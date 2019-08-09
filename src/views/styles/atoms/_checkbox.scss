@@ -1,0 +1,34 @@
+// .control-checkbox {
+//   display: flex;
+//   align-items: center;
+
+//   input {
+//     margin-right: 3px;
+//     transform: scale(1.1);
+//   }
+// }
+
+input[type="checkbox"] {
+  /* Hide original inputs */
+  visibility: hidden;
+  position: absolute;
+}
+
+input[type="checkbox"] + label:before {
+  height: 12px;
+  width: 12px;
+  margin-right: 2px;
+  content: " ";
+  display: inline-block;
+  vertical-align: baseline;
+  border: 1px solid #777;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background: gold;
+}
+
+/* CUSTOM RADIO AND CHECKBOX STYLES */
+input[type="checkbox"] + label:before {
+  border-radius: 2px;
+}

@@ -1,0 +1,19 @@
+@import "_color_swatch.scss";
+
+// body
+$font_color: $color-ink;
+$font_family: Lato, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$font_size: 0.85em;
+$font_disabled_color: $color-ink-light;
+$background_color: $color-white;
+
+$button_background_color: $color-sky-light;
+$button_font_color: $color-ink;
+$button_border_color: $color-ink-lightest;
+$button_shadow_color: $color-sky-dark;
+
+// input
+$input_background-color: $color-white;
+$input_color: $color-ink-lighter;
+$input_border-color: $color-sky-dark;
+$input_background-color_disabled: $color-sky;

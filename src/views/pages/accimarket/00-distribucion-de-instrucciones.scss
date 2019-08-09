@@ -1,0 +1,28 @@
+.container {
+  #barra-lateral {
+  }
+
+  #contenido {
+    display: grid;
+    grid-template-rows: auto auto;
+
+    #criterios-busqueda {
+      #criterios-seleccion-01 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      #botones_accion {
+      }
+
+      #criterios-seleccion-02 {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    #resultados-busqueda {
+    }
+  }
+}

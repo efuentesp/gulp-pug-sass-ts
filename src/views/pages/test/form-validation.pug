@@ -1,0 +1,42 @@
+extends ../../layouts/html5
+
+block title
+   title Form Validation
+
+block styles
+   link(rel="stylesheet" href="../../styles/main.scss")
+
+block content
+  .container#form-validation
+    .callout.callout-warning(hidden)
+      h4 Invalid Form
+      p Erros was found!
+
+    .callout.callout-info(hidden)
+      h4 Valid Form
+      p Everything seems ok!
+
+    form#new-customer(data-parsley-validate="")
+      +field-input("id", "ID", true)
+      +field-input("name", "Name", true)
+      +field-email("email", "E-mail")
+      +field-options("banco", true, {key: "P", value:"Person"}, {key:"C", value:"Company"})
+      +field-input("description", "Description")
+      +field-checks("products",
+            "Product Type",
+            true,
+            {key: "P01", value:"Product 1", color:"#fff"},
+            {key: "P02", value:"Product 2", color:"#fff"},
+            {key: "P03", value:"Product 3", color:"#fff"}
+            )
+      +field-select("payment",
+                    "Payment method",
+                    true,
+                    {key: "ET", value:"Electronic transfer"},
+                    {key:"CHK", value:"Check"}
+                    )
+      button(type="submit" value="validate") Submit
+
+block scripts
+   script(src="../../scripts/common.ts")
+   script(src="form-validation.ts")

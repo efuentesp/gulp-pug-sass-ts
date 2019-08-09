@@ -1,0 +1,10 @@
+mixin accordion(id)
+  .accordion(id=id)
+    block
+
+mixin accordion-item(id, _label="")
+  - var accordion_item_id = "accordion_" + id
+  - var accordion_item_ref = "#accordion_" + id
+  h3= _label
+  .accordion-content
+    block

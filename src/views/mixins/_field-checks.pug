@@ -1,0 +1,11 @@
+mixin field-checks(id, _label="", required=false, ...items)
+  - var check_name = "chk_" + id
+  - var check_name_arr = check_name + "[]"
+  .field
+    label(for=check_name)= _label
+    each item, index in items
+      - var check_id = "chk_" + id + "_" + index
+      .control-checkbox
+        input(type="checkbox" name=check_name id=check_id value=item.key required=required)
+        label(for=check_name)
+          = item.value

@@ -1,0 +1,8 @@
+mixin field-select(id, _label="", required=false, ...items)
+  .field
+    label= _label
+    .control
+      select(required=required)
+        option(value="") Choose..
+        each item in items
+          option(value=item.key)= item.value

@@ -1,0 +1,9 @@
+mixin collapsible-panel(id)
+  - var chk_toggle_id = "chk_toggle_" + id
+  .collapsible(id=id)
+    .panel-bar
+      input.toggle(type="checkbox" id=chk_toggle_id checked hidden)
+      a.is-icon(id="btn_")
+        i.fa.fa-minus-circle.fa-2x.icon-button
+    .panel-content.is-visible
+      block

@@ -1,0 +1,60 @@
+.search-form {
+  display: grid;
+
+  // border: 1px solid lightgray;
+  // padding: 3px;
+
+  .fieldset {
+    display: flex;
+    flex-wrap: wrap;
+
+    // border: 1px solid lightgray;
+    // padding: 3px;
+  }
+
+  .buttonset {
+    display: flex;
+    flex-wrap: wrap;
+
+    // border: 1px solid lightgray;
+    // padding: 3px;
+  }
+
+  .is-horizontal {
+    flex-direction: row;
+  }
+
+  .is-vertical {
+    flex-direction: column;
+  }
+
+  .is-start {
+    justify-content: flex-start;
+  }
+
+  .is-center {
+    justify-content: center;
+  }
+
+  .is-end {
+    justify-content: flex-end;
+  }
+
+  // Small devices (landscape phones, 576px and up)
+  // @media (min-width: 576px) {  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    grid-template-columns: auto 328px;
+  }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    grid-template-columns: auto 328px;
+  }
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    grid-template-columns: auto 328px;
+  }
+}

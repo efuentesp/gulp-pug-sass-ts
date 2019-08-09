@@ -1,0 +1,26 @@
+#causion-bursatil {
+  display: grid;
+  grid-template-rows: auto auto;
+
+  #search-criterias-section {
+    display: grid;
+    grid-template-rows: auto auto;
+
+    .panel-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      #search-criterias-column {
+        display: grid;
+        grid-template-columns: 200px 200px 200px 200px;
+      }
+
+      #search-actions-column {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-column-gap: 5px;
+        justify-content: right;
+      }
+    }
+  }
+}

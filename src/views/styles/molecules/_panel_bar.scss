@@ -1,0 +1,19 @@
+@import "../vars";
+
+.panel-bar {
+  display: grid;
+  justify-content: right;
+  padding-right: 10px;
+  border: 1px solid #afafaf;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  background-color: #dcdcdc;
+
+  .panel-label {
+    height: 25px;
+    padding-left: 10px;
+    padding-right: 5px;
+    text-align: middle;
+    cursor: pointer;
+  }
+}

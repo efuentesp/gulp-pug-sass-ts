@@ -1,0 +1,31 @@
+extends ../../layouts/html5
+
+block title
+   title 01.Causión Bursátil
+
+block styles
+   link(rel="stylesheet" href="../../styles/main.scss")
+   link(rel="stylesheet" href="01-caucion-bursatil.scss")
+
+block content
+   .container#causion-bursatil
+      +accordion("criterios_busqueda_accordion")
+         +accordion-item("criterios_busqueda_accordion_item")
+            #search-criterias-column
+               +field-date("date", "Fecha")
+               +field-plus-minus("contrato", "Contrato")
+               +field-plus-minus("digito", "Digito")
+               +field-options("banco", true, {key: "CB", value:"Casa de Bolsa"}, {key:"B", value:"Banco"})
+               +field-select("operacion", "Operación", false, {key: "CB", value:"Casa de Bolsa"}, {key:"B", value:"Banco"})
+            #search-actions-column
+               +button-search("Sirve para buscar Contratos.")
+               +button-clean
+               +button-pdf
+               +button-xls
+
+      section#search-results-section
+         +grid("contratos")
+
+block scripts
+   script(src="../../scripts/common.ts")
+   script(src="01-caucion-bursatil.ts")

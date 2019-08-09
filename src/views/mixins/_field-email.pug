@@ -1,0 +1,9 @@
+mixin field-email(id, _label="", required=false, size="small")
+  - var input_id = "input_" + id
+  - var size_class = "is-" + size
+  .field
+    label= _label
+    if required
+      span.required *
+    .control
+      input.input(type="email" id=input_id class=size_class required=required data-parsley-trigger="change")

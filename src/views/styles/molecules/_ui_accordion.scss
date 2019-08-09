@@ -1,0 +1,16 @@
+@import "../vars";
+
+.ui-accordion .ui-accordion-header {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  margin: 2px 0 0 0;
+  padding: 0.5em 0.5em 0.5em 0.7em;
+  // font-size: 100%;
+}
+.ui-accordion .ui-accordion-content {
+  // padding: 1em 2.2em;
+  padding-top: 0.5em;
+  border-top: 0;
+  overflow: auto;
+}

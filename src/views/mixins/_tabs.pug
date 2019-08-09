@@ -1,0 +1,12 @@
+mixin tab-group(id, ...items)
+  div(id=id)
+    ul
+      each item in items
+        - var tab_item_ref = "#" + item.id
+        li
+          a(href=tab_item_ref)= item.label
+    block
+
+mixin tab-item(id)
+  div(id=id)
+    block

@@ -1,0 +1,9 @@
+mixin field-date(id, _label="")
+  - var input_id = "input_" + id
+  - var btn_id = "btn_" + id
+  .field
+      label= _label
+      .control.has-addons
+        input.input.is-small(id=input_id)
+        //- button.is-icon(id=btn_id)
+        //-     i.fa.fa-calendar.icon-button

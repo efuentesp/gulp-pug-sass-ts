@@ -1,0 +1,35 @@
+include ../mixins/mixins
+
+doctype html
+html(lang='es')
+   head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+      block title
+
+      link(href="//fonts.googleapis.com/css?family=Lato", rel="stylesheet")
+      link(href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css", rel="stylesheet")
+      link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+      link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.5/css/ui.jqgrid.min.css")
+      block styles
+   body
+      block header
+        include ../partials/header
+
+      block content
+
+      block footer
+        include ../partials/footer
+
+      //- script(src="/node_modules/jquery/dist/jquery.min.js")
+      //- script(src="/node_modules/jquery-ui-dist/jquery-ui.min.js")
+      script(src="https://code.jquery.com/jquery-1.12.4.min.js"
+             integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+             crossorigin="anonymous")
+      script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+             integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+             crossorigin="anonymous")
+      script(src="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.5/js/jquery.jqgrid.min.js")
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js")
+      block scripts

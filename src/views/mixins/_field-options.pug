@@ -1,0 +1,8 @@
+mixin field-options(id, required=false, ...items)
+  .field
+      .control
+        each item, index in items
+          - var item_id = "radio_" + id + "_" + index
+          input(type="radio" name=id id=item_id value=item.key required=required)
+          label(for=item_id)
+            = item.value

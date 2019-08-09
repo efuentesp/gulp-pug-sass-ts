@@ -1,0 +1,93 @@
+extends ../../layouts/html5
+
+block title
+   title 00. Distribución de Instrucciones
+
+block styles
+   link(rel="stylesheet" href="../../styles/main.scss")
+   link(rel="stylesheet" href="00-distribucion-de-instrucciones.scss")
+
+block content
+  .container
+    .column#barra-lateral
+    .column#contenido
+      .row#criterios-busqueda
+        +accordion("criterios_busqueda_accordion")
+          +accordion-item("criterios_busqueda_accordion_item")
+            .row
+              .col#criterios-seleccion-01
+                .col
+                  +field-options("opciones",
+                    false,
+                    {key: "INTRA", value:"Intradia"},
+                    {key: "PROG", value:"Programados"},
+                    {key: "HIST", value:"Históricos"}
+                  )
+                  +field-checks("capturados",
+                                "Capturados",
+                                false,
+                                {key: "CAP", value:"Capturados"}
+                  )
+                +field-plus-minus("contrato", "Contrato")
+                +field-plus-minus("folio_mov", "Folio Mov.")
+                +field-plus-minus("digito", "Digito", "5em")
+                .col
+                  +field-input("importe_neto", "Importe Neto")
+                  +field-select("comparacion",
+                    "",
+                    false,
+                    {key: "ALL", value:"Todos"},
+                    {key: "EQ", value:"Igual"},
+                    {key: "GT", value:"Mayor que"},
+                    {key: "LT", value:"Menor que"},
+                    {key: "GE", value:"Mayor o igual que"},
+                    {key: "LE", value:"Menor o igual que"}
+                  )
+                +field-checks("depositos_retiros",
+                              "",
+                              false,
+                              {key: "DEP", value:"Depósitos"},
+                              {key: "RET", value:"Retiros"}
+                )
+                +field-checks("estatus",
+                              "",
+                              false,
+                              {key: "APL", value:"Aplicados"},
+                              {key: "CAN", value:"Cancelados"},
+                              {key: "PEN", value:"Pendientes"},
+                              {key: "REV", value:"En Revisión"},
+                              {key: "PRO", value:"En Proceso"},
+                              {key: "RVS", value:"En Revisión Sans"}
+                )
+                .col#botones_accion
+                  .col
+                    +button-search
+                    +button-clean
+                  .col
+                    +button-pdf
+                    +button-xls
+            .row
+              .col#criterios-seleccion-02
+                +field-select("sucursal",
+                  "Sucursal",
+                  false,
+                  {key: "REF", value:"Reforma"},
+                  {key: "INS", value:"Insurgentes"},
+                  {key: "TLA", value:"Tlalpan"},
+                  {key: "CEN", value:"Centro"}
+                )
+
+      .row#resultados-busqueda
+        +tab-group("tabs_resultados_busqueda",
+                    {id: "tab_promocion", label: "Promoción"},
+                    {id: "tab_administrativas", label: "Administrativas"},
+                    {id: "tab_fiduciario", label: "Fiduciario"})
+          +tab-item("tab_promocion")
+            +grid("grid_promocion")
+          +tab-item("tab_administrativas")
+            +grid("grid_administrativas")
+          +tab-item("tab_fiduciario")
+            +grid("grid_fiduciario")
+block scripts
+   script(src="../../scripts/common.ts")
+   script(src="00-distribucion-de-instrucciones.ts")

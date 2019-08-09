@@ -1,0 +1,48 @@
+extends ../../layouts/html5
+
+block title
+   title 03. Seguimiento de Órdenes - Histórico
+
+block styles
+   link(rel="stylesheet" href="../../styles/main.scss")
+   //- link(rel="stylesheet", href="03-seguimiento-de-ordenes-historico.scss")
+
+block content
+   .container#causion-bursatil
+      +accordion("criterios_busqueda_accordion")
+         +accordion-item("criterios_busqueda_accordion_item")
+            #search-criterias-column
+               +field-date("date", "Fecha")
+               +field-plus-minus("contrato", "Contrato")
+               +field-plus-minus("digito", "Digito")
+               +field-checks("servicio_inversion",
+                           "Servicio de Inversión",
+                           false,
+                           {key: "S01", value:"Asesoría", color:"#fff"},
+                           {key: "S02", value:"Gestión", color:"#fff"},
+                           {key: "S03", value:"Comercialización", color:"#fff"},
+                           {key: "S04", value:"Ejecución", color:"#fff"},
+                           {key: "S05", value:"N/A", color:"#fff"}
+                           )
+               +field-checks("rompe",
+                           "Rompe",
+                           false,
+                           {key: "SI", value:"Si", color:"#fff"},
+                           {key: "NO", value:"No", color:"#fff"},
+                           {key: "N/A", value:"N/A", color:"#fff"}
+                           )
+            #search-actions-column
+               +button-search("Sirve para buscar Contratos.")
+               +button-clean
+               +button-pdf
+               +button-xls
+      section#search-results-section
+        +tab-group("seguimiento_ordenes_tab_group",
+                   {id: "tab_item_intradia", label: "Intradia"},
+                   {id: "tab_item_historicos", label: "Históricos"})
+          +tab-item("tab_item_intradia")
+          +tab-item("tab_item_historicos")
+            +grid("ordenes_historicas")
+
+block scripts
+   script(src="03-seguimiento-de-ordenes-historico.ts")
