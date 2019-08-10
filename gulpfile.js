@@ -88,7 +88,7 @@ function watch() {
   gulp.watch("./**/*.pug", pugIt);
   gulp.watch("./views/scripts/**/*.ts", typescriptIt);
   gulp.watch("./views/pages/**/*.ts", typescriptIt);
-  gulp.watch("./images/**/*.gif", imageminIt);
+  gulp.watch(["./images/**/*.gif"], imageminIt);
 }
 
 exports.imageminIt = imageminIt;
