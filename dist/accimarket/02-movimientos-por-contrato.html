@@ -1,0 +1,180 @@
+
+<!-- include _collapsible-panel--><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>02. Movimientos por Contrato</title>
+    <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.5/css/ui.jqgrid.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body>
+    <header></header>
+    <div class="container" id="movimientos-por-contrato">
+      <div id="movimientos_por_contrato_tab_group">
+        <ul>
+          <li><a href="#tab_movimientos_por_contrato">Movimientos por Contrato</a></li>
+          <li><a href="#tab_reporte_agbc">Reporte AGBC</a></li>
+          <li><a href="#tab_cartas_masivas">Cartas Masivas</a></li>
+        </ul>
+        <div id="tab_movimientos_por_contrato">
+          <div class="accordion" id="criterios_busqueda_accordion">
+            <h3></h3>
+            <div class="accordion-content">
+              <div id="search-criterias-column">
+                <div class="field-group" id="busqueda_contrato">
+                  <div class="field">
+                    <label>Contrato</label><span class="required">*</span>
+                    <div class="control">
+                      <input class="input" type="text" id="input_contrato" required="required" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label>Fecha Inicial</label>
+                    <div class="control has-addons">
+                      <input class="input is-small" id="input_fecha_inicial"/>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label>Fecha Final</label>
+                    <div class="control has-addons">
+                      <input class="input is-small" id="input_fecha_final"/>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label>Operaciones mayores a</label>
+                    <div class="control">
+                      <input class="input" type="text" id="input_operaciones_mayores_a" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label>Plazo</label>
+                    <div class="control">
+                      <input class="input" type="text" id="input_plazo" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                    </div>
+                  </div>
+                </div>
+                <div id="datos_contrato_movimientos_tab_group">
+                  <ul>
+                    <li><a href="#datos_contrato">Datos del contrato</a></li>
+                    <li><a href="#filtro_movimientos">Filtro de movimientos</a></li>
+                  </ul>
+                  <div id="datos_contrato">
+                    <div class="field">
+                      <label>Cliente</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_cliente" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Digito</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_digito" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Digito Verif</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_digito_verif" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Perfil</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_perfil" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Libro</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_libro" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Status</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_status" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Area</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_area" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>División</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_division" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Dirección</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_direccion" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Región</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_region" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Sucursal</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_sucursal" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Zona</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_zona" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label>Gerencia</label>
+                      <div class="control">
+                        <input class="input" type="text" id="input_gerencia" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="filtro_movimientos">
+                  </div>
+                </div>
+              </div>
+              <div id="search-actions-column">
+                <button class="button big-button" id="btn_search" title="Sirve para buscar Contratos."><span class="fa-stack fa-lg"><i class="fa fa-search fa-2x"></i></span><br/><span>Consultar</span></button>
+                <button class="button big-button" id="btn_clean"><span class="fa-stack fa-lg"><i class="fa fa-file-o fa-2x"></i></span><br/><span>Limpiar</span></button>
+                <button class="button big-button" id="btn_pdf"><span class="fa-stack fa-lg"><i class="fa fa-file-pdf-o fa-2x"></i></span><br/><span>PDF</span></button>
+                <button class="button big-button" id="btn_xls"><span class="fa-stack fa-lg"><i class="fa fa-file-excel-o fa-2x"></i></span><br/><span>XLS</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tab_reporte_agbc">
+        </div>
+        <div id="tab_cartas_masivas">
+        </div>
+      </div>
+      <section id="search-results-section">
+        <table id="table_movimientos_contrato">
+          <tr>
+            <td></td>
+          </tr>
+        </table>
+        <div id="pager_movimientos_contrato"></div>
+      </section>
+    </div>
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.5/js/jquery.jqgrid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
+    <script src="/assets/scripts/accimarket/02-movimientos-por-contrato.js"></script>
+  </body>
+</html>

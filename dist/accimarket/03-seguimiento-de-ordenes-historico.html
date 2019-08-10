@@ -1,0 +1,125 @@
+
+<!-- include _collapsible-panel--><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>03. Seguimiento de Órdenes - Histórico</title>
+    <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.5/css/ui.jqgrid.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body>
+    <header></header>
+    <div class="container" id="causion-bursatil">
+      <div class="accordion" id="criterios_busqueda_accordion">
+        <h3></h3>
+        <div class="accordion-content">
+          <div id="search-criterias-column">
+            <div class="field">
+              <label>Fecha</label>
+              <div class="control has-addons">
+                <input class="input is-small" id="input_date"/>
+              </div>
+            </div>
+            <div class="field">
+              <label>Contrato</label>
+              <div class="control has-addons">
+                <input class="input" id="input_contrato" style="width: 8em;"/>
+                <button class="button is-icon is-green" id="btn_plus_contrato"><i class="fa fa-plus-circle fa-lg icon-button"></i></button>
+                <button class="button is-icon is-red" id="btn_minus_contrato"><i class="fa fa-minus-circle fa-lg icon-button"></i></button>
+              </div>
+            </div>
+            <div class="field">
+              <label>Digito</label>
+              <div class="control has-addons">
+                <input class="input" id="input_digito" style="width: 8em;"/>
+                <button class="button is-icon is-green" id="btn_plus_digito"><i class="fa fa-plus-circle fa-lg icon-button"></i></button>
+                <button class="button is-icon is-red" id="btn_minus_digito"><i class="fa fa-minus-circle fa-lg icon-button"></i></button>
+              </div>
+            </div>
+            <div class="field">
+              <label for="chk_servicio_inversion">Servicio de Inversión</label>
+              <div class="control-checkbox">
+                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_0" value="S01"/>
+                <label for="chk_servicio_inversion">Asesoría
+                </label>
+              </div>
+              <div class="control-checkbox">
+                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_1" value="S02"/>
+                <label for="chk_servicio_inversion">Gestión
+                </label>
+              </div>
+              <div class="control-checkbox">
+                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_2" value="S03"/>
+                <label for="chk_servicio_inversion">Comercialización
+                </label>
+              </div>
+              <div class="control-checkbox">
+                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_3" value="S04"/>
+                <label for="chk_servicio_inversion">Ejecución
+                </label>
+              </div>
+              <div class="control-checkbox">
+                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_4" value="S05"/>
+                <label for="chk_servicio_inversion">N/A
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label for="chk_rompe">Rompe</label>
+              <div class="control-checkbox">
+                <input type="checkbox" name="chk_rompe" id="chk_rompe_0" value="SI"/>
+                <label for="chk_rompe">Si
+                </label>
+              </div>
+              <div class="control-checkbox">
+                <input type="checkbox" name="chk_rompe" id="chk_rompe_1" value="NO"/>
+                <label for="chk_rompe">No
+                </label>
+              </div>
+              <div class="control-checkbox">
+                <input type="checkbox" name="chk_rompe" id="chk_rompe_2" value="N/A"/>
+                <label for="chk_rompe">N/A
+                </label>
+              </div>
+            </div>
+          </div>
+          <div id="search-actions-column">
+            <button class="button big-button" id="btn_search" title="Sirve para buscar Contratos."><span class="fa-stack fa-lg"><i class="fa fa-search fa-2x"></i></span><br/><span>Consultar</span></button>
+            <button class="button big-button" id="btn_clean"><span class="fa-stack fa-lg"><i class="fa fa-file-o fa-2x"></i></span><br/><span>Limpiar</span></button>
+            <button class="button big-button" id="btn_pdf"><span class="fa-stack fa-lg"><i class="fa fa-file-pdf-o fa-2x"></i></span><br/><span>PDF</span></button>
+            <button class="button big-button" id="btn_xls"><span class="fa-stack fa-lg"><i class="fa fa-file-excel-o fa-2x"></i></span><br/><span>XLS</span></button>
+          </div>
+        </div>
+      </div>
+      <section id="search-results-section">
+        <div id="seguimiento_ordenes_tab_group">
+          <ul>
+            <li><a href="#tab_item_intradia">Intradia</a></li>
+            <li><a href="#tab_item_historicos">Históricos</a></li>
+          </ul>
+          <div id="tab_item_intradia">
+          </div>
+          <div id="tab_item_historicos">
+            <table id="table_ordenes_historicas">
+              <tr>
+                <td></td>
+              </tr>
+            </table>
+            <div id="pager_ordenes_historicas"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.5/js/jquery.jqgrid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
+    <script src="/assets/scripts/accimarket/03-seguimiento-de-ordenes-historico.js"></script>
+  </body>
+</html>

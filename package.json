@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "gulp watch"
+    "start": "gulp"
   },
   "keywords": [],
   "author": "",
@@ -16,8 +16,11 @@
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
+    "gulp-line-ending-corrector": "^1.0.3",
     "gulp-pug": "^4.0.1",
+    "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-typescript": "^5.0.1",
     "typescript": "^3.5.3"
   },
