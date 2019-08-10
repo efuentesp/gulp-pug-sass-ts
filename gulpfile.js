@@ -82,7 +82,7 @@ function watch() {
   });
 
   gulp.watch(
-    ["./src/views/styles/main.scss", "./src/views/pages/**/*.scss"],
+    ["./src/views/styles/**/*.scss", "./src/views/pages/**/*.scss"],
     sassIt
   );
   gulp.watch("./**/*.pug", pugIt);

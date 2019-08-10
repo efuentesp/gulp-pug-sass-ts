@@ -5,7 +5,10 @@ mixin field-checks(id, _label="", required=false, ...items)
     label(for=check_name)= _label
     each item, index in items
       - var check_id = "chk_" + id + "_" + index
-      .control-checkbox
+      - var class_color = "is_" + item.color
+      label.checkbox_input= item.value
         input(type="checkbox" name=check_name id=check_id value=item.key required=required)
-        label(for=check_name)
-          = item.value
+        if item.color
+          span.checkmark.with_color(class=class_color)
+        else
+          span.checkmark

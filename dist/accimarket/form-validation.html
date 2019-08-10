@@ -43,14 +43,12 @@
           </div>
         </div>
         <div class="field">
-          <div class="control">
-            <input type="radio" name="banco" id="radio_banco_0" value="P" required="required"/>
-            <label for="radio_banco_0">Person
-            </label>
-            <input type="radio" name="banco" id="radio_banco_1" value="C" required="required"/>
-            <label for="radio_banco_1">Company
-            </label>
-          </div>
+          <label class="radio_button">Person
+            <input type="radio" name="banco" id="radio_banco_0" value="P" required="required"/><span class="checkmark"></span>
+          </label>
+          <label class="radio_button">Company
+            <input type="radio" name="banco" id="radio_banco_1" value="C" required="required"/><span class="checkmark"></span>
+          </label>
         </div>
         <div class="field">
           <label>Description</label>
@@ -60,21 +58,15 @@
         </div>
         <div class="field">
           <label for="chk_products">Product Type</label>
-          <div class="control-checkbox">
-            <input type="checkbox" name="chk_products" id="chk_products_0" value="P01" required="required"/>
-            <label for="chk_products">Product 1
-            </label>
-          </div>
-          <div class="control-checkbox">
-            <input type="checkbox" name="chk_products" id="chk_products_1" value="P02" required="required"/>
-            <label for="chk_products">Product 2
-            </label>
-          </div>
-          <div class="control-checkbox">
-            <input type="checkbox" name="chk_products" id="chk_products_2" value="P03" required="required"/>
-            <label for="chk_products">Product 3
-            </label>
-          </div>
+          <label class="checkbox_input">Product 1
+            <input type="checkbox" name="chk_products" id="chk_products_0" value="P01" required="required"/><span class="checkmark with_color is_#fff"></span>
+          </label>
+          <label class="checkbox_input">Product 2
+            <input type="checkbox" name="chk_products" id="chk_products_1" value="P02" required="required"/><span class="checkmark with_color is_#fff"></span>
+          </label>
+          <label class="checkbox_input">Product 3
+            <input type="checkbox" name="chk_products" id="chk_products_2" value="P03" required="required"/><span class="checkmark with_color is_#fff"></span>
+          </label>
         </div>
         <div class="field">
           <label>Payment method</label>

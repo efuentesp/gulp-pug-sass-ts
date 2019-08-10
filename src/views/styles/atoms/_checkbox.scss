@@ -1,34 +1,92 @@
-// .control-checkbox {
-//   display: flex;
-//   align-items: center;
+@import "../vars";
 
-//   input {
-//     margin-right: 3px;
-//     transform: scale(1.1);
-//   }
-// }
+/* The checkbox_input */
+.checkbox_input {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  user-select: none;
 
-input[type="checkbox"] {
-  /* Hide original inputs */
-  visibility: hidden;
-  position: absolute;
-}
+  /* Hide the browser's default checkbox */
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 
-input[type="checkbox"] + label:before {
-  height: 12px;
-  width: 12px;
-  margin-right: 2px;
-  content: " ";
-  display: inline-block;
-  vertical-align: baseline;
-  border: 1px solid #777;
-}
+    /* Show the checkmark when checked */
+    &:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
 
-input[type="checkbox"]:checked + label:before {
-  background: gold;
-}
+  /* On mouse-over, add a grey background color */
+  // &:hover input ~ .checkmark {
+  //   background-color: #ccc;
+  // }
 
-/* CUSTOM RADIO AND CHECKBOX STYLES */
-input[type="checkbox"] + label:before {
-  border-radius: 2px;
+  /* When the checkbox is checked, add a blue background */
+  // & input:checked ~ .checkmark {
+  //   background-color: #2196f3;
+  // }
+
+  /* Style the checkmark/indicator */
+  .checkmark:after {
+    left: 4px;
+    top: 0px;
+    width: 5px;
+    height: 10px;
+    border: solid $font_color;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    // background-color: red;
+    border: 1px solid $font_color;
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    &.with_color {
+      border-radius: 5px;
+    }
+
+    &.is_red {
+      background-color: $color-red;
+    }
+
+    &.is_green {
+      background-color: $color-green;
+    }
+
+    &.is_yellow {
+      background-color: $color-yellow;
+    }
+
+    &.is_blue {
+      background-color: $color-indigo-dark;
+    }
+
+    &.is_cyan {
+      background-color: $color-teal;
+    }
+
+    &.is_grey {
+      background-color: $color-sky-dark;
+    }
+  }
 }
