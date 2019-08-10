@@ -52,7 +52,7 @@
     height: 16px;
     width: 16px;
     // background-color: red;
-    border: 1px solid $font_color;
+    border: 1px solid $button_border_color;
 
     /* Create the checkmark/indicator (hidden when not checked) */
     &:after {

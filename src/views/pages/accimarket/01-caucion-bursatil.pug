@@ -16,7 +16,11 @@ block content
                +field-plus-minus("contrato", "Contrato")
                +field-plus-minus("digito", "Digito")
                +field-options("banco", true, {key: "CB", value:"Casa de Bolsa"}, {key:"B", value:"Banco"})
-               +field-select("operacion", "Operación", false, {key: "CB", value:"Casa de Bolsa"}, {key:"B", value:"Banco"})
+               +field-select("operacion",
+                             "Operación",
+                             false,
+                             "12em",
+                             {key: "CB", value:"Casa de Bolsa"}, {key:"B", value:"Banco"})
             #search-actions-column
                +button-search("Sirve para buscar Contratos.")
                +button-clean

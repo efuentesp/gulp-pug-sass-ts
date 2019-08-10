@@ -1,8 +1,10 @@
-mixin field-select(id, _label="", required=false, ...items)
+mixin field-select(id, _label="", required=false, size="8em", ...items)
+  - var style = "width: " + size + ";"
   .field
     label= _label
-    .control
-      select(required=required)
-        option(value="") Choose..
+    label.select
+      select.selectbox(required=required
+                       style=style)
+        option(value="")
         each item in items
           option(value=item.key)= item.value

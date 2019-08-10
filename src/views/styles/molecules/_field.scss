@@ -16,12 +16,12 @@
   .input {
     //display: block;
     background-color: $input_background_color;
-    border: 1px solid $input_border-color;
+    border: 1px solid $button_border_color;
     border-radius: 6px;
-    color: $input_color;
+    color: $font_color;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    font-size: 1em
+    font-size: 1em;
 
     &:disabled {
       background-color: $input_background-color_disabled;

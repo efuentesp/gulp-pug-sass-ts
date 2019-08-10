@@ -48,7 +48,11 @@ function sassIt() {
   return gulp
     .src(["./src/views/styles/main.scss", "./src/views/pages/**/*.scss"])
     .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(sass().on("error", sass.logError))
+    .pipe(
+      sass({
+        sourceComments: false
+      }).on("error", sass.logError)
+    )
     .pipe(
       autoprefixer({
         overrideBrowserslist: ["last 2 versions"]
@@ -62,7 +66,7 @@ function sassIt() {
 
 function typescriptIt() {
   return gulp
-    .src("./src/views/pages/**/*.ts")
+    .src(["./src/views/pages/**/*.ts"])
     .pipe(
       typescript({
         target: "ES3",
@@ -86,7 +90,6 @@ function watch() {
     sassIt
   );
   gulp.watch("./**/*.pug", pugIt);
-  gulp.watch("./views/scripts/**/*.ts", typescriptIt);
   gulp.watch("./views/pages/**/*.ts", typescriptIt);
   gulp.watch(["./images/**/*.gif"], imageminIt);
 }
