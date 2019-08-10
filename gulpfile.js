@@ -1,6 +1,6 @@
 const gulp = require("gulp");
-const pug = require("pug");
-const sass = require("gulp-saas");
+const pug = require("gulp-pug");
+const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const typescript = require("gulp-typescript");
 const browserSync = require("browser-sync").create();
@@ -11,7 +11,7 @@ const browserSync = require("browser-sync").create();
 //     .pipe(vinylPaths(del))
 // }
 
-function pug() {
+function pugIt() {
   return gulp
     .src("./src/views/pages/**/*.pug")
     .pipe(
@@ -23,20 +23,20 @@ function pug() {
     .pipe(browserSync.stream());
 }
 
-function style() {
+function sassIt() {
   return gulp
-    .src("./src/views/styles/main.scss")
-    .pipe(saas().on("error", sass.logError))
+    .src(["./src/views/styles/main.scss", "./src/views/pages/**/*.scss"])
+    .pipe(sass().on("error", sass.logError))
     .pipe(
       autoprefixer({
-        browsers: ["last 3 versions"]
+        overrideBrowserslist: ["last 2 versions"]
       })
     )
-    .pipe(gulp.dest("./dist/css"))
+    .pipe(gulp.dest("./dist/assets/css"))
     .pipe(browserSync.stream());
 }
 
-function typescript() {
+function typescriptIt() {
   return gulp
     .src("./src/views/pages/**/*.ts")
     .pipe(
@@ -45,7 +45,7 @@ function typescript() {
         module: "none"
       })
     )
-    .pipe(gulp.dest("./dist/scripts"))
+    .pipe(gulp.dest("./dist/assets/scripts"))
     .pipe(browserSync.stream());
 }
 
@@ -56,12 +56,15 @@ function watch() {
     }
   });
 
-  gulp.watch("./scss/**/*.scss", ["style"]);
-  gulp.watch("./**/*.pug", ["pug"]);
-  gulp.watch("./ts/**/*.ts", ["typescript"]);
+  gulp.watch(
+    ["./src/views/styles/main.scss", "./src/views/pages/**/*.scss"],
+    gulp.series(["sassIt"])
+  );
+  gulp.watch("./**/*.pug", gulp.series(["pugIt"]));
+  gulp.watch("./ts/**/*.ts", gulp.series(["typescriptIt"]));
 }
 
-exports.style = style;
-exports.pug = pug;
-exports.typescript = typescript;
+exports.sassIt = sassIt;
+exports.pugIt = pugIt;
+exports.typescriptIt = typescriptIt;
 exports.watch = watch;
