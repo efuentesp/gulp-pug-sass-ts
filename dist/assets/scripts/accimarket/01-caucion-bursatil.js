@@ -4,7 +4,7 @@ $("#criterios_busqueda_accordion").accordion({
 });
 $("#input_date").datepicker({
     showOn: "button",
-    buttonImage: "/images/calendar.gif",
+    buttonImage: "/assets/images/calendar.gif",
     buttonImageOnly: true
 });
 $("#table_contratos").jqGrid({

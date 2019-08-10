@@ -2,7 +2,9 @@ const gulp = require("gulp");
 const pug = require("gulp-pug");
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
-const replace = require("gulp-replace");
+const imagemin = require("gulp-imagemin");
+const changed = require("gulp-changed");
+// const replace = require("gulp-replace");
 const sourcemaps = require("gulp-sourcemaps");
 const typescript = require("gulp-typescript");
 const browserSync = require("browser-sync").create();
@@ -13,6 +15,16 @@ const lec = require("gulp-line-ending-corrector");
 //     .src('./dist', {read: false})
 //     .pipe(vinylPaths(del))
 // }
+
+function imageminIt() {
+  return (
+    gulp
+      .src("./src/images/*")
+      // .pipe(changed("./dist/assets/images"))
+      .pipe(imagemin())
+      .pipe(gulp.dest("./dist/assets/images"))
+  );
+}
 
 function pugIt() {
   return (
@@ -74,15 +86,18 @@ function watch() {
     sassIt
   );
   gulp.watch("./**/*.pug", pugIt);
-  gulp.watch("./ts/**/*.ts", typescriptIt);
+  gulp.watch("./views/scripts/**/*.ts", typescriptIt);
+  gulp.watch("./views/pages/**/*.ts", typescriptIt);
+  gulp.watch("./images/**/*.gif", imageminIt);
 }
 
+exports.imageminIt = imageminIt;
 exports.sassIt = sassIt;
 exports.pugIt = pugIt;
 exports.typescriptIt = typescriptIt;
 exports.watch = watch;
 
 exports.default = gulp.series(
-  gulp.parallel(pugIt, sassIt, typescriptIt),
+  gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
   watch
 );
