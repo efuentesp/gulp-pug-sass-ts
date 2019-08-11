@@ -7,13 +7,21 @@ $("#criterios_busqueda_accordion").accordion({
 $("#input_fecha_inicial").datepicker({
   showOn: "button",
   buttonImage: "/assets/images/calendar.gif",
-  buttonImageOnly: true
+  buttonImageOnly: true,
+  buttonText: "",
+  dayNames: dayNames,
+  dayNamesMin: dayNamesMin,
+  monthNames: monthNames
 });
 
 $("#input_fecha_final").datepicker({
   showOn: "button",
   buttonImage: "/assets/images/calendar.gif",
-  buttonImageOnly: true
+  buttonImageOnly: true,
+  buttonText: "",
+  dayNames: dayNames,
+  dayNamesMin: dayNamesMin,
+  monthNames: monthNames
 });
 
 $("#movimientos_por_contrato_tab_group").tabs();

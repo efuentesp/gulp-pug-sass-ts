@@ -7,7 +7,11 @@ $("#criterios_busqueda_accordion").accordion({
 $("#input_date").datepicker({
   showOn: "button",
   buttonImage: "/assets/images/calendar.gif",
-  buttonImageOnly: true
+  buttonImageOnly: true,
+  buttonText: "",
+  dayNames: dayNames,
+  dayNamesMin: dayNamesMin,
+  monthNames: monthNames
 });
 
 $("#table_contratos").jqGrid({
