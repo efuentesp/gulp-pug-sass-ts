@@ -1,0 +1,17 @@
+.container {
+  #search-criterias-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    #datos_contrato {
+      display: flex;
+      flex-direction: column;
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

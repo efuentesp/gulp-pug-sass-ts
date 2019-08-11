@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.5/css/ui.jqgrid.min.css">
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/accimarket/03-seguimiento-de-ordenes-historico.css">
   </head>
   <body>
     <header></header>
@@ -18,7 +19,7 @@
       <div class="accordion" id="criterios_busqueda_accordion">
         <h3></h3>
         <div class="accordion-content">
-          <div id="search-criterias-column">
+          <div class="row" id="search-criterias-column">
             <div class="field">
               <label>Fecha</label>
               <div class="control has-addons">
@@ -44,39 +45,39 @@
             <div class="field">
               <label for="chk_servicio_inversion">Servicio de Inversión</label>
               <label class="checkbox_input">Asesoría
-                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_0" value="S01"/><span class="checkmark with_color is_#fff"></span>
+                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_0" value="S01"/><span class="checkmark with_color is_green"></span>
               </label>
               <label class="checkbox_input">Gestión
-                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_1" value="S02"/><span class="checkmark with_color is_#fff"></span>
+                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_1" value="S02"/><span class="checkmark with_color is_yellow"></span>
               </label>
               <label class="checkbox_input">Comercialización
-                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_2" value="S03"/><span class="checkmark with_color is_#fff"></span>
+                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_2" value="S03"/><span class="checkmark with_color is_blue"></span>
               </label>
               <label class="checkbox_input">Ejecución
-                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_3" value="S04"/><span class="checkmark with_color is_#fff"></span>
+                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_3" value="S04"/><span class="checkmark with_color is_cyan"></span>
               </label>
               <label class="checkbox_input">N/A
-                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_4" value="S05"/><span class="checkmark with_color is_#fff"></span>
+                <input type="checkbox" name="chk_servicio_inversion" id="chk_servicio_inversion_4" value="S05"/><span class="checkmark with_color is_gray"></span>
               </label>
             </div>
             <div class="field">
               <label for="chk_rompe">Rompe</label>
               <label class="checkbox_input">Si
-                <input type="checkbox" name="chk_rompe" id="chk_rompe_0" value="SI"/><span class="checkmark with_color is_#fff"></span>
+                <input type="checkbox" name="chk_rompe" id="chk_rompe_0" value="SI"/><span class="checkmark with_color is_red"></span>
               </label>
               <label class="checkbox_input">No
-                <input type="checkbox" name="chk_rompe" id="chk_rompe_1" value="NO"/><span class="checkmark with_color is_#fff"></span>
+                <input type="checkbox" name="chk_rompe" id="chk_rompe_1" value="NO"/><span class="checkmark with_color is_green"></span>
               </label>
               <label class="checkbox_input">N/A
-                <input type="checkbox" name="chk_rompe" id="chk_rompe_2" value="N/A"/><span class="checkmark with_color is_#fff"></span>
+                <input type="checkbox" name="chk_rompe" id="chk_rompe_2" value="N/A"/><span class="checkmark with_color is_gray"></span>
               </label>
             </div>
-          </div>
-          <div id="search-actions-column">
-            <button class="button big-button" id="btn_search" title="Sirve para buscar Contratos."><span class="fa-stack fa-lg"><i class="fa fa-search fa-2x"></i></span><br/><span>Consultar</span></button>
-            <button class="button big-button" id="btn_clean"><span class="fa-stack fa-lg"><i class="fa fa-file-o fa-2x"></i></span><br/><span>Limpiar</span></button>
-            <button class="button big-button" id="btn_pdf"><span class="fa-stack fa-lg"><i class="fa fa-file-pdf-o fa-2x"></i></span><br/><span>PDF</span></button>
-            <button class="button big-button" id="btn_xls"><span class="fa-stack fa-lg"><i class="fa fa-file-excel-o fa-2x"></i></span><br/><span>XLS</span></button>
+            <div id="search-actions-column">
+              <button class="button big-button" id="btn_search" title="Sirve para buscar Contratos."><span class="fa-stack fa-lg"><i class="fa fa-search fa-2x"></i></span><br/><span>Consultar</span></button>
+              <button class="button big-button" id="btn_clean"><span class="fa-stack fa-lg"><i class="fa fa-file-o fa-2x"></i></span><br/><span>Limpiar</span></button>
+              <button class="button big-button" id="btn_pdf"><span class="fa-stack fa-lg"><i class="fa fa-file-pdf-o fa-2x"></i></span><br/><span>PDF</span></button>
+              <button class="button big-button" id="btn_xls"><span class="fa-stack fa-lg"><i class="fa fa-file-excel-o fa-2x"></i></span><br/><span>XLS</span></button>
+            </div>
           </div>
         </div>
       </div>
@@ -87,6 +88,7 @@
             <li><a href="#tab_item_historicos">Históricos</a></li>
           </ul>
           <div id="tab_item_intradia">
+            <p>Intradia</p>
           </div>
           <div id="tab_item_historicos">
             <table id="table_ordenes_historicas">

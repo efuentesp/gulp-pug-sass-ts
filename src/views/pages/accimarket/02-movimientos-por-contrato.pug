@@ -5,10 +5,10 @@ block title
 
 block styles
   link(rel="stylesheet" href="/assets/css/main.css")
-  //-  link(rel="stylesheet" href="/assets/css/accimarket/02-movimientos-por-contrato.css")
+  link(rel="stylesheet" href="/assets/css/accimarket/02-movimientos-por-contrato.css")
 
 block content
-  .container#movimientos-por-contrato
+  .container
     +tab-group("movimientos_por_contrato_tab_group",
                 {id: "tab_movimientos_por_contrato", label: "Movimientos por Contrato"},
                 {id: "tab_reporte_agbc", label: "Reporte AGBC"},
@@ -16,38 +16,46 @@ block content
       +tab-item("tab_movimientos_por_contrato")
         +accordion("criterios_busqueda_accordion")
           +accordion-item("criterios_busqueda_accordion_item")
-            #search-criterias-column
+            .column#search-criterias-column
               +field-group("busqueda_contrato")
                 +field-input("contrato", "Contrato", true)
                 +field-date("fecha_inicial", "Fecha Inicial")
                 +field-date("fecha_final", "Fecha Final")
                 +field-input("operaciones_mayores_a", "Operaciones mayores a")
                 +field-input("plazo", "Plazo")
+                #search-actions-column
+                  +button-search("Sirve para buscar Contratos.")
+                  +button-clean
+                  +button-pdf
+                  +button-xls
               +tab-group("datos_contrato_movimientos_tab_group",
                           {id: "datos_contrato", label: "Datos del contrato"},
                           {id: "filtro_movimientos", label: "Filtro de movimientos"})
                 +tab-item("datos_contrato")
-                  +field-input("cliente", "Cliente")
-                  +field-input("digito", "Digito")
-                  +field-input("digito_verif", "Digito Verif")
-                  +field-input("perfil", "Perfil")
-                  +field-input("libro", "Libro")
-                  +field-input("status", "Status")
-                  +field-input("area", "Area")
-                  +field-input("division", "División")
-                  +field-input("direccion", "Dirección")
-                  +field-input("region", "Región")
-                  +field-input("sucursal", "Sucursal")
-                  +field-input("zona", "Zona")
-                  +field-input("gerencia", "Gerencia")
+                  .row
+                    +field-input("cliente", "Cliente", false, "48em", true)
+                  .row
+                    +field-input("digito", "Digito", false, "8em", true)
+                    +field-input("digito_verif", "Digito Verif", false, "8em", true)
+                  .row
+                    +field-input("perfil", "Perfil", false, "16em", true)
+                    +field-input("libro", "Libro", false, "8em", true)
+                  .row
+                    +field-input("status", "Status", false, "8em", true)
+                    +field-input("area", "Area", false, "8em", true)
+                    +field-input("division", "División", false, "8em", true)
+                    +field-input("direccion", "Dirección", false, "8em", true)
+                  .row
+                    +field-input("region", "Región", false, "8em", true)
+                    +field-input("sucursal", "Sucursal", false, "8em", true)
+                    +field-input("zona", "Zona", false, "8em", true)
+                    +field-input("gerencia", "Gerencia", false, "8em", true)
                 +tab-item("filtro_movimientos")
-            #search-actions-column
-              +button-search("Sirve para buscar Contratos.")
-              +button-clean
-              +button-pdf
-              +button-xls
+                  p Filtro de Movimientos
       +tab-item("tab_reporte_agbc")
+        p Reporte AGBC
       +tab-item("tab_cartas_masivas")
+        p Cartas Masivas
     section#search-results-section
       +grid("movimientos_contrato")
 

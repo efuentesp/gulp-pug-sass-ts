@@ -9,7 +9,9 @@
     padding-bottom: 5px;
 
     span {
-      color: $color-red-dark;
+      &.required {
+        color: $color-red-dark;
+      }
     }
   }
 

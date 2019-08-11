@@ -2,6 +2,11 @@ console.log("03-seguimiento-de-ordenes-historico");
 $("#criterios_busqueda_accordion").accordion({
     collapsible: true
 });
+$("#input_date").datepicker({
+    showOn: "button",
+    buttonImage: "/assets/images/calendar.gif",
+    buttonImageOnly: true
+});
 $("#seguimiento_ordenes_tab_group").tabs();
 $("#table_ordenes_historicas").jqGrid({
     url: "http://localhost:3000/fideicomiso",

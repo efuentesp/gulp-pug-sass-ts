@@ -1,4 +1,6 @@
 const gulp = require("gulp");
+const del = require("del");
+const vinylPaths = require("vinyl-paths");
 const pug = require("gulp-pug");
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
@@ -10,11 +12,11 @@ const typescript = require("gulp-typescript");
 const browserSync = require("browser-sync").create();
 const lec = require("gulp-line-ending-corrector");
 
-// function clean() {
-//   return gulp
-//     .src('./dist', {read: false})
-//     .pipe(vinylPaths(del))
-// }
+function clean() {
+  return gulp
+    .src("./dist", { read: false, allowEmpty: true })
+    .pipe(vinylPaths(del));
+}
 
 function imageminIt() {
   return (
@@ -89,11 +91,12 @@ function watch() {
     ["./src/views/styles/**/*.scss", "./src/views/pages/**/*.scss"],
     sassIt
   );
-  gulp.watch("./**/*.pug", pugIt);
-  gulp.watch("./views/pages/**/*.ts", typescriptIt);
-  gulp.watch(["./images/**/*.gif"], imageminIt);
+  gulp.watch("./src/views/pages/**/*.pug", pugIt);
+  gulp.watch("./src/views/pages/**/*.ts", typescriptIt);
+  gulp.watch(["./src/images/**/*.gif"], imageminIt);
 }
 
+exports.clean = clean;
 exports.imageminIt = imageminIt;
 exports.sassIt = sassIt;
 exports.pugIt = pugIt;
@@ -101,6 +104,7 @@ exports.typescriptIt = typescriptIt;
 exports.watch = watch;
 
 exports.default = gulp.series(
+  clean,
   gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
   watch
 );
