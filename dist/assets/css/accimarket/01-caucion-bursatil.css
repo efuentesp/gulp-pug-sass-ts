@@ -1,2 +1,15 @@
+<<<<<<< HEAD
 
 /*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhY2NpbWFya2V0LzAxLWNhdWNpb24tYnVyc2F0aWwuY3NzIiwic291cmNlc0NvbnRlbnQiOltdfQ== */
+=======
+.container #criterios-busqueda {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFjY2ltYXJrZXQvMDEtY2F1Y2lvbi1idXJzYXRpbC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBRUksb0JBQWE7RUFBYixvQkFBYTtFQUFiLGFBQWE7RUFDYixtQkFBZTtNQUFmLGVBQWU7RUFDZix5QkFBNkI7TUFBN0IsNkJBQTZCLEVBQUEiLCJmaWxlIjoiYWNjaW1hcmtldC8wMS1jYXVjaW9uLWJ1cnNhdGlsLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jb250YWluZXIge1xuICAjY3JpdGVyaW9zLWJ1c3F1ZWRhIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXgtd3JhcDogd3JhcDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWFyb3VuZDtcbiAgfVxufVxuIl19 */
+>>>>>>> 1987f3eb7c9c82aa68bd64b3709db3c1e44082cd

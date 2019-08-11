@@ -1,10 +1,31 @@
-console.log("01-02-movimientos-por-contrato");
+console.log("02-movimientos-por-contrato");
 
 $("#criterios_busqueda_accordion").accordion({
   collapsible: true
 });
 
+$("#input_fecha_inicial").datepicker({
+  showOn: "button",
+  buttonImage: "/assets/images/calendar.gif",
+  buttonImageOnly: true,
+  buttonText: "",
+  dayNames: dayNames,
+  dayNamesMin: dayNamesMin,
+  monthNames: monthNames
+});
+
+$("#input_fecha_final").datepicker({
+  showOn: "button",
+  buttonImage: "/assets/images/calendar.gif",
+  buttonImageOnly: true,
+  buttonText: "",
+  dayNames: dayNames,
+  dayNamesMin: dayNamesMin,
+  monthNames: monthNames
+});
+
 $("#movimientos_por_contrato_tab_group").tabs();
+$("#datos_contrato_movimientos_tab_group").tabs();
 
 $("#table_movimientos_contrato").jqGrid({
   url: "http://localhost:3000/fideicomiso",

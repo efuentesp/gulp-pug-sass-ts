@@ -5,44 +5,46 @@ block title
 
 block styles
    link(rel="stylesheet" href="/assets/css/main.css")
-   //- link(rel="stylesheet", href="/assets/css/accimarket/03-seguimiento-de-ordenes-historico.css")
+   link(rel="stylesheet", href="/assets/css/accimarket/03-seguimiento-de-ordenes-historico.css")
 
 block content
    .container#causion-bursatil
       +accordion("criterios_busqueda_accordion")
          +accordion-item("criterios_busqueda_accordion_item")
-            #search-criterias-column
+            .row#search-criterias-column
                +field-date("date", "Fecha")
                +field-plus-minus("contrato", "Contrato")
                +field-plus-minus("digito", "Digito")
                +field-checks("servicio_inversion",
                            "Servicio de Inversión",
                            false,
-                           {key: "S01", value:"Asesoría", color:"#fff"},
-                           {key: "S02", value:"Gestión", color:"#fff"},
-                           {key: "S03", value:"Comercialización", color:"#fff"},
-                           {key: "S04", value:"Ejecución", color:"#fff"},
-                           {key: "S05", value:"N/A", color:"#fff"}
+                           {key: "S01", value:"Asesoría", color:"green"},
+                           {key: "S02", value:"Gestión", color:"yellow"},
+                           {key: "S03", value:"Comercialización", color:"blue"},
+                           {key: "S04", value:"Ejecución", color:"cyan"},
+                           {key: "S05", value:"N/A", color:"gray"}
                            )
                +field-checks("rompe",
                            "Rompe",
                            false,
-                           {key: "SI", value:"Si", color:"#fff"},
-                           {key: "NO", value:"No", color:"#fff"},
-                           {key: "N/A", value:"N/A", color:"#fff"}
+                           {key: "SI", value:"Si", color:"red"},
+                           {key: "NO", value:"No", color:"green"},
+                           {key: "N/A", value:"N/A", color:"gray"}
                            )
-            #search-actions-column
-               +button-search("Sirve para buscar Contratos.")
-               +button-clean
-               +button-pdf
-               +button-xls
+               #search-actions-column
+                  +button-search("Sirve para buscar Contratos.")
+                  +button-clean
+                  +button-pdf
+                  +button-xls
       section#search-results-section
         +tab-group("seguimiento_ordenes_tab_group",
                    {id: "tab_item_intradia", label: "Intradia"},
                    {id: "tab_item_historicos", label: "Históricos"})
           +tab-item("tab_item_intradia")
+            p Intradia
           +tab-item("tab_item_historicos")
             +grid("ordenes_historicas")
 
 block scripts
+   script(src="/assets/scripts/common.js")
    script(src="/assets/scripts/accimarket/03-seguimiento-de-ordenes-historico.js")

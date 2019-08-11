@@ -1,0 +1,25 @@
+.container {
+  #search-criterias-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    #busqueda_contrato {
+      flex: 1;
+    }
+
+    #datos_contrato_movimientos_tab_group {
+      flex: 2;
+    }
+
+    #datos_contrato {
+      display: flex;
+      flex-direction: column;
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
