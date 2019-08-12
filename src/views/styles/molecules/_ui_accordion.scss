@@ -1,16 +1,36 @@
 @import "../vars";
 
-.ui-accordion .ui-accordion-header {
-  display: block;
-  cursor: pointer;
-  position: relative;
-  margin: 2px 0 0 0;
-  padding: 0.5em 0.5em 0.5em 0.7em;
-  // font-size: 100%;
-}
-.ui-accordion .ui-accordion-content {
-  // padding: 1em 2.2em;
-  padding-top: 0.5em;
-  border-top: 0;
-  overflow: auto;
+.ui-accordion {
+  .ui-accordion-header {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin: 2px 0 0 0;
+    padding: 0.4em 0.4em 0.4em 0.4em;
+    border-radius: 14px;
+    background: $color-sky;
+    margin-bottom: 0.3em;
+
+    .ui-accordion-header-icon {
+      position: absolute;
+      left: unset;
+      top: 35%;
+      right: 0.8em;
+    }
+  }
+
+  .ui-accordion-icons {
+    padding-left: 2.2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .ui-accordion-content {
+    // padding: 1em 2.2em;
+    padding: 0.5em;
+    border-top: 0;
+    overflow: auto;
+    border: 1px solid $color-ink-lightest;
+    border-radius: 6px;
+  }
 }

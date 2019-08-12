@@ -92,8 +92,10 @@ function watch() {
     sassIt
   );
   gulp.watch("./src/views/pages/**/*.pug", pugIt);
+  gulp.watch("./src/views/mixins/**/*.pug", pugIt);
+  gulp.watch("./src/views/templates/**/*.pug", pugIt);
   gulp.watch("./src/views/pages/**/*.ts", typescriptIt);
-  gulp.watch(["./src/images/**/*.gif"], imageminIt);
+  gulp.watch(["./src/images/**/*"], imageminIt);
 }
 
 exports.clean = clean;

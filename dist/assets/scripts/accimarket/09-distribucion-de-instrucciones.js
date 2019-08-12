@@ -1,7 +1,5 @@
 console.log("00-distribucion-de-instrucciones");
-$("#criterios_busqueda_accordion").accordion({
-    collapsible: true
-});
+$("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
 $("#tabs_resultados_busqueda").tabs();
 $("#table_grid_promocion").jqGrid({
     url: "http://localhost:3000/fideicomiso",

@@ -3,15 +3,40 @@
 .field {
   padding: 6px;
 
+  &.is_horizontal {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+
+    label {
+      // width: 5em;
+      &:after {
+        content: ":";
+      }
+    }
+
+    .input {
+      margin-left: 8px;
+    }
+  }
+
+  &.is_vertical {
+    display: flex;
+    flex-flow: column;
+  }
+
   label {
     display: block;
     font-weight: bold;
     padding-bottom: 5px;
 
-    span {
-      &.required {
-        color: $color-red-dark;
-      }
+  }
+
+  span {
+    &.required {
+      padding-left: 3px;
+      color: $color-red-dark;
+      font-size: 1.5em;
     }
   }
 

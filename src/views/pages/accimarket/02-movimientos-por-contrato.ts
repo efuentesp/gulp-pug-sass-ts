@@ -1,28 +1,10 @@
 console.log("02-movimientos-por-contrato");
 
-$("#criterios_busqueda_accordion").accordion({
-  collapsible: true
-});
+$("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
 
-$("#input_fecha_inicial").datepicker({
-  showOn: "button",
-  buttonImage: "/assets/images/calendar.gif",
-  buttonImageOnly: true,
-  buttonText: "",
-  dayNames: dayNames,
-  dayNamesMin: dayNamesMin,
-  monthNames: monthNames
-});
+$("#input_fecha_inicial").datepicker(ui_datepicker_settings);
 
-$("#input_fecha_final").datepicker({
-  showOn: "button",
-  buttonImage: "/assets/images/calendar.gif",
-  buttonImageOnly: true,
-  buttonText: "",
-  dayNames: dayNames,
-  dayNamesMin: dayNamesMin,
-  monthNames: monthNames
-});
+$("#input_fecha_final").datepicker(ui_datepicker_settings);
 
 $("#movimientos_por_contrato_tab_group").tabs();
 $("#datos_contrato_movimientos_tab_group").tabs();

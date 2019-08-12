@@ -1,9 +1,15 @@
-mixin field-date(id, _label="")
+mixin field-date(id, _label="", required=false, size="8em", disabled=false, orientation="vertical")
   - var input_id = "input_" + id
   - var btn_id = "btn_" + id
-  .field
-      label= _label
+  - var _class = "is_" + orientation
+  - var style = "width: " + size + ";"
+  .field(class=_class)
+      label(for=input_id)= _label
+      if required
+        span.required *
       .control.has-addons
-        input.input.is-small(id=input_id)
-        //- button.is-icon(id=btn_id)
-        //-     i.fa.fa-calendar.icon-button
+        input.input.is-small(id=input_id
+                             required=required
+                             style=style
+                             disabled=disabled
+        )

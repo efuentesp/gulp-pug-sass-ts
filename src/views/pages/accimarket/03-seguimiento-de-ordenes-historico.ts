@@ -1,18 +1,8 @@
 console.log("03-seguimiento-de-ordenes-historico");
 
-$("#criterios_busqueda_accordion").accordion({
-  collapsible: true
-});
+$("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
 
-$("#input_date").datepicker({
-  showOn: "button",
-  buttonImage: "/assets/images/calendar.gif",
-  buttonImageOnly: true,
-  buttonText: "",
-  dayNames: dayNames,
-  dayNamesMin: dayNamesMin,
-  monthNames: monthNames
-});
+$("#input_date").datepicker(ui_datepicker_settings);
 
 $("#seguimiento_ordenes_tab_group").tabs();
 

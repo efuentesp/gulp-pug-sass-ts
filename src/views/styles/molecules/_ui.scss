@@ -35,17 +35,21 @@
 //   font-family: $font_family;
 //   // font-size: $font_size;
 // }
-.ui-widget.ui-widget-content {
-  border: 1px solid $button_border_color;
-}
+
+// .ui-widget.ui-widget-content {
+//   border: 1px solid $button_border_color;
+// }
+
 .ui-widget-content {
-  border: 1px solid $button_border_color;
+  // border: 1px solid $button_border_color;
   background: $background_color;
   color: $button_font_color;
 }
+
 .ui-widget-content a {
   color: $button_font_color;
 }
+
 .ui-widget-header {
   border: 1px solid $button_border_color;
   // background: #cccccc url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") 50%

@@ -20,10 +20,10 @@
         <h3></h3>
         <div class="accordion-content">
           <div class="row" id="search-criterias-column">
-            <div class="field">
-              <label>Fecha</label>
+            <div class="field is_vertical">
+              <label for="input_date">Fecha</label>
               <div class="control has-addons">
-                <input class="input is-small" id="input_date"/>
+                <input class="input is-small" id="input_date" style="width: 8em;"/>
               </div>
             </div>
             <div class="field">
@@ -81,7 +81,7 @@
           </div>
         </div>
       </div>
-      <section id="search-results-section">
+      <div class="row has_border" id="search-results-section">
         <div id="seguimiento_ordenes_tab_group">
           <ul>
             <li><a href="#tab_item_intradia">Intradia</a></li>
@@ -99,7 +99,7 @@
             <div id="pager_ordenes_historicas"></div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
     <footer></footer>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>

@@ -24,17 +24,13 @@
         <p>Everything seems ok!</p>
       </div>
       <form id="new-customer" data-parsley-validate="">
-        <div class="field">
-          <label>ID</label><span class="required">*</span>
-          <div class="control">
-            <input class="input" type="text" id="input_id" required="required" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
-          </div>
+        <div class="field is_vertical">
+          <label for="input_id">ID</label><span class="required">*</span>
+          <input class="input" type="text" id="input_id" required="required" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
         </div>
-        <div class="field">
-          <label>Name</label><span class="required">*</span>
-          <div class="control">
-            <input class="input" type="text" id="input_name" required="required" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
-          </div>
+        <div class="field is_vertical">
+          <label for="input_name">Name</label><span class="required">*</span>
+          <input class="input" type="text" id="input_name" required="required" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
         </div>
         <div class="field">
           <label>E-mail</label>
@@ -50,11 +46,9 @@
             <input type="radio" name="banco" id="radio_banco_1" value="C" required="required"/><span class="checkmark"></span>
           </label>
         </div>
-        <div class="field">
-          <label>Description</label>
-          <div class="control">
-            <input class="input" type="text" id="input_description" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
-          </div>
+        <div class="field is_vertical">
+          <label for="input_description">Description</label>
+          <input class="input" type="text" id="input_description" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
         </div>
         <div class="field">
           <label for="chk_products">Product Type</label>

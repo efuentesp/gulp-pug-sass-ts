@@ -6,10 +6,19 @@
 
     #busqueda_contrato {
       flex: 1;
+
+      label {
+        width: 11em;
+        text-align: right;
+      }
+
+      #input_operaciones_mayores_a, #input_plazo {
+        margin-left: 1.5em;
+      }
     }
 
     #datos_contrato_movimientos_tab_group {
-      flex: 2;
+      flex: 2.5;
     }
 
     #datos_contrato {
@@ -19,6 +28,10 @@
       .row {
         display: flex;
         flex-wrap: wrap;
+      }
+
+      label {
+        width: 6em;
       }
     }
   }

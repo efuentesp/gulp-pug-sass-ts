@@ -1,21 +1,20 @@
 mixin field-input(id, _label="", required=false, size="8em", disabled=false, orientation="vertical")
   - var input_id = "input_" + id
-  //- - var size_class = "is-" + size
+  - var _class = "is_" + orientation
   - var style = "width: " + size + ";"
   - var input_max_size = "32"
   - var input_max_size_errmsg = "You can enter only " + input_max_size + "characters."
-  .field
-    label= _label
+  .field(class=_class)
+    label(for=input_id)= _label
     if required
       span.required *
-    .control
-      input.input(type="text"
-                  id=input_id
-                  required=required
-                  style=style
-                  disabled=disabled
-                  data-parsley-trigger="keyup"
-                  data-parsley-maxlength=input_max_size
-                  data-parsley-maxlength-message=input_max_size_errmsg
-                  data-parsley-validation-threshold="10"
-                  )
+    input.input(type="text"
+                id=input_id
+                required=required
+                style=style
+                disabled=disabled
+                data-parsley-trigger="keyup"
+                data-parsley-maxlength=input_max_size
+                data-parsley-maxlength-message=input_max_size_errmsg
+                data-parsley-validation-threshold="10"
+                )

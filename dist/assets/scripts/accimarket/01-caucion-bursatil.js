@@ -1,16 +1,6 @@
 console.log("01-caucion-bursatil");
-$("#criterios_busqueda_accordion").accordion({
-    collapsible: true
-});
-$("#input_date").datepicker({
-    showOn: "button",
-    buttonImage: "/assets/images/calendar.gif",
-    buttonImageOnly: true,
-    buttonText: "",
-    dayNames: dayNames,
-    dayNamesMin: dayNamesMin,
-    monthNames: monthNames
-});
+$("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
+$("#input_date").datepicker(ui_datepicker_settings);
 $("#table_contratos").jqGrid({
     url: "http://localhost:3000/fideicomiso",
     datatype: "json",
