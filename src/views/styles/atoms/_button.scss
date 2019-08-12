@@ -32,4 +32,11 @@
       color: $color-red-dark;
     }
   }
+
+  &:disabled {
+    cursor: default;
+    color: $font_disabled_color;
+    border-color: $font_disabled_color;
+    background: $color_white;
+  }
 }

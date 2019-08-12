@@ -1,5 +1,6 @@
-mixin button-xls
-  button.button.big-button(id=(id="btn_xls"))
+mixin button-xls(disabled=false)
+  - var tooltip = ""
+  button.button.big-button(id="btn_xls" title=tooltip disabled=disabled)
       span.fa-stack.fa-lg
         i.fa.fa-file-excel-o.fa-2x
       br

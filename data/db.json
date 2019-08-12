@@ -1,0 +1,64 @@
+{
+  "contratos": [
+    {
+      "contrato": "CONTRATO 01",
+      "libro": "LIBRO 01",
+      "cliente": "CLIENTE 01",
+      "digito": "DIGITO 01",
+      "tv": "TV 01",
+      "descr_tv": "DESC TV 01",
+      "emisora": "EMISORA 01",
+      "serie": "SERIE 01",
+      "cantidad": "CANTIDAD 01",
+      "precio": "PRECIO 01",
+      "valuacion": "VALORACION 01",
+      "promotor": "PROMOTOR 01",
+      "folio": "FOLIO 01"
+    },
+    {
+      "contrato": "CONTRATO 02",
+      "libro": "LIBRO 02",
+      "cliente": "CLIENTE 02",
+      "digito": "DIGITO 02",
+      "tv": "TV 02",
+      "descr_tv": "DESC TV 02",
+      "emisora": "EMISORA 02",
+      "serie": "SERIE 02",
+      "cantidad": "CANTIDAD 02",
+      "precio": "PRECIO 02",
+      "valuacion": "VALORACION 02",
+      "promotor": "PROMOTOR 02",
+      "folio": "FOLIO 02"
+    },
+    {
+      "contrato": "CONTRATO 03",
+      "libro": "LIBRO 03",
+      "cliente": "CLIENTE 03",
+      "digito": "DIGITO 03",
+      "tv": "TV 03",
+      "descr_tv": "DESC TV 03",
+      "emisora": "EMISORA 03",
+      "serie": "SERIE 03",
+      "cantidad": "CANTIDAD 03",
+      "precio": "PRECIO 03",
+      "valuacion": "VALORACION 03",
+      "promotor": "PROMOTOR 03",
+      "folio": "FOLIO 03"
+    },
+    {
+      "contrato": "CONTRATO 04",
+      "libro": "LIBRO 04",
+      "cliente": "CLIENTE 04",
+      "digito": "DIGITO 04",
+      "tv": "TV 04",
+      "descr_tv": "DESC TV 04",
+      "emisora": "EMISORA 04",
+      "serie": "SERIE 04",
+      "cantidad": "CANTIDAD 04",
+      "precio": "PRECIO 04",
+      "valuacion": "VALORACION 04",
+      "promotor": "PROMOTOR 04",
+      "folio": "FOLIO 04"
+    }
+  ]
+}

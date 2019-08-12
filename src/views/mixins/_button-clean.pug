@@ -1,5 +1,6 @@
-mixin button-clean
-  button.button.big-button(id="btn_clean")
+mixin button-clean(disabled=false)
+  - var tooltip = ""
+  button.button.big-button(id="btn_clean" title=tooltip disabled=disabled)
       span.fa-stack.fa-lg
         i.fa.fa-file-o.fa-2x
       br

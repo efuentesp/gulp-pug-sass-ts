@@ -24,10 +24,10 @@ block content
                 +field-input("operaciones_mayores_a", "Operaciones mayores a", false, "8em", false, "horizontal")
                 +field-input("plazo", "Plazo", false, "8em", false, "horizontal")
                 #search-actions-column
-                  +button-search("Sirve para buscar Contratos.")
-                  +button-clean
-                  +button-pdf
-                  +button-xls
+                  +button-search
+                  +button-clean(true)
+                  +button-pdf(true)
+                  +button-xls(true)
               +tab-group("datos_contrato_movimientos_tab_group",
                           {id: "datos_contrato", label: "Datos del contrato"},
                           {id: "filtro_movimientos", label: "Filtro de movimientos"})
