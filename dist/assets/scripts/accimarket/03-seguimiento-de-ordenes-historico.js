@@ -46,3 +46,5 @@ $("#table_ordenes_historicas").jqGrid({
     autoencode: true,
     caption: ""
 });
+
+//# sourceMappingURL=../../maps/accimarket/03-seguimiento-de-ordenes-historico.js.map

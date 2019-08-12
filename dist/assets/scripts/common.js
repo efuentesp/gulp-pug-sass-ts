@@ -1,6 +1,5 @@
 console.log("common.ts");
 var REST_URL = "http://localhost:3001";
-// Query UI DatePicker settings
 var DAY_NAMES = [
     "Domingo",
     "Lunes",
@@ -36,22 +35,18 @@ var ui_datepicker_settings = {
     monthNames: MONTH_NAMES,
     dateFormat: DATE_FORMAT
 };
-// Query UI Accordion settings
 var icons = { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" };
 var ui_accordion_settings = {
     collapsible: true,
     icons: icons,
     heightStyle: "content"
 };
-// Query UI Tooltip settings
 $(document).tooltip();
-// JqGrid functions
 var fillJqGrid = function (grid_id, data) {
     data.forEach(function (item, i) {
         return $(grid_id).jqGrid("addRowData", i + 1, item);
     });
 };
-// REST APIs}
 var rest_findAll = function (resource, params, cb) {
     var api_params = $.param(params);
     var url = api_params ? REST_URL + "/" + resource + "?" + api_params : REST_URL + "/" + resource;
@@ -64,6 +59,7 @@ var rest_findAll = function (resource, params, cb) {
     });
 };
 var rpc_findAll = function (resource, params, cb) {
-    // TODO: Implementar versión con POST
 };
 var http_findAll = rest_findAll;
+
+//# sourceMappingURL=../maps/common.js.map

@@ -60,7 +60,7 @@ function sassIt() {
         overrideBrowserslist: ["last 2 versions"]
       })
     )
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write("../maps"))
     .pipe(lec())
     .pipe(gulp.dest("./dist/assets/css"))
     .pipe(browserSync.stream());
@@ -69,12 +69,15 @@ function sassIt() {
 function typescriptIt() {
   return gulp
     .src(["./src/views/pages/**/*.ts"])
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(
       typescript({
         target: "ES3",
-        module: "none"
+        module: "none",
+        removeComments: true
       })
     )
+    .pipe(sourcemaps.write("../maps"))
     .pipe(lec())
     .pipe(gulp.dest("./dist/assets/scripts"))
     .pipe(browserSync.stream());

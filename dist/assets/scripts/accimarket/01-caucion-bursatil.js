@@ -45,10 +45,9 @@ $("#table_contratos").jqGrid({
     autoencode: true,
     caption: ""
 });
-var contratos_params = {
-// cliente: "CLIENTE 01",
-// contrato: "CONTRATO 01"
-};
+var contratos_params = {};
 http_findAll("contratos", contratos_params, function (payload) {
     fillJqGrid("#table_contratos", payload);
 });
+
+//# sourceMappingURL=../../maps/accimarket/01-caucion-bursatil.js.map
