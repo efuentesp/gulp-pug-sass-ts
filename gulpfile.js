@@ -3,6 +3,9 @@ const del = require("del");
 const vinylPaths = require("vinyl-paths");
 const pug = require("gulp-pug");
 const sass = require("gulp-sass");
+const cleanCSS = require("gulp-clean-css");
+const concat = require("gulp-concat");
+const uglify = require("gulp-uglify");
 const autoprefixer = require("gulp-autoprefixer");
 const imagemin = require("gulp-imagemin");
 const changed = require("gulp-changed");
@@ -60,6 +63,7 @@ function sassIt() {
         overrideBrowserslist: ["last 2 versions"]
       })
     )
+    .pipe(cleanCSS())
     .pipe(sourcemaps.write("../maps"))
     .pipe(lec())
     .pipe(gulp.dest("./dist/assets/css"))
@@ -77,6 +81,7 @@ function typescriptIt() {
         removeComments: true
       })
     )
+    .pipe(uglify())
     .pipe(sourcemaps.write("../maps"))
     .pipe(lec())
     .pipe(gulp.dest("./dist/assets/scripts"))
@@ -87,7 +92,11 @@ function watch() {
   browserSync.init({
     server: {
       baseDir: "./dist"
-    }
+    },
+    port: 8080,
+    open: false,
+    reloadOnRestart: true,
+    notify: false
   });
 
   gulp.watch(
@@ -109,6 +118,11 @@ exports.typescriptIt = typescriptIt;
 exports.watch = watch;
 
 exports.default = gulp.series(
+  clean,
+  gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt)
+);
+
+exports.dev = gulp.series(
   clean,
   gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
   watch

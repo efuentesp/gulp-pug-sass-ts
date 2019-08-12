@@ -1,20 +1,2 @@
-.container #contenido {
-  display: grid;
-  grid-template-rows: auto auto; }
-  .container #contenido #criterios-busqueda #criterios-seleccion-01 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around; }
-  .container #contenido #criterios-busqueda #criterios-seleccion-02 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end; }
-
+.container #contenido{display:grid;grid-template-rows:auto auto}.container #contenido #criterios-busqueda #criterios-seleccion-01{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:distribute;justify-content:space-around}.container #contenido #criterios-busqueda #criterios-seleccion-02{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 /*# sourceMappingURL=../../maps/accimarket/09-distribucion-de-instrucciones.css.map */
