@@ -1,7 +1,19 @@
-mixin button-pdf(disabled=false)
+mixin button-pdf(disabled=false, size="large")
   - var tooltip = ""
-  button.button.big-button(id="btn_pdf" title=tooltip disabled=disabled)
-      span.fa-stack.fa-lg
-        i.fa.fa-file-pdf-o.fa-2x
-      br
-      span PDF
+
+  if size == "large"
+    button.button.big-button(id="btn_search" title=tooltip disabled=disabled)
+        span.fa-stack.fa-lg
+          i.fa.fa-file-pdf-o.fa-2x
+        br
+        span PDF
+
+  if size == "medium"
+    button.button.medium-button(id="btn_search" title=tooltip disabled=disabled)
+        span.fa-stack.fa-lg
+          i.fa.fa-file-pdf-o.fa-sm
+  
+  if size == "small"
+    button.button.small-button(id="btn_search" title=tooltip disabled=disabled)
+        span.fa-stack.fa-xs
+          i.fa.fa-file-pdf-o.fa-xs

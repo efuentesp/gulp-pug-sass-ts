@@ -15,6 +15,18 @@
     padding: 8px;
   }
 
+  &.medium-button {
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+  }
+
+  &.small-button {
+    width: 30px;
+    height: 30px;
+    padding: 0.5px;
+  }
+
   &.is-icon {
     color: $color-ink-lighter;
     border: none;
