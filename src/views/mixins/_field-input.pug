@@ -10,7 +10,7 @@ mixin field-input(id, parms)
       span.required *
     input.input(type="text"
                 id=_input_id
-                required=required
+                required=parms.required
                 style=_style
                 disabled=parms.disabled
                 data-parsley-trigger="keyup"

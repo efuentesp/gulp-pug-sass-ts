@@ -30,7 +30,7 @@
                 <div class="field-group" id="busqueda_contrato">
                   <div class="field is_horizontal">
                     <label for="contrato">Contrato</label><span class="required">*</span>
-                    <input class="input" type="text" id="contrato" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                    <input class="input" type="text" id="contrato" required="required" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                   </div>
                   <div class="field is_horizontal">
                     <label for="fecha_inicial">Fecha inicial</label><span class="required">*</span>
@@ -53,8 +53,8 @@
                     <input class="input" type="text" id="plazo" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                   </div>
                   <div id="search-actions-column">
-                    <button class="button big-button" id="btn_search" title=""><span class="fa-stack fa-lg"><i class="fa fa-search fa-2x"></i></span><br/><span>Consultar</span></button>
-                    <button class="button big-button" id="btn_clean" title="" disabled="disabled"><span class="fa-stack fa-lg"><i class="fa fa-file-o fa-2x"></i></span><br/><span>Limpiar</span></button>
+                    <button class="button big-button" type="submit" id="btn_search" title="" value="validate"><span class="fa-stack fa-lg"><i class="fa fa-search fa-2x"></i></span><br/><span>Consultar</span></button>
+                    <button class="button big-button" id="btn_clean" type="reset" title="" disabled="disabled"><span class="fa-stack fa-lg"><i class="fa fa-file-o fa-2x"></i></span><br/><span>Limpiar</span></button>
                     <button class="button big-button" id="btn_pdf" title="" disabled="disabled"><span class="fa-stack fa-lg"><i class="fa fa-file-pdf-o fa-2x"></i></span><br/><span>PDF</span></button>
                     <button class="button big-button" id="btn_xls" title="" disabled="disabled"><span class="fa-stack fa-lg"><i class="fa fa-file-excel-o fa-2x"></i></span><br/><span>XLS</span></button>
                   </div>
