@@ -1,0 +1,53 @@
+@import "../vars";
+
+.sidebar {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $color-white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  // padding-top: 60px;
+  display: flex;
+
+  .sidebar_content {
+    display: none;
+
+    &.is_open {
+      flex: 1;
+      display: block;
+      width: $sidebar_content_width;
+    }
+  }
+
+  .sidebar_button {
+    background: $color-sky-light;
+    width: $sidebar_closed_width;
+    display: flex;
+    justify-content: center;
+    border: 1px solid $color-sky-dark;
+    cursor: pointer;
+
+    &:after {
+      content: "\f0da";
+      font-family: "FontAwesome";
+      font-size: 1.5em;
+      position: absolute;
+      top: 50%;
+      color: $color-ink-lighter;
+    }
+
+    &.is_open {
+      &:after {
+        content: "\f0d9";
+        font-family: "FontAwesome";
+        font-size: 1.5em;
+        position: absolute;
+        top: 50%;
+        color: $color-ink-lighter;
+      }
+    }
+  }
+}

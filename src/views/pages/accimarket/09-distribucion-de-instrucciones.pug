@@ -9,75 +9,120 @@ block styles
 
 block content
   .container
-    .column#barra-lateral
-    .column#contenido
+    +sidebar
+      +field-checks("medios_liquidacion",
+                    "Medio de Liquidación",
+                    false,
+                    {key: "MEL", value:"Medio Electrónico"},
+                    {key: "BIL", value:"Efectivo (Billete)"},
+                    {key: "CHE", value:"Cheque"},
+                    {key: "OTR", value:"Otros"}
+      )
+      +field-checks("tipo_movimiento",
+                    "Tipo de Movimiento",
+                    false,
+                    {key: "01", value:"Cargo a cta del cliente"},
+                    {key: "02", value:"En cuenta"},
+                    {key: "03", value:"Entrega en caja"},
+                    {key: "04", value:"Ocurre"},
+                    {key: "05", value:"Traspaso de Fondos"},
+                    {key: "06", value:"Cargo a cta del cliente"},
+                    {key: "07", value:"Entrega en nuestra caja"},
+                    {key: "08", value:"Cargo en cuenta"}
+      )
+      +field-select("transaccion",
+        "Transacción",
+        false,
+        "12em",
+        {key: "ALL", value:"Todos"}
+      )
+      +field-select("institucion_financiera",
+        "Institución Financiera",
+        false,
+        "12em",
+        {key: "ALL", value:"Todos"}
+      )
+      +field-select("dispersion",
+        "Dispersión",
+        false,
+        "12em",
+        {key: "ALL", value:"Todos"}
+      )
+      +field-select("subsistema",
+        "Subsistema",
+        false,
+        "12em",
+        {key: "ALL", value:"Todos"}
+      )
+      +field-plus-minus("cuenta", "Cuenta")
+    .content#contenido
       .row#criterios-busqueda
         +accordion("criterios_busqueda_accordion")
           +accordion-item("criterios_busqueda_accordion_item")
-            .row
-              .col#criterios-seleccion-01
-                .col
-                  +field-options("opciones",
-                    false,
-                    {key: "INTRA", value:"Intradia"},
-                    {key: "PROG", value:"Programados"},
-                    {key: "HIST", value:"Históricos"}
-                  )
-                  +field-checks("capturados",
-                                "Capturados",
-                                false,
-                                {key: "CAP", value:"Capturados"}
-                  )
-                +field-plus-minus("contrato", "Contrato")
-                +field-plus-minus("folio_mov", "Folio Mov.")
-                +field-plus-minus("digito", "Digito", "5em")
-                .col
-                  +field-input("importe_neto", "Importe Neto")
-                  +field-select("comparacion",
-                    "",
-                    false,
-                    "12em",
-                    {key: "ALL", value:"Todos"},
-                    {key: "EQ", value:"Igual"},
-                    {key: "GT", value:"Mayor que"},
-                    {key: "LT", value:"Menor que"},
-                    {key: "GE", value:"Mayor o igual que"},
-                    {key: "LE", value:"Menor o igual que"}
-                  )
-                +field-checks("depositos_retiros",
-                              "",
-                              false,
-                              {key: "DEP", value:"Depósitos"},
-                              {key: "RET", value:"Retiros"}
-                )
-                +field-checks("estatus",
-                              "",
-                              false,
-                              {key: "APL", value:"Aplicados", color: "green"},
-                              {key: "CAN", value:"Cancelados", color: "red"},
-                              {key: "PEN", value:"Pendientes", color: "yellow"},
-                              {key: "REV", value:"En Revisión", color: "grey"},
-                              {key: "PRO", value:"En Proceso", color: "grey"},
-                              {key: "RVS", value:"En Revisión Sans", color: "grey"}
-                )
-                .col#botones_accion
-                  .col
-                    +button-search
-                    +button-clean
-                  .col
-                    +button-pdf
-                    +button-xls
-            .row
-              .col#criterios-seleccion-02
-                +field-select("sucursal",
-                  "Sucursal",
+
+            .col#criterios-seleccion-01
+              .col
+                +field-options("opciones",
                   false,
-                  "10em",
-                  {key: "REF", value:"Reforma"},
-                  {key: "INS", value:"Insurgentes"},
-                  {key: "TLA", value:"Tlalpan"},
-                  {key: "CEN", value:"Centro"}
+                  {key: "INTRA", value:"Intradia"},
+                  {key: "PROG", value:"Programados"},
+                  {key: "HIST", value:"Históricos"}
                 )
+                +field-checks("capturados",
+                              "Capturados",
+                              false,
+                              {key: "CAP", value:"Capturados"}
+                )
+              +field-plus-minus("contrato", "Contrato")
+              +field-plus-minus("folio_mov", "Folio Mov.")
+              +field-plus-minus("digito", "Digito", "5em")
+              .col
+                +field-input("importe_neto", "Importe Neto")
+                +field-select("comparacion",
+                  "",
+                  false,
+                  "12em",
+                  {key: "ALL", value:"Todos"},
+                  {key: "EQ", value:"Igual"},
+                  {key: "GT", value:"Mayor que"},
+                  {key: "LT", value:"Menor que"},
+                  {key: "GE", value:"Mayor o igual que"},
+                  {key: "LE", value:"Menor o igual que"}
+                )
+              +field-checks("depositos_retiros",
+                            "",
+                            false,
+                            {key: "DEP", value:"Depósitos"},
+                            {key: "RET", value:"Retiros"}
+              )
+              +field-checks("estatus",
+                            "",
+                            false,
+                            {key: "APL", value:"Aplicados", color: "green"},
+                            {key: "CAN", value:"Cancelados", color: "red"},
+                            {key: "PEN", value:"Pendientes", color: "yellow"},
+                            {key: "REV", value:"En Revisión", color: "grey"},
+                            {key: "PRO", value:"En Proceso", color: "grey"},
+                            {key: "RVS", value:"En Revisión Sans", color: "grey"}
+              )
+              .col#botones_accion
+                .col
+                  +button-search
+                  +button-clean
+                .col
+                  +button-pdf
+                  +button-xls
+
+            .col#criterios-seleccion-02
+              +field-select("sucursal",
+                "Sucursal",
+                false,
+                "10em",
+                {key: "REF", value:"Reforma"},
+                {key: "INS", value:"Insurgentes"},
+                {key: "TLA", value:"Tlalpan"},
+                {key: "CEN", value:"Centro"}
+              )
 
       .row.has_border#resultados-busqueda
         +tab-group("tabs_resultados_busqueda",
