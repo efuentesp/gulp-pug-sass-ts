@@ -29,28 +29,28 @@
               <div class="column" id="search-criterias-column">
                 <div class="field-group" id="busqueda_contrato">
                   <div class="field is_horizontal">
-                    <label for="input_contrato">Contrato</label><span class="required">*</span>
-                    <input class="input" type="text" id="input_contrato" required="required" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                    <label for="contrato">Contrato</label><span class="required">*</span>
+                    <input class="input" type="text" id="contrato" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                   </div>
                   <div class="field is_horizontal">
-                    <label for="input_fecha_inicial">Fecha inicial</label><span class="required">*</span>
+                    <label for="fecha_inicial">Fecha inicial</label><span class="required">*</span>
                     <div class="control has-addons">
-                      <input class="input is-small" id="input_fecha_inicial" required="required" style="width: 6em;"/>
+                      <input class="input is-small" id="fecha_inicial" required="required" style="width: 6em;"/>
                     </div>
                   </div>
                   <div class="field is_horizontal">
-                    <label for="input_fecha_final">Fecha final</label><span class="required">*</span>
+                    <label for="fecha_final">Fecha final</label><span class="required">*</span>
                     <div class="control has-addons">
-                      <input class="input is-small" id="input_fecha_final" required="required" style="width: 6em;"/>
+                      <input class="input is-small" id="fecha_final" required="required" style="width: 6em;"/>
                     </div>
                   </div>
                   <div class="field is_horizontal">
-                    <label for="input_operaciones_mayores_a">Operaciones mayores a</label>
-                    <input class="input" type="text" id="input_operaciones_mayores_a" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                    <label for="operaciones_mayores_a">Operaciones mayores a</label>
+                    <input class="input" type="text" id="operaciones_mayores_a" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                   </div>
                   <div class="field is_horizontal">
-                    <label for="input_plazo">Plazo</label>
-                    <input class="input" type="text" id="input_plazo" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                    <label for="plazo">Plazo</label>
+                    <input class="input" type="text" id="plazo" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                   </div>
                   <div id="search-actions-column">
                     <button class="button big-button" id="btn_search" title=""><span class="fa-stack fa-lg"><i class="fa fa-search fa-2x"></i></span><br/><span>Consultar</span></button>
@@ -67,64 +67,64 @@
                   <div id="datos_contrato">
                     <div class="row">
                       <div class="field is_horizontal">
-                        <label for="input_cliente">Cliente</label>
-                        <input class="input" type="text" id="input_cliente" style="width: 48em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                        <label for="cliente">Cliente</label>
+                        <input class="input" type="text" id="cliente" style="width: 48em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="field is_horizontal">
-                        <label for="input_digito">Digito</label>
-                        <input class="input" type="text" id="input_digito" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                        <label for="digito">Digito</label>
+                        <input class="input" type="text" id="digito" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                       </div>
                       <div class="field is_horizontal">
-                        <label for="input_digito_verif">Digito Verif</label>
-                        <input class="input" type="text" id="input_digito_verif" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="field is_horizontal">
-                        <label for="input_perfil">Perfil</label>
-                        <input class="input" type="text" id="input_perfil" style="width: 16em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
-                      </div>
-                      <div class="field is_horizontal">
-                        <label for="input_libro">Libro</label>
-                        <input class="input" type="text" id="input_libro" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                        <label for="digito_verif">Digito Verif</label>
+                        <input class="input" type="text" id="digito_verif" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="field is_horizontal">
-                        <label for="input_status">Status</label>
-                        <input class="input" type="text" id="input_status" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                        <label for="perfil">Perfil</label>
+                        <input class="input" type="text" id="perfil" style="width: 16em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                       </div>
                       <div class="field is_horizontal">
-                        <label for="input_area">Area</label>
-                        <input class="input" type="text" id="input_area" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
-                      </div>
-                      <div class="field is_horizontal">
-                        <label for="input_division">División</label>
-                        <input class="input" type="text" id="input_division" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
-                      </div>
-                      <div class="field is_horizontal">
-                        <label for="input_direccion">Dirección</label>
-                        <input class="input" type="text" id="input_direccion" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                        <label for="libro">Libro</label>
+                        <input class="input" type="text" id="libro" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="field is_horizontal">
-                        <label for="input_region">Región</label>
-                        <input class="input" type="text" id="input_region" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                        <label for="status">Status</label>
+                        <input class="input" type="text" id="status" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                       </div>
                       <div class="field is_horizontal">
-                        <label for="input_sucursal">Sucursal</label>
-                        <input class="input" type="text" id="input_sucursal" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                        <label for="area">Area</label>
+                        <input class="input" type="text" id="area" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                       </div>
                       <div class="field is_horizontal">
-                        <label for="input_zona">Zona</label>
-                        <input class="input" type="text" id="input_zona" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                        <label for="division">División</label>
+                        <input class="input" type="text" id="division" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                       </div>
                       <div class="field is_horizontal">
-                        <label for="input_gerencia">Gerencia</label>
-                        <input class="input" type="text" id="input_gerencia" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                        <label for="direccion">Dirección</label>
+                        <input class="input" type="text" id="direccion" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="field is_horizontal">
+                        <label for="region">Región</label>
+                        <input class="input" type="text" id="region" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                      <div class="field is_horizontal">
+                        <label for="sucursal">Sucursal</label>
+                        <input class="input" type="text" id="sucursal" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                      <div class="field is_horizontal">
+                        <label for="zona">Zona</label>
+                        <input class="input" type="text" id="zona" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
+                      </div>
+                      <div class="field is_horizontal">
+                        <label for="gerencia">Gerencia</label>
+                        <input class="input" type="text" id="gerencia" style="width: 8em;" disabled="disabled" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32characters." data-parsley-validation-threshold="10"/>
                       </div>
                     </div>
                   </div>

@@ -2,7 +2,7 @@ console.log("01-caucion-bursatil");
 
 $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
 
-$("#input_date").datepicker(ui_datepicker_settings);
+$("#date").datepicker(ui_datepicker_settings);
 
 const rest_url = `${REST_URL}/fideicomiso`;
 

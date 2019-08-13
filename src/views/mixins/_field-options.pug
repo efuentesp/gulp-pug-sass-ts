@@ -1,7 +1,7 @@
-mixin field-options(id, required=false, ...items)
+mixin field-options(id, parms, ...items)
   .field
     each item, index in items
       - var item_id = "radio_" + id + "_" + index
       label.radio_button= item.value
-        input(type="radio" name=id id=item_id value=item.key required=required)
+        input(type="radio" name=id id=item_id value=item.key required=parms.required)
         span.checkmark

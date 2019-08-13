@@ -1,9 +1,9 @@
-mixin field-select(id, _label="", required=false, size="8em", ...items)
-  - var style = "width: " + size + ";"
+mixin field-select(id, parms, ...items)
+  - var style = "width: " + (parms.size ? parms.size : "8em") + ";"
   .field
-    label= _label
+    label= parms.label
     label.select
-      select.selectbox(required=required
+      select.selectbox(required=parms.required
                        style=style)
         option(value="")
         each item in items

@@ -1,9 +1,9 @@
-mixin field-email(id, _label="", required=false, size="small")
+mixin field-email(id, parms)
   - var input_id = "input_" + id
-  - var size_class = "is-" + size
+  - var size_class = "is-" + (parms.size ? parms.size : "vertical")
   .field
-    label= _label
-    if required
+    label= parms.label
+    if parms.required
       span.required *
     .control
-      input.input(type="email" id=input_id class=size_class required=required data-parsley-trigger="change")
+      input.input(type="email" id=input_id class=size_class required=parms.required data-parsley-trigger="change")

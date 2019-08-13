@@ -17,22 +17,27 @@ block content
       p Everything seems ok!
 
     form#new-customer(data-parsley-validate="")
-      +field-input("id", "ID", true)
-      +field-input("name", "Name", true)
-      +field-email("email", "E-mail")
-      +field-options("banco", true, {key: "P", value:"Person"}, {key:"C", value:"Company"})
-      +field-input("description", "Description")
+      +field-input("id", {label: "ID", required: true})
+      +field-input("name", {label: "Name", required: true})
+      +field-email("email", {label: "E-mail"})
+      +field-options("banco",
+                    {required: true},
+                    {key: "P", value:"Person"}, {key:"C", value:"Company"})
+      +field-input("description", {label: "Description"})
       +field-checks("products",
-            "Product Type",
-            true,
+            {
+              label: "Product Type",
+            },
             {key: "P01", value:"Product 1", color:"#fff"},
             {key: "P02", value:"Product 2", color:"#fff"},
             {key: "P03", value:"Product 3", color:"#fff"}
             )
       +field-select("payment",
-                    "Payment method",
-                    true,
-                    "12em",
+                    {
+                      label: "Payment method",
+                      required: true,
+                      size: "12em"
+                    },
                     {key: "ET", value:"Electronic transfer"},
                     {key:"CHK", value:"Check"}
                     )

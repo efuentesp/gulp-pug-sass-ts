@@ -1,15 +1,15 @@
-mixin field-date(id, _label="", required=false, size="8em", disabled=false, orientation="vertical")
-  - var input_id = "input_" + id
-  - var btn_id = "btn_" + id
-  - var _class = "is_" + orientation
-  - var style = "width: " + size + ";"
+mixin field-date(id, parms)
+  - var _input_id = id
+  - var _btn_id = "btn_" + id
+  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   .field(class=_class)
-      label(for=input_id)= _label
-      if required
+      label(for=_input_id)= parms.label
+      if parms.required
         span.required *
       .control.has-addons
-        input.input.is-small(id=input_id
-                             required=required
-                             style=style
-                             disabled=disabled
+        input.input.is-small(id=_input_id
+                             required=parms.required
+                             style=_style
+                             disabled=parms.disabled
         )

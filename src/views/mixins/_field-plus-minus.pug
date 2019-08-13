@@ -1,11 +1,10 @@
-mixin field-plus-minus(id, _label="", size="8em")
+mixin field-plus-minus(id, parms)
   - var input_id = "input_" + id
   - var btn_plus_id = "btn_plus_" + id
   - var btn_minus_id = "btn_minus_" + id
-  //- - var size_class = "is-" + size
-  - var style = "width: " + size + ";"
+  - var style = "width: " + parms.size + ";"
   .field
-      label= _label
+      label= parms.label
       .control.has-addons
         input.input(id=input_id style=style)
         button.button.is-icon.is-green(id=btn_plus_id)

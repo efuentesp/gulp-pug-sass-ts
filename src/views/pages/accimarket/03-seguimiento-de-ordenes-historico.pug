@@ -12,12 +12,13 @@ block content
       +accordion("criterios_busqueda_accordion")
          +accordion-item("criterios_busqueda_accordion_item")
             .row#search-criterias-column
-               +field-date("date", "Fecha")
-               +field-plus-minus("contrato", "Contrato")
-               +field-plus-minus("digito", "Digito")
+               +field-date("date", {label: "Fecha"})
+               +field-plus-minus("contrato", {label: "Contrato"})
+               +field-plus-minus("digito", {label: "Digito"})
                +field-checks("servicio_inversion",
-                           "Servicio de Inversión",
-                           false,
+                           {
+                              label: "Servicio de Inversión",
+                           },
                            {key: "S01", value:"Asesoría", color:"green"},
                            {key: "S02", value:"Gestión", color:"yellow"},
                            {key: "S03", value:"Comercialización", color:"blue"},
@@ -25,8 +26,9 @@ block content
                            {key: "S05", value:"N/A", color:"gray"}
                            )
                +field-checks("rompe",
-                           "Rompe",
-                           false,
+                           {
+                              label: "Rompe",
+                           },
                            {key: "SI", value:"Si", color:"red"},
                            {key: "NO", value:"No", color:"green"},
                            {key: "N/A", value:"N/A", color:"gray"}

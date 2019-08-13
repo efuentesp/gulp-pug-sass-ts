@@ -1,20 +1,20 @@
-mixin field-input(id, _label="", required=false, size="8em", disabled=false, orientation="vertical")
-  - var input_id = "input_" + id
-  - var _class = "is_" + orientation
-  - var style = "width: " + size + ";"
-  - var input_max_size = "32"
-  - var input_max_size_errmsg = "You can enter only " + input_max_size + "characters."
+mixin field-input(id, parms)
+  - var _input_id = id
+  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
+  - var _input_max_size = "32"
+  - var _input_max_size_errmsg = "You can enter only " + _input_max_size + "characters."
   .field(class=_class)
-    label(for=input_id)= _label
-    if required
+    label(for=_input_id)= parms.label
+    if parms.required
       span.required *
     input.input(type="text"
-                id=input_id
+                id=_input_id
                 required=required
-                style=style
-                disabled=disabled
+                style=_style
+                disabled=parms.disabled
                 data-parsley-trigger="keyup"
-                data-parsley-maxlength=input_max_size
-                data-parsley-maxlength-message=input_max_size_errmsg
+                data-parsley-maxlength=_input_max_size
+                data-parsley-maxlength-message=_input_max_size_errmsg
                 data-parsley-validation-threshold="10"
                 )

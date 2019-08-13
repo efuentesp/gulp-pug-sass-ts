@@ -18,11 +18,36 @@ block content
           +accordion-item("criterios_busqueda_accordion_item")
             .column#search-criterias-column
               +field-group("busqueda_contrato")
-                +field-input("contrato", "Contrato", true, "8em", false, "horizontal")
-                +field-date("fecha_inicial", "Fecha inicial", true, "6em", false, "horizontal")
-                +field-date("fecha_final", "Fecha final", true, "6em", false, "horizontal")
-                +field-input("operaciones_mayores_a", "Operaciones mayores a", false, "8em", false, "horizontal")
-                +field-input("plazo", "Plazo", false, "8em", false, "horizontal")
+                +field-input("contrato",
+                            {
+                              label: "Contrato",
+                              required: true,
+                              orientation: "horizontal"
+                            })
+                +field-date("fecha_inicial",
+                            {
+                              label: "Fecha inicial",
+                              required: true,
+                              size: "6em",
+                              orientation: "horizontal"
+                            })
+                +field-date("fecha_final",
+                            {
+                              label: "Fecha final",
+                              required: true,
+                              size: "6em",
+                              orientation: "horizontal"
+                            })
+                +field-input("operaciones_mayores_a",
+                            {
+                              label: "Operaciones mayores a",
+                              orientation: "horizontal"
+                            })
+                +field-input("plazo",
+                            {
+                              label: "Plazo",
+                              orientation: "horizontal"
+                            })
                 #search-actions-column
                   +button-search
                   +button-clean(true)
@@ -33,23 +58,90 @@ block content
                           {id: "filtro_movimientos", label: "Filtro de movimientos"})
                 +tab-item("datos_contrato")
                   .row
-                    +field-input("cliente", "Cliente", false, "48em", true, "horizontal")
+                    +field-input("cliente",
+                                {
+                                  label: "Cliente",
+                                  size: "48em",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
                   .row
-                    +field-input("digito", "Digito", false, "8em", true, "horizontal")
-                    +field-input("digito_verif", "Digito Verif", false, "8em", true, "horizontal")
+                    +field-input("digito",
+                                {
+                                  label: "Digito",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
+                    +field-input("digito_verif",
+                                {
+                                  label: "Digito Verif",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
                   .row
-                    +field-input("perfil", "Perfil", false, "16em", true, "horizontal")
-                    +field-input("libro", "Libro", false, "8em", true, "horizontal")
+                    +field-input("perfil",
+                                {
+                                  label: "Perfil",
+                                  size: "16em",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
+                    +field-input("libro",
+                                {
+                                  label: "Libro",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
                   .row
-                    +field-input("status", "Status", false, "8em", true, "horizontal")
-                    +field-input("area", "Area", false, "8em", true, "horizontal")
-                    +field-input("division", "División", false, "8em", true, "horizontal")
-                    +field-input("direccion", "Dirección", false, "8em", true, "horizontal")
+                    +field-input("status",
+                                {
+                                  label: "Status",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
+                    +field-input("area",
+                                {
+                                  label: "Area",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
+                    +field-input("division",
+                                {
+                                  label: "División",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
+                    +field-input("direccion",
+                                {
+                                  label: "Dirección",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
                   .row
-                    +field-input("region", "Región", false, "8em", true, "horizontal")
-                    +field-input("sucursal", "Sucursal", false, "8em", true, "horizontal")
-                    +field-input("zona", "Zona", false, "8em", true, "horizontal")
-                    +field-input("gerencia", "Gerencia", false, "8em", true, "horizontal")
+                    +field-input("region",
+                                {
+                                  label: "Región",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
+                    +field-input("sucursal",
+                                {
+                                  label: "Sucursal",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
+                    +field-input("zona",
+                                {
+                                  label: "Zona",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
+                    +field-input("gerencia",
+                                {
+                                  label: "Gerencia",
+                                  disabled: true,
+                                  orientation: "horizontal"
+                                })
                 +tab-item("filtro_movimientos")
                   p Filtro de Movimientos
       +tab-item("tab_reporte_agbc")
