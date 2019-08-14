@@ -4,16 +4,16 @@ mixin button-xls(disabled=false, size="large")
   if size == "large"
     button.button.big-button(id="btn_search" title=tooltip disabled=disabled)
         span.fa-stack.fa-lg
-          i.fa.fa-file-excel-o.fa-2x
+          i.fas.fa-file-excel.fa-2x
         br
         span XLS
 
   if size == "medium"
     button.button.medium-button(id="btn_search" title=tooltip disabled=disabled)
-        span.fa-stack.fa-lg
-          i.fa.fa-file-excel-o.fa-sm
+        span.fa-stack.fa-2x
+          i.fas.fa-file-excel.fa-sm
   
   if size == "small"
     button.button.small-button(id="btn_search" title=tooltip disabled=disabled)
-        span.fa-stack.fa-xs
-          i.fa.fa-file-excel-o.fa-xs
+        span.fa-stack.fa-sm
+          i.fas.fa-file-excel.fa-lg

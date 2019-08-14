@@ -1,18 +1,18 @@
-mixin button-search(disabled=false, size="large")
+mixin button-validate(disabled=false, size="large")
   - var tooltip = ""
   if size == "large"
     button.button.big-button(id="btn_search" type="submit" title=tooltip disabled=disabled value="validate")
         span.fa-stack.fa-lg
-          i.fa.fa-search.fa-2x
+          i.far.fa-check-circle.fa-2x
         br
-        span Consultar
+        span Validar
 
   if size == "medium"
     button.button.medium-button(id="btn_search" title=tooltip disabled=disabled)
         span.fa-stack.fa-2x
-          i.fa.fa-search.fa-sm
-
+          i.far.fa-check-circle.fa-sm
+  
   if size == "small"
     button.button.small-button(id="btn_search" title=tooltip disabled=disabled)
         span.fa-stack.fa-sm
-          i.fa.fa-search.fa-lg
+          i.far.fa-check-circle.fa-lg
