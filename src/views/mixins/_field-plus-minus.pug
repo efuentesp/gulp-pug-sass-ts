@@ -1,13 +1,27 @@
 mixin field-plus-minus(id, parms)
-  - var input_id = "input_" + id
+  - var _input_id = id
+  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
+  - var _input_max_size = "32"
+  - var _input_max_size_errmsg = "You can enter only " + _input_max_size + " characters."  
   - var btn_plus_id = "btn_plus_" + id
   - var btn_minus_id = "btn_minus_" + id
-  - var style = "width: " + parms.size + ";"
-  .field
-      label= parms.label
-      .control.has-addons
-        input.input(id=input_id style=style)
-        button.button.is-icon.is-green(id=btn_plus_id)
-            i.fa.fa-plus-circle.fa-lg.icon-button
-        button.button.is-icon.is-red(id=btn_minus_id)
-            i.fa.fa-minus-circle.fa-lg.icon-button
+  .field(class=_class)
+    label(for=_input_id)= parms.label
+    if parms.required
+      span.required *
+    .control.has-addons
+      input.input(type="text"
+                  id=_input_id
+                  required=parms.required
+                  style=_style
+                  disabled=parms.disabled
+                  data-parsley-trigger="keyup"
+                  data-parsley-maxlength=_input_max_size
+                  data-parsley-maxlength-message=_input_max_size_errmsg
+                  data-parsley-validation-threshold="10"
+                  )
+      button.button.is-icon.is-green(id=btn_plus_id)
+          i.fa.fa-plus-circle.fa-lg.icon-button
+      button.button.is-icon.is-red(id=btn_minus_id)
+          i.fa.fa-minus-circle.fa-lg.icon-button

@@ -1,18 +1,19 @@
-mixin button-export(disabled=false, size="large")
-  - var tooltip = ""
-  if size == "large"
-    button.button.big-button(id="btn_search" type="submit" title=tooltip disabled=disabled value="validate")
+mixin button-export(parms)
+  - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
+
+  if _parms.size == "large"
+    button.button.big-button(id="btn_search" type="submit" title=_parms.tooltip disabled=_parms.disabled value="validate")
         span.fa-stack.fa-lg
           i.fas.fa-file-upload.fa-2x
         br
         span Exportar
 
-  if size == "medium"
-    button.button.medium-button(id="btn_search" title=tooltip disabled=disabled)
+  if _parms.size == "medium"
+    button.button.medium-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
         span.fa-stack.fa-2x
           i.fas.fa-file-upload.fa-sm
-  
-  if size == "small"
-    button.button.small-button(id="btn_search" title=tooltip disabled=disabled)
+
+  if _parms.size == "small"
+    button.button.small-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
         span.fa-stack.fa-sm
           i.fas.fa-file-upload.fa-lg

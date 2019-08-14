@@ -13,7 +13,9 @@
       "precio": "PRECIO 01",
       "valuacion": "VALORACION 01",
       "promotor": "PROMOTOR 01",
-      "folio": "FOLIO 01"
+      "folio": "FOLIO 01",
+      "fecha": "30-08-2019",
+      "negocio": "CB"
     },
     {
       "contrato": "CONTRATO 02",
@@ -28,7 +30,9 @@
       "precio": "PRECIO 02",
       "valuacion": "VALORACION 02",
       "promotor": "PROMOTOR 02",
-      "folio": "FOLIO 02"
+      "folio": "FOLIO 02",
+      "fecha": "31-08-2019",
+      "negocio": "B"
     },
     {
       "contrato": "CONTRATO 03",
@@ -43,7 +47,9 @@
       "precio": "PRECIO 03",
       "valuacion": "VALORACION 03",
       "promotor": "PROMOTOR 03",
-      "folio": "FOLIO 03"
+      "folio": "FOLIO 03",
+      "fecha": "30-08-2019",
+      "negocio": "CB"
     },
     {
       "contrato": "CONTRATO 04",
@@ -58,7 +64,9 @@
       "precio": "PRECIO 04",
       "valuacion": "VALORACION 04",
       "promotor": "PROMOTOR 04",
-      "folio": "FOLIO 04"
+      "folio": "FOLIO 04",
+      "fecha": "31-08-2019",
+      "negocio": "B"
     }
   ]
 }

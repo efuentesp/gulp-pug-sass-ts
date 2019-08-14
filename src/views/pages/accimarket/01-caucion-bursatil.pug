@@ -13,10 +13,10 @@ block content
          +accordion("criterios_busqueda_accordion")
             +accordion-item("criterios_busqueda_accordion_item")
                form#criterios-busqueda(data-parsley-validate="")
-                  +field-date("date", {label: "Fecha"})
+                  +field-date("fecha", {label: "Fecha"})
                   +field-plus-minus("contrato", {label: "Contrato"})
                   +field-plus-minus("digito", {label: "Digito"})
-                  +field-options("banco",
+                  +field-options("negocio",
                                  {},
                                  {key: "CB", value:"Casa de Bolsa"},
                                  {key:"B", value:"Banco"}

@@ -2,6 +2,10 @@ console.log("common.ts");
 
 const REST_URL = "http://localhost:3000";
 
+interface UrlParams {
+  [key: string]: any
+}
+
 // Query UI DatePicker settings
 const DAY_NAMES = [
   "Domingo",
@@ -57,6 +61,7 @@ $(document).tooltip();
 
 // JqGrid functions
 const fillJqGrid = (grid_id: string, data: any[]) => {
+  $(grid_id).jqGrid("clearGridData");
   data.forEach((item, i) => $(grid_id).jqGrid("addRowData", i + 1, item));
 };
 

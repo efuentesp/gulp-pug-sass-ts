@@ -1,18 +1,19 @@
 mixin button-custom(disabled=false, icon="fas fa-times-circle", title="Custom", size="large")
-  - var tooltip = ""
-  if size == "large"
-    button.button.big-button(id="btn_search" type="submit" title=tooltip disabled=disabled value="validate")
+  - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
+
+  if _parms.size == "large"
+    button.button.big-button(id="btn_search" type="submit" title=_parms.tooltip disabled=_parms.disabled value="validate")
         span.fa-stack.fa-lg
           i(class = icon + " fa-2x")
         br
         span #{title}
 
-  if size == "medium"
-    button.button.medium-button(id="btn_search" title=tooltip disabled=disabled)
+  if _parms.size == "medium"
+    button.button.medium-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
         span.fa-stack.fa-2x
           i(class = icon + " fa-sm")
-  
-  if size == "small"
-    button.button.small-button(id="btn_search" title=tooltip disabled=disabled)
+
+  if _parms.size == "small"
+    button.button.small-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
         span.fa-stack.fa-sm
           i(class = icon + " fa-lg")
