@@ -9,10 +9,10 @@ mixin button-search(disabled=false, size="large")
 
   if size == "medium"
     button.button.medium-button(id="btn_search" title=tooltip disabled=disabled)
-        span.fa-stack.fa-lg
+        span.fa-stack.fa-2x
           i.fa.fa-search.fa-sm
   
   if size == "small"
     button.button.small-button(id="btn_search" title=tooltip disabled=disabled)
-        span.fa-stack.fa-xs
-          i.fa.fa-search.fa-xs
+        span.fa-stack.fa-sm
+          i.fa.fa-search.fa-lg

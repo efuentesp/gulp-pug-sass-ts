@@ -4,16 +4,16 @@ mixin button-send(disabled=false, size="large")
   if size == "large"
     button.button.big-button(id="btn_search" title=tooltip disabled=disabled)
         span.fa-stack.fa-lg
-          i.fa.fa-file-import.fa-2x
+          i.fas.fa-file-export.fa-2x
         br
         span Enviar
 
   if size == "medium"
     button.button.medium-button(id="btn_search" title=tooltip disabled=disabled)
-        span.fa-stack.fa-lg
-          i.fa.fa-file-import.fa-sm
+        span.fa-stack.fa-2x
+          i.fas.fa-file-export.fa-sm
   
   if size == "small"
     button.button.small-button(id="btn_search" title=tooltip disabled=disabled)
-        span.fa-stack.fa-xs
-          i.fa.fa-file-import.fa-xs
+        span.fa-stack.fa-sm
+          i.fas.fa-file-export.fa-lg
