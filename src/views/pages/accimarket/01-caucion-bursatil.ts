@@ -50,6 +50,29 @@ $("#table_contratos").jqGrid({
   caption: ""
 });
 
+// Form validations
+const form = ($("#criterios-busqueda") as any)
+  .parsley()
+  .on("field:validated", () => {
+    const ok = $(".parsley-error").length === 0;
+    console.log("Errores de validación")
+    $(".callout-info").toggleClass("hidden", !ok);
+    $(".callout-warning").toggleClass("hidden", ok);
+  })
+  .on("form:submit", () => {
+    console.log("form:submit");
+
+    const $inputs = $('#myForm :input');
+
+    let values = {};
+    $inputs.each(() => {
+        values[this.id] = $(this).val();
+    });
+
+    alert("Form ready to be sent!");
+    return false;
+  });
+
 const contratos_params = {
   // cliente: "CLIENTE 01",
   // contrato: "CONTRATO 01"

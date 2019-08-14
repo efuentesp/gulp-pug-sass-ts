@@ -2,7 +2,7 @@ mixin button-clean(disabled=false, size="large")
   - var tooltip = ""
 
   if size == "large"
-    button.button.big-button(id="btn_search" title=tooltip disabled=disabled)
+    button.button.big-button(id="btn_search" type="reset" title=tooltip disabled=disabled)
         span.fa-stack.fa-lg
           i.far.fa-file.fa-2x
         br
