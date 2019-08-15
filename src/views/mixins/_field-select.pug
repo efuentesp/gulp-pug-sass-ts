@@ -1,10 +1,13 @@
 mixin field-select(id, parms, ...items)
-  - var style = "width: " + (parms.size ? parms.size : "8em") + ";"
+  - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
+  - var _placeholder = parms.placeholder ? parms.placeholder : "-- Seleccione --"
+
   .field
     label= parms.label
     label.select
-      select.selectbox(required=parms.required
-                       style=style)
-        option(value="")
+      select.select2(id=id
+                    name=id
+                    required=parms.required
+                    style=_style)
         each item in items
           option(value=item.key)= item.value

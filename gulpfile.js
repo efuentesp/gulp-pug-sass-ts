@@ -97,6 +97,7 @@ function concatVendorCss() {
 		.src([
 			'./node_modules/@fortawesome/fontawesome-free/css/all.min.css',
 			'./node_modules/normalize.css/normalize.css',
+			'./node_modules/select2/dist/css/select2.min.css',
 			'./src/views/styles/vendors/jqgrid/jqgrid.css'
 		])
 		.pipe(concat('vendors.min.css'))
@@ -108,6 +109,8 @@ function concatVendorJs() {
 		.src([
 			'./node_modules/parsleyjs/dist/parsley.min.js',
 			'./node_modules/parsleyjs/dist/i18n/es.js',
+			'./node_modules/select2/dist/js/select2.min.js',
+			'./node_modules/select2/dist/js/i18n/es.js',
 			'./src/views/pages/scripts/vendors/jqgrid/jqgrid.js'
 		])
 		.pipe(concat('vendors.min.js'))
