@@ -9,9 +9,11 @@ html(lang='es')
       block title
 
       link(href="//fonts.googleapis.com/css?family=Lato", rel="stylesheet")
-      link(href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css", rel="stylesheet")
-      link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css")
-      link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.5/css/ui.jqgrid.min.css")
+      //- link(href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css", rel="stylesheet")
+      //- link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css")
+      //- link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.5/css/ui.jqgrid.min.css")
+      link(href="/assets/css/vendors.min.css", rel="stylesheet")
+
       block styles
    body
       block header
@@ -30,6 +32,7 @@ html(lang='es')
       script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
              integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
              crossorigin="anonymous")
-      script(src="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.5/js/jquery.jqgrid.min.js")
-      script(src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js")
+      //- script(src="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.5/js/jquery.jqgrid.min.js")
+      //- script(src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js")
+      script(src="/assets/scripts/vendors.min.js")
       block scripts
