@@ -32,7 +32,8 @@
 
     &:after {
       content: "\f0da";
-      font-family: "FontAwesome";
+      font-family: "Font Awesome\ 5 Free";
+      font-weight: 900; /* Fix version 5.0.9 */
       font-size: 1.5em;
       position: absolute;
       top: 50%;
@@ -42,7 +43,8 @@
     &.is_open {
       &:after {
         content: "\f0d9";
-        font-family: "FontAwesome";
+        font-family: "Font Awesome\ 5 Free";
+        font-weight: 900; /* Fix version 5.0.9 */
         font-size: 1.5em;
         position: absolute;
         top: 50%;

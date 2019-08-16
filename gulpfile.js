@@ -14,6 +14,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const typescript = require('gulp-typescript');
 const browserSync = require('browser-sync').create();
 const lec = require('gulp-line-ending-corrector');
+const wrapper = require('gulp-wrapper');
 
 function clean() {
 	return gulp.src('./dist', { read: false, allowEmpty: true }).pipe(vinylPaths(del));
@@ -30,21 +31,17 @@ function imageminIt() {
 }
 
 function pugIt() {
-	return (
-		gulp
-			.src('./src/views/pages/**/*.pug')
-			.pipe(
-				pug({
-					pretty: true
-				})
-			)
-			// .pipe(replace(/(\.)pug/g, ".html"))
-			// .pipe(replace(/(\.)scss/g, ".css"))
-			// .pipe(replace(/(\.)ts/g, ".js"))
-			.pipe(lec())
-			.pipe(gulp.dest('./dist'))
-			.pipe(browserSync.stream())
-	);
+	return gulp
+		.src('./src/views/pages/**/*.pug')
+		.pipe(
+			pug({
+				pretty: true,
+				basedir: __dirname + '/src/views/'
+			})
+		)
+		.pipe(lec())
+		.pipe(gulp.dest('./dist'))
+		.pipe(browserSync.stream());
 }
 
 function sassIt() {
@@ -69,21 +66,29 @@ function sassIt() {
 }
 
 function typescriptIt() {
-	return gulp
-		.src(['./src/views/pages/**/*.ts'])
-		.pipe(sourcemaps.init({ loadMaps: true }))
-		.pipe(
-			typescript({
-				target: 'ES3',
-				module: 'none',
-				removeComments: true
-			})
-		)
-		.pipe(uglify())
-		.pipe(sourcemaps.write('../maps'))
-		.pipe(lec())
-		.pipe(gulp.dest('./dist/assets/scripts'))
-		.pipe(browserSync.stream());
+	return (
+		gulp
+			.src(['./src/views/pages/**/*.ts'])
+			.pipe(sourcemaps.init({ loadMaps: true }))
+			.pipe(
+				typescript({
+					target: 'ES3',
+					module: 'none',
+					removeComments: true
+				})
+			)
+			// .pipe(uglify())
+			// .pipe(
+			// 	wrapper({
+			// 		header: '$(document).ready(()=> {\n',
+			// 		footer: '});\n'
+			// 	})
+			// )
+			.pipe(sourcemaps.write('../maps'))
+			.pipe(lec())
+			.pipe(gulp.dest('./dist/assets/scripts'))
+			.pipe(browserSync.stream())
+	);
 }
 
 function webfonts() {
@@ -97,8 +102,8 @@ function concatVendorCss() {
 		.src([
 			'./node_modules/@fortawesome/fontawesome-free/css/all.min.css',
 			'./node_modules/normalize.css/normalize.css',
-			'./node_modules/select2/dist/css/select2.min.css',
-			'./src/views/styles/vendors/jqgrid/jqgrid.css'
+			// './src/views/styles/vendors/jqgrid/jqgrid.css',
+			'./node_modules/select2/dist/css/select2.min.css'
 		])
 		.pipe(concat('vendors.min.css'))
 		.pipe(gulp.dest('./dist/assets/css'));
