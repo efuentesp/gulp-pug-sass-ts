@@ -6,6 +6,7 @@ mixin field-plus-minus(id, parms)
   - var _input_max_size_errmsg = "You can enter only " + _input_max_size + " characters."  
   - var btn_plus_id = "btn_plus_" + id
   - var btn_minus_id = "btn_minus_" + id
+  - var tag_list_id = "tag_list_" + id
   .field(class=_class)
     label(for=_input_id)= parms.label
     if parms.required
@@ -22,6 +23,7 @@ mixin field-plus-minus(id, parms)
                   data-parsley-validation-threshold="10"
                   )
       button.button.is-icon.is-green(id=btn_plus_id)
-          i.fa.fa-plus-circle.fa-lg.icon-button
+        i.fa.fa-plus-circle.fa-lg.icon-button
       button.button.is-icon.is-red(id=btn_minus_id)
-          i.fa.fa-minus-circle.fa-lg.icon-button
+        i.fa.fa-minus-circle.fa-lg.icon-button
+    ul.tag-list(id=tag_list_id)
