@@ -1,0 +1,23 @@
+.container {
+  #tab_avisos_convocatoria_asamblea {
+    display: flex;
+
+    #grid_toolbar {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+    }
+  }
+
+  #criterios-busqueda {
+    #botones-accion {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  #search-results-section {
+    width: 90%;
+    overflow: auto;
+  }
+}

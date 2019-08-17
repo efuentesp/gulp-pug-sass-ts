@@ -1,0 +1,46 @@
+extends /layouts/html5
+
+block title
+   title 05.Consulta de Mercado de Dinero Listado de Ordenes Directas
+
+block styles
+  link(rel="stylesheet" href="/assets/css/accimarket/05-consulta-mercado-dinero-listado-ordenes-directo/styles.css")
+
+block content
+   .container
+      +tab-group("consultas_tab_group",
+                  {id: "tab_movimientos", label: "Movimientos"},
+                  {id: "tab_vencimientos", label: "Vencimientos"},
+                  {id: "tab_listado_ordenes_directo", label: "Listado de Órdenes en Directo"}
+      )
+         +tab-item("tab_movimientos")
+            p Movimientos
+         +tab-item("tab_vencimientos")
+            p Vencimientos
+         +tab-item("tab_listado_ordenes_directo")
+            +accordion("criterios_busqueda_accordion")
+               +accordion-item("criterios_busqueda_accordion_item")
+                  form#criterios-busqueda(data-parsley-validate="")
+                     +field-input("contrato", {label: "Contrato"})
+                     +field-input("digito", {label: "Digito", size: "5em"})
+                     +field-input("emisora", {label: "Emisora"})
+                     +field-input("usuario", {label: "Usuario"})
+                     +field-checks("solicitudes_cancelacion",
+                                 {
+                                    label: "Solicitudes de Cancelación",
+                                 },
+                                 {key: "S01", value:"Cancelación Solicitada", color:"yellow"},
+                                 {key: "S02", value:"Orden Cancelada", color:"red"},
+                                 {key: "S03", value:"Cancelación Rechazada", color:"black"}
+                                 )
+                     .column#botones-accion
+                        +button-search({size: "large", disabled: false})
+                        +button-clean({size: "large", disabled: false})
+                        +button-pdf({size: "large", disabled: false})
+                        +button-xls({size: "large", disabled: false})
+
+      .row.has_border#search-results-section
+         +grid("operaciones")
+
+block scripts
+   script(src="/assets/scripts/accimarket/05-consulta-mercado-dinero-listado-ordenes-directo/scripts.js")

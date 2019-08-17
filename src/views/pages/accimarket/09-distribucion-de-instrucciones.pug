@@ -116,11 +116,11 @@ block content
               )
               .col#botones_accion
                 .col
-                  +button-search
-                  +button-clean
+                  +button-search({size: "large", disabled: false})
+                  +button-clean({size: "large", disabled: false})
                 .col
-                  +button-pdf
-                  +button-xls
+                  +button-pdf({size: "large", disabled: false})
+                  +button-xls({size: "large", disabled: false})
 
             .col#criterios-seleccion-02
               +field-select("sucursal",

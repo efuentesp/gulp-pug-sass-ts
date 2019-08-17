@@ -88,5 +88,10 @@
     &.is_grey {
       background-color: $color-sky;
     }
+
+    &.is_black {
+      background-color: $color-ink;
+      color: $color-white;
+    }
   }
 }

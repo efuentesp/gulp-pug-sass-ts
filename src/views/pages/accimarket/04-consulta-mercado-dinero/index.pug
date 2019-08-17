@@ -33,10 +33,10 @@ block content
                               {key: "N/A", value:"N/A", color:"gray"}
                               )
                   .column#botones-accion
-                     +button-search
-                     +button-clean
-                     +button-pdf
-                     +button-xls
+                     +button-search({size: "large", disabled: false})
+                     +button-clean({size: "large", disabled: false})
+                     +button-pdf({size: "large", disabled: false})
+                     +button-xls({size: "large", disabled: false})
 
       .row.has_border#search-results-section
          +tab-group("resultados_tab_group",

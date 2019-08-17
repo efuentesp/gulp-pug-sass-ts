@@ -1,7 +1,9 @@
-console.log('04-consulta-mercado-dinero');
-$('#criterios_busqueda_accordion').accordion(ui_accordion_settings);
-$('#resultados_tab_group').tabs();
-$('#table_contratos').jqGrid({
+console.log('05-consulta-mercado-dinero-listado-ordenes-directo');
+$('#consultas_tab_group').tabs();
+$('#tipo_mercado').select2({
+    minimumResultsForSearch: Infinity
+});
+$('#table_operaciones').jqGrid({
     datatype: 'local',
     height: 250,
     colNames: [
@@ -49,4 +51,4 @@ $('#table_contratos').jqGrid({
     caption: ''
 });
 
-//# sourceMappingURL=../../../maps/accimarket/04-consulta-mercado-dinero/scripts.js.map
+//# sourceMappingURL=../../../maps/accimarket/06-ejercicios-derechos-corporativos/scripts.js.map

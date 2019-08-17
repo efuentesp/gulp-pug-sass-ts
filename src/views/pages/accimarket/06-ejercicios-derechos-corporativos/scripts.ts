@@ -1,10 +1,12 @@
-console.log('04-consulta-mercado-dinero');
+console.log('05-consulta-mercado-dinero-listado-ordenes-directo');
 
-$('#criterios_busqueda_accordion').accordion(ui_accordion_settings);
+$('#consultas_tab_group').tabs();
 
-$('#resultados_tab_group').tabs();
+($('#tipo_mercado') as any).select2({
+	minimumResultsForSearch: Infinity
+});
 
-$('#table_contratos').jqGrid({
+$('#table_operaciones').jqGrid({
 	datatype: 'local',
 	height: 250,
 	colNames: [

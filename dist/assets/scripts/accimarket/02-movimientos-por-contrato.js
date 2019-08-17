@@ -46,7 +46,8 @@ $('#table_movimientos_contrato').jqGrid({
     viewrecords: true,
     gridview: true,
     autoencode: true,
-    caption: ''
+    caption: '',
+    shrinkToFit: false
 });
 
 //# sourceMappingURL=../../maps/accimarket/02-movimientos-por-contrato.js.map

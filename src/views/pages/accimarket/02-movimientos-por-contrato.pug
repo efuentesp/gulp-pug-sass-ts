@@ -48,10 +48,10 @@ block content
                               orientation: "horizontal"
                             })
                 #search-actions-column
-                  +button-search
-                  +button-clean(true)
-                  +button-pdf(true)
-                  +button-xls(true)
+                  +button-search({size: "large", disabled: false})
+                  +button-clean({size: "large", disabled: false})
+                  +button-pdf({size: "large", disabled: true})
+                  +button-xls({size: "large", disabled: true})
               +tab-group("datos_contrato_movimientos_tab_group",
                           {id: "datos_contrato", label: "Datos del contrato"},
                           {id: "filtro_movimientos", label: "Filtro de movimientos"})
