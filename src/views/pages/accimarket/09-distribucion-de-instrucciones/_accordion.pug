@@ -1,0 +1,73 @@
+include /mixins/mixins
+
++accordion("criterios_busqueda_accordion")
+  +accordion-item("criterios_busqueda_accordion_item")
+
+    .col#criterios-seleccion-01
+      .col
+        +field-options("opciones",
+          {},
+          {key: "INTRA", value:"Intradia"},
+          {key: "PROG", value:"Programados"},
+          {key: "HIST", value:"Históricos"}
+        )
+        +field-checks("capturados",
+                      {
+                        label: "Capturados",
+                      },
+                      {key: "CAP", value:"Capturados"}
+        )
+      +field-plus-minus("contrato", {label: "Contrato"})
+      +field-plus-minus("folio_mov", {label: "Folio Mov."})
+      +field-plus-minus("digito", {label: "Digito", size: "5em"})
+      .col
+        +field-input("importe_neto", {label: "Importe Neto"})
+        +field-select("comparacion",
+          {
+            label: "",
+            size: "12em"
+          },
+          {key: "ALL", value:"Todos"},
+          {key: "EQ", value:"Igual"},
+          {key: "GT", value:"Mayor que"},
+          {key: "LT", value:"Menor que"},
+          {key: "GE", value:"Mayor o igual que"},
+          {key: "LE", value:"Menor o igual que"}
+        )
+      +field-checks("depositos_retiros",
+                    {
+                      label: "",
+                    },
+                    {key: "DEP", value:"Depósitos"},
+                    {key: "RET", value:"Retiros"}
+      )
+      +field-checks("estatus",
+                    {
+                      label: "",
+                    },
+                    {key: "APL", value:"Aplicados", color: "green"},
+                    {key: "CAN", value:"Cancelados", color: "red"},
+                    {key: "PEN", value:"Pendientes", color: "yellow"},
+                    {key: "REV", value:"En Revisión", color: "grey"},
+                    {key: "PRO", value:"En Proceso", color: "grey"},
+                    {key: "RVS", value:"En Revisión Sans", color: "grey"}
+      )
+      .col#botones_accion
+        .col
+          +button-search({size: "large", disabled: false})
+          +button-clean({size: "large", disabled: false})
+        .col
+          +button-pdf({size: "large", disabled: false})
+          +button-xls({size: "large", disabled: false})
+
+    .col#criterios-seleccion-02
+      +field-select("sucursal",
+        {
+          label: "Sucursal",
+          size: "10em"
+        },
+        {key: "REF", value:"Reforma"},
+        {key: "INS", value:"Insurgentes"},
+        {key: "TLA", value:"Tlalpan"},
+        {key: "CEN", value:"Centro"}
+      )

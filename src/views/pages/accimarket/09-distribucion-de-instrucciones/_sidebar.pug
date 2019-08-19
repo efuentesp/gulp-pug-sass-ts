@@ -1,0 +1,54 @@
+include /mixins/mixins
+
++sidebar
+  +field-checks("medios_liquidacion",
+                {
+                  label: "Medios de Liquidación",
+                },
+                {key: "MEL", value:"Medio Electrónico"},
+                {key: "BIL", value:"Efectivo (Billete)"},
+                {key: "CHE", value:"Cheque"},
+                {key: "OTR", value:"Otros"}
+  )
+  +field-checks("tipo_movimiento",
+                {
+                  label: "Tipo de Movimiento",
+                },
+                {key: "01", value:"Cargo a cta del cliente"},
+                {key: "02", value:"En cuenta"},
+                {key: "03", value:"Entrega en caja"},
+                {key: "04", value:"Ocurre"},
+                {key: "05", value:"Traspaso de Fondos"},
+                {key: "06", value:"Cargo a cta del cliente"},
+                {key: "07", value:"Entrega en nuestra caja"},
+                {key: "08", value:"Cargo en cuenta"}
+  )
+  +field-select("transaccion",
+    {
+      label: "Transacción",
+      size: "12em"
+    },
+    {key: "ALL", value:"Todos"}
+  )
+  +field-select("institucion_financiera",
+    {
+      label: "Institución Financiera",
+      size: "12em"
+    },
+    {key: "ALL", value:"Todos"}
+  )
+  +field-select("dispersion",
+    {
+      label: "Dispersión",
+      size: "12em"
+    },
+    {key: "ALL", value:"Todos"}
+  )
+  +field-select("subsistema",
+    {
+      label: "Subsistema",
+      size: "12em"
+    },
+    {key: "ALL", value:"Todos"}
+  )
+  +field-plus-minus("cuenta", {label: "Cuenta", size: "8em"})

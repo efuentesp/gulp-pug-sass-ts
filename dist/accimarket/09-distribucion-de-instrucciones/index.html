@@ -15,254 +15,256 @@
   <body>
     <header></header>
     <div class="container">
-      <div class="sidebar">
-        <div class="sidebar_content">
-          <div class="field">
-            <label for="chk_medios_liquidacion">Medios de Liquidación</label>
-            <label class="checkbox_input">Medio Electrónico
-              <input type="checkbox" name="chk_medios_liquidacion" id="chk_medios_liquidacion_0" value="MEL"/><span class="checkmark"></span>
-            </label>
-            <label class="checkbox_input">Efectivo (Billete)
-              <input type="checkbox" name="chk_medios_liquidacion" id="chk_medios_liquidacion_1" value="BIL"/><span class="checkmark"></span>
-            </label>
-            <label class="checkbox_input">Cheque
-              <input type="checkbox" name="chk_medios_liquidacion" id="chk_medios_liquidacion_2" value="CHE"/><span class="checkmark"></span>
-            </label>
-            <label class="checkbox_input">Otros
-              <input type="checkbox" name="chk_medios_liquidacion" id="chk_medios_liquidacion_3" value="OTR"/><span class="checkmark"></span>
-            </label>
-          </div>
-          <div class="field">
-            <label for="chk_tipo_movimiento">Tipo de Movimiento</label>
-            <label class="checkbox_input">Cargo a cta del cliente
-              <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_0" value="01"/><span class="checkmark"></span>
-            </label>
-            <label class="checkbox_input">En cuenta
-              <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_1" value="02"/><span class="checkmark"></span>
-            </label>
-            <label class="checkbox_input">Entrega en caja
-              <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_2" value="03"/><span class="checkmark"></span>
-            </label>
-            <label class="checkbox_input">Ocurre
-              <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_3" value="04"/><span class="checkmark"></span>
-            </label>
-            <label class="checkbox_input">Traspaso de Fondos
-              <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_4" value="05"/><span class="checkmark"></span>
-            </label>
-            <label class="checkbox_input">Cargo a cta del cliente
-              <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_5" value="06"/><span class="checkmark"></span>
-            </label>
-            <label class="checkbox_input">Entrega en nuestra caja
-              <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_6" value="07"/><span class="checkmark"></span>
-            </label>
-            <label class="checkbox_input">Cargo en cuenta
-              <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_7" value="08"/><span class="checkmark"></span>
-            </label>
-          </div>
-          <div class="field">
-            <label>Transacción</label>
-            <label class="select">
-              <select class="select2" id="transaccion" name="transaccion" style="width: 12em;">
-                <option value="ALL">Todos</option>
-              </select>
-            </label>
-          </div>
-          <div class="field">
-            <label>Institución Financiera</label>
-            <label class="select">
-              <select class="select2" id="institucion_financiera" name="institucion_financiera" style="width: 12em;">
-                <option value="ALL">Todos</option>
-              </select>
-            </label>
-          </div>
-          <div class="field">
-            <label>Dispersión</label>
-            <label class="select">
-              <select class="select2" id="dispersion" name="dispersion" style="width: 12em;">
-                <option value="ALL">Todos</option>
-              </select>
-            </label>
-          </div>
-          <div class="field">
-            <label>Subsistema</label>
-            <label class="select">
-              <select class="select2" id="subsistema" name="subsistema" style="width: 12em;">
-                <option value="ALL">Todos</option>
-              </select>
-            </label>
-          </div>
-          <div class="field is_vertical">
-            <label for="cuenta">Cuenta</label>
-            <div class="control has-addons">
-              <input class="input" type="text" id="cuenta" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10"/>
-              <button class="button is-icon is-green" id="btn_plus_cuenta"><i class="fa fa-plus-circle fa-lg icon-button"></i></button>
-              <button class="button is-icon is-red" id="btn_minus_cuenta"><i class="fa fa-minus-circle fa-lg icon-button"></i></button>
+      <!-- include _collapsible-panel-->
+            <div class="sidebar">
+              <div class="sidebar_content">
+                      <div class="field">
+                        <label for="chk_medios_liquidacion">Medios de Liquidación</label>
+                        <label class="checkbox_input">Medio Electrónico
+                          <input type="checkbox" name="chk_medios_liquidacion" id="chk_medios_liquidacion_0" value="MEL"><span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox_input">Efectivo (Billete)
+                          <input type="checkbox" name="chk_medios_liquidacion" id="chk_medios_liquidacion_1" value="BIL"><span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox_input">Cheque
+                          <input type="checkbox" name="chk_medios_liquidacion" id="chk_medios_liquidacion_2" value="CHE"><span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox_input">Otros
+                          <input type="checkbox" name="chk_medios_liquidacion" id="chk_medios_liquidacion_3" value="OTR"><span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="field">
+                        <label for="chk_tipo_movimiento">Tipo de Movimiento</label>
+                        <label class="checkbox_input">Cargo a cta del cliente
+                          <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_0" value="01"><span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox_input">En cuenta
+                          <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_1" value="02"><span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox_input">Entrega en caja
+                          <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_2" value="03"><span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox_input">Ocurre
+                          <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_3" value="04"><span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox_input">Traspaso de Fondos
+                          <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_4" value="05"><span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox_input">Cargo a cta del cliente
+                          <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_5" value="06"><span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox_input">Entrega en nuestra caja
+                          <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_6" value="07"><span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox_input">Cargo en cuenta
+                          <input type="checkbox" name="chk_tipo_movimiento" id="chk_tipo_movimiento_7" value="08"><span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="field">
+                        <label>Transacción</label>
+                        <label class="select">
+                          <select class="select2" id="transaccion" name="transaccion" style="width: 12em;">
+                            <option value="ALL">Todos</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="field">
+                        <label>Institución Financiera</label>
+                        <label class="select">
+                          <select class="select2" id="institucion_financiera" name="institucion_financiera" style="width: 12em;">
+                            <option value="ALL">Todos</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="field">
+                        <label>Dispersión</label>
+                        <label class="select">
+                          <select class="select2" id="dispersion" name="dispersion" style="width: 12em;">
+                            <option value="ALL">Todos</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="field">
+                        <label>Subsistema</label>
+                        <label class="select">
+                          <select class="select2" id="subsistema" name="subsistema" style="width: 12em;">
+                            <option value="ALL">Todos</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="field is_vertical">
+                        <label for="cuenta">Cuenta</label>
+                        <div class="control has-addons">
+                          <input class="input" type="text" id="cuenta" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                          <button class="button is-icon is-green" id="btn_plus_cuenta"><i class="fa fa-plus-circle fa-lg icon-button"></i></button>
+                          <button class="button is-icon is-red" id="btn_minus_cuenta"><i class="fa fa-minus-circle fa-lg icon-button"></i></button>
+                        </div>
+                        <ul class="tag-list" id="tag_list_cuenta"></ul>
+                      </div>
+              </div>
+              <div class="sidebar_button"></div>
             </div>
-            <ul class="tag-list" id="tag_list_cuenta"></ul>
-          </div>
-        </div>
-        <div class="sidebar_button"></div>
-      </div>
       <div class="content" id="contenido">
         <div class="row" id="criterios-busqueda">
-          <div class="accordion" id="criterios_busqueda_accordion">
-            <h3></h3>
-            <div class="accordion-content">
-              <div class="col" id="criterios-seleccion-01">
-                <div class="col">
-                  <div class="field">
-                    <label class="radio_button">Intradia
-                      <input type="radio" name="opciones" id="radio_opciones_0" value="INTRA"/><span class="checkmark"></span>
-                    </label>
-                    <label class="radio_button">Programados
-                      <input type="radio" name="opciones" id="radio_opciones_1" value="PROG"/><span class="checkmark"></span>
-                    </label>
-                    <label class="radio_button">Históricos
-                      <input type="radio" name="opciones" id="radio_opciones_2" value="HIST"/><span class="checkmark"></span>
-                    </label>
-                  </div>
-                  <div class="field">
-                    <label for="chk_capturados">Capturados</label>
-                    <label class="checkbox_input">Capturados
-                      <input type="checkbox" name="chk_capturados" id="chk_capturados_0" value="CAP"/><span class="checkmark"></span>
-                    </label>
-                  </div>
-                </div>
-                <div class="field is_vertical">
-                  <label for="contrato">Contrato</label>
-                  <div class="control has-addons">
-                    <input class="input" type="text" id="contrato" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10"/>
-                    <button class="button is-icon is-green" id="btn_plus_contrato"><i class="fa fa-plus-circle fa-lg icon-button"></i></button>
-                    <button class="button is-icon is-red" id="btn_minus_contrato"><i class="fa fa-minus-circle fa-lg icon-button"></i></button>
-                  </div>
-                  <ul class="tag-list" id="tag_list_contrato"></ul>
-                </div>
-                <div class="field is_vertical">
-                  <label for="folio_mov">Folio Mov.</label>
-                  <div class="control has-addons">
-                    <input class="input" type="text" id="folio_mov" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10"/>
-                    <button class="button is-icon is-green" id="btn_plus_folio_mov"><i class="fa fa-plus-circle fa-lg icon-button"></i></button>
-                    <button class="button is-icon is-red" id="btn_minus_folio_mov"><i class="fa fa-minus-circle fa-lg icon-button"></i></button>
-                  </div>
-                  <ul class="tag-list" id="tag_list_folio_mov"></ul>
-                </div>
-                <div class="field is_vertical">
-                  <label for="digito">Digito</label>
-                  <div class="control has-addons">
-                    <input class="input" type="text" id="digito" style="width: 5em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10"/>
-                    <button class="button is-icon is-green" id="btn_plus_digito"><i class="fa fa-plus-circle fa-lg icon-button"></i></button>
-                    <button class="button is-icon is-red" id="btn_minus_digito"><i class="fa fa-minus-circle fa-lg icon-button"></i></button>
-                  </div>
-                  <ul class="tag-list" id="tag_list_digito"></ul>
-                </div>
-                <div class="col">
-                  <div class="field is_vertical">
-                    <label for="importe_neto">Importe Neto</label>
-                    <input class="input" type="text" id="importe_neto" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10"/>
-                  </div>
-                  <div class="field">
-                    <label></label>
-                    <label class="select">
-                      <select class="select2" id="comparacion" name="comparacion" style="width: 12em;">
-                        <option value="ALL">Todos</option>
-                        <option value="EQ">Igual</option>
-                        <option value="GT">Mayor que</option>
-                        <option value="LT">Menor que</option>
-                        <option value="GE">Mayor o igual que</option>
-                        <option value="LE">Menor o igual que</option>
-                      </select>
-                    </label>
-                  </div>
-                </div>
-                <div class="field">
-                  <label for="chk_depositos_retiros"></label>
-                  <label class="checkbox_input">Depósitos
-                    <input type="checkbox" name="chk_depositos_retiros" id="chk_depositos_retiros_0" value="DEP"/><span class="checkmark"></span>
-                  </label>
-                  <label class="checkbox_input">Retiros
-                    <input type="checkbox" name="chk_depositos_retiros" id="chk_depositos_retiros_1" value="RET"/><span class="checkmark"></span>
-                  </label>
-                </div>
-                <div class="field">
-                  <label for="chk_estatus"></label>
-                  <label class="checkbox_input">Aplicados
-                    <input type="checkbox" name="chk_estatus" id="chk_estatus_0" value="APL"/><span class="checkmark with_color is_green"></span>
-                  </label>
-                  <label class="checkbox_input">Cancelados
-                    <input type="checkbox" name="chk_estatus" id="chk_estatus_1" value="CAN"/><span class="checkmark with_color is_red"></span>
-                  </label>
-                  <label class="checkbox_input">Pendientes
-                    <input type="checkbox" name="chk_estatus" id="chk_estatus_2" value="PEN"/><span class="checkmark with_color is_yellow"></span>
-                  </label>
-                  <label class="checkbox_input">En Revisión
-                    <input type="checkbox" name="chk_estatus" id="chk_estatus_3" value="REV"/><span class="checkmark with_color is_grey"></span>
-                  </label>
-                  <label class="checkbox_input">En Proceso
-                    <input type="checkbox" name="chk_estatus" id="chk_estatus_4" value="PRO"/><span class="checkmark with_color is_grey"></span>
-                  </label>
-                  <label class="checkbox_input">En Revisión Sans
-                    <input type="checkbox" name="chk_estatus" id="chk_estatus_5" value="RVS"/><span class="checkmark with_color is_grey"></span>
-                  </label>
-                </div>
-                <div class="col" id="botones_accion">
-                  <div class="col">
-                    <button class="button big-button" id="btn_search" type="submit" value="validate"><span class="fa-stack fa-lg"><i class="fa fa-search fa-2x"></i></span><br/><span>Consultar</span></button>
-                    <button class="button big-button" id="btn_search" type="reset"><span class="fa-stack fa-lg"><i class="far fa-file fa-2x"></i></span><br/><span>Limpiar</span></button>
-                  </div>
-                  <div class="col">
-                    <button class="button big-button" id="btn_search"><span class="fa-stack fa-lg"><i class="fa fas fa-file-pdf fa-2x"></i></span><br/><span>PDF</span></button>
-                    <button class="button big-button" id="btn_search"><span class="fa-stack fa-lg"><i class="fas fa-file-excel fa-2x"></i></span><br/><span>XLS</span></button>
-                  </div>
-                </div>
-              </div>
-              <div class="col" id="criterios-seleccion-02">
-                <div class="field">
-                  <label>Sucursal</label>
-                  <label class="select">
-                    <select class="select2" id="sucursal" name="sucursal" style="width: 10em;">
-                      <option value="REF">Reforma</option>
-                      <option value="INS">Insurgentes</option>
-                      <option value="TLA">Tlalpan</option>
-                      <option value="CEN">Centro</option>
-                    </select>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- include _collapsible-panel-->
+                    <div class="accordion" id="criterios_busqueda_accordion">
+                                <h3></h3>
+                                <div class="accordion-content">
+                                  <div class="col" id="criterios-seleccion-01">
+                                    <div class="col">
+                                                <div class="field">
+                                                  <label class="radio_button">Intradia
+                                                    <input type="radio" name="opciones" id="radio_opciones_0" value="INTRA"><span class="checkmark"></span>
+                                                  </label>
+                                                  <label class="radio_button">Programados
+                                                    <input type="radio" name="opciones" id="radio_opciones_1" value="PROG"><span class="checkmark"></span>
+                                                  </label>
+                                                  <label class="radio_button">Históricos
+                                                    <input type="radio" name="opciones" id="radio_opciones_2" value="HIST"><span class="checkmark"></span>
+                                                  </label>
+                                                </div>
+                                                <div class="field">
+                                                  <label for="chk_capturados">Capturados</label>
+                                                  <label class="checkbox_input">Capturados
+                                                    <input type="checkbox" name="chk_capturados" id="chk_capturados_0" value="CAP"><span class="checkmark"></span>
+                                                  </label>
+                                                </div>
+                                    </div>
+                                              <div class="field is_vertical">
+                                                <label for="contrato">Contrato</label>
+                                                <div class="control has-addons">
+                                                  <input class="input" type="text" id="contrato" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                                                  <button class="button is-icon is-green" id="btn_plus_contrato"><i class="fa fa-plus-circle fa-lg icon-button"></i></button>
+                                                  <button class="button is-icon is-red" id="btn_minus_contrato"><i class="fa fa-minus-circle fa-lg icon-button"></i></button>
+                                                </div>
+                                                <ul class="tag-list" id="tag_list_contrato"></ul>
+                                              </div>
+                                              <div class="field is_vertical">
+                                                <label for="folio_mov">Folio Mov.</label>
+                                                <div class="control has-addons">
+                                                  <input class="input" type="text" id="folio_mov" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                                                  <button class="button is-icon is-green" id="btn_plus_folio_mov"><i class="fa fa-plus-circle fa-lg icon-button"></i></button>
+                                                  <button class="button is-icon is-red" id="btn_minus_folio_mov"><i class="fa fa-minus-circle fa-lg icon-button"></i></button>
+                                                </div>
+                                                <ul class="tag-list" id="tag_list_folio_mov"></ul>
+                                              </div>
+                                              <div class="field is_vertical">
+                                                <label for="digito">Digito</label>
+                                                <div class="control has-addons">
+                                                  <input class="input" type="text" id="digito" style="width: 5em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                                                  <button class="button is-icon is-green" id="btn_plus_digito"><i class="fa fa-plus-circle fa-lg icon-button"></i></button>
+                                                  <button class="button is-icon is-red" id="btn_minus_digito"><i class="fa fa-minus-circle fa-lg icon-button"></i></button>
+                                                </div>
+                                                <ul class="tag-list" id="tag_list_digito"></ul>
+                                              </div>
+                                    <div class="col">
+                                                <div class="field is_vertical">
+                                                  <label for="importe_neto">Importe Neto</label>
+                                                  <input class="input" type="text" id="importe_neto" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                                                </div>
+                                                <div class="field">
+                                                  <label></label>
+                                                  <label class="select">
+                                                    <select class="select2" id="comparacion" name="comparacion" style="width: 12em;">
+                                                      <option value="ALL">Todos</option>
+                                                      <option value="EQ">Igual</option>
+                                                      <option value="GT">Mayor que</option>
+                                                      <option value="LT">Menor que</option>
+                                                      <option value="GE">Mayor o igual que</option>
+                                                      <option value="LE">Menor o igual que</option>
+                                                    </select>
+                                                  </label>
+                                                </div>
+                                    </div>
+                                              <div class="field">
+                                                <label for="chk_depositos_retiros"></label>
+                                                <label class="checkbox_input">Depósitos
+                                                  <input type="checkbox" name="chk_depositos_retiros" id="chk_depositos_retiros_0" value="DEP"><span class="checkmark"></span>
+                                                </label>
+                                                <label class="checkbox_input">Retiros
+                                                  <input type="checkbox" name="chk_depositos_retiros" id="chk_depositos_retiros_1" value="RET"><span class="checkmark"></span>
+                                                </label>
+                                              </div>
+                                              <div class="field">
+                                                <label for="chk_estatus"></label>
+                                                <label class="checkbox_input">Aplicados
+                                                  <input type="checkbox" name="chk_estatus" id="chk_estatus_0" value="APL"><span class="checkmark with_color is_green"></span>
+                                                </label>
+                                                <label class="checkbox_input">Cancelados
+                                                  <input type="checkbox" name="chk_estatus" id="chk_estatus_1" value="CAN"><span class="checkmark with_color is_red"></span>
+                                                </label>
+                                                <label class="checkbox_input">Pendientes
+                                                  <input type="checkbox" name="chk_estatus" id="chk_estatus_2" value="PEN"><span class="checkmark with_color is_yellow"></span>
+                                                </label>
+                                                <label class="checkbox_input">En Revisión
+                                                  <input type="checkbox" name="chk_estatus" id="chk_estatus_3" value="REV"><span class="checkmark with_color is_grey"></span>
+                                                </label>
+                                                <label class="checkbox_input">En Proceso
+                                                  <input type="checkbox" name="chk_estatus" id="chk_estatus_4" value="PRO"><span class="checkmark with_color is_grey"></span>
+                                                </label>
+                                                <label class="checkbox_input">En Revisión Sans
+                                                  <input type="checkbox" name="chk_estatus" id="chk_estatus_5" value="RVS"><span class="checkmark with_color is_grey"></span>
+                                                </label>
+                                              </div>
+                                    <div class="col" id="botones_accion">
+                                      <div class="col">
+                                                  <button class="button big-button" id="btn_search" type="submit" value="validate"><span class="fa-stack fa-lg"><i class="fa fa-search fa-2x"></i></span><br><span>Consultar</span></button>
+                                                  <button class="button big-button" id="btn_search" type="reset"><span class="fa-stack fa-lg"><i class="far fa-file fa-2x"></i></span><br><span>Limpiar</span></button>
+                                      </div>
+                                      <div class="col">
+                                                  <button class="button big-button" id="btn_search"><span class="fa-stack fa-lg"><i class="fa fas fa-file-pdf fa-2x"></i></span><br><span>PDF</span></button>
+                                                  <button class="button big-button" id="btn_search"><span class="fa-stack fa-lg"><i class="fas fa-file-excel fa-2x"></i></span><br><span>XLS</span></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col" id="criterios-seleccion-02">
+                                              <div class="field">
+                                                <label>Sucursal</label>
+                                                <label class="select">
+                                                  <select class="select2" id="sucursal" name="sucursal" style="width: 10em;">
+                                                    <option value="REF">Reforma</option>
+                                                    <option value="INS">Insurgentes</option>
+                                                    <option value="TLA">Tlalpan</option>
+                                                    <option value="CEN">Centro</option>
+                                                  </select>
+                                                </label>
+                                              </div>
+                                  </div>
+                                </div>
+                    </div>
         </div>
         <div class="row has_border" id="resultados-busqueda">
-          <div id="tabs_resultados_busqueda">
-            <ul>
-              <li><a href="#tab_promocion">Promoción</a></li>
-              <li><a href="#tab_administrativas">Administrativas</a></li>
-              <li><a href="#tab_fiduciario">Fiduciario</a></li>
-            </ul>
-            <div id="tab_promocion">
-              <table id="table_grid_promocion">
-                <tr>
-                  <td></td>
-                </tr>
-              </table>
-              <div id="pager_grid_promocion"></div>
-            </div>
-            <div id="tab_administrativas">
-              <table id="table_grid_administrativas">
-                <tr>
-                  <td></td>
-                </tr>
-              </table>
-              <div id="pager_grid_administrativas"></div>
-            </div>
-            <div id="tab_fiduciario">
-              <table id="table_grid_fiduciario">
-                <tr>
-                  <td></td>
-                </tr>
-              </table>
-              <div id="pager_grid_fiduciario"></div>
-            </div>
-          </div>
+                    <div id="tabs_resultados_busqueda">
+                      <ul>
+                        <li><a href="#tab_promocion">Promoción</a></li>
+                        <li><a href="#tab_administrativas">Administrativas</a></li>
+                        <li><a href="#tab_fiduciario">Fiduciario</a></li>
+                      </ul>
+                                <div id="tab_promocion">
+                                            <table id="table_grid_promocion">
+                                              <tr>
+                                                <td></td>
+                                              </tr>
+                                            </table>
+                                            <div id="pager_grid_promocion"></div>
+                                </div>
+                                <div id="tab_administrativas">
+                                            <table id="table_grid_administrativas">
+                                              <tr>
+                                                <td></td>
+                                              </tr>
+                                            </table>
+                                            <div id="pager_grid_administrativas"></div>
+                                </div>
+                                <div id="tab_fiduciario">
+                                            <table id="table_grid_fiduciario">
+                                              <tr>
+                                                <td></td>
+                                              </tr>
+                                            </table>
+                                            <div id="pager_grid_fiduciario"></div>
+                                </div>
+                    </div>
         </div>
       </div>
     </div>
