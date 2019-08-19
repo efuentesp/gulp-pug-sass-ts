@@ -110,7 +110,7 @@
                     <div class="accordion" id="criterios_busqueda_accordion">
                                 <h3></h3>
                                 <div class="accordion-content">
-                                  <div class="col" id="criterios-seleccion-01">
+                                  <div class="col is-search-form" id="criterios-seleccion-01">
                                     <div class="col">
                                                 <div class="field">
                                                   <label class="radio_button">Intradia
@@ -133,7 +133,10 @@
                                               <div class="field is_vertical">
                                                 <label for="contrato">Contrato</label>
                                                 <div class="control has-addons">
-                                                  <input class="input" type="text" id="contrato" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                                                  <select class="select2" id="contrato" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                                                    <option value="ALL">Todos</option>
+                                                    <option value="EQ">Igual</option>
+                                                  </select>
                                                   <button class="button is-icon is-green" id="btn_plus_contrato"><i class="fa fa-plus-circle fa-lg icon-button"></i></button>
                                                   <button class="button is-icon is-red" id="btn_minus_contrato"><i class="fa fa-minus-circle fa-lg icon-button"></i></button>
                                                 </div>

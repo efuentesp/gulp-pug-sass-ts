@@ -1,26 +1,9 @@
 @import "../vars";
 
-.search-form {
-  display: grid;
-
-  // border: 1px solid lightgray;
-  // padding: 3px;
-
-  .fieldset {
-    display: flex;
-    flex-wrap: wrap;
-
-    // border: 1px solid lightgray;
-    // padding: 3px;
-  }
-
-  .buttonset {
-    display: flex;
-    flex-wrap: wrap;
-
-    // border: 1px solid lightgray;
-    // padding: 3px;
-  }
+.is-search-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
   .is-horizontal {
     flex-direction: row;
@@ -47,16 +30,16 @@
 
   // Medium devices (tablets, 768px and up)
   @media (min-width: 768px) {
-    grid-template-columns: auto 328px;
+
   }
 
   // Large devices (desktops, 992px and up)
   @media (min-width: 992px) {
-    grid-template-columns: auto 328px;
+
   }
 
   // Extra large devices (large desktops, 1200px and up)
   @media (min-width: 1200px) {
-    grid-template-columns: auto 328px;
+
   }
 }

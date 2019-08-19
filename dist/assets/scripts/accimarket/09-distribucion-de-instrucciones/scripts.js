@@ -19,6 +19,10 @@ $('#comparacion').select2({
 $('#sucursal').select2({
     minimumResultsForSearch: Infinity
 });
+$('#contrato').select2({
+    minimumResultsForSearch: Infinity,
+    dropdownParent: $('#tag_list_contrato')
+});
 $('#table_grid_promocion').jqGrid({
     url: 'http://localhost:3000/fideicomiso',
     datatype: 'json',

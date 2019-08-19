@@ -20,7 +20,7 @@ block content
          +tab-item("tab_listado_ordenes_directo")
             +accordion("criterios_busqueda_accordion")
                +accordion-item("criterios_busqueda_accordion_item")
-                  form#criterios-busqueda(data-parsley-validate="")
+                  form.is-search-form#criterios-busqueda(data-parsley-validate="")
                      +field-input("contrato", {label: "Contrato"})
                      +field-input("digito", {label: "Digito", size: "5em"})
                      +field-input("emisora", {label: "Emisora"})
