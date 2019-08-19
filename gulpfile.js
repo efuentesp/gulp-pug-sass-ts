@@ -32,7 +32,7 @@ function imageminIt() {
 
 function pugIt() {
 	return gulp
-		.src('./src/views/pages/**/*.pug')
+		.src('./src/views/pages/**/index.pug')
 		.pipe(
 			pug({
 				pretty: true,
