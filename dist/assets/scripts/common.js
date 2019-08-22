@@ -78,6 +78,9 @@ var rest_findAll = function (resource, params, cb) {
 };
 var rpc_findAll = function (resource, params, cb) {
 };
+$('select[name=quiz_select]').select2({
+    minimumResultsForSearch: Infinity
+});
 var http_findAll = rest_findAll;
 
 //# sourceMappingURL=../maps/common.js.map
