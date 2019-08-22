@@ -101,4 +101,8 @@ const rpc_findAll = (resource: string, params: any, cb: Function) => {
   // TODO: Implementar versión con POST
 };
 
+($('select[name=quiz_select]') as any).select2({
+	minimumResultsForSearch: Infinity
+});
+
 const http_findAll = rest_findAll;
