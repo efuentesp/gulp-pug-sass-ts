@@ -41,7 +41,9 @@ var ui_accordion_settings = {
     icons: icons,
     heightStyle: "content"
 };
-$(document).tooltip();
+$(document).tooltip({
+    disabled: true
+});
 var fillJqGrid = function (grid_id, data) {
     $(grid_id).jqGrid("clearGridData");
     data.forEach(function (item, i) { return $(grid_id).jqGrid("addRowData", i + 1, item); });
