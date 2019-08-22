@@ -102,6 +102,7 @@ function concatVendorCss() {
 		.src([
 			'./node_modules/@fortawesome/fontawesome-free/css/all.min.css',
 			'./node_modules/normalize.css/normalize.css',
+			'./src/views/styles/vendors/jqgrid/ui.jqgrid.min.css',
 			// './src/views/styles/vendors/jqgrid/jqgrid.css',
 			'./node_modules/select2/dist/css/select2.min.css'
 		])
