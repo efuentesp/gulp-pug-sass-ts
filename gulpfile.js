@@ -27,7 +27,7 @@ function imageminIt() {
     gulp
       .src("./src/images/*")
       // .pipe(changed("./dist/assets/images"))
-      .pipe(imagemin())
+      //.pipe(imagemin())
       .pipe(gulp.dest("./dist/assets/images"))
   );
 }

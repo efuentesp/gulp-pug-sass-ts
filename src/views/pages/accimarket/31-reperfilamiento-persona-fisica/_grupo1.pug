@@ -1,0 +1,34 @@
+include /mixins/mixins
+
+.column#search-criterias-column
+    .row
+        +field-input("contrato",
+            {
+                label: "Contrato",
+                size: "11em",
+                orientation: "horizontal"
+            })
+    .row
+        +field-input("nombre",
+            {
+                label: "Nombre",
+                size: "35em",
+                required: true,
+                orientation: "horizontal"
+            })
+    .row
+        +field-input("perfil",
+            {
+                label: "Perfil Actual",
+                size: "15em",
+                orientation: "horizontal"
+            })
+.column#search-criterias-column
+    .row
+        +field-select("personaPerfilar",
+            {
+                label: "Seleccione la persona que desea perfilar",
+                size: "35em",
+                required: true,
+                orientation: "horizontal"
+            })

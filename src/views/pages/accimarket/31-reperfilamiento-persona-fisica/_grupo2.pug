@@ -1,0 +1,64 @@
+include /mixins/mixins
+
++field-group("busqueda_contrato")
+        p 1. Para cada una de las siguiente preguntas
+        +field-select("edad",
+                    {
+                        label: "1.1 Intervalo de Edad",
+                        orientation: "horizontal",
+                        required: true,
+                        size: "15em"
+                    })
+        +field-select("estudios",
+                    {
+                        label: "1.2 Nivel de estudios",
+                        orientation: "horizontal",
+                        required: true,
+                        size: "15em"
+                    })
+        +field-select("ocupacion",
+                    {
+                        label: "1.3 Ocupacion",
+                        orientation: "horizontal",
+                        required: true,
+                        size: "15em"
+                    })
+        .column#search-criterias-column
+            .row
+                p 1.4 Actividad Profesional
+            .row
+                +field-select("anterior",
+                            {
+                                label: "Anterior",
+                                orientation: "horizontal",
+                                size: "15em"
+                            })
+                +field-select("actual",
+                            {
+                                label: "Actual",
+                                orientation: "horizontal",
+                                required: true,
+                                size: "15em"
+                            })
+                +field-options("inversiones",
+                            {
+                                label: "Relacionada con Inversiones",
+                                orientation: "horizontal",
+                                required: true
+                            },
+                            {key:"SI", value:"SI"},
+                            {key:"NO", value:"NO"})
++field-select("estrategia",
+            {
+                label: "1.5 Estrategia de inversion del Cliente generalmente utilizada",
+                orientation: "horizontal",
+                required: true,
+                size: "15em"
+            })
++field-select("asesoria",
+            {
+                label: "1.6 El Cliente ha usuado asesoria para la toma de decisiones de inversion",
+                orientation: "horizontal",
+                required: true,
+                size: "15em"
+            })
