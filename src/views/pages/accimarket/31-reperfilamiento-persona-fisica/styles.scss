@@ -1,0 +1,12 @@
+.container {
+  #search-criterias-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  #search-results-section {
+    width: 99%;
+    overflow: auto;
+  }
+}

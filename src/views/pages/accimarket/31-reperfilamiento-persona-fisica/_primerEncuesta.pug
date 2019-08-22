@@ -1,0 +1,446 @@
+include /mixins/mixins
+
+.row
+    table
+        tr
+            td
+                p 2. ¿Cual es la experiencia en productos de inversion del Cliente?
+            td
+                p No conoce ni ha invertido
+            td
+                p Solo conoce
+            td
+                p Conoce y ha invertido 
+            td
+                p Si Conoce y ha invertido, indique:
+        tr
+            td
+            td
+            td
+            td
+            td
+                p Frecuencia
+            td
+                p Plazo
+            td
+                p Volumen
+        tr
+            td
+                p 2.1 Instrumentos de Deuda Gubernamental
+            td
+                +field-options("opcion2-1",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"NO-I", value:""})
+            td
+                +field-options("opcion2-1",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO", value:""})
+            td
+                +field-options("opcion2-1",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO-I", value:""})
+            td
+                +field-select("fercuencia2-1",
+                        {
+                            required: true
+                        })
+            td
+                +field-select("plazo2-1",
+                            {
+                                required: true
+                            })
+            td
+                +field-select("volumen2-1",
+                            {       
+                                required: true
+                            })
+        tr
+            td
+                p 2.2 Instrumentos de Deuda Cooperativa
+            td
+                +field-options("opcion2-2",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"NO-I", value:""})
+            td
+                +field-options("opcion2-2",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO", value:""})
+            td
+                +field-options("opcion2-2",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO-I", value:""})
+            td
+                +field-select("fercuencia2-2",
+                        {
+                            required: true
+                        })
+            td
+                +field-select("plazo2-2",
+                            {
+                                required: true
+                            })
+            td
+                +field-select("volumen2-2",
+                            {
+                                required: true
+                            })
+        tr
+            td
+                p 2.3 Sociedades de Inversion
+            td
+                +field-options("opcion2-3",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"NO-I", value:""})
+            td
+                +field-options("opcion2-3",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO", value:""})
+            td
+                +field-options("opcion2-3",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO-I", value:""})
+            td
+                +field-select("fercuencia2-3",
+                        {
+                            required: true
+                        })
+            td
+                +field-select("plazo2-3",
+                            {
+                                required: true
+                            })
+            td
+                +field-select("volumen2-3",
+                            {
+                                required: true
+                            })
+        tr
+            td
+                p 2.4 Valores Estructurados
+            td
+                +field-options("opcion2-4",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"NO-I", value:""})
+            td
+                +field-options("opcion2-4",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO", value:""})
+            td
+                +field-options("opcion2-4",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO-I", value:""})
+            td
+                +field-select("fercuencia2-4",
+                        {
+                            required: true
+                        })
+            td
+                +field-select("plazo2-4",
+                            {
+                                required: true
+                            })
+            td
+                +field-select("volumen2-4",
+                            {
+                                required: true
+                            })
+        tr
+            td
+                p 2.5 Certificados Bursatiles Fiduciarios (Cebures, Cedevis) y Fideicomisos Privados
+            td
+                +field-options("opcion2-5",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"NO-I", value:""})
+            td
+                +field-options("opcion2-5",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO", value:""})
+            td
+                +field-options("opcion2-5",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO-I", value:""})
+            td
+                +field-select("fercuencia2-5",
+                        {
+                            required: true
+                        })
+            td
+                +field-select("plazo2-5",
+                            {
+                                required: true
+                            })
+            td
+                +field-select("volumen2-5",
+                            {
+                                required: true
+                            })
+        tr
+            td
+                p 2.6 Titulos Opcionales (Warrants)
+            td
+                +field-options("opcion2-6",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"NO-I", value:""})
+            td
+                +field-options("opcion2-6",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO", value:""})
+            td
+                +field-options("opcion2-6",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO-I", value:""})
+            td
+                +field-select("fercuencia2-6",
+                        {
+                            required: true
+                        })
+            td
+                +field-select("plazo2-6",
+                            {
+                                required: true
+                            })
+            td
+                +field-select("volumen2-6",
+                            {
+                                required: true
+                            })
+        tr
+            td
+                p 2.7 Acciones
+            td
+                +field-options("opcion2-7",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"NO-I", value:""})
+            td
+                +field-options("opcion2-7",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO", value:""})
+            td
+                +field-options("opcion2-7",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO-I", value:""})
+            td
+                +field-select("fercuencia2-7",
+                        {
+                            required: true
+                        })
+            td
+                +field-select("plazo2-7",
+                            {
+                                required: true
+                            })
+            td
+                +field-select("volumen2-7",
+                            {
+                                required: true
+                            })
+        tr
+            td
+                p 2.8 Valores Extranjeros
+            td
+                +field-options("opcion2-8",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"NO-I", value:""})
+            td
+                +field-options("opcion2-8",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO", value:""})
+            td
+                +field-options("opcion2-8",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO-I", value:""})
+            td
+                +field-select("fercuencia2-8",
+                        {
+                            required: true
+                        })
+            td
+                +field-select("plazo2-8",
+                            {
+                                required: true
+                            })
+            td
+                +field-select("volumen2-8",
+                            {
+                                required: true
+                            })
+        tr
+            td
+                p 2.9 trackers TRACs o ETFs
+            td
+                +field-options("opcion2-9",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"NO-I", value:""})
+            td
+                +field-options("opcion2-9",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO", value:""})
+            td
+                +field-options("opcion2-9",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO-I", value:""})
+            td
+                +field-select("fercuencia2-9",
+                        {
+                            required: true
+                        })
+            td
+                +field-select("plazo2-9",
+                            {
+                                required: true
+                            })
+            td
+                +field-select("volumen2-9",
+                            {
+                                required: true
+                            })
+        tr
+            td
+                p 2.10 Certificados de Capital de Desarrollo (CKDs)
+            td
+                +field-options("opcion2-10",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"NO-I", value:""})
+            td
+                +field-options("opcion2-10",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO", value:""})
+            td
+                +field-options("opcion2-10",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"CO-I", value:""})
+            td
+                +field-select("fercuencia2-10",
+                        {
+                            required: true
+                        })
+            td
+                +field-select("plazo2-10",
+                            {
+                                required: true
+                            })
+            td
+                +field-select("volumen2-10",
+                            {
+                                required: true
+                            })

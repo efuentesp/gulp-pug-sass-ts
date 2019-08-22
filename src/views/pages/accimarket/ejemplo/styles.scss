@@ -1,0 +1,17 @@
+.container {
+  #search-results-section {
+    width: 99%;
+    overflow: auto;
+  }
+
+  #fecha-group {
+    label {
+      width: 64px;
+    }
+  }
+
+  #textoInformativo {
+    text-align: center;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,920 @@
+
+<!-- include _collapsible-panel--><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Reperfilamiento de Personas Fisicas</title>
+    <link href="//fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/free-jqgrid@4.15.5/css/ui.jqgrid.min.css">
+    <link href="/assets/css/vendors.min.css" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/accimarket/31-reperfilamiento-persona-fisica/styles.css">
+  </head>
+  <body>
+    <header></header>
+    <div class="container">
+      <div class="row">
+        <div class="accordion" id="reperfilamiento-pf">
+          <h3>Perfilamiento de Personas Fisicas</h3>
+          <div class="accordion-content">
+            <form class="is-search-form" id="criterios-busqueda" data-parsley-validate="">
+              <div class="column" id="search-criterias-column">
+                <div class="row">
+                  <div class="field is_horizontal">
+                    <label for="contrato">Contrato</label>
+                    <input class="input" type="text" id="contrato" style="width: 11em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10"/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="field is_horizontal">
+                    <label for="nombre">Nombre</label><span class="required">*</span>
+                    <input class="input" type="text" id="nombre" required="required" style="width: 35em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10"/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="field is_horizontal">
+                    <label for="perfil">Perfil Actual</label>
+                    <input class="input" type="text" id="perfil" style="width: 15em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10"/>
+                  </div>
+                </div>
+              </div>
+              <div class="column" id="search-criterias-column">
+                <div class="row">
+                  <div class="field">
+                    <label>Seleccione la persona que desea perfilar</label>
+                    <label class="select">
+                      <select class="select2" id="personaPerfilar" name="personaPerfilar" required="required" style="width: 35em;">
+                      </select>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!-- include _collapsible-panel-->
+            <div class="column" id="search-criterias-column">
+              <div class="row">
+                <p>Texto informativo</p>
+              </div>
+              <div class="row">
+                <p>%</p>
+                <div class="field is_vertical">
+                  <label for="liquidez-porcentaje"></label>
+                  <input class="input" type="text" id="liquidez-porcentaje" style="width: 5em;" disabled data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                </div>
+                <div class="field is_vertical">
+                  <label for="cortoPlazo-porcentaje"></label>
+                  <input class="input" type="text" id="cortoPlazo-porcentaje" style="width: 5em;" disabled data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                </div>
+                <div class="field is_vertical">
+                  <label for="medianoPlazo-porcentaje"></label>
+                  <input class="input" type="text" id="medianoPlazo-porcentaje" style="width: 5em;" disabled data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                </div>
+                <div class="field is_vertical">
+                  <label for="largoPlazo-porcentaje"></label>
+                  <input class="input" type="text" id="largoPlazo-porcentaje" style="width: 5em;" disabled data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                </div>
+              </div>
+              <div class="row">
+                <p>Monto %</p>
+                <div class="field is_vertical">
+                  <label for="liquidez-monto"></label>
+                  <input class="input" type="text" id="liquidez-monto" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                </div>
+                <div class="field is_vertical">
+                  <label for="cortoPlazo-monto"></label>
+                  <input class="input" type="text" id="cortoPlazo-monto" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                </div>
+                <div class="field is_vertical">
+                  <label for="medianoPlazo-monto"></label>
+                  <input class="input" type="text" id="medianoPlazo-monto" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                </div>
+                <div class="field is_vertical">
+                  <label for="largoPlazo-monto"></label>
+                  <input class="input" type="text" id="largoPlazo-monto" style="width: 8em;" data-parsley-trigger="keyup" data-parsley-maxlength="32" data-parsley-maxlength-message="You can enter only 32 characters." data-parsley-validation-threshold="10">
+                </div>
+              </div>
+              <div class="row">
+                <p>Horizonte</p>
+              </div>
+              <div class="row">
+                <p>Proposito</p>
+              </div>
+            </div>
+            <div class="field-group" id="busqueda_contrato">
+              <p>1. Para cada una de las siguiente preguntas</p>
+              <div class="field">
+                <label>1.1 Intervalo de Edad</label>
+                <label class="select">
+                  <select class="select2" id="edad" name="edad" required style="width: 15em;">
+                  </select>
+                </label>
+              </div>
+              <div class="field">
+                <label>1.2 Nivel de estudios</label>
+                <label class="select">
+                  <select class="select2" id="estudios" name="estudios" required style="width: 15em;">
+                  </select>
+                </label>
+              </div>
+              <div class="field">
+                <label>1.3 Ocupacion</label>
+                <label class="select">
+                  <select class="select2" id="ocupacion" name="ocupacion" required style="width: 15em;">
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div class="column" id="search-criterias-column">
+              <div class="row">
+                <p>1.4 Actividad Profesional</p>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <label>Anterior</label>
+                  <label class="select">
+                    <select class="select2" id="anterior" name="anterior" style="width: 15em;">
+                    </select>
+                  </label>
+                </div>
+                <div class="field">
+                  <label>Actual</label>
+                  <label class="select">
+                    <select class="select2" id="actual" name="actual" required style="width: 15em;">
+                    </select>
+                  </label>
+                </div>
+                <div class="field">
+                  <label class="radio_button">SI
+                    <input type="radio" name="inversiones" id="radio_inversiones_0" value="SI" required><span class="checkmark"></span>
+                  </label>
+                  <label class="radio_button">NO
+                    <input type="radio" name="inversiones" id="radio_inversiones_1" value="NO" required><span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label>1.5 Estrategia de inversion del Cliente generalmente utilizada</label>
+              <label class="select">
+                <select class="select2" id="estrategia" name="estrategia" required style="width: 15em;">
+                </select>
+              </label>
+            </div>
+            <div class="field">
+              <label>1.6 El Cliente ha usuado asesoria para la toma de decisiones de inversion</label>
+              <label class="select">
+                <select class="select2" id="asesoria" name="asesoria" required style="width: 15em;">
+                </select>
+              </label>
+            </div>
+            <!-- include _collapsible-panel-->
+            <div class="row">
+              <table>
+                <tr>
+                  <td>
+                    <p>2. ¿Cual es la experiencia en productos de inversion del Cliente?</p>
+                  </td>
+                  <td>
+                    <p>No conoce ni ha invertido</p>
+                  </td>
+                  <td>
+                    <p>Solo conoce</p>
+                  </td>
+                  <td>
+                    <p>Conoce y ha invertido </p>
+                  </td>
+                  <td>
+                    <p>Si Conoce y ha invertido, indique:</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <p>Frecuencia</p>
+                  </td>
+                  <td>
+                    <p>Plazo</p>
+                  </td>
+                  <td>
+                    <p>Volumen</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2.1 Instrumentos de Deuda Gubernamental</p>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-1" id="radio_opcion2-1_0" value="NO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-1" id="radio_opcion2-1_0" value="CO" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-1" id="radio_opcion2-1_0" value="CO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="fercuencia2-1" name="fercuencia2-1" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="plazo2-1" name="plazo2-1" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="volumen2-1" name="volumen2-1" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2.2 Instrumentos de Deuda Cooperativa</p>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-2" id="radio_opcion2-2_0" value="NO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-2" id="radio_opcion2-2_0" value="CO" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-2" id="radio_opcion2-2_0" value="CO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="fercuencia2-2" name="fercuencia2-2" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="plazo2-2" name="plazo2-2" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="volumen2-2" name="volumen2-2" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2.3 Sociedades de Inversion</p>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-3" id="radio_opcion2-3_0" value="NO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-3" id="radio_opcion2-3_0" value="CO" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-3" id="radio_opcion2-3_0" value="CO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="fercuencia2-3" name="fercuencia2-3" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="plazo2-3" name="plazo2-3" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="volumen2-3" name="volumen2-3" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2.4 Valores Estructurados</p>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-4" id="radio_opcion2-4_0" value="NO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-4" id="radio_opcion2-4_0" value="CO" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-4" id="radio_opcion2-4_0" value="CO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="fercuencia2-4" name="fercuencia2-4" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="plazo2-4" name="plazo2-4" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="volumen2-4" name="volumen2-4" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2.5 Certificados Bursatiles Fiduciarios (Cebures, Cedevis) y Fideicomisos Privados</p>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-5" id="radio_opcion2-5_0" value="NO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-5" id="radio_opcion2-5_0" value="CO" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-5" id="radio_opcion2-5_0" value="CO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="fercuencia2-5" name="fercuencia2-5" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="plazo2-5" name="plazo2-5" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="volumen2-5" name="volumen2-5" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2.6 Titulos Opcionales (Warrants)</p>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-6" id="radio_opcion2-6_0" value="NO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-6" id="radio_opcion2-6_0" value="CO" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-6" id="radio_opcion2-6_0" value="CO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="fercuencia2-6" name="fercuencia2-6" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="plazo2-6" name="plazo2-6" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="volumen2-6" name="volumen2-6" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2.7 Acciones</p>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-7" id="radio_opcion2-7_0" value="NO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-7" id="radio_opcion2-7_0" value="CO" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-7" id="radio_opcion2-7_0" value="CO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="fercuencia2-7" name="fercuencia2-7" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="plazo2-7" name="plazo2-7" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="volumen2-7" name="volumen2-7" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2.8 Valores Extranjeros</p>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-8" id="radio_opcion2-8_0" value="NO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-8" id="radio_opcion2-8_0" value="CO" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-8" id="radio_opcion2-8_0" value="CO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="fercuencia2-8" name="fercuencia2-8" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="plazo2-8" name="plazo2-8" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="volumen2-8" name="volumen2-8" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2.9 trackers TRACs o ETFs</p>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-9" id="radio_opcion2-9_0" value="NO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-9" id="radio_opcion2-9_0" value="CO" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-9" id="radio_opcion2-9_0" value="CO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="fercuencia2-9" name="fercuencia2-9" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="plazo2-9" name="plazo2-9" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="volumen2-9" name="volumen2-9" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2.10 Certificados de Capital de Desarrollo (CKDs)</p>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-10" id="radio_opcion2-10_0" value="NO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-10" id="radio_opcion2-10_0" value="CO" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label class="radio_button">
+                        <input type="radio" name="opcion2-10" id="radio_opcion2-10_0" value="CO-I" required><span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="fercuencia2-10" name="fercuencia2-10" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="plazo2-10" name="plazo2-10" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="field">
+                      <label></label>
+                      <label class="select">
+                        <select class="select2" id="volumen2-10" name="volumen2-10" required style="width: 8em;">
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="field">
+              <label>. Seleccionar el Proposito de Inversion .....</label>
+              <label class="select">
+                <select class="select2" id="proposito" name="proposito" required style="width: 15em;">
+                </select>
+              </label>
+            </div>
+            <div class="field">
+              <label>. Seleccionar la Tolerancia de Riesgo del Cliente .....</label>
+              <label class="select">
+                <select class="select2" id="tolerancia" name="tolerancia" required style="width: 35em;">
+                </select>
+              </label>
+            </div>
+            <div class="field">
+              <label>. Seleccionar el Horizonte de Inversion del Cliente</label>
+              <label class="select">
+                <select class="select2" id="horizonte-Inversion" name="horizonte-Inversion" required style="width: 15em;">
+                </select>
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio_button">Ninguna
+                <input type="radio" name="limitantes" id="radio_limitantes_0" value="NINGUNA" required><span class="checkmark"></span>
+              </label>
+              <label class="radio_button">Si
+                <input type="radio" name="limitantes" id="radio_limitantes_1" value="SI" required><span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="column" id="search-criterias-column">
+              <!-- include _collapsible-panel-->
+              <div class="row">
+                <p>6. Seleccione la que corresponde a la situacion financiera actual del Cliente</p>
+                <p>6.1 Porcentaje del total de Patrimonio que el Cliente designa a invertir en productos de inversion (diferentes de bienes raices, etc);</p>
+                <p>6.2 Porcentaje del ingreso anual que el Cliente destina a invertir en instrumentos de inversion:</p>
+                <p>6.3 Porcentaje de las inversiones del Cliente que mantendra en esta institucion:</p>
+              </div>
+              <div class="row">
+                <p>0-20% </p>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-1" id="radio_opcion6-1_0" value="0-20"><span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-2" id="radio_opcion6-2_0" value="0-20"><span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-3" id="radio_opcion6-3_0" value="0-20"><span class="checkmark"></span>
+                    </label>
+                  </div>
+              </div>
+              <div class="row">
+                <p>20-40% </p>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-1" id="radio_opcion6-1_0" value="20-40"><span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-2" id="radio_opcion6-2_0" value="20-40"><span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-3" id="radio_opcion6-3_0" value="20-40"><span class="checkmark"></span>
+                    </label>
+                  </div>
+              </div>
+              <div class="row">
+                <p>40-60% </p>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-1" id="radio_opcion6-1_0" value="40-60"><span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-2" id="radio_opcion6-2_0" value="40-60"><span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-3" id="radio_opcion6-3_0" value="40-60"><span class="checkmark"></span>
+                    </label>
+                  </div>
+              </div>
+              <div class="row">
+                <p>60-80% </p>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-1" id="radio_opcion6-1_0" value="60-80"><span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-2" id="radio_opcion6-2_0" value="60-80"><span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-3" id="radio_opcion6-3_0" value="60-80"><span class="checkmark"></span>
+                    </label>
+                  </div>
+              </div>
+              <div class="row">
+                <p>80-100% </p>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-1" id="radio_opcion6-1_0" value="80-100"><span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-2" id="radio_opcion6-2_0" value="80-100"><span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="field">
+                    <label class="radio_button">
+                      <input type="radio" name="opcion6-3" id="radio_opcion6-3_0" value="80-100"><span class="checkmark"></span>
+                    </label>
+                  </div>
+              </div>
+            </div>
+            <div class="column" id="search-criterias-column">
+              <div class="row">
+                <p>Selecciona el origen de los ingresos .....</p>
+              </div>
+              <div class="row">
+                  <div class="field">
+                    <label for="chk_origen-uno"></label>
+                    <label class="checkbox_input">Venta de Activos
+                      <input type="checkbox" name="chk_origen-uno" id="chk_origen-uno_0" value="SI"><span class="checkmark with_color is_blue"></span>
+                    </label>
+                    <label class="checkbox_input">Premios
+                      <input type="checkbox" name="chk_origen-uno" id="chk_origen-uno_1" value="NO"><span class="checkmark with_color is_blue"></span>
+                    </label>
+                    <label class="checkbox_input">Prestamos
+                      <input type="checkbox" name="chk_origen-uno" id="chk_origen-uno_2" value="N/A"><span class="checkmark with_color is_blue"></span>
+                    </label>
+                    <label class="checkbox_input">Salario Anual
+                      <input type="checkbox" name="chk_origen-uno" id="chk_origen-uno_3" value="N/A"><span class="checkmark with_color is_blue"></span>
+                    </label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="field">
+                    <label for="chk_origen-dos"></label>
+                    <label class="checkbox_input">Venta de Bienes
+                      <input type="checkbox" name="chk_origen-dos" id="chk_origen-dos_0" value="SI"><span class="checkmark with_color is_blue"></span>
+                    </label>
+                    <label class="checkbox_input">Herencia
+                      <input type="checkbox" name="chk_origen-dos" id="chk_origen-dos_1" value="NO"><span class="checkmark with_color is_blue"></span>
+                    </label>
+                    <label class="checkbox_input">Patrimonio/Ahorro
+                      <input type="checkbox" name="chk_origen-dos" id="chk_origen-dos_2" value="N/A"><span class="checkmark with_color is_blue"></span>
+                    </label>
+                    <label class="checkbox_input">Traspaso/Cancelacion de cuentas de otro banco
+                      <input type="checkbox" name="chk_origen-dos" id="chk_origen-dos_3" value="N/A"><span class="checkmark with_color is_blue"></span>
+                    </label>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="search-actions-column">
+          <button class="button big-button" id="btn_search"><span class="fa-stack fa-lg"><i class="fas fa-file-export fa-2x"></i></span><br><span>Enviar</span></button>
+      </div>
+    </div>
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/assets/scripts/vendors.min.js"></script>
+    <script src="/assets/scripts/common.js"></script>
+    <script src="/assets/scripts/accimarket/31-reperfilamiento-persona-fisica/scripts.js"></script>
+  </body>
+</html>
