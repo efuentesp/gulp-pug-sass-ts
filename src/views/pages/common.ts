@@ -57,7 +57,9 @@ const ui_accordion_settings = {
 };
 
 // Query UI Tooltip settings
-$(document).tooltip();
+$(document).tooltip({
+  disabled: true
+});
 
 // JqGrid functions
 const fillJqGrid = (grid_id: string, data: any[]) => {
@@ -100,5 +102,9 @@ const rest_findAll = (resource: string, params: any, cb: Function) => {
 const rpc_findAll = (resource: string, params: any, cb: Function) => {
   // TODO: Implementar versión con POST
 };
+
+($('select[name=quiz_select]') as any).select2({
+	minimumResultsForSearch: Infinity
+});
 
 const http_findAll = rest_findAll;

@@ -1,0 +1,31 @@
+mixin quiz(id, quizName, questions, answers)
+    - var _style = "width: 8em;"
+
+    table.quiz
+        thead
+            tr
+                th.question #{quizName}
+                each answer in answers
+                    th #{answer.answer}
+        tbody
+            each question, index in questions
+                - var _answer_name = id + "_" + index
+                tr
+                    td.question #{question.question}
+                        if question.required
+                            span.required *
+                    each answer in answers
+                        td
+                            if answer.type == "option"
+                                .answer
+                                    input(type="radio" name=_answer_name)
+                                    span.checkmark
+                            
+                            if answer.type == "select"
+                                .answer
+                                    select.select2(
+                                        name="quiz_select"
+                                        style=_style
+                                    )
+                                        each option in answer.options
+                                            option(value=option.key) #{option.value}

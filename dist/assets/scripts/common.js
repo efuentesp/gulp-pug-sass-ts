@@ -41,7 +41,9 @@ var ui_accordion_settings = {
     icons: icons,
     heightStyle: "content"
 };
-$(document).tooltip();
+$(document).tooltip({
+    disabled: true
+});
 var fillJqGrid = function (grid_id, data) {
     $(grid_id).jqGrid("clearGridData");
     data.forEach(function (item, i) { return $(grid_id).jqGrid("addRowData", i + 1, item); });
@@ -76,6 +78,9 @@ var rest_findAll = function (resource, params, cb) {
 };
 var rpc_findAll = function (resource, params, cb) {
 };
+$('select[name=quiz_select]').select2({
+    minimumResultsForSearch: Infinity
+});
 var http_findAll = rest_findAll;
 
 //# sourceMappingURL=../maps/common.js.map
