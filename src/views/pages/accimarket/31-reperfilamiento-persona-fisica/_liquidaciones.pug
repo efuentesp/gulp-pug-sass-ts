@@ -1,0 +1,53 @@
+include /mixins/mixins
+
+.column#search-criterias-column
+    .row
+        p Texto informativo
+    .row
+        p %
+        +field-input("liquidez-porcentaje",
+                    {
+                        label: "",
+                        size: "5em",
+                        disabled: true
+                    })
+        +field-input("cortoPlazo-porcentaje",
+                    {
+                        label: "",
+                        size: "5em",
+                        disabled: true
+                    })
+        +field-input("medianoPlazo-porcentaje",
+                    {
+                        label: "",
+                        size: "5em",
+                        disabled: true
+                    })
+        +field-input("largoPlazo-porcentaje",
+                    {
+                        label: "",
+                        size: "5em",
+                        disabled: true
+                    })
+    .row
+        p Monto %
+        +field-input("liquidez-monto",
+                    {
+                        label: ""
+                    })
+        +field-input("cortoPlazo-monto",
+                    {
+                        label: ""
+                    })
+        +field-input("medianoPlazo-monto",
+                    {
+                        label: ""
+                    })
+        +field-input("largoPlazo-monto",
+                    {
+                        label: ""
+                    })
+    .row
+        p Horizonte
+    .row
+        p Proposito
