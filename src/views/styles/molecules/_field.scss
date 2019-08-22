@@ -8,11 +8,15 @@
     flex-flow: row;
     align-items: center;
 
-    label {
+    .field-label {
       // width: 5em;
       &:after {
         content: ":";
       }
+    }
+
+    .radio_button {
+      padding-right: 1.5em;
     }
 
     .input {
