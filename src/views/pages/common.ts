@@ -57,7 +57,9 @@ const ui_accordion_settings = {
 };
 
 // Query UI Tooltip settings
-$(document).tooltip();
+$(document).tooltip({
+  disabled: true
+});
 
 // JqGrid functions
 const fillJqGrid = (grid_id: string, data: any[]) => {
