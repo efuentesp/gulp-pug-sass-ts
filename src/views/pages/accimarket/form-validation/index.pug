@@ -41,7 +41,7 @@ block content
                     {key: "ET", value:"Electronic transfer"},
                     {key:"CHK", value:"Check"}
                     )
-      button(type="submit" value="validate") Submit
+      +button-send({size: "large", disabled: false})
 
 block scripts
    script(src="/assets/scripts/accimarket/form-validation/scripts.js")
