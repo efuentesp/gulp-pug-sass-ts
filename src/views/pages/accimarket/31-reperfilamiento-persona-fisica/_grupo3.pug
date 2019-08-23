@@ -3,7 +3,7 @@ include /mixins/mixins
 .row
     p Si conoce y ha invertido, indique:
 .row
-    +quiz("encuesta", "2. ¿Cuál es la experiencia en productos de inversión del cliente?", [
+    +quiz("encuesta", {name: "2. ¿Cuál es la experiencia en productos de inversión del cliente?", size:"40em"}, [
             {question: "2.1. Instrumentos de Deuda Gubernamental", required: true},
             {question: "2.2. Instrumentos de Deuda Corporativa", required: true},
             {question: "2.3. Sociedades de Inversión", required: true},
@@ -18,7 +18,7 @@ include /mixins/mixins
             {answer: "No conoce ni ha invertido", type: "option"},
             {answer: "Sólo conoce", type: "option"},
             {answer: "Conoce y ha invertido", type: "option"},
-            {answer: "Frecuencia", type: "select", options: [{key: "FR1", value: "Valor Frecuencia 1"}, {key: "FR2", value: "Valor Frecuencia 2"}]},
-            {answer: "Plazo", type: "select", options: [{key: "PL1", value: "Valor Plazo 1"}, {key: "PL2", value: "Valor Plazo 2"}]},
-            {answer: "Volumen", type: "select", options: [{key: "VOL1", value: "Valor Volumen 1"}, {key: "VOL2", value: "Valor Volumen 2"}]}
+            {answer: "Frecuencia", type: "select", options: [{key: "FR1", value: "Valor Frecuencia 1"}, {key: "FR2", value: "Valor Frecuencia 2"}], size: "12em"},
+            {answer: "Plazo", type: "select", options: [{key: "PL1", value: "Valor Plazo 1"}, {key: "PL2", value: "Valor Plazo 2"}], size: "10em"},
+            {answer: "Volumen", type: "select", options: [{key: "VOL1", value: "Valor Volumen 1"}, {key: "VOL2", value: "Valor Volumen 2"}], size: "12em"}
         ])
