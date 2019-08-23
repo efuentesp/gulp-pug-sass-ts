@@ -11,15 +11,13 @@ block content
         .row
             +accordion("reperfilamiento-pf")
                 +accordion-item("reperfilamiento-pf-item", "Perfilamiento de Personas Fisicas")
-                    form.is-search-form#criterios-busqueda(data-parsley-validate="")
                     include _grupo1  
                     include _liquidaciones
                     include _grupo2
                     include _grupo3
                     include _grupo4
                     include _grupo5
-                    .column#search-criterias-column
-                        include _grupo6
+                    include _grupo6
         #search-actions-column
           +button-send({size: "large", disabled: false})
                     

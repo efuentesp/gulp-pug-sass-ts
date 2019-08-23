@@ -1,8 +1,7 @@
 include /mixins/mixins
 
 .row
-    p Selecciona el origen de los ingresos .....
-.row
+    p Selecciona el origen de los ingresos del Cliente destinados a invertir
     +field-checks("origen-uno",
                 {
                     label: "",
@@ -10,12 +9,7 @@ include /mixins/mixins
                 {key: "SI", value:"Venta de Activos", color:"blue"},
                 {key: "NO", value:"Premios", color:"blue"},
                 {key: "N/A", value:"Prestamos", color:"blue"},
-                {key: "N/A", value:"Salario Anual", color:"blue"})
-.row
-    +field-checks("origen-dos",
-                {
-                    label: "",
-                },
+                {key: "N/A", value:"Salario Anual", color:"blue"},
                 {key: "SI", value:"Venta de Bienes", color:"blue"},
                 {key: "NO", value:"Herencia", color:"blue"},
                 {key: "N/A", value:"Patrimonio/Ahorro", color:"blue"},
