@@ -1,13 +1,24 @@
 mixin field-select(id, parms, ...items)
+  - var _input_id = id
+  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
-  - var _placeholder = parms.placeholder ? parms.placeholder : "-- Seleccione --"
-
-  .field
-    label= parms.label
-    label.select
-      select.select2(id=id
-                    name=id
-                    required=parms.required
-                    style=_style)
-        each item in items
-          option(value=item.key)= item.value
+  - var _input_max_size = "32"
+  - var _input_max_size_errmsg = "You can enter only " + _input_max_size + " characters."
+  .field(class=_class)
+    label(for=_input_id)= parms.label
+    if parms.required
+      span.pr-3.required *
+    else
+      span.pr-3
+    select.select2(id=id
+                  name=id
+                  required=parms.required
+                  style=_style
+                  disabled=parms.disabled
+                  data-parsley-trigger="keyup"
+                  data-parsley-maxlength=_input_max_size
+                  data-parsley-maxlength-message=_input_max_size_errmsg
+                  data-parsley-validation-threshold="10"
+    )
+      each item in items
+        option(value=item.key)= item.value
