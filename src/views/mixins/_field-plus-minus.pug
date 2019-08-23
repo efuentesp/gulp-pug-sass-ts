@@ -1,4 +1,5 @@
 mixin field-plus-minus(id, parms)
+  - var _field_id = "field_" + id
   - var _input_id = id
   - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
@@ -7,7 +8,7 @@ mixin field-plus-minus(id, parms)
   - var btn_plus_id = "btn_plus_" + id
   - var btn_minus_id = "btn_minus_" + id
   - var tag_list_id = "tag_list_" + id
-  .field(class=_class)
+  .field(id=_field_id class=_class)
     label(for=_input_id)= parms.label
     if parms.required
       span.required *
