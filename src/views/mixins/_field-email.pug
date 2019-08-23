@@ -1,7 +1,8 @@
 mixin field-email(id, parms)
+  - var _field_id = "field_" + id
   - var input_id = "input_" + id
   - var size_class = "is-" + (parms.size ? parms.size : "vertical")
-  .field
+  .field(id=_field_id)
     label= parms.label
     if parms.required
       span.required *

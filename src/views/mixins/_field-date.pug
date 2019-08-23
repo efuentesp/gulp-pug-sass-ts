@@ -1,9 +1,10 @@
 mixin field-date(id, parms)
+  - var _field_id = "field_" + id
   - var _input_id = id
   - var _btn_id = "btn_" + id
   - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
-  .field(class=_class)
+  .field(id=_field_id class=_class)
       label(for=_input_id)= parms.label
       if parms.required
         span.required *

@@ -1,26 +1,24 @@
 .quiz {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    overflow-x: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  overflow-x: auto;
 
-    .question {
-        text-align: left;
-        padding: 8px;
+  .question {
+    text-align: left;
+    padding: 8px;
 
-        span {
-            &.required {
-            padding-left: 3px;
-            color: $color-red-dark;
-            font-size: 1.5em;
-            }
-        }
+    span {
+      &.required {
+        padding-left: 3px;
+        color: $color-red-dark;
+        font-size: 1.5em;
+      }
     }
+  }
 
-    .answer {
-        text-align: center;
-        padding: 8px;
-    }
+  .answer {
+    text-align: center;
+    padding: 8px;
+  }
 }
-
-
