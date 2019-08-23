@@ -1,10 +1,14 @@
 mixin field-email(id, parms)
   - var _field_id = "field_" + id
   - var input_id = "input_" + id
+  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
   - var size_class = "is-" + (parms.size ? parms.size : "vertical")
-  .field(id=_field_id)
-    label= parms.label
-    if parms.required
-      span.required *
+  .field(id=_field_id class=_class)
+    .field-label.flex
+      label= parms.label
+      if parms.required
+        span.required *
+      else
+        span
     .control
       input.input(type="email" id=input_id class=size_class required=parms.required data-parsley-trigger="change")

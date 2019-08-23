@@ -8,12 +8,12 @@
     flex-flow: row;
     align-items: center;
 
-    .field-label {
-      // width: 5em;
-      &:after {
-        content: ":";
-      }
-    }
+    // .field-label {
+    //   // width: 5em;
+    //   &:after {
+    //     content: ":";
+    //   }
+    // }
 
     .radio_button {
       padding-right: 1.5em;

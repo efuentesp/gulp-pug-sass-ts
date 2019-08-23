@@ -3,11 +3,12 @@ mixin field-options(id, parms, ...items)
   - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   .field(id=_field_id class=_class)
-    label.field-label= parms.label
-    if parms.required
-      span.pr-5.required *
-    else
-      span.pr-5
+    .field-label.flex
+      label.field-label= parms.label
+      if parms.required
+        span.pr-5.required *
+      else
+        span.pr-5
     each item, index in items
       - var item_id = "radio_" + id + "_" + index
       label.radio_button= item.value

@@ -1,13 +1,21 @@
 mixin field-checks(id, parms, ...items)
   - var _field_id = "field_" + id
   - var check_name = "chk_" + id
+  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   - var check_name_arr = check_name + "[]"
-  .field(id=_field_id)
-    label(for=check_name)= parms.label
+
+  .field(id=_field_id class=_class)
+    .field-label.flex
+      label(for=check_name)= parms.label
+      if parms.required
+        span.required.pr-5 *
+      else
+        span.pr-5
     each item, index in items
       - var check_id = "chk_" + id + "_" + index
       - var class_color = "is_" + item.color
-      label.checkbox_input= item.value
+      label.checkbox_input.pr-5= item.value
         input(type="checkbox" name=check_name id=check_id value=item.key required=parms.required)
         if item.color
           span.checkmark.with_color(class=class_color)
