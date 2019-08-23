@@ -4,6 +4,7 @@ const vinylPaths = require("vinyl-paths");
 const pug = require("gulp-pug");
 const sass = require("gulp-sass");
 const cleanCSS = require("gulp-clean-css");
+const purgeCSS = require("gulp-purgecss");
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
 const autoprefixer = require("gulp-autoprefixer");
@@ -100,17 +101,41 @@ function webfonts() {
 }
 
 function concatVendorCss() {
+  return (
+    gulp
+      .src([
+        "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+        "./node_modules/tailwindcss/dist/tailwind.min.css",
+        // "./src/views/styles/vendors/jqgrid/ui.jqgrid.min.css",
+        "./src/views/styles/vendors/jqgrid/jqgrid.css",
+        "./node_modules/select2/dist/css/select2.min.css"
+      ])
+      // .pipe(
+      //   purgeCSS({
+      //     content: ["./dist/**/*.html"],
+      //     whitelistPatterns: [/select2/, /jqgrid/]
+      //   })
+      // )
+      .pipe(
+        autoprefixer({
+          overrideBrowserslist: ["last 2 versions"]
+        })
+      )
+      .pipe(concat("vendors.min.css"))
+      .pipe(gulp.dest("./dist/assets/css"))
+  );
+}
+
+function purgeCssIt() {
   return gulp
-    .src([
-      "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-      // "./node_modules/normalize.css/normalize.css",
-      "./node_modules/tailwindcss/dist/tailwind.min.css",
-      "./src/views/styles/vendors/jqgrid/ui.jqgrid.min.css",
-      // './src/views/styles/vendors/jqgrid/jqgrid.css',
-      "./node_modules/select2/dist/css/select2.min.css"
-    ])
-    .pipe(concat("vendors.min.css"))
-    .pipe(gulp.dest("./dist/assets/css"));
+    .src(["./dist/assets/css/vendors.min.css"])
+    .pipe(
+      purgeCSS({
+        content: ["./dist/**/*.html"],
+        whitelistPatterns: [/select2/, /jqgrid/]
+      })
+    )
+    .pipe(gulp.dest("./dist/assets/css/purged"));
 }
 
 function concatJQueryJs() {
@@ -165,6 +190,7 @@ exports.pugIt = pugIt;
 exports.typescriptIt = typescriptIt;
 exports.webfonts = webfonts;
 exports.concatVendorCss = concatVendorCss;
+exports.purgeCssIt = purgeCssIt;
 exports.concatJQueryJs = concatJQueryJs;
 exports.concatVendorJs = concatVendorJs;
 exports.watch = watch;
