@@ -2,4 +2,19 @@
   .row{
     display: flex;
   }
+
+  #field_origen-uno{
+    display: flex;
+    flex-wrap: wrap;
+    width: 34em;
+
+    .checkbox_input{
+      width: 15em;
+    }
+  }
+
+  #pregunta6_4{
+    padding-left: 0.8em;
+    padding-right: 2em;
+  }
 }
