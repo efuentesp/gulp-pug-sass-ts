@@ -1,26 +1,31 @@
 mixin field-select(id, parms, ...items)
   - var _field_id = "field_" + id
   - var _input_id = id
+  - var _select2_class_handler = "#select2-" + id + "-container"
+  - var _field_error_block = "field_error_block_" + id
+  - var _field_error_block_id = "#" + _field_error_block
   - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   - var _input_max_size = "32"
   - var _input_max_size_errmsg = "You can enter only " + _input_max_size + " characters."
   .field(id=_field_id class=_class)
     .field-label.flex
-    label(for=_input_id)= parms.label
-      if parms.required
-        span.pr-3.required *
-      else
-        span.pr-3
-    select.select2(id=id
-                  name=id
-                  required=parms.required
-                  style=_style
-                  disabled=parms.disabled
-                  data-parsley-trigger="keyup"
-                  data-parsley-maxlength=_input_max_size
-                  data-parsley-maxlength-message=_input_max_size_errmsg
-                  data-parsley-validation-threshold="10"
-    )
-      each item in items
-        option(value=item.key)= item.value
+      label(for=_input_id)= parms.label
+        if parms.required
+          span.pr-3.required *
+        else
+          span.pr-3
+    .field-control
+      select.select2(id=id
+                    name=id
+                    required=parms.required
+                    style=_style
+                    disabled=parms.disabled
+                    data-parsley-trigger="change"
+                    data-parsley-errors-container=_field_error_block_id
+      )
+        option
+        each item in items
+          option(value=item.key)= item.value
+      .field-error
+        div(id=_field_error_block)

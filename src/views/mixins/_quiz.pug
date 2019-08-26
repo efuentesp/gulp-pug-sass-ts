@@ -10,23 +10,32 @@ mixin quiz(id, params, questions, answers)
         tbody
             each question, index in questions
                 - var _answer_name = id + "_" + index
+                - var _field_error_block = "field_error_block_" + id + "_" + index
+                - var _field_error_block_id = "#" + _field_error_block
                 tr
                     td.question #{question.question}
                         if question.required
                             span.required *
+                        .field-error
+                            div(id=_field_error_block)
                     each answer in answers
                         td
                             if answer.type == "option"
                                 .answer
-                                    input(type="radio" name=_answer_name)
+                                    input(type="radio"
+                                          name=_answer_name
+                                          required=question.required
+                                          data-parsley-errors-container=_field_error_block_id
+                                    )
                                     span.checkmark
-
                             if answer.type == "select"
                                 - var _style_select = "width: " + (answer.size ? answer.size : "8em") + ";"
                                 .answer
                                     select.select2(
                                         name="quiz_select"
                                         style=_style_select
+                                        required=question.required
+                                        data-parsley-errors-container=_field_error_block_id
                                     )
                                         each option in answer.options
                                             option(value=option.key) #{option.value}
