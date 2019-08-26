@@ -13,8 +13,33 @@
     }
   }
 
+  #preguntas{
+    padding-left: 0.7em;
+  }
+
   #pregunta6_4{
     padding-left: 0.8em;
     padding-right: 2em;
+  }
+
+  #informativo{
+    margin-left: 30em;
+    width: 70em;
+
+    td{
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  #descripcionPerfil{
+    margin-left: 20em;
+    width: 65em;
+
+    td{
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
   }
 }

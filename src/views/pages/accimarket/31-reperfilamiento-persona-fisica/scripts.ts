@@ -43,22 +43,3 @@ $("#reperfilamiento-pf").accordion(ui_accordion_settings);
 ($("#horizonte-Inversion") as any).select2({
   minimumResultsForSearch: Infinity
 });
-
-var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-jQuery.each(arr, function(i, val) {
-  ($("#opcion2-" + val) as any).select2({
-    minimumResultsForSearch: Infinity
-  });
-
-  ($("#fercuencia2-" + val) as any).select2({
-    minimumResultsForSearch: Infinity
-  });
-
-  ($("#plazo2-" + val) as any).select2({
-    minimumResultsForSearch: Infinity
-  });
-
-  ($("#volumen2-" + val) as any).select2({
-    minimumResultsForSearch: Infinity
-  });
-});

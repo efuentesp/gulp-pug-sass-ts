@@ -1,7 +1,7 @@
 include /mixins/mixins
 
 .row
-    p 1. Para cada una de las siguiente preguntas
+    p#preguntas 1. Para cada una de las siguiente preguntas
 .row
     +field-select("edad",
                 {
@@ -27,31 +27,29 @@ include /mixins/mixins
                     size: "15em"
                 })
 .row
-    p 1.4 Actividad Profesional
-.row
-    +field-select("anterior",
-                {
-                    label: "Anterior",
-                    orientation: "horizontal",
-                    size: "15em"
-                })
-.row
-    +field-select("actual",
-                {
-                    label: "Actual",
-                    orientation: "horizontal",
-                    required: true,
-                    size: "15em"
-                })
-.row
-    +field-options("inversiones",
-                {
-                    label: "Relacionada con Inversiones",
-                    orientation: "horizontal",
-                    required: true
-                },
-                {key:"SI", value:"SI"},
-                {key:"NO", value:"NO"})
+    p.pt-3.pl-2 1.4 Actividad Profesional
+    +field-group("grupo_4")
+        +field-select("anterior",
+                    {
+                        label: "Anterior",
+                        orientation: "horizontal",
+                        size: "21em"
+                    })
+        +field-select("actual",
+                    {
+                        label: "Actual",
+                        orientation: "horizontal",
+                        required: true,
+                        size: "21em"
+                    })
+        +field-options("inversiones",
+                    {
+                        label: "Relacionada con Inversiones",
+                        orientation: "horizontal",
+                        required: true
+                    },
+                    {key:"SI", value:"SI"},
+                    {key:"NO", value:"NO"})
 .row
     +field-select("estrategia",
         {
