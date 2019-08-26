@@ -8,18 +8,18 @@
     flex-flow: row;
     align-items: center;
 
-    .field-label {
-      // width: 5em;
-      &:after {
-        content: ":";
-      }
-    }
+    // .field-label {
+    //   // width: 5em;
+    //   &:after {
+    //     content: ":";
+    //   }
+    // }
 
     .radio_button {
       padding-right: 1.5em;
     }
 
-    .input {
+    .field-control {
       margin-left: 8px;
     }
   }
@@ -39,7 +39,7 @@
     &.required {
       padding-left: 3px;
       color: $color-red-dark;
-      font-size: 1.5em;
+      font-size: 1em;
     }
   }
 
@@ -79,7 +79,7 @@
   }
 
   input {
-    height: 2.1em;
+    height: 28px;
   }
 
   p {
@@ -103,7 +103,7 @@
     }
   }
 
-  .control {
+  .field-control {
     box-sizing: border-box;
     clear: both;
     // font-size: 1rem;

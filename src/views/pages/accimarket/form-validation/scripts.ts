@@ -10,3 +10,26 @@
     alert("Form ready to be sent!");
     return false;
   });
+
+($("#payment") as any).select2({
+  placeholder: "--Seleccione--",
+  minimumResultsForSearch: Infinity
+});
+
+($("#payment2") as any).select2({
+  placeholder: "--Seleccione--",
+  minimumResultsForSearch: Infinity
+});
+
+$("#payment2").change(() => {
+  ($("#new-customer") as any).parsley().validate();
+});
+
+($("#payment3") as any).select2({
+  placeholder: "--Seleccione--",
+  minimumResultsForSearch: Infinity
+});
+
+$("#payment3").change(() => {
+  ($("#new-customer") as any).parsley().validate();
+});

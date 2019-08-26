@@ -5,17 +5,20 @@ mixin field-input(id, parms)
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   - var _input_max_size = "32"
   - var _input_max_size_errmsg = "You can enter only " + _input_max_size + " characters."
+
   .field(id=_field_id class=_class)
-    label(for=_input_id)= parms.label
-    if parms.required
-      span.required *
-    input.input(type="text"
-                id=_input_id
-                required=parms.required
-                style=_style
-                disabled=parms.disabled
-                data-parsley-trigger="keyup"
-                data-parsley-maxlength=_input_max_size
-                data-parsley-maxlength-message=_input_max_size_errmsg
-                data-parsley-validation-threshold="10"
-                )
+    .field-label.flex
+      label(for=_input_id)= parms.label
+      if parms.required
+        span.required *
+    .field-control
+      input.input(type="text"
+                  id=_input_id
+                  required=parms.required
+                  style=_style
+                  disabled=parms.disabled
+                  data-parsley-trigger="keyup"
+                  data-parsley-maxlength=_input_max_size
+                  data-parsley-maxlength-message=_input_max_size_errmsg
+                  data-parsley-validation-threshold="10"
+                  )
