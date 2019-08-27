@@ -7,7 +7,7 @@ block styles
   link(rel="stylesheet" href="/assets/css/accimarket/05-consulta-mercado-dinero-listado-ordenes-directo/styles.css")
 
 block content
-   .container
+   .content.p-4
       +tab-group("consultas_tab_group",
                   {id: "tab_movimientos", label: "Movimientos"},
                   {id: "tab_vencimientos", label: "Vencimientos"},
@@ -39,7 +39,7 @@ block content
                         +button-pdf({size: "large", disabled: false})
                         +button-xls({size: "large", disabled: false})
 
-      .row.has_border#search-results-section
+      .row.has_border.w-full.overflow-auto
          +grid("operaciones")
 
 block scripts

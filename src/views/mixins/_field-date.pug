@@ -8,7 +8,7 @@ mixin field-date(id, parms)
       label(for=_input_id)= parms.label
       if parms.required
         span.required *
-      .control.has-addons
+      .control.has-addons.flex
         input.input.is-small(id=_input_id
                              required=parms.required
                              style=_style

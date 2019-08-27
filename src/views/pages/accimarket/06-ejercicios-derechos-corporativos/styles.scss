@@ -1,4 +1,4 @@
-.container {
+.content {
   #tab_avisos_convocatoria_asamblea {
     display: flex;
 
@@ -14,10 +14,5 @@
       display: flex;
       justify-content: flex-end;
     }
-  }
-
-  #search-results-section {
-    width: 90%;
-    overflow: auto;
   }
 }
