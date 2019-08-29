@@ -19,12 +19,14 @@ mixin quiz(id, params, questions, answers)
                             span.required *
                         .field-error
                             div(id=_field_error_block)
-                    each answer in answers
+                    each answer, j in answers
+                        - var _answer_id = _answer_name + "_" + j
                         - var _answer_points = (answer.points ? answer.points : "1")
                         td
                             if answer.type == "option"
                                 .answer
                                     input(type="radio"
+                                          id=_answer_id
                                           name=_answer_name
                                           required=question.required
                                           data-parsley-errors-container=_field_error_block_id
@@ -35,6 +37,7 @@ mixin quiz(id, params, questions, answers)
                                 - var _style_select = "width: " + (answer.size ? answer.size : "8em") + ";"
                                 .answer
                                     select.select2(
+                                        id=_answer_id
                                         name="quiz_select"
                                         style=_style_select
                                         required=question.required
