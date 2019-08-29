@@ -12,13 +12,15 @@ mixin quiz(id, params, questions, answers)
                 - var _answer_name = id + "_" + index
                 - var _field_error_block = "field_error_block_" + id + "_" + index
                 - var _field_error_block_id = "#" + _field_error_block
+                - var _question_points = (question.points ? question.points : "1")
                 tr
-                    td.question #{question.question}
+                    td.question(data-question-points=_question_points) #{question.question}
                         if question.required
                             span.required *
                         .field-error
                             div(id=_field_error_block)
                     each answer in answers
+                        - var _answer_points = (answer.points ? answer.points : "1")
                         td
                             if answer.type == "option"
                                 .answer
@@ -26,6 +28,7 @@ mixin quiz(id, params, questions, answers)
                                           name=_answer_name
                                           required=question.required
                                           data-parsley-errors-container=_field_error_block_id
+                                          data-points=_answer_points
                                     )
                                     span.checkmark
                             if answer.type == "select"
@@ -36,6 +39,7 @@ mixin quiz(id, params, questions, answers)
                                         style=_style_select
                                         required=question.required
                                         data-parsley-errors-container=_field_error_block_id
+                                        data-answer-points=_answer_points
                                     )
                                         each option in answer.options
                                             option(value=option.key) #{option.value}
