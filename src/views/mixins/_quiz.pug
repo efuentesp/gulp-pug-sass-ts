@@ -22,6 +22,7 @@ mixin quiz(id, params, questions, answers)
                     each answer, j in answers
                         - var _answer_id = _answer_name + "_" + j
                         - var _answer_points = (answer.points ? answer.points : "1")
+                        - var _disabled = (answer.disabled ? answer.disabled : false)
                         td
                             if answer.type == "option"
                                 .answer
@@ -29,13 +30,13 @@ mixin quiz(id, params, questions, answers)
                                           id=_answer_id
                                           name=_answer_name
                                           required=question.required
+                                          disabled=_disabled
                                           data-parsley-errors-container=_field_error_block_id
                                           data-points=_answer_points
                                     )
                                     span.checkmark
                             if answer.type == "select"
                                 - var _style_select = "width: " + (answer.size ? answer.size : "8em") + ";"
-                                - var _disabled = (answer.disabled ? answer.disabled : false)
                                 .answer
                                     select.select2(
                                         id=_answer_id
