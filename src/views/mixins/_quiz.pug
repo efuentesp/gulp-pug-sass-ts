@@ -23,9 +23,9 @@ mixin quiz(id, params, questions, answers)
                             if answer.type == "option"
                                 .answer
                                     input(type="radio"
-                                          name=_answer_name
-                                          required=question.required
-                                          data-parsley-errors-container=_field_error_block_id
+                                        name=_answer_name
+                                        required=question.required
+                                        data-parsley-errors-container=_field_error_block_id
                                     )
                                     span.checkmark
                             if answer.type == "select"

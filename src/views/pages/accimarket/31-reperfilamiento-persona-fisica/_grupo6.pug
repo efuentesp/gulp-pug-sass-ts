@@ -2,18 +2,20 @@ include /mixins/mixins
 
 .row
     p#pregunta6_4 6.4 Selecciona el origen de los ingresos del Cliente destinados a invertir
-    +field-checks("origen-uno",
-                {
-                    label: "",
-                },
-                {key: "SI", value:"Venta de Activos", color:"blue"},
-                {key: "NO", value:"Premios", color:"blue"},
-                {key: "N/A", value:"Prestamos", color:"blue"},
-                {key: "N/A", value:"Salario Anual", color:"blue"},
-                {key: "SI", value:"Venta de Bienes", color:"blue"},
-                {key: "NO", value:"Herencia", color:"blue"},
-                {key: "N/A", value:"Patrimonio/Ahorro", color:"blue"},
-                {key: "N/A", value:"Traspaso/Cancelacion de cuentas de otro banco", color:"blue"})
+    +field-checks("origen_uno",
+        {
+            label: "",
+        },
+        {key: "1", value:"Venta de Activos", color:"blue"},
+        {key: "6", value:"Venta de Bienes", color:"blue"},
+        {key: "2", value:"Premios", color:"blue"},
+        {key: "7", value:"Herencia", color:"blue"},
+        {key: "3", value:"Prestamos", color:"blue"},
+        {key: "8", value:"Patrimonio/Ahorro", color:"blue"},
+        {key: "4", value:"Salario Anual", color:"blue"},
+        {key: "10", value:"Traspaso/Cancelacion de cuentas de otro banco", color:"blue"},
+        {key: "5", value:"Pago de Dividendos", color:"blue"},
+        {key: "9", value:"Otros", color:"blue"})
 .row
     +field-input("perfilDoc",
         {
