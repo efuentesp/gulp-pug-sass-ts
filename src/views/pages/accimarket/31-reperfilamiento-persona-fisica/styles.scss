@@ -1,43 +1,43 @@
-.container{
-  .row{
+.content {
+  .row {
     display: flex;
   }
 
-  #field_origen-uno{
+  #field_origen-uno {
     display: flex;
     flex-wrap: wrap;
     width: 34em;
 
-    .checkbox_input{
+    .checkbox_input {
       width: 15em;
     }
   }
 
-  #preguntas{
+  #preguntas {
     padding-left: 0.7em;
   }
 
-  #pregunta6_4{
+  #pregunta6_4 {
     padding-left: 0.8em;
     padding-right: 2em;
   }
 
-  #informativo{
+  #informativo {
     margin-left: 30em;
     width: 70em;
 
-    td{
+    td {
       padding-left: 1rem;
       padding-right: 1rem;
       padding-bottom: 1.5rem;
     }
   }
 
-  #descripcionPerfil{
+  #descripcionPerfil {
     margin-left: 20em;
     width: 65em;
 
-    td{
+    td {
       padding-right: 1rem;
       padding-left: 1rem;
     }

@@ -7,20 +7,19 @@ block styles
     link(rel="stylesheet", href="/assets/css/accimarket/31-reperfilamiento-persona-fisica/styles.css")
 
 block content
-    .container
-        .row
-            +accordion("reperfilamiento-pf")
-                +accordion-item("reperfilamiento-pf-item", "Perfilamiento de Personas Fisicas")
-                    form#criterios-busqueda(data-parsley-validate="")
-                        include _grupo1
-                        include _liquidaciones
-                        include _grupo2
-                        include _grupo3
-                        include _grupo4
-                        include _grupo5
-                        include _grupo6
-                        .row#sticky-action-bar
-                            +button-send({size: "large", disabled: false})
+    .content.p-4
+        +accordion("reperfilamiento-pf")
+            +accordion-item("reperfilamiento-pf-item", "Perfilamiento de Personas Fisicas")
+                form#criterios-busqueda(data-parsley-validate="")
+                    include _grupo1
+                    include _liquidaciones
+                    include _grupo2
+                    include _grupo3
+                    include _grupo4
+                    include _grupo5
+                    include _grupo6
+                    .row#sticky-action-bar
+                        +button-send({size: "large", disabled: false})
 
 block scripts
     script(src="/assets/scripts/accimarket/31-reperfilamiento-persona-fisica/scripts.js")

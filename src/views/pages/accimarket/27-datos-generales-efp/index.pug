@@ -1,0 +1,24 @@
+extends /layouts/html5
+
+block title
+   title 27.Datos Generales
+
+block styles
+   link(rel="stylesheet" href="/assets/css/accimarket/27-datos-generales-efp/styles.css")
+
+block content
+   .content.p-4
+      include _01_criterios_busqueda
+
+      .row
+         +tab-group("titular_cotitular_tabgroup",
+                     {id: "tab_titular_contrato", label: "Titular del Contrato"},
+                     {id: "tab_cotitular", label: "Cotitular2"}
+         )
+            +tab-item("tab_titular_contrato")
+               include _02_tab_titular_contrato
+            +tab-item("tab_cotitular")
+               include _03_tab_cotitular
+
+block scripts
+   script(src="/assets/scripts/accimarket/27-datos-generales-efp/scripts.js")

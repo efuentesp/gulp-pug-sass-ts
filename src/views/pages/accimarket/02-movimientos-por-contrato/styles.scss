@@ -1,4 +1,4 @@
-.container {
+.content {
   #search-criterias-column {
     display: flex;
     flex-wrap: wrap;
@@ -35,10 +35,5 @@
         width: 6em;
       }
     }
-  }
-
-  #search-results-section {
-    width: 99%;
-    overflow: auto;
   }
 }

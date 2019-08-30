@@ -7,7 +7,7 @@ block styles
    link(rel="stylesheet" href="/assets/css/accimarket/01-caucion-bursatil/styles.css")
 
 block content
-   .container
+   .content.p-4
       .row
          +accordion("criterios_busqueda_accordion")
             +accordion-item("criterios_busqueda_accordion_item")
@@ -26,7 +26,7 @@ block content
                      +button-pdf({size: "large", disabled: false})
                      +button-xls({size: "large", disabled: false})
 
-      .row.has_border#search-results-section
+      .row.has_border.w-full.overflow-auto
          +grid("contratos")
 
 block scripts

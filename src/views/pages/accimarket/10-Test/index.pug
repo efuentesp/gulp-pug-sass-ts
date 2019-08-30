@@ -7,7 +7,7 @@ block styles
    link(rel="stylesheet" href="/assets/css/accimarket/10-Test/styles.css")
 
 block content
-   .container
+   .content.p-4
       .row
          +accordion("criterios_busqueda_accordion")
             +accordion-item("criterios_busqueda_accordion_item")
@@ -26,8 +26,7 @@ block content
                      +button-pdf({size: "large", disabled: false})
                      +button-xls({size: "large", disabled: false})
 
-      .row.has_border#search-results-section
-         
+      .row.has_border.w-full.overflow-auto
 
 block scripts
    script(src="/assets/scripts/accimarket/10-Test/scripts.js")
