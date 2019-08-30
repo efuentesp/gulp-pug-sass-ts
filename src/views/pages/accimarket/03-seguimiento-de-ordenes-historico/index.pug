@@ -7,7 +7,7 @@ block styles
    link(rel="stylesheet", href="/assets/css/accimarket/03-seguimiento-de-ordenes-historico/styles.css")
 
 block content
-   .container#causion-bursatil
+   .content.p-4
       +accordion("criterios_busqueda_accordion")
          +accordion-item("criterios_busqueda_accordion_item")
             .row.is-search-form#search-criterias-column
@@ -37,7 +37,7 @@ block content
                   +button-clean({size: "large", disabled: false})
                   +button-pdf({size: "large", disabled: false})
                   +button-xls({size: "large", disabled: false})
-      .row.has_border#search-results-section
+      .row.has_border.w-full.overflow-auto
         +tab-group("seguimiento_ordenes_tab_group",
                    {id: "tab_item_intradia", label: "Intradia"},
                    {id: "tab_item_historicos", label: "Históricos"})

@@ -1,0 +1,30 @@
+extends /layouts/html5
+
+block title
+    title Movimientos por Contrato
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/22-movimientos-por-contrato/styles.css")
+
+block content
+    .content.principal
+        +tab-group("grupo_movi_contrato",
+            {id: "tab_movi_contr", label: "Movimientos por Contrato"},
+            {id: "tab_repor_agbc", label: "Reporte AGBC"},
+            {id: "tab_cartas", label: "Cartas Masivas"})
+            +tab-item("tab_movi_contr")
+                +accordion("criterios_acordion")
+                    +accordion-item("acordion_item")
+                        include _grupoBotones
+                        include _grupoPestanaDatos
+            .row.has_border.w-full.overflow-auto
+                +grid("grid_mov_contrato")            
+            +tab-item("tab_repor_agbc")
+                p Reporte AGBC
+            +tab-item("tab_cartas")
+                p Cartas Masivas
+
+block scripts
+    script(src="/assets/scripts/accimarket/22-movimientos-por-contrato/scripts.js")
+
+

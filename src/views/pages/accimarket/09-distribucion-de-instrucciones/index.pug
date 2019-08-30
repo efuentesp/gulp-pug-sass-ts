@@ -7,12 +7,12 @@ block styles
    link(rel="stylesheet" href="/assets/css/accimarket/09-distribucion-de-instrucciones/styles.css")
 
 block content
-  .container
+  .content.p-4
     include _sidebar
     .content#contenido
       .row#criterios-busqueda
         include _accordion
-      .row.has_border#resultados-busqueda
+      .row.has_border.w-full.overflow-auto
         +tab-group("tabs_resultados_busqueda",
                     {id: "tab_promocion", label: "Promoción"},
                     {id: "tab_administrativas", label: "Administrativas"},

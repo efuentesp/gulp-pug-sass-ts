@@ -1,6 +1,6 @@
 @import "src/views/styles/vars";
 
-.container {
+.content {
   display: flex;
 
   #barra-lateral {
@@ -36,9 +36,6 @@
           }
         }
       }
-    }
-
-    #resultados-busqueda {
     }
 
     &.is_sidebar_open {

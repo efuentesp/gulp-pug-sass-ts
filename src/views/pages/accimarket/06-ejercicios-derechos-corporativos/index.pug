@@ -7,7 +7,7 @@ block styles
   link(rel="stylesheet" href="/assets/css/accimarket/06-ejercicios-derechos-corporativos/styles.css")
 
 block content
-   .container
+   .content.p-4
       +tab-group("consultas_tab_group",
                   {id: "tab_avisos_convocatoria_asamblea", label: "Avisos Convocatoria Asamblea"},
                   {id: "tab_consultar_derechos_capital", label: "Consultar Derechos de Capital"},
@@ -33,7 +33,7 @@ block content
                .row#grid_toolbar
                   +button-pdf({size: "small", disabled: false})
                   +button-xls({size: "small", disabled: false})
-               .row#search-results-section
+               .row.has_border.w-full.overflow-auto
                   +grid("operaciones")
 
          +tab-item("tab_consultar_derechos_capital")

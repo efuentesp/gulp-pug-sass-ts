@@ -7,21 +7,21 @@ block styles
     link(rel="stylesheet" href="/assets/css/accimarket/ejemplo/styles.css")
 
 block content
-    .container
+    .content.p-4
         .row
             +accordion("busqueda")
                 +accordion-item("busqueda_item")
                     form.is-search-form#criterios-busqueda(data-parsley-validate="")
                         +field-group("fecha-group")
-                            +field-date("fechaInicial", 
+                            +field-date("fechaInicial",
                                 {
-                                    label: "Fecha Inicial", 
+                                    label: "Fecha Inicial",
                                     required: true,
                                     orientation: "horizontal"
                                 })
-                            +field-date("fechaFinal", 
+                            +field-date("fechaFinal",
                                 {
-                                    label: "Fecha Final", 
+                                    label: "Fecha Final",
                                     required: true,
                                     orientation: "horizontal"
                                 })
@@ -39,7 +39,7 @@ block content
                                 +button-clean({size: "large", disabled: false})
         .row
             p#textoInformativo Listado de Órdenes
-        .row.has_border#search-results-section
+        .row.has_border.w-full.overflow-auto
             +grid("ventas")
         .row
             +field-input("totalreg",
