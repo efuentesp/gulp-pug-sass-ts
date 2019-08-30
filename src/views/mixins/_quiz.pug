@@ -35,12 +35,14 @@ mixin quiz(id, params, questions, answers)
                                     span.checkmark
                             if answer.type == "select"
                                 - var _style_select = "width: " + (answer.size ? answer.size : "8em") + ";"
+                                - var _disabled = (answer.disabled ? answer.disabled : false)
                                 .answer
                                     select.select2(
                                         id=_answer_id
                                         name="quiz_select"
                                         style=_style_select
                                         required=question.required
+                                        disabled=_disabled
                                         data-parsley-errors-container=_field_error_block_id
                                         data-answer-points=_answer_points
                                     )
