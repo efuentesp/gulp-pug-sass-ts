@@ -1,0 +1,38 @@
+include /mixins/mixins
+
+form#cotitular2-form-observaciones(data-parsley-validate="")
+    +field-input("fecha_apertura",
+        {
+        label: "Fecha Apertura",
+        disabled: true,
+        orientation: "horizontal"
+        })
+    +field-input("sector",
+        {
+        label: "Sector",
+        size: "5em",
+        disabled: true,
+        orientation: "horizontal"
+        })
+    +field-input("envio_correspondencia",
+        {
+        label: "Envio Correspondencia",
+        size: "5em",
+        disabled: true,
+        orientation: "horizontal"
+        })
+    //- .row
+    //-     +field-input("carta_ejecucion",
+    //-         {
+    //-         label: "Carta Ejecución:",
+    //-         size: "5em",
+    //-         disabled: true,
+    //-         orientation: "horizontal"
+    //-         })
+    //-     +field-input("fecha_carta_ejecucion",
+    //-         {
+    //-         label: "Fecha:",
+    //-         size: "5em",
+    //-         disabled: true,
+    //-         orientation: "horizontal"
+    //-         })

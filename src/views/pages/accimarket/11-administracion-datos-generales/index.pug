@@ -1,0 +1,22 @@
+extends /layouts/html5
+
+block title
+    title .::11.Administracion - Datos Generales
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/11-administracion-datos-generales/styles.css")
+
+block content
+    .container
+        .row
+            +accordion("administracion_datos_generales_accordion")
+                +accordion-item("administracion_datos_generales_item")
+                    form#datos-generales-header(data-parsley-validate="")
+                        include header-group-1
+                    include main-content
+                    //- include cotitular2-clasificacion-contrato
+                    include tab-cotitular2/cotitular2-clasificacion-contrato
+                    p OBSERVACIONES
+                    include cotitular2-observaciones
+block scripts
+    script(src="/assets/scripts/accimarket/11-administracion-datos-generales/scripts.js")
