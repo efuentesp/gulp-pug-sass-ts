@@ -75,9 +75,9 @@ function typescriptIt() {
       .pipe(sourcemaps.init({ loadMaps: true }))
       .pipe(
         typescript({
-          target: "ES3",
-          module: "none",
-          removeComments: true
+          target: "ES5",
+          module: "AMD",
+          removeComments: false
         })
       )
       // .pipe(uglify())
