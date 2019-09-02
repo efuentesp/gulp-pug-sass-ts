@@ -75,9 +75,9 @@ function typescriptIt() {
       .pipe(sourcemaps.init({ loadMaps: true }))
       .pipe(
         typescript({
-          target: "ES3",
-          module: "none",
-          removeComments: true
+          target: "ES5",
+          module: "AMD",
+          removeComments: false
         })
       )
       // .pipe(uglify())
@@ -106,9 +106,10 @@ function concatVendorCss() {
       .src([
         "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
         "./node_modules/tailwindcss/dist/tailwind.min.css",
-        // "./src/views/styles/vendors/jqgrid/ui.jqgrid.min.css",
-        "./src/views/styles/vendors/jqgrid/jqgrid.css",
+        "./src/views/styles/vendors/jqgrid/ui.jqgrid.min.css",
+        // "./src/views/styles/vendors/jqgrid/jqgrid.css",
         "./node_modules/select2/dist/css/select2.min.css"
+        // "./node_modules/jquery-file-upload/css/uploadfile.css"
       ])
       // .pipe(
       //   purgeCSS({
@@ -121,7 +122,7 @@ function concatVendorCss() {
           overrideBrowserslist: ["last 2 versions"]
         })
       )
-      .pipe(concat("vendors.min.css"))
+      .pipe(concat("libs.min.css"))
       .pipe(gulp.dest("./dist/assets/css"))
   );
 }
@@ -156,8 +157,9 @@ function concatVendorJs() {
       "./node_modules/select2/dist/js/select2.min.js",
       "./node_modules/select2/dist/js/i18n/es.js",
       "./src/views/pages/scripts/vendors/jqgrid/jqgrid.js"
+      // "./node_modules/jquery-file-upload/js/jquery.uploadfile.min.js"
     ])
-    .pipe(concat("vendors.min.js"))
+    .pipe(concat("libs.min.js"))
     .pipe(gulp.dest("./dist/assets/scripts"));
 }
 

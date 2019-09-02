@@ -1,3 +1,5 @@
+/// <reference path="../../typings/index.d.ts" />
+
 $("#reperfilamiento-pf").accordion(ui_accordion_settings);
 
 ($("#personaPerfilar") as any).select2({

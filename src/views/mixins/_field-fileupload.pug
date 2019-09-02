@@ -1,0 +1,22 @@
+mixin field-fileupload(id, parms)
+  - var _field_id = "field_" + id
+  - var _input_id = id
+  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _style = "width: " + (parms.size ? parms.size : "32em") + ";"
+  - var _file_extension = (parms.file_extension ? parms.file_extension : "image/*,.pdf") // ".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  - var _multiple = (parms.multiple ? parms.multiple : false)
+
+  .field(id=_field_id class=_class)
+    .field-label.flex
+      label(for=_input_id)= parms.label
+      if parms.required
+        span.required *
+    .field-control
+      input(type="file"
+                  id=_input_id
+                  name=_input_id
+                  required=parms.required
+                  style=_style
+                  disabled=parms.disabled
+                  accept=_file_extension
+                  )

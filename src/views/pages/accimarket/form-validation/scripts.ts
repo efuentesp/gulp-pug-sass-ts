@@ -1,3 +1,5 @@
+console.log("form-validation");
+
 ($("#new-customer") as any)
   .parsley()
   .on("field:validated", () => {

@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "jqgrid": "registry:dt/jqgrid#1.3.0+20161128184045"
+  }
+}

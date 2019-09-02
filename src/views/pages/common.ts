@@ -1,9 +1,11 @@
+/// <reference path="typings/index.d.ts" />
+
 console.log("common.ts");
 
 const REST_URL = "http://localhost:3000";
 
 interface UrlParams {
-  [key: string]: any
+  [key: string]: any;
 }
 
 // Query UI DatePicker settings
@@ -74,7 +76,7 @@ $(".sidebar_button").click(() => {
     $(".sidebar_content").removeClass("is_open");
     $(".sidebar_button").removeClass("is_open");
     $(".content").removeClass("is_sidebar_open");
-    $
+    $;
   } else {
     $(".sidebar_content").addClass("is_open");
     $(".sidebar_button").addClass("is_open");
@@ -103,8 +105,8 @@ const rpc_findAll = (resource: string, params: any, cb: Function) => {
   // TODO: Implementar versión con POST
 };
 
-($('select[name=quiz_select]') as any).select2({
-	minimumResultsForSearch: Infinity
+($("select[name=quiz_select]") as any).select2({
+  minimumResultsForSearch: Infinity
 });
 
 const http_findAll = rest_findAll;
