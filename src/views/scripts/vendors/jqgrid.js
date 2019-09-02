@@ -4603,7 +4603,7 @@
           }
           $("td#" + pgid + "_" + ts.p.pagerpos, "#" + pgcnt).append(pgl);
           $(".ui-paging-pager > tbody > tr").append(
-            "<td id='wilsonDiv' onclick='colapsarTodo()'><span class='collapsAll'><img src='css/images/closeFolder.jpg'></span></td"
+            "<td id='wilsonDiv' onclick='colapsarTodo()'><span class='collapsAll'><img src='/assets/images/closeFolder.jpg'></span></td"
           );
           tdw = $("#gbox_" + $.jgrid.jqID(ts.p.id)).css("font-size") || "11px";
           $("#gbox_" + $.jgrid.jqID(ts.p.id)).append(

@@ -1,40 +1,37 @@
-.ui-jqgrid .ui-jqgrid-labels th.ui-th-column:hover {
+.ui-widget.ui-widget-content {
+  border: 1px solid;
+  border-color: white rgb(74, 74, 74) rgb(74, 74, 74) rgb(74, 74, 74);
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+  border: 1px solid rgb(132, 130, 130);
+  background: #6eac2c url(/assets/images/ui-bg_gloss-wave_50_6eac2c_500x100.png)
+    50% 50% repeat-x;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.ui-jqgrid tr.jqgroup {
   font-weight: bold;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(246, 246, 246, 1) 47%,
-    rgba(237, 237, 237, 1) 100%
-  );
-}
-.selected-group {
-  border-style: solid !important;
-  border-width: 5px;
-  border-color: #009dff #bdbdbd #009dff #bdbdbd !important;
+  outline-style: none;
+  background: rgb(204, 204, 204);
 }
 
-.hoverContrato:hover {
-  background: #a8ddf5 !important;
-}
-
-/* Para los titulos de la tabla*/
-th {
-  color: #000064 !important;
-}
-
-/* Para los titulos que se despliegan y repliegan*/
-.list2ghead_0 td {
-  border-right: 0px !important;
-}
-
-/* Para los TD de la fila TR oscuros*/
-.myAltRowClassOdd td {
-  border-right-width: 1px !important;
-  border-right-color: blue !important;
-}
-
-/* Para los TD de la fila TR claros*/
-.myAltRowClassEven td {
-  border-right-width: 1px !important;
-  border-right-color: blue !important;
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+  border: 1px solid rgb(132, 130, 130);
+  background: #009dff 50% 50% repeat-x;
+  color: black;
 }
