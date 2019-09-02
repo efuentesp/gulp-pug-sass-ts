@@ -1,34 +1,15 @@
 /// <reference path="../../typings/index.d.ts" />
 
-console.log("00-distribucion-de-instrucciones");
+import { ui_accordion_settings } from "../../utils/ui-accordion";
+import { ui_datepicker_settings } from "../../utils/ui-datepicker";
+import { REST_URL, UrlParams, http_findAll } from "../../utils/http";
+import { fillJqGrid } from "../../utils/jqgrid";
+
+console.log("09-distribucion-de-instrucciones");
 
 $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
 
 $("#tabs_resultados_busqueda").tabs();
-
-($("#transaccion") as any).select2({
-  minimumResultsForSearch: Infinity
-});
-($("#institucion_financiera") as any).select2({
-  minimumResultsForSearch: Infinity
-});
-($("#dispersion") as any).select2({
-  minimumResultsForSearch: Infinity
-});
-($("#subsistema") as any).select2({
-  minimumResultsForSearch: Infinity
-});
-($("#comparacion") as any).select2({
-  minimumResultsForSearch: Infinity
-});
-($("#sucursal") as any).select2({
-  minimumResultsForSearch: Infinity
-});
-
-($("#contrato") as any).select2({
-  minimumResultsForSearch: Infinity,
-  dropdownParent: $("#tag_list_contrato")
-});
 
 $("#table_grid_promocion").jqGrid({
   url: "http://localhost:3000/fideicomiso",

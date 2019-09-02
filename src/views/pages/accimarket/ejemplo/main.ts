@@ -1,14 +1,15 @@
 /// <reference path="../../typings/index.d.ts" />
 
+import { ui_accordion_settings } from "../../utils/ui-accordion";
+import { ui_datepicker_settings } from "../../utils/ui-datepicker";
+import { REST_URL, UrlParams, http_findAll } from "../../utils/http";
+import { fillJqGrid } from "../../utils/jqgrid";
+
 $("#busqueda").accordion(ui_accordion_settings);
 
 $("#fechaInicial").datepicker(ui_datepicker_settings);
 
 $("#fechaFinal").datepicker(ui_datepicker_settings);
-
-($("#lineaNegocio") as any).select2({
-  minimumResultsForSearch: Infinity
-});
 
 $("#table_ventas").jqGrid({
   datatype: "local",

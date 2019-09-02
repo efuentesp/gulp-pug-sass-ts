@@ -2,9 +2,12 @@ extends /layouts/html5
 
 block title
     title Ejemplo
+    - var page = "ejemplo"
+    - var styles = "/assets/css/accimarket/" + page + "/styles.css"
+    - var scripts = "/assets/scripts/accimarket/" + page +"/main.js"
 
 block styles
-    link(rel="stylesheet" href="/assets/css/accimarket/ejemplo/styles.css")
+    link(rel="stylesheet" href=styles)
 
 block content
     .content.p-4
@@ -50,4 +53,4 @@ block content
                         })
 
 block scripts
-    script(src="/assets/scripts/accimarket/ejemplo/scripts.js")
+   script(data-main=scripts src="/assets/scripts/require.js")

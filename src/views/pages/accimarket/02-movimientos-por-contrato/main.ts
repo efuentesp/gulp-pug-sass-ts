@@ -1,14 +1,22 @@
 /// <reference path="../../typings/index.d.ts" />
 
-console.log("03-seguimiento-de-ordenes-historico");
+import { ui_accordion_settings } from "../../utils/ui-accordion";
+import { ui_datepicker_settings } from "../../utils/ui-datepicker";
+import { REST_URL, UrlParams, http_findAll } from "../../utils/http";
+import { fillJqGrid } from "../../utils/jqgrid";
+
+console.log("02-movimientos-por-contrato");
 
 $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
 
-$("#date").datepicker(ui_datepicker_settings);
+$("#fecha_inicial").datepicker(ui_datepicker_settings);
 
-$("#seguimiento_ordenes_tab_group").tabs();
+$("#fecha_final").datepicker(ui_datepicker_settings);
 
-$("#table_ordenes_historicas").jqGrid({
+$("#movimientos_por_contrato_tab_group").tabs();
+$("#datos_contrato_movimientos_tab_group").tabs();
+
+$("#table_movimientos_contrato").jqGrid({
   url: "http://localhost:3000/fideicomiso",
   datatype: "json",
   mtype: "GET",
@@ -42,7 +50,7 @@ $("#table_ordenes_historicas").jqGrid({
     { name: "adicionalesnombrenotario", width: 90 },
     { name: "adicionalesnonotario", width: 90 }
   ],
-  pager: "#pager_ordenes_historicas",
+  pager: "#pager_movimientos_contrato",
   rowNum: 10,
   rowList: [10, 20, 30],
   sortname: "generalesnumero",
@@ -50,5 +58,6 @@ $("#table_ordenes_historicas").jqGrid({
   viewrecords: true,
   gridview: true,
   autoencode: true,
-  caption: ""
+  caption: "",
+  shrinkToFit: false
 });

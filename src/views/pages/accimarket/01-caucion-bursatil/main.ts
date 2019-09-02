@@ -1,5 +1,10 @@
 /// <reference path="../../typings/index.d.ts" />
 
+import { ui_accordion_settings } from "../../utils/ui-accordion";
+import { ui_datepicker_settings } from "../../utils/ui-datepicker";
+import { REST_URL, UrlParams, http_findAll } from "../../utils/http";
+import { fillJqGrid } from "../../utils/jqgrid";
+
 console.log("01-caucion-bursatil");
 
 $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
@@ -68,10 +73,7 @@ $("#table_contratos").jqGrid({
 });
 
 // Form validations
-let contratos_params: UrlParams = {
-  // cliente: "CLIENTE 01",
-  // contrato: "CONTRATO 01"
-};
+let contratos_params: UrlParams = {};
 
 http_findAll("contratos", contratos_params, payload => {
   fillJqGrid("#table_contratos", payload);

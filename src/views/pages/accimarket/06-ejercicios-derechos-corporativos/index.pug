@@ -2,9 +2,12 @@ extends /layouts/html5
 
 block title
    title 06.Ejercicio de Derechos Corporativos
+   - var page = "06-ejercicios-derechos-corporativos"
+   - var styles = "/assets/css/accimarket/" + page + "/styles.css"
+   - var scripts = "/assets/scripts/accimarket/" + page +"/main.js"
 
 block styles
-  link(rel="stylesheet" href="/assets/css/accimarket/06-ejercicios-derechos-corporativos/styles.css")
+  link(rel="stylesheet" href=styles)
 
 block content
    .content.p-4
@@ -44,4 +47,4 @@ block content
             p Consulta Liquidación de Derechos
 
 block scripts
-   script(src="/assets/scripts/accimarket/06-ejercicios-derechos-corporativos/scripts.js")
+   script(data-main=scripts src="/assets/scripts/require.js")

@@ -1,12 +1,15 @@
 /// <reference path="../../typings/index.d.ts" />
 
-console.log("04-consulta-mercado-dinero");
+import { ui_accordion_settings } from "../../utils/ui-accordion";
+import { ui_datepicker_settings } from "../../utils/ui-datepicker";
+import { REST_URL, UrlParams, http_findAll } from "../../utils/http";
+import { fillJqGrid } from "../../utils/jqgrid";
 
-$("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
+console.log("05-consulta-mercado-dinero-listado-ordenes-directo");
 
-$("#resultados_tab_group").tabs();
+$("#consultas_tab_group").tabs();
 
-$("#table_contratos").jqGrid({
+$("#table_operaciones").jqGrid({
   datatype: "local",
   height: 250,
   colNames: [

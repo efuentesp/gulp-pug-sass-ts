@@ -156,10 +156,17 @@ function concatVendorJs() {
       "./node_modules/parsleyjs/dist/i18n/es.js",
       "./node_modules/select2/dist/js/select2.min.js",
       "./node_modules/select2/dist/js/i18n/es.js",
-      "./src/views/pages/scripts/vendors/jqgrid/jqgrid.js"
+      "./src/views/scripts/vendors/jqgrid.js"
       // "./node_modules/jquery-file-upload/js/jquery.uploadfile.min.js"
     ])
     .pipe(concat("libs.min.js"))
+    .pipe(gulp.dest("./dist/assets/scripts"));
+}
+
+function requireJs() {
+  return gulp
+    .src(["./node_modules/requirejs/require.js"])
+    .pipe(concat("require.js"))
     .pipe(gulp.dest("./dist/assets/scripts"));
 }
 
@@ -195,6 +202,7 @@ exports.concatVendorCss = concatVendorCss;
 exports.purgeCssIt = purgeCssIt;
 exports.concatJQueryJs = concatJQueryJs;
 exports.concatVendorJs = concatVendorJs;
+exports.requireJs = requireJs;
 exports.watch = watch;
 
 exports.default = gulp.series(
@@ -203,7 +211,8 @@ exports.default = gulp.series(
   webfonts,
   concatVendorCss,
   concatJQueryJs,
-  concatVendorJs
+  concatVendorJs,
+  requireJs
 );
 
 exports.dev = gulp.series(
@@ -213,5 +222,6 @@ exports.dev = gulp.series(
   concatVendorCss,
   concatJQueryJs,
   concatVendorJs,
+  requireJs,
   watch
 );

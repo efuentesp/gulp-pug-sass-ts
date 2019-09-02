@@ -1,5 +1,10 @@
 console.log("form-validation");
 
+import { ui_accordion_settings } from "../../utils/ui-accordion";
+import { ui_datepicker_settings } from "../../utils/ui-datepicker";
+import { REST_URL, UrlParams, http_findAll } from "../../utils/http";
+import { fillJqGrid } from "../../utils/jqgrid";
+
 ($("#new-customer") as any)
   .parsley()
   .on("field:validated", () => {
@@ -13,23 +18,8 @@ console.log("form-validation");
     return false;
   });
 
-($("#payment") as any).select2({
-  placeholder: "--Seleccione--",
-  minimumResultsForSearch: Infinity
-});
-
-($("#payment2") as any).select2({
-  placeholder: "--Seleccione--",
-  minimumResultsForSearch: Infinity
-});
-
 $("#payment2").change(() => {
   ($("#new-customer") as any).parsley().validate();
-});
-
-($("#payment3") as any).select2({
-  placeholder: "--Seleccione--",
-  minimumResultsForSearch: Infinity
 });
 
 $("#payment3").change(() => {

@@ -2,9 +2,12 @@ extends /layouts/html5
 
 block title
    title 03. Seguimiento de Órdenes - Histórico
+   - var page = "03-seguimiento-de-ordenes-historico"
+   - var styles = "/assets/css/accimarket/" + page + "/styles.css"
+   - var scripts = "/assets/scripts/accimarket/" + page +"/main.js"
 
 block styles
-   link(rel="stylesheet", href="/assets/css/accimarket/03-seguimiento-de-ordenes-historico/styles.css")
+   link(rel="stylesheet", href=styles)
 
 block content
    .content.p-4
@@ -47,4 +50,4 @@ block content
             +grid("ordenes_historicas")
 
 block scripts
-   script(src="/assets/scripts/accimarket/03-seguimiento-de-ordenes-historico/scripts.js")
+   script(data-main=scripts src="/assets/scripts/require.js")

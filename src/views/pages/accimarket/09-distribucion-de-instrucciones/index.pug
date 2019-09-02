@@ -2,9 +2,12 @@ extends /layouts/html5
 
 block title
    title 00. Distribución de Instrucciones
+   - var page = "09-distribucion-de-instrucciones"
+   - var styles = "/assets/css/accimarket/" + page + "/styles.css"
+   - var scripts = "/assets/scripts/accimarket/" + page +"/main.js"
 
 block styles
-   link(rel="stylesheet" href="/assets/css/accimarket/09-distribucion-de-instrucciones/styles.css")
+   link(rel="stylesheet" href=styles)
 
 block content
   .content.p-4
@@ -24,4 +27,4 @@ block content
           +tab-item("tab_fiduciario")
             +grid("grid_fiduciario")
 block scripts
-   script(src="/assets/scripts/accimarket/09-distribucion-de-instrucciones/scripts.js")
+   script(data-main=scripts src="/assets/scripts/require.js")

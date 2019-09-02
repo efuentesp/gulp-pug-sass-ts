@@ -2,9 +2,12 @@ extends /layouts/html5
 
 block title
    title 01.Causión Bursátil
+   - var page = "01-caucion-bursatil"
+   - var styles = "/assets/css/accimarket/" + page + "/styles.css"
+   - var scripts = "/assets/scripts/accimarket/" + page +"/main.js"
 
 block styles
-   link(rel="stylesheet" href="/assets/css/accimarket/01-caucion-bursatil/styles.css")
+   link(rel="stylesheet" href=styles)
 
 block content
    .content.p-4
@@ -30,4 +33,4 @@ block content
          +grid("contratos")
 
 block scripts
-   script(src="/assets/scripts/accimarket/01-caucion-bursatil/scripts.js")
+   script(data-main=scripts src="/assets/scripts/require.js")
