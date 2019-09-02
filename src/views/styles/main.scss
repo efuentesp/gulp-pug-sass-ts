@@ -7,7 +7,6 @@
 @import "atoms/_i.scss";
 @import "atoms/_button.scss";
 @import "atoms/_radio.scss";
-// @import "atoms/_select.scss";
 @import "atoms/_select2.scss";
 @import "atoms/_checkbox.scss";
 @import "atoms/_img.scss";
@@ -28,3 +27,5 @@
 @import "molecules/_form.scss";
 @import "molecules/_field.scss";
 @import "molecules/_quiz.scss";
+
+@import "organisms/jqgrid.scss";

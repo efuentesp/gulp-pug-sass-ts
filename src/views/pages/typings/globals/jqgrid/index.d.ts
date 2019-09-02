@@ -115,6 +115,10 @@ interface JQueryJqGridColumn {
    * Set the initial width of the column, in pixels. This value currently can not be set as percentage
    */
   width?: number;
+
+  formatoptions?: any;
+  summaryType?: string;
+  sorttype?: string;
 }
 
 interface IJqGridJsonReader {
@@ -360,7 +364,12 @@ interface JQueryJqGridOptions {
 
   grouping?: boolean;
   groupingView?: any;
+  pgtext?: string;
+  scrollable?: boolean;
+  sortable?: boolean;
+  toppager?: boolean;
   loadComplete?: () => void;
+  onSortCol?: (index: any, columnIndex: any, sortOrder: any) => string;
 }
 
 interface JQueryJqGridStatic {
