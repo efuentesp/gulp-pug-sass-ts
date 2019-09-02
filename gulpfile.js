@@ -3,6 +3,8 @@ const del = require("del");
 const vinylPaths = require("vinyl-paths");
 const pug = require("gulp-pug");
 const sass = require("gulp-sass");
+const postcss = require("gulp-postcss");
+const tailwindcss = require("tailwindcss");
 const cleanCSS = require("gulp-clean-css");
 const purgeCSS = require("gulp-purgecss");
 const concat = require("gulp-concat");
@@ -100,6 +102,16 @@ function webfonts() {
     .pipe(gulp.dest("./dist/assets/webfonts"));
 }
 
+function tailwindIt() {
+  return (
+    gulp
+      .src("./src/views/styles/tailwind.css")
+      .pipe(postcss([tailwindcss("./tailwind.js"), require("autoprefixer")]))
+      // .pipe(sass().on("error", sass.logError))
+      .pipe(gulp.dest("./dist/assets/css"))
+  );
+}
+
 function concatVendorCss() {
   return (
     gulp
@@ -194,6 +206,7 @@ function watch() {
 
 exports.clean = clean;
 exports.imageminIt = imageminIt;
+exports.tailwindIt = tailwindIt;
 exports.sassIt = sassIt;
 exports.pugIt = pugIt;
 exports.typescriptIt = typescriptIt;
@@ -209,6 +222,7 @@ exports.default = gulp.series(
   clean,
   gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
   webfonts,
+  tailwindIt,
   concatVendorCss,
   concatJQueryJs,
   concatVendorJs,
@@ -219,6 +233,7 @@ exports.dev = gulp.series(
   clean,
   gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
   webfonts,
+  tailwindIt,
   concatVendorCss,
   concatJQueryJs,
   concatVendorJs,
