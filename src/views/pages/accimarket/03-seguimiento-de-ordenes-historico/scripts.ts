@@ -1,3 +1,5 @@
+/// <reference path="../../typings/index.d.ts" />
+
 console.log("03-seguimiento-de-ordenes-historico");
 
 $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);

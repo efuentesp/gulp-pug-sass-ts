@@ -1,0 +1,23 @@
+extends /layouts/html5
+
+block title
+    title 27.Datos
+
+block content
+    .content.p-4
+        include _criterios_busqueda
+
+        .row
+            +tab-group("titular_cotitular_tabgroup",
+                {id: "tab_titular_contrato", label: "TITULAR DEL CONTRATO"},
+                {id: "tab_cotitular", label: "COTITULAR 2"}
+            )
+                +tab-item("tab_titular_contrato")
+                    include _tab_titular_contrato
+                +tab-item("tab_cotitular")
+                    include _tab_cotitular2
+
+block scripts
+    script(src="/assets/scripts/accimarket/27-administracion-datos-generales/scripts.js")
+    script(src="/assets/scripts/accimarket/27-administracion-datos-generales/grids-cotitular2.js")
+    script(src="/assets/scripts/accimarket/27-administracion-datos-generales/grids-titular-contrato.js")

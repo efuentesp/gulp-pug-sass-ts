@@ -1,3 +1,5 @@
+/// <reference path="../../typings/index.d.ts" />
+
 console.log("27-datos-generales-efp");
 
 $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);

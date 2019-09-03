@@ -1,0 +1,61 @@
+include /mixins/mixins
+
+
+form.flex.flex-wrap.justify-between(data-parsley-validate="")
+    .campos-observaciones
+        .row.flex.flex-wrap
+            +field-input("text_area_observaciones",
+                { size: "35em", disabled: true, orientation: "horizontal" }
+            )
+            +field-input("fecha_apertura",
+                { label: "Fecha Apertura", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+            +field-input("monto_inicial",
+                { label: "Monto Inicial", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+        .row.flex.flex-wrap
+            +field-input("sector",
+                { label: "Sector", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+            +field-input("residencia",
+                { label: "Residencia", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+        .row.flex.flex-wrap
+            +field-input("envio_correspondencia",
+                { label: "Envio Correspondencia", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+            +field-input("tipo_cuenta",
+                { label: "Tipo Cuenta", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+        .row.flex.flex-wrap
+            p Comisiones/Impuestos*
+            +field-input("manejo_cuenta",
+                { label: "Manejo Cuenta", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+        .row.flex.flex-wrap
+            +field-input("custodia_admon",
+                { label: "Custodia y Admon*", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+            +field-input("lim_max_operacion",
+                { label: "Lim.Máx. de Operación", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+        .row.flex.flex-wrap
+            +field-input("isr_mdo_din",
+                { label: "ISR Mdo Din*", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+            +field-input("fecha_ult_mov",
+                { label: "Fecha últ Mov", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+        .row.flex.flex-wrap
+            +field-input("porcentaje_acum_isr",
+                { label: "Porcentaje Acum. ISR", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+            +field-input("porcentaje_acum_ide",
+                { label: "Porcentaje de Acum. IDE", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+        .row.flex.flex-wrap
+            +field-input("imprime_estado_cuenta",
+                { label: "Imprime Estado de Cuenta", size: "4em", disabled: true, orientation: "horizontal" }
+            )
+
+
