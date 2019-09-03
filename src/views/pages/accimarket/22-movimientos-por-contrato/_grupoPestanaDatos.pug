@@ -4,96 +4,101 @@ include /mixins/mixins
     {id: "tab_datos", label: "Datos del Contrato"},
     {id: "tab_filtro", label: "Filtro de movimientos"})
     +tab-item("tab_datos")
-        +field-input("cliente",
-            {
-                label: "Cliente:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
-        +field-input("digito",
-            {
-                label: "Dígito:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
-        +field-input("digitoVer",
-            {
-                label: "Dígito Verif:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
-        +field-input("perfil",
-            {
-                label: "Perfil:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
-        +field-input("libro",
-            {
-                label: "Libro:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
-        +field-input("status",
-            {
-                label: "Status:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
-        +field-input("area",
-            {
-                label: "Area:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
-        +field-input("division",
-            {
-                label: "División:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
-        +field-input("direccion",
-            {
-                label: "Dirección:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
-        +field-input("region",
-            {
-                label: "Región:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
-        +field-input("sucursal",
-            {
-                label: "Sucursal:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
-        +field-input("zona",
-            {
-                label: "Zona:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
-        +field-input("gerencia",
-            {
-                label: "Gerencia:",
-                size: "10em",
-                disabled: true,
-                orientation: "horizontal"
-            })
+        .row
+            +field-input("cliente",
+                {
+                    label: "Cliente:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
+        .row
+            +field-input("digito",
+                {
+                    label: "Dígito:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
+            +field-input("digitoVer",
+                {
+                    label: "Dígito Verif:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
+        .row
+            +field-input("perfil",
+                {
+                    label: "Perfil:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
+            +field-input("libro",
+                {
+                    label: "Libro:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
+        .row
+            +field-input("status",
+                {
+                    label: "Status:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
+            +field-input("area",
+                {
+                    label: "Area:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
+            +field-input("division",
+                {
+                    label: "División:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
+            +field-input("direccion",
+                {
+                    label: "Dirección:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
+        .row
+            +field-input("region",
+                {
+                    label: "Región:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
+            +field-input("sucursal",
+                {
+                    label: "Sucursal:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
+            +field-input("zona",
+                {
+                    label: "Zona:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
+            +field-input("gerencia",
+                {
+                    label: "Gerencia:",
+                    size: "10em",
+                    disabled: true,
+                    orientation: "horizontal"
+                })
     +tab-item("tab_filtro")
         p Reporte AGBC

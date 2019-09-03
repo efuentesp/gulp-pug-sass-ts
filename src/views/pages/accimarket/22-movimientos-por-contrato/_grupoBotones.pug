@@ -1,42 +1,44 @@
 include /mixins/mixins
 
-+field-input("contrato",
-    {
-        label: "Contrato:",
-        required: true,
-        size: "11em",
-        orientation: "horizontal"
-    })
-+field-input("fechaI",
-    {
-        label: "Fecha Inicial:",
-        required: true,
-        size: "11em",
-        orientation: "horizontal"
-    })
-+field-input("fechaF",
-    {
-        label: "Fecha Final:",
-        required: true,
-        size: "11em",
-        orientation: "horizontal"
-    })
-+field-input("operaciones",
-    {
-        label: "Operaciones mayores a:",
-        size: "11em",
-        orientation: "horizontal"
-    })
-+field-input("plazo",
-    {
-        label: "Plazo:",
-        size: "11em",
-        orientation: "horizontal"
-    })
-#search-actions-column
-    +button-search({size: "large", disabled: false})
-    +button-search({size: "large", disabled: false})
-    +button-pdf({size: "large", disabled: false})
-    +button-xls({size: "large", disabled: false})
-    +button-pdf({size: "large", disabled: false})
++field-group("busqueda_contrato")
+    form.is-search-form#criterios-busqueda(data-parsley-validate="")
+        +field-input("contrato",
+            {
+                label: "Contrato:",
+                required: true,
+                size: "11em",
+                orientation: "horizontal"
+            })
+        +field-input("fechaI",
+            {
+                label: "Fecha Inicial:",
+                required: true,
+                size: "11em",
+                orientation: "horizontal"
+            })
+        +field-input("fechaF",
+            {
+                label: "Fecha Final:",
+                required: true,
+                size: "11em",
+                orientation: "horizontal"
+            })
+        +field-input("operaciones",
+            {
+                label: "Operaciones mayores a:",
+                size: "11em",
+                orientation: "horizontal"
+            })
+        +field-input("plazo",
+            {
+                label: "Plazo:",
+                size: "11em",
+                orientation: "horizontal"
+            })
+        #search-actions-column
+            +button-search({size: "large", disabled: false})
+            +button-search({size: "large", disabled: false})
+            +button-pdf({size: "large", disabled: false})
+            +button-xls({size: "large", disabled: false})
+            +button-pdf({size: "large", disabled: false})
 

@@ -1,0 +1,16 @@
+extends /layouts/html5
+
+block title
+    title Negatividad de Perfilamiento Persona Fisica
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/25-negatividad-perfilamiento-persona-fisica/styles.css")
+
+block content
+    .content.p-4
+        +accordion("negatividad-pf")
+            +accordion-item("neatividad-pf-item","Negatividad de Perfilamiento Personas Fisicas")
+                include ../31-reperfilamiento-persona-fisica/_grupo1
+
+block scripts
+    script(src="/assets/scripts/accimarket/25-negatividad-perfilamiento-persona-fisica/scripts.js")

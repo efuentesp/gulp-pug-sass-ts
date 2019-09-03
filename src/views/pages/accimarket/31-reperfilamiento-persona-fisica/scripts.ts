@@ -1,9 +1,10 @@
 let pf_params: UrlParams = {};
 
+$("#grupoInstrumentos").hide();
+
 $("#reperfilamiento-pf").accordion(ui_accordion_settings);
 
-$("#contrato").change(function () {
-
+$("#contrato").change(() => {
   pf_params.contrato = $("#contrato").val();
 
   http_findAll("busquedaContrato", pf_params, payload => {
@@ -25,6 +26,16 @@ $("#contrato").change(function () {
 ($("#personaPerfilar") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
+});
+
+$("input[name='limitantes']").change(() => {
+  var opcion = $("input[name='limitantes']:checked").val();
+  console.log(opcion);
+  if (opcion == 'true') {
+    $("#grupoInstrumentos").show();
+  } else {
+    $("#grupoInstrumentos").hide();
+  }
 });
 
 const formularioPF = ($("#criterios-busqueda") as any)

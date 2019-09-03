@@ -7,7 +7,7 @@ block styles
     link(rel="stylesheet" href="/assets/css/accimarket/22-movimientos-por-contrato/styles.css")
 
 block content
-    .content.principal
+    .content.p-4
         +tab-group("grupo_movi_contrato",
             {id: "tab_movi_contr", label: "Movimientos por Contrato"},
             {id: "tab_repor_agbc", label: "Reporte AGBC"},
@@ -15,14 +15,15 @@ block content
             +tab-item("tab_movi_contr")
                 +accordion("criterios_acordion")
                     +accordion-item("acordion_item")
-                        include _grupoBotones
-                        include _grupoPestanaDatos
-            .row.has_border.w-full.overflow-auto
-                +grid("grid_mov_contrato")            
+                        .column#columnas_dos
+                            include _grupoBotones
+                            include _grupoPestanaDatos
             +tab-item("tab_repor_agbc")
                 p Reporte AGBC
             +tab-item("tab_cartas")
                 p Cartas Masivas
+            .row.has_border.w-full.overflow-auto
+                +grid("grid_mov_contrato")
 
 block scripts
     script(src="/assets/scripts/accimarket/22-movimientos-por-contrato/scripts.js")

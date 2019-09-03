@@ -66,6 +66,26 @@ http_findAll("toleranciaService", select_params, (payload: any) => {
     });
 });
 
+($("#grupoInstrumento") as any).select2({
+    placeholder: "--Seleccione--",
+    minimumResultsForSearch: Infinity
+});
+
+($("#grupoInstrumentoValor") as any).select2({
+    placeholder: "--Seleccione--",
+    minimumResultsForSearch: Infinity
+});
+
+($("#emisoras") as any).select2({
+    placeholder: "--Seleccione--",
+    minimumResultsForSearch: Infinity
+});
+
+($("#emisorasTipoValor") as any).select2({
+    placeholder: "--Seleccione--",
+    minimumResultsForSearch: Infinity
+});
+
 http_findAll("horizonteInversion", select_params, (payload: any) => {
     ($("#horizonte-Inversion") as any).select2({
         placeholder: "--Seleccione--",

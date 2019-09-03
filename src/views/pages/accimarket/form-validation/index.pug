@@ -15,7 +15,7 @@ block content
       h4 Valid Form
       p Everything seems ok!
 
-    form#new-customer(data-parsley-validate="")
+    +form("new-customer")
       +field-input("id", {label: "ID", required: true, max_length: "6"})
       +field-input("name", {label: "Name", required: true, orientation: "horizontal"})
       +field-email("email", {label: "E-mail", required: true})
@@ -84,6 +84,12 @@ block content
                     {key:"CHK", value:"Check"}
                     )
       +field-input("amount", {label: "Amount", required: true, type: "digits"})
+      +field-fileupload("adjuntar_archivo",
+                        {
+                          label: "Adjuntar Archivo",
+                          required: true
+                        }
+                        )
 
       +button-send({size: "large", disabled: false})
 

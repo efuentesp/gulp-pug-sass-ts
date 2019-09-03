@@ -56,3 +56,27 @@ function obtenerPorcentaje() {
     $("#largoPlazoPor").val(porLargoPlazo);
     $("#patrimonioPor").val(porLiquidez + porCortoPlazo + porMedianoPlazo + porLargoPlazo);
 }
+
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+$.each(numbers, function (index, value) {
+    console.log(index + ':' + value);
+    var radioComp = 'encuesta_' + value;
+    $("#" + radioComp + "_0").change(function () {
+        $("#encuesta_" + value + "_3").removeAttr("required").attr("disabled", '');
+        $("#encuesta_" + value + "_4").removeAttr("required").attr("disabled", '');
+        $("#encuesta_" + value + "_5").removeAttr("required").attr("disabled", '');
+        ($("#criterios-busqueda") as any).parsley().reset();
+    });
+    $("#" + radioComp + "_1").change(function () {
+        $("#encuesta_" + value + "_3").removeAttr("required").attr("disabled", '');
+        $("#encuesta_" + value + "_4").removeAttr("required").attr("disabled", '');
+        $("#encuesta_" + value + "_5").removeAttr("required").attr("disabled", '');
+        ($("#criterios-busqueda") as any).parsley().reset();
+    });
+    $("#" + radioComp + "_2").change(function () {
+        $("#encuesta_" + value + "_3").attr("required", "required").removeAttr("disabled");
+        $("#encuesta_" + value + "_4").attr("required", "required").removeAttr("disabled");
+        $("#encuesta_" + value + "_5").attr("required", "required").removeAttr("disabled");
+        ($("#criterios-busqueda") as any).parsley().reset();
+    });
+});

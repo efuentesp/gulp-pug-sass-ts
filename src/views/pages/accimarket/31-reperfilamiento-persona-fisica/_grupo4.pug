@@ -21,5 +21,31 @@ include _grupo4_1
         orientation: "horizontal",
         required: true
     },
-    {key:"NINGUNA", value:"Ninguna"},
-    {key:"SI", value:"Si"})
+    {key:"false", value:"Ninguna"},
+    {key:"true", value:"Si"})
+.row
+    +field-group("grupoInstrumentos")
+        .row
+            p#preguntas Especificar
+        .row
+            p#preguntas Seleccione Independiente
+        .row
+            +field-select-plus-minus("grupoInstrumento",{
+                label:"Grupo Instrumento",
+                size:"18em"
+            })
+            +field-select-plus-minus("grupoInstrumentoValor",{
+                label:"Tipo Valor",
+                size:"12em"
+            })
+        .row
+            p#preguntas Seleccione Dependiente
+        .row
+            +field-select-plus-minus("emisoras",{
+                label:"Emisoras",
+                size:"18em"
+            })
+            +field-select-plus-minus("emisorasTipoValor",{
+                label:"Tipo Valor",
+                size:"12em"
+            })

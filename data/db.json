@@ -308,5 +308,32 @@
       "deUnoaTres": "25",
       "mayorDeTres": "70"
     }
+  ],
+  "servicioLuisP": [
+    {
+      "fechaO": "02-09-2019",
+      "fechaL": "07-09-2019",
+      "operacion": "CLIENTE 01",
+      "emisora": "DIGITO 01",
+      "perfilProd": "PERFIL 01",
+      "tv": "TV 01",
+      "cantidad": "DESC TV 01",
+      "precio": "EMISORA 01",
+      "impBruto": "SERIE 01",
+      "comision": "CANTIDAD 01",
+      "iva": "PRECIO 01",
+      "impuesto": "VALORACION 01",
+      "impNeto": "PROMOTOR 01",
+      "tasa": "FOLIO 01",
+      "plazo": "30-08-2019",
+      "tipoPort": "CB",
+      "rompe": "ROMPE 01",
+      "servInv": "VALORACION 01",
+      "perfilCli": "PROMOTOR 01",
+      "medio": "FOLIO 01",
+      "numRed": "30082019",
+      "clasificacion": "CB",
+      "oper": "020019"
+    }
   ]
 }
