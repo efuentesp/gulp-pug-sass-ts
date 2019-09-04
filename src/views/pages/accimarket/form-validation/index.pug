@@ -1,7 +1,7 @@
 extends /layouts/html5
 
 block title
-   title Form Validation
+  title Form Validation
 
 block styles
 
@@ -21,79 +21,88 @@ block content
       +field-email("email", {label: "E-mail", required: true})
       +field-email("email2", {label: "E-mail", required: true, orientation: "horizontal"})
       +field-options("banco",
-                    {label: "Person Type", required: true},
-                    {key: "P", value:"Person"}, {key:"C", value:"Company"}
+        {label: "Person Type", required: true},
+        {key: "P", value:"Person"}, {key:"C", value:"Company"}
       )
       +field-options("banco1",
-                    {label: "Person Type", required: true, orientation: "horizontal"},
-                    {key: "P", value:"Person"}, {key:"C", value:"Company"}
+        {label: "Person Type", required: true, orientation: "horizontal"},
+        {key: "P", value:"Person"}, {key:"C", value:"Company"}
       )
       +field-input("description", {label: "Description"})
       +field-input("description2", {label: "Description", orientation: "horizontal"})
       +field-checks("products",
-            {
-              label: "Product Type",
-              required: true
-            },
-            {key: "P01", value:"Product 1"},
-            {key: "P02", value:"Product 2"},
-            {key: "P03", value:"Product 3"}
+        {
+          label: "Product Type",
+          required: true
+        },
+        {key: "P01", value:"Product 1"},
+        {key: "P02", value:"Product 2"},
+        {key: "P03", value:"Product 3"}
       )
+
+      +field-checks("products3",
+        {orientation: "horizontal"},
+        {key: "P01", value:"Product 1", color: "red"},
+        {key: "P02", value:"Product 2", color: "yellow"},
+        {key: "P03", value:"Product 3", color: "green"}
+      )
+
+
       +field-checks("products2",
-            {
-              label: "Product Type",
-              required: true,
-              orientation: "horizontal"
-            },
-            {key: "P01", value:"Product 1"},
-            {key: "P02", value:"Product 2"},
-            {key: "P03", value:"Product 3"}
+        {
+          label: "Product Type",
+          required: true,
+          orientation: "horizontal"
+        },
+        {key: "P01", value:"Product 1"},
+        {key: "P02", value:"Product 2"},
+        {key: "P03", value:"Product 3"}
       )
       +field-checks("products3",
-            {
-              label: "Product Type",
-              orientation: "horizontal"
-            },
-            {key: "P01", value:"Product 1"},
-            {key: "P02", value:"Product 2"},
-            {key: "P03", value:"Product 3"}
+        {
+          label: "Product Type",
+          orientation: "horizontal"
+        },
+        {key: "P01", value:"Product 1"},
+        {key: "P02", value:"Product 2"},
+        {key: "P03", value:"Product 3"}
       )
       +field-select("payment",
-                    {
-                      label: "Payment method",
-                      size: "12em"
-                    },
-                    {key: "ET", value:"Electronic transfer"},
-                    {key:"CHK", value:"Check"}
+        {
+          label: "Payment method",
+          size: "12em"
+        },
+        {key: "ET", value:"Electronic transfer"},
+        {key:"CHK", value:"Check"}
       )
       +field-select("payment2",
-                    {
-                      label: "Payment method",
-                      required: true,
-                      size: "12em"
-                    },
-                    {key: "ET", value:"Electronic transfer"},
-                    {key:"CHK", value:"Check"}
+        {
+          label: "Payment method",
+          required: true,
+          size: "12em"
+        },
+        {key: "ET", value:"Electronic transfer"},
+        {key:"CHK", value:"Check"}
       )
       +field-select("payment3",
-                    {
-                      label: "Payment method",
-                      required: true,
-                      size: "12em",
-                      orientation: "horizontal"
-                    },
-                    {key: "ET", value:"Electronic transfer"},
-                    {key:"CHK", value:"Check"}
+        {
+          label: "Payment method",
+          required: true,
+          size: "12em",
+          orientation: "horizontal"
+        },
+        {key: "ET", value:"Electronic transfer"},
+        {key:"CHK", value:"Check"}
       )
       +field-input("amount", {label: "Amount", required: true, type: "digits"})
       +field-fileupload("adjuntar_archivo",
-                        {
-                          label: "Adjuntar Archivo",
-                          required: true
-                        }
+        {
+          label: "Adjuntar Archivo",
+          required: true
+        }
       )
 
       +button-send({size: "large", disabled: false})
 
 block scripts
-   script(src="/assets/scripts/accimarket/form-validation/scripts.js")
+  script(src="/assets/scripts/accimarket/form-validation/scripts.js")

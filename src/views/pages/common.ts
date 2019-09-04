@@ -101,6 +101,18 @@ const rest_findAll = (resource: string, params: any, cb: Function) => {
   });
 };
 
+const rest_findOne = (resource: string, id: string, cb: Function) => {
+  const url = `${REST_URL}/${resource}/${id}`;
+  console.log(url);
+
+  $.ajax({
+    url,
+    contentType: "application/json",
+    dataType: "json",
+    success: result => cb(result)
+  });
+};
+
 const rpc_findAll = (resource: string, params: any, cb: Function) => {
   // TODO: Implementar versión con POST
 };
@@ -110,3 +122,4 @@ const rpc_findAll = (resource: string, params: any, cb: Function) => {
 });
 
 const http_findAll = rest_findAll;
+const http_findOne = rest_findOne;
