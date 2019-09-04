@@ -31,3 +31,8 @@ $("#reperfilamiento_pm_tab_group").tabs();
     placeholder: "--Seleccione--",
     minimumResultsForSearch: Infinity
 });
+
+($("#graficosOpcion") as any).select2({
+    placeholder: "--Seleccione--",
+    minimumResultsForSearch: Infinity
+});

@@ -22,7 +22,14 @@ include /mixins/mixins
     {answer: "No conoce ni ha invertido", type: "option"},
     {answer: "Sólo conoce", type: "option"},
     {answer: "Conoce y ha invertido", type: "option"},
-    {answer: "Frecuencia", type: "select", options: [{key: "", value: "--Seleccionar--"},{key: "1", value: "Mensual"}, {key: "2", value: "Semestral"}, {key: "3", value: "Anual"}], size: "12em", disabled: true},
-    {answer: "Plazo", type: "select", options: [{key: "", value: "--Seleccionar--"},{key: "1", value: "Corto"}, {key: "2", value: "Medio"}, {key: "3", value: "Largo"}], size: "10em", disabled: true},
-    {answer: "Volumen", type: "select", options: [{key: "", value: "--Seleccionar--"},{key: "1", value: "Medio"}, {key: "2", value: "Bajo"}, {key: "3", value: "ALto"}], size: "12em", disabled: true}
+    {answer: "Frecuencia", type: "select", options: [{key: "", value: "--Seleccionar--"},{key: "M", value: "Mensual"}, {key: "S", value: "Semestral"}, {key: "A", value: "Anual"}], size: "12em", disabled: true},
+    {answer: "Plazo", type: "select", options: [{key: "", value: "--Seleccionar--"},{key: "C", value: "Corto"}, {key: "M", value: "Medio"}, {key: "L", value: "Largo"}], size: "10em", disabled: true},
+    {answer: "Volumen", type: "select", options: [{key: "", value: "--Seleccionar--"},{key: "M", value: "Medio"}, {key: "B", value: "Bajo"}, {key: "A", value: "Alto"}], size: "12em", disabled: true}
 ])
+.row
+    p Ni conoce ni ha invertido:  No conoce el producto y nunca ha invertido en este.
+    p Solo conoce: Unicamente conoce el producto sin embargo nunca ha invertido en este.
+    p Conoce y ha invertido: Tiene pleno conocimiento del producto y anteriormente ha invertido en este.
+    p Frecuencia: (M)Mesual, (S)Semestral, (A)Anual
+    p Plazo: (C)Corto: menos de un año, (M)Medio: de un año a tres años, (L)Largo: mayor a 3 años
+    p Volumen: (M)Medio:, (B)Bajo:,(A)Alto:
