@@ -1,0 +1,39 @@
+extends /layouts/html5
+
+block title
+    title Reperfilamiento Persona Fisica
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/30-reperfilamiento-persona-moral/styles.css")
+
+block content
+    .content.p-4
+        +accordion("reperfilamiento-pm")
+            +accordion-item("reperfilamiento-pm-item", "Reperfilamiento para Personas Morales")
+                form#reperfilamientoPM
+                    include _criteriosBusqueda
+                    +tab-group("reperfilamiento_pm_tab_group",
+                        {id: "tab_mapaLiquidaciones", label: "Mapa de Liquidez"},
+                        {id: "tab_conocimientoClienUno", label: "Conocimiento del cliente y su Experencia en productos financieros"},
+                        {id: "tab_conocimientoClienDos", label: "Conocimiento del cliente y su Experencia en productos financieros"},
+                        {id: "tab_objetivosInversioUno", label: "Objetivos de Inversion"},
+                        {id: "tab_objetivosInversioDos", label: "Objetivos de Inversion"},
+                        {id: "tab_objetivosInversioTres", label: "Objetivos de Inversion"},
+                        {id: "tab_situacionCapacitacion", label: "Situacion y Capa..."})
+                        +tab-item("tab_mapaLiquidaciones")
+                            include _tabMapaLiquide
+                        +tab-item("tab_conocimientoClienUno")
+                            include _tabConocimientoUno
+                        +tab-item("tab_conocimientoClienDos")
+                            include _tabConocimientoDos
+                        +tab-item("tab_objetivosInversioUno")
+                            p Cuatro
+                        +tab-item("tab_objetivosInversioDos")
+                            p Cinco
+                        +tab-item("tab_objetivosInversioTres")
+                            p Seis
+                        +tab-item("tab_situacionCapacitacion")
+                            p Siete
+
+block scripts
+    script(src="/assets/scripts/accimarket/30-reperfilamiento-persona-moral/scripts.js")

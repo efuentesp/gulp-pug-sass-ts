@@ -1,0 +1,34 @@
+include /mixins/mixins
+
+.row
+    +field-input("contratoPM",
+        {
+            label: "Contrato",
+            size: "11em",
+            orientation: "horizontal",
+            max_length: "6",
+            type: "digits"
+        })
+    +field-input("nombrePM",
+        {
+            label: "Nombre",
+            size: "35em",
+            disabled: true,
+            orientation: "horizontal"
+        })
+    +field-input("perfilPM",
+        {
+            label: "Perfil Actual",
+            size: "15em",
+            disabled: true,
+            orientation: "horizontal"
+        })
+
+.row
+    +field-select("personaPerfilarPM",
+        {
+            label: "Seleccione la firma que desea perfilar",
+            size: "35em",
+            required: true,
+            orientation: "horizontal"
+        })

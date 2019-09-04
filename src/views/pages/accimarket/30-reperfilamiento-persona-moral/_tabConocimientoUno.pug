@@ -1,0 +1,65 @@
+include /mixins/mixins
+
+.row
+    p 1. Para cada una de las siguientes preguntas, seleccione la opcion que mejor describa la informacion de la Persona Moral por usted(es) representada.
+.row
+    +field-select("antiguedadConsPM",
+        {
+            label: "1.-Antiguedad con base en la fecha de Constitucion",
+            size: "20em",
+            required: true,
+            orientation: "horizontal"
+        })
+.row
+    +field-select("giroPM",
+        {
+            label: "2.-Giro de la Persona Moral",
+            size: "20em",
+            required: true,
+            orientation: "horizontal"
+        })
+.row
+    +field-select("tipoPM",
+        {
+            label: "3.-Tipo de Persona Moral",
+            size: "20em",
+            required: true,
+            orientation: "horizontal"
+        })
+.row
+    +field-options("actividadInvPM",
+        {
+            label: "4.-¿La actividad esta relacionada con inversiones?",
+            orientation: "horizontal",
+            required: true
+        },
+        {key:"true", value:"Si"},
+        {key:"false", value:"No"})
+.row
+    +field-select("actividadActuaPM",
+        {
+            label: "4.1.-Anote actividad actual de la Persona Moral",
+            size: "35em",
+            required: true,
+            orientation: "horizontal"
+        })
+.row
+    +field-select("estrategiaInvPM",
+        {
+            label: "5.-Estrategia de inversion generalmente utilizada",
+            size: "20em",
+            required: true,
+            orientation: "horizontal"
+        })
+.row
+    +field-select("asesoriaInvPM",
+        {
+            label: "6.-Ha usado asesoria para la toma de decisiones de inversion",
+            size: "20em",
+            required: true,
+            orientation: "horizontal"
+        })
+.row
+    p *El giro de Servicios incluye a las personas morales dedicadas a Servicios en General, Gubernamental, Educacion y Sin Fines de Lucro.
+    p **Especulativa: Estrategia de inversion de alto riesgo basadas en las oprtunidades derivadas de la fluctaciones de los mercados y precios.
+    p ***Presevacion de Capital portafolios diversificados basados en una estrategia de inversion de corto, mediano y largo plazo.

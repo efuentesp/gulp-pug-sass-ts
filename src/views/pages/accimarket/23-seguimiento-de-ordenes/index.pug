@@ -14,3 +14,13 @@ block content
         +accordion("seguimiento_acordion")
             +accordion-item("acordion_item")
                 include _grupoParametros
+                include _grupoChecks
+                include _grupoBotones
+        .row.has_border.w-full.overflow-auto
+        +tab-group("grupo_grids",
+            {id: "tab_intradia", label: "Intradia"},
+            {id: "tab_historico", label: "Históricos"})
+            +tab-item("tab_intradia")
+                p -------------------------PENDIENTE---------------------------
+            +tab-item("tab_historico")
+                +grid("grid_mov_contrato")
