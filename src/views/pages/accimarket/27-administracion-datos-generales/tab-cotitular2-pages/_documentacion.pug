@@ -1,5 +1,15 @@
 //- p DOCUMENTACIOO
-p Contrato
+
+.row.flex
+    p Contrato
+    +field-checks("documentacion_flags",
+        {orientation: "horizontal"},
+        {key: "entregada", value:"Entregada", color: "green"},
+        {key: "pendiente", value:"Pendiente", color: "yellow"},
+        {key: "vencido", value:"Vencido", color: "red"},
+        {key: "noaplica", value:"No Aplica", color: "black"}
+)
+
 +grid("cotitular2_documentacion_contrato")
 p Cliente
 +grid("cotitular2_documentacion_cliente")

@@ -1,30 +1,30 @@
 /**Grid Clasificacion Contrato / Limitantes a intervenir */
 
-$("#table_cotitular2_clasificacion_contrato_limitantes_intervenir").jqGrid({
-  datatype: "local",
-  height: 250,
-  colNames: [
-    "Grupo Instrumento",
-    "Tipo Valor",
-    "Emisoras",
-    "Tipo Valor Emisora"
-  ],
-  colModel: [
-    { name: "grupo_instrumento", width: 100 },
-    { name: "tipo_valor", width: 100 },
-    { name: "emisoras", width: 100 },
-    { name: "tipo_valor_emisora", width: 100 }
-  ],
-  //   pager: "#pager_cotitular2_comisiones",
-  rowNum: 10,
-  rowList: [10, 20, 30],
-  sortname: "cotitular2_clasificacion_contrato_limitantes_intervenir",
-  sortorder: "desc",
-  viewrecords: true,
-  gridview: true,
-  autoencode: true,
-  caption: ""
-});
+// $("#table_cotitular2_clasificacion_contrato_limitantes_intervenir").jqGrid({
+//   datatype: "local",
+//   height: 250,
+//   colNames: [
+//     "Grupo Instrumento",
+//     "Tipo Valor",
+//     "Emisoras",
+//     "Tipo Valor Emisora"
+//   ],
+//   colModel: [
+//     { name: "grupo_instrumento", width: 100 },
+//     { name: "tipo_valor", width: 100 },
+//     { name: "emisoras", width: 100 },
+//     { name: "tipo_valor_emisora", width: 100 }
+//   ],
+//   //   pager: "#pager_cotitular2_comisiones",
+//   rowNum: 10,
+//   rowList: [10, 20, 30],
+//   sortname: "cotitular2_clasificacion_contrato_limitantes_intervenir",
+//   sortorder: "desc",
+//   viewrecords: true,
+//   gridview: true,
+//   autoencode: true,
+//   caption: ""
+// });
 
 // Form validations
 let cotitular2_clasificacion_contrato_limitantes_intervenir_params: UrlParams = {
@@ -32,16 +32,16 @@ let cotitular2_clasificacion_contrato_limitantes_intervenir_params: UrlParams = 
   // contrato: "CONTRATO 01"
 };
 
-http_findAll(
-  "cotitular2_clasificacion_contrato_limitantes_intervenir",
-  cotitular2_clasificacion_contrato_limitantes_intervenir_params,
-  payload => {
-    fillJqGrid(
-      "#table_cotitular2_clasificacion_contrato_limitantes_intervenir",
-      payload
-    );
-  }
-);
+// http_findAll(
+//   "cotitular2_clasificacion_contrato_limitantes_intervenir",
+//   cotitular2_clasificacion_contrato_limitantes_intervenir_params,
+//   payload => {
+//     fillJqGrid(
+//       "#table_cotitular2_clasificacion_contrato_limitantes_intervenir",
+//       payload
+//     );
+//   }
+// );
 
 /**Grid Clasificacion Contrato / Relacion Emisor */
 $("#table_cotitular2_clasificacion_contrato_relacion_emisor").jqGrid({
@@ -66,16 +66,16 @@ let cotitular2_clasificacion_contrato_relacion_emisor_params: UrlParams = {
   // contrato: "CONTRATO 01"
 };
 
-http_findAll(
-  "cotitular2_clasificacion_contrato_relacion_emisor",
-  cotitular2_clasificacion_contrato_relacion_emisor_params,
-  payload => {
-    fillJqGrid(
-      "#table_cotitular2_clasificacion_contrato_relacion_emisor",
-      payload
-    );
-  }
-);
+// http_findAll(
+//   "cotitular2_clasificacion_contrato_relacion_emisor",
+//   cotitular2_clasificacion_contrato_relacion_emisor_params,
+//   payload => {
+//     fillJqGrid(
+//       "#table_cotitular2_clasificacion_contrato_relacion_emisor",
+//       payload
+//     );
+//   }
+// );
 
 /**Grid Comisiones */
 /**cotitular2_comisiones */
@@ -101,9 +101,9 @@ let cotitular2_comisiones_params: UrlParams = {
   // contrato: "CONTRATO 01"
 };
 
-http_findAll("cotitular2_comisiones", cotitular2_comisiones_params, payload => {
-  fillJqGrid("#table_cotitular2_comisiones", payload);
-});
+// http_findAll("cotitular2_comisiones", cotitular2_comisiones_params, payload => {
+//   fillJqGrid("#table_cotitular2_comisiones", payload);
+// });
 
 /**Grid Documentacion */
 $("#table_cotitular2_documentacion_contrato").jqGrid({
@@ -133,13 +133,13 @@ let cotitular2_documentacion_contrato_params: UrlParams = {
   // contrato: "CONTRATO 01"
 };
 
-http_findAll(
-  "cotitular2_documentacion_contrato",
-  cotitular2_documentacion_contrato_params,
-  payload => {
-    fillJqGrid("#table_cotitular2_documentacion_contrato", payload);
-  }
-);
+// http_findAll(
+//   "cotitular2_documentacion_contrato",
+//   cotitular2_documentacion_contrato_params,
+//   payload => {
+//     fillJqGrid("#table_cotitular2_documentacion_contrato", payload);
+//   }
+// );
 
 $("#table_cotitular2_documentacion_cliente").jqGrid({
   datatype: "local",
@@ -168,13 +168,13 @@ let cotitular2_documentacion_cliente_params: UrlParams = {
   // contrato: "CONTRATO 01"
 };
 
-http_findAll(
-  "cotitular2_documentacion_cliente",
-  cotitular2_documentacion_cliente_params,
-  payload => {
-    fillJqGrid("#table_cotitular2_documentacion_cliente", payload);
-  }
-);
+// http_findAll(
+//   "cotitular2_documentacion_cliente",
+//   cotitular2_documentacion_cliente_params,
+//   payload => {
+//     fillJqGrid("#table_cotitular2_documentacion_cliente", payload);
+//   }
+// );
 
 /**Grid Domicilio */
 $("#table_cotitular2_domicilio").jqGrid({
@@ -217,9 +217,9 @@ let cotitular2_domicilio_params: UrlParams = {
   // contrato: "CONTRATO 01"
 };
 
-http_findAll("cotitular2_domicilio", cotitular2_domicilio_params, payload => {
-  fillJqGrid("#table_cotitular2_domicilio", payload);
-});
+// http_findAll("cotitular2_domicilio", cotitular2_domicilio_params, payload => {
+//   fillJqGrid("#table_cotitular2_domicilio", payload);
+// });
 
 /**Grid Firmas Autorizadas */
 $("#table_cotitular2_firmas_autorizadas").jqGrid({
@@ -262,13 +262,13 @@ let cotitular2_firmas_autorizadas_params: UrlParams = {
   // contrato: "CONTRATO 01"
 };
 
-http_findAll(
-  "cotitular2_firmas_autorizadas",
-  cotitular2_firmas_autorizadas_params,
-  payload => {
-    fillJqGrid("#table_cotitular2_firmas_autorizadas", payload);
-  }
-);
+// http_findAll(
+//   "cotitular2_firmas_autorizadas",
+//   cotitular2_firmas_autorizadas_params,
+//   payload => {
+//     fillJqGrid("#table_cotitular2_firmas_autorizadas", payload);
+//   }
+// );
 
 /**Grid Formatos Fiscales */
 $("#table_cotitular2_formatos_fiscales").jqGrid({
@@ -313,13 +313,13 @@ let cotitular2_formatos_fiscales_params: UrlParams = {
   // contrato: "CONTRATO 01"
 };
 
-http_findAll(
-  "cotitular2_formatos_fiscales",
-  cotitular2_formatos_fiscales_params,
-  payload => {
-    fillJqGrid("#table_cotitular2_formatos_fiscales", payload);
-  }
-);
+// http_findAll(
+//   "cotitular2_formatos_fiscales",
+//   cotitular2_formatos_fiscales_params,
+//   payload => {
+//     fillJqGrid("#table_cotitular2_formatos_fiscales", payload);
+//   }
+// );
 
 /**Grid Medio de Comunicacion */
 $("#table_cotitular2_medio_comunicacion").jqGrid({
@@ -348,13 +348,13 @@ let cotitular2_medio_comunicacion_params: UrlParams = {
   // contrato: "CONTRATO 01"
 };
 
-http_findAll(
-  "cotitular2_medio_comunicacion",
-  cotitular2_medio_comunicacion_params,
-  payload => {
-    fillJqGrid("#table_cotitular2_medio_comunicacion", payload);
-  }
-);
+// http_findAll(
+//   "cotitular2_medio_comunicacion",
+//   cotitular2_medio_comunicacion_params,
+//   payload => {
+//     fillJqGrid("#table_cotitular2_medio_comunicacion", payload);
+//   }
+// );
 
 /**Grid Medio de Liquidacion */
 $("#table_cotitular2_medio_liquidacion").jqGrid({
@@ -403,10 +403,10 @@ let cotitular2_medio_liquidacion_params: UrlParams = {
   // contrato: "CONTRATO 01"
 };
 
-http_findAll(
-  "cotitular2_medio_liquidacion",
-  cotitular2_medio_liquidacion_params,
-  payload => {
-    fillJqGrid("#table_cotitular2_medio_liquidacion", payload);
-  }
-);
+// http_findAll(
+//   "cotitular2_medio_liquidacion",
+//   cotitular2_medio_liquidacion_params,
+//   payload => {
+//     fillJqGrid("#table_cotitular2_medio_liquidacion", payload);
+//   }
+// );

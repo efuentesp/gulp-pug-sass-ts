@@ -1,7 +1,8 @@
 {
   "contratos": [
     {
-      "contrato": "CONTRATO 01",
+      "id": "C001",
+      "contrato": "CONTRATO01",
       "libro": "LIBRO 01",
       "cliente": "CLIENTE 01",
       "digito": "DIGITO 01",
@@ -16,10 +17,92 @@
       "folio": "FOLIO 01",
       "fecha": "30-08-2019",
       "negocio": "CB",
-      "fechaFinal": "02-09-2019"
+      "fechaFinal": "02-09-2019",
+      "dv": "5",
+      "estatus": "A",
+      "perfil": "PRESERVACIÓN(IR1)",
+      "perfil2": "ELEGIBLE",
+      "portafolio": "CLIENTES",
+      "portafolio_uuid": "TitCli Nom 12118 APPAT12118 APMAT12118",
+      "clabe": "2180650543547290",
+      "clabe2": "CITI PRIVATE BANK ",
+      "stipo_port": "POSICION CONTADO",
+      "titular": {
+        "nombre": ""
+      },
+      "cotitulares": [
+        {
+          "persona_fisica": {
+            "nombre": ""
+          },
+          "clasificacion_contrato": {
+            "asesor_inversion": "",
+            "tipo_manifiesto": "",
+            "servicio_inversion": "ASESORÍA,GESTIÓN,COMERCIALIZACIÓN Y EJECUCIÓN",
+            "carta_ejecucion": "GRABACIÓN TELEFÓNICA",
+            "fecha_carta_ejecucion": "19/09/2014",
+            "carta_ejecucion_2": "CARTA ORIGINAL",
+            "fecha_carta_ejecucion_2": "04/05/2016",
+            "institucional_pract_vta": "INSTITUCIONAL PRACT. VTA.",
+            "justificacion_institucional_pract_vta": "ANEXO 1 BIS (INST PV)",
+            "fecha_institucional_pract_vta": "29/01/2015",
+            "sofisticado_nosofisticado": "SOFISTICADO",
+            "justificacion_sofisticado_nosofisticado": "CARTA DECLARACION SOFISTICADO",
+            "fecha_sofisticado_nosofisticado": "04/05/2016",
+            "elegible_noelegible": "NO ELEGIBLE",
+            "justificacion_elegible_noelegible": "NO APLICA",
+            "fecha_elegible_noelegible": "NO APLICA",
+            "calificado_nocalificado": "CALIFICADO",
+            "justificacion_calificado_nocalificado": "CARTA DE CALIFICADO",
+            "fecha_calificado_nocalificado": "04/05/2016",
+            "discrecional_nodiscrecional": "NO DISCRECIONAL",
+            "justificacion_discrecional_nodiscrecional": "NO APLICA",
+            "fecha_discrecional_nodiscrecional": "NO APLICA",
+            "anexo_descriptivo": "",
+            "limitantes_invertitr": [
+              {
+                "grupo_instrumentos": "Prueba GrupoInstru",
+                "tipo_valor": "Prueba Tipo Valor",
+                "emisoras": "Prueba Emisora",
+                "tipo_valor_emisora": "Prueba Tipo Valor Emisora"
+              },
+              {
+                "grupo_instrumentos": "Prueba GrupoInstru2",
+                "tipo_valor": "Prueba Tipo Valor2",
+                "emisoras": "Prueba Emisora2",
+                "tipo_valor_emisora": "Prueba Tipo Valor Emisora2"
+              },
+              {
+                "grupo_instrumentos": "Prueba GrupoInstru3",
+                "tipo_valor": "Prueba Tipo Valor3",
+                "emisoras": "Prueba Emisora3",
+                "tipo_valor_emisora": "Prueba Tipo Valor Emisora3"
+              }
+            ]
+          },
+          "observaciones": {
+            "text_area_observaciones": "",
+            "fecha_apertura": "06/Nov/1984",
+            "monto_inicial": "0",
+            "sector": "PARTICULARES PERSONAS FISICAS",
+            "residencia": "MEXICO",
+            "envio_correspondencia": "No",
+            "tipo_cuenta": "INDIVIDUAL",
+            "manejo_cuenta": "NO DISCRECIONAL",
+            "custodia_admon": "Si",
+            "lim_max_operacion": "0",
+            "isr_mdo_din": "Si",
+            "fecha_ult_mov": "02/Mar/2017",
+            "porcentaje_acum_isr": "100.00",
+            "porcentaje_acum_ide": "100.00",
+            "imprime_estado_cuenta": "Si"
+          }
+        }
+      ]
     },
     {
-      "contrato": "CONTRATO 02",
+      "id": "C002",
+      "contrato": "CONTRATO02",
       "libro": "LIBRO 02",
       "cliente": "CLIENTE 02",
       "digito": "DIGITO 02",
@@ -37,7 +120,8 @@
       "fechaFinal": "02-09-2019"
     },
     {
-      "contrato": "CONTRATO 03",
+      "id": "C003",
+      "contrato": "CONTRATO03",
       "libro": "LIBRO 03",
       "cliente": "CLIENTE 03",
       "digito": "DIGITO 03",
@@ -55,7 +139,8 @@
       "fechaFinal": "03-09-2019"
     },
     {
-      "contrato": "CONTRATO 04",
+      "id": "C004",
+      "contrato": "CONTRATO04",
       "libro": "LIBRO 04",
       "cliente": "CLIENTE 04",
       "digito": "DIGITO 04",
