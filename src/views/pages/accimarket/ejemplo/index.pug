@@ -9,30 +9,30 @@ block styles
 block content
     .content.p-4
         .row
-           +accordion("busqueda")
+            +accordion("busqueda")
                 +accordion-item("busqueda_item")
                     form.is-search-form#criterios-busqueda(data-parsley-validate="")
                         +field-group("fecha-group")
                             +field-date("fechaInicial",
-                                        {
-                                            label: "Fecha Inicial",
-                                            required: true,
-                                            orientation: "horizontal"
-                                        })
+                                {
+                                    label: "Fecha Inicial",
+                                    required: true,
+                                    orientation: "horizontal"
+                                })
                             +field-date("fechaFinal",
-                                        {
-                                            label: "Fecha Final",
-                                            required: true,
-                                            orientation: "horizontal"
-                                        })
+                                {
+                                    label: "Fecha Final",
+                                    required: true,
+                                    orientation: "horizontal"
+                                })
                         +field-group("negocio-group")
                             +field-select("lineaNegocio",
-                                        {
-                                            label: "Linea de Negocio"
-                                        },
-                                        {key: "ALL", value: "TODAS"},
-                                        {key: "CB", value: "CB"}
-                                        )
+                                {
+                                    label: "Linea de Negocio"
+                                },
+                                {key: "ALL", value: "TODAS"},
+                                {key: "CB", value: "CB"}
+                                )
                         +field-group("botones-group")
                             #search-actions-column
                                 +button-search({size: "large", disabled: false})
@@ -43,11 +43,11 @@ block content
             +grid("ventas")
         .row
             +field-input("totalreg",
-                        {
-                            label: "Total de registros",
-                            orientation: "horizontal",
-                            size: "8em"
-                        })
+                {
+                    label: "Total de registros",
+                    orientation: "horizontal",
+                    size: "8em"
+                })
 
 block scripts
     script(src="/assets/scripts/accimarket/ejemplo/scripts.js")

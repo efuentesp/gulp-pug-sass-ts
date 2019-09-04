@@ -1,0 +1,16 @@
+extends /layouts/html5
+
+block title
+    title Movimientos por Contrato
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/23-seguimiento-de-ordenes/styles.css")
+
+block scripts
+    script(src="/assets/scripts/accimarket/23-seguimiento-de-ordenes/scripts.js")
+
+block content
+    .content.acordion
+        +accordion("seguimiento_acordion")
+            +accordion-item("acordion_item")
+                include _grupoParametros

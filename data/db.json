@@ -157,5 +157,298 @@
       "negocio": "B",
       "fechaFinal": "02-09-2019"
     }
+  ],
+  "busquedaContrato": [
+    {
+      "contrato": 12345,
+      "nombre": "LAD",
+      "perfilActual": "Desarrollador",
+      "personasPerfilar": [
+        {
+          "id": 1,
+          "text": "LADP"
+        },
+        {
+          "id": 2,
+          "text": "PDAL"
+        }
+      ]
+    },
+    {
+      "contrato": 67890,
+      "nombre": "DAL",
+      "perfilActual": "DBA",
+      "personasPerfilar": [
+        {
+          "id": 1,
+          "text": "DALP"
+        },
+        {
+          "id": 2,
+          "text": "PLAD"
+        }
+      ]
+    }
+  ],
+  "edadesService": [
+    {
+      "id": 25,
+      "text": "De 18 a 35 años"
+    },
+    {
+      "id": 20,
+      "text": "De 36 a 45 años"
+    },
+    {
+      "id": 15,
+      "text": "De 46 a 55 años"
+    },
+    {
+      "id": 10,
+      "text": "De 56 a 65 años"
+    },
+    {
+      "id": 5,
+      "text": "66 añosen adelante"
+    }
+  ],
+  "estudiosService": [
+    {
+      "id": 5,
+      "text": "Maestria/Doctorado"
+    },
+    {
+      "id": 4,
+      "text": "Licenciatura"
+    },
+    {
+      "id": 3,
+      "text": "Tecnica/Comercial"
+    },
+    {
+      "id": 3,
+      "text": "Preparatoria"
+    },
+    {
+      "id": 2,
+      "text": "Secundaria"
+    },
+    {
+      "id": 1,
+      "text": "Primaria"
+    },
+    {
+      "id": 1,
+      "text": "Sin escolaridad"
+    }
+  ],
+  "ocupacionService": [
+    {
+      "id": 5,
+      "text": "Estudiante"
+    },
+    {
+      "id": 4,
+      "text": "Empresario"
+    },
+    {
+      "id": 3,
+      "text": "Director"
+    },
+    {
+      "id": 2,
+      "text": "Empleado"
+    },
+    {
+      "id": 1,
+      "text": "Jubilado"
+    },
+    {
+      "id": 1,
+      "text": "Ama de Casa"
+    },
+    {
+      "id": 1,
+      "text": "Otro"
+    }
+  ],
+  "estrategiaService": [
+    {
+      "id": 2,
+      "text": "Especulativa"
+    },
+    {
+      "id": 1,
+      "text": "Patrimonial"
+    }
+  ],
+  "asesoriaService": [
+    {
+      "id": 3,
+      "text": "No asesorado (Ejecucion)"
+    },
+    {
+      "id": 2,
+      "text": "Ocasionalmente No asesorado"
+    },
+    {
+      "id": 1,
+      "text": "Siempre asesorado"
+    }
+  ],
+  "propositoService": [
+    {
+      "id": 5,
+      "text": "Estrategia A (Liquidez)"
+    },
+    {
+      "id": 10,
+      "text": "Estrategia B (Conservacion)"
+    },
+    {
+      "id": 15,
+      "text": "Estrategia C (Equilibrio)"
+    },
+    {
+      "id": 20,
+      "text": "Estrategia D (Incremento)"
+    },
+    {
+      "id": 25,
+      "text": "Estrategia E (Maximizacion)"
+    }
+  ],
+  "toleranciaService": [
+    {
+      "id": 4,
+      "text": "No acostumbra invertir en instrumentos con volatilidad (minima*)"
+    },
+    {
+      "id": 8,
+      "text": "Venderia todo en prevision de perdidas adicionales (baja*)"
+    },
+    {
+      "id": 12,
+      "text": "Venderia solo una parte (media*)"
+    },
+    {
+      "id": 16,
+      "text": "Mantendria la inversion (alta*)"
+    },
+    {
+      "id": 20,
+      "text": "Compraria mas (agresiva*)"
+    }
+  ],
+  "horizonteInversion": [
+    {
+      "id": 4,
+      "text": "Portafolio 1 (Corto Plazo)"
+    },
+    {
+      "id": 8,
+      "text": "Portafolio 2 (Corto/Mediano Plazo)"
+    },
+    {
+      "id": 12,
+      "text": "Portafolio 3 (Mediano Plazo)"
+    },
+    {
+      "id": 16,
+      "text": "Portafolio 4 (Mediano/Largo Plazo)"
+    },
+    {
+      "id": 20,
+      "text": "Portafolio 5 (Largo Plazo)"
+    }
+  ],
+  "detallePortaFolio": [
+    {
+      "id": 4,
+      "menorDeUn": "100",
+      "deUnoaTres": "0",
+      "mayorDeTres": "0"
+    },
+    {
+      "id": 8,
+      "menorDeUn": "70",
+      "deUnoaTres": "30",
+      "mayorDeTres": "0"
+    },
+    {
+      "id": 12,
+      "menorDeUn": "30",
+      "deUnoaTres": "50",
+      "mayorDeTres": "20"
+    },
+    {
+      "id": 16,
+      "menorDeUn": "10",
+      "deUnoaTres": "50",
+      "mayorDeTres": "20"
+    },
+    {
+      "id": 20,
+      "menorDeUn": "5",
+      "deUnoaTres": "25",
+      "mayorDeTres": "70"
+    }
+  ],
+  "servicioLuisP": [
+    {
+      "fechaO": "02-09-2019",
+      "fechaL": "07-09-2019",
+      "operacion": "CLIENTE 01",
+      "emisora": "DIGITO 01",
+      "perfilProd": "PERFIL 01",
+      "tv": "TV 01",
+      "cantidad": "DESC TV 01",
+      "precio": "EMISORA 01",
+      "impBruto": "SERIE 01",
+      "comision": "CANTIDAD 01",
+      "iva": "PRECIO 01",
+      "impuesto": "VALORACION 01",
+      "impNeto": "PROMOTOR 01",
+      "tasa": "FOLIO 01",
+      "plazo": "30-08-2019",
+      "tipoPort": "CB",
+      "rompe": "ROMPE 01",
+      "servInv": "VALORACION 01",
+      "perfilCli": "PROMOTOR 01",
+      "medio": "FOLIO 01",
+      "numRed": "30082019",
+      "clasificacion": "CB",
+      "oper": "020019"
+    }
+  ],
+  "perfilamiento_personas_fisicas": [
+    {
+      "contrato": "12345",
+      "nombre": "LAD",
+      "perfil": "Desarrollador",
+      "personaPerfilar": "1",
+      "liquidezPor": "0",
+      "liquidezMonto": "1",
+      "cortoPlazoPor": "0",
+      "cortoPlazoMonto": "2",
+      "medianoPlazoPor": "0",
+      "medianoPlazoMonto": "3",
+      "largoPlazoPor": "0",
+      "largoPlazoMonto": "4",
+      "patrimonioPor": "0",
+      "patrimonioMonto": "10",
+      "edad": "25",
+      "estudios": "5",
+      "ocupacion": "5",
+      "inversiones": "SI",
+      "estrategia": "2",
+      "asesoria": "3",
+      "proposito": "5",
+      "tolerancia": "4",
+      "limitantes": "false",
+      "horizonteInversion": "4",
+      "origenUno": [],
+      "id": 1
+    }
   ]
 }

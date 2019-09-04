@@ -1,0 +1,26 @@
+.content {
+  #columnas_dos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    #busqueda_contrato {
+      flex: 1;
+    }
+
+    #grupo_datos {
+      flex: 2.5;
+    }
+
+    #tab_datos {
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      label {
+        width: 6em;
+      }
+    }
+  }
+}

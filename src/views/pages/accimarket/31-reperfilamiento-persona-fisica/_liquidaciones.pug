@@ -7,7 +7,7 @@ include /mixins/mixins
             td
                 p %
             td
-                p Monto %
+                p Monto $
             td
                 p Horizonte
             td
@@ -15,18 +15,19 @@ include /mixins/mixins
         tr.text-justify
             td
                 +field-input("liquidezPor",
-                            {
-                                label: "",
-                                orientation: "horizontal",
-                                disabled: true
-                            })
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        disabled: true
+                    })
             td
                 +field-input("liquidezMonto",
-                            {
-                                label: "",
-                                size: "10em",
-                                orientation: "horizontal"
-                            })
+                    {
+                        label: "",
+                        size: "10em",
+                        orientation: "horizontal",
+                        required: true
+                    })
             td
                 p.font-bold Liquidez
                 p (Abarca todo el gasto corriente e un mes)
@@ -35,18 +36,19 @@ include /mixins/mixins
         tr.text-justify
             td
                 +field-input("cortoPlazoPor",
-                            {
-                                label: "",
-                                orientation: "horizontal",
-                                disabled: true
-                            })
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        disabled: true
+                    })
             td
                 +field-input("cortoPlazoMonto",
-                            {
-                                label: "",
-                                size: "10em",
-                                orientation: "horizontal"
-                            })
+                    {
+                        label: "",
+                        size: "10em",
+                        orientation: "horizontal",
+                        required: true
+                    })
             td
                 p.font-bold Corto Plazo
                 p (Se construye por la reserva de contigencia que debera separar para afrontar imprevistos o proyectos a corto plazo. Se recomienda entre 6 y 9 meses de su ingreso normal).
@@ -55,18 +57,19 @@ include /mixins/mixins
         tr.text-justify
             td
                 +field-input("medianoPlazoPor",
-                            {
-                                label: "",
-                                orientation: "horizontal",
-                                disabled: true
-                            })
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        disabled: true
+                    })
             td
                 +field-input("medianoPlazoMonto",
-                            {
-                                label: "",
-                                size: "10em",
-                                orientation: "horizontal"
-                            })
+                    {
+                        label: "",
+                        size: "10em",
+                        orientation: "horizontal",
+                        required: true
+                    })
             td
                 p.font-bold Mediano Plazo
                 p (Es el dinero que le proporcionara los ingresos que requiere para mantener su estilo de vida actual y para proyectos a mas largo plazo).
@@ -75,18 +78,19 @@ include /mixins/mixins
         tr.text-justify
             td
                 +field-input("largoPlazoPor",
-                            {
-                                label: "",
-                                orientation: "horizontal",
-                                disabled: true
-                            })
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        disabled: true
+                    })
             td
                 +field-input("largoPlazoMonto",
-                            {
-                                label: "",
-                                size: "10em",
-                                orientation: "horizontal"
-                            })
+                    {
+                        label: "",
+                        size: "10em",
+                        orientation: "horizontal",
+                        required: true
+                    })
             td
                 p.font-bold Largo Plazo
                 p (EL resto de su patrimonio que no utilizara en menos de 5 años).
@@ -95,16 +99,18 @@ include /mixins/mixins
         tr.text-justify
             td
                 +field-input("patrimonioPor",
-                            {
-                                label: "",
-                                orientation: "horizontal",
-                                disabled: true
-                            })
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        disabled: true
+                    })
             td
                 +field-input("patrimonioMonto",
-                            {
-                                label: "",
-                                size: "10em",
-                                disabled: true,
-                                orientation: "horizontal"
-                            })
+                    {
+                        label: "",
+                        size: "10em",
+                        disabled: true,
+                        orientation: "horizontal"
+                    })
+            td
+            td

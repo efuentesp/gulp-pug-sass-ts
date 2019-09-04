@@ -101,6 +101,20 @@ const rest_findAll = (resource: string, params: any, cb: Function) => {
   });
 };
 
+const rest_create = (resource: string, payload: any, cb: Function) => {
+  const url = `${REST_URL}/${resource}`;
+  console.log(url);
+
+  $.ajax({
+    type: "POST",
+    url,
+    data: JSON.stringify(payload),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: result => cb(result)
+  });
+};
+
 const rest_findOne = (resource: string, id: string, cb: Function) => {
   const url = `${REST_URL}/${resource}/${id}`;
   console.log(url);
@@ -123,3 +137,4 @@ const rpc_findAll = (resource: string, params: any, cb: Function) => {
 
 const http_findAll = rest_findAll;
 const http_findOne = rest_findOne;
+const http_create = rest_create;
