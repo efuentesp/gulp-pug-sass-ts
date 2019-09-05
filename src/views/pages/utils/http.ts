@@ -1,6 +1,6 @@
 /// <reference path="../../../../typings/index.d.ts" />
 
-// import { from } from "rxjs";
+// import * as Rx from "rxjs";
 
 export const REST_URL = "http://localhost:3000";
 
