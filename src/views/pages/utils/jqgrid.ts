@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 // JqGrid utils
 export const fillJqGrid = (grid_id: string, data: any[]) => {
   $(grid_id).jqGrid("clearGridData");

@@ -80,6 +80,8 @@ function typescriptIt() {
           target: "ES5",
           module: "AMD",
           removeComments: false
+          // moduleResolution: "node"
+          // esModuleInterop: true
         })
       )
       // .pipe(uglify())
@@ -164,6 +166,7 @@ function concatJQueryJs() {
 function concatVendorJs() {
   return gulp
     .src([
+      // "./node_modules/rxjs/Rx.js",
       "./node_modules/parsleyjs/dist/parsley.min.js",
       "./node_modules/parsleyjs/dist/i18n/es.js",
       "./node_modules/select2/dist/js/select2.min.js",

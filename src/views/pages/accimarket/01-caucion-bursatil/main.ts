@@ -1,4 +1,4 @@
-/// <reference path="../../typings/index.d.ts" />
+/// <reference path="../../../../../typings/index.d.ts" />
 
 import { ui_accordion_settings } from "../../utils/ui-accordion";
 import { ui_datepicker_settings } from "../../utils/ui-datepicker";
@@ -11,7 +11,9 @@ $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
 
 $("#fecha").datepicker(ui_datepicker_settings);
 
+// console.log("Observable");
 const rest_url = `${REST_URL}/fideicomiso`;
+// http_findAll$("contratos", {}).subscribe(console.log);
 
 $("#btn_plus_contrato").click(() => {
   const text_to_add = $("#contrato").val() as string;
@@ -222,7 +224,7 @@ http_findAll("contratos", contratos_params, payload => {
   });
 });
 
-const form = ($("#criterios-busqueda") as any)
+const form = $("#criterios-busqueda")
   .parsley()
   .on("field:validated", () => {
     const ok = $(".parsley-error").length === 0;
