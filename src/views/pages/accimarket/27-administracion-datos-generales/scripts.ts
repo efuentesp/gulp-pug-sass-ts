@@ -14,18 +14,20 @@ $("#cotitular2_clasificacion_contrato_tab_group").tabs();
 /****   TAB-GROUP ------//--> */
 
 /*config TITULAR tabgroup */
+// $('#titular_contrato_tabgroup').tabs();
 $("#titular_contrato_tabgroup")
   .tabs()
   .addClass("ui-tabs-vertical ui-helper-clearfix");
-$("#titular_contrato_tabgroup li")
+$("#titular_contrato_tabgroup > ul > li")
   .removeClass("ui-corner-top")
   .addClass("ui-corner-left");
 
 /*config COTITULAR2 tabgroup */
+// $('#cotitular2_tabgroup').tabs();
 $("#cotitular2_tabgroup")
   .tabs()
   .addClass("ui-tabs-vertical ui-helper-clearfix");
-$("#cotitular2_tabgroup li")
+$("#cotitular2_tabgroup > ul > li")
   .removeClass("ui-corner-top")
   .addClass("ui-corner-left");
 

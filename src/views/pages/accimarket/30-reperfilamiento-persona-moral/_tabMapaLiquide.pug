@@ -1,0 +1,115 @@
+include /mixins/mixins
+
+.row
+    p.pb-4#informaPM Identifique el monto del patrimonio que necesitara para hacer frente a cualquier inverion, gatos o contingencia en un periodo de hasta 2 años; el resto del patrimonio que no utilizara a corto plazo, recomendamos diversificarlo con el fin de incrementar su patrimonio y cumplir sus objetivos a futuro.
+    table#liquidezPM
+        tr.text-center.font-bold
+            td
+                p %
+            td
+                p Monto $
+            td
+                p Horizonte
+            td
+                p Proposito
+        tr.text-justify
+            td
+                +field-input("liquidezPor",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        disabled: true
+                    })
+            td
+                +field-input("liquidezMonto",
+                    {
+                        label: "",
+                        size: "10em",
+                        orientation: "horizontal"
+                    })
+            td
+                p.font-bold Liquidez
+                p (Abarca todo el gasto corriente e un mes)
+            td
+                p Educacion gastos de vivienda, trasporte, tarjetas de credito, creditos personales, tiempo libre, alimentacion, vestimenta, cobertura (seguros).
+        tr.text-justify
+            td
+                +field-input("cortoPlazoPor",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        disabled: true
+                    })
+            td
+                +field-input("cortoPlazoMonto",
+                    {
+                        label: "",
+                        size: "10em",
+                        orientation: "horizontal"
+                    })
+            td
+                p.font-bold Corto Plazo
+                p (Se construye por la reserva de contigencia que debera separar para afrontar imprevistos o proyectos a corto plazo. Se recomienda entre 6 y 9 meses de su ingreso normal).
+            td
+                p Reserva para contingencia,  viajes, cambio de auto, remodelacion, etc.
+        tr.text-justify
+            td
+                +field-input("medianoPlazoPor",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        disabled: true
+                    })
+            td
+                +field-input("medianoPlazoMonto",
+                    {
+                        label: "",
+                        size: "10em",
+                        orientation: "horizontal"
+                    })
+            td
+                p.font-bold Mediano Plazo
+                p (Es el dinero que le proporcionara los ingresos que requiere para mantener su estilo de vida actual y para proyectos a mas largo plazo).
+            td
+                p Ingresos constantes a largo plazo que le permita conservar su estilo de vida. Estudios de posgrado, comprar casa.
+        tr.text-justify
+            td
+                +field-input("largoPlazoPor",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        disabled: true
+                    })
+            td
+                +field-input("largoPlazoMonto",
+                    {
+                        label: "",
+                        size: "10em",
+                        orientation: "horizontal"
+                    })
+            td
+                p.font-bold Largo Plazo
+                p (EL resto de su patrimonio que no utilizara en menos de 5 años).
+            td
+                p Acumulacion del patrimonio. Asegurar independencia financiera en el tiempo.
+        tr.text-justify
+            td
+                +field-input("patrimonioPor",
+                    {
+                        label: "",
+                        orientation: "horizontal",
+                        disabled: true
+                    })
+            td
+                +field-input("patrimonioMonto",
+                    {
+                        label: "",
+                        size: "10em",
+                        disabled: true,
+                        orientation: "horizontal"
+                    })
+            td
+            td
+.row
+    p.pl-4 Rendimientos y Volatilidad de estartegias de Inversion (largo, mediano y corto plazo) en el tiempo
+    p GRAFICA
