@@ -1,6 +1,4 @@
 const gulp = require("gulp");
-const del = require("del");
-const vinylPaths = require("vinyl-paths");
 const pug = require("gulp-pug");
 const sass = require("gulp-sass");
 const cleanCSS = require("gulp-clean-css");
@@ -13,9 +11,11 @@ const changed = require("gulp-changed");
 // const replace = require("gulp-replace");
 const sourcemaps = require("gulp-sourcemaps");
 const typescript = require("gulp-typescript");
-const browserSync = require("browser-sync").create();
 const lec = require("gulp-line-ending-corrector");
 const wrapper = require("gulp-wrapper");
+const del = require("del");
+const vinylPaths = require("vinyl-paths");
+const browserSync = require("browser-sync").create();
 
 function clean() {
   return gulp
@@ -27,7 +27,7 @@ function imageminIt() {
   return (
     gulp
       .src("./src/images/*")
-      // .pipe(changed("./dist/assets/images"))
+      //.pipe(changed("./dist/assets/images"))
       //.pipe(imagemin())
       .pipe(gulp.dest("./dist/assets/images"))
   );
@@ -94,6 +94,13 @@ function typescriptIt() {
   );
 }
 
+function babelIt() {
+  // return gulp
+  //   .src(["./src/views/pages/*.js"])
+  //   .pipe(gulp.dest("./dist/assets/scripts"))
+  //   .pipe(browserSync.stream());
+}
+
 function webfonts() {
   return gulp
     .src(["./node_modules/@fortawesome/fontawesome-free/webfonts/*"])
@@ -107,9 +114,7 @@ function concatVendorCss() {
         "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
         "./node_modules/tailwindcss/dist/tailwind.min.css",
         "./src/views/styles/vendors/jqgrid/ui.jqgrid.min.css",
-        // "./src/views/styles/vendors/jqgrid/jqgrid.css",
         "./node_modules/select2/dist/css/select2.min.css"
-        // "./node_modules/jquery-file-upload/css/uploadfile.css"
       ])
       // .pipe(
       //   purgeCSS({
@@ -152,12 +157,14 @@ function concatJQueryJs() {
 function concatVendorJs() {
   return gulp
     .src([
+      "./node_modules/rx/dist/rx.js",
+      "./node_modules/rx/dist/rx.binding.js",
+      "./node_modules/rx-jquery/rx.jquery.js",
       "./node_modules/parsleyjs/dist/parsley.min.js",
       "./node_modules/parsleyjs/dist/i18n/es.js",
       "./node_modules/select2/dist/js/select2.min.js",
       "./node_modules/select2/dist/js/i18n/es.js",
       "./src/views/pages/scripts/vendors/jqgrid/jqgrid.js"
-      // "./node_modules/jquery-file-upload/js/jquery.uploadfile.min.js"
     ])
     .pipe(concat("libs.min.js"))
     .pipe(gulp.dest("./dist/assets/scripts"));
@@ -182,6 +189,7 @@ function watch() {
   gulp.watch("./src/views/mixins/**/*.pug", pugIt);
   gulp.watch("./src/views/templates/**/*.pug", pugIt);
   gulp.watch("./src/views/pages/**/*.ts", typescriptIt);
+  gulp.watch("./src/views/pages/**/*.js", babelIt);
   gulp.watch(["./src/images/**/*"], imageminIt);
 }
 
@@ -190,6 +198,7 @@ exports.imageminIt = imageminIt;
 exports.sassIt = sassIt;
 exports.pugIt = pugIt;
 exports.typescriptIt = typescriptIt;
+exports.babelIt = babelIt;
 exports.webfonts = webfonts;
 exports.concatVendorCss = concatVendorCss;
 exports.purgeCssIt = purgeCssIt;
@@ -199,7 +208,7 @@ exports.watch = watch;
 
 exports.default = gulp.series(
   clean,
-  gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
+  gulp.parallel(pugIt, sassIt, typescriptIt, babelIt, imageminIt),
   webfonts,
   concatVendorCss,
   concatJQueryJs,
@@ -208,7 +217,7 @@ exports.default = gulp.series(
 
 exports.dev = gulp.series(
   clean,
-  gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
+  gulp.parallel(pugIt, sassIt, typescriptIt, babelIt, imageminIt),
   webfonts,
   concatVendorCss,
   concatJQueryJs,
