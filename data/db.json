@@ -78,8 +78,263 @@
                 "emisoras": "Prueba Emisora3",
                 "tipo_valor_emisora": "Prueba Tipo Valor Emisora3"
               }
+            ],
+            "relacion_emisor": [
+              {
+                "emisor": "[BEF] FRANCO BELGA (USD)",
+                "relacion": "Vicepresidente"
+              },
+              {
+                "emisor": "[DOP]REP. DOMINICANA PESO (USD)",
+                "relacion": "Presidente"
+              },
+              {
+                "emisor": "[BEF] FRANCO BELGA (USD)",
+                "relacion": "Presidente"
+              }
             ]
           },
+          "comisiones": [
+            {
+              "tipo": "Obligaciones",
+              "porcentaje": "0.250000"
+            },
+            {
+              "tipo": "Renta Variable",
+              "porcentaje": "0.062500"
+            }
+          ],
+          "documentacion": {
+            "contrato": [
+              {
+                "sts": "check green",
+                "documentacion": "MIFT",
+                "tipo": "MIFT",
+                "observaciones": ""
+              },
+              {
+                "sts": "check red",
+                "documentacion": "CONTRATO DE INTERMEDIACION",
+                "tipo": "SIN TIPO",
+                "observaciones": ""
+              },
+              {
+                "sts": "check red",
+                "documentacion": "ADDENDUM",
+                "tipo": "SIN TIPO",
+                "observaciones": ""
+              },
+              {
+                "sts": "check red",
+                "documentacion": "ANEXO W9",
+                "tipo": "ANEXO",
+                "observaciones": ""
+              },
+              {
+                "sts": "check red",
+                "documentacion": "ANEXO W8",
+                "tipo": "FECHAS DE FIRMA",
+                "observaciones": ""
+              }
+            ],
+            "cliente": [
+              {
+                "sts": "check green",
+                "documentacion": "CREDENCIAL DE ELECTOR",
+                "tipo": "IDENTIFICACION",
+                "observaciones": "2021/12/31"
+              },
+              {
+                "sts": "check green",
+                "documentacion": "INSCRIPCION EN EL R.F.C.",
+                "tipo": "COMPROBANTE DE DOMICILIO",
+                "observaciones": ""
+              },
+              {
+                "sts": "check green",
+                "documentacion": "REGISTRO FEDERAL DE CONTRIBUYENTES",
+                "tipo": "COMPROBANTE FISCAL",
+                "observaciones": ""
+              },
+              {
+                "sts": "check green",
+                "documentacion": "CREDENCIAL IFE",
+                "tipo": "COMPROBANTE DE NACIONALIDAD",
+                "observaciones": ""
+              },
+              {
+                "sts": "check green",
+                "documentacion": "COMPROBANTE CHEQUERA",
+                "tipo": "COMPROBANTE CHEQUERA BANAMEX",
+                "observaciones": "2014/01/13"
+              }
+            ]
+          },
+          "domicilio": [
+            {
+              "tipo_dom": "FISCAL",
+              "direccion": "AV DE LA CALLE NO. 12118 NumExter NumInterior",
+              "colonia": "COL COLONIA X",
+              "municipio_del": "CUAUHTEMOC",
+              "cp": "06700",
+              "ciudad": "CIUDAD DE MEXICO",
+              "estado": "Ciudad de México"
+            },
+            {
+              "tipo_dom": "CORRESPONDENCIA",
+              "direccion": "AV DE LA CALLE NO. 12118 NumExter NumInterior",
+              "colonia": "COL COLONIA X",
+              "municipio_del": "CUAUHTEMOC",
+              "cp": "06700",
+              "ciudad": "CIUDAD DE MEXICO",
+              "estado": "Ciudad de México"
+            }
+          ],
+          "firmas_autorizadas": [
+            {
+              "tipo": "SINTIPO",
+              "nombre": "LUIS",
+              "ap_paterno": "CASAS",
+              "ap_materno": "PEREZ",
+              "no_escri": "0",
+              "no_not": "",
+              "reg_pub_comer": "",
+              "obs_firma": ""
+            }
+          ],
+          "formatos_fiscales": [
+            {
+              "custodio": "Deutshe Bank AG, NY",
+              "w8_ben": "yellow check",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "JP Morgan",
+              "w8_ben": "yellow check",
+              "w8_imy": "CASAS",
+              "w9": "PEREZ",
+              "prueba2": "0",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "The Bank of New York",
+              "w8_ben": "yellow check",
+              "w8_imy": "CASAS",
+              "w9": "PEREZ",
+              "prueba2": "0",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "Clearstream Banking",
+              "w8_ben": "yellow check",
+              "w8_imy": "CASAS",
+              "w9": "PEREZ",
+              "prueba2": "0",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "Euroclear Bank",
+              "w8_ben": "yellow check",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "INDEVAL",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            },
+            {
+              "custodio": "Santander España",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            },
+            {
+              "custodio": "BBVA",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            },
+            {
+              "custodio": "PRUEBA",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            },
+            {
+              "custodio": "PRUEBA21",
+              "w8_ben": "yellow check",
+              "w8_imy": "CASAS",
+              "w9": "PEREZ",
+              "prueba2": "0",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "PRUEBA JQUERY3",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            }
+          ],
+          "medio_comunicacion": [
+            {
+              "tipo": "TELEFONO OFICINA",
+              "descripcion": "1226121181",
+              "observaciones": ""
+            }
+          ],
+          "medio_liquidacion": [
+            {
+              "sts": "1",
+              "titular_cuenta": "NomTitCta12118Fcta1",
+              "medio_liq": "Maestra",
+              "inst_financiera": "BANCO NACIONAL DE MEXICO, S.A.",
+              "no_cuenta": "71531",
+              "no_cliente_banco": "8491424",
+              "no_succ": "509",
+              "plaza": "0",
+              "fut_cta": "",
+              "fut_benef": ""
+            }
+          ],
           "observaciones": {
             "text_area_observaciones": "",
             "fecha_apertura": "06/Nov/1984",
@@ -156,299 +411,6 @@
       "fecha": "31-08-2019",
       "negocio": "B",
       "fechaFinal": "02-09-2019"
-    }
-  ],
-  "busquedaContrato": [
-    {
-      "contrato": 12345,
-      "nombre": "LAD",
-      "perfilActual": "Desarrollador",
-      "personasPerfilar": [
-        {
-          "id": 1,
-          "text": "LADP"
-        },
-        {
-          "id": 2,
-          "text": "PDAL"
-        }
-      ]
-    },
-    {
-      "contrato": 67890,
-      "nombre": "DAL",
-      "perfilActual": "DBA",
-      "personasPerfilar": [
-        {
-          "id": 1,
-          "text": "DALP"
-        },
-        {
-          "id": 2,
-          "text": "PLAD"
-        }
-      ]
-    }
-  ],
-  "edadesService": [
-    {
-      "id": 25,
-      "text": "De 18 a 35 años"
-    },
-    {
-      "id": 20,
-      "text": "De 36 a 45 años"
-    },
-    {
-      "id": 15,
-      "text": "De 46 a 55 años"
-    },
-    {
-      "id": 10,
-      "text": "De 56 a 65 años"
-    },
-    {
-      "id": 5,
-      "text": "66 añosen adelante"
-    }
-  ],
-  "estudiosService": [
-    {
-      "id": 5,
-      "text": "Maestria/Doctorado"
-    },
-    {
-      "id": 4,
-      "text": "Licenciatura"
-    },
-    {
-      "id": 3,
-      "text": "Tecnica/Comercial"
-    },
-    {
-      "id": 3,
-      "text": "Preparatoria"
-    },
-    {
-      "id": 2,
-      "text": "Secundaria"
-    },
-    {
-      "id": 1,
-      "text": "Primaria"
-    },
-    {
-      "id": 1,
-      "text": "Sin escolaridad"
-    }
-  ],
-  "ocupacionService": [
-    {
-      "id": 5,
-      "text": "Estudiante"
-    },
-    {
-      "id": 4,
-      "text": "Empresario"
-    },
-    {
-      "id": 3,
-      "text": "Director"
-    },
-    {
-      "id": 2,
-      "text": "Empleado"
-    },
-    {
-      "id": 1,
-      "text": "Jubilado"
-    },
-    {
-      "id": 1,
-      "text": "Ama de Casa"
-    },
-    {
-      "id": 1,
-      "text": "Otro"
-    }
-  ],
-  "estrategiaService": [
-    {
-      "id": 2,
-      "text": "Especulativa"
-    },
-    {
-      "id": 1,
-      "text": "Patrimonial"
-    }
-  ],
-  "asesoriaService": [
-    {
-      "id": 3,
-      "text": "No asesorado (Ejecucion)"
-    },
-    {
-      "id": 2,
-      "text": "Ocasionalmente No asesorado"
-    },
-    {
-      "id": 1,
-      "text": "Siempre asesorado"
-    }
-  ],
-  "propositoService": [
-    {
-      "id": 5,
-      "text": "Estrategia A (Liquidez)"
-    },
-    {
-      "id": 10,
-      "text": "Estrategia B (Conservacion)"
-    },
-    {
-      "id": 15,
-      "text": "Estrategia C (Equilibrio)"
-    },
-    {
-      "id": 20,
-      "text": "Estrategia D (Incremento)"
-    },
-    {
-      "id": 25,
-      "text": "Estrategia E (Maximizacion)"
-    }
-  ],
-  "toleranciaService": [
-    {
-      "id": 4,
-      "text": "No acostumbra invertir en instrumentos con volatilidad (minima*)"
-    },
-    {
-      "id": 8,
-      "text": "Venderia todo en prevision de perdidas adicionales (baja*)"
-    },
-    {
-      "id": 12,
-      "text": "Venderia solo una parte (media*)"
-    },
-    {
-      "id": 16,
-      "text": "Mantendria la inversion (alta*)"
-    },
-    {
-      "id": 20,
-      "text": "Compraria mas (agresiva*)"
-    }
-  ],
-  "horizonteInversion": [
-    {
-      "id": 4,
-      "text": "Portafolio 1 (Corto Plazo)"
-    },
-    {
-      "id": 8,
-      "text": "Portafolio 2 (Corto/Mediano Plazo)"
-    },
-    {
-      "id": 12,
-      "text": "Portafolio 3 (Mediano Plazo)"
-    },
-    {
-      "id": 16,
-      "text": "Portafolio 4 (Mediano/Largo Plazo)"
-    },
-    {
-      "id": 20,
-      "text": "Portafolio 5 (Largo Plazo)"
-    }
-  ],
-  "detallePortaFolio": [
-    {
-      "id": 4,
-      "menorDeUn": "100",
-      "deUnoaTres": "0",
-      "mayorDeTres": "0"
-    },
-    {
-      "id": 8,
-      "menorDeUn": "70",
-      "deUnoaTres": "30",
-      "mayorDeTres": "0"
-    },
-    {
-      "id": 12,
-      "menorDeUn": "30",
-      "deUnoaTres": "50",
-      "mayorDeTres": "20"
-    },
-    {
-      "id": 16,
-      "menorDeUn": "10",
-      "deUnoaTres": "50",
-      "mayorDeTres": "20"
-    },
-    {
-      "id": 20,
-      "menorDeUn": "5",
-      "deUnoaTres": "25",
-      "mayorDeTres": "70"
-    }
-  ],
-  "servicioLuisP": [
-    {
-      "fechaO": "02-09-2019",
-      "fechaL": "07-09-2019",
-      "operacion": "CLIENTE 01",
-      "emisora": "DIGITO 01",
-      "perfilProd": "PERFIL 01",
-      "tv": "TV 01",
-      "cantidad": "DESC TV 01",
-      "precio": "EMISORA 01",
-      "impBruto": "SERIE 01",
-      "comision": "CANTIDAD 01",
-      "iva": "PRECIO 01",
-      "impuesto": "VALORACION 01",
-      "impNeto": "PROMOTOR 01",
-      "tasa": "FOLIO 01",
-      "plazo": "30-08-2019",
-      "tipoPort": "CB",
-      "rompe": "ROMPE 01",
-      "servInv": "VALORACION 01",
-      "perfilCli": "PROMOTOR 01",
-      "medio": "FOLIO 01",
-      "numRed": "30082019",
-      "clasificacion": "CB",
-      "oper": "020019"
-    }
-  ],
-  "perfilamiento_personas_fisicas": [
-    {
-      "contrato": "12345",
-      "nombre": "LAD",
-      "perfil": "Desarrollador",
-      "personaPerfilar": "1",
-      "liquidezPor": "0",
-      "liquidezMonto": "1",
-      "cortoPlazoPor": "0",
-      "cortoPlazoMonto": "2",
-      "medianoPlazoPor": "0",
-      "medianoPlazoMonto": "3",
-      "largoPlazoPor": "0",
-      "largoPlazoMonto": "4",
-      "patrimonioPor": "0",
-      "patrimonioMonto": "10",
-      "edad": "25",
-      "estudios": "5",
-      "ocupacion": "5",
-      "inversiones": "SI",
-      "estrategia": "2",
-      "asesoria": "3",
-      "proposito": "5",
-      "tolerancia": "4",
-      "limitantes": "false",
-      "horizonteInversion": "4",
-      "origenUno": [],
-      "id": 1
     }
   ]
 }

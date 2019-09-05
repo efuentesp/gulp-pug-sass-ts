@@ -72,6 +72,13 @@ const llenarTitularContrato = (payload: any) => {};
 const llenarCotitulares = (payload: any) => {
   llenarCotitular_ClasificacionContrato(payload, 0);
   llenarCotitular_Observaciones(payload, 0);
+  llenarCotitular_Comisiones(payload, 0);
+  llenarCotitular_Documentacion(payload, 0);
+  llenarCotitular_Domicilio(payload, 0);
+  llenarCotitular_FirmasAutorizadas(payload, 0);
+  llenarCotitular_FormatosFiscales(payload, 0);
+  llenarCotitular_MediosComunicacion(payload, 0);
+  llenarCotitular_MedioLiquidacion(payload, 0);
   // ..
 };
 
@@ -154,6 +161,7 @@ const llenarCotitular_ClasificacionContrato = (payload: any, i: number) => {
   );
 
   llenarCotitular_LimitantesInvertir(payload, 0);
+  llenarCotitular_RelacionEmisor(payload, 0);
 };
 
 const llenarCotitular_LimitantesInvertir = (payload: any, i: number) => {
@@ -180,6 +188,292 @@ const llenarCotitular_LimitantesInvertir = (payload: any, i: number) => {
     rowNum: 10,
     rowList: [10, 20, 30],
     sortname: "grupo_instrumentos",
+    sortorder: "desc",
+    viewrecords: true,
+    gridview: true,
+    autoencode: true,
+    caption: ""
+  });
+};
+
+const llenarCotitular_RelacionEmisor = (payload: any, i: number) => {
+  const relacionEmisorArray: any[] =
+    payload.cotitulares[i].clasificacion_contrato.relacion_emisor;
+
+  $("#table_cotitular2_clasificacion_contrato_relacion_emisor").jqGrid({
+    data: relacionEmisorArray,
+    datatype: "local",
+    height: "auto",
+    colNames: ["Emisor", "Relación"],
+    colModel: [
+      { name: "emisor", width: 150 },
+      { name: "relacion", width: 150 }
+    ],
+    //   pager: "#pager_cotitular2_comisiones",
+    rowNum: 10,
+    rowList: [10, 20, 30],
+    sortname: "relacion",
+    sortorder: "desc",
+    viewrecords: true,
+    gridview: true,
+    autoencode: true,
+    caption: ""
+  });
+};
+
+const llenarCotitular_Comisiones = (payload: any, i: number) => {
+  const comisionesArray: any[] = payload.cotitulares[i].comisiones;
+
+  $("#table_cotitular2_comisiones").jqGrid({
+    data: comisionesArray,
+    datatype: "local",
+    height: "auto",
+    colNames: ["Tipo", "Porcentaje %"],
+    colModel: [
+      { name: "tipo", width: 150 },
+      { name: "porcentaje", width: 150 }
+    ],
+    //   pager: "#pager_cotitular2_comisiones",
+    rowNum: 10,
+    rowList: [10, 20, 30],
+    sortname: "porcentaje",
+    sortorder: "desc",
+    viewrecords: true,
+    gridview: true,
+    autoencode: true,
+    caption: ""
+  });
+};
+
+const llenarCotitular_Documentacion = (payload: any, i: number) => {
+  const documentacionContratoArray: any[] =
+    payload.cotitulares[i].documentacion.contrato;
+  const documentacionClienteArray: any[] =
+    payload.cotitulares[i].documentacion.cliente;
+
+  $("#table_cotitular2_documentacion_contrato").jqGrid({
+    data: documentacionContratoArray,
+    datatype: "local",
+    height: "auto",
+    colNames: ["Sts", "Documentación", "Tipo", "Observaciones"],
+    colModel: [
+      { name: "sts", width: 150 },
+      { name: "documentacion", width: 150 },
+      { name: "tipo", width: 150 },
+      { name: "observaciones", width: 150 }
+    ],
+    //   pager: "#pager_cotitular2_comisiones",
+    rowNum: 10,
+    rowList: [10, 20, 30],
+    sortname: "tipo",
+    sortorder: "desc",
+    viewrecords: true,
+    gridview: true,
+    autoencode: true,
+    caption: ""
+  });
+
+  $("#table_cotitular2_documentacion_cliente").jqGrid({
+    data: documentacionClienteArray,
+    datatype: "local",
+    height: "auto",
+    colNames: ["Sts", "Documentación", "Tipo", "Observaciones"],
+    colModel: [
+      { name: "sts", width: 150 },
+      { name: "documentacion", width: 150 },
+      { name: "tipo", width: 150 },
+      { name: "observaciones", width: 150 }
+    ],
+    //   pager: "#pager_cotitular2_comisiones",
+    rowNum: 10,
+    rowList: [10, 20, 30],
+    sortname: "tipo",
+    sortorder: "desc",
+    viewrecords: true,
+    gridview: true,
+    autoencode: true,
+    caption: ""
+  });
+};
+
+const llenarCotitular_Domicilio = (payload: any, i: number) => {
+  const domicilioArray: any[] = payload.cotitulares[i].domicilio;
+
+  $("#table_cotitular2_domicilio").jqGrid({
+    data: domicilioArray,
+    datatype: "local",
+    height: "auto",
+    colNames: [
+      "Tipo Dom.",
+      "Dirección",
+      "Colonia",
+      "Municipio/Del.",
+      "C.P.",
+      "Ciudad",
+      "Estado"
+    ],
+    colModel: [
+      { name: "tipo_dom", width: 150 },
+      { name: "direccion", width: 150 },
+      { name: "colonia", width: 150 },
+      { name: "municipio_del", width: 150 },
+      { name: "cp", width: 150 },
+      { name: "ciudad", width: 150 },
+      { name: "estado", width: 150 }
+    ],
+    //   pager: "#pager_cotitular2_comisiones",
+    rowNum: 10,
+    rowList: [10, 20, 30],
+    sortname: "tipo_dom",
+    sortorder: "desc",
+    viewrecords: true,
+    gridview: true,
+    autoencode: true,
+    caption: ""
+  });
+};
+
+const llenarCotitular_FirmasAutorizadas = (payload: any, i: number) => {
+  const firmasAutorizadasArray: any[] =
+    payload.cotitulares[i].firmas_autorizadas;
+
+  $("#table_cotitular2_firmas_autorizadas").jqGrid({
+    data: firmasAutorizadasArray,
+    datatype: "local",
+    height: "auto",
+    colNames: [
+      "Tipo",
+      "Nombre",
+      "Apellido Paterno",
+      "Apellido  Materno",
+      "No Escri",
+      "No Not",
+      "Reg Pub Comer",
+      "Obs Firma"
+    ],
+    colModel: [
+      { name: "tipo", width: 150 },
+      { name: "nombre", width: 150 },
+      { name: "ap_paterno", width: 150 },
+      { name: "ap_materno", width: 150 },
+      { name: "no_escri", width: 150 },
+      { name: "no_not", width: 150 },
+      { name: "reg_pub_comer", width: 150 },
+      { name: "obs_firma", width: 150 }
+    ],
+    //   pager: "#pager_cotitular2_comisiones",
+    rowNum: 10,
+    rowList: [10, 20, 30],
+    sortname: "tipo",
+    sortorder: "desc",
+    viewrecords: true,
+    gridview: true,
+    autoencode: true,
+    caption: ""
+  });
+};
+
+const llenarCotitular_FormatosFiscales = (payload: any, i: number) => {
+  const formatosFiscalesArray: any[] = payload.cotitulares[i].formatos_fiscales;
+
+  $("#table_cotitular2_formatos_fiscales").jqGrid({
+    data: formatosFiscalesArray,
+    datatype: "local",
+    height: "auto",
+    colNames: [
+      "Custodio",
+      "W-8 BEN",
+      "W-8 IMY",
+      "W9",
+      "PRUEBA2",
+      "PRUEBA JQUERY",
+      "Fecha Formato",
+      "Fecha Vencimiento"
+    ],
+    colModel: [
+      { name: "custodio", width: 150 },
+      { name: "w8_ben", width: 150 },
+      { name: "w8_imy", width: 150 },
+      { name: "w9", width: 150 },
+      { name: "prueba2", width: 150 },
+      { name: "pruebajquery", width: 150 },
+      { name: "fecha_formato", width: 150 },
+      { name: "fecha_vencimiento", width: 150 }
+    ],
+    //   pager: "#pager_cotitular2_comisiones",
+    rowNum: 10,
+    rowList: [10, 20, 30],
+    sortname: "fecha_vencimiento",
+    sortorder: "desc",
+    viewrecords: true,
+    gridview: true,
+    autoencode: true,
+    caption: ""
+  });
+};
+
+const llenarCotitular_MediosComunicacion = (payload: any, i: number) => {
+  const mediosComunicacionArray: any[] =
+    payload.cotitulares[i].medio_comunicacion;
+
+  $("#table_cotitular2_medio_comunicacion").jqGrid({
+    data: mediosComunicacionArray,
+    datatype: "local",
+    height: "auto",
+    colNames: ["Tipo", "Descripción", "Observaciones"],
+    colModel: [
+      { name: "tipo", width: 150 },
+      { name: "descripcion", width: 150 },
+      { name: "observaciones", width: 150 }
+    ],
+    //   pager: "#pager_cotitular2_comisiones",
+    rowNum: 10,
+    rowList: [10, 20, 30],
+    sortname: "tipo",
+    sortorder: "desc",
+    viewrecords: true,
+    gridview: true,
+    autoencode: true,
+    caption: ""
+  });
+};
+
+const llenarCotitular_MedioLiquidacion = (payload: any, i: number) => {
+  const mediosComunicacionArray: any[] =
+    payload.cotitulares[i].medio_liquidacion;
+
+  $("#table_cotitular2_medio_liquidacion").jqGrid({
+    data: mediosComunicacionArray,
+    datatype: "local",
+    height: "auto",
+    colNames: [
+      "Sts",
+      "Titular Cuenta",
+      "Medio Liq",
+      "Inst Financiera",
+      "No Cta",
+      "No Cliente Banco",
+      "No Succ",
+      "Plaza",
+      "Fut Cta",
+      "Fut Benef"
+    ],
+    colModel: [
+      { name: "sts", width: 150 },
+      { name: "titular_cuenta", width: 150 },
+      { name: "medio_liq", width: 150 },
+      { name: "inst_financiera", width: 150 },
+      { name: "no_cuenta", width: 150 },
+      { name: "no_cliente_banco", width: 150 },
+      { name: "no_succ", width: 150 },
+      { name: "plaza", width: 150 },
+      { name: "fut_cta", width: 150 },
+      { name: "fut_benef", width: 150 }
+    ],
+    //   pager: "#pager_cotitular2_comisiones",
+    rowNum: 10,
+    rowList: [10, 20, 30],
+    sortname: "tipo",
     sortorder: "desc",
     viewrecords: true,
     gridview: true,
