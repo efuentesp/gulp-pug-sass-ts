@@ -80,6 +80,8 @@ const llenaGridContratos = (contratos: any) => {
 		rowList: [10, 20, 30],
 		colNames: [
 			'Contrato',
+			'Imagen',
+			'Icono',
 			'ID Emisión',
 			'Cantidad',
 			'Emision',
@@ -119,6 +121,24 @@ const llenaGridContratos = (contratos: any) => {
 				width: 100,
 				sortable: true,
 				sorttype: 'number'
+			},
+			{
+				name: 'imagen',
+				index: 'imagen',
+				width: 50,
+				sortable: false,
+				formatter: (cellvalue, options, rowobject) => {
+					return "<img src='/assets/images/calendar.png' width='12px'>";
+				}
+			},
+			{
+				name: 'icono',
+				index: 'icono',
+				width: 50,
+				sortable: false,
+				formatter: (cellvalue, options, rowobject) => {
+					return "<i class='fa fa-plus-circle fa-lg text-red-600'></i>";
+				}
 			},
 			{ name: 'emisora', index: 'emisora', width: 100, sortable: false },
 			{ name: 'cantidad', index: 'cantidad', width: 100, sortable: false },
