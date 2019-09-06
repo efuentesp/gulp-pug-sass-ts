@@ -8,16 +8,8 @@ $("#fecha").datepicker(ui_datepicker_settings);
 
 const rest_url = `${REST_URL}/fideicomiso`;
 
-$("#btn_plus_contrato").click(() => {
-  const text_to_add = $("#contrato").val() as string;
-  console.log(text_to_add);
-  $("ul#tag_list_contrato").append($("<li>").text(text_to_add));
-  $("#contrato").val("");
-});
-
-$("ul#tag_list_contrato li").click(() => {
-  console.log("li clicked!");
-});
+fieldPlusMinus("contrato");
+fieldPlusMinus("digito");
 
 // Form validations
 let contratos_params: UrlParams = {};

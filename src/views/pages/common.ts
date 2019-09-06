@@ -178,3 +178,134 @@ const http_findOne = rest_findOne;
 const http_findOne$ = rest_findOne$;
 const http_create = rest_create;
 const http_create$ = rest_create$;
+
+const fieldSelectPlusMinus = (id: string) => {
+  const idBtnPlus = "#btn_plus_" + id;
+  const idBtnMinus = "#btn_minus_" + id;
+  const idInput = "#" + id;
+  const list = "ul#tag_list_" + id;
+
+  $(idBtnPlus).click(() => {
+    const text_to_add = $(idInput + " option:selected").text() as string;
+    const value_to_add = $(idInput + " option:selected").val() as string;
+    var exist = 0;
+
+    if ($("li").length <= 0) {
+      $(list).append(
+        "<li><a id = " +
+          value_to_add +
+          " class='delete_item' href='javascript:void();'>" +
+          text_to_add +
+          "</option></a></li>"
+      );
+      exist = 1;
+    } else {
+      $(list + " li a").each(function(index) {
+        if ($(this).text() === text_to_add) {
+          exist = 1;
+          return false;
+        }
+      });
+    }
+
+    if (exist == 0) {
+      $(list).append(
+        "<li><a id = " +
+          value_to_add +
+          " class='delete_item' href='javascript:void();'>" +
+          text_to_add +
+          "</option></a></li>"
+      );
+    }
+
+    $(idInput)
+      .val(null)
+      .trigger("change");
+  });
+
+  $(idBtnMinus).click(() => {
+    $(list + " li a").each(function(index) {
+      if ($(this).attr("id") === $(idInput).val()) {
+        $(this).remove();
+      }
+    });
+
+    $(idInput)
+      .val(null)
+      .trigger("change");
+  });
+
+  $(list).delegate(".delete_item", "click", function() {
+    $(idInput)
+      .val(
+        $(this)
+          .parent()
+          .find(".delete_item")
+          .attr("id")
+      )
+      .trigger("change");
+  });
+
+  ($(idInput) as any).select2({
+    placeholder: "--Seleccione--",
+    minimumResultsForSearch: Infinity
+  });
+};
+
+const fieldPlusMinus = (id: string) => {
+  const idBtnPlus = "#btn_plus_" + id;
+  const idBtnMinus = "#btn_minus_" + id;
+  const idInput = "#" + id;
+  const list = "ul#tag_list_" + id;
+
+  $(idBtnPlus).click(() => {
+    const text_to_add = $(idInput).val() as string;
+    console.log("Texto add: " + text_to_add);
+    var exist = 0;
+
+    if ($("li").length <= 0) {
+      $(list).append(
+        '<li><a class="delete_item" href="javascript:void();">' +
+          text_to_add +
+          "</a> </li>"
+      );
+      exist = 1;
+    } else {
+      $(list + " li a").each(function(index) {
+        if ($(this).text() === text_to_add) {
+          exist = 1;
+          return false;
+        }
+      });
+    }
+
+    if (exist == 0) {
+      $(list).append(
+        '<li><a class="delete_item" href="javascript:void();">' +
+          text_to_add +
+          "</a> </li>"
+      );
+    }
+
+    $(idInput).val("");
+  });
+
+  $(idBtnMinus).click(() => {
+    $(list + " li a").each(function(index) {
+      if ($(this).text() === $(idInput).val()) {
+        $(this).remove();
+      }
+    });
+
+    $(idInput).val("");
+  });
+
+  $(list).delegate(".delete_item", "click", function() {
+    $(idInput).val(
+      $(this)
+        .parent()
+        .find(".delete_item")
+        .html()
+    );
+  });
+};
