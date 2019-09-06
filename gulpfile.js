@@ -8,13 +8,18 @@ const uglify = require("gulp-uglify");
 const autoprefixer = require("gulp-autoprefixer");
 const imagemin = require("gulp-imagemin");
 const changed = require("gulp-changed");
+const rename = require("gulp-rename");
 // const replace = require("gulp-replace");
 const sourcemaps = require("gulp-sourcemaps");
 const typescript = require("gulp-typescript");
 const lec = require("gulp-line-ending-corrector");
 const wrapper = require("gulp-wrapper");
 const del = require("del");
+const browserify = require("browserify");
+const babelify = require("babelify");
 const vinylPaths = require("vinyl-paths");
+const source = require("vinyl-source-stream");
+const buffer = require("vinyl-buffer");
 const browserSync = require("browser-sync").create();
 
 function clean() {
@@ -99,6 +104,18 @@ function babelIt() {
   //   .src(["./src/views/pages/*.js"])
   //   .pipe(gulp.dest("./dist/assets/scripts"))
   //   .pipe(browserSync.stream());
+  return (
+    browserify({ entries: ["./src/views/pages/rxjs.js"] })
+      .transform("babelify", { presets: ["@babel/preset-env"] })
+      .bundle()
+      .pipe(source("rxjs.js"))
+      .pipe(rename({ extname: ".min.js" }))
+      .pipe(buffer())
+      .pipe(sourcemaps.init({ loadMaps: true }))
+      // .pipe(uglify())
+      .pipe(sourcemaps.write("../maps"))
+      .pipe(gulp.dest("./dist/assets/scripts"))
+  );
 }
 
 function webfonts() {
@@ -190,7 +207,7 @@ function watch() {
   gulp.watch("./src/views/templates/**/*.pug", pugIt);
   gulp.watch("./src/views/pages/**/*.ts", typescriptIt);
   gulp.watch("./src/views/pages/**/*.js", babelIt);
-  gulp.watch(["./src/images/**/*"], imageminIt);
+  // gulp.watch(["./src/images/**/*"], imageminIt);
 }
 
 exports.clean = clean;

@@ -8,14 +8,24 @@
     "build": "gulp",
     "json:server": "json-server --watch data/db.json"
   },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@types/jquery": "^3.3.31",
     "@types/jqueryui": "^1.12.7",
     "@types/rx": "^4.1.1",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.26.7",
+    "browserify": "^16.5.0",
     "del": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
@@ -28,6 +38,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-pug": "^4.0.1",
     "gulp-purgecss": "^1.2.0",
+    "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
@@ -39,7 +50,9 @@
     "prettier-tslint": "^0.4.2",
     "tslint": "^5.19.0",
     "typescript": "^3.5.3",
-    "vinyl-paths": "^3.0.0"
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-paths": "^3.0.0",
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.10.1",
