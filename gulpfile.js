@@ -104,6 +104,7 @@ function babelIt() {
   //   .src(["./src/views/pages/*.js"])
   //   .pipe(gulp.dest("./dist/assets/scripts"))
   //   .pipe(browserSync.stream());
+
   return (
     browserify({ entries: ["./src/views/pages/rxjs.js"] })
       .transform("babelify", { presets: ["@babel/preset-env"] })
@@ -225,7 +226,7 @@ exports.watch = watch;
 
 exports.default = gulp.series(
   clean,
-  gulp.parallel(pugIt, sassIt, typescriptIt, babelIt, imageminIt),
+  gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
   webfonts,
   concatVendorCss,
   concatJQueryJs,
@@ -234,7 +235,7 @@ exports.default = gulp.series(
 
 exports.dev = gulp.series(
   clean,
-  gulp.parallel(pugIt, sassIt, typescriptIt, babelIt, imageminIt),
+  gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
   webfonts,
   concatVendorCss,
   concatJQueryJs,
