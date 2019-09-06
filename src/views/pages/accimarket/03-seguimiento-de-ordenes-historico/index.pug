@@ -4,7 +4,7 @@ block title
    title 03. Seguimiento de Órdenes - Histórico
 
 block styles
-   link(rel="stylesheet", href="/assets/css/accimarket/03-seguimiento-de-ordenes-historico/styles.css")
+   link(rel="stylesheet" href="/assets/css/accimarket/03-seguimiento-de-ordenes-historico/styles.css")
 
 block content
    .content.p-4
@@ -15,36 +15,36 @@ block content
                +field-plus-minus("contrato", {label: "Contrato"})
                +field-plus-minus("digito", {label: "Digito"})
                +field-checks("servicio_inversion",
-                           {
-                              label: "Servicio de Inversión",
-                           },
-                           {key: "S01", value:"Asesoría", color:"green"},
-                           {key: "S02", value:"Gestión", color:"yellow"},
-                           {key: "S03", value:"Comercialización", color:"blue"},
-                           {key: "S04", value:"Ejecución", color:"cyan"},
-                           {key: "S05", value:"N/A", color:"gray"}
-                           )
+                  {
+                     label: "Servicio de Inversión",
+                  },
+                  {key: "S01", value:"Asesoría", color:"green"},
+                  {key: "S02", value:"Gestión", color:"yellow"},
+                  {key: "S03", value:"Comercialización", color:"blue"},
+                  {key: "S04", value:"Ejecución", color:"cyan"},
+                  {key: "S05", value:"N/A", color:"gray"}
+                  )
                +field-checks("rompe",
-                           {
-                              label: "Rompe",
-                           },
-                           {key: "SI", value:"Si", color:"red"},
-                           {key: "NO", value:"No", color:"green"},
-                           {key: "N/A", value:"N/A", color:"gray"}
-                           )
+                  {
+                     label: "Rompe",
+                  },
+                  {key: "SI", value:"Si", color:"red"},
+                  {key: "NO", value:"No", color:"green"},
+                  {key: "N/A", value:"N/A", color:"gray"}
+                  )
                #search-actions-column
                   +button-search({size: "large", disabled: false})
                   +button-clean({size: "large", disabled: false})
                   +button-pdf({size: "large", disabled: false})
                   +button-xls({size: "large", disabled: false})
       .row.has_border.w-full.overflow-auto
-        +tab-group("seguimiento_ordenes_tab_group",
-                   {id: "tab_item_intradia", label: "Intradia"},
-                   {id: "tab_item_historicos", label: "Históricos"})
-          +tab-item("tab_item_intradia")
-            p Intradia
-          +tab-item("tab_item_historicos")
-            +grid("ordenes_historicas")
+         +tab-group("seguimiento_ordenes_tab_group",
+            {id: "tab_item_intradia", label: "Intradia"},
+            {id: "tab_item_historicos", label: "Históricos"})
+               +tab-item("tab_item_intradia")
+                  p Intradia
+               +tab-item("tab_item_historicos")
+                  +grid("ordenes_historicas")
 
 block scripts
    script(src="/assets/scripts/accimarket/03-seguimiento-de-ordenes-historico/scripts.js")

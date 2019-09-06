@@ -3,10 +3,46 @@
     display: flex;
   }
 
-  #field_origen-uno {
-    display: flex;
-    flex-wrap: wrap;
-    width: 34em;
+  #field_estudios {
+    label {
+      width: 12.5em;
+    }
+  }
+
+  #field_ocupacion {
+    label {
+      width: 12.5em;
+    }
+  }
+
+  #field_estrategia {
+    label {
+      width: 38.7em;
+    }
+  }
+
+  #field_horizonte-Inversion {
+    align-items: baseline;
+
+    label {
+      width: 33.5em;
+    }
+  }
+
+  #field_tolerancia {
+    label {
+      width: 33.5em;
+    }
+  }
+
+  #field_origen_uno {
+    .field-control {
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        width: 34em;
+      }
+    }
 
     .checkbox_input {
       width: 15em;
@@ -26,6 +62,13 @@
     margin-left: 30em;
     width: 70em;
 
+    tr {
+      border-collapse: collapse;
+      border-radius: 7px;
+      border-style: hidden;
+      box-shadow: 0 0 0 1px blue;
+    }
+
     td {
       padding-left: 1rem;
       padding-right: 1rem;
@@ -37,9 +80,23 @@
     margin-left: 20em;
     width: 65em;
 
+    tr {
+      border-collapse: collapse;
+      border-radius: 7px;
+      border-style: hidden;
+      box-shadow: 0 0 0 1px blue;
+    }
+
     td {
       padding-right: 1rem;
       padding-left: 1rem;
     }
+  }
+
+  #grupoInstrumentos {
+    label {
+      font-weight: 700;
+    }
+    padding-left: 35em;
   }
 }

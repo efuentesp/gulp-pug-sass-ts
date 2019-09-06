@@ -12,7 +12,7 @@ include /mixins/mixins
             +field-input("asesor_inversion",
                 {
                 label: "Asesor de Inversión:",
-                size: "80em",
+                size: "60em",
                 disabled: true,
                 orientation: "horizontal"
                 })
@@ -20,7 +20,7 @@ include /mixins/mixins
             +field-input("tipo_manifiesto",
                 {
                 label: "Tipo de Manifiesto:",
-                size: "5em",
+                size: "29em",
                 disabled: true,
                 orientation: "horizontal"
                 })
@@ -28,147 +28,147 @@ include /mixins/mixins
             +field-input("servicio_inversion",
                 {
                 label: "Servicio de Inversión:",
-                size: "5em",
+                size: "60em",
                 disabled: true,
                 orientation: "horizontal"
                 })
-        .row.flex.flex-wrap
+        .row.flex.inline-flex
             +field-input("carta_ejecucion",
                 {
                 label: "Carta Ejecución:",
-                size: "5em",
+                size: "45em",
                 disabled: true,
                 orientation: "horizontal"
                 })
             +field-input("fecha_carta_ejecucion",
                 {
                 label: "Fecha:",
-                size: "5em",
+                size: "10em",
                 disabled: true,
                 orientation: "horizontal"
                 })
-        .row.flex.flex-wrap
+        .row.flex.inline-flex
             +field-input("carta_ejecucion_2",
                 {
                 label: "Carta Ejecución:",
-                size: "5em",
+                size: "45em",
                 disabled: true,
                 orientation: "horizontal"
                 })
             +field-input("fecha_carta_ejecucion_2",
                 {
                 label: "Fecha:",
-                size: "5em",
+                size: "10em",
                 disabled: true,
                 orientation: "horizontal"
                 })
-        .row.flex.flex-wrap
+        .row.flex.inline-flex
             +field-input("institucional_pract_vta",
                 {
                 label: "Institucional/Institucional Pract. Vta.:",
-                size: "5em",
+                size: "17em",
                 disabled: true,
                 orientation: "horizontal"
                 })
             +field-input("justificacion_institucional_pract_vta",
                 {
                 label: "Justificación:",
-                size: "5em",
+                size: "20em",
                 disabled: true,
                 orientation: "horizontal"
                 })
             +field-input("fecha_institucional_pract_vta",
                 {
                 label: "Fecha:",
-                size: "5em",
+                size: "10em",
                 disabled: true,
                 orientation: "horizontal"
                 })
-        .row.flex.flex-wrap
+        .row.flex.inline-flex
             +field-input("sofisticado_nosofisticado",
                 {
                 label: "Sofisticado/No Sofisticado:",
-                size: "5em",
+                size: "17em",
                 disabled: true,
                 orientation: "horizontal"
                 })
             +field-input("justificacion_sofisticado_nosofisticado",
                 {
                 label: "Justificación:",
-                size: "5em",
+                size: "20em",
                 disabled: true,
                 orientation: "horizontal"
                 })
             +field-input("fecha_sofisticado_nosofisticado",
                 {
                 label: "Fecha:",
-                size: "5em",
+                size: "10em",
                 disabled: true,
                 orientation: "horizontal"
                 })
-        .row.flex.flex-wrap
+        .row.flex.inline-flex
             +field-input("elegible_noelegible",
                 {
                 label: "Elegible/No Elegible:",
-                size: "5em",
+                size: "17em",
                 disabled: true,
                 orientation: "horizontal"
                 })
             +field-input("justificacion_elegible_noelegible",
                 {
                 label: "Justificación:",
-                size: "5em",
+                size: "20em",
                 disabled: true,
                 orientation: "horizontal"
                 })
             +field-input("fecha_elegible_noelegible",
                 {
                 label: "Fecha:",
-                size: "5em",
+                size: "10em",
                 disabled: true,
                 orientation: "horizontal"
                 })
-        .row.flex.flex-wrap
+        .row.flex.inline-flex
             +field-input("calificado_nocalificado",
                 {
                 label: "Calificado/No Calificado:",
-                size: "5em",
+                size: "17em",
                 disabled: true,
                 orientation: "horizontal"
                 })
             +field-input("justificacion_calificado_nocalificado",
                 {
                 label: "Justificación:",
-                size: "5em",
+                size: "20em",
                 disabled: true,
                 orientation: "horizontal"
                 })
             +field-input("fecha_calificado_nocalificado",
                 {
                 label: "Fecha:",
-                size: "5em",
+                size: "10em",
                 disabled: true,
                 orientation: "horizontal"
                 })
-        .row.flex.flex-wrap
+        .row.flex.inline-flex
             +field-input("discrecional_nodiscrecional",
                 {
                 label: "Discrecional/No Discrecional:",
-                size: "5em",
+                size: "17em",
                 disabled: true,
                 orientation: "horizontal"
                 })
             +field-input("justificacion_discrecional_nodiscrecional",
                 {
                 label: "Justificación:",
-                size: "5em",
+                size: "20em",
                 disabled: true,
                 orientation: "horizontal"
                 })
             +field-input("fecha_discrecional_nodiscrecional",
                 {
                 label: "Fecha:",
-                size: "5em",
+                size: "10em",
                 disabled: true,
                 orientation: "horizontal"
                 })
@@ -176,25 +176,25 @@ include /mixins/mixins
             +field-input("anexo_descriptivo",
                 {
                 label: "Anexo Descriptivo:",
-                size: "15em",
+                size: "60em",
                 disabled: true,
                 orientation: "horizontal"
                 })
 
 
     +tab-item("conocimiento_experiencia")
-        .row.flex.flex-wrap
+        .row.flex.inline-flex
             +quiz("encuesta2", {name: "Instrumento de Inversión", size: "40em"}, [
-                {question: "Instrumentos de Deuda Gubernamental", required: true},
-                {question: "Instrumentos de Deuda Corporativa", required: true},
-                {question: "Sociedades de Inversión", required: true},
-                {question: "Valores Estructurados", required: true},
-                {question: "Certificados Bursátiles Fiduciarios(Cebures,Cedevis) y Fideicomisos Privados", required: true},
-                {question: "Titulos Opcionales (Warrants)", required: true},
-                {question: "Acciones", required: true},
-                {question: "Valores Extranjeros", required: true},
-                {question: "Trackers TRACs o ETFs", required: true},
-                {question: "Certificados de Capital de Desarrollo (CKDs)", required: true}
+                {question: "Instrumentos de Deuda Gubernamental"},
+                {question: "Instrumentos de Deuda Corporativa"},
+                {question: "Sociedades de Inversión"},
+                {question: "Valores Estructurados"},
+                {question: "Certificados Bursátiles Fiduciarios(Cebures,Cedevis) y Fideicomisos Privados"},
+                {question: "Titulos Opcionales (Warrants)"},
+                {question: "Acciones"},
+                {question: "Valores Extranjeros"},
+                {question: "Trackers TRACs o ETFs"},
+                {question: "Certificados de Capital de Desarrollo (CKDs)"}
                 ], [
                     {answer: "No conoce ni ha invertido", type: "option"},
                     {answer: "Sólo conoce", type: "option"},

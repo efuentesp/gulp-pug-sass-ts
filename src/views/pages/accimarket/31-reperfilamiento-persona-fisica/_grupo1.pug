@@ -5,13 +5,14 @@ include /mixins/mixins
         {
             label: "Contrato",
             size: "11em",
-            orientation: "horizontal"
+            orientation: "horizontal",
+            max_length: "6",
+            type: "digits"
         })
     +field-input("nombre",
         {
             label: "Nombre",
             size: "35em",
-            required: true,
             disabled: true,
             orientation: "horizontal"
         })
