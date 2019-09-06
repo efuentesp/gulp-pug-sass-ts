@@ -101,16 +101,7 @@ const rest_findAll = (resource: string, params: any, cb: Function) => {
   });
 };
 
-const restUrl_findAll = (resource: string, params: any) => {
-  const api_params = $.param(params);
-  const url = api_params
-    ? `${REST_URL}/${resource}?${api_params}`
-    : `${REST_URL}/${resource}`;
-
-  return url;
-};
-
-const rest_findAll$ = (resource, params) => {
+const rest_findAll$ = (resource: string, params: any) => {
   const api_params = $.param(params);
   const url = api_params
     ? `${REST_URL}/${resource}?${api_params}`
@@ -138,6 +129,19 @@ const rest_create = (resource: string, payload: any, cb: Function) => {
   });
 };
 
+const rest_create$ = (resource: string, payload: any) => {
+  const url = `${REST_URL}/${resource}`;
+  // console.log(url);
+
+  return $.ajaxAsObservable({
+    type: "POST",
+    url,
+    data: JSON.stringify(payload),
+    contentType: "application/json; charset=utf-8",
+    dataType: "json"
+  });
+};
+
 const rest_findOne = (resource: string, id: string, cb: Function) => {
   const url = `${REST_URL}/${resource}/${id}`;
   // console.log(url);
@@ -150,6 +154,16 @@ const rest_findOne = (resource: string, id: string, cb: Function) => {
   });
 };
 
+const rest_findOne$ = (resource: string, id: string) => {
+  const url = `${REST_URL}/${resource}/${id}`;
+
+  return $.ajaxAsObservable({
+    url,
+    contentType: "application/json",
+    dataType: "json"
+  });
+};
+
 const rpc_findAll = (resource: string, params: any, cb: Function) => {
   // TODO: Implementar versión con POST
 };
@@ -159,5 +173,8 @@ const rpc_findAll = (resource: string, params: any, cb: Function) => {
 });
 
 const http_findAll = rest_findAll;
+const http_findAll$ = rest_findAll$;
 const http_findOne = rest_findOne;
+const http_findOne$ = rest_findOne$;
 const http_create = rest_create;
+const http_create$ = rest_create$;

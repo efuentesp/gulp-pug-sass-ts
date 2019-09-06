@@ -19,15 +19,17 @@ $("ul#tag_list_contrato li").click(() => {
   console.log("li clicked!");
 });
 
-rest_findAll$("contratos", {}).subscribe(console.log);
-
 // Form validations
 let contratos_params: UrlParams = {};
 
-http_findAll("contratos", contratos_params, payload => {
-  // fillJqGrid("#table_contratos", payload);
-  llenaGridContratos(payload);
-});
+const r$ = http_findAll$("contratos", contratos_params)
+  .map(v => v["data"])
+  .subscribe(data => llenaGridContratos(data));
+
+// http_findAll("contratos", contratos_params, payload => {
+//   // fillJqGrid("#table_contratos", payload);
+//   llenaGridContratos(payload);
+// });
 
 const form = ($("#criterios-busqueda") as any)
   .parsley()
