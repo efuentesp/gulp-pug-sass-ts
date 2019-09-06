@@ -25,10 +25,7 @@ $("#tabs_resultados_busqueda").tabs();
   minimumResultsForSearch: Infinity
 });
 
-($("#contrato") as any).select2({
-  minimumResultsForSearch: Infinity,
-  dropdownParent: $("#tag_list_contrato")
-});
+fieldSelectPlusMinus("contrato");
 
 $("#table_grid_promocion").jqGrid({
   url: "http://localhost:3000/fideicomiso",
