@@ -13,6 +13,11 @@ console.log("form-validation");
     return false;
   });
 
+$("#fecha1").datepicker(ui_datepicker_settings);
+$("#fecha2").datepicker(ui_datepicker_settings);
+$("#fecha3").datepicker(ui_datepicker_settings);
+$("#fecha4").datepicker(ui_datepicker_settings);
+
 ($("#payment") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
