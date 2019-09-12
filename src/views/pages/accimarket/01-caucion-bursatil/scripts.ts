@@ -31,8 +31,8 @@ const form = ($("#criterios-busqueda") as any)
     // $(".callout-info").toggleClass("hidden", !ok);
     // $(".callout-warning").toggleClass("hidden", ok);
   })
-  .on("form:submit", () => {
-    console.log("form:submit");
+  .on("form:submit", (e) => {
+    console.log("form:submit", e);
 
     contratos_params = {};
 
@@ -56,7 +56,7 @@ const form = ($("#criterios-busqueda") as any)
 
     http_findAll("contratos", contratos_params, payload => {
       // fillJqGrid('#table_contratos', payload);
-      // console.log(payload);
+      console.log(payload);
       $("#table_contratos").jqGrid("clearGridData");
       $("#table_contratos").jqGrid("setGridParam", { data: payload });
       $("#table_contratos").trigger("reloadGrid");

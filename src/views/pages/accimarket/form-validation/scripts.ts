@@ -18,6 +18,11 @@ $("#fecha2").datepicker(ui_datepicker_settings);
 $("#fecha3").datepicker(ui_datepicker_settings);
 $("#fecha4").datepicker(ui_datepicker_settings);
 
+fieldPlusMinus("contrato1");
+fieldPlusMinus("contrato2");
+fieldPlusMinus("contrato3");
+fieldPlusMinus("contrato4");
+
 ($("#payment") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity

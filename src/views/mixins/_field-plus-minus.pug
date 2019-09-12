@@ -9,10 +9,11 @@ mixin field-plus-minus(id, parms)
   - var btn_minus_id = "btn_minus_" + id
   - var tag_list_id = "tag_list_" + id
   .field(id=_field_id class=_class)
-    label(for=_input_id)= parms.label
-    if parms.required
-      span.required *
-    .control.has-addons
+    .field-label.flex
+      label(for=_input_id)= parms.label
+      if parms.required
+        span.required *
+    .field-control.has-addons
       input.input(type="text"
                   id=_input_id
                   required=parms.required
