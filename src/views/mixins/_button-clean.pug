@@ -3,9 +3,7 @@ mixin button-clean(parms)
 
   if _parms.size == "large"
     button.button.big-button(id="btn_search" type="reset" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-lg
-          i.far.fa-file.fa-2x
-        br
+        img(src="/assets/images/btn-limpiar_32x32.png")
         span Limpiar
 
   if _parms.size == "medium"

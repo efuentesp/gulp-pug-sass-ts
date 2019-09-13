@@ -14,14 +14,14 @@ fieldPlusMinus("digito");
 // Form validations
 let contratos_params: UrlParams = {};
 
-const r$ = http_findAll$("contratos", contratos_params)
-  .map(v => v["data"])
-  .subscribe(data => llenaGridContratos(data));
+// const r$ = http_findAll$("contratos", contratos_params)
+//   .map(v => v["data"])
+//   .subscribe(data => llenaGridContratos(data));
 
-// http_findAll("contratos", contratos_params, payload => {
-//   // fillJqGrid("#table_contratos", payload);
-//   llenaGridContratos(payload);
-// });
+http_findAll("contratos", contratos_params, payload => {
+  // fillJqGrid("#table_contratos", payload);
+  llenaGridContratos(payload);
+});
 
 const form = ($("#criterios-busqueda") as any)
   .parsley()
