@@ -19,7 +19,7 @@ const DAY_NAMES = [
   "Sábado"
 ];
 
-const DAY_NAMES_MIN = ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"];
+const DAY_NAMES_MIN = ["D", "L ", "M ", "M ", "J ", "V ", "S "];
 
 const MONTH_NAMES = [
   "Enero",

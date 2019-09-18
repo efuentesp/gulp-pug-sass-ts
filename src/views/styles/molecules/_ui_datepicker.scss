@@ -1,13 +1,16 @@
-@import '../vars';
+@import "../vars";
 
 .ui-datepicker {
   width: 17em;
-  padding: 0.2em 0.2em 0;
+  // padding: 0.2em 0.2em 0;
   display: none;
+  border: 1px solid $color-sky-dark;
+  box-shadow: 2px 2px $color-sky;
 }
 .ui-datepicker .ui-datepicker-header {
   position: relative;
   padding: 0.2em 0;
+  background: $color-sky;
 }
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next {
@@ -174,4 +177,11 @@
   background-repeat: no-repeat;
   left: 0.5em;
   top: 0.3em;
+}
+
+.ui-datepicker-current-day {
+  .ui-state-active {
+    background: $color-blue-light;
+    border: 1px solid $color-blue-light;
+  }
 }
