@@ -124,7 +124,7 @@ const llenaGridContratos = (contratos: any) => {
         width: 50,
         sortable: false,
         formatter: (cellvalue, options, rowobject) => {
-          return "<img src='/assets/images/calendar.png' width='12px'>";
+          return "<img src='../../assets/images/btn-calendario_32x32.png' width='12px'>";
         }
       },
       {

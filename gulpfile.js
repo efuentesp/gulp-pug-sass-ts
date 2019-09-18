@@ -14,6 +14,7 @@ const sourcemaps = require("gulp-sourcemaps");
 const typescript = require("gulp-typescript");
 const lec = require("gulp-line-ending-corrector");
 const wrapper = require("gulp-wrapper");
+const prettify = require("gulp-prettify");
 const del = require("del");
 const browserify = require("browserify");
 const babelify = require("babelify");
@@ -43,8 +44,14 @@ function pugIt() {
     .src("./src/views/pages/**/index.pug")
     .pipe(
       pug({
-        pretty: true,
+        // pretty: true,
         basedir: __dirname + "/src/views/"
+      })
+    )
+    .pipe(
+      prettify({
+        indent_inner_html: true,
+        indent_size: 2
       })
     )
     .pipe(lec())

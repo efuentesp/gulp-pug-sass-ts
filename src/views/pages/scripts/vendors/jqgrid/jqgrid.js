@@ -3345,7 +3345,7 @@ $.fn.jqGrid = function( pin ) {
 				$("td#"+pgid+"_"+ts.p.recordpos,"#"+pgcnt).append("<div dir='"+dir+"' style='text-align:"+ts.p.recordpos+"' class='ui-paging-info'></div>");
 			}
 			$("td#"+pgid+"_"+ts.p.pagerpos,"#"+pgcnt).append(pgl);
-			$(".ui-paging-pager > tbody > tr").append("<td id='wilsonDiv' onclick='colapsarTodo()'><span class='collapsAll'><img src='/assets/images/closeFolder.jpg'></span></td");
+			$(".ui-paging-pager > tbody > tr").append("<td id='wilsonDiv' onclick='colapsarTodo()'><span class='collapsAll'><img src='../../assets/images/closeFolder.jpg'></span></td");
 			tdw = $("#gbox_"+$.jgrid.jqID(ts.p.id)).css("font-size") || "11px";
 			$("#gbox_"+$.jgrid.jqID(ts.p.id)).append("<div id='testpg' "+getstyle(stylemodule, 'entrieBox', false, 'ui-jqgrid')+" style='font-size:"+tdw+";visibility:hidden;' ></div>");
 			twd = $(pgl).clone().appendTo("#testpg").width();
