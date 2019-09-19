@@ -21,6 +21,9 @@ let contratos_params: UrlParams = {};
 http_findAll("contratos", contratos_params, payload => {
   // fillJqGrid("#table_contratos", payload);
   llenaGridContratos(payload);
+  const rec_count = payload.length;
+  $("#count_contratos").html(rec_count);
+  // console.log(rec_count);
 });
 
 const form = ($("#criterios-busqueda") as any)
@@ -31,7 +34,7 @@ const form = ($("#criterios-busqueda") as any)
     // $(".callout-info").toggleClass("hidden", !ok);
     // $(".callout-warning").toggleClass("hidden", ok);
   })
-  .on("form:submit", (e) => {
+  .on("form:submit", e => {
     console.log("form:submit", e);
 
     contratos_params = {};
@@ -55,11 +58,13 @@ const form = ($("#criterios-busqueda") as any)
     }
 
     http_findAll("contratos", contratos_params, payload => {
-      // fillJqGrid('#table_contratos', payload);
-      console.log(payload);
+      // console.log(payload);
       $("#table_contratos").jqGrid("clearGridData");
       $("#table_contratos").jqGrid("setGridParam", { data: payload });
       $("#table_contratos").trigger("reloadGrid");
+      const rec_count = payload.length;
+      $("#count_contratos").html(rec_count);
+      // console.log(rec_count);
     });
 
     return false;
@@ -71,13 +76,11 @@ const llenaGridContratos = (contratos: any) => {
     data: contratos,
     datatype: "local",
     height: "auto",
-    // height: ajustarHeight(),
-    // width: ajustarWidth(),
     rowList: [10, 20, 30],
     colNames: [
       "Contrato",
-      "Imagen",
-      "Icono",
+      // "Imagen",
+      // "Icono",
       "ID Emisión",
       "Cantidad",
       "Emision",
@@ -118,24 +121,24 @@ const llenaGridContratos = (contratos: any) => {
         sortable: true,
         sorttype: "number"
       },
-      {
-        name: "imagen",
-        index: "imagen",
-        width: 50,
-        sortable: false,
-        formatter: (cellvalue, options, rowobject) => {
-          return "<img src='../../assets/images/btn-calendario_32x32.png' width='12px'>";
-        }
-      },
-      {
-        name: "icono",
-        index: "icono",
-        width: 50,
-        sortable: false,
-        formatter: (cellvalue, options, rowobject) => {
-          return "<i class='fa fa-plus-circle fa-lg text-red-600'></i>";
-        }
-      },
+      // {
+      //   name: "imagen",
+      //   index: "imagen",
+      //   width: 50,
+      //   sortable: false,
+      //   formatter: (cellvalue, options, rowobject) => {
+      //     return "<img src='../../assets/images/btn-calendario_32x32.png' width='12px'>";
+      //   }
+      // },
+      // {
+      //   name: "icono",
+      //   index: "icono",
+      //   width: 50,
+      //   sortable: false,
+      //   formatter: (cellvalue, options, rowobject) => {
+      //     return "<i class='fa fa-plus-circle fa-lg text-red-600'></i>";
+      //   }
+      // },
       { name: "emisora", index: "emisora", width: 100, sortable: false },
       { name: "cantidad", index: "cantidad", width: 100, sortable: false },
       { name: "emision", index: "emision", width: 100, sortable: false },
@@ -213,68 +216,7 @@ const llenaGridContratos = (contratos: any) => {
         formatter: "date",
         sortable: false
       }
-    ],
-    toppager: true,
-    viewrecords: true,
-    sortname: "contrato",
-    sortable: true,
-    grouping: true,
-    groupingView: {
-      groupField: ["contrato"],
-      groupSummary: [true],
-      groupDataSorted: true,
-      groupOrder: ["asc"],
-      groupSummaryPos: ["header"]
-    },
-    loadComplete: function() {
-      $(this)
-        .find(">tbody>tr.jqgrow:odd")
-        .addClass("myAltRowClassEven");
-      $(this)
-        .find(">tbody>tr.jqgrow:even")
-        .addClass("myAltRowClassOdd");
-
-      $(".list2ghead_0").click(function() {
-        if ($(this).hasClass("selected-group") == true)
-          $(this).removeClass("selected-group");
-        else
-          $(this)
-            .addClass("selected-group")
-            .siblings()
-            .removeClass("selected-group");
-      });
-
-      $("body").keypress(function(event) {
-        $(".selected-group").each(function(index) {
-          if (event.key == "+") {
-            $(this)
-              .find(".ui-icon-circlesmall-plus")
-              .trigger("click");
-            $(this).addClass("selected-group");
-          } else if (event.key == "-") {
-            $(this)
-              .find(".ui-icon-circlesmall-minus")
-              .trigger("click");
-            $(this).addClass("selected-group");
-          }
-        });
-      });
-
-      $("#list2_contrato").addClass("hoverContrato");
-
-      $("[aria-describedby='list2_contrato']").css("font-size", "0");
-    },
-    pgtext: "Página {0} de {1}",
-    scrollable: true,
-    shrinkToFit: false,
-    forceFit: true,
-    onSortCol: function(index, columnIndex, sortOrder) {
-      if (index == "contrato") {
-        $("#table_contratos").jqGrid("groupingGroupBy", ["contrato"], {
-          groupOrder: [sortOrder]
-        });
-      }
-      return "stop";
-    }
+    ]
+    // pager: "#pager_contratos"
   });
 };

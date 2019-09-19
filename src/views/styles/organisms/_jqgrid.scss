@@ -1,0 +1,23 @@
+.ui-jqgrid-hbox {
+  border-bottom: 1px solid $color-ink-light;
+  background: $color-sky;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  .ui-th-column {
+    color: $font_color;
+    font-weight: 800;
+  }
+}
+
+.ui-jqgrid-btable {
+  tr:nth-child(even) {
+    background-color: $color-sky-lighter;
+  }
+}
+
+.ui-jqgrid-count-rec {
+  padding-top: 0.5em;
+  max-width: 12em;
+  margin: auto;
+}

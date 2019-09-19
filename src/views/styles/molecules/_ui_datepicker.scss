@@ -183,5 +183,12 @@
   .ui-state-active {
     background: $color-blue-light;
     border: 1px solid $color-blue-light;
+    font-weight: 900;
+  }
+}
+
+.ui-datepicker-calendar {
+  .ui-state-default {
+    color: $font_color;
   }
 }
