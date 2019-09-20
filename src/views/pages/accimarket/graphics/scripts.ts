@@ -38,12 +38,15 @@ const fillRendimientos = (rendimientos: any) => {
     dataSetY2.push(data.dataB);
   }
 
-  stackChart(
-    "stackChart",
-    "Cifras de rendimientos, tasas e inflación con fines ilustrativos",
-    "Tasa Efectiva del Mejor y Peor Mes",
-    dataSetX,
-    [
+  stackChart({
+    id: "stackChart",
+    titleX: "Cifras de rendimientos, tasas e inflación con fines ilustrativos",
+    titleY: "Tasa Efectiva del Mejor y Peor Mes",
+    labels: dataSetX,
+    tickMaxY: 8.0,
+    tickMinY: -8.0,
+    tickStepY: 2.0,
+    dataSet: [
       {
         label: "Peor Mes",
         backgroundColor: "#c53030",
@@ -54,24 +57,8 @@ const fillRendimientos = (rendimientos: any) => {
         backgroundColor: "#2b6cb0",
         data: dataSetY2
       }
-    ],
-    [
-      {
-        tickMaxY: 8.0,
-        tickMinY: -8.0,
-        tickStepY: 2.0,
-        scaleLabelDisplayX: true,
-        scaleLabelDisplayY: true,
-        tickDisplayX: false,
-        tickDisplayY: true,
-        legendPosition: "bottom",
-        legendDisplay: true,
-        usePointStyle: true,
-        graphTitleDisplay: false,
-        graphTitle: ""
-      }
     ]
-  );
+  });
 };
 
 const fillPromedios = (promedios: any) => {
@@ -86,12 +73,15 @@ const fillPromedios = (promedios: any) => {
     dataSetY2.push(data.dataB);
   }
 
-  barChart(
-    "barChart",
-    "Cifras de rendimientos, tasas e inflación con fines ilustrativos",
-    "Rendimientos Promedio Anual",
-    dataSetX,
-    [
+  barChart({
+    id: "barChart",
+    titleX: "Cifras de rendimientos, tasas e inflación con fines ilustrativos",
+    titleY: "Rendimientos Promedio Anual",
+    labels: dataSetX,
+    tickMaxY: 15.0,
+    tickMinY: 0,
+    tickStepY: 1,
+    dataSet: [
       {
         type: "line",
         label: "Promedio",
@@ -107,24 +97,8 @@ const fillPromedios = (promedios: any) => {
         backgroundColor: "#2b6cb0",
         data: dataSetY2
       }
-    ],
-    [
-      {
-        tickMaxY: 15.0,
-        tickMinY: 0,
-        tickStepY: 1.0,
-        scaleLabelDisplayX: true,
-        scaleLabelDisplayY: true,
-        tickDisplayX: false,
-        tickDisplayY: true,
-        legendPosition: "bottom",
-        legendDisplay: false,
-        usePointStyle: true,
-        graphTitleDisplay: false,
-        graphTitle: ""
-      }
     ]
-  );
+  });
 };
 
 const fillRates = (rates: any) => {
@@ -162,16 +136,16 @@ const fillRates = (rates: any) => {
       {
         tickMaxY: 15.0,
         tickMinY: 0,
-        tickStepY: 1.0,
-        scaleLabelDisplayX: true,
-        scaleLabelDisplayY: true,
-        tickDisplayX: false,
-        tickDisplayY: true,
-        legendPosition: "bottom",
-        legendDisplay: false,
-        usePointStyle: true,
-        graphTitleDisplay: false,
-        graphTitle: ""
+        tickStepY: 1.0
+        // scaleLabelDisplayX: true,
+        // scaleLabelDisplayY: true,
+        // tickDisplayX: false,
+        // tickDisplayY: true,
+        // legendPosition: "bottom",
+        // legendDisplay: false,
+        // usePointStyle: true,
+        // graphTitleDisplay: false,
+        // graphTitle: ""
       }
     ],
     56,
@@ -239,16 +213,16 @@ const fillEstrategias = (rates: any) => {
       {
         tickMaxY: 15.0,
         tickMinY: 0,
-        tickStepY: 1.0,
-        scaleLabelDisplayX: true,
-        scaleLabelDisplayY: true,
-        tickDisplayX: false,
-        tickDisplayY: true,
-        legendPosition: "bottom",
-        legendDisplay: true,
-        usePointStyle: true,
-        graphTitleDisplay: false,
-        graphTitle: ""
+        tickStepY: 1.0
+        // scaleLabelDisplayX: true,
+        // scaleLabelDisplayY: true,
+        // tickDisplayX: false,
+        // tickDisplayY: true,
+        // legendPosition: "bottom",
+        // legendDisplay: true,
+        // usePointStyle: true,
+        // graphTitleDisplay: false,
+        // graphTitle: ""
       }
     ]
   );

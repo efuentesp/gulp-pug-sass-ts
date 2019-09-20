@@ -326,29 +326,54 @@ const getList = (id: string) => {
   return list;
 };
 
+interface stackChartParams {
+  id: string;
+  titleX: string;
+  titleY: string;
+  labels: any[];
+  tickMaxY: number;
+  tickMinY: number;
+  tickStepY: number;
+  dataSet: any[];
+}
+
+interface barChartParams {
+  id: string;
+  titleX: string;
+  titleY: string;
+  labels: any[];
+  tickMaxY: number;
+  tickMinY: number;
+  tickStepY: number;
+  dataSet: any[];
+}
+
 var initGraphStack = function initGraphStack(
   id,
   chartData,
   labelAxisX,
   labelAxisY,
-  options
+  tickMaxY,
+  tickMinY,
+  tickStepY
 ) {
   // Defined context
   var ctx: any = document.getElementById(id);
   var context = ctx.getContext("2d");
+
   // Style legends
-  Chart.defaults.global.legend.labels.usePointStyle = options[0].usePointStyle;
+  Chart.defaults.global.legend.labels.usePointStyle = true;
   Chart.defaults.global.legend.labels.fontSize = 9;
   Chart.defaults.global.legend.labels.boxWidth = 9;
-  Chart.defaults.global.legend.position = options[0].legendPosition;
-  Chart.defaults.global.legend.display = options[0].legendDisplay;
+  Chart.defaults.global.legend.position = "bottom";
+  Chart.defaults.global.legend.display = false;
   // Style tittle graph
   Chart.defaults.global.title.display = false;
   Chart.defaults.global.title.text = "";
   // Graph responsive
   Chart.defaults.global.responsive = true;
 
-  var stackGraph = new Chart(context, {
+  const stackGraph = new Chart(context, {
     plugins: [
       {
         afterDatasetsDraw: function(stackGraph) {
@@ -388,17 +413,14 @@ var initGraphStack = function initGraphStack(
       scales: {
         xAxes: [
           {
-            // type
             stacked: true,
-            // Tittle from axisX
             scaleLabel: {
-              display: options[0].scaleLabelDisplayX,
+              display: true,
               labelString: labelAxisX,
               fontColor: "#000"
             },
             ticks: {
-              // tittle of data point
-              display: options[0].tickDisplayX
+              display: false
             },
             gridLines: {
               display: true
@@ -409,17 +431,14 @@ var initGraphStack = function initGraphStack(
           {
             stacked: true,
             scaleLabel: {
-              display: options[0].scaleLabelDisplayY,
+              display: true,
               labelString: labelAxisY,
               fontColor: "#000"
             },
             ticks: {
-              display: options[0].tickDisplayY,
-              // Y escale
-              max: options[0].tickMaxY,
-              min: options[0].tickMinY,
-              stepSize: options[0].tickStepY,
-              // Add string to value
+              max: tickMaxY,
+              min: tickMinY,
+              stepSize: tickStepY,
               callback: function(value) {
                 return value + ".00%";
               }
@@ -434,42 +453,27 @@ var initGraphStack = function initGraphStack(
   });
 };
 
-// StackGraph
-const stackChart = (
-  id: string,
-  titleX: string,
-  titleY: string,
-  labels: any = [],
-  dataSet: any = [],
-  options: any = []
-) => {
-  var chartData = {
-    labels: labels,
-    datasets: dataSet
-  };
-
-  initGraphStack(id, chartData, titleX, titleY, options);
-};
-
 const initGraphBar = function initGraphBar(
   id,
   chartData,
   labelAxisX,
   labelAxisY,
-  options
+  tickMaxY,
+  tickMinY,
+  tickStepY
 ) {
   // Defined context
   var ctxBar: any = document.getElementById(id);
   var contextBar = ctxBar.getContext("2d");
   // Style legends
-  Chart.defaults.global.legend.labels.usePointStyle = options[0].usePointStyle;
+  Chart.defaults.global.legend.labels.usePointStyle = true;
   Chart.defaults.global.legend.labels.fontSize = 9;
   Chart.defaults.global.legend.labels.boxWidth = 9;
-  Chart.defaults.global.legend.position = options[0].legendPosition;
-  Chart.defaults.global.legend.display = options[0].legendDisplay;
+  Chart.defaults.global.legend.position = "bottom";
+  Chart.defaults.global.legend.display = false;
   // Style tittle graph
-  Chart.defaults.global.title.display = options[0].graphTitleDisplay;
-  Chart.defaults.global.title.text = options[0].graphTitle;
+  Chart.defaults.global.title.display = false;
+  Chart.defaults.global.title.text = "";
   // Graph responsive
   Chart.defaults.global.responsive = true;
   // Data point
@@ -713,11 +717,11 @@ const initGraphBar = function initGraphBar(
               fontColor: "#000"
             },
             ticks: {
-              display: options[0].tickDisplayY,
+              display: true,
               // Y escale
-              max: options[0].tickMaxY,
-              min: options[0].tickMinY,
-              stepSize: options[0].tickStepY,
+              max: tickMaxY,
+              min: tickMinY,
+              stepSize: tickStepY,
               callback: function(value) {
                 return value + ".0%";
               }
@@ -729,21 +733,40 @@ const initGraphBar = function initGraphBar(
   });
 };
 
-// BarGraph
-const barChart = (
-  id: string,
-  titleX: string,
-  titleY: string,
-  labels: any = [],
-  dataSet: any = [],
-  options: any = []
-) => {
+// StackGraph
+const stackChart = (params: stackChartParams) => {
   var chartData = {
-    labels: labels,
-    datasets: dataSet
+    labels: params.labels,
+    datasets: params.dataSet
   };
 
-  initGraphBar(id, chartData, titleX, titleY, options);
+  initGraphStack(
+    params.id,
+    chartData,
+    params.titleX,
+    params.titleY,
+    params.tickMaxY,
+    params.tickMinY,
+    params.tickStepY
+  );
+};
+
+// BarGraph
+const barChart = (params: barChartParams) => {
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  initGraphBar(
+    params.id,
+    chartData,
+    params.titleX,
+    params.titleY,
+    params.tickMaxY,
+    params.tickMinY,
+    params.tickStepY
+  );
 };
 
 const initGraphLine = function initGraphLine(
