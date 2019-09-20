@@ -1,0 +1,4 @@
+mixin canvas(id,params)
+  - var _style = "max-width: " + (params.width ? params.width : "600px") + ";" + "max-height: " + (params.height ? params.height : "600px") + "; padding: 30px;"
+  div(style=_style)
+    canvas(id=id)

@@ -1,0 +1,16 @@
+extends /layouts/html5
+
+block title
+   title Graficos
+
+block styles
+   link(rel="stylesheet" href="/assets/css/accimarket/graphics/styles.css")
+
+block content
+   +canvas("stackChart", {width:'800px', height:'800px'})
+   +canvas("barChart", {width:'800px', height:'800px'})
+   +canvas("lineChart", {width:'800px', height:'800px'})
+   +canvas("multiChart", {width:'800px', height:'800px'})
+
+block scripts
+   script(src="/assets/scripts/accimarket/graphics/scripts.js")
