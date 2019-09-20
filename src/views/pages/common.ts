@@ -190,7 +190,7 @@ const fieldSelectPlusMinus = (id: string) => {
     const value_to_add = $(idInput + " option:selected").val() as string;
     var exist = 0;
 
-    if ($("li").length <= 0) {
+    if ($("li").length <= 0 && text_to_add.length > 0) {
       $(list).append(
         "<li><a id = " +
           value_to_add +
@@ -208,7 +208,7 @@ const fieldSelectPlusMinus = (id: string) => {
       });
     }
 
-    if (exist == 0) {
+    if (exist == 0 && text_to_add.length > 0) {
       $(list).append(
         "<li><a id = " +
           value_to_add +
@@ -254,7 +254,6 @@ const fieldSelectPlusMinus = (id: string) => {
 };
 
 const fieldPlusMinus = (id: string) => {
-  console.log("Plus");
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
@@ -264,7 +263,7 @@ const fieldPlusMinus = (id: string) => {
     const text_to_add = $(idInput).val() as string;
     var exist = 0;
 
-    if ($("li").length <= 0) {
+    if ($("li").length <= 0 && text_to_add.length > 0) {
       $(list).append(
         '<li><a class="delete_item" href="javascript:void();">' +
           text_to_add +
@@ -280,7 +279,7 @@ const fieldPlusMinus = (id: string) => {
       });
     }
 
-    if (exist == 0) {
+    if (exist == 0 && text_to_add.length > 0) {
       $(list).append(
         '<li><a class="delete_item" href="javascript:void();">' +
           text_to_add +
@@ -311,6 +310,20 @@ const fieldPlusMinus = (id: string) => {
         .html()
     );
   });
+};
+
+const getList = (id: string) => {
+  var list: any = [];
+
+  $("#tag_list_" + id + " li").each(function() {
+    list.push(
+      $(this)
+        .text()
+        .trim()
+    );
+  });
+
+  return list;
 };
 
 var initGraphStack = function initGraphStack(

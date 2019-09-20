@@ -40,19 +40,23 @@ const form = ($("#criterios-busqueda") as any)
     contratos_params = {};
 
     const fecha = $("#fecha").val();
-    const contrato = $("#contrato").val();
-    const digito = $("#digito").val();
     const negocio = $("input[name='negocio']:checked").val();
+
+    var listContrato = getList("contrato");
+    var listDigito = getList("digito");
 
     if (fecha) {
       contratos_params.fecha = fecha;
     }
-    if (contrato) {
-      contratos_params.contrato = contrato;
+
+    if (listContrato.length > 0) {
+      contratos_params.contrato = listContrato;
     }
-    if (digito) {
-      contratos_params.digito = digito;
+
+    if (listDigito.length > 0) {
+      contratos_params.digito = listDigito;
     }
+
     if (negocio) {
       contratos_params.negocio = negocio;
     }
