@@ -22,10 +22,18 @@ block content
                 p Reporte AGBC
             +tab-item("tab_cartas")
                 p Cartas Masivas
+            .row.text-center.text-2xl.font-bold
+                label#tituloContrato
             .row.has_border.w-full.overflow-auto
                 +grid("grid_mov_contrato")
+            .row
+                +field-input("totalreg",
+                    {
+                        label: "Total de registros",
+                        orientation: "horizontal",
+                        size: "8em"
+                    })
 
 block scripts
     script(src="/assets/scripts/accimarket/22-movimientos-por-contrato/scripts.js")
-
-
+    script(src="/assets/scripts/accimarket/22-movimientos-por-contrato/scriptsMov.js")

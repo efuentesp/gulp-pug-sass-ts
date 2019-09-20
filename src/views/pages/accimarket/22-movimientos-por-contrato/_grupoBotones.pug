@@ -9,25 +9,26 @@ include /mixins/mixins
                 size: "11em",
                 orientation: "horizontal"
             })
-        +field-input("fechaI",
+        +field-date("fechaI",
             {
                 label: "Fecha Inicial:",
                 required: true,
-                size: "11em",
+                size: "9em",
                 orientation: "horizontal"
             })
-        +field-input("fechaF",
+        +field-date("fechaF",
             {
                 label: "Fecha Final:",
                 required: true,
-                size: "11em",
+                size: "9em",
                 orientation: "horizontal"
             })
         +field-input("operaciones",
             {
                 label: "Operaciones mayores a:",
                 size: "11em",
-                orientation: "horizontal"
+                orientation: "horizontal",
+                type: "number"
             })
         +field-input("plazo",
             {
@@ -37,7 +38,7 @@ include /mixins/mixins
             })
         #search-actions-column
             +button-search({size: "large", disabled: false})
-            +button-search({size: "large", disabled: false})
+            button#idDetalle Detalle
             +button-pdf({size: "large", disabled: false})
             +button-xls({size: "large", disabled: false})
             +button-pdf({size: "large", disabled: false})

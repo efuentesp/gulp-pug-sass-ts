@@ -1,0 +1,54 @@
+.content {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #criterios-busqueda-posicion {
+    display: flex;
+  }
+
+  #groupRendimiento {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60em;
+  }
+
+  #field_perfilContrato {
+    label[for="perfilContrato"] {
+      width: 3.5em;
+    }
+  }
+
+  #field_fechaInicial {
+    label {
+      width: 7em;
+    }
+  }
+
+  #field_fechaFinal {
+    label {
+      width: 6.5em;
+    }
+  }
+
+  #field_opcionesRendi {
+    width: 20em;
+
+    .field-control {
+      div {
+        label {
+          width: 12em;
+        }
+
+        width: 24em;
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  #field_moduloCalculo {
+    justify-content: flex-end;
+  }
+}

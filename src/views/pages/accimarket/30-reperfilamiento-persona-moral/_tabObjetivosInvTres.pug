@@ -3,8 +3,98 @@ include /mixins/mixins
 .row
     +field-select("graficosOpcionT",
         {
-            label: "5.",
-            size: "15em",
+            label: "5. Tomando en cuenta su horizonte y sus requerimientos de liquidez a traves del tiempo, ¿cual de las siguientes alternativas se mas a los objetivos de inversion de la Persona Moral?. Seleccione una sola opcion de los cinco portafolios abajo propuesto e indique si cuenta con alguna limitante de inverion.",
+            size: "30em",
             required: true,
             orientation: "horizontal"
         })
+.row
+    table.text-center#tableTitulos
+        tr
+            td.tdConfig
+            td.tdTitulos
+                label.font-bold.text-3xl 1
+                label (Corto Plazo)
+            td.tdTitulos
+                label.font-bold.text-3xl 2
+                label (Corto / Mediano Plazo)
+            td.tdTitulos
+                label.font-bold.text-3xl 3
+                label (Mediano Plazo)
+            td.tdTitulos
+                label.font-bold.text-3xl 4
+                label (Mediano / Largo Plazo)
+            td.tdTitulos
+                label.font-bold.text-3xl 5
+                label (Largo Plazo)
+.row.pt-4
+    table.text-center#tablePorta
+        thead
+            th
+            th Portafolio1
+            th Portafolio2
+            th Portafolio3
+            th Portafolio4
+            th Portafolio5
+        tbody
+            tr
+                td
+                    p.text-blue-400.font-bold Menor a 1 año
+                td
+                    p 100%
+                td
+                    p 70%
+                td
+                    p 30%
+                td
+                    p 10%
+                td
+                    p 5%
+            tr#even
+                td
+                    p.text-blue-400.font-bold De 1 a 3 años
+                td
+                    p 0%
+                td
+                    p 30%
+                td
+                    p 50%
+                td
+                    p 50%
+                td
+                    p 25%
+            tr
+                td
+                    p.text-blue-400.font-bold Mayor a 3 años
+                td
+                    p 0%
+                td
+                    p 0%
+                td
+                    p 20%
+                td
+                    p 40%
+                td
+                    p 70%
+            tr#even
+                td
+                    p.text-blue-400.font-bold Total
+                td
+                    p 100%
+                td
+                    p 100%
+                td
+                    p 100%
+                td
+                    p 100%
+                td
+                    p 100%
+.row
+    +field-options("limitantePM",
+        {
+            label: "¿Tiene alguna limitante y/o restriccion para invertir?",
+            orientation: "horizontal",
+            required: true
+        },
+        {key:"false", value:"Ninguna"},
+        {key:"true", value:"Si"})

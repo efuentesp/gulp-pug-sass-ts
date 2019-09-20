@@ -1,0 +1,28 @@
+.content {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #groupConsulta {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75em;
+  }
+
+  #groupDatos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #search-actions-column {
+    display: flex;
+    flex-wrap: wrap;
+    width: 31em;
+  }
+
+  #rowBusqueda {
+    width: 25em;
+    justify-content: flex-end;
+  }
+}

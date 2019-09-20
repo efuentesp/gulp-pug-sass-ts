@@ -1,0 +1,66 @@
+extends /layouts/html5
+
+block title
+    title Lista De Ordenes
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/listado-de-ordenes/styles.css")
+
+block content
+    .content
+        .row
+            +accordion("criterios_busqueda_ordenes")
+                +accordion-item("busqueda_item")
+                    form#criterios-busqueda
+                        .row#rowFlex
+                            +field-plus-minus("sociedad",
+                                {
+                                    label: "Sociedad"
+                                })
+                            +field-plus-minus("contrato",
+                                {
+                                    label: "Contrato"
+                                })
+                            +field-plus-minus("digito",
+                                {
+                                    label: "Digito"
+                                })
+                            +field-plus-minus("usuario",
+                                {
+                                    label: "Usuario"
+                                })
+                            +field-checks("estatus",
+                                {
+                                    label: "Estatus",
+                                    orientation: "horizontal"
+                                },
+                                {key: "S01", value:"Asignados", color:"green"},
+                                {key: "S04", value:"Pendientes", color:"blue"},
+                                {key: "S02", value:"Sin Asignar", color:"yellow"},
+                                {key: "S05", value:"Canceladas", color:"red"},
+                                {key: "S03", value:"Fuera Horario", color:"blue"},
+                                {key: "S06", value:"Generadas", color:"gray"}
+                                )
+                            +field-checks("clasificacion",
+                                {
+                                    label: "Clasificacion",
+                                },
+                                {key: "SI", value:"Comunes", color:"gray"},
+                                {key: "N/A", value:"Deuda y Cobertura", color:"gray"}
+                                )
+                            #search-actions-column
+                                +button-search({size: "large", disabled: false})
+                                +button-clean({size: "large", disabled: false})
+                                +button-pdf({size: "large", disabled: false})
+                                +button-xls({size: "large", disabled: false})
+                        .row.text-center.h-12.bg-orange-100
+                            p.font-bold.text-2xl.p-2 Listado de Ordenes
+                    +grid("busquedaOrdenes")
+                    .row
+                        +field-input("totalReg",
+                            {
+                                label: "Total de Registros",
+                                orientation: "horizontal"
+                            })
+block scripts
+    script(src="/assets/scripts/accimarket/listado-de-ordenes/scripts.js")

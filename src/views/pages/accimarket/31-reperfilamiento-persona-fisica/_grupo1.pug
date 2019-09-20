@@ -6,7 +6,8 @@ include /mixins/mixins
             label: "Contrato",
             size: "11em",
             orientation: "horizontal",
-            max_length: "6",
+            required: true,
+            max_length: "9",
             type: "digits"
         })
     +field-input("nombre",
@@ -24,7 +25,7 @@ include /mixins/mixins
             orientation: "horizontal"
         })
 
-.row
+.row#rowPerfilar
     +field-select("personaPerfilar",
         {
             label: "Seleccione la persona que desea perfilar",
@@ -32,3 +33,4 @@ include /mixins/mixins
             required: true,
             orientation: "horizontal"
         })
+    label.font-bold.pt-4.pl-4#fechaNacimiento

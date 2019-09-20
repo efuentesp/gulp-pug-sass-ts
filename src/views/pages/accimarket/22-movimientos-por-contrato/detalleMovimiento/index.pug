@@ -1,0 +1,14 @@
+extends /layouts/html5
+
+block title
+    title Movimientos por Contrato
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/22-movimientos-por-contrato/styles.css")
+
+block content
+    .contentMov.p-4
+        include ../_detalleMov
+
+block scripts
+    script(src="/assets/scripts/accimarket/22-movimientos-por-contrato/scriptsMov.js")

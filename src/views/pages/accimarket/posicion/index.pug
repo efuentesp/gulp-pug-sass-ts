@@ -1,0 +1,26 @@
+extends /layouts/html5
+
+block title
+    title Posicion
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/posicion/styles.css")
+
+block content
+    .content.p-4
+        form#criterios-busqueda-posicion
+            include _criteriosPosicion
+            +tab-group("grupo_posicion",
+            {id: "tab_contado", label: "CONTADO"},
+            {id: "tab_difgtia", label: "DIF/GTIA"},
+            {id: "tab_spc", label: "SPC"})
+                +tab-item("tab_contado")
+                    +grid("contado")
+                +tab-item("tab_difgtia")
+                    +grid("difgtia")
+                +tab-item("tab_spc")
+                    +grid("spc")
+            p Falta el panel de abajo de Liquidacion
+
+block scripts
+    script(src="/assets/scripts/accimarket/posicion/scripts.js")

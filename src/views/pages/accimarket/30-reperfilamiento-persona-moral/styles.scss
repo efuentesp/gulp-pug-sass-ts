@@ -1,13 +1,85 @@
 .content {
+  .row {
+    display: flex;
+  }
+
   #informaPM {
     width: 80em;
   }
 
   #liquidezPM {
-    width: 85em;
+    width: 70em;
   }
 
-  #tab_mapaLiquidaciones {
+  /*#tab_mapaLiquidaciones {
     display: flex;
+  }*/
+
+  #tableTitulos {
+    margin: auto;
+    width: 700px;
+    border-collapse: collapse;
+    border-style: solid;
+    background-color: #2b6cb0;
+
+    tr {
+      display: flex;
+    }
+
+    label {
+      color: #fff;
+    }
+
+    .tdTitulos {
+      width: 9.9rem;
+    }
+
+    .tdConfig {
+      width: 13em;
+      height: 4em;
+      background: #fff;
+    }
+  }
+
+  #tablePorta {
+    margin: auto;
+    width: 700px;
+    border-collapse: collapse;
+    border: 1px solid #fff;
+    border-style: hidden;
+  }
+
+  #tablePorta th,
+  #tablePorta td {
+    padding: 3px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: white black;
+  }
+
+  #tablePorta thead {
+    background-color: #c4cdd5;
+  }
+
+  #tablePorta tr#even {
+    background-color: #c4cdd5;
+  }
+
+  .liquidezI {
+    margin-top: 4em;
+    height: 23em;
+  }
+
+  .lididezColumnA {
+    border-width: 3px;
+    border-style: solid none solid solid;
+    border-color: blue;
+    width: 1em;
+  }
+
+  .lididezColumnB {
+    border-width: 3px;
+    border-style: solid none solid solid;
+    border-color: blue;
   }
 }

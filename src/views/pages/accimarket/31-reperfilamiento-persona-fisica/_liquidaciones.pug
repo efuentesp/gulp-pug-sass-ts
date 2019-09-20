@@ -2,16 +2,38 @@ include /mixins/mixins
 
 .row
     p#preguntas Mapa de Liquidez
+    table.informativoE
+        tr
+            td
+            td.estiloColumnaB
+        tr
+            td.h-20.w-40.text-center.font-bold.text-indigo-700 Necesidades de liquidez transaccional
+        tr
+            td
+            td.estiloColumnaD
+        tr
+            td.h-2
+            td.h-2
+        tr
+            td
+            td.estiloColumnaA
+        tr
+            td.h-20.w-40.text-center.font-bold.text-indigo-700 Oportunidad de acumular patrimonio
+        tr
+            td
+            td.estiloColumnaC
+        tr
+            td.h-20.w-40.text-center.font-bold.text-indigo-700 Patrimonio liquido total 100%
     table#informativo
         tr.text-center.font-bold
             td
-                p %
+                p.text-indigo-700 %
             td
-                p Monto $
+                p.text-indigo-700 Monto $
             td
-                p Horizonte
+                p.text-indigo-700 Horizonte
             td
-                p Proposito
+                p.text-indigo-700 Proposito
         tr.text-justify
             td
                 +field-input("liquidezPor",

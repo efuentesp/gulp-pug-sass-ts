@@ -1,21 +1,43 @@
 let pf_params: UrlParams = {};
+let pf_encuestaU: UrlParams = {};
+let pf_encuestaLstU: any[] = [];
+let pf_encuestaD: UrlParams = {};
+let pf_encuestaLstD: any[] = [];
 
 $('#grupoInstrumentos').hide();
 
 $('#reperfilamiento-pf').accordion(ui_accordion_settings);
 
 $('#contrato').change(() => {
-	pf_params.contrato = $('#contrato').val();
+	const contrato: string = String($('#contrato').val());
+	$("#fechaNacimiento").text("");
+	$('#personaPerfilar option').remove();
+	var options = new Option('--Seleccione--', 'id', true, true);
+	$('#personaPerfilar').append(options).trigger('change');
 
-	http_findAll('busquedaContrato', pf_params, payload => {
-		if (payload.length > 0) {
-			$('#nombre').val(payload[0].nombre);
-			$('#perfil').val(payload[0].perfilActual);
-			($('#personaPerfilar') as any).select2({
-				placeholder: '--Seleccione--',
-				minimumResultsForSearch: Infinity,
-				data: payload[0].personasPerfilar
-			});
+	http_findOne('busquedaContrato', contrato, payload => {
+		if (payload !== null) {
+			$('#nombre').val(payload.nombre);
+			$('#perfil').val(payload.perfilActual);
+			if (payload.idPerfilActual != 'IR4') {
+				mostrarOcultar(true);
+				($('#personaPerfilar') as any).select2({
+					placeholder: '--Seleccione--',
+					minimumResultsForSearch: Infinity,
+					data: payload.personasPerfilar
+				}).on("select2:selecting", function (evt) {
+					$("#fechaNacimiento").text("Fecha de Nacimiento " + evt.params.args.data.fechaNacimiento);
+					var edadActual = calcularEdad(evt.params.args.data.fechaNacimiento);
+					console.log("Edad -> " + edadActual);
+					if (edadActual >= 18) {
+						rangoFecha(edadActual);
+					} else {
+						$('#edad').val("0").prop('disabled', false).trigger('change');
+					}
+				});
+			} else {
+				mostrarOcultar(false);
+			}
 		} else {
 			$('#nombre').val('');
 			$('#perfil').val('');
@@ -162,6 +184,32 @@ const formularioPF = ($('#criterios-busqueda') as any)
 		}
 
 		//Grupo 3 es la encuesta
+		var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+		$.each(numbers, function (index, value) {
+			pf_encuestaU = {};
+			pf_encuestaU.idEncuesta = value;
+
+			var radioComp = 'encuesta_' + value;
+			var score = $("input[name='" + radioComp + "']");
+			z: for (var i = 0; i < score.length; i++) {
+				var componente = $("input[id='" + score[i].id + "']:checked").val();
+				if (i == 0 && componente == 'on') {
+					pf_encuestaU.noConoceNiHaInvertido = false;
+					pf_encuestaU.punto = $("#" + score[i].id).attr("data-points");
+				} else if (i == 1 && componente == 'on') {
+					pf_encuestaU.soloConoce = false;
+					pf_encuestaU.punto = $("#" + score[i].id).attr("data-points");
+				} if (i == 2 && componente == 'on') {
+					pf_encuestaU.conoceHaInvertido = true;
+					pf_encuestaU.punto = $("#" + score[i].id).attr("data-points");
+					pf_encuestaU.frecuencia = $("#" + radioComp + "_3").val();
+					pf_encuestaU.plazo = $("#" + radioComp + "_4").val();
+					pf_encuestaU.volumen = $("#" + radioComp + "_5").val();
+				}
+			}
+			pf_encuestaLstU.push(pf_encuestaU);
+		});
+		pf_params.encuestaLst = pf_encuestaLstU;
 
 		//Grupo 4
 		const proposito = $('#proposito').val();
@@ -185,10 +233,25 @@ const formularioPF = ($('#criterios-busqueda') as any)
 		}
 
 		//Grupo 5 es la encuesta
+		var numberEncuesta = [0, 1, 2]
+		$.each(numberEncuesta, function (index, value) {
+			pf_encuestaD = {};
+			pf_encuestaD.idEncuesta = value;
+			var radioCompE = 'encuesta2_' + value;
+			var valoreE = $("input[name='" + radioCompE + "']");
+			z: for (var i = 0; i < valoreE.length; i++) {
+				var componente = $("input[id='" + valoreE[i].id + "']:checked").val();
+				if (componente == 'on') {
+					pf_encuestaD.valor = $("#" + valoreE[i].id).attr("data-points");
+				}
+			}
+			pf_encuestaLstD.push(pf_encuestaD);
+		});
+		pf_params.encuestaLstD = pf_encuestaLstD;
 
 		//Grupo 6
 		var origenUno = new Array();
-		$("input[name='chk_origen_uno']:checked").each(function() {
+		$("input[name='chk_origen_uno']:checked").each(function () {
 			origenUno.push($(this).val());
 		});
 		if (origenUno) {
@@ -205,3 +268,54 @@ const formularioPF = ($('#criterios-busqueda') as any)
 
 		return false;
 	});
+
+function calcularEdad(fecha) {
+	var hoy = new Date();
+	var cumpleanos = new Date(fecha);
+	var edadObtenida = hoy.getFullYear() - cumpleanos.getFullYear();
+	var m = hoy.getMonth() - cumpleanos.getMonth();
+
+	if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+		edadObtenida--;
+	}
+	console.log("Edad -> " + edadObtenida)
+	return edadObtenida;
+}
+
+function rangoFecha(ed) {
+	var valor = 0;
+	if (ed >= 18 && ed <= 35) {
+		console.log("Esta entre los 18-35");
+		valor = 25;
+	} else if (ed >= 36 && ed <= 45) {
+		console.log("Esta entre los 36-45");
+		valor = 20;
+	} else if (ed >= 46 && ed <= 55) {
+		console.log("Esta entre los 46-55");
+		valor = 15;
+	} else if (ed >= 56 && ed <= 65) {
+		console.log("Esta entre los 56-65");
+		valor = 10;
+	} else {
+		console.log("Es mayor de los 66");
+		valor = 5;
+	}
+	$('#edad').val(valor).prop('disabled', true).trigger("change");
+}
+
+function mostrarOcultar(tipo) {
+	if (tipo) {
+		$("#mesaggePerfil").show();
+		$("#rowPerfilar").show();
+		$("#grupoTodo").show();
+		$("#grupoAsesor").hide();
+		$("#sticky-action-bar").show();
+	} else {
+		$("#mesaggePerfil").html("El contrato tiene asociado un Asesor en Inversión, por lo tanto se le debe asignar por default el Perfil de Inversión P7 (NO APLICA).");
+		$("#downloadPerfil").html("Clic en el boton PDF para descargar la documentacion. ");
+		$("#rowPerfilar").hide();
+		$("#grupoTodo").hide();
+		$("#grupoAsesor").show();
+		$("#sticky-action-bar").hide();
+	}
+}

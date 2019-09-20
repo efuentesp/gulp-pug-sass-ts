@@ -59,8 +59,9 @@
   }
 
   #informativo {
-    margin-left: 30em;
+    margin-left: 1em;
     width: 70em;
+    height: 40em;
 
     tr {
       border-collapse: collapse;
@@ -98,5 +99,39 @@
       font-weight: 700;
     }
     padding-left: 35em;
+  }
+
+  .informativoE {
+    margin-top: 3.5em;
+    margin-left: 25em;
+    height: 36em;
+  }
+
+  .estiloColumnaB {
+    border-width: 3px;
+    border-style: solid none none solid;
+    border-color: blue;
+    width: 1em;
+  }
+
+  .estiloColumnaD {
+    border-width: 3px;
+    border-style: none none solid solid;
+    border-color: blue;
+  }
+
+  .estiloColumnaA {
+    border-width: 3px;
+    border-style: solid none none solid;
+    border-color: blue;
+    width: 1em;
+    height: 4em;
+  }
+
+  .estiloColumnaC {
+    border-width: 3px;
+    border-style: none none solid solid;
+    border-color: blue;
+    height: 5em;
   }
 }
