@@ -17,9 +17,13 @@ include /mixins/mixins
                       },
                       {key: "CAP", value:"Capturados"}
         )
-      +field-select-plus-minus("contrato", {label: "Contrato"},
-                      {key: "ALL", value:"Todos"},
-                      {key: "EQ", value:"Igual"}
+      +field-select-plus-minus("contrato", {label: "Contrato", size: "10em"},
+                      {key: "", value:""},
+                      {key: "C001", value:"Contrato 01"},
+                      {key: "C002", value:"Contrato 02"},
+                      {key: "C003", value:"Contrato 03"},
+                      {key: "C004", value:"Contrato 04"},
+                      {key: "C005", value:"Contrato 05"}
       )
       +field-plus-minus("folio_mov", {label: "Folio Mov."})
       +field-plus-minus("digito", {label: "Digito", size: "5em"})

@@ -78,8 +78,263 @@
                 "emisoras": "Prueba Emisora3",
                 "tipo_valor_emisora": "Prueba Tipo Valor Emisora3"
               }
+            ],
+            "relacion_emisor": [
+              {
+                "emisor": "[BEF] FRANCO BELGA (USD)",
+                "relacion": "Vicepresidente"
+              },
+              {
+                "emisor": "[DOP]REP. DOMINICANA PESO (USD)",
+                "relacion": "Presidente"
+              },
+              {
+                "emisor": "[BEF] FRANCO BELGA (USD)",
+                "relacion": "Presidente"
+              }
             ]
           },
+          "comisiones": [
+            {
+              "tipo": "Obligaciones",
+              "porcentaje": "0.250000"
+            },
+            {
+              "tipo": "Renta Variable",
+              "porcentaje": "0.062500"
+            }
+          ],
+          "documentacion": {
+            "contrato": [
+              {
+                "sts": "check green",
+                "documentacion": "MIFT",
+                "tipo": "MIFT",
+                "observaciones": ""
+              },
+              {
+                "sts": "check red",
+                "documentacion": "CONTRATO DE INTERMEDIACION",
+                "tipo": "SIN TIPO",
+                "observaciones": ""
+              },
+              {
+                "sts": "check red",
+                "documentacion": "ADDENDUM",
+                "tipo": "SIN TIPO",
+                "observaciones": ""
+              },
+              {
+                "sts": "check red",
+                "documentacion": "ANEXO W9",
+                "tipo": "ANEXO",
+                "observaciones": ""
+              },
+              {
+                "sts": "check red",
+                "documentacion": "ANEXO W8",
+                "tipo": "FECHAS DE FIRMA",
+                "observaciones": ""
+              }
+            ],
+            "cliente": [
+              {
+                "sts": "check green",
+                "documentacion": "CREDENCIAL DE ELECTOR",
+                "tipo": "IDENTIFICACION",
+                "observaciones": "2021/12/31"
+              },
+              {
+                "sts": "check green",
+                "documentacion": "INSCRIPCION EN EL R.F.C.",
+                "tipo": "COMPROBANTE DE DOMICILIO",
+                "observaciones": ""
+              },
+              {
+                "sts": "check green",
+                "documentacion": "REGISTRO FEDERAL DE CONTRIBUYENTES",
+                "tipo": "COMPROBANTE FISCAL",
+                "observaciones": ""
+              },
+              {
+                "sts": "check green",
+                "documentacion": "CREDENCIAL IFE",
+                "tipo": "COMPROBANTE DE NACIONALIDAD",
+                "observaciones": ""
+              },
+              {
+                "sts": "check green",
+                "documentacion": "COMPROBANTE CHEQUERA",
+                "tipo": "COMPROBANTE CHEQUERA BANAMEX",
+                "observaciones": "2014/01/13"
+              }
+            ]
+          },
+          "domicilio": [
+            {
+              "tipo_dom": "FISCAL",
+              "direccion": "AV DE LA CALLE NO. 12118 NumExter NumInterior",
+              "colonia": "COL COLONIA X",
+              "municipio_del": "CUAUHTEMOC",
+              "cp": "06700",
+              "ciudad": "CIUDAD DE MEXICO",
+              "estado": "Ciudad de México"
+            },
+            {
+              "tipo_dom": "CORRESPONDENCIA",
+              "direccion": "AV DE LA CALLE NO. 12118 NumExter NumInterior",
+              "colonia": "COL COLONIA X",
+              "municipio_del": "CUAUHTEMOC",
+              "cp": "06700",
+              "ciudad": "CIUDAD DE MEXICO",
+              "estado": "Ciudad de México"
+            }
+          ],
+          "firmas_autorizadas": [
+            {
+              "tipo": "SINTIPO",
+              "nombre": "LUIS",
+              "ap_paterno": "CASAS",
+              "ap_materno": "PEREZ",
+              "no_escri": "0",
+              "no_not": "",
+              "reg_pub_comer": "",
+              "obs_firma": ""
+            }
+          ],
+          "formatos_fiscales": [
+            {
+              "custodio": "Deutshe Bank AG, NY",
+              "w8_ben": "yellow check",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "JP Morgan",
+              "w8_ben": "yellow check",
+              "w8_imy": "CASAS",
+              "w9": "PEREZ",
+              "prueba2": "0",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "The Bank of New York",
+              "w8_ben": "yellow check",
+              "w8_imy": "CASAS",
+              "w9": "PEREZ",
+              "prueba2": "0",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "Clearstream Banking",
+              "w8_ben": "yellow check",
+              "w8_imy": "CASAS",
+              "w9": "PEREZ",
+              "prueba2": "0",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "Euroclear Bank",
+              "w8_ben": "yellow check",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "INDEVAL",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            },
+            {
+              "custodio": "Santander España",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            },
+            {
+              "custodio": "BBVA",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            },
+            {
+              "custodio": "PRUEBA",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            },
+            {
+              "custodio": "PRUEBA21",
+              "w8_ben": "yellow check",
+              "w8_imy": "CASAS",
+              "w9": "PEREZ",
+              "prueba2": "0",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "PRUEBA JQUERY3",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            }
+          ],
+          "medio_comunicacion": [
+            {
+              "tipo": "TELEFONO OFICINA",
+              "descripcion": "1226121181",
+              "observaciones": ""
+            }
+          ],
+          "medio_liquidacion": [
+            {
+              "sts": "1",
+              "titular_cuenta": "NomTitCta12118Fcta1",
+              "medio_liq": "Maestra",
+              "inst_financiera": "BANCO NACIONAL DE MEXICO, S.A.",
+              "no_cuenta": "71531",
+              "no_cliente_banco": "8491424",
+              "no_succ": "509",
+              "plaza": "0",
+              "fut_cta": "",
+              "fut_benef": ""
+            }
+          ],
           "observaciones": {
             "text_area_observaciones": "",
             "fecha_apertura": "06/Nov/1984",

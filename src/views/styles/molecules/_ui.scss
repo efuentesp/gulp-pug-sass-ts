@@ -51,7 +51,7 @@
 }
 
 .ui-widget-header {
-  border: 1px solid $button_border_color;
+  // border: 1px solid $button_border_color;
   // background: #cccccc url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") 50%
   //   50% repeat-x;
   color: $button_font_color;
@@ -72,7 +72,7 @@
 works properly when clicked or hovered */
 html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
-  border: 1px solid $button_border_color;
+  border: 1px solid $color-white;
   // background: #e6e6e6 url("images/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50%
   //   repeat-x;
   font-weight: normal;

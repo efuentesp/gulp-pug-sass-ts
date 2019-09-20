@@ -8,73 +8,22 @@ $("#fecha").datepicker(ui_datepicker_settings);
 
 const rest_url = `${REST_URL}/fideicomiso`;
 
-$("#btn_plus_contrato").click(() => {
-  const text_to_add = $("#contrato").val() as string;
-  console.log(text_to_add);
-  $("ul#tag_list_contrato").append($("<li>").text(text_to_add));
-  $("#contrato").val("");
-});
-
-$("ul#tag_list_contrato li").click(() => {
-  console.log("li clicked!");
-});
-
-$("#table_contratos").jqGrid({
-  datatype: "local",
-  height: 250,
-  colNames: [
-    "Contrato",
-    "Libro",
-    "Cliente",
-    "Digito",
-    "TV",
-    "Descr TV",
-    "Emisora",
-    "Serie",
-    "Cantidad",
-    "Precio",
-    "Valuación",
-    "Promotor",
-    "Folio",
-    "Fecha",
-    "Negocio"
-  ],
-  colModel: [
-    { name: "contrato", width: 55 },
-    { name: "libro", width: 90 },
-    { name: "cliente", width: 80, align: "right" },
-    { name: "digito", width: 80, align: "right" },
-    { name: "tv", width: 80, align: "right" },
-    { name: "descr_tv", width: 150, sortable: false },
-    { name: "emisora", width: 90 },
-    { name: "serie", width: 90 },
-    { name: "cantidad", width: 90 },
-    { name: "precio", width: 90 },
-    { name: "valuacion", width: 90 },
-    { name: "promotor", width: 90 },
-    { name: "folio", width: 90 },
-    { name: "fecha", width: 90 },
-    { name: "negocio", width: 90 }
-  ],
-  pager: "#pager_contratos",
-  rowNum: 10,
-  rowList: [10, 20, 30],
-  sortname: "contrato",
-  sortorder: "desc",
-  viewrecords: true,
-  gridview: true,
-  autoencode: true,
-  caption: ""
-});
+fieldPlusMinus("contrato");
+fieldPlusMinus("digito");
 
 // Form validations
-let contratos_params: UrlParams = {
-  // cliente: "CLIENTE 01",
-  // contrato: "CONTRATO 01"
-};
+let contratos_params: UrlParams = {};
+
+// const r$ = http_findAll$("contratos", contratos_params)
+//   .map(v => v["data"])
+//   .subscribe(data => llenaGridContratos(data));
 
 http_findAll("contratos", contratos_params, payload => {
-  fillJqGrid("#table_contratos", payload);
+  // fillJqGrid("#table_contratos", payload);
+  llenaGridContratos(payload);
+  const rec_count = payload.length;
+  $("#count_contratos").html(rec_count);
+  // console.log(rec_count);
 });
 
 const form = ($("#criterios-busqueda") as any)
@@ -85,8 +34,8 @@ const form = ($("#criterios-busqueda") as any)
     // $(".callout-info").toggleClass("hidden", !ok);
     // $(".callout-warning").toggleClass("hidden", ok);
   })
-  .on("form:submit", () => {
-    console.log("form:submit");
+  .on("form:submit", e => {
+    console.log("form:submit", e);
 
     contratos_params = {};
 
@@ -109,8 +58,165 @@ const form = ($("#criterios-busqueda") as any)
     }
 
     http_findAll("contratos", contratos_params, payload => {
-      fillJqGrid("#table_contratos", payload);
+      // console.log(payload);
+      $("#table_contratos").jqGrid("clearGridData");
+      $("#table_contratos").jqGrid("setGridParam", { data: payload });
+      $("#table_contratos").trigger("reloadGrid");
+      const rec_count = payload.length;
+      $("#count_contratos").html(rec_count);
+      // console.log(rec_count);
     });
 
     return false;
   });
+
+const llenaGridContratos = (contratos: any) => {
+  // console.log(contratos);
+  $("#table_contratos").jqGrid({
+    data: contratos,
+    datatype: "local",
+    height: "auto",
+    rowList: [10, 20, 30],
+    colNames: [
+      "Contrato",
+      // "Imagen",
+      // "Icono",
+      "ID Emisión",
+      "Cantidad",
+      "Emision",
+      "Serie",
+      "Cupon",
+      "Dígito",
+      "T.V.",
+      "Precio",
+      "Importe",
+      "Descripción",
+      "Fecha",
+      "Descripción T.V.",
+      "Lista Contrato",
+      "Lista Dígito",
+      "Usuario",
+      "Reporte",
+      "Lista libro",
+      "ID Libro",
+      "Cliente",
+      "Promotor",
+      "Folio",
+      "Moneda",
+      "Credito MX",
+      "Aforo",
+      "Tipo Moneda",
+      "Fecha Producción",
+      "I Libro",
+      "Libro",
+      "% Real",
+      "Diferencia",
+      "Fecha Antigua"
+    ],
+    colModel: [
+      {
+        name: "contrato",
+        index: "contrato",
+        width: 100,
+        sortable: true,
+        sorttype: "number"
+      },
+      // {
+      //   name: "imagen",
+      //   index: "imagen",
+      //   width: 50,
+      //   sortable: false,
+      //   formatter: (cellvalue, options, rowobject) => {
+      //     return "<img src='../../assets/images/btn-calendario_32x32.png' width='12px'>";
+      //   }
+      // },
+      // {
+      //   name: "icono",
+      //   index: "icono",
+      //   width: 50,
+      //   sortable: false,
+      //   formatter: (cellvalue, options, rowobject) => {
+      //     return "<i class='fa fa-plus-circle fa-lg text-red-600'></i>";
+      //   }
+      // },
+      { name: "emisora", index: "emisora", width: 100, sortable: false },
+      { name: "cantidad", index: "cantidad", width: 100, sortable: false },
+      { name: "emision", index: "emision", width: 100, sortable: false },
+      { name: "serie", index: "serie", width: 100, sortable: false },
+      { name: "cupon", index: "cupon", width: 100, sortable: false },
+      { name: "digito", index: "digito", width: 100, sortable: false },
+      { name: "tv", index: "tv", width: 100, sortable: false },
+      {
+        name: "precioMdo",
+        index: "precioMdo",
+        width: 90,
+        formatter: "currency",
+        sortable: false,
+        summaryType: "sum",
+        formatoptions: {
+          decimalPlaces: 2,
+          prefix: "$",
+          thousandsSeparator: ","
+        }
+      },
+      {
+        name: "importeValua",
+        index: "importeValua",
+        width: 90,
+        formatter: "currency",
+        sortable: false,
+        summaryType: "sum",
+        formatoptions: {
+          decimalPlaces: 2,
+          prefix: "$",
+          thousandsSeparator: ","
+        }
+      },
+      { name: "descripcion", index: "descripcion", width: 90, sortable: false },
+      {
+        name: "fecha",
+        index: "fecha",
+        width: 90,
+        formatter: "date",
+        sortable: false
+      },
+      { name: "descrTV", index: "descrTV", width: 90, sortable: false },
+      {
+        name: "listaContrato",
+        index: "listaContrato",
+        width: 90,
+        sortable: false
+      },
+      { name: "listaDigito", index: "listaDigito", width: 90, sortable: false },
+      { name: "usuario", index: "usuario", width: 90, sortable: false },
+      { name: "reporte", index: "reporte", width: 90, sortable: false },
+      { name: "listaLibro", index: "listaLibro", width: 90, sortable: false },
+      { name: "idLibro", index: "idLibro", width: 90, sortable: false },
+      { name: "cliente", index: "cliente", width: 90, sortable: false },
+      { name: "promotor", index: "promotor", width: 90, sortable: false },
+      { name: "folio", index: "folio", width: 90, sortable: false },
+      { name: "moneda", index: "moneda", width: 90, sortable: false },
+      { name: "creditoMX", index: "creditoMX", width: 90, sortable: false },
+      { name: "aforo", index: "aforo", width: 90, sortable: false },
+      { name: "monedaTipo", index: "monedaTipo", width: 90, sortable: false },
+      {
+        name: "fechaProducción",
+        index: "fechaProducción",
+        width: 90,
+        sortable: false
+      },
+      { name: "iLibro", index: "iLibro", width: 90, sortable: false },
+      { name: "libro", index: "libro", width: 90, sortable: false },
+      { name: "porcentReal", index: "porcentReal", width: 90, sortable: false },
+      { name: "diferencia", index: "diferencia", width: 90, sortable: false },
+      {
+        name: "fechaMasAntiua",
+        index: "fechaMasAntiua",
+        width: 90,
+        formatter: "date",
+        sortable: false
+      }
+    ]
+    // pager: "#pager_contratos"
+  });
+};

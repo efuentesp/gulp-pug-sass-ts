@@ -1,20 +1,30 @@
 @import "../vars";
 
 .button {
-  // background: $button_background_color;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(235, 235, 235, 1) 48%,
-    rgba(224, 224, 224, 1) 62%,
-    rgba(242, 242, 242, 1) 100%
-  );
+  background: $button_background_color;
+  // background: linear-gradient(
+  //   to bottom,
+  //   rgba(255, 255, 255, 1) 0%,
+  //   rgba(235, 235, 235, 1) 48%,
+  //   rgba(224, 224, 224, 1) 62%,
+  //   rgba(242, 242, 242, 1) 100%
+  // );
   color: $button_font_color;
   border: 1px solid $button_border_color;
-  border-radius: 6px 6px 8px 8px;
+  border-radius: 3px 3px 8px 8px;
   box-shadow: 1px 1px $button_shadow_color;
   cursor: pointer;
   margin: 0 3px 0 3px;
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  span {
+    font-weight: 600;
+  }
 
   &.big-button {
     width: 70px;

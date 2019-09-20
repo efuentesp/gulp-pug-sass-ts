@@ -4,7 +4,7 @@ block title
    title 01.Causión Bursátil
 
 block styles
-   link(rel="stylesheet" href="/assets/css/accimarket/01-caucion-bursatil/styles.css")
+   link(rel="stylesheet" href="../../assets/css/accimarket/01-caucion-bursatil/styles.css")
 
 block content
    .content.p-4
@@ -26,8 +26,10 @@ block content
                      +button-pdf({size: "large", disabled: false})
                      +button-xls({size: "large", disabled: false})
 
-      .row.has_border.w-full.overflow-auto
-         +grid("contratos")
+      .row.has_border
+         .row.w-full.overflow-auto
+            +grid("contratos")
+         +grid-records-count("contratos")
 
 block scripts
-   script(src="/assets/scripts/accimarket/01-caucion-bursatil/scripts.js")
+   script(src="../../assets/scripts/accimarket/01-caucion-bursatil/scripts.js")
