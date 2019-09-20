@@ -220,3 +220,20 @@ const llenaGridContratos = (contratos: any) => {
     // pager: "#pager_contratos"
   });
 };
+
+$("#btn_pdf").click(() =>
+  $("#dialogo_pdf").dialog({
+    modal: true,
+    closeText: "",
+    show: true,
+    title: "Generar PDF"
+  })
+);
+$("#btn_xls").click(() =>
+  $("#dialogo_xls").dialog({
+    modal: true,
+    closeText: "",
+    show: true,
+    title: "Generar XLS"
+  })
+);
