@@ -348,25 +348,45 @@ interface barChartParams {
   dataSet: any[];
 }
 
-var initGraphStack = function initGraphStack(
-  id,
-  chartData,
-  labelAxisX,
-  labelAxisY,
-  tickMaxY,
-  tickMinY,
-  tickStepY
-) {
-  // Defined context
-  var ctx: any = document.getElementById(id);
-  var context = ctx.getContext("2d");
+interface lineChartParams {
+  id: string;
+  titleX: string;
+  titleY: string;
+  labels: any[];
+  tickMaxY: number;
+  tickMinY: number;
+  tickStepY: number;
+  dataSet: any[];
+  pointA: number;
+  pointB: number;
+}
 
+interface multiLineChartParams {
+  id: string;
+  titleX: string;
+  titleY: string;
+  labels: any[];
+  tickMaxY: number;
+  tickMinY: number;
+  tickStepY: number;
+  dataSet: any[];
+}
+
+// StackGraph
+const stackChart = (params: stackChartParams) => {
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  var ctx: any = document.getElementById(params.id);
+  var context = ctx.getContext("2d");
   // Style legends
   Chart.defaults.global.legend.labels.usePointStyle = true;
   Chart.defaults.global.legend.labels.fontSize = 9;
   Chart.defaults.global.legend.labels.boxWidth = 9;
   Chart.defaults.global.legend.position = "bottom";
-  Chart.defaults.global.legend.display = false;
+  Chart.defaults.global.legend.display = true;
   // Style tittle graph
   Chart.defaults.global.title.display = false;
   Chart.defaults.global.title.text = "";
@@ -416,7 +436,7 @@ var initGraphStack = function initGraphStack(
             stacked: true,
             scaleLabel: {
               display: true,
-              labelString: labelAxisX,
+              labelString: params.titleX,
               fontColor: "#000"
             },
             ticks: {
@@ -432,13 +452,13 @@ var initGraphStack = function initGraphStack(
             stacked: true,
             scaleLabel: {
               display: true,
-              labelString: labelAxisY,
+              labelString: params.titleY,
               fontColor: "#000"
             },
             ticks: {
-              max: tickMaxY,
-              min: tickMinY,
-              stepSize: tickStepY,
+              max: params.tickMaxY,
+              min: params.tickMinY,
+              stepSize: params.tickStepY,
               callback: function(value) {
                 return value + ".00%";
               }
@@ -453,17 +473,14 @@ var initGraphStack = function initGraphStack(
   });
 };
 
-const initGraphBar = function initGraphBar(
-  id,
-  chartData,
-  labelAxisX,
-  labelAxisY,
-  tickMaxY,
-  tickMinY,
-  tickStepY
-) {
-  // Defined context
-  var ctxBar: any = document.getElementById(id);
+// BarGraph
+const barChart = (params: barChartParams) => {
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  var ctxBar: any = document.getElementById(params.id);
   var contextBar = ctxBar.getContext("2d");
   // Style legends
   Chart.defaults.global.legend.labels.usePointStyle = true;
@@ -700,7 +717,7 @@ const initGraphBar = function initGraphBar(
             },
             scaleLabel: {
               display: true,
-              labelString: labelAxisX,
+              labelString: params.titleX,
               fontColor: "#000"
             }
           }
@@ -713,15 +730,15 @@ const initGraphBar = function initGraphBar(
             stacked: true,
             scaleLabel: {
               display: true,
-              labelString: labelAxisY,
+              labelString: params.titleY,
               fontColor: "#000"
             },
             ticks: {
               display: true,
               // Y escale
-              max: tickMaxY,
-              min: tickMinY,
-              stepSize: tickStepY,
+              max: params.tickMaxY,
+              min: params.tickMinY,
+              stepSize: params.tickStepY,
               callback: function(value) {
                 return value + ".0%";
               }
@@ -733,63 +750,24 @@ const initGraphBar = function initGraphBar(
   });
 };
 
-// StackGraph
-const stackChart = (params: stackChartParams) => {
+// lineGraph
+const lineChart = (params: lineChartParams) => {
   var chartData = {
     labels: params.labels,
     datasets: params.dataSet
   };
 
-  initGraphStack(
-    params.id,
-    chartData,
-    params.titleX,
-    params.titleY,
-    params.tickMaxY,
-    params.tickMinY,
-    params.tickStepY
-  );
-};
-
-// BarGraph
-const barChart = (params: barChartParams) => {
-  var chartData = {
-    labels: params.labels,
-    datasets: params.dataSet
-  };
-
-  initGraphBar(
-    params.id,
-    chartData,
-    params.titleX,
-    params.titleY,
-    params.tickMaxY,
-    params.tickMinY,
-    params.tickStepY
-  );
-};
-
-const initGraphLine = function initGraphLine(
-  id,
-  chartData,
-  labelAxisX,
-  labelAxisY,
-  options,
-  y1,
-  y2
-) {
-  // Defined context
-  var ctxBar: any = document.getElementById(id);
+  var ctxBar: any = document.getElementById(params.id);
   var contextBar = ctxBar.getContext("2d");
   // Style legends
-  Chart.defaults.global.legend.labels.usePointStyle = options[0].usePointStyle;
+  Chart.defaults.global.legend.labels.usePointStyle = true;
   Chart.defaults.global.legend.labels.fontSize = 9;
   Chart.defaults.global.legend.labels.boxWidth = 9;
-  Chart.defaults.global.legend.position = options[0].legendPosition;
-  Chart.defaults.global.legend.display = options[0].legendDisplay;
+  Chart.defaults.global.legend.position = "bottom";
+  Chart.defaults.global.legend.display = false;
   // Style tittle graph
-  Chart.defaults.global.title.display = options[0].graphTitleDisplay;
-  Chart.defaults.global.title.text = options[0].graphTitle;
+  Chart.defaults.global.title.display = false;
+  Chart.defaults.global.title.text = "";
   // Graph responsive
   Chart.defaults.global.responsive = true;
   // Data point
@@ -816,19 +794,13 @@ const initGraphLine = function initGraphLine(
                 );
 
                 // Line
-                if (index == y1) {
+                if (index == params.pointA) {
                   ctx.textAlign = "center";
                   ctx.textBaseline = "top";
                   var padding = 15;
-                  // var position = element.tooltipPosition();
-                  //var angle = Math.atan2(element._view.y,element._view.x);
                   ctx.fillText("A", element._view.x, element._view.y - 80);
-                  //ctx.fillText("B", element._view.x + 120, element._view.y);
-
                   ctx.beginPath();
-                  // ctx.lineWidth = "1";
                   ctx.strokeStyle = "#000";
-                  // Tamaño 130 x 60
                   ctx.rect(element._view.x - 15, element._view.y - 90, 30, 30);
                   ctx.stroke();
 
@@ -841,7 +813,7 @@ const initGraphLine = function initGraphLine(
                   ctx.stroke();
                 }
 
-                if (index == y2) {
+                if (index == params.pointB) {
                   ctx.textAlign = "center";
                   ctx.textBaseline = "top";
                   var padding = 15;
@@ -872,11 +844,7 @@ const initGraphLine = function initGraphLine(
       legend: {
         display: false
       },
-      tooltips: {
-        // callback: function(tooltipItem) {
-        //   return tooltipItem.yLabel;
-        // }
-      },
+      tooltips: {},
       scales: {
         xAxes: [
           {
@@ -900,44 +868,26 @@ const initGraphLine = function initGraphLine(
   });
 };
 
-// LineGraph
-const lineChart = (
-  id: string,
-  titleX: string,
-  titleY: string,
-  labels: any = [],
-  dataSet: any = [],
-  options: any = [],
-  pointY1: any,
-  pointY2: any
-) => {
+// MultilineGraph
+const multiLineChart = (params: multiLineChartParams) => {
   var chartData = {
-    labels: labels,
-    datasets: dataSet
+    labels: params.labels,
+    datasets: params.dataSet
   };
 
-  initGraphLine(id, chartData, titleX, titleY, options, pointY1, pointY2);
-};
-
-const initGraphMultiLine = function initGraphMultiLine(
-  id,
-  chartData,
-  labelAxisX,
-  labelAxisY,
-  options
-) {
-  // Defined context
-  var ctxBar: any = document.getElementById(id);
+  var ctxBar: any = document.getElementById(params.id);
   var contextBar = ctxBar.getContext("2d");
+
   // Style legends
   Chart.defaults.global.legend.labels.usePointStyle = false;
   Chart.defaults.global.legend.labels.fontSize = 9;
   Chart.defaults.global.legend.labels.boxWidth = 9;
-  Chart.defaults.global.legend.position = options[0].legendPosition;
+  Chart.defaults.global.legend.position = "bottom";
   Chart.defaults.global.legend.display = true;
+
   // Style tittle graph
-  Chart.defaults.global.title.display = options[0].graphTitleDisplay;
-  Chart.defaults.global.title.text = options[0].graphTitle;
+  Chart.defaults.global.title.display = false;
+  Chart.defaults.global.title.text = "";
   // Graph responsive
   Chart.defaults.global.responsive = true;
   // Data point
@@ -990,11 +940,6 @@ const initGraphMultiLine = function initGraphMultiLine(
         display: true,
         position: "right"
       },
-      tooltips: {
-        // callback: function(tooltipItem) {
-        //   return tooltipItem.yLabel;
-        // }
-      },
       scales: {
         xAxes: [
           {
@@ -1008,7 +953,6 @@ const initGraphMultiLine = function initGraphMultiLine(
         ],
         yAxes: [
           {
-            //stacked: true,
             gridLines: {
               display: true
             }
@@ -1017,21 +961,4 @@ const initGraphMultiLine = function initGraphMultiLine(
       }
     }
   });
-};
-
-// LineGraph
-const multiLineChart = (
-  id: string,
-  titleX: string,
-  titleY: string,
-  labels: any = [],
-  dataSet: any = [],
-  options: any = []
-) => {
-  var chartData = {
-    labels: labels,
-    datasets: dataSet
-  };
-
-  initGraphMultiLine(id, chartData, titleX, titleY, options);
 };

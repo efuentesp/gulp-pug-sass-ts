@@ -1,6 +1,5 @@
 /// <reference path="../../typings/index.d.ts" />
 
-let estrategias_params: UrlParams = {};
 let rates_params: UrlParams = {};
 let rendimientos_params: UrlParams = {};
 let promedios_params: UrlParams = {};
@@ -116,12 +115,15 @@ const fillRates = (rates: any) => {
     dataSetY.push(data.askClose);
   }
 
-  lineChart(
-    "lineChart",
-    "X",
-    "Y",
-    dataSetX,
-    [
+  lineChart({
+    id: "lineChart",
+    titleX: "X",
+    titleY: "Y",
+    labels: dataSetX,
+    tickMaxY: 15.0,
+    tickMinY: 0,
+    tickStepY: 1,
+    dataSet: [
       {
         type: "line",
         label: "Porcentaje",
@@ -132,25 +134,9 @@ const fillRates = (rates: any) => {
         borderWidth: 2
       }
     ],
-    [
-      {
-        tickMaxY: 15.0,
-        tickMinY: 0,
-        tickStepY: 1.0
-        // scaleLabelDisplayX: true,
-        // scaleLabelDisplayY: true,
-        // tickDisplayX: false,
-        // tickDisplayY: true,
-        // legendPosition: "bottom",
-        // legendDisplay: false,
-        // usePointStyle: true,
-        // graphTitleDisplay: false,
-        // graphTitle: ""
-      }
-    ],
-    56,
-    200
-  );
+    pointA: 56,
+    pointB: 200
+  });
 };
 
 const fillEstrategias = (rates: any) => {
@@ -172,12 +158,15 @@ const fillEstrategias = (rates: any) => {
     dataSetY3.push(data.bidOpen);
   }
 
-  multiLineChart(
-    "multiChart",
-    "X",
-    "Y",
-    dataSetX,
-    [
+  multiLineChart({
+    id: "multiChart",
+    titleX: "X",
+    titleY: "Y",
+    labels: dataSetX,
+    tickMaxY: 15.0,
+    tickMinY: 0,
+    tickStepY: 1,
+    dataSet: [
       {
         type: "line",
         label: "Largo Plazo",
@@ -208,22 +197,6 @@ const fillEstrategias = (rates: any) => {
         fontColor: "#2f855a",
         backgroundColor: "#2f855a"
       }
-    ],
-    [
-      {
-        tickMaxY: 15.0,
-        tickMinY: 0,
-        tickStepY: 1.0
-        // scaleLabelDisplayX: true,
-        // scaleLabelDisplayY: true,
-        // tickDisplayX: false,
-        // tickDisplayY: true,
-        // legendPosition: "bottom",
-        // legendDisplay: true,
-        // usePointStyle: true,
-        // graphTitleDisplay: false,
-        // graphTitle: ""
-      }
     ]
-  );
+  });
 };
