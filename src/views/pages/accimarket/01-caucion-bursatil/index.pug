@@ -13,7 +13,7 @@ block content
             +accordion-item("criterios_busqueda_accordion_item")
                form.is-search-form#criterios-busqueda(data-parsley-validate="")
                   +field-date("fecha", {label: "Fecha"})
-                  +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final"})
+                  +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: true})
                   +field-plus-minus("contrato", {label: "Contrato"})
                   +field-plus-minus("digito", {label: "Digito"})
                   +field-options("negocio",

@@ -999,3 +999,8 @@ const validateDateRage = (id: string) => {
     }
   });
 };
+
+// Clean selects
+$("#btn_clean").click(() => {
+  $("li").remove();
+});
