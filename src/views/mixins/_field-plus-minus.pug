@@ -24,9 +24,9 @@ mixin field-plus-minus(id, parms)
                   data-parsley-maxlength-message=_input_max_size_errmsg
                   data-parsley-validation-threshold="10"
                   )
-      button.button.is-icon.is-green(id=btn_plus_id)
+      button.button.is-icon.is-green(id=btn_plus_id type="button")
         i.fa.fa-plus-circle.fa-lg.icon-button
-      button.button.is-icon.is-red(id=btn_minus_id)
+      button.button.is-icon.is-red(id=btn_minus_id type="button")
         i.fa.fa-minus-circle.fa-lg.icon-button
     ul.tag-list(id=tag_list_id
                 style=_style

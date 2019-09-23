@@ -24,9 +24,9 @@ mixin field-select-plus-minus(id, parms, ...items)
                   )
         each item in items
           option(value=item.key)= item.value
-      button.button.is-icon.is-green(id=btn_plus_id)
+      button.button.is-icon.is-green(id=btn_plus_id type="button")
         i.fa.fa-plus-circle.fa-lg.icon-button
-      button.button.is-icon.is-red(id=btn_minus_id)
+      button.button.is-icon.is-red(id=btn_minus_id type="button")
         i.fa.fa-minus-circle.fa-lg.icon-button
     ul.tag-list(id=tag_list_id
                 style=_style
