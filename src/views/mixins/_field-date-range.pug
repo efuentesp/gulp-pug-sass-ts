@@ -1,0 +1,25 @@
+mixin field-date-range(id, parms)
+  - var _field_id = "field_" + id
+  - var _input_id = id
+  - var _btn_id = "btn_" + id
+  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
+  - var _input_max_length = (parms.max_length ? parms.max_length : "32")
+  - var _input_max_length_errmsg = "Solo puedes ingresar hasta " + _input_max_length + " caracteres."
+
+  .field(id=_field_id class=_class)
+    .field-control.flex
+    +field-date(_input_id + "_begin_date",
+                {
+                  label: parms.begin_label,
+                  required: parms.required,
+                  size: _style,
+                  orientation: _class
+                })
+    +field-date(_input_id + "_end_date",
+                {
+                  label: parms.end_label,
+                  required: parms.required,
+                  size: _style,
+                  orientation: _class
+                })

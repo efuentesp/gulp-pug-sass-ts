@@ -236,9 +236,9 @@ $("#btn_pdf").click(() =>
         text: "Aceptar",
         icon: "ui-icon-check",
         click: function() {
-          $( this ).dialog( "close" );
+          $(this).dialog("close");
         }
-   
+
         // Uncommenting the following line would hide the text,
         // resulting in the label being used as a tooltip
         //showText: false
@@ -254,3 +254,5 @@ $("#btn_xls").click(() =>
     title: "Generar XLS"
   })
 );
+
+validateDateRage("rango");

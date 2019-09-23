@@ -962,3 +962,40 @@ const multiLineChart = (params: multiLineChartParams) => {
     }
   });
 };
+
+// Dates
+const validateDateRage = (id: string) => {
+  $("#" + id + "_begin_date").datepicker({
+    showOn: "button",
+    buttonImage: "../../assets/images/btn-calendario_32x32.png",
+    buttonImageOnly: true,
+    buttonText: "",
+    changeMonth: true,
+    dateFormat: "dd-mm-yy",
+    onClose: function(selectedDate, instance) {
+      if (selectedDate != "") {
+        $("#" + id + "_end_date").datepicker("option", "minDate", selectedDate);
+        var date = $.datepicker.parseDate(
+          instance.settings.dateFormat,
+          selectedDate,
+          instance.settings
+        );
+        date.setMonth(date.getMonth() + 3);
+        $("#" + id + "_end_date").datepicker("option", "minDate", selectedDate);
+        $("#" + id + "_end_date").datepicker("option", "maxDate", date);
+      }
+    }
+  });
+
+  $("#" + id + "_end_date").datepicker({
+    showOn: "button",
+    buttonImage: "../../assets/images/btn-calendario_32x32.png",
+    buttonImageOnly: true,
+    buttonText: "",
+    changeMonth: true,
+    dateFormat: "dd-mm-yy",
+    onClose: function(selectedDate) {
+      $("#" + id + "_begin_date").datepicker("option", "maxDate", selectedDate);
+    }
+  });
+};
