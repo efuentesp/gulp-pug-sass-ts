@@ -36,7 +36,7 @@ const MONTH_NAMES = [
   "Diciembre"
 ];
 
-const DATE_FORMAT = "dd-mm-yy";
+const DATE_FORMAT = "yy-mm-dd";
 
 const ui_datepicker_settings = {
   showOn: "button",
@@ -971,7 +971,7 @@ const validateDateRage = (id: string) => {
     buttonImageOnly: true,
     buttonText: "",
     changeMonth: true,
-    dateFormat: "dd-mm-yy",
+    dateFormat: "yy-mm-dd",
     onClose: function(selectedDate, instance) {
       if (selectedDate != "") {
         $("#" + id + "_end_date").datepicker("option", "minDate", selectedDate);
@@ -993,7 +993,7 @@ const validateDateRage = (id: string) => {
     buttonImageOnly: true,
     buttonText: "",
     changeMonth: true,
-    dateFormat: "dd-mm-yy",
+    dateFormat: "yy-mm-dd",
     onClose: function(selectedDate) {
       $("#" + id + "_begin_date").datepicker("option", "maxDate", selectedDate);
     }
