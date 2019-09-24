@@ -34,6 +34,39 @@ block content
           +field-plus-minus("contrato3", {label: "Contrato", orientation: "horizontal"})
           +field-plus-minus("contrato4", {label: "Contrato", orientation: "horizontal", required: true})
         .row
+          +field-select-plus-minus("contrato5", {label: "Contrato", size: "10em"},
+                          {key: "", value:""},
+                          {key: "C001", value:"Contrato 01"},
+                          {key: "C002", value:"Contrato 02"},
+                          {key: "C003", value:"Contrato 03"},
+                          {key: "C004", value:"Contrato 04"},
+                          {key: "C005", value:"Contrato 05"}
+          )
+          +field-select-plus-minus("contrato6", {label: "Contrato", size: "10em", required: true},
+                          {key: "", value:""},
+                          {key: "C001", value:"Contrato 01"},
+                          {key: "C002", value:"Contrato 02"},
+                          {key: "C003", value:"Contrato 03"},
+                          {key: "C004", value:"Contrato 04"},
+                          {key: "C005", value:"Contrato 05"}
+          )
+          +field-select-plus-minus("contrato7", {label: "Contrato", size: "10em", orientation: "horizontal"},
+                          {key: "", value:""},
+                          {key: "C001", value:"Contrato 01"},
+                          {key: "C002", value:"Contrato 02"},
+                          {key: "C003", value:"Contrato 03"},
+                          {key: "C004", value:"Contrato 04"},
+                          {key: "C005", value:"Contrato 05"}
+          )
+          +field-select-plus-minus("contrato8", {label: "Contrato", size: "10em", orientation: "horizontal", required: true},
+                          {key: "", value:""},
+                          {key: "C001", value:"Contrato 01"},
+                          {key: "C002", value:"Contrato 02"},
+                          {key: "C003", value:"Contrato 03"},
+                          {key: "C004", value:"Contrato 04"},
+                          {key: "C005", value:"Contrato 05"}
+          )
+        .row
           +field-options("banco",
             {label: "Person Type", required: true},
             {key: "P", value:"Person"}, {key:"C", value:"Company"}
