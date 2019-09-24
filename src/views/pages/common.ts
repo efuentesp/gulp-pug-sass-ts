@@ -1002,5 +1002,6 @@ const validateDateRage = (id: string) => {
 
 // Clean selects
 $("#btn_clean").click(() => {
+  ($(".is-search-form") as any).parsley().reset();
   $("li").remove();
 });
