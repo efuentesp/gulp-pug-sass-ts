@@ -1005,3 +1005,14 @@ $("#btn_clean").click(() => {
   ($(".is-search-form") as any).parsley().reset();
   $("li").remove();
 });
+
+const getCheckedCheckbox = (id: string) => {
+  var list: any = [];
+
+  list = $("input[name='chk_" + id + "']:checked")
+    .map(function() {
+      return $(this).val();
+    })
+    .toArray();
+  return list;
+};
