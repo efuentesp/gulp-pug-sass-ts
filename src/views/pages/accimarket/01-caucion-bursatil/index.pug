@@ -21,6 +21,31 @@ block content
                                  {key: "CB", value:"Casa de Bolsa"},
                                  {key:"B", value:"Banco"}
                   )
+                  +field-select-plus-minus("contrato1", {label: "Contrato", size: "10em"},
+                                 {key: "", value:""},
+                                 {key: "C001", value:"Contrato 01"},
+                                 {key: "C002", value:"Contrato 02"},
+                                 {key: "C003", value:"Contrato 03"},
+                                 {key: "C004", value:"Contrato 04"},
+                                 {key: "C005", value:"Contrato 05"}
+                  )
+                  +field-checks("products3",
+                     {
+                     label: "Product Type",
+                     orientation: "horizontal"
+                     },
+                     {key: "P01", value:"Product 1"},
+                     {key: "P02", value:"Product 2"},
+                     {key: "P03", value:"Product 3"}
+                  )
+                  +field-select("payment",
+                     {
+                     label: "Payment method",
+                     size: "12em"
+                     },
+                     {key: "ET", value:"Electronic transfer"},
+                     {key:"CHK", value:"Check"}
+                  )
                   .column#botones-accion
                      +button-search({size: "large", disabled: false})
                      +button-clean({size: "large", disabled: false})

@@ -10,6 +10,12 @@ const rest_url = `${REST_URL}/fideicomiso`;
 
 fieldPlusMinus("contrato");
 fieldPlusMinus("digito");
+fieldSelectPlusMinus("contrato1");
+
+($("#payment") as any).select2({
+  placeholder: "--Seleccione--",
+  minimumResultsForSearch: Infinity
+});
 
 // Form validations
 let contratos_params: UrlParams = {};

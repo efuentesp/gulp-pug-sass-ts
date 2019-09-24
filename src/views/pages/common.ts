@@ -1004,6 +1004,9 @@ const validateDateRage = (id: string) => {
 $("#btn_clean").click(() => {
   ($(".is-search-form") as any).parsley().reset();
   $("li").remove();
+  $(".select2")
+    .val(null)
+    .trigger("change");
 });
 
 const getCheckedCheckbox = (id: string) => {
