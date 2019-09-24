@@ -11,7 +11,7 @@ block content
         .row
             +accordion("criterios_busqueda_ordenes")
                 +accordion-item("busqueda_item")
-                    form#criterios-busqueda
+                    .form-group
                         .row#rowFlex
                             +field-plus-minus("sociedad",
                                 {
@@ -56,11 +56,6 @@ block content
                         .row.text-center.h-12.bg-orange-100
                             p.font-bold.text-2xl.p-2 Listado de Ordenes
                     +grid("busquedaOrdenes")
-                    .row
-                        +field-input("totalReg",
-                            {
-                                label: "Total de Registros",
-                                orientation: "horizontal"
-                            })
+                    +grid-records-count("contratos")
 block scripts
     script(src="/assets/scripts/accimarket/listado-de-ordenes/scripts.js")

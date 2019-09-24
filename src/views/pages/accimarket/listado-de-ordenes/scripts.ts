@@ -1,5 +1,10 @@
 $("#criterios_busqueda_ordenes").accordion(ui_accordion_settings);
 
+fieldPlusMinus("sociedad");
+fieldPlusMinus("contrato");
+fieldPlusMinus("digito");
+fieldPlusMinus("usuario");
+
 $("#table_busquedaOrdenes").jqGrid({
     datatype: "local",
     height: 250,
@@ -26,7 +31,6 @@ $("#table_busquedaOrdenes").jqGrid({
         { name: "perfCliente", width: 200 },
         { name: "perfProducto", width: 200 }
     ],
-    pager: "#pager_busquedaOrdenes",
     rowNum: 10,
     rowList: [10, 20, 30],
     sortname: "tipo",
@@ -34,5 +38,9 @@ $("#table_busquedaOrdenes").jqGrid({
     viewrecords: true,
     gridview: true,
     autoencode: true,
+    grouping: true,
+    groupingView: {
+        groupField: "Renta Fija",
+    },
     caption: ""
 });

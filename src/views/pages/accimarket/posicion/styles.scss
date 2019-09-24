@@ -25,4 +25,10 @@
     width: 25em;
     justify-content: flex-end;
   }
+
+  #gview_table_totales {
+    .ui-jqgrid-hdiv {
+      display: none !important;
+    }
+  }
 }

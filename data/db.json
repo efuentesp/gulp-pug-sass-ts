@@ -1120,5 +1120,82 @@
         "operArt194": -1
       }
     ]
-  }
+  },
+  "posicionService": [
+    {
+      "id": "1",
+      "contrato": "12345",
+      "plazo": "147",
+      "emisora": "BONDES",
+      "cantidad": "100,000",
+      "costo": "89,900",
+      "precio": "89900",
+      "inversion": "899000.00",
+      "valor": "899000",
+      "tasa": "7.18",
+      "porTot": "11.06",
+      "porInv": "11.06",
+      "ultMov": "01-Ago-19",
+      "fechaVen": "26-Dic-19",
+      "impVenc": "0.00",
+      "nat": "D",
+      "isrDia": "0.00"
+    },
+    {
+      "id": "2",
+      "contrato": "12345",
+      "plazo": "147",
+      "emisora": "BONDES",
+      "cantidad": "100,000",
+      "costo": "89,900",
+      "precio": "89900",
+      "inversion": "899000.00",
+      "valor": "899000",
+      "tasa": "7.18",
+      "porTot": "11.06",
+      "porInv": "11.06",
+      "ultMov": "01-Ago-19",
+      "fechaVen": "26-Dic-19",
+      "impVenc": "0.00",
+      "nat": "D",
+      "isrDia": "0.00"
+    },
+    {
+      "id": "3",
+      "contrato": "12345",
+      "plazo": "147",
+      "emisora": "BONDES",
+      "cantidad": "100,000",
+      "costo": "89,900",
+      "precio": "89900",
+      "inversion": "899000.00",
+      "valor": "899000",
+      "tasa": "7.18",
+      "porTot": "11.06",
+      "porInv": "11.06",
+      "ultMov": "01-Ago-19",
+      "fechaVen": "26-Dic-19",
+      "impVenc": "0.00",
+      "nat": "D",
+      "isrDia": "0.00"
+    },
+    {
+      "contrato": "1",
+      "emisora": "Posicion Total:",
+      "inversion": "100",
+      "valor": "50",
+      "porInv": "25"
+    },
+    {
+      "contrato": "1",
+      "emisora": "Efectivo:",
+      "valor": "200"
+    },
+    {
+      "contrato": "1",
+      "emisora": "RF:",
+      "inversion": "300",
+      "valor": "50"
+    }
+  ]
 }
