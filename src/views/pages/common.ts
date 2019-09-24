@@ -1004,3 +1004,14 @@ const validateDateRage = (id: string) => {
 $("#btn_clean").click(() => {
   $("li").remove();
 });
+
+const getCheckedCheckbox = (id: string) => {
+  var list: any = [];
+
+  list = $("input[name='chk_" + id + "']:checked")
+    .map(function() {
+      return $(this).val();
+    })
+    .toArray();
+  return list;
+};
