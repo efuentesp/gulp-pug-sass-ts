@@ -54,7 +54,7 @@ const ui_datepicker_settings = {
   closeText: "Limpiar",
   onClose: function(dateText, inst) {
     if ($(window.event.srcElement).hasClass("ui-datepicker-close")) {
-      document.getElementById(this.id).value = "";
+      (document.getElementById(this.id) as HTMLInputElement).value = "";
     }
   }
 };
