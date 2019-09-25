@@ -49,7 +49,14 @@ const ui_datepicker_settings = {
   dateFormat: DATE_FORMAT,
   changeMonth: true,
   changeYear: true,
-  clearText: "Clear"
+  showButtonPanel: true,
+  currentText: "Hoy",
+  closeText: "Limpiar",
+  onClose: function(dateText, inst) {
+    if ($(window.event.srcElement).hasClass("ui-datepicker-close")) {
+      document.getElementById(this.id).value = "";
+    }
+  }
 };
 
 // Query UI Accordion settings
