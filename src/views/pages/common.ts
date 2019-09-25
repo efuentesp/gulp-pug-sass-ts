@@ -46,7 +46,10 @@ const ui_datepicker_settings = {
   dayNames: DAY_NAMES,
   dayNamesMin: DAY_NAMES_MIN,
   monthNames: MONTH_NAMES,
-  dateFormat: DATE_FORMAT
+  dateFormat: DATE_FORMAT,
+  changeMonth: true,
+  changeYear: true,
+  clearText: "Clear"
 };
 
 // Query UI Accordion settings
@@ -966,12 +969,7 @@ const multiLineChart = (params: multiLineChartParams) => {
 // Dates
 const validateDateRage = (id: string) => {
   $("#" + id + "_begin_date").datepicker({
-    showOn: "button",
-    buttonImage: "../../assets/images/btn-calendario_32x32.png",
-    buttonImageOnly: true,
-    buttonText: "",
-    changeMonth: true,
-    dateFormat: DATE_FORMAT,
+    ...ui_datepicker_settings,
     onClose: function(selectedDate, instance) {
       if (selectedDate != "") {
         $("#" + id + "_end_date").datepicker("option", "minDate", selectedDate);
@@ -988,12 +986,7 @@ const validateDateRage = (id: string) => {
   });
 
   $("#" + id + "_end_date").datepicker({
-    showOn: "button",
-    buttonImage: "../../assets/images/btn-calendario_32x32.png",
-    buttonImageOnly: true,
-    buttonText: "",
-    changeMonth: true,
-    dateFormat: DATE_FORMAT,
+    ...ui_datepicker_settings,
     onClose: function(selectedDate) {
       $("#" + id + "_begin_date").datepicker("option", "maxDate", selectedDate);
     }
