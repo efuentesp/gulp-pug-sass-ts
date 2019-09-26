@@ -79,6 +79,9 @@ const fillJqGrid = (grid_id: string, data: any[]) => {
   data.forEach((item, i) => $(grid_id).jqGrid("addRowData", i + 1, item));
 };
 
+// Switch / Toggle
+($(".radio-toggle") as any).toggleInput();
+
 // Sidebar
 let isSidebarOpened = false;
 $(".sidebar_button").click(() => {

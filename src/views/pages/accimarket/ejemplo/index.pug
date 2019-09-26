@@ -33,6 +33,15 @@ block content
                                 {key: "ALL", value: "TODAS"},
                                 {key: "CB", value: "CB"}
                                 )
+
+                        +field-switch("switch",
+                            {
+                                label: "Tipo"
+                            },
+                            {key: "N", value:"NORMAL"},
+                            {key:"E", value:"ESPECIAL"}
+                        )
+
                         +field-group("botones-group")
                             #search-actions-column
                                 +button-search({size: "large", disabled: false})
