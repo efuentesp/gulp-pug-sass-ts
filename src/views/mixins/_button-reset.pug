@@ -2,18 +2,18 @@ mixin button-reset(parms)
   - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
 
   if _parms.size == "large"
-    button.button.big-button(id="btn_clean" type="submit" title=_parms.tooltip disabled=_parms.disabled value="validate")
+    button.button.big-button(id="btn_reset" type="submit" title=_parms.tooltip disabled=_parms.disabled value="validate")
         span.fa-stack.fa-lg
           i.fas.fa-undo.fa-2x
         br
         span Reiniciar
 
   if _parms.size == "medium"
-    button.button.medium-button(id="btn_clean" title=_parms.tooltip disabled=_parms.disabled)
+    button.button.medium-button(id="btn_reset" title=_parms.tooltip disabled=_parms.disabled)
         span.fa-stack.fa-2x
           i.fas.fa-undo.fa-sm
 
   if _parms.size == "small"
-    button.button.small-button(id="btn_clean" title=_parms.tooltip disabled=_parms.disabled)
+    button.button.small-button(id="btn_reset" title=_parms.tooltip disabled=_parms.disabled)
         span.fa-stack.fa-sm
           i.fas.fa-undo.fa-lg

@@ -2,18 +2,18 @@ mixin button-validate(parms)
   - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
 
   if _parms.size == "large"
-    button.button.big-button(id="btn_search" type="submit" title=_parms.tooltip disabled=_parms.disabled value="validate")
+    button.button.big-button(id="btn_validate" type="submit" title=_parms.tooltip disabled=_parms.disabled value="validate")
         span.fa-stack.fa-lg
           i.far.fa-check-circle.fa-2x
         br
         span Validar
 
   if _parms.size == "medium"
-    button.button.medium-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
+    button.button.medium-button(id="btn_validate" title=_parms.tooltip disabled=_parms.disabled)
         span.fa-stack.fa-2x
           i.far.fa-check-circle.fa-sm
 
   if _parms.size == "small"
-    button.button.small-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
+    button.button.small-button(id="btn_validate" title=_parms.tooltip disabled=_parms.disabled)
         span.fa-stack.fa-sm
           i.far.fa-check-circle.fa-lg
