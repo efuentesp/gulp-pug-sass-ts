@@ -140,7 +140,8 @@ function concatVendorCss() {
         "./node_modules/tailwindcss/dist/tailwind.min.css",
         "./src/views/styles/vendors/jqgrid/ui.jqgrid.min.css",
         "./node_modules/select2/dist/css/select2.min.css",
-        "./src/views/styles/vendors/jquery.toggleinput/jquery.toggleinput.css"
+        "./src/views/styles/vendors/jquery.toggleinput/jquery.toggleinput.css",
+        "./src/views/styles/vendors/jquery.steps/jquery.steps.css"
       ])
       // .pipe(
       //   purgeCSS({
@@ -192,7 +193,8 @@ function concatVendorJs() {
       "./node_modules/select2/dist/js/i18n/es.js",
       "./src/views/pages/scripts/vendors/jqgrid/jqgrid.js",
       "./src/views/pages/scripts/vendors/splitter/splitter.js",
-      "./src/views/scripts/vendors/jquery.toggleinput.js"
+      "./src/views/scripts/vendors/jquery.toggleinput.js",
+      "./src/views/scripts/vendors/jquery.steps.js"
     ])
     .pipe(concat("libs.min.js"))
     .pipe(gulp.dest("./dist/assets/scripts"));
