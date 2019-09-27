@@ -209,6 +209,7 @@ const fieldSelectPlusMinus = (id: string) => {
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
   const list = "ul#tag_list_" + id;
+  const node = "tag_list_" + id;
 
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput + " option:selected").text() as string;
@@ -249,10 +250,10 @@ const fieldSelectPlusMinus = (id: string) => {
   });
 
   $(idBtnMinus).click(() => {
+    var nodelist = document.getElementById(node);
     $(list + " li a").each(function(index) {
       if ($(this).attr("id") === $(idInput).val()) {
-        $("li:has('a'):contains(" + $(this).text() + ")").remove();
-        $(this).remove();
+        nodelist.childNodes[index].remove();
       }
     });
 
@@ -283,6 +284,7 @@ const fieldPlusMinus = (id: string) => {
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
   const list = "ul#tag_list_" + id;
+  const node = "tag_list_" + id;
 
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput).val() as string;
@@ -290,9 +292,9 @@ const fieldPlusMinus = (id: string) => {
 
     if ($("li").length <= 0 && text_to_add.length > 0) {
       $(list).append(
-        '<li><a class="delete_item" href="javascript:void();">' +
+        "<li><a class='delete_item' href='javascript:void();'>" +
           text_to_add +
-          "</a> </li>"
+          "</a></li>"
       );
       exist = 1;
     } else {
@@ -306,9 +308,9 @@ const fieldPlusMinus = (id: string) => {
 
     if (exist == 0 && text_to_add.length > 0) {
       $(list).append(
-        '<li><a class="delete_item" href="javascript:void();">' +
+        "<li><a class='delete_item' href='javascript:void();'>" +
           text_to_add +
-          "</a> </li>"
+          "</a></li>"
       );
     }
 
@@ -316,10 +318,10 @@ const fieldPlusMinus = (id: string) => {
   });
 
   $(idBtnMinus).click(() => {
+    var nodelist = document.getElementById(node);
     $(list + " li a").each(function(index) {
       if ($(this).text() === $(idInput).val()) {
-        $("li:has('a'):contains(" + $(this).text() + ")").remove();
-        $(this).remove();
+        nodelist.childNodes[index].remove();
       }
     });
 
