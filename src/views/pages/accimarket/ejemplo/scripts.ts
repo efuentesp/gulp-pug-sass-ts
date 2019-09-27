@@ -84,8 +84,6 @@ const formu = ($("#criterios-busqueda") as any)
     return false;
   });
 
-$("#simple").splitter();
-
 let average_params: UrlParams = {};
 
 http_findAll("averages", average_params, payload => {

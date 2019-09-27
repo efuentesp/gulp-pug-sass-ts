@@ -1,6 +1,3 @@
-$("#grupo_movi_contrato").tabs();
-$("#grupo_datos").tabs();
-
 $("#btn_plus_contrato").click(() => {
   const text_to_add = $("#contrato").val() as string;
   console.log(text_to_add);

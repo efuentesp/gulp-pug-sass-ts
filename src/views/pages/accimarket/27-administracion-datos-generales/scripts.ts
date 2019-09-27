@@ -1,13 +1,5 @@
 console.log("27-administracion-datos-generales");
 
-/****   TABS ------//--> */
-
-/*config tabs TITULAR_COTITULAR2*/
-$("#titular_cotitular_tabgroup").tabs();
-
-/*config tabs COTITULAR2 _clasificacion_contrato*/
-$("#cotitular2_clasificacion_contrato_tab_group").tabs();
-
 /****   TAB-GROUP ------//--> */
 
 /*config TITULAR tabgroup */

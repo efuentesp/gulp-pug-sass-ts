@@ -2,8 +2,6 @@
 
 console.log("04-consulta-mercado-dinero");
 
-$("#consultas_tab_group").tabs();
-
 $("#table_operaciones").jqGrid({
   datatype: "local",
   height: 250,

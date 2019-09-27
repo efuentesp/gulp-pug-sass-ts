@@ -2,8 +2,6 @@
 
 console.log("00-distribucion-de-instrucciones");
 
-$("#tabs_resultados_busqueda").tabs();
-
 ($("#transaccion") as any).select2({
   minimumResultsForSearch: Infinity
 });

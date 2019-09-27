@@ -2,8 +2,6 @@
 
 console.log("27-datos-generales-efp");
 
-$("#titular_cotitular_tabgroup").tabs();
-
 $("#titular_contrato_tabgroup")
   .tabs()
   .addClass("ui-tabs-vertical ui-helper-clearfix");

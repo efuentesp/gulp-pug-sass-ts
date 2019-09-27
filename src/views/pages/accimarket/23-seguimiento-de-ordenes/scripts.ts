@@ -1,5 +1,3 @@
-$("#grupo_grids").tabs();
-
 $("#table_grid_mov_contrato").jqGrid({
   datatype: "local",
   height: 250,

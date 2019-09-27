@@ -2,9 +2,6 @@
 
 console.log("02-movimientos-por-contrato");
 
-$("#movimientos_por_contrato_tab_group").tabs();
-$("#datos_contrato_movimientos_tab_group").tabs();
-
 $("#table_movimientos_contrato").jqGrid({
   url: "http://localhost:3000/fideicomiso",
   datatype: "json",

@@ -2,8 +2,6 @@
 
 console.log("03-seguimiento-de-ordenes-historico");
 
-$("#seguimiento_ordenes_tab_group").tabs();
-
 $("#table_ordenes_historicas").jqGrid({
   url: "http://localhost:3000/fideicomiso",
   datatype: "json",
