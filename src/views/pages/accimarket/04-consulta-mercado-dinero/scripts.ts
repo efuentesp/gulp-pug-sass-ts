@@ -2,7 +2,7 @@
 
 console.log("04-consulta-mercado-dinero");
 
-$("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
+// $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
 
 $("#resultados_tab_group").tabs();
 

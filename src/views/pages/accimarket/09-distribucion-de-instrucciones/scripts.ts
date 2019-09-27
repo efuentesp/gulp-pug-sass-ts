@@ -2,7 +2,7 @@
 
 console.log("00-distribucion-de-instrucciones");
 
-$("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
+// $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
 
 $("#tabs_resultados_busqueda").tabs();
 

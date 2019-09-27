@@ -1,6 +1,6 @@
 /// <reference path="../../typings/index.d.ts" />
 
-$("#busqueda").accordion(ui_accordion_settings);
+// $("#busqueda").accordion(ui_accordion_settings);
 
 $("#fechaInicial").datepicker(ui_datepicker_settings);
 

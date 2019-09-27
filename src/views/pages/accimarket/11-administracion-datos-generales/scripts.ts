@@ -1,6 +1,6 @@
 alert(".::Administracion Datos Generales");
 
-$("#administracion_datos_generales_accordion").accordion(ui_accordion_settings);
+// $("#administracion_datos_generales_accordion").accordion(ui_accordion_settings);
 
 $("#consultas_tab_group").tabs();
 

@@ -2,7 +2,7 @@
 
 console.log("03-seguimiento-de-ordenes-historico");
 
-$("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
+// $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
 
 $("#date").datepicker(ui_datepicker_settings);
 

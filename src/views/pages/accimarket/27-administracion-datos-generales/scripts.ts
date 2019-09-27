@@ -1,7 +1,7 @@
 console.log("27-administracion-datos-generales");
 
 /*acordion*/
-$("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
+// $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
 
 /****   TABS ------//--> */
 

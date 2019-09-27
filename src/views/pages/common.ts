@@ -73,6 +73,9 @@ $(document).tooltip({
   disabled: true
 });
 
+// Accordion
+$(".accordion").accordion(ui_accordion_settings);
+
 // JqGrid functions
 const fillJqGrid = (grid_id: string, data: any[]) => {
   $(grid_id).jqGrid("clearGridData");
