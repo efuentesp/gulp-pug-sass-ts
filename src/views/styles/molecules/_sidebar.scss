@@ -53,3 +53,9 @@
     }
   }
 }
+
+.content {
+  &.is_sidebar_open {
+    padding-left: $sidebar_content_width + $sidebar_closed_width + 2px;
+  }
+}

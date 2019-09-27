@@ -1,9 +1,11 @@
-mixin form(id)
+mixin form(id, parms)
   - var form_id = id
+  - var _parms = (parms ? parms : {})
 
-  form.is-search-form(id=id
-       method="post"
-       data-parsley-validate=""
-       enctype="multipart/form-data"
+  form(id=id
+      class=_parms.class
+      method="post"
+      data-parsley-validate=""
+      enctype="multipart/form-data"
   )
     block

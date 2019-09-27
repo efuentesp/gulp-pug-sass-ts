@@ -11,7 +11,7 @@ block content
       .row
          +accordion("criterios_busqueda_accordion")
             +accordion-item("criterios_busqueda_accordion_item")
-               +form("criterios-busqueda")
+               +form("criterios-busqueda", {class: "is-search-form"})
                   +field-date("fecha", {label: "Fecha"})
                   +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: true})
                   +field-plus-minus("contrato", {label: "Contrato"})
