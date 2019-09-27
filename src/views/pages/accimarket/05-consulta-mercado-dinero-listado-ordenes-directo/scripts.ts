@@ -2,8 +2,6 @@
 
 console.log("04-consulta-mercado-dinero");
 
-// $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
-
 $("#consultas_tab_group").tabs();
 
 $("#table_operaciones").jqGrid({

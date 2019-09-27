@@ -1,11 +1,5 @@
 /// <reference path="../../typings/index.d.ts" />
 
-// $("#busqueda").accordion(ui_accordion_settings);
-
-$("#fechaInicial").datepicker(ui_datepicker_settings);
-
-$("#fechaFinal").datepicker(ui_datepicker_settings);
-
 ($("#lineaNegocio") as any).select2({
   minimumResultsForSearch: Infinity
 });

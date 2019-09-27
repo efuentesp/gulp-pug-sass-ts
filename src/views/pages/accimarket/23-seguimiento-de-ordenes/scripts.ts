@@ -1,5 +1,3 @@
-// $('#seguimiento_acordion').accordion(ui_accordion_settings);
-$("#fecha").datepicker(ui_datepicker_settings);
 $("#grupo_grids").tabs();
 
 $("#table_grid_mov_contrato").jqGrid({

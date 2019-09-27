@@ -76,6 +76,9 @@ $(document).tooltip({
 // Accordion
 $(".accordion").accordion(ui_accordion_settings);
 
+// DatePicker
+$(".datepicker").datepicker(ui_datepicker_settings);
+
 // JqGrid functions
 const fillJqGrid = (grid_id: string, data: any[]) => {
   $(grid_id).jqGrid("clearGridData");

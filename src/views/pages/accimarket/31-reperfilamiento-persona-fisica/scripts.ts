@@ -2,8 +2,6 @@ let pf_params: UrlParams = {};
 
 $("#grupoInstrumentos").hide();
 
-// $('#reperfilamiento-pf').accordion(ui_accordion_settings);
-
 $("#contrato").change(() => {
   pf_params.contrato = $("#contrato").val();
 

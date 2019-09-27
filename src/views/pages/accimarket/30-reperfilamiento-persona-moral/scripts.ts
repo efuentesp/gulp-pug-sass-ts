@@ -1,5 +1,3 @@
-// $("#reperfilamiento-pm").accordion(ui_accordion_settings);
-
 $("#reperfilamiento_pm_tab_group").tabs();
 
 ($("#antiguedadConsPM") as any).select2({

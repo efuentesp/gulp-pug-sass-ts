@@ -1,8 +1,5 @@
 $("#grupo_movi_contrato").tabs();
 $("#grupo_datos").tabs();
-// $('#criterios_acordion').accordion(ui_accordion_settings);
-$("#fechaI").datepicker(ui_datepicker_settings);
-$("#fechaF").datepicker(ui_datepicker_settings);
 
 $("#btn_plus_contrato").click(() => {
   const text_to_add = $("#contrato").val() as string;

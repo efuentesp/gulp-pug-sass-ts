@@ -2,16 +2,8 @@
 
 console.log("02-movimientos-por-contrato");
 
-// $("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
-
-$("#fecha_inicial").datepicker(ui_datepicker_settings);
-
-$("#fecha_final").datepicker(ui_datepicker_settings);
-
 $("#movimientos_por_contrato_tab_group").tabs();
 $("#datos_contrato_movimientos_tab_group").tabs();
-
-// $("#ejemplo_accordion").accordion(ui_accordion_settings);
 
 $("#table_movimientos_contrato").jqGrid({
   url: "http://localhost:3000/fideicomiso",
