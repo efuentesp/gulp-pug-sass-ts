@@ -43,16 +43,15 @@ block content
                         )
 
                         +field-group("botones-group")
-                            #search-actions-column
-                                +button-search({size: "large", disabled: false})
-                                +button-clean({size: "large", disabled: false})
+                            +button-search({size: "large", disabled: false})
+                            +button-clean({size: "large", disabled: false})
 
-                                +button-add({size:"large", disabled: false})
-                                +button-send({size:"large", label: "Enviar todos", disabled: false})
-                                +button-validate({size:"large", disabled: false})
-                                +button-import({size:"large", disabled: false})
-                                +button-delete({size:"large", disabled: false})
-                                +button-reset({size:"large", disabled: false})
+                            +button-add({size:"large", disabled: false})
+                            +button-send({size:"large", label: "Enviar todos", disabled: false})
+                            +button-validate({size:"large", disabled: false})
+                            +button-import({size:"large", disabled: false})
+                            +button-delete({size:"large", disabled: false})
+                            +button-reset({size:"large", disabled: false})
         .row
             p#textoInformativo Listado de Órdenes
         .row.has_border.w-full.overflow-auto
