@@ -1,0 +1,13 @@
+@import "../vars";
+
+.has-toggle-input {
+  label {
+    height: 28px;
+    color: $color-ink-lightest;
+
+    &.active {
+      background: $color-ink-lightest;
+      border-color: $color-ink-lightest;
+    }
+  }
+}

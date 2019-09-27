@@ -2,8 +2,6 @@
 
 console.log("05-consulta-mercado-dinero-listado-ordenes-directo");
 
-$("#consultas_tab_group").tabs();
-
 ($("#tipo_mercado") as any).select2({
   minimumResultsForSearch: Infinity
 });

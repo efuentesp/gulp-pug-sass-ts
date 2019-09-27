@@ -1,6 +1,6 @@
 include /mixins/mixins
 
-.row
+.row.w-full
     p#pregunta6_4 6.4 Selecciona el origen de los ingresos del Cliente destinados a invertir
     +field-checks("origen_uno",
         {
@@ -16,7 +16,7 @@ include /mixins/mixins
         {key: "2", value:"Traspaso/Cancelacion de cuentas de otro banco", color:"blue"},
         {key: "2", value:"Pago de Dividendos", color:"blue"},
         {key: "1", value:"Otro", color:"blue"})
-.row
+.row.w-full
     +field-input("perfilDoc",
         {
             label: "Perfil",
@@ -24,7 +24,7 @@ include /mixins/mixins
             orientation: "horizontal"
         })
     +button-import({size: "small", disabled: false})
-.row
+.row.w-full
     p#preguntas Inconsistencias
 .row
     include _grupo6_1

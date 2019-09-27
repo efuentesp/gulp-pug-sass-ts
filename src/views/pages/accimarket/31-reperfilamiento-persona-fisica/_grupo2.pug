@@ -1,67 +1,68 @@
 include /mixins/mixins
 
-.row
-    p#preguntas 1. Para cada una de las siguiente preguntas
-.row
-    +field-select("edad",
-        {
-            label: "1.1 Intervalo de Edad",
-            orientation: "horizontal",
-            required: true,
-            size: "15em"
-        })
-.row
-    +field-select("estudios",
-        {
-            label: "1.2 Nivel de estudios",
-            orientation: "horizontal",
-            required: true,
-            size: "15em"
-        })
-.row
-    +field-select("ocupacion",
-        {
-            label: "1.3 Ocupacion",
-            orientation: "horizontal",
-            required: true,
-            size: "15em"
-        })
-.row
-    p.pt-3.pl-2 1.4 Actividad Profesional
-    +field-group("grupo_4")
-        +field-select("anterior",
++field-group("grupoDos")
+    .row
+        p#preguntas 1. Para cada una de las siguiente preguntas
+    .row
+        +field-select("edad",
             {
-                label: "Anterior",
+                label: "1.1 Intervalo de Edad",
                 orientation: "horizontal",
-                size: "21em"
+                required: true,
+                size: "15em"
             })
-        +field-select("actual",
+    .row
+        +field-select("estudios",
             {
-                label: "Actual",
+                label: "1.2 Nivel de estudios",
                 orientation: "horizontal",
-                size: "21em"
+                required: true,
+                size: "15em"
             })
-        +field-options("inversiones",
+    .row
+        +field-select("ocupacion",
             {
-                label: "Relacionada con Inversiones",
+                label: "1.3 Ocupacion",
                 orientation: "horizontal",
-                required: true
-            },
-            {key:"SI", value:"SI"},
-            {key:"NO", value:"NO"})
-.row
-    +field-select("estrategia",
-        {
-            label: "1.5 Estrategia de inversion del Cliente generalmente utilizada",
-            orientation: "horizontal",
-            required: true,
-            size: "15em"
-        })
-.row
-    +field-select("asesoria",
-        {
-            label: "1.6 El Cliente ha usuado asesoria para la toma de decisiones de inversion",
-            orientation: "horizontal",
-            required: true,
-            size: "15em"
-        })
+                required: true,
+                size: "15em"
+            })
+    .row
+        p.pt-3.pl-2#actividad 1.4 Actividad Profesional
+        +field-group("grupo_4")
+            +field-select("anterior",
+                {
+                    label: "Anterior",
+                    orientation: "horizontal",
+                    size: "21em"
+                })
+            +field-select("actual",
+                {
+                    label: "Actual",
+                    orientation: "horizontal",
+                    size: "21em"
+                })
+            +field-options("inversiones",
+                {
+                    label: "Relacionada con Inversiones",
+                    orientation: "horizontal",
+                    required: true
+                },
+                {key:"SI", value:"SI"},
+                {key:"NO", value:"NO"})
+    .row
+        +field-select("estrategia",
+            {
+                label: "1.5 Estrategia de inversion del Cliente generalmente utilizada",
+                orientation: "horizontal",
+                required: true,
+                size: "15em"
+            })
+    .row
+        +field-select("asesoria",
+            {
+                label: "1.6 El Cliente ha usuado asesoria para la toma de decisiones de inversion",
+                orientation: "horizontal",
+                required: true,
+                size: "15em"
+            })

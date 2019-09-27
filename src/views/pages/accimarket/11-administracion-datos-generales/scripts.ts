@@ -1,12 +1,5 @@
 alert(".::Administracion Datos Generales");
 
-$("#administracion_datos_generales_accordion").accordion(ui_accordion_settings);
-
-$("#consultas_tab_group").tabs();
-
-/*Tabs cotitular2 Clasificacion Contrato*/
-$("#cotitular2_clasificacion_contrato_tab_group").tabs();
-
 /*Grid Limitantes a Invertir*/
 $("#table_limitantes_invertir_grid").jqGrid({
   datatype: "local",

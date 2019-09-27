@@ -46,7 +46,17 @@ const ui_datepicker_settings = {
   dayNames: DAY_NAMES,
   dayNamesMin: DAY_NAMES_MIN,
   monthNames: MONTH_NAMES,
-  dateFormat: DATE_FORMAT
+  dateFormat: DATE_FORMAT,
+  changeMonth: true,
+  changeYear: true,
+  showButtonPanel: true,
+  currentText: "Hoy",
+  closeText: "Limpiar",
+  onClose: function(dateText, inst) {
+    if ($(window.event.srcElement).hasClass("ui-datepicker-close")) {
+      (document.getElementById(this.id) as HTMLInputElement).value = "";
+    }
+  }
 };
 
 // Query UI Accordion settings
@@ -63,11 +73,26 @@ $(document).tooltip({
   disabled: true
 });
 
+// Tabs
+$(".tab-group").tabs();
+
+// Accordion
+$(".accordion").accordion(ui_accordion_settings);
+
+// DatePicker
+$(".datepicker").datepicker(ui_datepicker_settings);
+
+// Splitter
+$(".splitter").splitter();
+
 // JqGrid functions
 const fillJqGrid = (grid_id: string, data: any[]) => {
   $(grid_id).jqGrid("clearGridData");
   data.forEach((item, i) => $(grid_id).jqGrid("addRowData", i + 1, item));
 };
+
+// Switch / Toggle
+($(".radio-toggle") as any).toggleInput();
 
 // Sidebar
 let isSidebarOpened = false;
@@ -465,6 +490,98 @@ const stackChart = (params: stackChartParams) => {
             },
             gridLines: {
               display: true
+            }
+          }
+        ]
+      }
+    }
+  });
+};
+
+// SimpleBarGraph
+const simpleBarChart = (params: barChartParams) => {
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  var ctxBar: any = document.getElementById(params.id);
+  var contextBar = ctxBar.getContext("2d");
+  // Style legends
+  Chart.defaults.global.legend.labels.usePointStyle = true;
+  Chart.defaults.global.legend.labels.fontSize = 9;
+  Chart.defaults.global.legend.labels.boxWidth = 9;
+  Chart.defaults.global.legend.position = "bottom";
+  Chart.defaults.global.legend.display = false;
+  // Style tittle graph
+  Chart.defaults.global.title.display = false;
+  Chart.defaults.global.title.text = "";
+  // Graph responsive
+  Chart.defaults.global.responsive = true;
+  // Data point
+  Chart.defaults.global.elements.point.radius = 0;
+
+  var barGraph = new Chart(contextBar, {
+    plugins: [
+      {
+        afterDatasetsDraw: function(barGraph) {
+          var ctx = barGraph.ctx;
+          barGraph.data.datasets.forEach(function(dataset, i) {
+            var meta = barGraph.getDatasetMeta(i);
+            if (!meta.hidden) {
+              meta.data.forEach(function(element, index) {
+                ctx.fillStyle = "#000";
+                var fontSize = 12;
+                var fontStyle = "normal";
+                var fontFamily = "Arial";
+
+                ctx.font = Chart.helpers.fontString(
+                  fontSize,
+                  fontStyle,
+                  fontFamily
+                );
+              });
+            }
+          });
+        }
+      }
+    ],
+    type: "bar",
+    data: chartData,
+    options: {
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: true
+            },
+            stacked: true,
+            ticks: {
+              display: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: params.titleX,
+              fontColor: "#000"
+            }
+          }
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: false
+            },
+            stacked: true,
+            scaleLabel: {
+              display: true,
+              labelString: params.titleY,
+              fontColor: "#000"
+            },
+            ticks: {
+              display: true,
+              callback: function(value) {
+                return value + "";
+              }
             }
           }
         ]
@@ -966,12 +1083,7 @@ const multiLineChart = (params: multiLineChartParams) => {
 // Dates
 const validateDateRage = (id: string) => {
   $("#" + id + "_begin_date").datepicker({
-    showOn: "button",
-    buttonImage: "../../assets/images/btn-calendario_32x32.png",
-    buttonImageOnly: true,
-    buttonText: "",
-    changeMonth: true,
-    dateFormat: "dd-mm-yy",
+    ...ui_datepicker_settings,
     onClose: function(selectedDate, instance) {
       if (selectedDate != "") {
         $("#" + id + "_end_date").datepicker("option", "minDate", selectedDate);
@@ -988,12 +1100,7 @@ const validateDateRage = (id: string) => {
   });
 
   $("#" + id + "_end_date").datepicker({
-    showOn: "button",
-    buttonImage: "../../assets/images/btn-calendario_32x32.png",
-    buttonImageOnly: true,
-    buttonText: "",
-    changeMonth: true,
-    dateFormat: "dd-mm-yy",
+    ...ui_datepicker_settings,
     onClose: function(selectedDate) {
       $("#" + id + "_begin_date").datepicker("option", "maxDate", selectedDate);
     }

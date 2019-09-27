@@ -3,59 +3,14 @@
     display: flex;
   }
 
-  #field_estudios {
-    label {
-      width: 12.5em;
-    }
-  }
-
-  #field_ocupacion {
-    label {
-      width: 12.5em;
-    }
-  }
-
-  #field_estrategia {
-    label {
-      width: 38.7em;
-    }
-  }
-
-  #field_horizonte-Inversion {
-    align-items: baseline;
-
-    label {
-      width: 33.5em;
-    }
-  }
-
-  #field_tolerancia {
-    label {
-      width: 33.5em;
-    }
-  }
-
-  #field_origen_uno {
-    .field-control {
-      div {
-        display: flex;
-        flex-wrap: wrap;
-        width: 34em;
-      }
-    }
-
-    .checkbox_input {
-      width: 15em;
-    }
-  }
-
   #preguntas {
     padding-left: 0.7em;
   }
 
-  #pregunta6_4 {
-    padding-left: 0.8em;
-    padding-right: 2em;
+  .informativoE {
+    margin-top: 3.5em;
+    margin-left: 25em;
+    height: 36em;
   }
 
   #informativo {
@@ -75,36 +30,6 @@
       padding-right: 1rem;
       padding-bottom: 1.5rem;
     }
-  }
-
-  #descripcionPerfil {
-    margin-left: 20em;
-    width: 65em;
-
-    tr {
-      border-collapse: collapse;
-      border-radius: 7px;
-      border-style: hidden;
-      box-shadow: 0 0 0 1px blue;
-    }
-
-    td {
-      padding-right: 1rem;
-      padding-left: 1rem;
-    }
-  }
-
-  #grupoInstrumentos {
-    label {
-      font-weight: 700;
-    }
-    padding-left: 35em;
-  }
-
-  .informativoE {
-    margin-top: 3.5em;
-    margin-left: 25em;
-    height: 36em;
   }
 
   .estiloColumnaB {
@@ -133,5 +58,119 @@
     border-style: none none solid solid;
     border-color: blue;
     height: 5em;
+  }
+
+  #grupoTodo {
+    flex-wrap: wrap;
+  }
+
+  #grupoDos {
+    width: 50em;
+    flex-wrap: wrap;
+
+    #field_estudios {
+      label {
+        width: 12.5em;
+      }
+    }
+
+    #field_ocupacion {
+      label {
+        width: 12.5em;
+      }
+    }
+
+    #actividad {
+      width: 26em;
+    }
+
+    #grupo_4 {
+      flex-wrap: wrap;
+    }
+  }
+
+  #grupoTres {
+    flex-wrap: wrap;
+
+    #grupoParrafo {
+      width: 112em;
+    }
+  }
+
+  #grupoCuatro {
+    flex-wrap: wrap;
+    width: 50em;
+
+    #field_tolerancia {
+      label {
+        width: 33.5em;
+      }
+    }
+
+    #field_horizonte-Inversion {
+      align-items: baseline;
+
+      label {
+        width: 33.5em;
+      }
+    }
+
+    #datosInfo_group {
+      flex-wrap: wrap;
+
+      #textoPortafolio {
+        width: 24em;
+      }
+    }
+  }
+
+  #grupoInstrumentos {
+    flex-wrap: wrap;
+    width: 80em;
+    padding-left: 35em;
+
+    label {
+      font-weight: 700;
+    }
+  }
+
+  #field_origen_uno {
+    .field-control {
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        width: 34em;
+      }
+    }
+
+    .checkbox_input {
+      width: 15em;
+    }
+  }
+
+  #pregunta6_4 {
+    padding-left: 0.8em;
+    padding-right: 2em;
+  }
+
+  #descripcionPerfil {
+    margin-left: 20em;
+    width: 65em;
+
+    tr {
+      border-collapse: collapse;
+      border-radius: 7px;
+      border-style: hidden;
+      box-shadow: 0 0 0 1px blue;
+    }
+
+    td {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
+
+  #grupoAsesor {
+    flex-wrap: wrap;
   }
 }

@@ -4699,5 +4699,15 @@
       "dataA": 4,
       "dataB": 9.0
     }
+  ],
+  "averages": [
+    {
+      "dataA": "Sep-18",
+      "dataB": 0.4
+    },
+    {
+      "dataA": "Sep-18",
+      "dataB": 0.6
+    }
   ]
 }

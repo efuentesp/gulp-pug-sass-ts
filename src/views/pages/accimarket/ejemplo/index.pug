@@ -11,5 +11,64 @@ block content
         .row
             +accordion("criterios_busqueda_accordion")
                 +accordion-item("busqueda_item")
+                    form.is-search-form#criterios-busqueda(data-parsley-validate="")
+                        +field-group("fecha-group")
+                            +field-date("fechaInicial",
+                                {
+                                    label: "Fecha Inicial",
+                                    required: true,
+                                    orientation: "horizontal"
+                                })
+                            +field-date("fechaFinal",
+                                {
+                                    label: "Fecha Final",
+                                    required: true,
+                                    orientation: "horizontal"
+                                })
+                        +field-group("negocio-group")
+                            +field-select("lineaNegocio",
+                                {
+                                    label: "Linea de Negocio"
+                                },
+                                {key: "ALL", value: "TODAS"},
+                                {key: "CB", value: "CB"}
+                                )
+
+                        +field-switch("switch",
+                            {
+                                label: "Tipo"
+                            },
+                            {key: "N", value:"NORMAL"},
+                            {key:"E", value:"ESPECIAL"}
+                        )
+
+                        +field-group("botones-group")
+                            +button-search({size: "large", disabled: false})
+                            +button-clean({size: "large", disabled: false})
+
+                            +button-add({size:"large", disabled: false})
+                            +button-send({size:"large", label: "Enviar todos", disabled: false})
+                            +button-validate({size:"large", disabled: false})
+                            +button-import({size:"large", disabled: false})
+                            +button-delete({size:"large", disabled: false})
+                            +button-reset({size:"large", disabled: false})
+        .row
+            p#textoInformativo Listado de Órdenes
+        .row.has_border.w-full.overflow-auto
+            +splitter("simple")
+                .pane
+                    +grid("ventas")
+                    +canvas("averageChart", {width:'600px', height:'400px'})   
+                .pane
+                    +grid("contratos")
+                    +canvas("average1Chart", {width:'600px', height:'400px'})
+        .row
+            +field-input("totalreg",
+                {
+                    label: "Total de registros",
+                    orientation: "horizontal",
+                    size: "8em"
+                })
+
 block scripts
     script(src="../../assets/scripts/accimarket/ejemplo/scripts.js")

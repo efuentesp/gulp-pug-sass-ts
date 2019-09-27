@@ -16,11 +16,11 @@ mixin field-date(id, parms)
         span.required *
     .field-control
       .field-input.flex
-        input.input(id=_input_id
+        input.datepicker.input(id=_input_id
           required=parms.required
-          data-parsley-type="date"
           style=_style
           disabled=parms.disabled
+          readonly
           data-parsley-errors-container=_field_error_block_id
         )
       .field-error

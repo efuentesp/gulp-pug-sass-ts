@@ -1,0 +1,30 @@
+mixin field-switch(id, parms, ...items)
+  - var _field_id = "field_" + id
+  - var _field_error_block = "field_error_block_" + id
+  - var _field_error_block_id = "#" + _field_error_block
+  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
+  .field(id=_field_id class=_class)
+    .field-label.flex
+      label.field-label= parms.label
+      if parms.required
+        span.pr-5.required *
+      else
+        span.pr-5
+    .field-control.radio-toggle.has-toggle-input
+        .form-check
+            each item, index in items
+                - var item_id = "radio_" + id + "_" + index
+                - var _checked = (index==0 ? true : false)
+                label.form-check-label
+                    input.form-check-input(type="radio"
+                        name=id
+                        id=item_id
+                        value=item.key
+                        required=parms.required
+                        checked=_checked
+                        data-parsley-errors-container=_field_error_block_id
+                    )
+                    span= item.value
+        .field-error
+        div(id=_field_error_block)

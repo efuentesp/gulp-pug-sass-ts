@@ -2,10 +2,6 @@
 
 console.log("01-caucion-bursatil");
 
-$("#criterios_busqueda_accordion").accordion(ui_accordion_settings);
-
-$("#fecha").datepicker(ui_datepicker_settings);
-
 $("#btn_plus_contrato").click(() => {
   const text_to_add = $("#contrato").val() as string;
   console.log(text_to_add);
