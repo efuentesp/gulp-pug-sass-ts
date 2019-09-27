@@ -191,6 +191,7 @@ function concatVendorJs() {
       "./node_modules/select2/dist/js/select2.min.js",
       "./node_modules/select2/dist/js/i18n/es.js",
       "./src/views/pages/scripts/vendors/jqgrid/jqgrid.js",
+      "./src/views/pages/scripts/vendors/splitter/splitter.js",
       "./src/views/scripts/vendors/jquery.toggleinput.js"
     ])
     .pipe(concat("libs.min.js"))

@@ -56,7 +56,13 @@ block content
         .row
             p#textoInformativo Listado de Órdenes
         .row.has_border.w-full.overflow-auto
-            +grid("ventas")
+            +splitter("simple")
+                .pane
+                    +grid("ventas")
+                    +canvas("averageChart", {width:'600px', height:'400px'})   
+                .pane
+                    +grid("contratos")
+                    +canvas("average1Chart", {width:'600px', height:'400px'})
         .row
             +field-input("totalreg",
                 {

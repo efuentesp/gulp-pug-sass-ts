@@ -486,6 +486,98 @@ const stackChart = (params: stackChartParams) => {
   });
 };
 
+// SimpleBarGraph
+const simpleBarChart = (params: barChartParams) => {
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  var ctxBar: any = document.getElementById(params.id);
+  var contextBar = ctxBar.getContext("2d");
+  // Style legends
+  Chart.defaults.global.legend.labels.usePointStyle = true;
+  Chart.defaults.global.legend.labels.fontSize = 9;
+  Chart.defaults.global.legend.labels.boxWidth = 9;
+  Chart.defaults.global.legend.position = "bottom";
+  Chart.defaults.global.legend.display = false;
+  // Style tittle graph
+  Chart.defaults.global.title.display = false;
+  Chart.defaults.global.title.text = "";
+  // Graph responsive
+  Chart.defaults.global.responsive = true;
+  // Data point
+  Chart.defaults.global.elements.point.radius = 0;
+
+  var barGraph = new Chart(contextBar, {
+    plugins: [
+      {
+        afterDatasetsDraw: function(barGraph) {
+          var ctx = barGraph.ctx;
+          barGraph.data.datasets.forEach(function(dataset, i) {
+            var meta = barGraph.getDatasetMeta(i);
+            if (!meta.hidden) {
+              meta.data.forEach(function(element, index) {
+                ctx.fillStyle = "#000";
+                var fontSize = 12;
+                var fontStyle = "normal";
+                var fontFamily = "Arial";
+
+                ctx.font = Chart.helpers.fontString(
+                  fontSize,
+                  fontStyle,
+                  fontFamily
+                );
+              });
+            }
+          });
+        }
+      }
+    ],
+    type: "bar",
+    data: chartData,
+    options: {
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: true
+            },
+            stacked: true,
+            ticks: {
+              display: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: params.titleX,
+              fontColor: "#000"
+            }
+          }
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: false
+            },
+            stacked: true,
+            scaleLabel: {
+              display: true,
+              labelString: params.titleY,
+              fontColor: "#000"
+            },
+            ticks: {
+              display: true,
+              callback: function(value) {
+                return value + "";
+              }
+            }
+          }
+        ]
+      }
+    }
+  });
+};
+
 // BarGraph
 const barChart = (params: barChartParams) => {
   var chartData = {
