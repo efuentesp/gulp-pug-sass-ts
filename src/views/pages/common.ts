@@ -110,6 +110,14 @@ $(".sidebar_button").click(() => {
   isSidebarOpened = !isSidebarOpened;
 });
 
+// Wizard
+($(".wizard") as any).steps({
+  headerTag: "h3",
+  bodyTag: "section",
+  transitionEffect: "slideLeft",
+  autoFocus: true
+});
+
 // REST APIs}
 const rest_findAll = (resource: string, params: any, cb: Function) => {
   const api_params = $.param(params);
