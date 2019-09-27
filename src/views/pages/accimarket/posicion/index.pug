@@ -8,7 +8,7 @@ block styles
 
 block content
     .content.p-4
-        form#criterios-busqueda-posicion
+        +form("criterios-busqueda-posicion")
             include _criteriosPosicion
             +tab-group("grupo_posicion",
             {id: "tab_contado", label: "CONTADO"},
@@ -16,13 +16,19 @@ block content
             {id: "tab_spc", label: "SPC"})
                 +tab-item("tab_contado")
                     +grid("contado")
+                    +grid("totales")
                 +tab-item("tab_difgtia")
                     +grid("difgtia")
-                    +grid-records-count("difgtiacount")
+                    +grid("totalesDifgtia")
                 +tab-item("tab_spc")
                     +grid("spc")
-                    +grid-records-count("spccount")
-            p Falta el panel de abajo de Liquidacion
+                    +grid("totalesSpc")
+            +grid("liquidacion")
+
+    .row
+        .ui-dialog.hidden(id="dialogo_msg")
+            p Posicion-0. La consulta de Posicion no obtuvo resultados.
 
 block scripts
     script(src="/assets/scripts/accimarket/posicion/scripts.js")
+    script(src="/assets/scripts/accimarket/posicion/scriptsTables.js")

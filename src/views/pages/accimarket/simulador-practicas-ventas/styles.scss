@@ -1,0 +1,45 @@
+.content {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #groupSimulacion {
+    padding-left: 4em;
+    width: 98em;
+
+    .field-label {
+      width: 8.5em;
+    }
+
+    #field_preCierre,
+    #field_posicion,
+    #field_spread {
+      padding-left: 2.5em;
+    }
+
+    #field_tasa {
+      padding-left: 23.6em;
+    }
+  }
+
+  #search-actions-column {
+    width: 10em;
+    padding-left: 2em;
+    margin-bottom: 1em;
+
+    .button {
+      margin-top: 2em;
+    }
+  }
+
+  #search-action-tabla {
+    width: 7em;
+    margin-top: 5em;
+    margin-bottom: 2em;
+
+    .button {
+      margin-top: 2em;
+    }
+  }
+}

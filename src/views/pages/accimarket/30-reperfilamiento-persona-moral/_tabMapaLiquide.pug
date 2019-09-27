@@ -2,7 +2,6 @@ include /mixins/mixins
 
 .row
     p.pb-4#informaPM Identifique el monto del patrimonio que necesitara para hacer frente a cualquier inverion, gatos o contingencia en un periodo de hasta 2 años; el resto del patrimonio que no utilizara a corto plazo, recomendamos diversificarlo con el fin de incrementar su patrimonio y cumplir sus objetivos a futuro.
-    p.pl-4 Rendimientos y Volatilidad de estartegias de Inversion (largo, mediano y corto plazo) en el tiempo
 .row
     table.liquidezI
         tr
@@ -123,4 +122,4 @@ include /mixins/mixins
                     })
             td
             td
-    p.pl-4 GRAFICA
+    +canvas("multiChart", {width:'900px', height:'900px'})

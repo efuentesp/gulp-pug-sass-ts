@@ -34,14 +34,14 @@ include /mixins/mixins
                 label: "Perfil contrato",
                 orientation: "horizontal",
                 disabled: true,
-                size: "10em"
+                size: "13em"
             })
         +field-input("libro",
             {
                 label: "Libro",
                 orientation: "horizontal",
                 disabled: true,
-                size: "10em"
+                size: "7em"
             })
         +field-input("nombreContrato",
             {
@@ -55,7 +55,7 @@ include /mixins/mixins
                 label: "CLABE",
                 orientation: "horizontal",
                 disabled: true,
-                size: "13.5em"
+                size: "16.5em"
             })
     +field-options("opciones",
         {
@@ -75,8 +75,4 @@ include /mixins/mixins
                     label: ""
                 },
                 {key: "precioAuto", value:"Precio Mdo."})
-            +field-input("buscar",
-                {
-                    label: "",
-                    size: "10em"
-                })
+            +field-search("buscar", {size:"12em"})

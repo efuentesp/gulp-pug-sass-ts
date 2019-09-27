@@ -4,7 +4,7 @@
     flex-wrap: wrap;
   }
 
-  #criterios-busqueda-posicion {
+  #criterios-busqueda-rendimientos {
     display: flex;
   }
 
@@ -12,6 +12,11 @@
     display: flex;
     flex-wrap: wrap;
     width: 60em;
+
+    input {
+      text-align: center;
+      font-weight: bold;
+    }
   }
 
   #field_perfilContrato {
@@ -50,5 +55,10 @@
 
   #field_moduloCalculo {
     justify-content: flex-end;
+  }
+
+  #graficaMensual,
+  #graficaAcumulados {
+    width: 58em;
   }
 }

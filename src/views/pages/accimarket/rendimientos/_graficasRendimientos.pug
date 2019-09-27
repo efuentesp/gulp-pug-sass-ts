@@ -1,0 +1,7 @@
+include /mixins/mixins
+
+.row
+    .row.overflow-auto#graficaMensual
+        +grid("resultadosMensuales")
+    .row.overflow-auto.pl-4#graficaAcumulados
+        +grid("resultadosAcomulados")

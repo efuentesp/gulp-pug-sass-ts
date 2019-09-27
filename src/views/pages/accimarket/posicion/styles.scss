@@ -8,6 +8,11 @@
     display: flex;
     flex-wrap: wrap;
     width: 75em;
+
+    input {
+      text-align: center;
+      font-weight: bold;
+    }
   }
 
   #groupDatos {
@@ -26,7 +31,10 @@
     justify-content: flex-end;
   }
 
-  #gview_table_totales {
+  #gview_table_totales,
+  #gview_table_liquidacion,
+  #gview_table_totalesDifgtia,
+  #gview_table_totalesSpc {
     .ui-jqgrid-hdiv {
       display: none !important;
     }

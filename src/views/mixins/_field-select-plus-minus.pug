@@ -8,26 +8,34 @@ mixin field-select-plus-minus(id, parms, ...items)
   - var btn_plus_id = "btn_plus_" + id
   - var btn_minus_id = "btn_minus_" + id
   - var tag_list_id = "tag_list_" + id
+  - var _field_error_block = "field_error_block_" + id
+  - var _field_error_block_id = "#" + _field_error_block
+
   .field(id=_field_id class=_class)
-    label(for=_input_id)= parms.label
-    if parms.required
-      span.required *
-    .control.has-addons
-      select.select2(id=_input_id
-                  required=parms.required
+    .field-label.flex
+      label(for=_input_id)= parms.label
+      if parms.required
+        span.required *
+    .field-control
+      .field-plus-minus.has-addons
+        select.select2(id=_input_id
+                    required=parms.required
+                    style=_style
+                    disabled=parms.disabled
+                    data-parsley-trigger="keyup"
+                    data-parsley-maxlength=_input_max_size
+                    data-parsley-maxlength-message=_input_max_size_errmsg
+                    data-parsley-validation-threshold="10"
+                    data-parsley-errors-container=_field_error_block_id
+                    )
+          each item in items
+            option(value=item.key)= item.value
+        button.button.is-icon.is-green(id=btn_plus_id type="button")
+          i.fa.fa-plus-circle.fa-lg.icon-button
+        button.button.is-icon.is-red(id=btn_minus_id type="button")
+          i.fa.fa-minus-circle.fa-lg.icon-button
+      .field-error
+        div(id=_field_error_block)
+      ul.tag-list(id=tag_list_id
                   style=_style
-                  disabled=parms.disabled
-                  data-parsley-trigger="keyup"
-                  data-parsley-maxlength=_input_max_size
-                  data-parsley-maxlength-message=_input_max_size_errmsg
-                  data-parsley-validation-threshold="10"
                   )
-        each item in items
-          option(value=item.key)= item.value
-      button.button.is-icon.is-green(id=btn_plus_id)
-        i.fa.fa-plus-circle.fa-lg.icon-button
-      button.button.is-icon.is-red(id=btn_minus_id)
-        i.fa.fa-minus-circle.fa-lg.icon-button
-    ul.tag-list(id=tag_list_id
-                style=_style
-                )

@@ -6,16 +6,22 @@ mixin field-date(id, parms)
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   - var _input_max_length = (parms.max_length ? parms.max_length : "32")
   - var _input_max_length_errmsg = "Solo puedes ingresar hasta " + _input_max_length + " caracteres."
+  - var _field_error_block = "field_error_block_" + id
+  - var _field_error_block_id = "#" + _field_error_block
 
   .field(id=_field_id class=_class)
     .field-label.flex
       label(for=_input_id)= parms.label
       if parms.required
         span.required *
-    .field-control.flex
-      input.input(id=_input_id
-        required=parms.required
-        data-parsley-type="date"
-        style=_style
-        disabled=parms.disabled
-      )
+    .field-control
+      .field-input.flex
+        input.input(id=_input_id
+          required=parms.required
+          data-parsley-type="date"
+          style=_style
+          disabled=parms.disabled
+          data-parsley-errors-container=_field_error_block_id
+        )
+      .field-error
+        div(id=_field_error_block)

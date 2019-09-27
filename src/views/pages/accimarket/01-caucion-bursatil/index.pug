@@ -11,14 +11,40 @@ block content
       .row
          +accordion("criterios_busqueda_accordion")
             +accordion-item("criterios_busqueda_accordion_item")
-               form.is-search-form#criterios-busqueda(data-parsley-validate="")
+               +form("criterios-busqueda")
                   +field-date("fecha", {label: "Fecha"})
+                  +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: true})
                   +field-plus-minus("contrato", {label: "Contrato"})
                   +field-plus-minus("digito", {label: "Digito"})
                   +field-options("negocio",
                                  {},
                                  {key: "CB", value:"Casa de Bolsa"},
                                  {key:"B", value:"Banco"}
+                  )
+                  +field-select-plus-minus("contrato1", {label: "Contrato", size: "10em"},
+                                 {key: "", value:""},
+                                 {key: "C001", value:"Contrato 01"},
+                                 {key: "C002", value:"Contrato 02"},
+                                 {key: "C003", value:"Contrato 03"},
+                                 {key: "C004", value:"Contrato 04"},
+                                 {key: "C005", value:"Contrato 05"}
+                  )
+                  +field-checks("products3",
+                     {
+                     label: "Product Type",
+                     orientation: "horizontal"
+                     },
+                     {key: "P01", value:"Product 1"},
+                     {key: "P02", value:"Product 2"},
+                     {key: "P03", value:"Product 3"}
+                  )
+                  +field-select("payment",
+                     {
+                     label: "Payment method",
+                     size: "12em"
+                     },
+                     {key: "ET", value:"Electronic transfer"},
+                     {key:"CHK", value:"Check"}
                   )
                   .column#botones-accion
                      +button-search({size: "large", disabled: false})
@@ -30,6 +56,10 @@ block content
          .row.w-full.overflow-auto
             +grid("contratos")
          +grid-records-count("contratos")
+
+      include _dialog_pdf
+      include _dialog_xls
+
 
 block scripts
    script(src="../../assets/scripts/accimarket/01-caucion-bursatil/scripts.js")

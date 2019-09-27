@@ -10,6 +10,12 @@ const rest_url = `${REST_URL}/fideicomiso`;
 
 fieldPlusMinus("contrato");
 fieldPlusMinus("digito");
+fieldSelectPlusMinus("contrato1");
+
+($("#payment") as any).select2({
+  placeholder: "--Seleccione--",
+  minimumResultsForSearch: Infinity
+});
 
 // Form validations
 let contratos_params: UrlParams = {};
@@ -40,19 +46,23 @@ const form = ($("#criterios-busqueda") as any)
     contratos_params = {};
 
     const fecha = $("#fecha").val();
-    const contrato = $("#contrato").val();
-    const digito = $("#digito").val();
     const negocio = $("input[name='negocio']:checked").val();
+
+    var listContrato = getList("contrato");
+    var listDigito = getList("digito");
 
     if (fecha) {
       contratos_params.fecha = fecha;
     }
-    if (contrato) {
-      contratos_params.contrato = contrato;
+
+    if (listContrato.length > 0) {
+      contratos_params.contrato = listContrato;
     }
-    if (digito) {
-      contratos_params.digito = digito;
+
+    if (listDigito.length > 0) {
+      contratos_params.digito = listDigito;
     }
+
     if (negocio) {
       contratos_params.negocio = negocio;
     }
@@ -220,3 +230,35 @@ const llenaGridContratos = (contratos: any) => {
     // pager: "#pager_contratos"
   });
 };
+
+$("#btn_pdf").click(() =>
+  $("#dialogo_pdf").dialog({
+    modal: true,
+    closeText: "",
+    show: true,
+    title: "Generar PDF",
+    buttons: [
+      {
+        text: "Aceptar",
+        icon: "ui-icon-check",
+        click: function() {
+          $(this).dialog("close");
+        }
+
+        // Uncommenting the following line would hide the text,
+        // resulting in the label being used as a tooltip
+        //showText: false
+      }
+    ]
+  })
+);
+$("#btn_xls").click(() =>
+  $("#dialogo_xls").dialog({
+    modal: true,
+    closeText: "",
+    show: true,
+    title: "Generar XLS"
+  })
+);
+
+validateDateRage("rango");

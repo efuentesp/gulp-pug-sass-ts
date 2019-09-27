@@ -1,3 +1,5 @@
+@import "../vars";
+
 .ui-jqgrid-hbox {
   border-bottom: 1px solid $color-ink-light;
   background: $color-sky;
@@ -13,6 +15,13 @@
 .ui-jqgrid-btable {
   tr:nth-child(even) {
     background-color: $color-sky-lighter;
+  }
+
+  .jqgrow {
+    &.ui-state-highlight {
+      background: $color-blue-light;
+      color: $font_color;
+    }
   }
 }
 

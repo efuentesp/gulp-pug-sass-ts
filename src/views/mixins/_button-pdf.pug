@@ -2,16 +2,16 @@ mixin button-pdf(parms)
   - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
 
   if _parms.size == "large"
-    button.button.big-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
+    button.button.big-button(id="btn_pdf" title=_parms.tooltip disabled=_parms.disabled)
         img(src="../../assets/images/btn-pdf_32x32.png")
         span PDF
 
   if _parms.size == "medium"
-    button.button.medium-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
+    button.button.medium-button(id="btn_pdf" title=_parms.tooltip disabled=_parms.disabled)
        span.fa-stack.fa-2x
           i.fa.fas.fa-file-pdf.fa-sm
 
   if _parms.size == "small"
-    button.button.small-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
+    button.button.small-button(id="btn_pdf" title=_parms.tooltip disabled=_parms.disabled)
         span.fa-stack.fa-sm
           i.fa.fas.fa-file-pdf.fa-lg
