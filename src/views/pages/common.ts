@@ -40,7 +40,7 @@ const DATE_FORMAT = "dd-mm-yy";
 
 const ui_datepicker_settings = {
   showOn: "button",
-  buttonImage: "../../assets/images/btn-calendario_32x32.png",
+  buttonImage: "../../assets/images/btn-calendario.svg",
   buttonImageOnly: true,
   buttonText: "",
   dayNames: DAY_NAMES,
