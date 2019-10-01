@@ -115,7 +115,16 @@ $(".sidebar_button").click(() => {
   headerTag: "h3",
   bodyTag: "section",
   transitionEffect: "slideLeft",
-  autoFocus: true
+  autoFocus: true,
+  labels: {
+    cancel: "Cancelar",
+    current: "paso actual:",
+    pagination: "Paginación",
+    finish: "Terminar",
+    next: "Siguiente",
+    previous: "Anterior",
+    loading: "Cargando ..."
+  }
 });
 
 // REST APIs}
