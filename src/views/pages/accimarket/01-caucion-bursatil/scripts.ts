@@ -28,6 +28,19 @@ http_findAll("contratos", contratos_params, payload => {
   // console.log(rec_count);
 });
 
+// Llamado a servicios via POST
+const rpc_url = "/appserver/mvcpt/movimientosPorContrato/consultaCon";
+const rpc_parms = {
+  contrato: "12345",
+  rol: "TIT"
+};
+rpc(rpc_url, rpc_parms, (data, textStatus, jQxhr) => {
+  console.log(data, textStatus, jQxhr);
+  llenaGridContratos(data);
+  const rec_count = data.length;
+  $("#count_contratos").html(rec_count);
+});
+
 const form = ($("#criterios-busqueda") as any)
   .parsley()
   .on("field:validated", () => {

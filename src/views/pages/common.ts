@@ -206,8 +206,15 @@ const rest_findOne$ = (resource: string, id: string) => {
   });
 };
 
-const rpc_findAll = (resource: string, params: any, cb: Function) => {
-  // TODO: Implementar versión con POST
+const rpc = (url: string, params: any, cb: Function) => {
+  $.ajax({
+    url,
+    dataType: "json",
+    type: "post",
+    contentType: "application/x-www-form-urlencoded",
+    data: params,
+    success: (data, textStatus, jQxhr) => cb(data, textStatus, jQxhr)
+  });
 };
 
 ($("select[name=quiz_select]") as any).select2({

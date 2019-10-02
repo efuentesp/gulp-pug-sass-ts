@@ -1,3 +1,5 @@
+@import "src/views/styles/vars";
+
 .content {
   .row {
     display: flex;
@@ -63,10 +65,11 @@
     width: 70em;
 
     tr {
-      border-collapse: collapse;
-      border-radius: 7px;
-      border-style: hidden;
-      box-shadow: 0 0 0 1px blue;
+      // border-collapse: collapse;
+      // border-radius: 7px;
+      // border-style: hidden;
+      // box-shadow: 0 0 0 1px blue;
+      border: 2px solid $color-blue;
     }
 
     td {
