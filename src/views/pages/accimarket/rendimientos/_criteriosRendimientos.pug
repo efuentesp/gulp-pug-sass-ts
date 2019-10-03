@@ -41,7 +41,8 @@ include /mixins/mixins
                 label: "",
                 orientation: "horizontal",
                 disabled: true,
-                size: "40em"
+                size: "40em",
+                max_length: "50"
             })
         +field-input("clabe",
             {
@@ -74,13 +75,13 @@ include /mixins/mixins
             label: ""
         },
         {key: "S01", value:"Inflacion", color:"green"},
-        {key: "S03", value:"IPC", color:"gray"},
-        {key: "S04", value:"Cetes 28", color:"yellow"},
-        {key: "S06", value:"Deval", color:"blue"},
-        {key: "S02", value:"Soc Inv RF-PM", color:"yellow"},
+        {key: "S02", value:"IPC", color:"gray"},
+        {key: "S03", value:"Cetes 28", color:"yellow"},
+        {key: "S04", value:"Deval", color:"blue"},
+        {key: "S05", value:"Soc Inv RF-PM", color:"yellow"},
         {key: "S06", value:"Cetes 91", color:"green"},
-        {key: "S05", value:"Soc Inv RV", color:"red"},
-        {key: "S06", value:"INMEX", color:"cyan"}
+        {key: "S07", value:"Soc Inv RV", color:"red"},
+        {key: "S08", value:"INMEX", color:"cyan"}
         )
 .row
     #search-actions-column.pl-12

@@ -34,19 +34,23 @@ include /mixins/mixins
                 +field-select-plus-minus("grupoInstrumento",{
                     label:"Grupo Instrumento",
                     size:"18em"
-                })
+                },
+                {key:"1",value:"Ejemplo Instrumentos"},
+                {key:"2",value:"Ejemplo Dos Instrumentos"})
                 +field-select-plus-minus("grupoInstrumentoValor",{
                     label:"Tipo Valor",
                     size:"12em"
-                })
+                },
+                {key:"1",value:"Valor Instrumentos"},
+                {key:"2",value:"Valor Dos Instrumentos"})
             .row
                 p#preguntas Seleccione Dependiente
-            .row
+            .row#rowEmisoras
                 +field-select-plus-minus("emisoras",{
                     label:"Emisoras",
                     size:"18em"
-                })
-                +field-select-plus-minus("emisorasTipoValor",{
-                    label:"Tipo Valor",
-                    size:"12em"
-                })
+                },
+                {key:"1",value:"Ejemplo Emisoras"},
+                {key:"2",value:"Ejemplo Dos Emisoras"})
+                p#boton BOTON
+                +grid("emisora")

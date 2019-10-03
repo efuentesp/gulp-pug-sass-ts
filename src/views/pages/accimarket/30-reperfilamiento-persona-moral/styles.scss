@@ -9,15 +9,22 @@
 
   #liquidezPM {
     width: 70em;
+    height: 26em;
   }
 
   /*#tab_mapaLiquidaciones {
     display: flex;
   }*/
 
+  #tab_conocimientoClienUno {
+    label {
+      width: 35em;
+    }
+  }
+
   #tableTitulos {
     margin: auto;
-    width: 700px;
+    width: 560px;
     border-collapse: collapse;
     border-style: solid;
     background-color: #2b6cb0;
@@ -35,7 +42,7 @@
     }
 
     .tdConfig {
-      width: 13em;
+      width: 16em;
       height: 4em;
       background: #fff;
     }
@@ -43,7 +50,7 @@
 
   #tablePorta {
     margin: auto;
-    width: 700px;
+    width: 560px;
     border-collapse: collapse;
     border: 1px solid #fff;
     border-style: hidden;
@@ -66,7 +73,7 @@
   }
 
   .liquidezI {
-    margin-top: 4em;
+    margin-top: 3em;
     height: 23em;
   }
 
@@ -82,4 +89,8 @@
     border-style: solid none solid solid;
     border-color: blue;
   }
+}
+
+table {
+  font-size: 1em;
 }

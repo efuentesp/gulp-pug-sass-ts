@@ -1,5 +1,3 @@
-$("#grupo_simulacion_practicas_ventas").tabs();
-
 ($("#simulacion") as any).select2({
     placeholder: "--Seleccione--",
     minimumResultsForSearch: Infinity
@@ -55,7 +53,7 @@ $("#table_simulador").jqGrid({
 
 $("#table_resultadosDia").jqGrid({
     datatype: "local",
-    height: 'auto',
+    height: 250,
     colNames: [
         "id",
         "fecHoy",

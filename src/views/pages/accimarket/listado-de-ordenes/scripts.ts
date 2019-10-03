@@ -1,6 +1,5 @@
+/// <reference path="../../typings/index.d.ts" />
 let listaOrdenes_params: UrlParams = {};
-
-$("#criterios_busqueda_ordenes").accordion(ui_accordion_settings);
 
 fieldPlusMinus("sociedad");
 fieldPlusMinus("contrato");
@@ -19,7 +18,11 @@ $("#table_busquedaOrdenes").jqGrid({
         "Cliente",
         "Importe/Cantidad",
         "Perfil del Cliente al momento de la Operacion",
-        "Perfil del Producto al momento de la Operacion"
+        "Perfil del Producto al momento de la Operacion",
+        "Precio",
+        "Precio/Definitivo/Horario",
+        "Precio Asignado",
+        "Fac Captura"
     ],
     colModel: [
         { name: "tipo", width: 55 },
@@ -30,7 +33,11 @@ $("#table_busquedaOrdenes").jqGrid({
         { name: "cliente", width: 110 },
         { name: "cantidad", width: 110 },
         { name: "perfil", width: 250 },
-        { name: "perfil2", width: 250 }
+        { name: "perfil2", width: 250 },
+        { name: "precio", width: 100 },
+        { name: "precioDefinitivo", width: 100 },
+        { name: "precioAsignado", width: 100 },
+        { name: "facCaptura", width: 100 }
     ],
     rowNum: 10,
     rowList: [10, 20, 30],

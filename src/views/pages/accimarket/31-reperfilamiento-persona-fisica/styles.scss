@@ -19,10 +19,7 @@
     height: 40em;
 
     tr {
-      border-collapse: collapse;
-      border-radius: 7px;
-      border-style: hidden;
-      box-shadow: 0 0 0 1px blue;
+      border: 2px solid blue;
     }
 
     td {
@@ -65,7 +62,7 @@
   }
 
   #grupoDos {
-    width: 50em;
+    width: 48em;
     flex-wrap: wrap;
 
     #field_estudios {
@@ -80,8 +77,20 @@
       }
     }
 
+    #field_estrategia {
+      label {
+        width: 35em;
+      }
+    }
+
     #actividad {
-      width: 26em;
+      width: 29em;
+    }
+
+    #field_actual {
+      label {
+        width: 4.9em;
+      }
     }
 
     #grupo_4 {
@@ -99,7 +108,7 @@
 
   #grupoCuatro {
     flex-wrap: wrap;
-    width: 50em;
+    width: 85em;
 
     #field_tolerancia {
       label {
@@ -127,7 +136,7 @@
   #grupoInstrumentos {
     flex-wrap: wrap;
     width: 80em;
-    padding-left: 35em;
+    padding-left: 30em;
 
     label {
       font-weight: 700;
@@ -158,10 +167,7 @@
     width: 65em;
 
     tr {
-      border-collapse: collapse;
-      border-radius: 7px;
-      border-style: hidden;
-      box-shadow: 0 0 0 1px blue;
+      border: 2px solid blue;
     }
 
     td {
@@ -173,4 +179,12 @@
   #grupoAsesor {
     flex-wrap: wrap;
   }
+
+  #rowEmisoras {
+    display: -webkit-box;
+  }
+}
+
+table {
+  font-size: 1em;
 }

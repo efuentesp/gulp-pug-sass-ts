@@ -13,6 +13,10 @@ const respuestaServicio = (tabla: string, tablaTotal: string, payload: any) => {
     $("#table_" + tablaTotal).jqGrid("clearGridData");
     $("#table_" + tablaTotal).jqGrid("setGridParam", { data: obj });
     $("#table_" + tablaTotal).trigger("reloadGrid");
+
+    $("#ui-id-2").show();
+    $("#ui-id-3").show();
+
 };
 
 const accionTabs = (payload: any) => {

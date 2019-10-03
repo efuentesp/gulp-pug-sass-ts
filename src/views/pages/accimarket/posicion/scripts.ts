@@ -1,5 +1,14 @@
 let posicion_params: UrlParams = {};
-$("#grupo_posicion").tabs();
+
+$("#ui-id-2").hide();
+$("#ui-id-3").hide();
+
+$("#buscar").change(() => {
+    const queryString = $("#buscar").val();
+
+    console.log("Agregar lo de busqueda");
+});
+
 
 http_findAll("contratos", posicion_params, payload => {
     llenandoGridContado(payload);

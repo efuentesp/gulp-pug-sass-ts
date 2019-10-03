@@ -9,13 +9,14 @@ block content
             {id: "tab_simulacion", label: "Simulacion"},
             {id: "tab_resultados", label: "Resultados del dia"})
                 +tab-item("tab_simulacion")
-                    include _criteriosSimulacion
-                    .row
-                        .row.overflow-auto
-                            +grid("simulador")
-                        #search-action-tabla
-                            +button-validate({size: "large", disabled: false})
-                            +button-reset({size: "large", disabled: false})
+                    +form("criterios-busqueda-simulacion")
+                        include _criteriosSimulacion
+                        .row
+                            .row.overflow-auto
+                                +grid("simulador")
+                            #search-action-tabla
+                                +button-validate({size: "large", disabled: false})
+                                +button-reset({size: "large", disabled: false})
                 +tab-item("tab_resultados")
                     .row.justify-end.mb-12
                         +button-reset({size: "large", disabled: false})

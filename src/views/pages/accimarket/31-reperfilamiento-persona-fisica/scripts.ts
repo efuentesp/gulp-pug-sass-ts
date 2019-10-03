@@ -7,7 +7,9 @@ let pf_encuestaLstD: any[] = [];
 $('#grupoInstrumentos').hide();
 
 $(document).ready(() => {
-	mostrarOcultar(false);
+	mostrarOcultar(true);
+	var element = document.getElementById("datosInfo_group");
+	element.classList.remove("flex");
 });
 
 $('#contrato').change(() => {
@@ -321,3 +323,27 @@ function mostrarOcultar(tipo) {
 		$("#sticky-action-bar").hide();
 	}
 }
+
+$("#boton").click(() => {
+	var parametros = '[{ "emisora": "Emi", "tipoValor": "1" }]';
+	$("#table_emisora").jqGrid('addRow', { data: parametros }).trigger('reloadGrid');
+});
+
+$("#table_emisora").jqGrid({
+	datatype: "local",
+	height: 100,
+	width: 305,
+	colNames: [
+		"Emisoras",
+		"Tipo Valor"
+	],
+	colModel: [
+		{ name: "emisora" },
+		{ name: "tipoValor" }
+	],
+	rowNum: 10,
+	rowList: [10, 20, 30],
+	sortname: "tipo",
+	sortorder: "desc",
+	shrinkToFit: false
+});

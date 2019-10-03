@@ -66,16 +66,20 @@ http_findAll("toleranciaService", select_params, (payload: any) => {
     });
 });
 
+fieldSelectPlusMinus("grupoInstrumento");
 ($("#grupoInstrumento") as any).select2({
     placeholder: "--Seleccione--",
     minimumResultsForSearch: Infinity
 });
 
+fieldSelectPlusMinus("grupoInstrumentoValor");
 ($("#grupoInstrumentoValor") as any).select2({
     placeholder: "--Seleccione--",
     minimumResultsForSearch: Infinity
 });
 
+
+fieldSelectPlusMinus("emisoras");
 ($("#emisoras") as any).select2({
     placeholder: "--Seleccione--",
     minimumResultsForSearch: Infinity

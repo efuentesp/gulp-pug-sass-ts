@@ -1,6 +1,6 @@
-$('#criterios_busqueda_rendimientos').accordion(ui_accordion_settings);
-$('#fechaInicial').datepicker(ui_datepicker_settings);
-$('#fechaFinal').datepicker(ui_datepicker_settings);
+/// <reference path="../../typings/index.d.ts" />
+
+console.log("Rendimientos");
 
 $("#btn_search").click(() => {
     const formListOrdenes = ($("#criterios-busqueda-rendimientos") as any)
@@ -15,6 +15,12 @@ $("#btn_search").click(() => {
 
             http_findOne("contratos", contrato, payload => {
                 infoContratoRendimiento(payload);
+
+                fillJqGrid("#table_resultadosMensuales", payload.listaMensuales);
+                graficaMensuales("graficaMensual", payload.listaMensuales);
+
+                fillJqGrid("#table_resultadosAcomulados", payload.listaAcumulados);
+                graficaMensuales("graficaAcumulados", payload.listaAcumulados);
             });
             return false;
         });
@@ -30,23 +36,32 @@ $("#btn_search").click(() => {
     minimumResultsForSearch: Infinity
 });
 
-
 $("#table_resultadosMensuales").jqGrid({
     datatype: "local",
-    height: 'auto',
+    height: '150',
     colNames: [
         "Periodo",
         "Portafolio %",
-        "Ejemplo U",
-        "Ejemplo D",
-        "Ejemplo T",
+        "Inflacion %",
+        "IPC %",
+        "Cetes 28 %",
+        "Deval %",
+        "Soc Inv RF-PM %",
+        "Cetes 91 %",
+        "Soc Inv RV %",
+        "INMEX %"
     ],
     colModel: [
-        { name: "periodo", width: 300 },
-        { name: "portafolio", width: 300 },
-        { name: "ejemplo", width: 300 },
-        { name: "ejemplo", width: 300 },
-        { name: "ejemplo", width: 300 }
+        { name: "periodo", width: 300, align: "center" },
+        { name: "portafolio", width: 300, align: "center" },
+        { name: "S01", width: 300, hidden: true, align: "center" },
+        { name: "S02", width: 300, hidden: true, align: "center" },
+        { name: "S03", width: 300, hidden: true, align: "center" },
+        { name: "S04", width: 300, hidden: true, align: "center" },
+        { name: "S05", width: 300, hidden: true, align: "center" },
+        { name: "S06", width: 300, hidden: true, align: "center" },
+        { name: "S07", width: 300, hidden: true, align: "center" },
+        { name: "S08", width: 300, hidden: true, align: "center" }
     ],
     rowNum: 10,
     rowList: [10, 20, 30],
@@ -59,14 +74,30 @@ $("#table_resultadosMensuales").jqGrid({
 
 $("#table_resultadosAcomulados").jqGrid({
     datatype: "local",
-    height: 'auto',
+    height: '150',
     colNames: [
         "Periodo",
-        "Portafolio %"
+        "Portafolio %",
+        "Inflacion %",
+        "IPC %",
+        "Cetes 28 %",
+        "Deval %",
+        "Soc Inv RF-PM %",
+        "Cetes 91 %",
+        "Soc Inv RV %",
+        "INMEX %"
     ],
     colModel: [
         { name: "periodo", width: 300 },
-        { name: "portafolio", width: 300 }
+        { name: "portafolio", width: 300 },
+        { name: "S01", width: 300, hidden: true, align: "center" },
+        { name: "S02", width: 300, hidden: true, align: "center" },
+        { name: "S03", width: 300, hidden: true, align: "center" },
+        { name: "S04", width: 300, hidden: true, align: "center" },
+        { name: "S05", width: 300, hidden: true, align: "center" },
+        { name: "S06", width: 300, hidden: true, align: "center" },
+        { name: "S07", width: 300, hidden: true, align: "center" },
+        { name: "S08", width: 300, hidden: true, align: "center" }
     ],
     rowNum: 10,
     rowList: [10, 20, 30],
@@ -87,6 +118,42 @@ const infoContratoRendimiento = (payload: any) => {
     $("#clabe").val(payload.clabe);
 };
 
-$('input[name="chk_opcionesRendi"]:checked').click(function () {
-    console.log($(this).val);
+const graficaMensuales = (tipoGrafica: string, lista: any) => {
+    var dataSetY = [];
+    var dataSetX = [];
+
+    for (var i = 0; i < lista.length; i++) {
+        var data = lista[i];
+        dataSetX.push(data.periodo);
+        dataSetY.push(data.total);
+    }
+
+    simpleBarChart({
+        id: tipoGrafica,
+        titleX: "Período",
+        titleY: "Portafolio",
+        labels: dataSetX,
+        tickMaxY: 1.0,
+        tickMinY: 0,
+        tickStepY: 0.2,
+        dataSet: [
+            {
+                type: "bar",
+                label: "Real",
+                backgroundColor: "#2b6cb0",
+                data: dataSetY
+            }
+        ]
+    });
+};
+
+$('input[name="chk_opcionesRendi"]').change(function () {
+    console.log("Checkbox ejemplo " + $(this).is(':checked') + " " + $(this).val());
+    if ($(this).is(':checked')) {
+        $("#table_resultadosMensuales").jqGrid('showCol', $(this).val());
+        $("#table_resultadosAcomulados").jqGrid('showCol', $(this).val());
+    } else {
+        $("#table_resultadosMensuales").jqGrid('hideCol', $(this).val());
+        $("#table_resultadosAcomulados").jqGrid('hideCol', $(this).val());
+    }
 });
