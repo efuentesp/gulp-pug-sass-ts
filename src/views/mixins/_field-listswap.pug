@@ -1,0 +1,7 @@
+mixin field-listswap(id, params, ...items)
+  - var _select_ids = id
+    select(id=id
+    data-text=params.label)
+        each item in items
+          option(value=item.value)= item.label
+    
