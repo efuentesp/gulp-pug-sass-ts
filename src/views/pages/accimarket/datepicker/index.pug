@@ -1,0 +1,13 @@
+extends /layouts/html5
+
+block title
+   title Graficos
+
+block styles
+   //- link(rel="stylesheet" href="/assets/css/accimarket/datepicker/styles.css")
+
+block content
+   +field-month-year("datepicker", {label: "datepicker"})
+
+block scripts
+   script(src="/assets/scripts/accimarket/datepicker/scripts.js")

@@ -37,6 +37,7 @@ const MONTH_NAMES = [
 ];
 
 const DATE_FORMAT = "dd-mm-yy";
+const DATE_FORMAT_MONTH_YEAR = "MM yy";
 
 const ui_datepicker_settings = {
   showOn: "button",
@@ -56,6 +57,19 @@ const ui_datepicker_settings = {
     if ($(window.event.srcElement).hasClass("ui-datepicker-close")) {
       (document.getElementById(this.id) as HTMLInputElement).value = "";
     }
+  }
+};
+
+const ui_datepicker_month_year_settings = {
+  changeMonth: true,
+  changeYear: true,
+  showButtonPanel: false,
+  dateFormat: DATE_FORMAT_MONTH_YEAR,
+  onChangeMonthYear: function(year, month, inst) {
+    $(this).datepicker(
+      "setDate",
+      new Date(inst.selectedYear, inst.selectedMonth, 1)
+    );
   }
 };
 
@@ -81,6 +95,9 @@ $(".accordion").accordion(ui_accordion_settings);
 
 // DatePicker
 $(".datepicker").datepicker(ui_datepicker_settings);
+
+// DatePicker Month Year
+$(".monthpicker").datepicker(ui_datepicker_month_year_settings);
 
 // Splitter
 $(".splitter").splitter();
