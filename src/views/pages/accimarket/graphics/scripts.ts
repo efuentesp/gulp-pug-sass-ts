@@ -56,7 +56,9 @@ const fillRendimientos = (rendimientos: any) => {
         backgroundColor: "#2b6cb0",
         data: dataSetY2
       }
-    ]
+    ],
+    width: "400px",
+    height: "200px"
   });
 };
 
@@ -80,6 +82,8 @@ const fillPromedios = (promedios: any) => {
     tickMaxY: 15.0,
     tickMinY: 0,
     tickStepY: 1,
+    width: "400px",
+    height: "200px",
     dataSet: [
       {
         type: "line",
@@ -135,7 +139,9 @@ const fillRates = (rates: any) => {
       }
     ],
     pointA: 56,
-    pointB: 200
+    pointB: 200,
+    width: "600px",
+    height: "200px"
   });
 };
 
@@ -197,6 +203,8 @@ const fillEstrategias = (rates: any) => {
         fontColor: "#2f855a",
         backgroundColor: "#2f855a"
       }
-    ]
+    ],
+    width: "600px",
+    height: "200px"
   });
 };

@@ -403,6 +403,8 @@ interface stackChartParams {
   tickMinY: number;
   tickStepY: number;
   dataSet: any[];
+  width: string;
+  height: string;
 }
 
 interface barChartParams {
@@ -412,6 +414,8 @@ interface barChartParams {
   labels: any[];
   tickMaxY: number;
   tickMinY: number;
+  width: string;
+  height: string;
   tickStepY: number;
   dataSet: any[];
 }
@@ -427,6 +431,8 @@ interface lineChartParams {
   dataSet: any[];
   pointA: number;
   pointB: number;
+  width: string;
+  height: string;
 }
 
 interface multiLineChartParams {
@@ -438,6 +444,8 @@ interface multiLineChartParams {
   tickMinY: number;
   tickStepY: number;
   dataSet: any[];
+  width: string;
+  height: string;
 }
 
 // StackGraph
@@ -449,6 +457,7 @@ const stackChart = (params: stackChartParams) => {
 
   var ctx: any = document.getElementById(params.id);
   var context = ctx.getContext("2d");
+
   // Style legends
   Chart.defaults.global.legend.labels.usePointStyle = true;
   Chart.defaults.global.legend.labels.fontSize = 9;
@@ -466,6 +475,10 @@ const stackChart = (params: stackChartParams) => {
       {
         afterDatasetsDraw: function(stackGraph) {
           var ctx = stackGraph.ctx;
+
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+
           stackGraph.data.datasets.forEach(function(dataset, i) {
             var meta = stackGraph.getDatasetMeta(i);
             meta.data.forEach(function(element, index) {
@@ -569,6 +582,10 @@ const simpleBarChart = (params: barChartParams) => {
       {
         afterDatasetsDraw: function(barGraph) {
           var ctx = barGraph.ctx;
+
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+
           barGraph.data.datasets.forEach(function(dataset, i) {
             var meta = barGraph.getDatasetMeta(i);
             if (!meta.hidden) {
@@ -661,6 +678,10 @@ const barChart = (params: barChartParams) => {
       {
         afterDatasetsDraw: function(barGraph) {
           var ctx = barGraph.ctx;
+
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+
           barGraph.data.datasets.forEach(function(dataset, i) {
             var meta = barGraph.getDatasetMeta(i);
             if (!meta.hidden) {
@@ -938,6 +959,10 @@ const lineChart = (params: lineChartParams) => {
       {
         afterDatasetsDraw: function(lineGraph) {
           var ctx = lineGraph.ctx;
+
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+
           lineGraph.data.datasets.forEach(function(dataset, i) {
             var meta = lineGraph.getDatasetMeta(i);
             if (!meta.hidden) {
@@ -1058,6 +1083,10 @@ const multiLineChart = (params: multiLineChartParams) => {
       {
         beforeDraw: function(multiLineGraph) {
           var ctx = multiLineGraph.ctx;
+
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+
           var chartArea = multiLineGraph.chartArea;
 
           ctx.save();
