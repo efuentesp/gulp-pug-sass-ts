@@ -14,12 +14,14 @@ mixin field-date-range(id, parms)
                   label: parms.begin_label,
                   required: parms.required,
                   size: _style,
-                  orientation: _class
+                  orientation: _class,
+                  datepicker_range: true
                 })
     +field-date(_input_id + "_end_date",
                 {
                   label: parms.end_label,
                   required: parms.required,
                   size: _style,
-                  orientation: _class
+                  orientation: _class,
+                  datepicker_range: true
                 })
