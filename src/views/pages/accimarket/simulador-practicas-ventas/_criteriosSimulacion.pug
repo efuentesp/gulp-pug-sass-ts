@@ -1,0 +1,111 @@
+include /mixins/mixins
+
+.row.justify-end.font-bold
+    p Simulacion sin Restricciones
+.row.justify-end
+    +field-checks("guardarAnalisis",
+        {
+            label: "",
+            orientation: "horizontal"
+        },
+        {key: "true", value:"Guardar Analisis"})
+.row
+    +field-group("groupSimulacion")
+        .row
+            +field-input("contrato",
+                {
+                    label: "Contrato",
+                    orientation: "horizontal",
+                    required: true,
+                    size: "13em"
+                })
+            +field-select("simulacion",
+                {
+                    label:"Simulacion",
+                    orientation: "horizontal",
+                    required: true,
+                    size: "13em"
+                })
+            +field-select("operacion",
+                {
+                    label:"Operacion",
+                    orientation: "horizontal",
+                    required: true,
+                    size: "13em"
+                })
+            +field-input("emisora",
+                {
+                    label:"Emisora",
+                    orientation: "horizontal",
+                    required: true,
+                    size: "13em"
+                })
+        .row
+            +field-input("cantidad",
+                {
+                    label:"Cantidad",
+                    orientation: "horizontal",
+                    required: true,
+                    size: "13em"
+                })
+            +field-input("precio",
+                {
+                    label:"Precio",
+                    orientation: "horizontal",
+                    required: true,
+                    size: "13em"
+                })
+        .row
+            +field-select("servicioInv",
+                {
+                    label:"Servicio de Inv",
+                    orientation: "horizontal",
+                    required: true,
+                    size: "13em"
+                })
+            +field-input("preMdo",
+                {
+                    label:"Prec Mdo",
+                    orientation: "horizontal",
+                    disabled: true,
+                    size: "11em"
+                })
+            +field-input("preCierre",
+                {
+                    label:"Prec Cierre",
+                    orientation: "horizontal",
+                    disabled: true,
+                    size: "11em"
+                })
+            +field-input("posicion",
+                {
+                    label:"Posicion",
+                    orientation: "horizontal",
+                    disabled: true,
+                    size: "11em"
+                })
+        .row
+            +field-select("titulosPosicion",
+                {
+                    label:"Titulos a afectar de Posicion",
+                    orientation: "horizontal",
+                    required: true,
+                    size: "13em"
+                })
+            +field-input("tasa",
+                {
+                    label:"Tasa",
+                    orientation: "horizontal",
+                    disabled: true,
+                    size: "11em"
+                })
+            +field-input("spread",
+                {
+                    label:"Spread",
+                    orientation: "horizontal",
+                    disabled: true,
+                    size: "11em"
+                })
+    #search-actions-column
+        +button-add({size: "large", disabled: false})
+        +button-clean({size: "large", disabled: false})

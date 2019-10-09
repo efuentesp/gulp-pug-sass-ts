@@ -5,35 +5,143 @@
     display: flex;
   }
 
-  #field_estudios {
-    label {
-      width: 12.5em;
+  #preguntas {
+    padding-left: 0.7em;
+  }
+
+  .informativoE {
+    margin-top: 3.5em;
+    margin-left: 25em;
+    height: 36em;
+  }
+
+  #informativo {
+    margin-left: 1em;
+    width: 70em;
+    height: 40em;
+
+    tr {
+      border: 2px solid blue;
+    }
+
+    td {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1.5rem;
     }
   }
 
-  #field_ocupacion {
-    label {
-      width: 12.5em;
+  .estiloColumnaB {
+    border-width: 3px;
+    border-style: solid none none solid;
+    border-color: blue;
+    width: 1em;
+  }
+
+  .estiloColumnaD {
+    border-width: 3px;
+    border-style: none none solid solid;
+    border-color: blue;
+  }
+
+  .estiloColumnaA {
+    border-width: 3px;
+    border-style: solid none none solid;
+    border-color: blue;
+    width: 1em;
+    height: 4em;
+  }
+
+  .estiloColumnaC {
+    border-width: 3px;
+    border-style: none none solid solid;
+    border-color: blue;
+    height: 5em;
+  }
+
+  #grupoTodo {
+    flex-wrap: wrap;
+  }
+
+  #grupoDos {
+    width: 48em;
+    flex-wrap: wrap;
+
+    #field_estudios {
+      label {
+        width: 12.5em;
+      }
+    }
+
+    #field_ocupacion {
+      label {
+        width: 12.5em;
+      }
+    }
+
+    #field_estrategia {
+      label {
+        width: 35em;
+      }
+    }
+
+    #actividad {
+      width: 29em;
+    }
+
+    #field_actual {
+      label {
+        width: 4.9em;
+      }
+    }
+
+    #grupo_4 {
+      flex-wrap: wrap;
     }
   }
 
-  #field_estrategia {
-    label {
-      width: 38.7em;
+  #grupoTres {
+    flex-wrap: wrap;
+
+    #grupoParrafo {
+      width: 112em;
     }
   }
 
-  #field_horizonte-Inversion {
-    align-items: baseline;
+  #grupoCuatro {
+    flex-wrap: wrap;
+    width: 85em;
 
-    label {
-      width: 33.5em;
+    #field_tolerancia {
+      label {
+        width: 33.5em;
+      }
+    }
+
+    #field_horizonte-Inversion {
+      align-items: baseline;
+
+      label {
+        width: 33.5em;
+      }
+    }
+
+    #datosInfo_group {
+      flex-wrap: wrap;
+
+      #textoPortafolio {
+        width: 24em;
+      }
     }
   }
 
-  #field_tolerancia {
+  #grupoInstrumentos {
+    flex-wrap: wrap;
+    width: 80em;
+    padding-left: 30em;
+
     label {
-      width: 33.5em;
+      font-weight: 700;
     }
   }
 
@@ -51,8 +159,11 @@
     }
   }
 
-  #preguntas {
-    padding-left: 0.7em;
+  #field_otros {
+    position: absolute;
+    z-index: 1;
+    margin-top: 12em;
+    margin-left: 60em;
   }
 
   #pregunta6_4 {
@@ -61,7 +172,7 @@
   }
 
   #informativo {
-    margin-left: 30em;
+    //margin-left: 30em;
     width: 70em;
 
     tr {
@@ -84,10 +195,7 @@
     width: 65em;
 
     tr {
-      border-collapse: collapse;
-      border-radius: 7px;
-      border-style: hidden;
-      box-shadow: 0 0 0 1px blue;
+      border: 2px solid blue;
     }
 
     td {
@@ -96,10 +204,20 @@
     }
   }
 
-  #grupoInstrumentos {
-    label {
-      font-weight: 700;
-    }
-    padding-left: 35em;
+  #grupoAsesor {
+    flex-wrap: wrap;
   }
+
+  #rowEmisoras {
+    display: -webkit-box;
+  }
+}
+
+//Estilos para el  dialogo
+#dialogText {
+  height: 15em;
+}
+
+table {
+  font-size: 1em;
 }

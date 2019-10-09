@@ -1,0 +1,31 @@
+.content {
+  #rowFlex {
+    display: flex;
+  }
+
+  #search-actions-column {
+    width: 20em;
+  }
+
+  #field_estatus {
+    flex-wrap: wrap;
+    width: 22em;
+
+    label[for="chk_estatus"] {
+      width: 19em;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .field-control {
+      .flex {
+        label {
+          width: 11em;
+        }
+
+        width: 22em;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

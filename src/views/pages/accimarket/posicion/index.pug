@@ -1,0 +1,34 @@
+extends /layouts/html5
+
+block title
+    title Posicion
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/posicion/styles.css")
+
+block content
+    .content.p-4
+        +form("criterios-busqueda-posicion")
+            include _criteriosPosicion
+            +tab-group("grupo_posicion",
+            {id: "tab_contado", label: "CONTADO"},
+            {id: "tab_difgtia", label: "DIF/GTIA"},
+            {id: "tab_spc", label: "SPC"})
+                +tab-item("tab_contado")
+                    +grid("contado")
+                    +grid("totales")
+                +tab-item("tab_difgtia")
+                    +grid("difgtia")
+                    +grid("totalesDifgtia")
+                +tab-item("tab_spc")
+                    +grid("spc")
+                    +grid("totalesSpc")
+            +grid("liquidacion")
+
+    .row
+        .ui-dialog.hidden(id="dialogo_msg")
+            p Posicion-0. La consulta de Posicion no obtuvo resultados.
+
+block scripts
+    script(src="/assets/scripts/accimarket/posicion/scripts.js")
+    script(src="/assets/scripts/accimarket/posicion/scriptsTables.js")

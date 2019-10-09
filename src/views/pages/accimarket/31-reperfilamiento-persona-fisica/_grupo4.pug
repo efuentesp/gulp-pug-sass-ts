@@ -1,51 +1,56 @@
 include /mixins/mixins
 
-+field-select("proposito",
-    {
-        label: "3. Seleccionar el Proposito de Inversion del Cliente (Estrategia)",
-        orientation: "horizontal",
-        required: true,
-        size: "15em"
-    })
-+field-select("tolerancia",
-    {
-        label: "4. Seleccionar la Tolerancia de Riesgo del Cliente.",
-        orientation: "horizontal",
-        required: true,
-        size: "35em"
-    })
-include _grupo4_1
-+field-options("limitantes",
-    {
-        label: "5.1 El cliente tiene alguna limitante y/o restriccion para invertir",
-        orientation: "horizontal",
-        required: true
-    },
-    {key:"false", value:"Ninguna"},
-    {key:"true", value:"Si"})
-.row
-    +field-group("grupoInstrumentos")
-        .row
-            p#preguntas Especificar
-        .row
-            p#preguntas Seleccione Independiente
-        .row
-            +field-select-plus-minus("grupoInstrumento",{
-                label:"Grupo Instrumento",
-                size:"18em"
-            })
-            +field-select-plus-minus("grupoInstrumentoValor",{
-                label:"Tipo Valor",
-                size:"12em"
-            })
-        .row
-            p#preguntas Seleccione Dependiente
-        .row
-            +field-select-plus-minus("emisoras",{
-                label:"Emisoras",
-                size:"18em"
-            })
-            +field-select-plus-minus("emisorasTipoValor",{
-                label:"Tipo Valor",
-                size:"12em"
-            })
++field-group("grupoCuatro")
+    +field-select("proposito",
+        {
+            label: "3. Seleccionar el Proposito de Inversion del Cliente (Estrategia)",
+            orientation: "horizontal",
+            required: true,
+            size: "15em"
+        })
+    +field-select("tolerancia",
+        {
+            label: "4. Seleccionar la Tolerancia de Riesgo del Cliente.",
+            orientation: "horizontal",
+            required: true,
+            size: "35em"
+        })
+    include _grupo4_1
+    +field-options("limitantes",
+        {
+            label: "5.1 El cliente tiene alguna limitante y/o restriccion para invertir",
+            orientation: "horizontal",
+            required: true
+        },
+        {key:"false", value:"Ninguna"},
+        {key:"true", value:"Si"})
+    .row
+        +field-group("grupoInstrumentos")
+            .row
+                p#preguntas Especificar
+            .row
+                p#preguntas Seleccione Independiente
+            .row
+                +field-select-plus-minus("grupoInstrumento",{
+                    label:"Grupo Instrumento",
+                    size:"18em"
+                },
+                {key:"1",value:"Ejemplo Instrumentos"},
+                {key:"2",value:"Ejemplo Dos Instrumentos"})
+                +field-select-plus-minus("grupoInstrumentoValor",{
+                    label:"Tipo Valor",
+                    size:"12em"
+                },
+                {key:"1",value:"Valor Instrumentos"},
+                {key:"2",value:"Valor Dos Instrumentos"})
+            .row
+                p#preguntas Seleccione Dependiente
+            .row#rowEmisoras
+                +field-select-plus-minus("emisoras",{
+                    label:"Emisoras",
+                    size:"18em"
+                },
+                {key:"1",value:"Ejemplo Emisoras"},
+                {key:"2",value:"Ejemplo Dos Emisoras"})
+                p#boton BOTON
+                +grid("emisora")

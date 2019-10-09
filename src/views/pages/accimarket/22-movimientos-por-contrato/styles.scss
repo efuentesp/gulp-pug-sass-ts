@@ -2,25 +2,72 @@
   #columnas_dos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+
+    #criterios-busqueda {
+      justify-content: end;
+    }
 
     #busqueda_contrato {
       flex: 1;
+
+      label {
+        width: 15em;
+        text-align: right;
+      }
+
+      #fechaI,
+      #fechaF {
+        margin-left: 1em;
+      }
+
+      #operaciones,
+      #plazo {
+        margin-left: 1.5em;
+      }
     }
 
-    #grupo_datos {
+    #tab_movi_contr {
       flex: 2.5;
     }
 
     #tab_datos {
+      display: flex;
+      flex-direction: column;
+
       .row {
         display: flex;
         flex-wrap: wrap;
       }
 
       label {
-        width: 6em;
+        width: 8em;
       }
     }
+  }
+
+  #field_totalreg {
+    font-weight: 700;
+    justify-content: flex-end;
+
+    input {
+      text-align: center;
+    }
+  }
+}
+
+.contentMov {
+  #tablaMovimientos {
+    width: 30em;
+    border-collapse: collapse;
+    border: 1px solid #fff;
+    border-style: hidden;
+  }
+
+  #tablaMovimientos thead {
+    background-color: #2b6cb0;
+  }
+
+  #tablaMovimientos tr#otros {
+    background-color: #c4cdd5;
   }
 }

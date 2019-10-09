@@ -2,6 +2,9 @@ include /mixins/mixins
 
 +tab-group("titular_contrato_tabgroup",
     {id: "tab_persona_fisica_nacional", label: "Persona Física Nacional"},
+    {id: "tab_persona_fisica_inter", label: "Persona Fisica Internacional"},
+    {id: "tab_persona_moral_nacional", label: "Persona Moral Nacional"},
+    {id: "tab_persona_moral_extranjera", label: "Persona Moral Extranjera"},
     {id: "tab_clasificacion_contrato", label: "Clasificación Contrato"},
     {id: "tab_comisionaes", label: "Comisiones"},
     {id: "tab_documentacion", label: "Documentación"},
@@ -13,12 +16,28 @@ include /mixins/mixins
     {id: "tab_observaciones", label: "Observaciones"}
 )
     +tab-item("tab_persona_fisica_nacional")
+        include tab-titular-contrato/fisica/_personaFisicaNacional
+    +tab-item("tab_persona_fisica_inter")
+        include tab-titular-contrato/fisica/_personaFisicaInter
+    +tab-item("tab_persona_moral_nacional")
+        include tab-titular-contrato/moral/_personaMoralNacional
+    +tab-item("tab_persona_moral_extranjera")
+        include tab-titular-contrato/moral/_personaMoralExtranjera
     +tab-item("tab_clasificacion_contrato")
+        include tab-titular-contrato/_clasificacion_contrato
     +tab-item("tab_comisionaes")
+        include tab-titular-contrato/_comisiones
     +tab-item("tab_documentacion")
+        include tab-titular-contrato/_documentacion
     +tab-item("tab_domicilio")
+        include tab-titular-contrato/_domicilio
     +tab-item("tab_firmas_autorizadas")
+        include tab-titular-contrato/_firmas_autorizadas
     +tab-item("tab_formatos_fiscales")
+        include tab-titular-contrato/_formato_fiscales
     +tab-item("tab_medio_comunicacion")
+        include tab-titular-contrato/_medio_comunicacion
     +tab-item("tab_medio_liquidacion")
+        include tab-titular-contrato/_medio_liquidacion
     +tab-item("tab_observaciones")
+        include tab-titular-contrato/_observaciones

@@ -1,0 +1,42 @@
+.content {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #groupConsulta {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75em;
+
+    input {
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  #groupDatos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #search-actions-column {
+    display: flex;
+    flex-wrap: wrap;
+    width: 31em;
+  }
+
+  #rowBusqueda {
+    width: 25em;
+    justify-content: flex-end;
+  }
+
+  #gview_table_totales,
+  #gview_table_liquidacion,
+  #gview_table_totalesDifgtia,
+  #gview_table_totalesSpc {
+    .ui-jqgrid-hdiv {
+      display: none !important;
+    }
+  }
+}

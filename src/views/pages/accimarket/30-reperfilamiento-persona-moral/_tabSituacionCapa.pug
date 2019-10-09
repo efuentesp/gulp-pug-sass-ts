@@ -1,0 +1,32 @@
+include /mixins/mixins
+
+.row 
+    p  6. Para cada una de las siguientes preguntas, seleccione la opcion que mejor describa la situacion financiera actual de la Persona Moral que representa.
+.row
+    +quiz("encuestaCapa", {name: ""}, [
+    {question: "1. Porcentaje del total del Patrimonio de la Persona Moral que se destinara a invertir en Productos de Inversión.", required: true},
+    {question: "2. Porcentaje del ingreso anual de la Persona Moral que se destinara a invertir en Productos de Inversión.", required: true},
+    {question: "3. Porcentaje de las inversiones que mantendrá en esta institución.", required: true}
+    ], [
+        {answer: "0-20%", type: "option"},
+        {answer: "20-40%", type: "option"},
+        {answer: "40-60%", type: "option"},
+        {answer: "60-80%", type: "option"},
+        {answer: "80-100%", type: "option"}
+    ])
+.row
+    +field-checks("origen_unoPM",
+        {
+            label: "4 Selecciona el origen de los ingresos destinados a invertir (puede seleccionar mas de una opcion).",
+            required: true
+        },
+        {key: "1", value:"Venta de Activos", color:"blue"},
+        {key: "6", value:"Venta de Bienes", color:"blue"},
+        {key: "2", value:"Premios", color:"blue"},
+        {key: "7", value:"Herencia", color:"blue"},
+        {key: "3", value:"Prestamos", color:"blue"},
+        {key: "8", value:"Patrimonio/Ahorro", color:"blue"},
+        {key: "4", value:"Salario Anual", color:"blue"},
+        {key: "10", value:"Traspaso/Cancelacion de cuentas de otro banco", color:"blue"},
+        {key: "5", value:"Pago de Dividendos", color:"blue"},
+        {key: "9", value:"Otros", color:"blue"})

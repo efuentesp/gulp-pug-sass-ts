@@ -33,7 +33,12 @@ block content
                         +tab-item("tab_objetivosInversioTres")
                             include _tabObjetivosInvTres
                         +tab-item("tab_situacionCapacitacion")
-                            p Siete
+                            include _tabSituacionCapa
+                    .row#sticky-action-bar
+                        +button-reset({size: "large", disabled: false})
+                        +button-send({size: "large", disabled: false})
+                        +button-cancel({size: "large", disabled: false})
 
 block scripts
     script(src="../../assets/scripts/accimarket/30-reperfilamiento-persona-moral/scripts.js")
+    script(src="../../assets/scripts/accimarket/30-reperfilamiento-persona-moral/scriptsGraficas.js")

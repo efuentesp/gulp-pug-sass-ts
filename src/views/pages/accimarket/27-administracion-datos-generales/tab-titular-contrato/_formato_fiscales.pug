@@ -1,11 +1,12 @@
 //- p FORMATO FISCALES
-.row.flex
+.row.flex.justify-end
     +field-checks("formatos_fiscales_flags",
         {orientation: "horizontal"},
         {key: "vigente", value:"Vigente", color: "green"},
         {key: "pendiente", value:"Pendiente", color: "yellow"},
         {key: "vencido", value:"Vencido", color: "red"},
         {key: "noaplica", value:"No Aplica", color: "black"}
-)
+    )
 
-+grid("cotitular2_formatos_fiscales")
+.row.w-full.overflow-auto.heigthTablaM
+    +grid("cotitular2_formatos_fiscales")

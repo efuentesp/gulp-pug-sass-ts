@@ -1,0 +1,9 @@
+include /mixins/mixins
+
++splitter("simple")
+    .pane
+        +grid("resultadosMensuales")
+        +canvas("graficaMensual", {width:'600px', height:'400px'})
+    .pane
+        +grid("resultadosAcomulados")
+        +canvas("graficaAcumulados", {width:'600px', height:'400px'})

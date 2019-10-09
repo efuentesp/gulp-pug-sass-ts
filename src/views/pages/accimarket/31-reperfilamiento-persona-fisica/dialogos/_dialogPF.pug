@@ -1,0 +1,17 @@
+include /mixins/mixins
+
+.row
+    .ui-dialog.hidden(id="dialogoError")
+        +field-group("grupoDialog")
+            .row
+                p Boton Uno
+            .row
+                +field-textarea("dialogText",
+                    {
+                        label:"",
+                        orientation:"horizontal",
+                        size:"30em",
+                        max_length:"250"
+                    })
+            .row
+                p Boton Dos

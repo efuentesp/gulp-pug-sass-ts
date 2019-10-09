@@ -1,0 +1,50 @@
+#personaFN,
+#personaFI {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80em;
+
+  #field_sexo {
+    label {
+      width: 4.5em;
+    }
+  }
+
+  #field_pfi_sexo,
+  #field_pfi_calidadMigratoria {
+    label {
+      width: 4.5em;
+    }
+  }
+
+  #field_pfi_actividad {
+    label {
+      width: 3.8em;
+    }
+  }
+
+  #field_pfi_rfc {
+    label {
+      width: 2.6em;
+    }
+  }
+}
+
+#personaMN,
+#personaME {
+  flex-wrap: wrap;
+  width: 83em;
+
+  label {
+    width: 11em;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  #rowBnmx,
+  #rowPme_Bnmx {
+    width: 60em;
+  }
+}

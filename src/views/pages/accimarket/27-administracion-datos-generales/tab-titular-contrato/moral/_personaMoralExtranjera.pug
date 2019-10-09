@@ -1,0 +1,71 @@
+include /mixins/mixins
+
++field-group("personaME")
+    .row
+        +field-input("pme_nombreCorto",
+            {
+            label: "Nombre Corto:",
+            size: "10em",
+            disabled: true,
+            orientation: "horizontal"
+            })
+        +field-input("pme_pais",
+            {
+            label: "Pais:",
+            size: "10em",
+            disabled: true,
+            orientation: "horizontal"
+            })
+        +field-input("pme_rfcgpoPertenencia",
+            {
+            label: "Gpo. Pertenencia:",
+            size: "10em",
+            disabled: true,
+            orientation: "horizontal"
+            })
+    .row
+        +field-input("pme_nacionalidad",
+            {
+            label: "Nacionalidad:",
+            size: "10em",
+            disabled: true,
+            orientation: "horizontal"
+            })
+        +field-input("pme_gpoNacional",
+            {
+            label: "Gpo. Nacional:",
+            size: "10em",
+            disabled: true,
+            orientation: "horizontal"
+            })
+        +field-input("pme_custLocal",
+            {
+            label: "Cust. Local:",
+            size: "10em",
+            disabled: true,
+            orientation: "horizontal"
+            })
+    .row
+        +field-input("pme_recompra",
+            {
+            label: "Recompra:",
+            size: "15em",
+            disabled: true,
+            orientation: "horizontal"
+            })
+    .row#rowPme_Bnmx
+        +field-input("pme_cteBnmx",
+            {
+            label: "Cte Bnmx:",
+            size: "15em",
+            disabled: true,
+            orientation: "horizontal"
+            })
+    .row
+        +field-textarea("pme_clasificacion",
+            {
+                label: "Clasificacion",
+                size: "46em",
+                disabled: true,
+                orientation: "horizontal"
+            })

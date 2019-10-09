@@ -1,0 +1,97 @@
+include /mixins/mixins
+
+.row
+    +field-group("groupRendimiento")
+        +field-input("contrato",
+            {
+                label: "Contrato",
+                orientation: "horizontal",
+                size: "10em"
+            })
+        +field-input("digito",
+            {
+                label: "Digito",
+                orientation: "horizontal",
+                disabled: true,
+                size: "4em"
+            })
+        +field-input("dv",
+            {
+                label: "DV",
+                orientation: "horizontal",
+                disabled: true,
+                size: "4em"
+            })
+        +field-input("estatus",
+            {
+                label: "Estatus",
+                orientation: "horizontal",
+                disabled: true,
+                size: "4em"
+            })
+        +field-input("perfilContrato",
+            {
+                label: "Perfil",
+                orientation: "horizontal",
+                disabled: true,
+                size: "13em"
+            })
+        +field-input("nombreContrato",
+            {
+                label: "",
+                orientation: "horizontal",
+                disabled: true,
+                size: "40em",
+                max_length: "50"
+            })
+        +field-input("clabe",
+            {
+                label: "CLABE",
+                orientation: "horizontal",
+                disabled: true,
+                size: "13em"
+            })
+        +field-date("fechaInicial",
+            {
+                label: "Fecha Inicial",
+                orientation: "horizontal",
+                size: "10em"
+            })
+        +field-date("fechaFinal",
+            {
+                label: "Fecha Final",
+                orientation: "horizontal",
+                size: "10em"
+            })
+        +field-select("renta",
+            {
+                label: "Renta",
+                orientation: "horizontal",
+                size: "12.5em"
+            })
+.row
+    +field-checks("opcionesRendi",
+        {
+            label: ""
+        },
+        {key: "S01", value:"Inflacion", color:"green"},
+        {key: "S02", value:"IPC", color:"gray"},
+        {key: "S03", value:"Cetes 28", color:"yellow"},
+        {key: "S04", value:"Deval", color:"blue"},
+        {key: "S05", value:"Soc Inv RF-PM", color:"yellow"},
+        {key: "S06", value:"Cetes 91", color:"green"},
+        {key: "S07", value:"Soc Inv RV", color:"red"},
+        {key: "S08", value:"INMEX", color:"cyan"}
+        )
+.row
+    #search-actions-column.pl-12
+        +button-search({size: "large", disabled: false})
+        +button-clean({size: "large", disabled: false})
+        +button-pdf({size: "large", disabled: false})
+        +button-xls({size: "large", disabled: false})
+        +field-select("moduloCalculo",
+            {
+                label: "Modulo de Calculo",
+                orientation: "horizontal",
+                size: "14em"
+            })

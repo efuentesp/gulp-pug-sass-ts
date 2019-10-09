@@ -184,8 +184,9 @@
 }
 
 #field_manejo_cuenta {
+  margin-left: 19.9em;
   label {
-    width: 37em;
+    width: 17em;
     text-align: end;
   }
 }
@@ -244,4 +245,16 @@
   td.question {
     text-align: right;
   }
+}
+
+.heigtTabla {
+  height: 31em;
+}
+
+.heigthTablaM {
+  height: 27.5em;
+}
+
+.heigthTablaC {
+  height: 15em;
 }

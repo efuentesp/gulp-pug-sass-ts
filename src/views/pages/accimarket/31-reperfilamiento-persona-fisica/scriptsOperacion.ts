@@ -50,16 +50,15 @@ function obtenerPorcentaje() {
     let porCortoPlazo: number = +(cortoPlazo / totalPatrimonio).toFixed();
     let porMedianoPlazo: number = +(medianoPlazo / totalPatrimonio).toFixed();
     let porLargoPlazo: number = +(largoPlazo / totalPatrimonio).toFixed();
-    $("#liquidezPor").val(porLiquidez);
-    $("#cortoPlazoPor").val(porCortoPlazo);
-    $("#medianoPlazoPor").val(porMedianoPlazo);
-    $("#largoPlazoPor").val(porLargoPlazo);
-    $("#patrimonioPor").val(porLiquidez + porCortoPlazo + porMedianoPlazo + porLargoPlazo);
+    $("#liquidezPor").val(porLiquidez * 100);
+    $("#cortoPlazoPor").val(porCortoPlazo * 100);
+    $("#medianoPlazoPor").val(porMedianoPlazo * 100);
+    $("#largoPlazoPor").val(porLargoPlazo * 100);
+    $("#patrimonioPor").val((porLiquidez + porCortoPlazo + porMedianoPlazo + porLargoPlazo) * 100);
 }
 
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 $.each(numbers, function (index, value) {
-    console.log(index + ':' + value);
     var radioComp = 'encuesta_' + value;
     $("#" + radioComp + "_0").change(function () {
         $("#encuesta_" + value + "_3").removeAttr("required").attr("disabled", '');

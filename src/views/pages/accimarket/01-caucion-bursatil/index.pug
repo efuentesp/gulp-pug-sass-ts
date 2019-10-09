@@ -1,4 +1,4 @@
-extends /layouts/html5
+extends /layouts/jsp
 
 block title
    title 01.Causión Bursátil
@@ -17,17 +17,17 @@ block content
                   +field-plus-minus("contrato", {label: "Contrato"})
                   +field-plus-minus("digito", {label: "Digito"})
                   +field-options("negocio",
-                                 {},
-                                 {key: "CB", value:"Casa de Bolsa"},
-                                 {key:"B", value:"Banco"}
+                     {},
+                     {key: "CB", value:"Casa de Bolsa"},
+                     {key:"B", value:"Banco"}
                   )
                   +field-select-plus-minus("contrato1", {label: "Contrato", size: "10em"},
-                                 {key: "", value:""},
-                                 {key: "C001", value:"Contrato 01"},
-                                 {key: "C002", value:"Contrato 02"},
-                                 {key: "C003", value:"Contrato 03"},
-                                 {key: "C004", value:"Contrato 04"},
-                                 {key: "C005", value:"Contrato 05"}
+                     {key: "", value:""},
+                     {key: "C001", value:"Contrato 01"},
+                     {key: "C002", value:"Contrato 02"},
+                     {key: "C003", value:"Contrato 03"},
+                     {key: "C004", value:"Contrato 04"},
+                     {key: "C005", value:"Contrato 05"}
                   )
                   +field-checks("products3",
                      {
