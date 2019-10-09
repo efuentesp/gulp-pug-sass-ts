@@ -10,7 +10,7 @@ block content
     .content.p-4
         +accordion("reperfilamiento-pf")
             +accordion-item("reperfilamiento-pf-item", "Perfilamiento de Personas Fisicas")
-                form#criterios-busqueda(data-parsley-validate="")
+                +form("#criterios-busqueda")
                     include _grupo1
                     +field-group("grupoTodo")
                         include _liquidaciones
@@ -24,6 +24,7 @@ block content
                     +field-group("grupoAsesor")
                         include asesorInversion/_asesorInversion
 
+        include dialogos/_dialogPF
 block scripts
     script(src="../../assets/scripts/accimarket/31-reperfilamiento-persona-fisica/scripts.js")
     script(src="../../assets/scripts/accimarket/31-reperfilamiento-persona-fisica/selectOptions.js")

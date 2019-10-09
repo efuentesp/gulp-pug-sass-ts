@@ -1,3 +1,5 @@
+@import "src/views/styles/vars";
+
 .content {
   .row {
     display: flex;
@@ -157,9 +159,35 @@
     }
   }
 
+  #field_otros {
+    position: absolute;
+    z-index: 1;
+    margin-top: 12em;
+    margin-left: 60em;
+  }
+
   #pregunta6_4 {
     padding-left: 0.8em;
     padding-right: 2em;
+  }
+
+  #informativo {
+    //margin-left: 30em;
+    width: 70em;
+
+    tr {
+      // border-collapse: collapse;
+      // border-radius: 7px;
+      // border-style: hidden;
+      // box-shadow: 0 0 0 1px blue;
+      border: 2px solid $color-blue;
+    }
+
+    td {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 1.5rem;
+    }
   }
 
   #descripcionPerfil {
@@ -183,6 +211,11 @@
   #rowEmisoras {
     display: -webkit-box;
   }
+}
+
+//Estilos para el  dialogo
+#dialogText {
+  height: 15em;
 }
 
 table {

@@ -1,17 +1,18 @@
-
+let params_pm: UrlParams = {};
 
 $('#contratoPM').change(() => {
 
-  const contrato: string = String($('#contratoPM').val());
+  params_pm = {};
+  params_pm.contrato = String($('#contratoPM').val());
 
-  http_findOne('busquedaContrato', contrato, payload => {
+  http_findAll("contratoPM", params_pm, payload => {
     if (payload !== null) {
-      $('#nombrePM').val(payload.nombre);
-      $('#perfilPM').val(payload.perfilActual);
+      $('#nombrePM').val(payload.nomFirma);
+      $('#perfilPM').val(payload.perfil);
       ($('#personaPerfilarPM') as any).select2({
         placeholder: '--Seleccione--',
         minimumResultsForSearch: Infinity,
-        data: payload.personasPerfilar
+        data: payload.listaFirmas
       });
     } else {
       $('#nombrePM').val('');

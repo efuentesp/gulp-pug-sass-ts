@@ -40,7 +40,7 @@ const DATE_FORMAT = "dd-mm-yy";
 
 const ui_datepicker_settings = {
   showOn: "button",
-  buttonImage: "../../assets/images/btn-calendario_32x32.png",
+  buttonImage: "../../assets/images/btn-calendario.svg",
   buttonImageOnly: true,
   buttonText: "",
   dayNames: DAY_NAMES,
@@ -108,6 +108,23 @@ $(".sidebar_button").click(() => {
     $(".content").addClass("is_sidebar_open");
   }
   isSidebarOpened = !isSidebarOpened;
+});
+
+// Wizard
+($(".wizard") as any).steps({
+  headerTag: "h3",
+  bodyTag: "section",
+  transitionEffect: "slideLeft",
+  autoFocus: true,
+  labels: {
+    cancel: "Cancelar",
+    current: "paso actual:",
+    pagination: "Paginación",
+    finish: "Terminar",
+    next: "Siguiente",
+    previous: "Anterior",
+    loading: "Cargando ..."
+  }
 });
 
 // REST APIs}
@@ -189,8 +206,15 @@ const rest_findOne$ = (resource: string, id: string) => {
   });
 };
 
-const rpc_findAll = (resource: string, params: any, cb: Function) => {
-  // TODO: Implementar versión con POST
+const rpc = (url: string, params: any, cb: Function) => {
+  $.ajax({
+    url,
+    dataType: "json",
+    type: "post",
+    contentType: "application/x-www-form-urlencoded",
+    data: params,
+    success: (data, textStatus, jQxhr) => cb(data, textStatus, jQxhr)
+  });
 };
 
 ($("select[name=quiz_select]") as any).select2({
@@ -209,6 +233,7 @@ const fieldSelectPlusMinus = (id: string) => {
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
   const list = "ul#tag_list_" + id;
+  const node = "tag_list_" + id;
 
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput + " option:selected").text() as string;
@@ -249,10 +274,10 @@ const fieldSelectPlusMinus = (id: string) => {
   });
 
   $(idBtnMinus).click(() => {
+    var nodelist = document.getElementById(node);
     $(list + " li a").each(function(index) {
       if ($(this).attr("id") === $(idInput).val()) {
-        $("li:has('a'):contains(" + $(this).text() + ")").remove();
-        $(this).remove();
+        nodelist.childNodes[index].remove();
       }
     });
 
@@ -283,6 +308,7 @@ const fieldPlusMinus = (id: string) => {
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
   const list = "ul#tag_list_" + id;
+  const node = "tag_list_" + id;
 
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput).val() as string;
@@ -290,9 +316,9 @@ const fieldPlusMinus = (id: string) => {
 
     if ($("li").length <= 0 && text_to_add.length > 0) {
       $(list).append(
-        '<li><a class="delete_item" href="javascript:void();">' +
+        "<li><a class='delete_item' href='javascript:void();'>" +
           text_to_add +
-          "</a> </li>"
+          "</a></li>"
       );
       exist = 1;
     } else {
@@ -306,9 +332,9 @@ const fieldPlusMinus = (id: string) => {
 
     if (exist == 0 && text_to_add.length > 0) {
       $(list).append(
-        '<li><a class="delete_item" href="javascript:void();">' +
+        "<li><a class='delete_item' href='javascript:void();'>" +
           text_to_add +
-          "</a> </li>"
+          "</a></li>"
       );
     }
 
@@ -316,10 +342,10 @@ const fieldPlusMinus = (id: string) => {
   });
 
   $(idBtnMinus).click(() => {
+    var nodelist = document.getElementById(node);
     $(list + " li a").each(function(index) {
       if ($(this).text() === $(idInput).val()) {
-        $("li:has('a'):contains(" + $(this).text() + ")").remove();
-        $(this).remove();
+        nodelist.childNodes[index].remove();
       }
     });
 
