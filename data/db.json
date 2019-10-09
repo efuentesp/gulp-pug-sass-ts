@@ -4233,5 +4233,19 @@
       "dataA": "Sep-18",
       "dataB": 0.6
     }
+  ],
+  "spreads": [
+    {
+      "rango-min-mx": "0 - 49,999.99",
+      "tasa-banda": "4"
+    },
+    {
+      "rango-min-mx": "50,000.00 - 99,999.99",
+      "tasa-banda": "4"
+    },
+    {
+      "rango-min-mx": "100,000.00 - 249,999.99",
+      "tasa-banda": "4"
+    }
   ]
 }

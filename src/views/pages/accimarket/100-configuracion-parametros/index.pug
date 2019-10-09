@@ -1,0 +1,19 @@
+extends /layouts/html5
+
+block title
+   title Configuración de Parámetros
+
+block styles
+   link(rel="stylesheet" href="/assets/css/accimarket/100-configuracion-parametros/styles.css")
+
+block content
+   .content.p-4
+      include _01_configuracion_reinversion
+      .row
+         h1 Spread
+      .row.has_border
+         .row.w-full.overflow-auto
+            +grid("spreads")
+
+block scripts
+   script(src="/assets/scripts/accimarket/100-configuracion-parametros/scripts.js")
