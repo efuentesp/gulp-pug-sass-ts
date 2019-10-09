@@ -65,7 +65,9 @@ const fillLiquidez = (rates: any) => {
                 fontColor: "#2f855a",
                 backgroundColor: "#2f855a"
             }
-        ]
+        ],
+        width: "10em",
+        height: "20em"
     });
 };
 
@@ -110,7 +112,9 @@ const fillObjInversion = (promedios: any) => {
                 backgroundColor: "#2b6cb0",
                 data: dataSetY2
             }
-        ]
+        ],
+        width: "10em",
+        height: "20em"
     });
 };
 
@@ -150,7 +154,9 @@ const fillObjInversionRA = (rendimientos: any) => {
                 backgroundColor: "#2b6cb0",
                 data: dataSetY2
             }
-        ]
+        ],
+        width: "10em",
+        height: "20em"
     });
 };
 
@@ -194,6 +200,8 @@ const fillMultileneasObjetivo = (rates: any) => {
             }
         ],
         pointA: 56,
-        pointB: 200
+        pointB: 200,
+        width: "10em",
+        height: "20em"
     });
 };

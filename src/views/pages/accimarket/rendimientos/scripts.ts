@@ -143,7 +143,9 @@ const graficaMensuales = (tipoGrafica: string, lista: any) => {
                 backgroundColor: "#2b6cb0",
                 data: dataSetY
             }
-        ]
+        ],
+        width: "10em",
+        height: "20em"
     });
 };
 
