@@ -8,6 +8,7 @@ mixin field-date(id, parms)
   - var _input_max_length_errmsg = "Solo puedes ingresar hasta " + _input_max_length + " caracteres."
   - var _field_error_block = "field_error_block_" + id
   - var _field_error_block_id = "#" + _field_error_block
+  - var _datepicker_class = (parms.datepicker_range ? "datepicker_range" : "datepicker")
 
   .field(id=_field_id class=_class)
     .field-label.flex
@@ -16,7 +17,8 @@ mixin field-date(id, parms)
         span.required *
     .field-control
       .field-input.flex
-        input.datepicker.input(id=_input_id
+        input.input(id=_input_id
+          class=_datepicker_class
           required=parms.required
           style=_style
           disabled=parms.disabled

@@ -1,0 +1,22 @@
+extends /layouts/html5
+
+block title
+   title Graficos
+
+block styles
+   link(rel="stylesheet" href="/assets/css/accimarket/listado/styles.css")
+
+block content
+   +field-listswap("source", 
+      {label:'Columnas Disponibles'},     
+      {key: "1", value:"option_1_2", label:"Why not option 2"},
+      {key: "2", value:"option_1_3", label:"Here's another option 3"},
+      {key: "3", value:"option_1_4", label:"What about option 4"}
+      )
+   +field-listswap("destination", 
+      {label:'Columnas Visibles'},
+      {key: "4", value:"option_1_5", label:"I'll go with option 5"},
+      {key: "5", value:"option_1_6", label:"Let's stick to option 6"})   
+
+block scripts
+   script(src="/assets/scripts/accimarket/listado/scripts.js")
