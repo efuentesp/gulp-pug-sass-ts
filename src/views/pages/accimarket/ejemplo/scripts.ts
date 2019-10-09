@@ -112,6 +112,8 @@ const fillAverage = (average: any) => {
     tickMaxY: 1.0,
     tickMinY: 0,
     tickStepY: 0.2,
+    width: "500px",
+    height: "300px",
     dataSet: [
       {
         type: "bar",
@@ -141,6 +143,8 @@ const fillAverage1 = (average: any) => {
     tickMaxY: 1.0,
     tickMinY: 0,
     tickStepY: 0.2,
+    width: "500px",
+    height: "300px",
     dataSet: [
       {
         type: "bar",

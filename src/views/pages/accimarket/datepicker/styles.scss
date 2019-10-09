@@ -1,0 +1,68 @@
+.ui-datepicker table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 0.4em;
+  display: none !important;
+}
+
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: 0.2em 0;
+  background: #fff !important;
+}
+
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-br,
+.ui-corner-right {
+  border-bottom-right-radius: 10px !important;
+}
+
+.ui-corner-all,
+.ui-corner-bl,
+.ui-corner-bottom,
+.ui-corner-left {
+  border-bottom-left-radius: 10px !important;
+}
+
+.ui-corner-all,
+.ui-corner-right,
+.ui-corner-top,
+.ui-corner-tr {
+  border-top-right-radius: 10px !important;
+}
+
+.ui-corner-all,
+.ui-corner-left,
+.ui-corner-tl,
+.ui-corner-top {
+  border-top-left-radius: 10px !important;
+}
+
+.ui-datepicker {
+  width: 17em;
+  display: none;
+  border: 1px solid #dfe3e8;
+  -webkit-box-shadow: 1px 1px #dfe3e8;
+  box-shadow: 1px 1px #dfe3e8;
+}
+
+.ui-datepicker-prev span {
+  background-image: url("../../../../assets/images/iconfinder_play-circle-left.png") !important;
+  background-position: 0px 0px !important;
+}
+
+.ui-datepicker-next span {
+  background-image: url("../../../../assets/images/iconfinder_play-circle.png") !important;
+  background-position: 0px 0px !important;
+}
+
+.ui-datepicker-title select.ui-datepicker-month {
+  line-height: 1;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.ui-icon-triangle-2-n-s {
+  background-position: -128px -16px;
+}
