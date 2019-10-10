@@ -2,7 +2,7 @@
     +accordion("acordeon-configuracion-reinversion")
       +accordion-item("acordeon-item-configuracion-reinversion")
           +form("configuracion-reinversion")
-            .row.flex
+            .row.flex.flex-wrap.justify-between
                 .column
                     +field-select("linea-negocio",
                         {
@@ -14,8 +14,8 @@
                         {key:"BPR", value:"Banca Privada"}
                     )
                 .column
-                    p Datos de Reinversión
-                    .box.flex.flex-wrap.content-between.p-4.border.border-solid.border-gray-700.rounded-lg
+                    p.font-bold Datos de Reinversión
+                    .box.flex.p-4.border.border-solid.border-gray-700.rounded-lg
                         .column
                             +field-select("grupo-instrumento",
                                 {
@@ -41,4 +41,4 @@
                                 {key: "SI", value:"Ejecutar proceso de reinversión Automática de remanentes para esta línea de negocio."}
                             )
                         .column
-                            +button-send({size: "large", disabled: false})
+                            +button-save({size: "large", disabled: false})

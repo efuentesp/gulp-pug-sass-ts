@@ -9,8 +9,12 @@ block styles
 block content
    .content.p-4
       include _01_configuracion_reinversion
-      .row
-         h1 Spread
+      .row.pt-4.flex.flex-wrap.justify-between
+         h1.font-bold.text-lg.align-text-bottom Spread
+         .column
+            +field-group("botones-group")
+               +button-edit({size: "large", disabled: false})
+               +button-save({size: "large", disabled: false})
       .row.has_border
          .row.w-full.overflow-auto
             +grid("spreads")
