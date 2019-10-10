@@ -144,6 +144,11 @@
     // background-color: #eaa;
   }
 
+  .pane {
+    background: none;
+    border: 1px solid $button_border_color;
+  }
+
   .splitter-pane {
     overflow: auto;
     background: $color-sky-lighter;
@@ -171,5 +176,12 @@
   }
   .splitter-iframe-hide {
     visibility: hidden;
+  }
+
+  .splitter-bar-horizontal {
+    height: 10px;
+    background-image: url("../../assets/images/hgrabber.gif");
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
