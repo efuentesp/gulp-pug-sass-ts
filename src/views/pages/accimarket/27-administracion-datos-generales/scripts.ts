@@ -301,7 +301,9 @@ $("#table_cotitular2_domicilio").jqGrid({
     "Municipio/Del.",
     "C.P.",
     "Ciudad",
-    "Estado"
+    "Estado",
+    "Pais",
+    "Apto. Postal"
   ],
   colModel: [
     { name: "tipo_dom", width: 150 },
@@ -310,7 +312,9 @@ $("#table_cotitular2_domicilio").jqGrid({
     { name: "municipio_del", width: 150 },
     { name: "cp", width: 150 },
     { name: "ciudad", width: 150 },
-    { name: "estado", width: 150 }
+    { name: "estado", width: 150 },
+    { name: "pais", width: 150 },
+    { name: "apto_postal", width: 150 }
   ],
   //   pager: "#pager_cotitular2_comisiones",
   rowNum: 10,
@@ -381,8 +385,11 @@ $("#table_cotitular2_formatos_fiscales").jqGrid({
     "W9",
     "PRUEBA2",
     "PRUEBA JQUERY",
+    "JQUERY",
+    "JQUER",
     "Fecha Formato",
-    "Fecha Vencimiento"
+    "Fecha Vencimiento",
+    "OUI"
   ],
   colModel: [
     { name: "custodio", width: 150 },
@@ -391,8 +398,11 @@ $("#table_cotitular2_formatos_fiscales").jqGrid({
     { name: "w9", width: 150 },
     { name: "prueba2", width: 150 },
     { name: "pruebajquery", width: 150 },
+    { name: "jquery", width: 150 },
+    { name: "jquer", width: 150 },
     { name: "fecha_formato", width: 150 },
-    { name: "fecha_vencimiento", width: 150 }
+    { name: "fecha_vencimiento", width: 150 },
+    { name: "oui", width: 150 }
   ],
   //   pager: "#pager_cotitular2_comisiones",
   rowNum: 10,
@@ -468,6 +478,58 @@ $("#table_cotitular2_medio_liquidacion").jqGrid({
   rowNum: 10,
   rowList: [10, 20, 30],
   sortname: "tipo",
+  sortorder: "desc",
+  viewrecords: true,
+  gridview: true,
+  autoencode: true,
+  caption: ""
+});
+
+$("#table_persona_fisica_int").jqGrid({
+  datatype: "local",
+  height: "auto",
+  colNames: [
+    "Nombre",
+    "Apellido Paterno",
+    "Apellido Materno",
+    "Porcentaje %"
+  ],
+  colModel: [
+    { name: "nombre_persona_int", width: 220 },
+    { name: "apellido_pat_persona_int", width: 220 },
+    { name: "apellido_mat_persona_int", width: 220 },
+    { name: "porcentaje_persona_int", width: 220 }
+  ],
+  //   pager: "#pager_cotitular2_comisiones",
+  rowNum: 10,
+  rowList: [10, 20, 30],
+  sortname: "nombre_persona_int",
+  sortorder: "desc",
+  viewrecords: true,
+  gridview: true,
+  autoencode: true,
+  caption: ""
+});
+
+$("#table_persona_fisica_nac").jqGrid({
+  datatype: "local",
+  height: "auto",
+  colNames: [
+    "Nombre",
+    "Apellido Paterno",
+    "Apellido Materno",
+    "Porcentaje %"
+  ],
+  colModel: [
+    { name: "nombre_persona_nac", width: 220 },
+    { name: "apellido_pat_persona_nac", width: 220 },
+    { name: "apellido_mat_persona_nac", width: 220 },
+    { name: "porcentaje_persona_nac", width: 220 }
+  ],
+  //   pager: "#pager_cotitular2_comisiones",
+  rowNum: 10,
+  rowList: [10, 20, 30],
+  sortname: "nombre_persona_nac",
   sortorder: "desc",
   viewrecords: true,
   gridview: true,
