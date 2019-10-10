@@ -1,0 +1,18 @@
+.row
+    .ui-dialog.hidden(id="configColumns")
+        .row
+            +field-listswap("source",
+                {label:'Columnas Disponibles'},
+                {key: "1", value:"option_1_2", label:"Why not option 2"},
+                {key: "2", value:"option_1_3", label:"Here's another option 3"},
+                {key: "3", value:"option_1_4", label:"What about option 4"}
+                )
+            +field-listswap("destination",
+                {label:'Columnas Visibles'},
+                {key: "4", value:"option_1_5", label:"I'll go with option 5"},
+                {key: "5", value:"option_1_6", label:"Let's stick to option 6"})
+        .row
+            p Texto Uno
+            p Texto Dos
+            p Texto Tres
+            p Botones

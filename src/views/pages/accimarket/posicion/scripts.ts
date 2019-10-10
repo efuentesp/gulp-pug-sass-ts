@@ -1,3 +1,4 @@
+/// <reference path="../../typings/index.d.ts" />
 let posicion_params: UrlParams = {};
 
 $("#ui-id-2").hide();
@@ -9,6 +10,43 @@ $("#buscar").change(() => {
     console.log("Agregar lo de busqueda");
 });
 
+$("#btn_pdf").click(() =>
+    $("#configColumns").dialog({
+        modal: true,
+        closeText: "",
+        show: true,
+        width: "700px",
+        title: "Configuracion de Columnas",
+        buttons: [
+            {
+                text: "Aceptar",
+                icon: "ui-icon-check",
+                click: function () {
+                    $(this).dialog("close");
+                }
+            }
+        ]
+    })
+);
+
+$("#btn_xls").click(() =>
+    $("#detalle").dialog({
+        modal: true,
+        closeText: "",
+        show: true,
+        width: "700px",
+        title: "",
+        buttons: [
+            {
+                text: "Aceptar",
+                icon: "ui-icon-check",
+                click: function () {
+                    $(this).dialog("close");
+                }
+            }
+        ]
+    })
+);
 
 http_findAll("contratos", posicion_params, payload => {
     llenandoGridContado(payload);
@@ -383,3 +421,33 @@ function sumatoria(valores) {
     return total;
 }
 
+$("#source, #destination").listswap({
+    truncate: true,
+    height: 250,
+    is_scroll: true
+});
+
+$("#table_detalle").jqGrid({
+    datatype: "local",
+    height: 250,
+    colNames: [
+        "Fecha Operacion",
+        "Fecha Liquidacion",
+        "Operacion",
+        "Emisora",
+        "TV",
+        "Cantidad",
+        "Precio"
+    ],
+    colModel: [
+        { name: "fechOperacion", index: 'contrato', width: 120 },
+        { name: "fechLiquidacion", width: 120 },
+        { name: "operacion", width: 140 },
+        { name: "emisora", width: 75 },
+        { name: "tv", width: 75 },
+        { name: "cantidad", width: 75 },
+        { name: "precio", width: 75 }
+    ],
+    viewrecords: true,
+    grouping: true
+});

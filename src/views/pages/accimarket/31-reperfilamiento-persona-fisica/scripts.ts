@@ -23,6 +23,7 @@ $(document).ready(() => {
 
 $('#contrato').change(() => {
 	const contrato: string = String($('#contrato').val());
+
 	$("#fechaNacimiento").text("");
 	$('#personaPerfilar option').remove();
 	var options = new Option('--Seleccione--', 'id', true, true);
@@ -32,25 +33,7 @@ $('#contrato').change(() => {
 		if (payload !== null) {
 			$('#nombre').val(payload.nombre);
 			$('#perfil').val(payload.perfilActual);
-			if (payload.noPermiso) {
-				$("#dialogoError").dialog({
-					modal: true,
-					closeText: "",
-					show: true,
-					title: "Error",
-					/*buttons: [
-						{
-							text: "Aceptar",
-							icon: "ui-icon-check",
-							click: function () {
-								$(this).dialog("close");
-							}
-						}
-					],*/
-					width: "450px"
-				});
-			}
-			/*if (payload.idPerfilActual != 'IR4') {
+			if (payload.idPerfilActual != 'IR4') {
 				mostrarOcultar(true);
 				($('#personaPerfilar') as any).select2({
 					placeholder: '--Seleccione--',
@@ -68,7 +51,7 @@ $('#contrato').change(() => {
 				});
 			} else {
 				mostrarOcultar(false);
-			}*/
+			}
 		} else {
 			$('#nombre').val('');
 			$('#perfil').val('');

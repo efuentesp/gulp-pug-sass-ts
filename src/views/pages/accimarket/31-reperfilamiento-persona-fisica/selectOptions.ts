@@ -1,5 +1,5 @@
 let select_params: UrlParams = {};
-
+/*
 rpc("http://localhost:3000/edadesService", "", (data, textStatus, jQxhr) => {
     console.log(textStatus);
     ($("#edad") as any).select2({
@@ -7,15 +7,15 @@ rpc("http://localhost:3000/edadesService", "", (data, textStatus, jQxhr) => {
         minimumResultsForSearch: Infinity,
         data: data
     });
-});
+});*/
 
-/*http_findAll("edadesService", select_params, (payload: any) => {
+http_findAll("edadesService", select_params, (payload: any) => {
     ($("#edad") as any).select2({
         placeholder: "--Seleccione--",
         minimumResultsForSearch: Infinity,
         data: payload
     });
-});*/
+});
 
 http_findAll("estudiosService", select_params, (payload: any) => {
     ($("#estudios") as any).select2({

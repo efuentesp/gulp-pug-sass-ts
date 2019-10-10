@@ -40,3 +40,25 @@
     }
   }
 }
+
+#rowPrincipales {
+  display: flex;
+  width: 20em;
+}
+
+#criterios-detalle {
+  width: 25em;
+  justify-content: flex-start;
+  margin-left: 1.5em;
+
+  #field_fechaF,
+  #field_contrato {
+    label {
+      width: 6.7em;
+    }
+  }
+}
+
+#tablaFiltros {
+  width: 32em;
+}

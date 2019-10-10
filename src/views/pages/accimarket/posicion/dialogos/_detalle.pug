@@ -1,0 +1,60 @@
+.row
+    .ui-dialog.hidden(id="detalle")
+        +accordion("criterios_detalle")
+            +accordion-item("detalle_item")
+                .row#rowPrincipales
+                    .row
+                        +field-group("busqueda_detalle")
+                            form.is-search-form#criterios-detalle(data-parsley-validate="")
+                                +field-input("contrato",
+                                    {
+                                        label: "Contrato:",
+                                        required: true,
+                                        size: "8em",
+                                        orientation: "horizontal"
+                                    })
+                                +field-date("fechaI",
+                                    {
+                                        label: "Fecha Inicial:",
+                                        required: true,
+                                        size: "12em",
+                                        orientation: "horizontal"
+                                    })
+                                +field-date("fechaF",
+                                    {
+                                        label: "Fecha Final:",
+                                        required: true,
+                                        size: "12em",
+                                        orientation: "horizontal"
+                                    })
+                                #search-actions-column
+                                    +button-search({size: "large", disabled: false})
+                                    +button-pdf({size: "large", disabled: false})
+                                    +button-xls({size: "large", disabled: false})
+                    .row
+                        .row.h-40
+                            table#tablaFiltros
+                                tr
+                                    td.font-bold
+                                        span Emision
+                                        div.overflow-auto
+                                            table.w-full.overflow-auto#idEmision
+                                                tbody
+                                                    td.cursor-pointer#emision_0 --TODOS--
+                                    td.font-bold 
+                                        span Operacion
+                                        div.overflow-auto
+                                            table.w-full.overflow-auto#idOperacion
+                                                tbody
+                                                    td.cursor-pointer#operacion_0 --TODOS--
+                                    td.font-bold 
+                                        span Portafolio
+                                        div.overflow-auto
+                                            table.w-full.overflow-auto#idPortafolio
+                                                tbody
+                                                    td.cursor-pointer#portafolio_0 --TODOS--
+                        .row.text-center.mt-3
+                            +button-search({size: "large", disabled: false})
+                            +button-clean({size: "large", disabled: false})
+        .row.w-full.overflow-auto
+            +grid("detalle")
