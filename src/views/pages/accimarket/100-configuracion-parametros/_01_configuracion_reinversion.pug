@@ -22,14 +22,16 @@
                                     label: "Grupo Instrumento",
                                     required: true,
                                     orientation: "horizontal",
-                                    size: "16em"
+                                    size: "16em",
+                                    disabled: true
                                 },
-                                {key: "PAG", value:"PAGE"}
+                                {key: "PAGE", value:"PAGE", selected: true}
                             )
                             +field-input("saldo-remanente",
                                         {
                                             label: "Saldo Remanente >= $",
                                             required: true,
+                                            default_value: "500",
                                             orientation: "horizontal",
                                             max_length: "12",
                                             size: "16em"
@@ -41,4 +43,4 @@
                                 {key: "SI", value:"Ejecutar proceso de reinversión Automática de remanentes para esta línea de negocio."}
                             )
                         .column
-                            +button-save({size: "large", disabled: false})
+                            +button-save({id: "btn_guardar_datos_inversion", size: "large", disabled: false})

@@ -26,6 +26,7 @@ mixin field-select(id, parms, ...items)
       )
         option
         each item in items
+          - var _item_selected = (item.selected ? "selected" : "")
           option(value=item.key)= item.value
       .field-error
         div(id=_field_error_block)
