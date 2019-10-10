@@ -274,3 +274,9 @@ $("#btn_xls").click(() =>
 );
 
 validateDateRage("rango");
+
+fieldSelectPlusAutocomplete("ejemplo", {
+  service: "contratos",
+  id: "id",
+  text: "contrato"
+});

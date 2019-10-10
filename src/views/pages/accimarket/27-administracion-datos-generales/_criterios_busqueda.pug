@@ -2,11 +2,11 @@ include /mixins/mixins
 
 +accordion("criterios_busqueda_accordion")
     +accordion-item("criterios_busqueda_accordion_item")
-        form#criterios-busqueda.flex.flex-wrap.justify-between(data-parsley-validate="")
+        form#criterios-busqueda.flex.flex-wrap.justify-between
             .campos-filtrado
                 .row.flex.flex-wrap
                     +field-input("contrato",
-                        { label: "Contrato", orientation: "horizontal" }
+                        { label: "Contrato", orientation: "horizontal"}
                     )
                     +field-input("digito",
                         { label: "Digito", size: "4em", disabled: true, orientation: "horizontal" }
@@ -28,7 +28,7 @@ include /mixins/mixins
                     )
                 .row.flex.flex-wrap
                     +field-input("portafolio_uuid",
-                        { label: "", size: "37.5em", disabled: true, orientation: "horizontal" }
+                        { label: "", size: "37.5em", max_length:200, disabled: true, orientation: "horizontal" }
                     )
                     +field-input("clabe",
                         { label: "Perfil", size: "12em", disabled: true, orientation: "horizontal" }

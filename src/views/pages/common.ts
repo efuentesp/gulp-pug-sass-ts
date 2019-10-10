@@ -381,6 +381,111 @@ const fieldPlusMinus = (id: string) => {
   });
 };
 
+// Autocomplete
+const fieldSelectPlusAutocomplete = (id: string, params: any) => {
+  const idBtnPlus = "#btn_plus_" + id;
+  const idBtnMinus = "#btn_minus_" + id;
+  const idInput = "#" + id;
+  const list = "ul#tag_list_" + id;
+  const node = "tag_list_" + id;
+  const restService = params.service;
+  const attrId = params.id;
+  const attrText = params.text;
+
+  $(idBtnPlus).click(() => {
+    const text_to_add = $(idInput + " option:selected").text() as string;
+    const value_to_add = $(idInput + " option:selected").val() as string;
+    var exist = 0;
+
+    if ($("li").length <= 0 && text_to_add.length > 0) {
+      $(list).append(
+        "<li><a id = " +
+          value_to_add +
+          " class='delete_item' href='javascript:void();'>" +
+          text_to_add +
+          "</option></a></li>"
+      );
+      exist = 1;
+    } else {
+      $(list + " li a").each(function(index) {
+        if ($(this).text() === text_to_add) {
+          exist = 1;
+          return false;
+        }
+      });
+    }
+
+    if (exist == 0 && text_to_add.length > 0) {
+      $(list).append(
+        "<li><a id = " +
+          value_to_add +
+          " class='delete_item' href='javascript:void();'>" +
+          text_to_add +
+          "</option></a></li>"
+      );
+    }
+
+    $(idInput)
+      .val(null)
+      .trigger("change");
+  });
+
+  $(idBtnMinus).click(() => {
+    var nodelist = document.getElementById(node);
+    $(list + " li a").each(function(index) {
+      if ($(this).attr("id") === $(idInput).val()) {
+        nodelist.childNodes[index].remove();
+      }
+    });
+
+    $(idInput)
+      .val(null)
+      .trigger("change");
+  });
+
+  $(list).delegate(".delete_item", "click", function() {
+    $(idInput)
+      .val(
+        $(this)
+          .parent()
+          .find(".delete_item")
+          .attr("id")
+      )
+      .trigger("change");
+  });
+
+  ($(idInput) as any).select2({
+    ajax: {
+      url: `${REST_URL}/` + restService + ``,
+      dataType: "json",
+      type: "GET",
+      data: function(params) {
+        var query = {
+          q: params.term,
+          rows: 10
+        };
+        return query;
+      },
+      processResults: function(data) {
+        return {
+          results: $.map(data, function(item) {
+            return {
+              text: item[attrText],
+              id: item[attrId]
+            };
+          })
+        };
+      }
+    },
+    placeholder: {
+      id: "0",
+      text: "-- Seleccione --"
+    },
+    cache: "true",
+    minimumInputLength: 3
+  });
+};
+
 const getList = (id: string) => {
   var list: any = [];
 
