@@ -95,6 +95,7 @@ const llenaGridContratos = (contratos: any) => {
     data: contratos,
     datatype: "local",
     height: "auto",
+    shrinkToFit: false,
     rowList: [10, 20, 30],
     colNames: [
       "Contrato",
@@ -237,9 +238,10 @@ const llenaGridContratos = (contratos: any) => {
         sortable: false
       }
     ]
-    // pager: "#pager_contratos"
   });
 };
+
+$("#table_contratos").jqGrid("setFrozenColumns");
 
 $("#btn_pdf").click(() =>
   $("#dialogo_pdf").dialog({

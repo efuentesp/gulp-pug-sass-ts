@@ -53,7 +53,7 @@ const llenarInfoContrato = (payload: any) => {
   // ...
 };
 
-const llenarTitularContrato = (payload: any) => { };
+const llenarTitularContrato = (payload: any) => {};
 
 const llenarCotitulares = (payload: any) => {
   llenarCotitular_ClasificacionContrato(payload, 0);
@@ -153,7 +153,10 @@ const llenarCotitular_ClasificacionContrato = (payload: any, i: number) => {
 const llenarCotitular_LimitantesInvertir = (payload: any, i: number) => {
   const limitantesInvertirArray: any[] =
     payload.cotitulares[i].clasificacion_contrato.limitantes_invertitr;
-  fillJqGrid("#table_cotitular2_clasificacion_contrato_limitantes_intervenir", limitantesInvertirArray);
+  fillJqGrid(
+    "#table_cotitular2_clasificacion_contrato_limitantes_intervenir",
+    limitantesInvertirArray
+  );
 };
 
 $("#table_cotitular2_clasificacion_contrato_limitantes_intervenir").jqGrid({
@@ -185,17 +188,17 @@ $("#table_cotitular2_clasificacion_contrato_limitantes_intervenir").jqGrid({
 const llenarCotitular_RelacionEmisor = (payload: any, i: number) => {
   const relacionEmisorArray: any[] =
     payload.cotitulares[i].clasificacion_contrato.relacion_emisor;
-  fillJqGrid("#table_cotitular2_clasificacion_contrato_relacion_emisor", relacionEmisorArray);
+  fillJqGrid(
+    "#table_cotitular2_clasificacion_contrato_relacion_emisor",
+    relacionEmisorArray
+  );
 };
 
 $("#table_cotitular2_clasificacion_contrato_relacion_emisor").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: ["Emisor", "Relación"],
-  colModel: [
-    { name: "emisor", width: 350 },
-    { name: "relacion", width: 200 }
-  ],
+  colModel: [{ name: "emisor", width: 350 }, { name: "relacion", width: 200 }],
   //   pager: "#pager_cotitular2_comisiones",
   rowNum: 10,
   rowList: [10, 20, 30],
@@ -216,10 +219,7 @@ $("#table_cotitular2_comisiones").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: ["Tipo", "Porcentaje %"],
-  colModel: [
-    { name: "tipo", width: 350 },
-    { name: "porcentaje", width: 500 }
-  ],
+  colModel: [{ name: "tipo", width: 350 }, { name: "porcentaje", width: 500 }],
   //   pager: "#pager_cotitular2_comisiones",
   rowNum: 10,
   rowList: [10, 20, 30],
@@ -235,12 +235,16 @@ const llenarCotitular_Documentacion = (payload: any, i: number) => {
   const documentacionContratoArray: any[] =
     payload.cotitulares[i].documentacion.contrato;
   $("#table_cotitular2_documentacion_contrato").jqGrid("clearGridData");
-  $("#table_cotitular2_documentacion_contrato").jqGrid("setGridParam", { data: documentacionContratoArray });
+  $("#table_cotitular2_documentacion_contrato").jqGrid("setGridParam", {
+    data: documentacionContratoArray
+  });
   $("#table_cotitular2_documentacion_contrato").trigger("reloadGrid");
   const documentacionClienteArray: any[] =
     payload.cotitulares[i].documentacion.cliente;
   $("#table_cotitular2_documentacion_cliente").jqGrid("clearGridData");
-  $("#table_cotitular2_documentacion_cliente").jqGrid("setGridParam", { data: documentacionClienteArray });
+  $("#table_cotitular2_documentacion_cliente").jqGrid("setGridParam", {
+    data: documentacionClienteArray
+  });
   $("#table_cotitular2_documentacion_cliente").trigger("reloadGrid");
 };
 
@@ -367,7 +371,9 @@ const llenarCotitular_FormatosFiscales = (payload: any, i: number) => {
   const formatosFiscalesArray: any[] = payload.cotitulares[i].formatos_fiscales;
   //fillJqGrid("#table_cotitular2_formatos_fiscales", formatosFiscalesArray);
   $("#table_cotitular2_formatos_fiscales").jqGrid("clearGridData");
-  $("#table_cotitular2_formatos_fiscales").jqGrid("setGridParam", { data: formatosFiscalesArray });
+  $("#table_cotitular2_formatos_fiscales").jqGrid("setGridParam", {
+    data: formatosFiscalesArray
+  });
   $("#table_cotitular2_formatos_fiscales").trigger("reloadGrid");
 };
 
@@ -506,15 +512,15 @@ const llenarCotitular_Observaciones = (payload: any, i: number) => {
 };
 
 function valores(cellvalue, options, rowObject) {
-  if (cellvalue == 'yellow check' || cellvalue == 'check yellow') {
+  if (cellvalue == "yellow check" || cellvalue == "check yellow") {
     return '<div class="w-5 h-5 bg-yellow-500 ml-6"></div>';
-  } else if (cellvalue == 'green check' || cellvalue == 'check green') {
+  } else if (cellvalue == "green check" || cellvalue == "check green") {
     return '<div class="w-5 h-5 bg-green-500 ml-6"></div>';
-  } else if (cellvalue == 'red check' || cellvalue == 'check red') {
+  } else if (cellvalue == "red check" || cellvalue == "check red") {
     return '<div class="w-5 h-5 bg-red-500 ml-6"></div>';
-  } else if (cellvalue == 'black check' || cellvalue == 'check black') {
+  } else if (cellvalue == "black check" || cellvalue == "check black") {
     return '<div class="w-5 h-5 bg-black-500 ml-6"></div>';
   } else {
-    return '';
+    return "";
   }
 }

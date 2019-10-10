@@ -198,6 +198,7 @@ function concatVendorJs() {
       "./src/views/scripts/vendors/jquery.steps.js",
       "./src/views/scripts/vendors/chartjs.min.js",
       "./src/views/pages/scripts/vendors/listswap/jquery.listswap.js"
+      // "./src/views/pages/scripts/vendors/jquery-templating/jquery.loadTemplate.min.js"
     ])
     .pipe(concat("libs.min.js"))
     .pipe(gulp.dest("./dist/assets/scripts"));

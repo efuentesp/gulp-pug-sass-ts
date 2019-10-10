@@ -100,7 +100,8 @@ $(".datepicker").datepicker(ui_datepicker_settings);
 $(".monthpicker").datepicker(ui_datepicker_month_year_settings);
 
 // Splitter
-$(".splitter").splitter();
+$(".splitter-vertical").splitter();
+$(".splitter-horizontal").splitter({ type: "h" });
 
 // JqGrid functions
 const fillJqGrid = (grid_id: string, data: any[]) => {
