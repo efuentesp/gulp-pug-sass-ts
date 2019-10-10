@@ -530,10 +530,7 @@
       "listaSpc": []
     },
     {
-      "contrato[]": [
-        "CONTRATO01",
-        "CONTRATO02"
-      ],
+      "contrato[]": ["CONTRATO01", "CONTRATO02"],
       "id": "t-eLVZ4"
     },
     {
@@ -1464,13 +1461,7 @@
           "valor": "3"
         }
       ],
-      "origenUno": [
-        "3",
-        "3",
-        "1",
-        "1",
-        "1"
-      ],
+      "origenUno": ["3", "3", "1", "1", "1"],
       "id": 1
     }
   ],
@@ -5326,113 +5317,18 @@
       "dataB": 0.6
     }
   ],
-  "contratoPM": {
-    "id": 1,
-    "idcatfinanciero": 0,
-    "folioCRM": 90158,
-    "contrato": 6618,
-    "razonCliente": "FINANZAS CORPORATIVAS, S.A. DE C.V.",
-    "perfil": "PRESERVACIÓN (IR1)",
-    "idPerfil": 1134,
-    "fechaConstitucion": "1979-07-01 00:00:00.0",
-    "idCliente": 92684230,
-    "email": null,
-    "idLineaNegocio": 2,
-    "descrLineaNegocio": "BANCA PRIVADA",
-    "fechaRegistro": "2019-07-11 17:21:44.767",
-    "folioFirma": 1,
-    "idRolPerfil": 21,
-    "descRolPerfil": "FIRMA AUTORIZADA",
-    "tipoFirmaAut": "MANCOMUNADA",
-    "nomFirma": "1111111111111111111 11111111111111111111 1",
-    "apePatFirma": "1111111111111111111 11111111111111111111 1",
-    "apeMatFirma": "1111111111111111111 11111111111111111111 1",
-    "negativaPerfil": 0,
-    "sofisticado": 0,
-    "idEspecContrato": 3,
-    "institucional": 0,
-    "totalPuntosIF": 0,
-    "obsContrato": "Observaciones del Contrato 6618",
-    "idAsesorInversion": null,
-    "asesorInversion": null,
-    "rolAsesorInvesion": null,
-    "tieneAsesor": 0,
-    "idCNBV": null,
-    "emailInfo": null,
-    "tipoAsesor": null,
-    "tipoRegistro": null,
-    "idPendiente": "1",
-    "elegible": null,
-    "institucionalXventas": null,
-    "idCuestionario": null,
-    "digito": null,
-    "listaFirmas": [
-      {
-        "titulo": "C.P.",
-        "apePatFirma": "1111111111111111111 11111111111111111111 1",
-        "apeMatFirma": "1111111111111111111 11111111111111111111 1",
-        "nomFirma": "1111111111111111111 11111111111111111111 1",
-        "tipoFirma": "MANCOMUNADA",
-        "numEscri": "17589",
-        "fecEscri": "790516",
-        "nomNot": " ",
-        "numNot": "116",
-        "regPubComercial": " ",
-        "roleCartaMdto": " ",
-        "obsFirmaAut": " ",
-        "folioFirma": 1,
-        "fecVenc": "1900-01-01 00:00:00.0",
-        "venc": 0,
-        "usuario": "",
-        "mail": "",
-        "token": "",
-        "id": 1,
-        "text": "1111111111111111111 11111111111111111111 1"
-      },
-      {
-        "titulo": "C.P.",
-        "apePatFirma": "2222222222222222222 22222222222222222222 2",
-        "apeMatFirma": "2222222222222222222 22222222222222222222 2",
-        "nomFirma": "2222222222222222222 22222222222222222222 2",
-        "tipoFirma": "MANCOMUNADA",
-        "numEscri": "17589",
-        "fecEscri": "790516",
-        "nomNot": " ",
-        "numNot": "116",
-        "regPubComercial": " ",
-        "roleCartaMdto": " ",
-        "obsFirmaAut": " ",
-        "folioFirma": 2,
-        "fecVenc": "1900-01-01 00:00:00.0",
-        "venc": 0,
-        "usuario": "",
-        "mail": "",
-        "token": "",
-        "id": 2,
-        "text": "2222222222222222222 22222222222222222222 2"
-      },
-      {
-        "titulo": "C.P.",
-        "apePatFirma": "3333333333333333333 33333333333333333333 3",
-        "apeMatFirma": "3333333333333333333 33333333333333333333 3",
-        "nomFirma": "3333333333333333333 33333333333333333333 3",
-        "tipoFirma": "MANCOMUNADA",
-        "numEscri": "17589",
-        "fecEscri": "790516",
-        "nomNot": " ",
-        "numNot": "116",
-        "regPubComercial": " ",
-        "roleCartaMdto": " ",
-        "obsFirmaAut": " ",
-        "folioFirma": 3,
-        "fecVenc": "2003-09-09 00:00:00.0",
-        "venc": 0,
-        "usuario": "",
-        "mail": "",
-        "token": "",
-        "id": 3,
-        "text": "3333333333333333333 33333333333333333333 3"
-      }
-    ]
-  }
+  "spreads": [
+    {
+      "rango-min-mx": "0 - 49,999.99",
+      "tasa-banda": "4"
+    },
+    {
+      "rango-min-mx": "50,000.00 - 99,999.99",
+      "tasa-banda": "4"
+    },
+    {
+      "rango-min-mx": "100,000.00 - 249,999.99",
+      "tasa-banda": "4"
+    }
+  ]
 }

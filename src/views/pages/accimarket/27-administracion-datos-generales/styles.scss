@@ -258,3 +258,12 @@
 .heigthTablaC {
   height: 15em;
 }
+
+// Centrar los textos de los campos de salida
+.field {
+  .input {
+    &:disabled {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.row
+    +accordion("acordeon-configuracion-reinversion")
+      +accordion-item("acordeon-item-configuracion-reinversion")
+          +form("configuracion-reinversion")
+            .row.flex.flex-wrap.justify-between
+                .column
+                    +field-select("linea-negocio",
+                        {
+                        label: "Linea de Negocio",
+                        required: true,
+                        size: "16em"
+                        },
+                        {key: "BPA", value:"Banca Patrimonial"},
+                        {key:"BPR", value:"Banca Privada"}
+                    )
+                .column
+                    p.font-bold Datos de Reinversión
+                    .box.flex.p-4.border.border-solid.border-gray-700.rounded-lg
+                        .column
+                            +field-select("grupo-instrumento",
+                                {
+                                    label: "Grupo Instrumento",
+                                    required: true,
+                                    orientation: "horizontal",
+                                    size: "16em",
+                                    disabled: true
+                                },
+                                {key: "PAGE", value:"PAGE", selected: true}
+                            )
+                            +field-input("saldo-remanente",
+                                        {
+                                            label: "Saldo Remanente >= $",
+                                            required: true,
+                                            default_value: "500",
+                                            orientation: "horizontal",
+                                            max_length: "12",
+                                            size: "16em"
+                                        }
+                            )
+                            +field-checks("ejecutar",
+                                {
+                                },
+                                {key: "SI", value:"Ejecutar proceso de reinversión Automática de remanentes para esta línea de negocio."}
+                            )
+                        .column
+                            +button-save({id: "btn_guardar_datos_inversion", size: "large", disabled: false})
