@@ -24,10 +24,14 @@ http_findAll("spreads", spreads_params, payload => {
 
 const llenaGridSpreads = (spreads: any) => {
   let lastsel2;
+  const gridWidth = $("#div-spreads-grid")
+    .parent()
+    .width();
 
   $("#table_spreads").jqGrid({
     data: spreads,
     datatype: "local",
+    width: gridWidth,
     height: "auto",
     rowList: [10, 20, 30],
     colNames: ["Rango (Min-Max)", "Tasa Banda", "Spread", "Tasa Cliente"],
@@ -56,6 +60,13 @@ const llenaGridSpreads = (spreads: any) => {
     }
   });
 };
+
+$(window).on("resize", function() {
+  const gridWidth = $("#div-spreads-grid")
+    .parent()
+    .width();
+  $("#table_spreads").jqGrid("setGridWidth", gridWidth, true);
+});
 
 $("#btn_guardar_datos_inversion").click(e => {
   console.log("dialogo_guardar_datos_inversion");
