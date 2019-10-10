@@ -1,0 +1,21 @@
+mixin button-save(parms)
+  - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
+  - var _label = (parms.label ? parms.label : "Guardar")
+  - var _id = (parms.id ? parms.id : "btn_save")
+
+  if _parms.size == "large"
+    button.button.big-button(id=_id title=tooltip disabled=_parms.disabled)
+      span.fa-stack.fa-lg
+        i.fas.fa-save.fa-2x
+      br
+      span=_label
+
+  if _parms.size == "medium"
+    button.button.medium-button(id=_id title=tooltip disabled=_parms.disabled)
+        span.fa-stack.fa-2x
+          i.fas.fa-save.fa-sm
+
+  if _parms.size == "small"
+    button.button.small-button(id=_id title=tooltip disabled=_parms.disabled)
+        span.fa-stack.fa-sm
+          i.fas.fa-save.fa-lg

@@ -138,7 +138,8 @@ const llenaGridContratos = (contratos: any) => {
         index: "contrato",
         width: 100,
         sortable: true,
-        sorttype: "number"
+        sorttype: "number",
+        frozen: true
       },
       // {
       //   name: "imagen",
