@@ -554,6 +554,54 @@ interface multiLineChartParams {
   height: string;
 }
 
+interface pieChartParams {
+  id: string;
+  titleX: string;
+  labels: any[];
+  dataSet: any[];
+  width: string;
+  height: string;
+}
+
+// Set any colors to pie chart
+const backgroundSet = (elements: number) => {
+  // Set principal
+  var backgroundColorSet = [
+    "#4299E1",
+    "#48BB78",
+    "#F56565",
+    "#ECC94B",
+    "#ED8936",
+    "#38B2AC",
+    "#9F7AEA",
+    "#ED64A6",
+    "#E53E3E",
+    "#DD6B20",
+    "#D69E2E",
+    "#38A169",
+    "#3182CE",
+    "#319795",
+    "#805AD5",
+    "#D53F8C",
+    "#5A67D8"
+  ];
+
+  var r = 0;
+  var g = 0;
+  var b = 0;
+  var c;
+
+  for (var i = 0; i < elements; i++) {
+    r = Math.floor(Math.random() * 255);
+    g = Math.floor(Math.random() * 255);
+    b = Math.floor(Math.random() * 255);
+    c = "rgb(" + r + ", " + g + ", " + b + ", 0.4)";
+    backgroundColorSet.push(c);
+  }
+
+  return backgroundColorSet;
+};
+
 // StackGraph
 const stackChart = (params: stackChartParams) => {
   var chartData = {
@@ -1253,6 +1301,40 @@ const multiLineChart = (params: multiLineChartParams) => {
             }
           }
         ]
+      }
+    }
+  });
+};
+
+// PieGraph
+const pieChart = (params: pieChartParams) => {
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  var ctxBar: any = document.getElementById(params.id);
+  var contextBar = ctxBar.getContext("2d");
+
+  var pieGraph = new Chart(contextBar, {
+    plugins: [
+      {
+        afterDatasetsDraw: function(pieGraph) {
+          var ctx = pieGraph.ctx;
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+        }
+      }
+    ],
+    type: "pie",
+    data: chartData,
+    options: {
+      legend: {
+        display: true
+      },
+      title: {
+        display: true,
+        text: params.titleX
       }
     }
   });
