@@ -24,6 +24,11 @@ http_findAll("promedios", promedios_params, payload => {
   fillPromedios(payload);
 });
 
+// Services bar chart
+http_findAll("promedios", promedios_params, payload => {
+  fillPromediosPie(payload);
+});
+
 // Stack
 const fillRendimientos = (rendimientos: any) => {
   var dataSetY1 = [];
@@ -206,5 +211,32 @@ const fillEstrategias = (rates: any) => {
     ],
     width: "600px",
     height: "200px"
+  });
+};
+
+const fillPromediosPie = (promedios: any) => {
+  var dataSetY = [];
+  var dataSetX = [];
+
+  for (var i = 0; i < promedios.length; i++) {
+    var data = promedios[i];
+    dataSetX.push(data.horizonte);
+    dataSetY.push(data.dataB);
+  }
+
+  pieChart({
+    id: "pieChart",
+    titleX: "Cifras de rendimientos, tasas e inflación con fines ilustrativos",
+    labels: dataSetX,
+    width: "400px",
+    height: "200px",
+    dataSet: [
+      {
+        type: "pie",
+        label: "Real",
+        backgroundColor: backgroundSet(promedios.length),
+        data: dataSetY
+      }
+    ]
   });
 };
