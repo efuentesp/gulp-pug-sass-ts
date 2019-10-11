@@ -5330,5 +5330,14 @@
       "rango-min-mx": "100,000.00 - 249,999.99",
       "tasa-banda": "4"
     }
+  ],
+  "cotizacion_reportos": [
+    {
+      "grupo": "BONDE D (BONDE D)",
+      "instrumento": "BONDE D (BONDE D)",
+      "plazo": "1 - 1",
+      "rango": "1 - 49999",
+      "tasa": "9.0"
+    }
   ]
 }

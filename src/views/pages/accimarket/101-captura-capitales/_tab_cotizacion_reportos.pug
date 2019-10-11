@@ -1,0 +1,43 @@
++sidebar
+  +field-select("grupo",
+    {
+      label: "Grupo",
+      orientation: "horizontal"
+    },
+    {key: "SG", value:"SIN GRUPO"},
+    {key: "GUB", value:"GUBER"}
+  )
+  +field-select("instrumento",
+    {
+      label: "Instrumento",
+      orientation: "horizontal"
+    },
+    {key: "TNETA", value:"TNETA"},
+    {key: "BB10MTN", value:"BB10MTN"}
+  )
+  +field-input("monto_invertir",
+               {
+                 label: "Monto a Invertir",
+                 orientation: "horizontal"
+                }
+  )
+  +field-input("plazo",
+               {
+                 label: "Plazo",
+                 orientation: "horizontal"
+                }
+  )
+  +field-date("fecha_banda",
+              {
+                label: "Fecha banda",
+                orientation: "horizontal",
+                required: true
+              }
+  )
+  +button-search({size: "large", disabled: false})
+  +button-clean({size: "large", disabled: false})
+.content.flex-1
+  +tab-group("tab_group_grid_cotizacion_reportos",
+      {id: "tab_grid_cotizacion_reportos", label: "Detalle"})
+      +tab-item("tab_grid_cotizacion_reportos")
+        +grid("grid_detalle_cotizacion_reportos")

@@ -59,6 +59,21 @@ function pugIt() {
     .pipe(browserSync.stream());
 }
 
+function handlebarsIt() {
+  return gulp
+    .src("./src/views/pages/**/*.handlebars")
+    .pipe(
+      prettify({
+        indent_inner_html: true,
+        indent_size: 2
+      })
+    )
+    .pipe(rename({ extname: ".html" }))
+    .pipe(lec())
+    .pipe(gulp.dest("./dist"))
+    .pipe(browserSync.stream());
+}
+
 function sassIt() {
   return gulp
     .src(["./src/views/styles/main.scss", "./src/views/pages/**/*.scss"])
@@ -197,8 +212,8 @@ function concatVendorJs() {
       "./src/views/scripts/vendors/jquery.toggleinput.js",
       "./src/views/scripts/vendors/jquery.steps.js",
       "./src/views/scripts/vendors/chartjs.min.js",
-      "./src/views/pages/scripts/vendors/listswap/jquery.listswap.js"
-      // "./src/views/pages/scripts/vendors/jquery-templating/jquery.loadTemplate.min.js"
+      "./src/views/pages/scripts/vendors/listswap/jquery.listswap.js",
+      "./src/views/pages/scripts/vendors/handlebars/handlebars-v4.4.3.js"
     ])
     .pipe(concat("libs.min.js"))
     .pipe(gulp.dest("./dist/assets/scripts"));
@@ -231,6 +246,7 @@ exports.clean = clean;
 exports.imageminIt = imageminIt;
 exports.sassIt = sassIt;
 exports.pugIt = pugIt;
+exports.handlebarsIt = handlebarsIt;
 exports.typescriptIt = typescriptIt;
 exports.babelIt = babelIt;
 exports.webfonts = webfonts;
@@ -242,7 +258,7 @@ exports.watch = watch;
 
 exports.default = gulp.series(
   clean,
-  gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
+  gulp.parallel(pugIt, handlebarsIt, sassIt, typescriptIt, imageminIt),
   webfonts,
   concatVendorCss,
   concatJQueryJs,
@@ -251,7 +267,7 @@ exports.default = gulp.series(
 
 exports.dev = gulp.series(
   clean,
-  gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
+  gulp.parallel(pugIt, handlebarsIt, sassIt, typescriptIt, imageminIt),
   webfonts,
   concatVendorCss,
   concatJQueryJs,
