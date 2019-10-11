@@ -100,7 +100,8 @@ $(".datepicker").datepicker(ui_datepicker_settings);
 $(".monthpicker").datepicker(ui_datepicker_month_year_settings);
 
 // Splitter
-$(".splitter").splitter();
+$(".splitter-vertical").splitter();
+$(".splitter-horizontal").splitter({ type: "h" });
 
 // JqGrid functions
 const fillJqGrid = (grid_id: string, data: any[]) => {
@@ -380,6 +381,111 @@ const fieldPlusMinus = (id: string) => {
   });
 };
 
+// Autocomplete
+const fieldSelectPlusAutocomplete = (id: string, params: any) => {
+  const idBtnPlus = "#btn_plus_" + id;
+  const idBtnMinus = "#btn_minus_" + id;
+  const idInput = "#" + id;
+  const list = "ul#tag_list_" + id;
+  const node = "tag_list_" + id;
+  const restService = params.service;
+  const attrId = params.id;
+  const attrText = params.text;
+
+  $(idBtnPlus).click(() => {
+    const text_to_add = $(idInput + " option:selected").text() as string;
+    const value_to_add = $(idInput + " option:selected").val() as string;
+    var exist = 0;
+
+    if ($("li").length <= 0 && text_to_add.length > 0) {
+      $(list).append(
+        "<li><a id = " +
+          value_to_add +
+          " class='delete_item' href='javascript:void();'>" +
+          text_to_add +
+          "</option></a></li>"
+      );
+      exist = 1;
+    } else {
+      $(list + " li a").each(function(index) {
+        if ($(this).text() === text_to_add) {
+          exist = 1;
+          return false;
+        }
+      });
+    }
+
+    if (exist == 0 && text_to_add.length > 0) {
+      $(list).append(
+        "<li><a id = " +
+          value_to_add +
+          " class='delete_item' href='javascript:void();'>" +
+          text_to_add +
+          "</option></a></li>"
+      );
+    }
+
+    $(idInput)
+      .val(null)
+      .trigger("change");
+  });
+
+  $(idBtnMinus).click(() => {
+    var nodelist = document.getElementById(node);
+    $(list + " li a").each(function(index) {
+      if ($(this).attr("id") === $(idInput).val()) {
+        nodelist.childNodes[index].remove();
+      }
+    });
+
+    $(idInput)
+      .val(null)
+      .trigger("change");
+  });
+
+  $(list).delegate(".delete_item", "click", function() {
+    $(idInput)
+      .val(
+        $(this)
+          .parent()
+          .find(".delete_item")
+          .attr("id")
+      )
+      .trigger("change");
+  });
+
+  ($(idInput) as any).select2({
+    ajax: {
+      url: `${REST_URL}/` + restService + ``,
+      dataType: "json",
+      type: "GET",
+      data: function(params) {
+        var query = {
+          q: params.term,
+          rows: 10
+        };
+        return query;
+      },
+      processResults: function(data) {
+        return {
+          results: $.map(data, function(item) {
+            return {
+              text: item[attrText],
+              id: item[attrId]
+            };
+          })
+        };
+      }
+    },
+    placeholder: {
+      id: "0",
+      text: "-- Seleccione --"
+    },
+    cache: "true",
+    minimumInputLength: 3
+  });
+};
+
 const getList = (id: string) => {
   var list: any = [];
 
@@ -447,6 +553,54 @@ interface multiLineChartParams {
   width: string;
   height: string;
 }
+
+interface pieChartParams {
+  id: string;
+  titleX: string;
+  labels: any[];
+  dataSet: any[];
+  width: string;
+  height: string;
+}
+
+// Set any colors to pie chart
+const backgroundSet = (elements: number) => {
+  // Set principal
+  var backgroundColorSet = [
+    "#4299E1",
+    "#48BB78",
+    "#F56565",
+    "#ECC94B",
+    "#ED8936",
+    "#38B2AC",
+    "#9F7AEA",
+    "#ED64A6",
+    "#E53E3E",
+    "#DD6B20",
+    "#D69E2E",
+    "#38A169",
+    "#3182CE",
+    "#319795",
+    "#805AD5",
+    "#D53F8C",
+    "#5A67D8"
+  ];
+
+  var r = 0;
+  var g = 0;
+  var b = 0;
+  var c;
+
+  for (var i = 0; i < elements; i++) {
+    r = Math.floor(Math.random() * 255);
+    g = Math.floor(Math.random() * 255);
+    b = Math.floor(Math.random() * 255);
+    c = "rgb(" + r + ", " + g + ", " + b + ", 0.4)";
+    backgroundColorSet.push(c);
+  }
+
+  return backgroundColorSet;
+};
 
 // StackGraph
 const stackChart = (params: stackChartParams) => {
@@ -1147,6 +1301,40 @@ const multiLineChart = (params: multiLineChartParams) => {
             }
           }
         ]
+      }
+    }
+  });
+};
+
+// PieGraph
+const pieChart = (params: pieChartParams) => {
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  var ctxBar: any = document.getElementById(params.id);
+  var contextBar = ctxBar.getContext("2d");
+
+  var pieGraph = new Chart(contextBar, {
+    plugins: [
+      {
+        afterDatasetsDraw: function(pieGraph) {
+          var ctx = pieGraph.ctx;
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+        }
+      }
+    ],
+    type: "pie",
+    data: chartData,
+    options: {
+      legend: {
+        display: true
+      },
+      title: {
+        display: true,
+        text: params.titleX
       }
     }
   });

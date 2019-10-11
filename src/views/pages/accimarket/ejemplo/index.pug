@@ -59,7 +59,7 @@ block content
             +splitter("simple")
                 .pane
                     +grid("ventas")
-                    +canvas("averageChart", {width:'600px', height:'400px'})   
+                    +canvas("averageChart", {width:'600px', height:'400px'})
                 .pane
                     +grid("contratos")
                     +canvas("average1Chart", {width:'600px', height:'400px'})
@@ -70,6 +70,15 @@ block content
                     orientation: "horizontal",
                     size: "8em"
                 })
+        br
+        p Ejemplo de Panel Horizontal (arrastrar la linea que divide a los 2 paneles)
+        .row
+            +splitter("horizontal-splitter", {orientation: "horizontal"})
+                .pane
+                    p Panel 1
+                .pane
+                    p Panel 2
+
         .row
             include _acordeon
 

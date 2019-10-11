@@ -1,5 +1,3 @@
-//- p DOCUMENTACIOO
-
 .row.flex.justify-end
     +field-checks("documentacion_flags",
         {orientation: "horizontal", disabled:true},
@@ -9,11 +7,9 @@
         {key: "noaplica", value:"No Aplica", color: "black"}
     )
 
-.row.justify-center
-    p Contrato
+p Contrato
 .row.w-full.overflow-auto.heigthTablaC
     +grid("cotitular2_documentacion_contrato")
-.row
-    p Cliente
+p Cliente
 .row.w-full.overflow-auto.heigthTablaC
     +grid("cotitular2_documentacion_cliente")
