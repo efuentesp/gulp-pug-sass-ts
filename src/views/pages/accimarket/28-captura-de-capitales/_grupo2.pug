@@ -1,0 +1,15 @@
+include /mixins/mixins
+
+.row#botones-final
+    +field-options("opcionesEnvio",
+          {label: "Método de envío",
+           orientation: "horizontal"
+          },
+          {key: "ENSEC", value:"En secuencia"},
+          {key: "SIMUL", value:"Simultaneo"}
+        )
+    +button-send({label: "Enviar Todas",size: "large", disabled: false,orientation: "horizontal"})
+    +button-validate({label: "Validar",size: "large", disabled: false,orientation: "horizontal"})
+    +button-export({label: "Importar SCP",size: "large", disabled: false,orientation: "horizontal"})
+    +button-delete({label: "Borrar",size: "large", disabled: false,orientation: "horizontal"})
+    +button-reset({label: "Reiniciar",size: "large", disabled: false,orientation: "horizontal"})

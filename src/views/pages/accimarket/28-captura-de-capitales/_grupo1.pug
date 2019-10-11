@@ -1,0 +1,98 @@
+include /mixins/mixins
+.row#botones-final
+    +field-checks("reset",
+        {
+            label: "",
+            orientation: "horizontal"
+            },
+            {key: "true", value:"reset"}
+        )
+.row#ordenaElementos   
+    +field-input("contrato",
+        {
+            label: "Contrato",
+            size: "15em",
+            orientation: "horizontal",
+            required: true,
+            max_length: "9",
+            type: "digits"
+        })
+    +field-input("emisora",
+        {
+            label: "emisora",
+            required: true,
+            size: "15em",
+            orientation: "horizontal"
+        })
+    +field-select("Operacion",
+        {
+            label: "Operación",
+            size: "15em",
+            required: true,
+            orientation: "horizontal"
+        })
+    +field-input("cantidad",
+        {
+            label: "cantidad",
+            required: true,
+            size: "15em",
+            orientation: "horizontal",
+            max_length: "17",
+            type: "digits"
+        })
+    +field-input("precio",
+        {
+            label: "precio",
+            required: true,
+            size: "15em",
+            orientation: "horizontal",
+            max_length: "9",
+            type: "digits"
+        })
+    +field-select("Vigencia",
+        {
+            label: "Vigencia",
+            size: "15em",
+            required: true,
+            orientation: "horizontal"
+        })
+    +field-options("opciones",
+          {label: "Envio",
+           required: true,
+           orientation: "horizontal"
+          },
+          {key: "LIBRO", value:"Libro"},
+          {key: "MESA", value:"Mesa"}
+        )
+    +field-select("ServicioI",
+        {
+            label: "Servicio de Inv.",
+            size: "15em",
+            required: true,
+            orientation: "horizontal"
+        })
+    +field-select("TitulosAP",
+        {
+            label: "Titulos a afectar de posición",
+            size: "15em",
+            required: true,
+            orientation: "horizontal"
+        })
+    +field-select("ModoC",
+        {
+            label: "Modo Cierre",
+            size: "15em",
+            required: true,
+            orientation: "horizontal"
+        })
+.row
+    +field-checks("Capturar datos avanzados",
+        {
+            label: "",
+            orientation: "horizontal"
+            },
+            {key: "P02", value:"capturarDA"}
+            )
+.row#botones-final
+    +button-add({label: "Agregar",size: "large", disabled: false})
+    +button-clean({label: "Limpiar",size: "large", disabled: false})

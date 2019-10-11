@@ -1,0 +1,47 @@
+extends /layouts/html5
+
+block title
+   title 06.Ejercicio de Derechos Corporativos
+
+block styles
+  link(rel="stylesheet" href="../../assets/css/accimarket/06-ejercicios-derechos-corporativos/styles.css")
+
+block content
+   .content.p-4
+      +tab-group("consultas_tab_group",
+                  {id: "tab_avisos_convocatoria_asamblea", label: "Avisos Convocatoria Asamblea"},
+                  {id: "tab_consultar_derechos_capital", label: "Consultar Derechos de Capital"},
+                  {id: "tab_consultar_derechos_deuda", label: "Consultar Derechos de Deuda"},
+                  {id: "tab_consulta_liquidacion_derechos", label: "Consulta Liquidación de Derechos"}
+      )
+         +tab-item("tab_avisos_convocatoria_asamblea")
+            form#criterios-busqueda(data-parsley-validate="")
+               b Filtro
+               +field-select("tipo_mercado",
+               {
+                  label: "Tipo Mercado"
+               },
+               {key: "ALL", value:"Todos"}
+               )
+               +field-plus-minus("tipo_asamble", {label: "Tipo Asamblea"})
+               +field-plus-minus("emisora", {label: "Tipo Asamblea"})
+               +field-plus-minus("estatus", {label: "Tipo Asamblea"})
+               .column#botones-accion
+                  +button-clean({size: "small", disabled: false})
+                  +button-search({size: "small", disabled: false})
+            .row.has_border
+               .row#grid_toolbar
+                  +button-pdf({size: "small", disabled: false})
+                  +button-xls({size: "small", disabled: false})
+               .row.has_border.w-full.overflow-auto
+                  +grid("operaciones")
+
+         +tab-item("tab_consultar_derechos_capital")
+            p Consultar Derechos de Capital
+         +tab-item("tab_consultar_derechos_deuda")
+            p Consultar Derechos de Deuda
+         +tab-item("tab_consulta_liquidacion_derechos")
+            p Consulta Liquidación de Derechos
+
+block scripts
+   script(src="../../assets/scripts/accimarket/06-ejercicios-derechos-corporativos/scripts.js")

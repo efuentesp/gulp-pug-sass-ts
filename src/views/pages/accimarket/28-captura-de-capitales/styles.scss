@@ -1,0 +1,28 @@
+.content {
+  #alinearinputs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #tab_captura_de_capitales {
+    display: flex;
+  }
+  #tab_ordenes {
+    display: flex;
+
+    #grid_toolbar {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+    }
+  }
+#botones-final {
+  display: flex;
+  justify-content: flex-end;
+}
+#ordenaElementos {
+  flex-wrap: wrap;
+  .field-label {
+    width: 8.5em;
+  }
+}
+}
