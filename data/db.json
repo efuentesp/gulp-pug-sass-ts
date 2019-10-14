@@ -5280,6 +5280,15 @@
       "dataB": -5.5
     }
   ],
+  "rendimientosh": [
+    {
+      "mes": "May",
+      "dataA": 5,
+      "dataB": 16,
+      "dataC": 38,
+      "dataD": 46
+    }
+  ],
   "promedios": [
     {
       "horizonte": "A (Liquidez)",
