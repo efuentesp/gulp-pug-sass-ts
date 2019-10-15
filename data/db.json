@@ -5361,5 +5361,7 @@
       "emisora": "BONDESO 190328",
       "usuario": "USUARIO01"
     }
-  ]
+  ],
+  "source": [{ "id": "7", "value": "option_1_7", "label": "Valor 7" }],
+  "destination": [{ "id": "8", "value": "option_1_8", "label": "Valor 8" }]
 }
