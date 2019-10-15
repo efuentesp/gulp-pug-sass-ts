@@ -1,0 +1,23 @@
+extends /layouts/jsp
+
+block title
+   title 103. Consultas de Mercado de Dinero
+
+block styles
+   link(rel="stylesheet" href="../../assets/css/accimarket/103-consultas-mercado-dinero/styles.css")
+
+block content
+   .content.p-4
+      +tab-group("tab_group_consultas_mercado_dinero",
+         {id: "tab_ordenes_en_reporto", label: "Órdenes en Reporto"},
+         {id: "tab_vencimientos", label: "Vencimientos"},
+         {id: "tab_ordenes_en_directo", label: "Ordenes en Directo"},
+         {id: "tab_ordenes_fuera_de_parametros", label:"Ordenes fuera de parámetros"})
+         +tab-item("tab_ordenes_en_reporto")
+         +tab-item("tab_vencimientos")
+         +tab-item("tab_ordenes_en_directo")
+            include _tab_ordenes_en_directo
+         +tab-item("tab_ordenes_fuera_de_parametros")
+
+block scripts
+   script(src="../../assets/scripts/accimarket/103-consultas-mercado-dinero/scripts.js")

@@ -1,0 +1,25 @@
++accordion("criterios_busqueda_accordion")
+    +accordion-item("criterios_busqueda_accordion_item")
+      +form("criterios-busqueda", {class: "is-search-form"})
+        +field-input("libro", {label: "Libro", max_length: "25"})
+        +field-input("contrato", {label: "Contrato", max_length: "25"})
+        +field-input("digito", {label: "Dígito", size: "6em", max_length: "25"})
+        +field-input("emisora", {label: "Emisora", max_length: "25"})
+        +field-input("usuario", {label: "Usuario", max_length: "25"})
+        +field-checks("solicitudes_cancelacion",
+        {
+            label: "Solicitudes de Cancelación",
+        },
+        {key: "CS", value:"Cancelación Solicitada", color:"yellow"},
+        {key: "OC", value:"Orden Cancelada", color:"red"},
+        {key: "CR", value:"Cancelación Rechazada", color:"black"}
+        )
+        .columna#botones-accion
+            +button-search({size: "large", disabled: false})
+            +button-clean({size: "large", disabled: false})
+            +button-pdf({size: "large", disabled: false})
+            +button-xls({size: "large", disabled: false})
+.row.has_border
+    .row.w-full.overflow-auto
+      +grid("ordenes")
+    +grid-records-count("ordenes")

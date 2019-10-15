@@ -1,0 +1,21 @@
+extends /layouts/jsp
+
+block title
+   title 01.Causión Bursátil
+
+block styles
+   link(rel="stylesheet" href="../../assets/css/accimarket/101-captura-capitales/styles.css")
+
+block content
+   .content.p-4
+      +tab-group("tab_group_captura_capitales",
+         {id: "tab_cotizacion_reportos", label: "Cotización Reportos"},
+         {id: "tab_reporto", label: "Reporto"},
+         {id: "tab_directo", label: "Directo"})
+         +tab-item("tab_cotizacion_reportos")
+            include _tab_cotizacion_reportos
+         +tab-item("tab_reporto")
+         +tab-item("tab_directo")
+
+block scripts
+   script(src="../../assets/scripts/accimarket/101-captura-capitales/scripts.js")

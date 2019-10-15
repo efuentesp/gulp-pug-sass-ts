@@ -36,12 +36,6 @@
     justify-content: flex-end;
   }
 
-  #gview_table_totales {
-    .ui-jqgrid-hdiv {
-      display: none !important;
-    }
-  }
-
   #tblOpciones {
     width: 25em;
     height: 15em;
@@ -51,10 +45,10 @@
     flex-wrap: wrap;
     width: 33em;
   }
+}
 
-  #field_opcionesRenta {
-    display: contents;
-  }
+.field_opcionesRenta {
+  display: contents;
 }
 
 #mensajesConfig {
@@ -64,6 +58,10 @@
 #rowPrincipales {
   display: flex;
   width: 20em;
+}
+
+#rowDetalle {
+  margin-top: 5em;
 }
 
 #criterios-detalle {

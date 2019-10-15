@@ -1,5 +1,6 @@
 let promed_params: UrlParams = {};
 let mov_pos_dialog_params: UrlParams = {};
+let rendi_params: UrlParams = {};
 
 const respuestaServicio = (tabla: string, tablaTotal: string, payload: any) => {
     $("#table_" + tabla).jqGrid("clearGridData");
@@ -152,9 +153,60 @@ const sumatoria = (valores) => {
     return total;
 }
 
-const genereTabDimanic = (tabLst: any[]) => {
-    console.log("Obtiene Tab a crear");
-    for (var i = 0; i < tabLst.length; i++) {
-        console.log("Tab -> " + tabLst[i].descrCorta);
+const ejecutaGraficaLineal = () => {
+    http_findAll("rendimientosh", rendi_params, payload => {
+        fillHorizontalRendi(payload);
+    });
+};
+
+// Stack Horizontal
+const fillHorizontalRendi = (rendimientosh: any) => {
+    var dataSetY1 = [];
+    var dataSetY2 = [];
+    var dataSetY3 = [];
+    var dataSetY4 = [];
+    var dataSetX = [];
+
+    for (var i = 0; i < rendimientosh.length; i++) {
+        var data = rendimientosh[i];
+        dataSetX.push(data.mes);
+        dataSetY1.push(data.dataA);
+        dataSetY2.push(data.dataB);
+        dataSetY3.push(data.dataC);
+        dataSetY4.push(data.dataD);
     }
-}
+
+    stackChartHorizontal({
+        id: "stackChartHijo",
+        titleX: "",
+        titleY: "",
+        labels: dataSetX,
+        tickMaxX: 100.0,
+        tickMinX: 0.0,
+        tickStepX: 20.0,
+        dataSet: [
+            {
+                label: "RV",
+                backgroundColor: "yellow",
+                data: dataSetY1
+            },
+            {
+                label: "RF",
+                backgroundColor: "orange",
+                data: dataSetY2
+            },
+            {
+                label: "Liquidez",
+                backgroundColor: "red",
+                data: dataSetY3
+            },
+            {
+                label: "NE",
+                backgroundColor: "blue",
+                data: dataSetY4
+            }
+        ],
+        width: "600px",
+        height: "160px"
+    });
+};

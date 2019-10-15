@@ -183,5 +183,13 @@
     background-image: url("../../assets/images/hgrabber.gif");
     background-repeat: no-repeat;
     background-position: center;
+    cursor: row-resize;
+  }
+
+  .splitter-bar-horizontal-docked {
+    height: 10px;
+    background-image: url("../../assets/images/hdockbar-trans.gif");
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }

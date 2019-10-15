@@ -10,16 +10,11 @@ block content
     .content.p-4
         .row
             include _criteriosPosicion
-            +tab-group("grupo_posicion",
-            {id: "tab_contado", label: "CONTADO"})
-                +tab-item("tab_contado")
-                    .column.w-full.overflow-auto#tablas
-                        +grid("contado")
-                        +grid("totales")
-                    include _resumen
+            +tab-group("grupo_posicion",{})
 
         include dialogos/_configuracionColumnas
         include dialogos/_detalle
+        include dialogos/_mensajes
 
         <div class="contextMenu" id="contextMenu" style="display:none; width:400px;">
             <ul style="width: 400px; font-size: 65%;">

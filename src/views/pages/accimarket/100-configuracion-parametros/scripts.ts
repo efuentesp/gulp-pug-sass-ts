@@ -57,6 +57,11 @@ const llenaGridSpreads = (spreads: any) => {
         $("#table_spreads").jqGrid("editRow", id, true);
         lastsel2 = id;
       }
+    },
+    editParams: {
+      oneditfunc: val => {
+        console.log(val);
+      }
     }
   });
 };

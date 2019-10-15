@@ -4956,6 +4956,15 @@
       "dataB": -5.5
     }
   ],
+  "rendimientosh": [
+    {
+      "mes": "May",
+      "dataA": 5,
+      "dataB": 16,
+      "dataC": 38,
+      "dataD": 46
+    }
+  ],
   "promedios": [
     {
       "horizonte": "A (Liquidez)",
@@ -5217,6 +5226,22 @@
           "descripcion": "Renta Otra"
         }
       ]
+    }
+  ],
+  "sTipoPort": [
+    {
+      "descrCorta": "CONTADO",
+      "stipoPortf": 22,
+      "descrLarga": "POSICION CONTADO",
+      "idServicioPos": -1,
+      "idServicio": 1
+    },
+    {
+      "descrCorta": "DIF/GTIA",
+      "stipoPortf": 28,
+      "descrLarga": "POR DIFERENTES GARANTIAS",
+      "idServicioPos": -1,
+      "idServicio": 1
     }
   ],
   "sTipoPortfContratosV2": [
@@ -5509,6 +5534,28 @@
       "ancho": 70,
       "columna": "descripcion",
       "nombre": "Descripcion"
+    }
+  ],
+  "cotizacion_reportos": [
+    {
+      "grupo": "BONDE D (BONDE D)",
+      "instrumento": "BONDE D (BONDE D)",
+      "plazo": "1 - 1",
+      "rango": "1 - 49999",
+      "tasa": "9.0"
+    }
+  ],
+  "orden_en_directo": [
+    {
+      "folio_operacion": "8123456",
+      "solicitudes_cancelacion": "CS",
+      "fecha_operacion": "22/03/2019",
+      "fecha_asignacion": "22/03/2019",
+      "libro": "Banco",
+      "contrato": "21377",
+      "digito": "RG",
+      "emisora": "BONDESO 190328",
+      "usuario": "USUARIO01"
     }
   ]
 }
