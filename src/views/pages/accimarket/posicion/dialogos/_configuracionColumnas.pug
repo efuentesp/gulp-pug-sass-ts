@@ -1,18 +1,14 @@
 .row
     .ui-dialog.hidden(id="configColumns")
-        .row
-            +field-listswap("source",
-                {label:'Columnas Disponibles'},
-                {key: "1", value:"option_1_2", label:"Why not option 2"},
-                {key: "2", value:"option_1_3", label:"Here's another option 3"},
-                {key: "3", value:"option_1_4", label:"What about option 4"}
-                )
-            +field-listswap("destination",
-                {label:'Columnas Visibles'},
-                {key: "4", value:"option_1_5", label:"I'll go with option 5"},
-                {key: "5", value:"option_1_6", label:"Let's stick to option 6"})
-        .row
-            p Texto Uno
-            p Texto Dos
-            p Texto Tres
-            p Botones
+        +field-group("groupConsulta")
+            .row.relative.w-full
+                +field-listswap("source",
+                    {label:'Columnas Disponibles'},
+                    {})
+                +field-listswap("destination",
+                    {label:'Columnas Visibles'},
+                    {})
+            .row.absolute#mensajesConfig
+                p.mb-8.w-64 Agregue columnas arrastrandolas a la lista de Columnas Visibles
+                p.mb-8.w-64 Para eliminarlas, arrastrelas de regreso a la lista de Columnas Disponibles
+                p.w-64 Defina la posicion de la columna arrastrandola hacia arriab o abajo

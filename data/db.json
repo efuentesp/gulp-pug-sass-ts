@@ -371,7 +371,8 @@
           "fechaVen": "26-Dic-19",
           "impVenc": "0.00",
           "nat": "D",
-          "isrDia": "0.00"
+          "isrDia": "0.00",
+          "descripcion": "Renta Fija"
         },
         {
           "contrato": "12345",
@@ -389,7 +390,8 @@
           "fechaVen": "26-Dic-19",
           "impVenc": "0.00",
           "nat": "D",
-          "isrDia": "0.00"
+          "isrDia": "0.00",
+          "descripcion": "Renta Fija"
         },
         {
           "contrato": "12345",
@@ -407,7 +409,122 @@
           "fechaVen": "26-Dic-19",
           "impVenc": "0.00",
           "nat": "D",
-          "isrDia": "0.00"
+          "isrDia": "0.00",
+          "descripcion": "Renta Fija"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
         }
       ],
       "listaDifGtia": [],
@@ -530,7 +647,10 @@
       "listaSpc": []
     },
     {
-      "contrato[]": ["CONTRATO01", "CONTRATO02"],
+      "contrato[]": [
+        "CONTRATO01",
+        "CONTRATO02"
+      ],
       "id": "t-eLVZ4"
     },
     {
@@ -1011,7 +1131,13 @@
           "valor": "3"
         }
       ],
-      "origenUno": ["3", "3", "1", "1", "1"],
+      "origenUno": [
+        "3",
+        "3",
+        "1",
+        "1",
+        "1"
+      ],
       "id": 1
     }
   ],
@@ -1119,14 +1245,14 @@
         "importeImpuesto": 0,
         "importeFinal": 2188.8,
         "tasaRetno": 0,
-        "fecOper": "2019-08-02 00:00:00.0",
-        "fecLiq": "2019-08-05 00:00:00.0",
+        "fecOper": "02-08-2019",
+        "fecLiq": "05-08-2019",
         "descrOper": "Venta",
         "tipovalor": "1C",
         "nom": "CORPTRC",
         "descrSTipoPortf": "POSICION CONTADO",
         "serie": "ISHRS",
-        "emiSerie": "CORPTRC ISHRS",
+        "emiSerie": "CORPTRC ISHRS D",
         "rompe": 0,
         "recomend": "No aplica - No aplica",
         "idSistema": 10,
@@ -1158,8 +1284,8 @@
         "importeImpuesto": 0,
         "importeFinal": 84629.69,
         "tasaRetno": 0,
-        "fecOper": "2019-08-02 00:00:00.0",
-        "fecLiq": "2019-09-06 00:00:00.0",
+        "fecOper": "02-08-2019",
+        "fecLiq": "06-08-2019",
         "descrOper": "Abono Distribucion de Interes",
         "tipovalor": "1C",
         "nom": "CORPTRC",
@@ -1197,8 +1323,8 @@
         "importeImpuesto": 0,
         "importeFinal": 84629.69,
         "tasaRetno": 0,
-        "fecOper": "2019-08-02 00:00:00.0",
-        "fecLiq": "2019-09-06 00:00:00.0",
+        "fecOper": "02-08-2019",
+        "fecLiq": "06-08-2019",
         "descrOper": "Abono Distribucion de Interes",
         "tipovalor": "1C",
         "nom": "CORPTRC",
@@ -1236,8 +1362,8 @@
         "importeImpuesto": 0,
         "importeFinal": 2188.8,
         "tasaRetno": 0,
-        "fecOper": "2019-08-02 00:00:00.0",
-        "fecLiq": "2019-09-06 00:00:00.0",
+        "fecOper": "02-08-2019",
+        "fecLiq": "06-08-2019",
         "descrOper": "Venta",
         "tipovalor": "1C",
         "nom": "CORPTRC",
@@ -1275,8 +1401,8 @@
         "importeImpuesto": 0,
         "importeFinal": 2.09,
         "tasaRetno": 0,
-        "fecOper": "2019-08-02 00:00:00.0",
-        "fecLiq": "2019-09-06 00:00:00.0",
+        "fecOper": "02-08-2019",
+        "fecLiq": "06-08-2019",
         "descrOper": "Abono Distribucion de Interes",
         "tipovalor": "1C",
         "nom": "CORPTRC",
@@ -1314,8 +1440,8 @@
         "importeImpuesto": 0,
         "importeFinal": 84629.69,
         "tasaRetno": 0,
-        "fecOper": "2019-08-02 00:00:00.0",
-        "fecLiq": "2019-09-06 00:00:00.0",
+        "fecOper": "02-08-2019",
+        "fecLiq": "06-08-2019",
         "descrOper": "Abono Distribucion de Interes",
         "tipovalor": "1C",
         "nom": "CORPTRC",
@@ -4879,6 +5005,510 @@
     {
       "rango-min-mx": "100,000.00 - 249,999.99",
       "tasa-banda": "4"
+    }
+  ],
+  "ultimoContrato": {
+    "contrato": "12345"
+  },
+  "datosContrato": [
+    {
+      "contrato": 12345,
+      "digito": "RZ",
+      "dv": "5",
+      "nombre": "XXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXxx",
+      "perfil": "PRESERVACIÓN (IR1)",
+      "status": "A",
+      "clabe": "0000000000000000",
+      "stipoportf": 22,
+      "jbLiquidacion": {
+        "efvoDiaAnt": 2628219.98432,
+        "liqHoy": 5256439.96864,
+        "liq24HRS": 2628219.98432,
+        "liq48HRS": 2628219.98432,
+        "liqMas48HRS": 2628219.98432,
+        "efvoFecha": 2628219.98432,
+        "deposito": 50.0,
+        "retiro": 1070.0,
+        "valorChequera": 0.0,
+        "contrato": null,
+        "efvoDiaAntStr": null,
+        "liqHoyStr": null,
+        "liq24HRSStr": null,
+        "liq48HRSStr": null,
+        "liqMas48HRSStr": null,
+        "efvoFechaStr": null,
+        "depositoStr": null,
+        "retiroStr": null,
+        "valorChequeraStr": null
+      },
+      "usrsesion": "dise",
+      "idLibro": 1,
+      "libro": "CASA DE BOLSA",
+      "listaContrato": [
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONDES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Fija"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONDES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Fija"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Fija"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        }
+      ]
+    }
+  ],
+  "sTipoPortfContratosV2": [
+    {
+      "descrCorta": "CONTADO",
+      "stipoPortf": 22,
+      "descrLarga": "POSICION CONTADO",
+      "idServicioPos": -1,
+      "idServicio": 1
+    },
+    {
+      "descrCorta": "DIF/GTIA",
+      "stipoPortf": 28,
+      "descrLarga": "POR DIFERENTES GARANTIAS",
+      "idServicioPos": -1,
+      "idServicio": -1
+    },
+    {
+      "descrCorta": "SPC",
+      "stipoPortf": 44,
+      "descrLarga": "Fideicomiso Corporativo",
+      "idServicioPos": -1,
+      "idServicio": -1
+    },
+    {
+      "descrCorta": "CONTADO ASESORES",
+      "stipoPortf": 22,
+      "descrLarga": "POSICION CONTADO ASESORES",
+      "idServicioPos": 1,
+      "idServicio": 1
+    },
+    {
+      "descrCorta": "CONTADO EJECUCIÓN",
+      "stipoPortf": 22,
+      "descrLarga": "POSICION CONTADO EJECUCIÓN",
+      "idServicioPos": 0,
+      "idServicio": 4
+    }
+  ],
+  "configInicialPosV2": [
+    {
+      "configArr": [
+        {
+          "idColumna": "1",
+          "ancho": 120,
+          "columna": "contrato",
+          "nombre": "Contrato"
+        },
+        {
+          "idColumna": "2",
+          "ancho": 85,
+          "columna": "plazo",
+          "nombre": "Plazo"
+        },
+        {
+          "idColumna": "3",
+          "ancho": 140,
+          "columna": "emisora",
+          "nombre": "Emisora"
+        },
+        {
+          "idColumna": "4",
+          "ancho": 75,
+          "columna": "cantidad",
+          "nombre": "Cantidad"
+        },
+        {
+          "idColumna": "5",
+          "ancho": 75,
+          "columna": "costo",
+          "nombre": "Costo"
+        },
+        {
+          "idColumna": "6",
+          "ancho": 75,
+          "columna": "precio",
+          "nombre": "Precio"
+        },
+        {
+          "idColumna": "7",
+          "ancho": 75,
+          "columna": "inversion",
+          "nombre": "Inversion"
+        },
+        {
+          "idColumna": "8",
+          "ancho": 70,
+          "columna": "valor",
+          "nombre": "Valor"
+        },
+        {
+          "idColumna": "9",
+          "ancho": 55,
+          "columna": "tasa",
+          "nombre": "Tasa"
+        },
+        {
+          "idColumna": "10",
+          "ancho": 55,
+          "columna": "porTot",
+          "nombre": "%Tot"
+        },
+        {
+          "idColumna": "11",
+          "ancho": 55,
+          "columna": "porInv",
+          "nombre": "%Inv"
+        },
+        {
+          "idColumna": "12",
+          "ancho": 80,
+          "columna": "ultMov",
+          "nombre": "Ult. Mov."
+        },
+        {
+          "idColumna": "13",
+          "ancho": 80,
+          "columna": "fechaVen",
+          "nombre": "Fec. Ve..."
+        },
+        {
+          "idColumna": "14",
+          "ancho": 80,
+          "columna": "impVenc",
+          "nombre": "Imp. Venc."
+        },
+        {
+          "idColumna": "15",
+          "ancho": 45,
+          "columna": "nat",
+          "nombre": "Nat."
+        },
+        {
+          "idColumna": "16",
+          "ancho": 70,
+          "columna": "isrDia",
+          "nombre": "ISR Dia"
+        },
+        {
+          "idColumna": "17",
+          "ancho": 70,
+          "columna": "descripcion",
+          "nombre": "Descripcion"
+        }
+      ],
+      "emisoras": [
+        {
+          "precioMercado": null,
+          "idEmision": 10,
+          "nomEmision": "EDOARDO B"
+        },
+        {
+          "precioMercado": null,
+          "idEmision": 19,
+          "nomEmision": "EAIPC90 DC052"
+        },
+        {
+          "precioMercado": null,
+          "idEmision": 27,
+          "nomEmision": "PLAVICO *"
+        },
+        {
+          "precioMercado": null,
+          "idEmision": 55300,
+          "nomEmision": "DOLAR  "
+        }
+      ],
+      "catDigitos": [
+        "AA",
+        "AB",
+        "AC",
+        "AD",
+        "BV",
+        "VJ",
+        "VK",
+        "VM",
+        "VN",
+        "VO",
+        "WP",
+        "WQ",
+        "WR",
+        "WS",
+        "WT",
+        "ZY",
+        "ZZ"
+      ]
+    }
+  ],
+  "lisColumnasActuales": [
+    {
+      "idColumna": "1",
+      "ancho": 120,
+      "columna": "contrato",
+      "nombre": "Contrato"
+    },
+    {
+      "idColumna": "2",
+      "ancho": 85,
+      "columna": "plazo",
+      "nombre": "Plazo"
+    },
+    {
+      "idColumna": "3",
+      "ancho": 140,
+      "columna": "emisora",
+      "nombre": "Emisora"
+    },
+    {
+      "idColumna": "4",
+      "ancho": 75,
+      "columna": "cantidad",
+      "nombre": "Cantidad"
+    },
+    {
+      "idColumna": "5",
+      "ancho": 75,
+      "columna": "costo",
+      "nombre": "Costo"
+    },
+    {
+      "idColumna": "6",
+      "ancho": 75,
+      "columna": "precio",
+      "nombre": "Precio"
+    },
+    {
+      "idColumna": "7",
+      "ancho": 75,
+      "columna": "inversion",
+      "nombre": "Inversion"
+    },
+    {
+      "idColumna": "8",
+      "ancho": 70,
+      "columna": "valor",
+      "nombre": "Valor"
+    },
+    {
+      "idColumna": "9",
+      "ancho": 55,
+      "columna": "tasa",
+      "nombre": "Tasa"
+    },
+    {
+      "idColumna": "10",
+      "ancho": 55,
+      "columna": "porTot",
+      "nombre": "%Tot"
+    },
+    {
+      "idColumna": "11",
+      "ancho": 55,
+      "columna": "porInv",
+      "nombre": "%Inv"
+    },
+    {
+      "idColumna": "12",
+      "ancho": 80,
+      "columna": "ultMov",
+      "nombre": "Ult. Mov."
+    },
+    {
+      "idColumna": "13",
+      "ancho": 80,
+      "columna": "fechaVen",
+      "nombre": "Fec. Ve..."
+    },
+    {
+      "idColumna": "14",
+      "ancho": 80,
+      "columna": "impVenc",
+      "nombre": "Imp. Venc."
+    },
+    {
+      "idColumna": "15",
+      "ancho": 45,
+      "columna": "nat",
+      "nombre": "Nat."
+    }
+  ],
+  "lisColumnasDisponibles": [
+    {
+      "idColumna": "16",
+      "ancho": 70,
+      "columna": "isrDia",
+      "nombre": "ISR Dia"
+    },
+    {
+      "idColumna": "17",
+      "ancho": 70,
+      "columna": "descripcion",
+      "nombre": "Descripcion"
     }
   ]
 }

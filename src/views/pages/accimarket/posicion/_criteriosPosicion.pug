@@ -1,79 +1,80 @@
 include /mixins/mixins
 
 .row
-    +field-group("groupConsulta")
-        +field-input("contrato",
-            {
-                label: "Contrato",
-                orientation: "horizontal",
-                size: "10em"
-            })
-        +field-input("digito",
-            {
-                label: "Digito",
-                orientation: "horizontal",
-                disabled: true,
-                size: "4em"
-            })
-        +field-input("dv",
-            {
-                label: "DV",
-                orientation: "horizontal",
-                disabled: true,
-                size: "4em"
-            })
-        +field-input("estatus",
-            {
-                label: "Estatus",
-                orientation: "horizontal",
-                disabled: true,
-                size: "4em"
-            })
-        +field-input("perfilContrato",
-            {
-                label: "Perfil contrato",
-                orientation: "horizontal",
-                disabled: true,
-                size: "13em"
-            })
-        +field-input("libro",
-            {
-                label: "Libro",
-                orientation: "horizontal",
-                disabled: true,
-                size: "7em"
-            })
-        +field-input("nombreContrato",
-            {
-                label: "",
-                orientation: "horizontal",
-                disabled: true,
-                size: "40em",
-                max_length: "50"
-            })
-        +field-input("clabe",
-            {
-                label: "CLABE",
-                orientation: "horizontal",
-                disabled: true,
-                size: "16.5em"
-            })
-    +field-options("opciones",
-        {
-            label:""
-        },
-            {key:"SI", value:"Detalle"},
-            {key:"NO", value:"Resumen"}
-        )
-    #search-actions-column.pl-12
-        +button-search({size: "large", disabled: false})
-        +button-clean({size: "large", disabled: false})
-        +button-pdf({size: "large", disabled: false})
-        +button-xls({size: "large", disabled: false})
-        .row#rowBusqueda
-            +field-checks("precioMdo",
+    +form("criterios-busqueda-posicion", {class: "is-search-form"})
+        +field-group("groupConsulta")
+            +field-input("contrato",
                 {
-                    label: ""
-                },
-                {key: "precioAuto", value:"Precio Mdo."})
-            +field-search("buscar", {size:"12em"})
+                    label: "Contrato",
+                    orientation: "horizontal",
+                    size: "10em"
+                })
+            +field-input("digito",
+                {
+                    label: "Digito",
+                    orientation: "horizontal",
+                    disabled: true,
+                    size: "4em"
+                })
+            +field-input("dv",
+                {
+                    label: "DV",
+                    orientation: "horizontal",
+                    disabled: true,
+                    size: "4em"
+                })
+            +field-input("estatus",
+                {
+                    label: "Estatus",
+                    orientation: "horizontal",
+                    disabled: true,
+                    size: "4em"
+                })
+            +field-input("perfilContrato",
+                {
+                    label: "Perfil contrato",
+                    orientation: "horizontal",
+                    disabled: true,
+                    size: "13em"
+                })
+            +field-input("libro",
+                {
+                    label: "Libro",
+                    orientation: "horizontal",
+                    disabled: true,
+                    size: "7em"
+                })
+            +field-input("nombreContrato",
+                {
+                    label: "",
+                    orientation: "horizontal",
+                    disabled: true,
+                    size: "40em",
+                    max_length: "50"
+                })
+            +field-input("clabe",
+                {
+                    label: "CLABE",
+                    orientation: "horizontal",
+                    disabled: true,
+                    size: "16.5em"
+                })
+        +field-options("opciones",
+            {
+                label:""
+            },
+                {key:"SI", value:"Detalle"},
+                {key:"NO", value:"Resumen"}
+            )
+        #search-actions-column.pl-12
+            +button-search({id:"btn_consul_posicion",size: "large", disabled: false})
+            +button-clean({size: "large", disabled: false})
+            +button-pdf({id:"btn_pdf_posicion",size: "large", disabled: false})
+            +button-xls({id:"btn_xml_posicion",size: "large", disabled: false})
+            .row#rowBusqueda
+                +field-checks("precioMdo",
+                    {
+                        label: ""
+                    },
+                    {key: "precioAuto", value:"Precio Mdo."})
+                +field-search("buscar", {size:"12em"})

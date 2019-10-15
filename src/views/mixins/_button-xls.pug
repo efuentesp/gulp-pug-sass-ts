@@ -1,17 +1,19 @@
 mixin button-xls(parms)
   - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
+  - var _label = (parms.label ? parms.label : "XLS")
+  - var _id = (parms.id ? parms.id : "btn_xls")
 
   if _parms.size == "large"
-    button.button.big-button(id="btn_xls" title=_parms.tooltip disabled=_parms.disabled)
-        img(src="../../assets/images/btn-xls_32x32.png")
-        span XLS
+    button.button.big-button(id=_id title=_parms.tooltip disabled=_parms.disabled)
+      img(src="../../assets/images/btn-xls_32x32.png")
+      span=_label
 
   if _parms.size == "medium"
-    button.button.medium-button(id="btn_xls" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-2x
-          i.fas.fa-file-excel.fa-sm
+    button.button.medium-button(id=_id title=_parms.tooltip disabled=_parms.disabled)
+      span.fa-stack.fa-2x
+        i.fas.fa-file-excel.fa-sm
 
   if _parms.size == "small"
-    button.button.small-button(id="btn_xls" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-sm
-          i.fas.fa-file-excel.fa-lg
+    button.button.small-button(id=_id title=_parms.tooltip disabled=_parms.disabled)
+      span.fa-stack.fa-sm
+        i.fas.fa-file-excel.fa-lg

@@ -1,4 +1,9 @@
 .content {
+  #criterios-busqueda-posicion {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .row {
     display: flex;
     flex-wrap: wrap;
@@ -31,14 +36,29 @@
     justify-content: flex-end;
   }
 
-  #gview_table_totales,
-  #gview_table_liquidacion,
-  #gview_table_totalesDifgtia,
-  #gview_table_totalesSpc {
+  #gview_table_totales {
     .ui-jqgrid-hdiv {
       display: none !important;
     }
   }
+
+  #tblOpciones {
+    width: 25em;
+    height: 15em;
+  }
+
+  #opcionesGraficaA {
+    flex-wrap: wrap;
+    width: 33em;
+  }
+
+  #field_opcionesRenta {
+    display: contents;
+  }
+}
+
+#mensajesConfig {
+  margin-left: 34em;
 }
 
 #rowPrincipales {
@@ -52,11 +72,17 @@
   margin-left: 1.5em;
 
   #field_fechaF,
-  #field_contrato {
+  #field_contratoDetalle {
     label {
       width: 6.7em;
     }
   }
+}
+
+#emisionLst,
+#operacionLst,
+#portafolioLst {
+  width: 100%;
 }
 
 #tablaFiltros {
