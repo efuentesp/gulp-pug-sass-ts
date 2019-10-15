@@ -371,6 +371,7 @@ interface JQueryJqGridOptions {
   toppager?: boolean;
   loadComplete?: () => void;
   onSortCol?: (index: any, columnIndex: any, sortOrder: any) => string;
+  editParams?: any;
 }
 
 interface JQueryJqGridStatic {

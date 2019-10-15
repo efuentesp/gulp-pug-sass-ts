@@ -5339,5 +5339,18 @@
       "rango": "1 - 49999",
       "tasa": "9.0"
     }
+  ],
+  "orden_en_directo": [
+    {
+      "folio_operacion": "8123456",
+      "solicitudes_cancelacion": "CS",
+      "fecha_operacion": "22/03/2019",
+      "fecha_asignacion": "22/03/2019",
+      "libro": "Banco",
+      "contrato": "21377",
+      "digito": "RG",
+      "emisora": "BONDESO 190328",
+      "usuario": "USUARIO01"
+    }
   ]
 }

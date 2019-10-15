@@ -208,6 +208,7 @@ function concatVendorJs() {
       "./node_modules/select2/dist/js/select2.min.js",
       "./node_modules/select2/dist/js/i18n/es.js",
       "./src/views/pages/scripts/vendors/jqgrid/jqgrid.js",
+      "./src/views/pages/scripts/vendors/jqgrid/context-menu.js",
       "./src/views/pages/scripts/vendors/splitter/splitter.js",
       "./src/views/scripts/vendors/jquery.toggleinput.js",
       "./src/views/scripts/vendors/jquery.steps.js",
