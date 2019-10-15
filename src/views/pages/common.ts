@@ -513,6 +513,19 @@ interface stackChartParams {
   height: string;
 }
 
+interface stackChartHParams {
+  id: string;
+  titleX: string;
+  titleY: string;
+  labels: any[];
+  tickMaxX: number;
+  tickMinX: number;
+  tickStepX: number;
+  dataSet: any[];
+  width: string;
+  height: string;
+}
+
 interface barChartParams {
   id: string;
   titleX: string;
@@ -700,6 +713,111 @@ const stackChart = (params: stackChartParams) => {
             },
             gridLines: {
               display: true
+            }
+          }
+        ]
+      }
+    }
+  });
+};
+
+// StackGraphHorizontal
+const stackChartHorizontal = (params: stackChartHParams) => {
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  var ctx: any = document.getElementById(params.id);
+  var context = ctx.getContext("2d");
+
+  // Style legends
+  Chart.defaults.global.legend.labels.usePointStyle = true;
+  Chart.defaults.global.legend.labels.fontSize = 9;
+  Chart.defaults.global.legend.labels.boxWidth = 9;
+  Chart.defaults.global.legend.position = "bottom";
+  Chart.defaults.global.legend.display = true;
+  // Style tittle graph
+  Chart.defaults.global.title.display = false;
+  Chart.defaults.global.title.text = "";
+  // Graph responsive
+  Chart.defaults.global.responsive = true;
+
+  const stackGraphH = new Chart(context, {
+    plugins: [
+      {
+        afterDatasetsDraw: function(stackGraphH) {
+          var ctx = stackGraphH.ctx;
+
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+
+          stackGraphH.data.datasets.forEach(function(dataset, i) {
+            var meta = stackGraphH.getDatasetMeta(i);
+            meta.data.forEach(function(element, index) {
+              // GeneralFont
+              ctx.fillStyle = "#fff";
+              var fontSize = 10;
+              var fontStyle = "bold";
+              var fontFamily = "Arial";
+
+              ctx.font = Chart.helpers.fontString(
+                fontSize,
+                fontStyle,
+                fontFamily
+              );
+
+              ctx.textAlign = "center";
+              ctx.textBaseline = "middle";
+              var padding = 20;
+
+              ctx.fillText(
+                dataset.data[index] + "%",
+                element._view.x - padding,
+                element._view.y
+              );
+            });
+          });
+        }
+      }
+    ],
+    type: "horizontalBar",
+    data: chartData,
+    options: {
+      scales: {
+        xAxes: [
+          {
+            stacked: true,
+            scaleLabel: {
+              display: false,
+              labelString: params.titleX,
+              fontColor: "#000"
+            },
+            ticks: {
+              display: true,
+              stepSize: params.tickStepX,
+              callback: function(value) {
+                return value + "%";
+              }
+            },
+            gridLines: {
+              display: true
+            }
+          }
+        ],
+        yAxes: [
+          {
+            stacked: true,
+            scaleLabel: {
+              display: false,
+              labelString: params.titleY,
+              fontColor: "#000"
+            },
+            ticks: {
+              display: false
+            },
+            gridLines: {
+              display: false
             }
           }
         ]
