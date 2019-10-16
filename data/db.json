@@ -5361,5 +5361,29 @@
       "emisora": "BONDESO 190328",
       "usuario": "USUARIO01"
     }
+  ],
+  "ordenes_nota_estructurada": [
+    {
+      "contrato":"12345",
+      "digito":"RZ",
+      "nombre":"APPAT12118APMAT12118Nom12118",
+      "emisora":"BANAMEX16022",
+      "operacion":"Compra",
+      "importe":20,
+      "precio":50000,
+      "rompe":"No",
+      "servicio_inversion":"No aplica - No aplica"
+    },
+    {
+      "contrato":"54321",
+      "digito":"RZ",
+      "nombre":"APPAT12118APMAT12118Nom12118",
+      "emisora":"BANAMEX16022",
+      "operacion":"Compra",
+      "importe":20,
+      "precio":50000,
+      "rompe":"No",
+      "servicio_inversion":"No aplica - No aplica"
+    }
   ]
 }
