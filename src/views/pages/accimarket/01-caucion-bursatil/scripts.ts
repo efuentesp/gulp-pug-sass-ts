@@ -253,7 +253,7 @@ $("#btn_pdf").click(() =>
       {
         text: "Aceptar",
         icon: "ui-icon-check",
-        click: function() {
+        click: function () {
           $(this).dialog("close");
         }
 
