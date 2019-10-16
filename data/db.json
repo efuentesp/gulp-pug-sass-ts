@@ -5253,7 +5253,7 @@
       "idServicio": 1
     },
     {
-      "descrCorta": "DIF/GTIA",
+      "descrCorta": "DIFGTIA",
       "stipoPortf": 28,
       "descrLarga": "POR DIFERENTES GARANTIAS",
       "idServicioPos": -1,
@@ -5557,5 +5557,70 @@
       "emisora": "BONDESO 190328",
       "usuario": "USUARIO01"
     }
-  ]
+  ],
+  "source": [
+    {
+      "id": "7",
+      "value": "option_1_7",
+      "label": "Valor 7"
+    }
+  ],
+  "destination": [
+    {
+      "id": "8",
+      "value": "option_1_8",
+      "label": "Valor 8"
+    }
+  ],
+  "listaEmision": {
+    "arregloUno": [
+      {
+        "costo": 254.729,
+        "descrTipoPos": "Renta Fija",
+        "emis": "ALSEA",
+        "porcInver": 12.499999979453776,
+        "serie": "15",
+        "tipoPos": 1,
+        "valCierre": 2628219.98,
+        "cambio": 12
+      },
+      {
+        "costo": 7243.68,
+        "descrTipoPos": "Renta Variable",
+        "emis": "AAPL",
+        "porcInver": 9.99999998356302,
+        "serie": "*",
+        "tipoPos": 2,
+        "valCierre": 2628219.98,
+        "cambio": 12
+      },
+      {
+        "costo": 393.786,
+        "descrTipoPos": "Renta Variable",
+        "emis": "WALMEX",
+        "porcInver": 9.99999998356302,
+        "serie": "V",
+        "tipoPos": 2,
+        "valCierre": 2628219.98,
+        "cambio": 12
+      },
+      {
+        "descrTipoPos": "Total",
+        "inver": 109702562.05000001,
+        "rf": 21025759.87456,
+        "rv": 26282199.8432,
+        "tipoPos": null
+      }
+    ],
+    "arregloDos": [
+      {
+        "descrTipoPos": "Renta Fija",
+        "tipoPos": 1
+      },
+      {
+        "descrTipoPos": "Renta Variable",
+        "tipoPos": 2
+      }
+    ]
+  }
 }

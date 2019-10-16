@@ -10,7 +10,11 @@ block content
     .content.p-4
         .row
             include _criteriosPosicion
+            button#Dialog DialogConfiguracion
             +tab-group("grupo_posicion",{})
+        .row.has_border.overflow-auto
+            include _tablaLiquidaciones
+
 
         include dialogos/_configuracionColumnas
         include dialogos/_detalle
@@ -31,4 +35,5 @@ block content
 
 block scripts
     script(src="/assets/scripts/accimarket/posicion/scripts.js")
+    script(src="/assets/scripts/accimarket/posicion/scriptsDinamicTab.js")
     script(src="/assets/scripts/accimarket/posicion/scriptsTables.js")

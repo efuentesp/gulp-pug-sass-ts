@@ -20,24 +20,22 @@ const respuestaServicio = (tabla: string, tablaTotal: string, payload: any) => {
 };
 
 const dialogoConfiguracion = () => {
-    $("#dialogConfig").click(() => {
-        $("#configColumns").dialog({
-            modal: true,
-            closeText: "",
-            show: true,
-            width: "620px",
-            title: "Configuracion de Columnas",
-            buttons: [
-                {
-                    text: "Aceptar",
-                    icon: "ui-icon-check",
-                    click: function () {
-                        $(this).dialog("close");
-                        columnas();
-                    }
+    $("#configColumns").dialog({
+        modal: true,
+        closeText: "",
+        show: true,
+        width: "620px",
+        title: "Configuracion de Columnas",
+        buttons: [
+            {
+                text: "Aceptar",
+                icon: "ui-icon-check",
+                click: function () {
+                    $(this).dialog("close");
+                    columnas();
                 }
-            ]
-        });
+            }
+        ]
     });
 };
 
@@ -116,32 +114,32 @@ const ejecutaDialog = () => {
     });
 };
 
-const ejecutaPai = () => {
-    http_findAll("promedios", promed_params, payload => {
-        var dataSetY = [];
-        var dataSetX = [];
+const ejecutaPai = (idGeneral, listaValores) => {
+    var dataSetY = [];
+    var dataSetX = [];
 
-        for (var i = 0; i < payload.length; i++) {
-            var data = payload[i];
-            dataSetX.push(data.horizonte);
-            dataSetY.push(data.dataB);
-        }
+    generaTablaPortafolio(idGeneral, listaValores);
 
-        pieChart({
-            id: "pieChart",
-            titleX: "",
-            labels: dataSetX,
-            width: "400px",
-            height: "200px",
-            dataSet: [
-                {
-                    type: "pie",
-                    label: "Real",
-                    backgroundColor: backgroundSet(payload.length),
-                    data: dataSetY
-                }
-            ]
-        });
+    for (var i = 0; i < listaValores.length; i++) {
+        var data = listaValores[i];
+        dataSetX.push(data.emis + " " + data.serie);
+        dataSetY.push(redondeo2decimales(data.porcInver));
+    }
+
+    pieChart({
+        id: "pieChart" + idGeneral,
+        titleX: "",
+        labels: dataSetX,
+        width: "400px",
+        height: "200px",
+        dataSet: [
+            {
+                type: "pie",
+                label: "Real",
+                backgroundColor: backgroundSet(listaValores.length),
+                data: dataSetY
+            }
+        ]
     });
 }
 
@@ -153,14 +151,20 @@ const sumatoria = (valores) => {
     return total;
 }
 
-const ejecutaGraficaLineal = () => {
+function redondeo2decimales(numero) {
+    var flotante = parseFloat(numero);
+    var resultado = Math.round(flotante * 100) / 100;
+    return resultado;
+}
+
+const ejecutaGraficaLineal = (idGenerado) => {
     http_findAll("rendimientosh", rendi_params, payload => {
-        fillHorizontalRendi(payload);
+        fillHorizontalRendi(payload, idGenerado);
     });
 };
 
 // Stack Horizontal
-const fillHorizontalRendi = (rendimientosh: any) => {
+const fillHorizontalRendi = (rendimientosh: any, idGenerado) => {
     var dataSetY1 = [];
     var dataSetY2 = [];
     var dataSetY3 = [];
@@ -177,7 +181,7 @@ const fillHorizontalRendi = (rendimientosh: any) => {
     }
 
     stackChartHorizontal({
-        id: "stackChartHijo",
+        id: "stackChartHijo" + idGenerado,
         titleX: "",
         titleY: "",
         labels: dataSetX,
@@ -209,4 +213,44 @@ const fillHorizontalRendi = (rendimientosh: any) => {
         width: "600px",
         height: "160px"
     });
+};
+
+const llenaDisponibles = (source: any) => {
+    var select = $("#source");
+    var list = $("#listbox_source_wrapper ul");
+
+    for (var i = 0; i < source.length; i++) {
+        var data = source[i];
+        select.append(
+            "<option value = " + data.columna + ">" + data.nombre + "</option>"
+        );
+
+        list.append(
+            "<li class='listbox_option odd' data-value=" +
+            data.columna +
+            "><span class='truncate'>" +
+            data.nombre +
+            "</span></li>"
+        );
+    }
+};
+
+const llenaActuales = (source: any) => {
+    var select = $("#destination");
+    var list = $("#listbox_destination_wrapper ul");
+
+    for (var i = 0; i < source.length; i++) {
+        var data = source[i];
+        select.append(
+            "<option value = " + data.columna + ">" + data.nombre + "</option>"
+        );
+
+        list.append(
+            "<li class='listbox_option odd' data-value=" +
+            data.columna +
+            "><span class='truncate'>" +
+            data.nombre +
+            "</span></li>"
+        );
+    }
 };

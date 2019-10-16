@@ -14,53 +14,51 @@ $(document).ready(() => {
         dataType: "json",
         success: function (result) {
             $("#contrato").val(result.contrato);
-        }
-    });
-
-    //Obtenemos todas las columnas
-    $.ajax({
-        url: "http://localhost:3000/configInicialPosV2",
-        contentType: "application/json",
-        dataType: "json",
-        success: function (result) {
-            for (var columna = 0; columna < result[0].configArr.length; columna++) {
-                columnasAll.push(result[0].configArr[columna].nombre);
-            }
-        }
-    });
-
-    //Obtiene las columnas actuales
-    $.ajax({
-        url: "http://localhost:3000/lisColumnasActuales",
-        contentType: "application/json",
-        dataType: "json",
-        success: function (result) {
-            for (var _i = 0; _i < result.length; _i++) {
-                colModelDinamic.push({ name: result[_i].columna, index: result[_i].columna, align: "right", width: result[_i].ancho });
-            }
-        }
-    });
-
-    //Obtiene las columnas disponibles
-    $.ajax({
-        url: "http://localhost:3000/lisColumnasDisponibles",
-        contentType: "application/json",
-        dataType: "json",
-        success: function (result) {
-            for (var _i = 0; _i < result.length; _i++) {
-                colModelDinamic.push({ name: result[_i].columna, index: result[_i].columna, align: "right", hidden: true, width: result[_i].ancho });
-            }
-        }
-    });
-
-    //Obtenemos los encabezados de tab
-    $.ajax({
-        url: "http://localhost:3000/sTipoPort",
-        contentType: "application/json",
-        dataType: "json",
-        success: function (result) {
-            agregarTab(result);
-            consultaInformacion(String($("#contrato").val()));
+            //Obtenemos todas las columnas
+            $.ajax({
+                url: "http://localhost:3000/configInicialPosV2",
+                contentType: "application/json",
+                dataType: "json",
+                success: function (result) {
+                    for (var columna = 0; columna < result[0].configArr.length; columna++) {
+                        columnasAll.push(result[0].configArr[columna].nombre);
+                    }
+                    //Obtiene las columnas actuales
+                    $.ajax({
+                        url: "http://localhost:3000/lisColumnasActuales",
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (result) {
+                            for (var _i = 0; _i < result.length; _i++) {
+                                colModelDinamic.push({ name: result[_i].columna, index: result[_i].columna, align: "right", width: result[_i].ancho });
+                            }
+                            llenaActuales(result);
+                            //Obtiene las columnas disponibles
+                            $.ajax({
+                                url: "http://localhost:3000/lisColumnasDisponibles",
+                                contentType: "application/json",
+                                dataType: "json",
+                                success: function (result) {
+                                    for (var _i = 0; _i < result.length; _i++) {
+                                        colModelDinamic.push({ name: result[_i].columna, index: result[_i].columna, align: "right", hidden: true, width: result[_i].ancho });
+                                    }
+                                    llenaDisponibles(result);
+                                    //Obtenemos los encabezados de tab
+                                    $.ajax({
+                                        url: "http://localhost:3000/sTipoPortfContratosV2",
+                                        contentType: "application/json",
+                                        dataType: "json",
+                                        success: function (result) {
+                                            agregarTab(result);
+                                            consultaInformacion(String($("#contrato").val()));
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    });
+                }
+            });
         }
     });
 
@@ -68,22 +66,56 @@ $(document).ready(() => {
     $("#fechaF").datepicker("setDate", new Date());
 });
 
+$("#Dialog").click(() => {
+    dialogoConfiguracion();
+});
+
 const agregarTab = (listaTabs) => {
+    var listaVolteada = [];
+    var listaTotales = {};
+    var listaGrafica = [];
     var tabs = $("#grupo_posicion").tabs();
     var tabTitle = $("#tab_title"),
         tabTemplate = "<li><a href='#{href}' title='{title}'>#{label}</a></li>";
 
     $("a[href='#undefined']").closest("li").remove()
-    for (var tabCounter = 0; tabCounter < listaTabs.length; tabCounter++) {
+    for (var tabCounter = 0; tabCounter < 2; tabCounter++) {
         var label = tabTitle.val() || listaTabs[tabCounter].descrCorta,
-            id = "tabs-" + listaTabs[tabCounter].descrCorta,
+            id = "tabs-" + listaTabs[tabCounter].descrCorta.replace(/ /g, ""),
             title = tabTitle.val() || listaTabs[tabCounter].descrLarga,
             li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/\{title\}/g, title).replace(/#\{label\}/g, label));
 
+        //Obtiene la informacion de posicion
+        $.ajax({
+            url: "http://localhost:3000/listaEmision",
+            contentType: "application/json",
+            dataType: "json",
+            async: false,
+            cache: false,
+            success: function (result) {
+                for (var n = 0; n < result.arregloUno.length; n++) {
+                    if (result.arregloUno[n].tipoPos == null) {
+                        listaTotales = result.arregloUno[n];
+                    } else {
+                        listaGrafica.push(result.arregloUno[n]);
+                    }
+                }
+                listaVolteada = result.arregloDos;
+            }
+        });
+
         tabs.find(".ui-tabs-nav").append(li);
-        tabs.append("<div id='" + id + "'><div class='column w-full overflow-auto' id='tablas_" + listaTabs[tabCounter].stipoPortf + "'><table id='table_" + listaTabs[tabCounter].stipoPortf + "'><tr><td></td></tr></table><div id='pager_contado'></div><table id='table_totales_" + listaTabs[tabCounter].stipoPortf + "'><tr><td></td></tr></table><div id='pager_totales'></div></div><div class='row' id='graficaPortafolio_" + listaTabs[tabCounter].stipoPortf + "'><div class='field-group flex items-center' id='opcionesGraficaA'><table class='bg-gray-200' id='tblOpciones'><tr class='border-solid border border-gray-500' id='tituloRF'><td class='font-bold'>Renta Fija:</td><td class='cursor-pointer text-right' id='totalRF'></td></tr><tr class='border-solid border border-gray-500' id='tituloRN'><td class='font-bold'>Renta Variable:</td><td class='cursor-pointer text-right' id='totalRO'></td></tr><tr class='border-solid border border-gray-500' id='tituloN'><td class='font-bold'>Notas Estructuradas :</td><td class='cursor-pointer text-right' id='totalN'></td></tr><tr class='border-solid border border-gray-500'><td class='font-bold' id='tituloTotalCom'>Total</td><td class='cursor-pointer text-right' id='totalComp'></td></tr><tr class='border-solid border border-gray-500'><td class='font-bold'>Efectivo</td><td class='cursor-pointer text-right' id='totalEfec'></td></tr><tr class='border-solid border border-gray-500'><td class='cursor-pointer text-right' id='total'></td></tr></table><!--OpcionRenta--><div class='field is_vertical field_opcionesRenta' id='field_opcionesRenta'><div class='field-label flex'><label for='opcionesRenta'><span class='pr-3'></span></label></div><div class='field-control'><select class='select2' id='opcionesRenta' name='opcionesRenta' style='width: 15em;' data-parsley-trigger='change' data-parsley-errors-container='#field_error_block_opcionesRenta'><option></option></select><div class='field-error'><div id='field_error_block_opcionesRenta'></div></div></div></div><!--TerminaOpcionRenta--><div style='max-width: 800px;max-height: 800px; padding: 30px;'><canvas id='pieChart'></canvas></div></div><!--IniciaBloqueDos--><div class='field-group flex items-center' id='opcionesGraficaB'><div class='row'><p>Liquidez</p></div><div class='row'><div style='max-width: 600px;max-height: 150px; padding: 30px;'><canvas id='stackChartHijo'></canvas></div></div><div class='row' id='rowDetalle'><table id='table_portafolio'><tr><td></td></tr></table><div id='pager_portafolio'></div></div></div><!--TerminaBloqueDos--></div></div>");
-        generaTabla(listaTabs[tabCounter].stipoPortf);
-        listaTabsVal.push(listaTabs[tabCounter].stipoPortf);
+        var idEspecial = listaTabs[tabCounter].descrCorta;
+        console.log("Id Generado para procesar -> " + idEspecial);
+        var genereTab = generaTabDinamico(idEspecial);
+        var generTabC = generaTabDinamicoD(listaVolteada, listaTotales);
+        var genergraTab = graficasTabDinamico(idEspecial);
+        console.log("Tab Generado -> " + genereTab + generTabC + genergraTab);
+        tabs.append(genereTab + generTabC + genergraTab);
+        ejecutaPai(idEspecial, listaGrafica);
+        ejecutaGraficaLineal(idEspecial);
+        generaTabla(idEspecial);
+        listaTabsVal.push(idEspecial);
     }
     tabs.tabs("refresh");
 
@@ -91,13 +123,13 @@ const agregarTab = (listaTabs) => {
         $("#graficaPortafolio_" + listaTabsVal[j]).hide();
     }
 
-    ($("#opcionesRenta") as any).select2({
+    ($("#opcionesRenta_CONTADO") as any).select2({
         placeholder: "--Seleccione--",
         minimumResultsForSearch: Infinity
     });
 
-    var element = document.getElementById("opcionesGraficaB");
-    element.classList.remove("flex");
+    /*var element = document.getElementById("opcionesGraficaB");
+    element.classList.remove("flex");*/
 };
 
 /*const validaColumnas = () => {
@@ -194,6 +226,14 @@ const infoContrato = (payload: any) => {
     $("#libro").val(payload[0].libro);
     $("#nombreContrato").val(payload[0].nombre);
     $("#clabe").val(payload[0].clabe);
+    $("#totalLiqHoy").text(payload[0].jbLiquidacion.liqHoy);
+    $("#totalEfectivoA").text(payload[0].jbLiquidacion.efvoDiaAnt);
+    $("#totalDepositos").text(payload[0].jbLiquidacion.deposito);
+    $("#total24").text(payload[0].jbLiquidacion.liq24HRS);
+    $("#totalEfectivo").text(payload[0].jbLiquidacion.efvoFecha);
+    $("#totalRetiros").text(payload[0].jbLiquidacion.retiro);
+    $("#totalLiq48").text(payload[0].jbLiquidacion.liq48HRS);
+    $("#totalLiqM48").text(payload[0].jbLiquidacion.liqMas48HRS);
 };
 
 $('input[name="opciones"]').change(function () {
@@ -202,9 +242,6 @@ $('input[name="opciones"]').change(function () {
         for (var j = 0; j < listaTabsVal.length; j++) {
             $("#tablas_" + listaTabsVal[j]).hide();
             $("#graficaPortafolio_" + listaTabsVal[j]).show();
-            ejecutaPai();
-            ejecutaGraficaLineal();
-            generaTablaPortafolio();
         }
     } else {
         for (var j = 0; j < listaTabsVal.length; j++) {
@@ -265,6 +302,7 @@ $("#btn_consul_mov").click(() => {
 });
 
 $("#btn_pdf_posicion").click(() => {
+
     const formListOrdenesPDF = ($("#criterios-busqueda-posicion") as any)
         .parsley()
         .on("field:validated", () => {
@@ -477,8 +515,9 @@ $("#table_detalle").jqGrid({
     grouping: true
 });
 
-const generaTablaPortafolio = () => {
-    $("#table_portafolio").jqGrid({
+const generaTablaPortafolio = (idGenerado, listaValores) => {
+    $("#table_portafolio_" + idGenerado).jqGrid({
+        data: listaValores,
         datatype: "local",
         height: 'auto',
         colNames: [
@@ -489,11 +528,11 @@ const generaTablaPortafolio = () => {
             "%"
         ],
         colModel: [
-            { name: "blanco", width: 50, align: "right" },
-            { name: "emisora", width: 450, align: "right" },
-            { name: "valor", width: 140 },
+            { name: "blanco", width: 50 },
+            { name: "emis", width: 450 },
+            { name: "valCierre", width: 140, align: "right" },
             { name: "cambio", width: 140, align: "right" },
-            { name: "porcentaje", width: 50, align: "right" }
+            { name: "porcInver", width: 50, align: "right" }
         ],
         sortorder: "desc",
         viewrecords: true,
