@@ -1504,3 +1504,39 @@ const getCheckedCheckbox = (id: string) => {
     .toArray();
   return list;
 };
+
+// Función creada por Guillermo Islas
+// function relocateSummary(gridNameID, summaryColumnName, decimalPlaces) {
+//   if (gridNameID && summaryColumnName) {
+//     var summaryRow = $("#" + gridNameID + " tr[jqfootlevel]");
+//     if (summaryRow && summaryRow.length > 0) {
+//       var singleRow;
+//       $(summaryRow).each(function(index) {
+//         singleRow = $(this);
+//         var columnFullName = gridNameID + "_" + summaryColumnName;
+//         var summaryColumn = $(singleRow).find(
+//           "td[aria-describedBy=" + columnFullName + "]"
+//         );
+//         var summaryIndex = $(summaryColumn).index();
+//         if (-1 != summaryIndex) {
+//           var sum = $(summaryColumn);
+//           var sumValue = $(sum).html();
+//           if (decimalPlaces && !isNaN(sumValue)) {
+//             sumValue = "$" + Number(sumValue).toFixed(decimalPlaces);
+//             $(sum).html(sumValue);
+//           }
+//           var level = $(singleRow).attr("jqfootlevel");
+//           var headerRowID = "#" + gridNameID + "ghead_" + level + "_" + index;
+//           var headerRow = $(headerRowID);
+//           if (headerRow && headerRow.length > 0) {
+//             $(headerRow)
+//               .find("td:first")
+//               .attr("colspan", summaryIndex - 1);
+//             $(headerRow).append(sum);
+//             $(singleRow).remove();
+//           }
+//         }
+//       });
+//     }
+//   }
+// }
