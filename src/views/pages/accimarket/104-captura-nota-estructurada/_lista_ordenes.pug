@@ -1,0 +1,16 @@
+.row
+    p.pb-4.font-bold Lista de órdenes
+.card.bg-white.border.border-solid.border-gray-300.rounded.p-4
+    .row.flex.flex-wrap.justify-between.pb-4
+        p.font-bold Órdenes
+        +field-group("botones-group")
+            +button-pdf({size: "large", disabled: false})
+            +button-xls({size: "large", disabled: false})
+    .row.has_border
+        .row.w-full.overflow-auto
+            +grid("ordenes")
+        +grid-records-count("ordenes")
+.row.flex.flex-wrap.justify-end.pt-4
+    +field-group("botones-group")
+        +button-validate({size:"large", disabled: false})
+        +button-save({size:"large", disabled: false})
