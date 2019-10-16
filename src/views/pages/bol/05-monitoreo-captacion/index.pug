@@ -1,0 +1,41 @@
+extends /layouts/jsp
+
+block title
+   title Consultas de Mercado de Dinero
+
+block styles
+   link(rel="stylesheet" href="../../assets/css/bol/05-monitoreo-captacion/styles.css")
+
+block content
+
+    .content.p-4
+        .row.flex.justify-between.border.border-solid.border-gray-500.rounded-lg.p-4
+            p.text-2xl.text-blue-700.font-bold MONITOREO CAPTACIÓN DE NOTA ESTRUCTURADA
+
+            +field-group("botones-exportar")
+                +button-pdf({size: "large", disabled: false})
+                +button-xls({size: "large", disabled: false})
+
+        .row.flex.mt-4
+            .column.border.border-solid.border-gray-500.rounded-lg.p-4
+                include filtros
+            .contenido.p-4
+                .row.w-full.overflow-auto
+                    +grid("notas-estructuradas")
+                +grid-records-count("notas-estructuradas")
+
+        .contextMenu.hidden#contextMenu
+            ul
+                li#cierre-definitivo
+                    span Cierre definitivo
+                li#detalle-captacion
+                    span Detalle de captación
+                li#cancela-notae
+                    span Cancelar nota estructurada
+                li#reenvio-cierre
+                    span Reenvío de cierre
+                li#amplia-horario
+                    span Ampliación de horario
+
+block scripts
+    script(src="../../assets/scripts/bol/05-monitoreo-captacion/scripts.js")
