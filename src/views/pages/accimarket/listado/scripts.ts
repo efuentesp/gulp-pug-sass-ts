@@ -20,6 +20,7 @@ http_findAll("destination", destination_params, payload => {
 const llenaSource = (source: any) => {
   var select = $("#source");
   var list = $("#listbox_source_wrapper ul");
+  var div_id = "#listboxswap_swap";
 
   for (var i = 0; i < source.length; i++) {
     var data = source[i];
@@ -28,41 +29,26 @@ const llenaSource = (source: any) => {
     );
 
     list.append(
-      "<li class='listbox_option odd' data-value=" +
+      "<li class='listbox_option' data-value=" +
         data.value +
         "><span class='truncate'>" +
         data.label +
         "</span></li>"
     );
+
+    $(div_id + " .source_wrapper .listbox_option:odd").addClass("odd");
+    $(div_id + " .source_wrapper .listbox_option:even").addClass("even");
+
+    $(div_id + " .source_wrapper .listbox_option").click(function() {
+      $(this).addClass("selected");
+    });
   }
 };
-
-// $("#listbox_source_wrapper ul li span").click(() => {
-
-// });
-
-// $("#listbox_source_wrapper ul li").click(() => {
-//   console.log("DAto");
-// });
-
-// $("#listbox_source_wrapper ul li.listbox_option").on("click", "span", function(
-//   e
-// ) {
-//   e.preventDefault();
-//   var $this = $(this).parent();
-
-//   console.log("Res:" + $this);
-
-//   $this
-//     .addClass("select")
-//     .siblings()
-//     .removeClass("select");
-//   //$("#sizevalue").val($this.data("value"));
-// });
 
 const llenaDestination = (destination: any) => {
   var select = $("#destination");
   var list = $("#listbox_destination_wrapper ul");
+  var div_id = "#listboxswap_swap";
 
   for (var i = 0; i < destination.length; i++) {
     var data = destination[i];
@@ -77,9 +63,12 @@ const llenaDestination = (destination: any) => {
         data.label +
         "</span></li>"
     );
+
+    $(div_id + " .destination_wrapper .listbox_option:odd").addClass("odd");
+    $(div_id + " .destination_wrapper .listbox_option:even").addClass("even");
+
+    $(div_id + " .destination_wrapper .listbox_option").click(function() {
+      $(this).addClass("selected");
+    });
   }
 };
-
-$("#listbox_source_wrapper ul li").click(() => {
-  console.log("Element");
-});

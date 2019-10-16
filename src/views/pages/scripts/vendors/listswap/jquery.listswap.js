@@ -20,8 +20,10 @@
     var destination_search = "";
     var source_search = "";
     var rand = Math.floor(Math.random() * 999999 + 1);
-    var div_id = "#listboxswap_" + rand;
-    var div_id_ = "listboxswap_" + rand;
+    // var div_id = "#listboxswap_" + rand;
+    // var div_id_ = "listboxswap_" + rand;
+    var div_id = "#listboxswap_swap";
+    var div_id_ = "listboxswap_swap";
     var div_class_ = "";
     var rtl_class_ = "";
     settings.rtl === true ? (rtl_class_ = " rtl") : rtl_class_;
@@ -101,7 +103,7 @@
 
       $(div_id + " #" + select_id + " > option").each(function() {
         var value = this.value;
-        console.log("Value:", value);
+
         var label = this.text;
         var wrapper = "div#" + listbox_id;
 
@@ -251,9 +253,6 @@
       var data_value = target.attr("data-value");
       var text = target[0].textContent;
       let lu = source.parentNode;
-
-      console.log("Dato-lu", lu);
-      console.log("Dato", li.previousElementSibling);
       //var listUl = document.getElementById("source");
       //listUl.insertBefore(li, li.previousElementSibling);
     }
