@@ -5364,26 +5364,28 @@
   ],
   "ordenes_nota_estructurada": [
     {
-      "contrato":"12345",
-      "digito":"RZ",
-      "nombre":"APPAT12118APMAT12118Nom12118",
-      "emisora":"BANAMEX16022",
-      "operacion":"Compra",
-      "importe":20,
-      "precio":50000,
-      "rompe":"No",
-      "servicio_inversion":"No aplica - No aplica"
+      "contrato": "12345",
+      "digito": "RZ",
+      "nombre": "APPAT12118APMAT12118Nom12118",
+      "emisora": "BANAMEX16022",
+      "operacion": "Compra",
+      "importe": 20,
+      "precio": 50000,
+      "rompe": "No",
+      "servicio_inversion": "No aplica - No aplica"
     },
     {
-      "contrato":"54321",
-      "digito":"RZ",
-      "nombre":"APPAT12118APMAT12118Nom12118",
-      "emisora":"BANAMEX16022",
-      "operacion":"Compra",
-      "importe":20,
-      "precio":50000,
-      "rompe":"No",
-      "servicio_inversion":"No aplica - No aplica"
+      "contrato": "54321",
+      "digito": "RZ",
+      "nombre": "APPAT12118APMAT12118Nom12118",
+      "emisora": "BANAMEX16022",
+      "operacion": "Compra",
+      "importe": 20,
+      "precio": 50000,
+      "rompe": "No",
+      "servicio_inversion": "No aplica - No aplica"
     }
-  ]
+  ],
+  "source": [{ "id": "7", "value": "option_1_7", "label": "Valor 7" }],
+  "destination": [{ "id": "8", "value": "option_1_8", "label": "Valor 8" }]
 }
