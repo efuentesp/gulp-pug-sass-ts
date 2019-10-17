@@ -1,9 +1,11 @@
-.contenido{
-    width: 73%;
+.contenido {
+  width: 73%;
+  flex: 1;
 }
 
-#contextMenu {
-    ul {
-        width: 400px;
-    }
+#jqContextMenu {
+  ul {
+    width: 200px !important;
+    padding: 5px !important;
+  }
 }
