@@ -1,0 +1,26 @@
+extends /layouts/jsp
+
+block title
+   title Configuración de Parámetros
+
+block styles
+   link(rel="stylesheet" href="/assets/css/accimarket/100-configuracion-parametros/styles.css")
+
+block content
+   .content.p-4
+      include _01_configuracion_reinversion
+      .row.pt-4.flex.flex-wrap.justify-between
+         h1.font-bold.text-lg.align-text-bottom Spreads
+         .column
+            +field-group("botones-group")
+               +button-save({id: "btn_guardar_datos_spreads", size: "large", disabled: false})
+               +button-edit({size: "large", disabled: false})
+      .row.has_border
+         .row.w-full.overflow-auto#div-spreads-grid
+            +grid("spreads")
+
+   include _dialog_guardar_datos_inversion
+   include _dialog_guardar_datos_spreads
+
+block scripts
+   script(src="/assets/scripts/accimarket/100-configuracion-parametros/scripts.js")

@@ -17,12 +17,82 @@
   }
 #botones-final {
   display: flex;
+  justify-content: center;
+  .field-control{
+    border: 0.5px solid #D3D3D3;
+    border-radius: 8px;
+    padding: 5px;
+    }
+}
+#boton-reset {
+  display: flex;
   justify-content: flex-end;
 }
-#ordenaElementos {
+#ordenaElementos  {
   flex-wrap: wrap;
   .field-label {
     width: 8.5em;
   }
+  
+  }
+  #elementosOcultos{
+  display: none;
+  flex-wrap: wrap;
+  .field-label {
+    width: 8.5em;
+  }
+  }
+
+#elementosJuntos{
+  display: flex;
+  }
+#elementosJuntos2{
+    display: flex;
+    .field-label {
+      width: 6em !important;
+    }
+  }
+#field_digito{ 
+  display: none;      
+  .field-label {
+    width: 1em !important;
+  }
 }
+  #field_titular{ 
+    display: none;      
+    .field-label {
+      width: 1em !important;
+    }
+    }
+#field_perfilC{ 
+    display: none; 
+    .field-label {
+      position: relative; 
+      top: 0.8em; 
+    }         
+} 
+#field_IPContrato{ 
+  display: none;      
+  .field-label {
+    width: 1em !important;
+  }
+} 
+  #field_pemisora{ 
+    display: none;
+  }
+  #field_Mensajes{ 
+    display: none;      
+    .field-label {
+      width: 0em !important;
+    }
+  } 
+  
+  .verde{ color: white;background-color: lightgreen}; 
+ // .mySelect option[value="--Seleccione--"] { color: black;background-color: #D3D3D3; } 
+  .rojo{ color: white ;background-color: red}; 
+
+  .select2-selected {
+    position: relative;
+    background-color: DodgerBlue;
+  }
 }

@@ -1,4 +1,6 @@
-mixin splitter(id)
+mixin splitter(id, parms)
+  - var _parms = (parms ? parms : {orientation: "vertical"})
+  - var _class = "splitter-" + _parms.orientation
 
-  .splitter(id=id)
+  .splitter(id=id class=_class)
     block

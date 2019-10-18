@@ -1,19 +1,15 @@
-//- p DOCUMENTACIOO
-
 .row.flex.justify-end
     +field-checks("documentacion_flags",
-        {orientation: "horizontal"},
+        {orientation: "horizontal", disabled:true},
         {key: "entregada", value:"Entregada", color: "green"},
         {key: "pendiente", value:"Pendiente", color: "yellow"},
         {key: "vencido", value:"Vencido", color: "red"},
         {key: "noaplica", value:"No Aplica", color: "black"}
     )
 
-.row.justify-center
-    p Contrato
+p Contrato
 .row.w-full.overflow-auto.heigthTablaC
     +grid("cotitular2_documentacion_contrato")
-.row
-    p Cliente
+p Cliente
 .row.w-full.overflow-auto.heigthTablaC
     +grid("cotitular2_documentacion_cliente")

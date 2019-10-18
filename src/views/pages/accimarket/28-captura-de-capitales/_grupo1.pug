@@ -1,98 +1,201 @@
 include /mixins/mixins
-.row#botones-final
+.row#boton-reset    
     +field-checks("reset",
         {
             label: "",
+            name: "reset",
             orientation: "horizontal"
             },
             {key: "true", value:"reset"}
         )
-.row#ordenaElementos   
-    +field-input("contrato",
+.row#ordenaElementos
+        .row#elementosJuntos
+            +field-input("contrato",
+                {
+                    label: "Contrato",
+                    size: "15em",
+                    orientation: "horizontal",
+                    required: true,
+                    max_length: "9",
+                    type: "digits",
+                    align: "left"
+                })
+            +field-input("digito",
+            {
+                    size: "5em",
+                    orientation: "horizontal",
+                    type: "text",
+                    disabled: true
+                })
+        +field-input("titular",
+           {
+                size: "25em",
+                orientation: "horizontal",
+                align: "left",
+                disabled: true
+            })
+        .row#elementosJuntos2
+            +field-input("perfilC",
+            {
+                    label: "Perfil Contrato",
+                    size: "8em",
+                    orientation: "horizontal",
+                    align: "left",
+                    disabled: true
+                })
+            +field-input("IPContrato",
+            {
+                    size: "4em",
+                    orientation: "horizontal",
+                    align: "left",
+                    disabled: true
+                })
+        +field-input("emisora",
+            {
+                label: "emisora",
+                required: true,
+                size: "15em",
+                orientation: "horizontal"
+            })
+        +field-input("pemisora",
         {
-            label: "Contrato",
-            size: "15em",
-            orientation: "horizontal",
+                label: "Perfil Emisora",
+                size: "25em",
+                orientation: "horizontal",
+                align: "left",
+                disabled: true
+            })
+        +field-select("Operacion",
+            {
+                label: "Operación",
+                size: "15em",
+                orientation: "horizontal"
+            },
+                {key: "C", value:"compra"},
+                {key: "CPA", value:"Cpa"},
+                {key:"V", value:"Venta"},
+                {key:"VTA", value:"Vta"},
+                {key:"VC", value:"Venta en corto"},
+                {key:"VCD", value:"Venta en corto dinámica"}
+            )
+        +field-input("cantidad",
+            {
+                label: "cantidad",
+                required: true,
+                size: "15em",
+                orientation: "horizontal",
+                max_length: "17",
+                type: "digits"
+            })
+        +field-input("precio",
+            {
+                label: "precio",
+                required: true,
+                size: "15em",
+                orientation: "horizontal",
+                max_length: "9",
+                type: "digits"
+            })
+        +field-select("Vigencia",
+            {
+                label: "Vigencia",
+                size: "15em",
+                orientation: "horizontal"
+            })
+        +field-options("opciones",
+            {label: "Envio",
             required: true,
-            max_length: "9",
-            type: "digits"
-        })
-    +field-input("emisora",
-        {
-            label: "emisora",
-            required: true,
-            size: "15em",
-            orientation: "horizontal"
-        })
-    +field-select("Operacion",
-        {
-            label: "Operación",
-            size: "15em",
-            required: true,
-            orientation: "horizontal"
-        })
-    +field-input("cantidad",
-        {
-            label: "cantidad",
-            required: true,
-            size: "15em",
-            orientation: "horizontal",
-            max_length: "17",
-            type: "digits"
-        })
-    +field-input("precio",
-        {
-            label: "precio",
-            required: true,
-            size: "15em",
-            orientation: "horizontal",
-            max_length: "9",
-            type: "digits"
-        })
-    +field-select("Vigencia",
-        {
-            label: "Vigencia",
-            size: "15em",
-            required: true,
-            orientation: "horizontal"
-        })
-    +field-options("opciones",
-          {label: "Envio",
-           required: true,
-           orientation: "horizontal"
-          },
-          {key: "LIBRO", value:"Libro"},
-          {key: "MESA", value:"Mesa"}
-        )
-    +field-select("ServicioI",
-        {
-            label: "Servicio de Inv.",
-            size: "15em",
-            required: true,
-            orientation: "horizontal"
-        })
-    +field-select("TitulosAP",
-        {
-            label: "Titulos a afectar de posición",
-            size: "15em",
-            required: true,
-            orientation: "horizontal"
-        })
-    +field-select("ModoC",
-        {
-            label: "Modo Cierre",
-            size: "15em",
-            required: true,
-            orientation: "horizontal"
-        })
-.row
-    +field-checks("Capturar datos avanzados",
-        {
-            label: "",
             orientation: "horizontal"
             },
-            {key: "P02", value:"capturarDA"}
+            {key: "LIBRO", value:"Libro"},
+            {key: "MESA", value:"Mesa"}
             )
+        +field-select("ServicioI",
+            {
+                label: "Servicio de Inv.",
+                size: "15em",
+                orientation: "horizontal"
+            })
+        +field-select("TitulosAP",
+            {
+                label: "Titulos a afectar de posición",
+                size: "15em",
+                orientation: "horizontal"
+            })
+        +field-select("ModoC",
+            {
+                label: "Modo Cierre",
+                size: "15em",
+                orientation: "horizontal"
+            })
+        .row
+        +field-checks("CapturarDA",
+            {
+                label: "",
+                orientation: "horizontal"
+                },
+                {key: "true", value:"capturar datos Avanzados"}
+                )
+        .row#elementosOcultos
+            +field-select("MPL",
+                {
+                    label: "MPL",
+                    size: "15em",
+                    orientation: "horizontal"
+                })
+            +field-select("difPujas",
+                {
+                    label: "Diferencia de pujas",
+                    size: "15em",
+                    orientation: "horizontal"
+                },
+                    {key: "UN", value:".01"},
+                    {key: "DO", value:".02"},
+                    {key:"TR", value:".03"},
+                    {key:"CU", value:".04"},
+                    {key:"CI", value:".05"}
+                )
+            +field-input("PorcentajeVO",
+                {
+                    label: "Porcentaje VO",
+                    size: "15em",
+                    orientation: "horizontal",
+                    max_length: "2",
+                    type: "digits"
+                })
+            +field-input("Posicion",
+                {
+                    label: "Posicion",
+                    size: "15em",
+                    orientation: "horizontal",
+                    max_length: "2"
+                })
+        +field-textarea("Mensajes",
+            {
+                size: "25em",
+                orientation: "horizontal",
+                max_length: "2",
+                disabled: true
+            })
+        .row#elementosJuntos2
+            +field-input("precMdo",
+                {
+                    label: "Prec Mdo",
+                    size: "6em",
+                    orientation: "horizontal",
+                    max_length: "6.5",
+                    type: "digits",
+                    align: "left",               
+                    disabled: true
+                })
+            +field-input("PrecCierre",
+            {
+                    label: "Prec Cierre",
+                    size: "6em",
+                    orientation: "horizontal",
+                    type: "text",
+                    disabled: true
+                })
 .row#botones-final
     +button-add({label: "Agregar",size: "large", disabled: false})
     +button-clean({label: "Limpiar",size: "large", disabled: false})

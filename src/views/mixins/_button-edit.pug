@@ -1,0 +1,20 @@
+mixin button-edit(parms)
+  - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
+  - var _label = (parms.label ? parms.label : "Editar")
+
+  if _parms.size == "large"
+    button.button.big-button(id="btn_edit" title=tooltip disabled=_parms.disabled)
+      span.fa-stack.fa-lg
+        i.fas.fa-edit.fa-2x
+      br
+      span= _label
+
+  if _parms.size == "medium"
+    button.button.medium-button(id="btn_edit" title=tooltip disabled=_parms.disabled)
+        span.fa-stack.fa-2x
+          i.fas.fa-edit.fa-sm
+
+  if _parms.size == "small"
+    button.button.small-button(id="btn_edit" title=tooltip disabled=_parms.disabled)
+        span.fa-stack.fa-sm
+          i.fas.fa-edit.fa-lg
