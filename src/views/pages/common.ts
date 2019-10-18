@@ -1541,6 +1541,80 @@ const getCheckedCheckbox = (id: string) => {
 //     }
 //   }
 // }
+
+// Función creada por Guillermo Islas
+function copyGridContentToClipboard(gridNameID, includeGroups) {
+  if (gridNameID && gridNameID.trim()) {
+    gridNameID = gridNameID.trim();
+    var grid = $("#" + gridNameID);
+    if (grid && grid.length > 0) {
+      var gridData = $(grid).getGridParam("data");
+      var totalRecords = $(grid).getGridParam("records");
+      var colModel = $(grid).getGridParam("colModel");
+      var headers = [];
+      if (includeGroups && typeof includeGroups === "boolean") {
+        var groupHeaders = $(grid).getGridParam("groupingView").groupField;
+        $(groupHeaders).each(function(index, value) {
+          headers.push(value);
+        });
+      }
+      var column;
+      var columnName;
+      $(colModel).each(function() {
+        column = $(this)[0];
+        columnName = column.name;
+        if (!column.hidden) {
+          headers.push(columnName);
+        }
+      });
+      var tableHeader = "<thead><tr>";
+      $.each(headers, function(index, value) {
+        tableHeader += "<th>" + value + "</th>";
+      });
+      tableHeader += "</tr></thead>";
+      var totalRecordsTableRow =
+        '<tr><td colspan="' +
+        headers.length +
+        '">Total de registros: ' +
+        totalRecords +
+        "</td></tr>";
+      var row;
+      var tableContent = "";
+      $(gridData).each(function() {
+        tableContent += "<tr>";
+        row = $(this)[0];
+        $.each(headers, function(index, header) {
+          tableContent += "<td>" + row[header] + "</td>";
+        });
+        tableContent += "</tr>";
+      });
+      var tableID = "___" + gridNameID;
+      var table = $(
+        '<table id="' +
+          tableID +
+          '">' +
+          tableHeader +
+          "<tbody>" +
+          totalRecordsTableRow +
+          tableContent +
+          "</tbody></table>"
+      );
+      $(table)
+        .css("position", "absolute")
+        .css("top", "-2000px")
+        .css("left", "-2000px");
+      $("body").append(table);
+      var range = document.createRange();
+      range.selectNodeContents(document.getElementById(tableID));
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      document.execCommand("copy");
+      $(table).remove();
+    }
+  }
+}
+
 const fillSwapList = (id: string, id_list: string, params: any) => {
   var _id = "#" + id;
   var _list = "#" + id_list;
