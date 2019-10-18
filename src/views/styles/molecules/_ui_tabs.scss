@@ -43,6 +43,10 @@
       padding: 0.5em 1em;
       text-decoration: none;
     }
+
+    .container-img_image {
+      width: 20px;
+    }
   }
 
   .ui-tabs-panel {
@@ -69,17 +73,18 @@
   width: 100%;
 
   & > .ui-tabs-panel {
+    flex: 1;
     border: none;
     padding: 1em;
     float: right;
     //width: 40em;
-    width: 86%;
+    width: 83%;
   }
 
   & > .ui-tabs-nav {
     padding: 0.2em 0.1em 0.2em 0.2em;
     float: left;
-    width: 16em;
+    width: 19em;
     border: 1px solid $color-sky-dark;
     border-radius: 6px;
 
