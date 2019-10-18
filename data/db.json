@@ -530,10 +530,7 @@
       "listaSpc": []
     },
     {
-      "contrato[]": [
-        "CONTRATO01",
-        "CONTRATO02"
-      ],
+      "contrato[]": ["CONTRATO01", "CONTRATO02"],
       "id": "t-eLVZ4"
     },
     {
@@ -1536,13 +1533,7 @@
           "valor": "3"
         }
       ],
-      "origenUno": [
-        "3",
-        "3",
-        "1",
-        "1",
-        "1"
-      ],
+      "origenUno": ["3", "3", "1", "1", "1"],
       "id": 1
     }
   ],
@@ -5556,6 +5547,148 @@
       "id": "8",
       "value": "option_1_8",
       "label": "Valor 8"
+    }
+  ],
+  "encuesta": [
+    {
+      "question": [
+        {
+          "question": "2.1. Instrumentos de Deuda Gubernamental",
+          "required": true,
+          "points": ["1", "2", "3"]
+        },
+        {
+          "question": "2.2. Instrumentos de Deuda Corporativa",
+          "required": true,
+          "points": ["1", "2", "3"]
+        },
+        {
+          "question": "2.3. Sociedades de Inversión",
+          "required": true,
+          "points": ["2", "4", "6"]
+        },
+        {
+          "question": "2.4. Valores Estructurados",
+          "required": true,
+          "points": ["2", "4", "6"]
+        },
+        {
+          "question": "2.5. Certificados Bursátiles Fiduciarios (Cebures, Cedevis) y Fideicomisos Privados",
+          "required": true,
+          "points": ["2", "4", "6"]
+        },
+        {
+          "question": "2.6. Títulos Opcionales (Warrants)",
+          "required": true,
+          "points": ["2", "4", "6"]
+        },
+        {
+          "question": "2.7. Acciones",
+          "required": true,
+          "points": ["3", "6", "9"]
+        },
+        {
+          "question": "2.8. Valores Extranjeros",
+          "required": true,
+          "points": ["3", "6", "9"]
+        },
+        {
+          "question": "2.9. Trackers TRACs o EFTs",
+          "required": true,
+          "points": ["3", "6", "9"]
+        },
+        {
+          "question": "2.10. Certificados de Capital de Desarrollo",
+          "required": true,
+          "points": ["3", "6", "9"]
+        }
+      ],
+      "answer": [
+        {
+          "answer": "No conoce ni ha invertido",
+          "type": "option"
+        },
+        {
+          "answer": "Sólo conoce",
+          "type": "option"
+        },
+        {
+          "answer": "Conoce y ha invertido",
+          "type": "option"
+        },
+        {
+          "answer": "Frecuencia",
+          "type": "select",
+          "options": [
+            {
+              "key": "",
+              "value": "--Seleccionar--"
+            },
+            {
+              "key": "M",
+              "value": "Mensual"
+            },
+            {
+              "key": "S",
+              "value": "Semestral"
+            },
+            {
+              "key": "A",
+              "value": "Anual"
+            }
+          ],
+          "size": "12em",
+          "disabled": true
+        },
+        {
+          "answer": "Plazo",
+          "type": "select",
+          "options": [
+            {
+              "key": "",
+              "value": "--Seleccionar--"
+            },
+            {
+              "key": "C",
+              "value": "Corto"
+            },
+            {
+              "key": "M",
+              "value": "Medio"
+            },
+            {
+              "key": "L",
+              "value": "Largo"
+            }
+          ],
+          "size": "10em",
+          "disabled": true
+        },
+        {
+          "answer": "Volumen",
+          "type": "select",
+          "options": [
+            {
+              "key": "",
+              "value": "--Seleccionar--"
+            },
+            {
+              "key": "M",
+              "value": "Medio"
+            },
+            {
+              "key": "B",
+              "value": "Bajo"
+            },
+            {
+              "key": "A",
+              "value": "Alto"
+            }
+          ],
+          "size": "12em",
+          "disabled": true
+        }
+      ]
     }
   ]
 }

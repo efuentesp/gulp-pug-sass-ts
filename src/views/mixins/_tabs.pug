@@ -5,8 +5,14 @@ mixin tab-group(id, ...items)
         - var tab_item_ref = "#" + item.id
         li
           a(href=tab_item_ref)
-            //- i.fas.fa-user.pr-3
-            = item.label
+            if item.img != null
+              .container-imgtxt
+                img.container-img_image(src="../../assets/images/"+item.img align="middle")
+                .container-img_text=item.label
+            else 
+              //- i.fas.fa-user.pr-3     
+              =item.label
+            
     block
 
 mixin tab-item(id)

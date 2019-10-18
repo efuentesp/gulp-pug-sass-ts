@@ -1569,3 +1569,112 @@ const fillSwapList = (id: string, id_list: string, params: any) => {
     });
   }
 };
+
+const fillQuiz = (field_group: string, id: string, quiz: any) => {
+  var trElement = $("#" + field_group + " tbody");
+  var answerOption = "";
+  var answerSelect = "";
+  var answersSelect = "";
+  var answers = "";
+  var question = "";
+  var questions = "";
+  var options = "";
+  var option = "";
+  var nAnswers = 0;
+  var nQuestions = 0;
+
+  nQuestions = quiz[0].question.length;
+  nAnswers = quiz[0].answer.length;
+
+  // Questions
+  for (var i = 0; i < nQuestions; i++) {
+    question = "<tr><td class='question'>" + quiz[0].question[i].question;
+
+    if (quiz[0].question[i].required) {
+      question += "<span class='required'>*</span>";
+    }
+
+    question +=
+      "<div class='field-error'><div id='field_error_block_encuesta_" +
+      i +
+      "'></div></div></td>";
+
+    answers = "";
+    options = "";
+
+    // Answers
+    for (var j = 0; j < nAnswers; j++) {
+      var answer_points = quiz[0].question[i].points
+        ? quiz[0].question[i].points[j]
+        : "1";
+      var disabled = quiz[0].answer[j].disabled;
+
+      var db = "";
+      //   if (disabled) {
+      //     db = "disabled";
+      //   }
+
+      if (quiz[0].answer[j].type == "option") {
+        answerOption =
+          "<td>" +
+          "<div class='answer'>" +
+          "<input type='radio' id='" +
+          id +
+          "_" +
+          i +
+          "_" +
+          j +
+          "' name='" +
+          id +
+          "_" +
+          i +
+          "' required data-parsley-errors-container='#field_error_block_" +
+          id +
+          "_" +
+          j +
+          "' data-points='" +
+          answer_points +
+          "'>" +
+          "<span class='checkmark'></span>" +
+          "</div>" +
+          "</td>";
+
+        answers += answerOption;
+      }
+
+      if (quiz[0].answer[j].type == "select") {
+        answerSelect =
+          '<td><div class="answer">' +
+          '<select class="select2" id="encuesta_' +
+          i +
+          "_" +
+          j +
+          '" name="quiz_select" style="width: 12em;" required ' +
+          db +
+          " " +
+          'data-parsley-errors-container="#field_error_block_' +
+          id +
+          "_" +
+          i +
+          '">';
+
+        options = "";
+        for (var k = 0; k < quiz[0].answer[j].options.length; k++) {
+          option =
+            '<option value="' +
+            quiz[0].answer[j].options[k].key +
+            '">' +
+            quiz[0].answer[j].options[k].value +
+            "</option>";
+          options += option;
+        }
+
+        answersSelect = answerSelect + options + "</select></div>" + "</td>";
+        answers += answersSelect;
+      }
+    }
+
+    questions = question + answers + "</tr>";
+    trElement.append(questions);
+  }
+};
