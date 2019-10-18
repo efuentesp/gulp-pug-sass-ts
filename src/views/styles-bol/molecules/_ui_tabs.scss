@@ -1,0 +1,112 @@
+@import "../vars";
+
+/* UI Tabs
+----------------------------------*/
+.ui-tabs {
+  position: relative; /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+  padding: 0.2em;
+
+  .ui-tabs-nav {
+    margin: 0;
+    // padding: 0.2em 0.2em 0;
+    border: 1px solid $color-ink-lightest;
+    border-width: 0 0 1px 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    li {
+      list-style: none;
+      float: left;
+      position: relative;
+      top: 0;
+      margin: 1px 0.2em 0 0;
+      border-bottom-width: 0;
+      padding: 0;
+      white-space: nowrap;
+
+      &.ui-tabs-active {
+        margin-bottom: -1px;
+        // padding-bottom: 1px;
+        border-bottom: 1px solid $color-white;
+        // font-weight: bold;
+      }
+
+      &.ui-tabs-active .ui-tabs-anchor,
+      &.ui-state-disabled .ui-tabs-anchor,
+      &.ui-tabs-loading .ui-tabs-anchor {
+        cursor: text;
+      }
+    }
+
+    .ui-tabs-anchor {
+      float: left;
+      padding: 0.5em 1em;
+      text-decoration: none;
+    }
+  }
+
+  .ui-tabs-panel {
+    display: block;
+    // border-width: 0;
+    padding: 1em 1.4em;
+    background: none;
+    border: 1px solid $color-ink-lightest;
+    border-width: 0 1px 1px 1px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    // border-top-left-radius: 6px;
+    // border-top-right-radius: 6px;
+  }
+}
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+  cursor: pointer;
+}
+
+// Vertical Tabs
+
+.ui-tabs-vertical {
+  // width: 55em;
+  width: 100%;
+
+  & > .ui-tabs-panel {
+    border: none;
+    padding: 1em;
+    float: right;
+    //width: 40em;
+    width: 86%;
+  }
+
+  & > .ui-tabs-nav {
+    padding: 0.2em 0.1em 0.2em 0.2em;
+    float: left;
+    width: 16em;
+    border: 1px solid $color-sky-dark;
+    border-radius: 6px;
+
+    & li {
+      clear: left;
+      width: 100%;
+      // border-bottom-width: 1px !important;
+      // border-right-width: 0 !important;
+      // margin: 0 -1px 0.2em 0;
+
+      & > a {
+        display: block;
+      }
+
+      &.ui-tabs-active {
+        padding-bottom: 0;
+        padding-right: 0.1em;
+        // border-right-width: 1px;
+        border: none;
+        background: $color-sky;
+        border-radius: 6px;
+        // font-weight: 500;
+      }
+
+      &.ui-state-hover {
+        border: none;
+      }
+    }
+  }
+}

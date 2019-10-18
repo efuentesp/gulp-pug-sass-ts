@@ -1,0 +1,43 @@
+@import "../vars";
+
+.wizard {
+  .steps {
+    ul {
+      li {
+        width: 20em;
+      }
+    }
+    .current {
+      a {
+        background: $color-blue-dark;
+      }
+    }
+    .disabled {
+      a {
+        background: $color-sky;
+      }
+    }
+    .done {
+      a {
+        opacity: 1;
+      }
+    }
+  }
+
+  .content {
+    border: 1px solid $button_border_color;
+    background: $color-white;
+  }
+
+  .actions {
+    a {
+      background: $color-blue-dark;
+    }
+
+    .disabled {
+      a {
+        background: $color-sky;
+      }
+    }
+  }
+}
