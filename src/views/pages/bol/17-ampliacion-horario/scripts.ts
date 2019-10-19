@@ -1,5 +1,8 @@
+let params: UrlParams = {};
+
 ($("#horario-sacid") as any).select2({
-    minimumResultsForSearch: Infinity
+    minimumResultsForSearch: Infinity,
+    selectedIndex: 1
 });
 
 ($("#horario-ampliacion") as any).select2({
@@ -7,7 +10,8 @@
     minimumResultsForSearch: Infinity
 });
 
-$("#btn_mostrar_ventana").click(() =>
+const mostrarDialogoHorario = (notaEstructurada: any) => {
+    params = {}
     $("#dialogo_ampliacion_horario").dialog({
         modal: true,
         closeText: "",
@@ -18,7 +22,17 @@ $("#btn_mostrar_ventana").click(() =>
             {
                 text: "Aceptar",
                 click: function () {
-                    $(this).dialog("close");
+
+                    params.emisora = notaEstructurada.emisora
+                    params.fecInicio = notaEstructurada.fecInicio
+                    params.horario = $('#horario-ampliacion option:selected').text();
+                    //idsistema, idlibro
+                    console.log("Params " + JSON.stringify(params));
+                    http_create("horarioAmpliado", params, response => {
+                        console.log(response);
+                    });
+                    $('#horario-ampliacion').prop('selectedIndex', 0);
+                    //$(this).dialog("close");
                 }
             },
             {
@@ -29,4 +43,4 @@ $("#btn_mostrar_ventana").click(() =>
             }
         ]
     })
-);
+}

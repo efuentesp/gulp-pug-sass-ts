@@ -16,9 +16,6 @@ $("#btn_pdf").click(() =>
                     $(this).dialog("close");
                 }
 
-                // Uncommenting the following line would hide the text,
-                // resulting in the label being used as a tooltip
-                //showText: false
             }
         ]
     })
@@ -38,12 +35,22 @@ let notaEstructurada_params: UrlParams = {};
 
 
 http_findAll("notaEstructurada", notaEstructurada_params, notasEstructuradas => {
+    //llenaGridNotasE(notasEstructuradas);
     llenaGridNotasE(notasEstructuradas);
     const rec_count = notasEstructuradas.length;
     $("#count_notas-estructuradas").html(rec_count);
 
 });
 
+const pintaTabla = (datosTabla: any, idTabla, result) => {
+    console.log(datosTabla);
+
+    $("#table_" + idTabla).jqGrid("clearGridData");
+    $("#table_" + idTabla).jqGrid("setGridParam", { data: datosTabla });
+    $("#table_" + idTabla).trigger("reloadGrid");
+    const rec_count = datosTabla.length;
+    $("#count_" + idTabla).html(rec_count);
+}
 
 
 const llenaGridNotasE = (notasEstructuradas: any) => {
@@ -86,6 +93,7 @@ const llenaGridNotasE = (notasEstructuradas: any) => {
 
         ],
         loadComplete: function () {
+
             console.log('Menu');
             ($("tr.jqgrow", this) as any).contextMenu('contextMenu', {
                 bindings: {
@@ -102,7 +110,15 @@ const llenaGridNotasE = (notasEstructuradas: any) => {
                         console.log('Reenvio de cierre');
                     },
                     'amplia-horario': function (event) {
-                        console.log('Amplia horario');
+                        var rowKey = $("#table_notas-estructuradas").getGridParam("selrow");
+                        var notaEstructurada;
+                        if (rowKey != null) {
+                            notaEstructurada = $("#table_notas-estructuradas").jqGrid('getRowData', rowKey);
+                            console.log("Seleccionado " + JSON.stringify(notaEstructurada));
+                            mostrarDialogoHorario(notaEstructurada)
+                        } else {
+                            console.log('Selecciona una nota');
+                        }
                     },
                 }, onContexMenu: function (event, menu) {
 
@@ -110,62 +126,48 @@ const llenaGridNotasE = (notasEstructuradas: any) => {
             });
         }
     });
-
-    /* $("#table_notas-estructuradas").setGridParam({
- 
-         loadComplete: function () {
-             $('tr.jqgrow', "#table_notas-estructuradas").contextmenu('contextMenu', {
-                 bindings: {
-                     'cierre-definitivo': function (event) {
-                         console.log('Cierre definitivo');
-                     },
-                     'detalle-captacion': function (event) {
-                         console.log('Detalle de captacion');
-                     },
-                     'cancela-notae': function (event) {
-                         console.log('Cancela nota estructurada');
-                     },
-                     'reenvio-cierre': function (event) {
-                         console.log('Reenvio de cierre');
-                     },
-                     'amplia-horario': function (event) {
-                         console.log('Amplia horario');
-                     },
-                 },onContexMenu: function(event, menu){
- 
-                 }
-             });
-         }
-     });*/
-
-    $("#table_notas-estructuradas").jqGrid("setGridParam",
-        {
-            loadComplete: function () {
-                console.log("setGridParam")
-                $("#table_notas-estructuradas").contextMenu('contextMenu', {
-                    bindings: {
-                        'cierre-definitivo': function (event) {
-                            console.log('Cierre definitivo');
-                        },
-                        'detalle-captacion': function (event) {
-                            console.log('Detalle de captacion');
-                        },
-                        'cancela-notae': function (event) {
-                            console.log('Cancela nota estructurada');
-                        },
-                        'reenvio-cierre': function (event) {
-                            console.log('Reenvio de cierre');
-                        },
-                        'amplia-horario': function (event) {
-                            console.log('Amplia horario');
-                        },
-                    }, onContexMenu: function (event, menu) {
-
-                    }
-                });
-
-            }
-        }
-    );
-
 };
+
+
+const formMonitoreoCaptacion = ($("#criterios-busqueda") as any)
+    .parsley()
+    .on("field:validated", () => {
+        const ok = $(".parsley-error").length === 0;
+
+    })
+    .on("form:submit", e => {
+        console.log("form:submit", e);
+
+        notaEstructurada_params = {};
+
+        const fechaInicio = $("#rango_begin_date").val();
+        const fechaFin = $("#rango_end_date").val();
+
+        var listTV = getList("tv");
+        var listEmisora = getList("emisora");
+
+        if (fechaInicio) {
+            notaEstructurada_params.fechaInicio = fechaInicio;
+        }
+
+        if (fechaFin) {
+            notaEstructurada_params.fechaFin = fechaFin;
+        }
+
+        if (listTV.length > 0) {
+            notaEstructurada_params.listTV = listTV;
+        }
+
+        if (listEmisora.length > 0) {
+            notaEstructurada_params.emisora = listEmisora;
+        }
+
+
+        http_findAll("notaEstructurada", notaEstructurada_params, notasEstructuradas => {
+            // console.log(payload);
+            pintaTabla(notasEstructuradas, "notas-estructuradas", "");
+            // console.log(rec_count);
+        });
+
+        return false;
+    });

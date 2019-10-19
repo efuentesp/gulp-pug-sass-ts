@@ -27,6 +27,7 @@
       "clabe": "2180650543547290",
       "clabe2": "CITI PRIVATE BANK ",
       "stipo_port": "POSICION CONTADO",
+      "saldo": "2000000",
       "titular": {
         "nombre": ""
       },
@@ -1218,6 +1219,9 @@
     },
     {
       "id": 199
+    },
+    {
+      "id": 200
     }
   ],
   "estudiosService": [
@@ -5479,6 +5483,51 @@
       "mna": "dolares",
       "estatus": "activa",
       "mensaje": "Correcto"
+    },
+    {
+      "tv": "Prueba 1",
+      "emisora": "Banamex",
+      "serie": "Serie",
+      "plazo": "mayo",
+      "fecInicio": "10/20/2019",
+      "horaCierre": "16:00",
+      "limiteCaptado": "10,000",
+      "captado": "7,000",
+      "porColocar": "3000",
+      "mnb": "Pesos",
+      "mna": "dolares",
+      "estatus": "activa",
+      "mensaje": "Correcto"
+    },
+    {
+      "tv": "Tipo valor",
+      "emisora": "Grupo carso",
+      "serie": "Serie",
+      "plazo": "mayo",
+      "fecInicio": "18/10/2019",
+      "horaCierre": "16:00",
+      "limiteCaptado": "10,000",
+      "captado": "7,000",
+      "porColocar": "3000",
+      "mnb": "Pesos",
+      "mna": "dolares",
+      "estatus": "activa",
+      "mensaje": "Correcto"
+    },
+    {
+      "tv": "Prueba",
+      "emisora": "alguna",
+      "serie": "Serie",
+      "plazo": "mayo",
+      "fecInicio": "10/20/2019",
+      "horaCierre": "16:00",
+      "limiteCaptado": "10,000",
+      "captado": "7,000",
+      "porColocar": "3000",
+      "mnb": "Pesos",
+      "mna": "dolares",
+      "estatus": "activa",
+      "mensaje": "Correcto"
     }
   ],
   "ordenes_nota_estructurada": [
@@ -5549,58 +5598,180 @@
       "label": "Valor 8"
     }
   ],
+  "emisoras": [
+    {
+      "id": "01",
+      "value": "EMISORA 01",
+      "label": "EMISORA 01 SA"
+    },
+    {
+      "id": "02",
+      "value": "EMISORA 02",
+      "label": "EMISORA 02 SA"
+    },
+    {
+      "id": "03",
+      "value": "BANAMEX16022",
+      "label": "BANAMEX16022 SA"
+    }
+  ],
+  "datosEmisora": [
+    {
+      "id": "01",
+      "emisora": "EMISORA 01",
+      "tv": "TV 01",
+      "plazo": "147",
+      "tasa": "7.12",
+      "fechaInicio": "30-11-2019",
+      "fechaFin": "30-12-2019",
+      "monedaBase": "dolares",
+      "monedaAlt": "pesos",
+      "serie": "ISHRS",
+      "perfilEmision": "Emision01",
+      "valorNominal": "100",
+      "totalColocar": "1000",
+      "multiploInversion": "10",
+      "minimoInversion": "100",
+      "precio": "100",
+      "tituloLiq" : "ISHRS",
+      "tipoMed" : "ISHRS",
+      "medLiq" : "ISHRS"
+    },
+    {
+      "id": "02",
+      "emisora": "EMISORA 02",
+      "tv": "TV 02",
+      "plazo": "148",
+      "tasa": "7.20",
+      "fechaInicio": "30-10-2019",
+      "fechaFin": "30-11-2019",
+      "monedaBase": "dolares",
+      "monedaAlt": "pesos",
+      "serie": "ISHRS",
+      "perfilEmision": "Emision02",
+      "valorNominal": "100",
+      "totalColocar": "1000",
+      "multiploInversion": "10",
+      "minimoInversion": "100",
+      "precio": "12000",
+      "tituloLiq" : "ISHRS",
+      "tipoMed" : "ISHRS",
+      "medLiq" : "ISHRS"
+    },
+    {
+      "id": "03",
+      "emisora": "BANAMEX16022",
+      "tv": "TV BMX",
+      "plazo": "150",
+      "tasa": "8.20",
+      "fechaInicio": "12-08-2019",
+      "fechaFin": "15-11-2019",
+      "monedaBase": "euros",
+      "monedaAlt": "pesos",
+      "serie": "ISHRS",
+      "perfilEmision": "Emision03",
+      "valorNominal": "100",
+      "totalColocar": "1000",
+      "multiploInversion": "10",
+      "minimoInversion": "100",
+      "precio": "150",
+      "tituloLiq" : "ISHRS",
+      "tipoMed" : "ISHRS",
+      "medLiq" : "ISHRS"
+    }
+  ],
   "encuesta": [
     {
       "question": [
         {
           "question": "2.1. Instrumentos de Deuda Gubernamental",
           "required": true,
-          "points": ["1", "2", "3"]
+          "points": [
+            "1",
+            "2",
+            "3"
+          ]
         },
         {
           "question": "2.2. Instrumentos de Deuda Corporativa",
           "required": true,
-          "points": ["1", "2", "3"]
+          "points": [
+            "1",
+            "2",
+            "3"
+          ]
         },
         {
           "question": "2.3. Sociedades de Inversión",
           "required": true,
-          "points": ["2", "4", "6"]
+          "points": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "question": "2.4. Valores Estructurados",
           "required": true,
-          "points": ["2", "4", "6"]
+          "points": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "question": "2.5. Certificados Bursátiles Fiduciarios (Cebures, Cedevis) y Fideicomisos Privados",
           "required": true,
-          "points": ["2", "4", "6"]
+          "points": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "question": "2.6. Títulos Opcionales (Warrants)",
           "required": true,
-          "points": ["2", "4", "6"]
+          "points": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "question": "2.7. Acciones",
           "required": true,
-          "points": ["3", "6", "9"]
+          "points": [
+            "3",
+            "6",
+            "9"
+          ]
         },
         {
           "question": "2.8. Valores Extranjeros",
           "required": true,
-          "points": ["3", "6", "9"]
+          "points": [
+            "3",
+            "6",
+            "9"
+          ]
         },
         {
           "question": "2.9. Trackers TRACs o EFTs",
           "required": true,
-          "points": ["3", "6", "9"]
+          "points": [
+            "3",
+            "6",
+            "9"
+          ]
         },
         {
           "question": "2.10. Certificados de Capital de Desarrollo",
           "required": true,
-          "points": ["3", "6", "9"]
+          "points": [
+            "3",
+            "6",
+            "9"
+          ]
         }
       ],
       "answer": [
@@ -5689,6 +5860,20 @@
           "disabled": true
         }
       ]
+    }
+  ],
+  "horarioAmpliado": [
+    {
+      "emisora": "Banamex",
+      "fecInicio": "10/20/2019",
+      "horario": "04:00 hrs",
+      "id": 1
+    },
+    {
+      "emisora": "Banamex",
+      "fecInicio": "10/20/2019",
+      "horario": "05:00 hrs",
+      "id": 2
     }
   ]
 }
