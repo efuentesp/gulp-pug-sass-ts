@@ -76,7 +76,11 @@ function handlebarsIt() {
 
 function sassIt() {
   return gulp
-    .src(["./src/views/styles/main.scss", "./src/views/pages/**/*.scss"])
+    .src([
+      "./src/views/styles/main.scss",
+      "./src/views/styles-bol/main-bol.scss",
+      "./src/views/pages/**/*.scss"
+    ])
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(
       sass({
@@ -232,7 +236,11 @@ function watch() {
   });
 
   gulp.watch(
-    ["./src/views/styles/**/*.scss", "./src/views/pages/**/*.scss"],
+    [
+      "./src/views/styles/**/*.scss",
+      "./src/views/styles-bol/**/*.scss",
+      "./src/views/pages/**/*.scss"
+    ],
     sassIt
   );
   gulp.watch("./src/views/pages/**/*.pug", pugIt);

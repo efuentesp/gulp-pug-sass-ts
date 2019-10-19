@@ -1486,6 +1486,7 @@ const validateDateRage = (id: string) => {
 };
 
 // Clean selects
+// TODO: No amarrar el clean a la clase .is-search-form ya que no siempre se usa.
 $("#btn_clean").click(() => {
   ($(".is-search-form") as any).parsley().reset();
   $("li").remove();
@@ -1504,6 +1505,115 @@ const getCheckedCheckbox = (id: string) => {
     .toArray();
   return list;
 };
+
+// Función creada por Guillermo Islas
+// function relocateSummary(gridNameID, summaryColumnName, decimalPlaces) {
+//   if (gridNameID && summaryColumnName) {
+//     var summaryRow = $("#" + gridNameID + " tr[jqfootlevel]");
+//     if (summaryRow && summaryRow.length > 0) {
+//       var singleRow;
+//       $(summaryRow).each(function(index) {
+//         singleRow = $(this);
+//         var columnFullName = gridNameID + "_" + summaryColumnName;
+//         var summaryColumn = $(singleRow).find(
+//           "td[aria-describedBy=" + columnFullName + "]"
+//         );
+//         var summaryIndex = $(summaryColumn).index();
+//         if (-1 != summaryIndex) {
+//           var sum = $(summaryColumn);
+//           var sumValue = $(sum).html();
+//           if (decimalPlaces && !isNaN(sumValue)) {
+//             sumValue = "$" + Number(sumValue).toFixed(decimalPlaces);
+//             $(sum).html(sumValue);
+//           }
+//           var level = $(singleRow).attr("jqfootlevel");
+//           var headerRowID = "#" + gridNameID + "ghead_" + level + "_" + index;
+//           var headerRow = $(headerRowID);
+//           if (headerRow && headerRow.length > 0) {
+//             $(headerRow)
+//               .find("td:first")
+//               .attr("colspan", summaryIndex - 1);
+//             $(headerRow).append(sum);
+//             $(singleRow).remove();
+//           }
+//         }
+//       });
+//     }
+//   }
+// }
+
+// Función creada por Guillermo Islas
+function copyGridContentToClipboard(gridNameID, includeGroups) {
+  if (gridNameID && gridNameID.trim()) {
+    gridNameID = gridNameID.trim();
+    var grid = $("#" + gridNameID);
+    if (grid && grid.length > 0) {
+      var gridData = $(grid).getGridParam("data");
+      var totalRecords = $(grid).getGridParam("records");
+      var colModel = $(grid).getGridParam("colModel");
+      var headers = [];
+      if (includeGroups && typeof includeGroups === "boolean") {
+        var groupHeaders = $(grid).getGridParam("groupingView").groupField;
+        $(groupHeaders).each(function(index, value) {
+          headers.push(value);
+        });
+      }
+      var column;
+      var columnName;
+      $(colModel).each(function() {
+        column = $(this)[0];
+        columnName = column.name;
+        if (!column.hidden) {
+          headers.push(columnName);
+        }
+      });
+      var tableHeader = "<thead><tr>";
+      $.each(headers, function(index, value) {
+        tableHeader += "<th>" + value + "</th>";
+      });
+      tableHeader += "</tr></thead>";
+      var totalRecordsTableRow =
+        '<tr><td colspan="' +
+        headers.length +
+        '">Total de registros: ' +
+        totalRecords +
+        "</td></tr>";
+      var row;
+      var tableContent = "";
+      $(gridData).each(function() {
+        tableContent += "<tr>";
+        row = $(this)[0];
+        $.each(headers, function(index, header) {
+          tableContent += "<td>" + row[header] + "</td>";
+        });
+        tableContent += "</tr>";
+      });
+      var tableID = "___" + gridNameID;
+      var table = $(
+        '<table id="' +
+          tableID +
+          '">' +
+          tableHeader +
+          "<tbody>" +
+          totalRecordsTableRow +
+          tableContent +
+          "</tbody></table>"
+      );
+      $(table)
+        .css("position", "absolute")
+        .css("top", "-2000px")
+        .css("left", "-2000px");
+      $("body").append(table);
+      var range = document.createRange();
+      range.selectNodeContents(document.getElementById(tableID));
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      document.execCommand("copy");
+      $(table).remove();
+    }
+  }
+}
 
 const fillSwapList = (id: string, id_list: string, params: any) => {
   var _id = "#" + id;
@@ -1532,5 +1642,114 @@ const fillSwapList = (id: string, id_list: string, params: any) => {
     $(div_id + " ." + id + "_wrapper .listbox_option").click(function() {
       $(this).addClass("selected");
     });
+  }
+};
+
+const fillQuiz = (field_group: string, id: string, quiz: any) => {
+  var trElement = $("#" + field_group + " tbody");
+  var answerOption = "";
+  var answerSelect = "";
+  var answersSelect = "";
+  var answers = "";
+  var question = "";
+  var questions = "";
+  var options = "";
+  var option = "";
+  var nAnswers = 0;
+  var nQuestions = 0;
+
+  nQuestions = quiz[0].question.length;
+  nAnswers = quiz[0].answer.length;
+
+  // Questions
+  for (var i = 0; i < nQuestions; i++) {
+    question = "<tr><td class='question'>" + quiz[0].question[i].question;
+
+    if (quiz[0].question[i].required) {
+      question += "<span class='required'>*</span>";
+    }
+
+    question +=
+      "<div class='field-error'><div id='field_error_block_encuesta_" +
+      i +
+      "'></div></div></td>";
+
+    answers = "";
+    options = "";
+
+    // Answers
+    for (var j = 0; j < nAnswers; j++) {
+      var answer_points = quiz[0].question[i].points
+        ? quiz[0].question[i].points[j]
+        : "1";
+      var disabled = quiz[0].answer[j].disabled;
+
+      var db = "";
+      //   if (disabled) {
+      //     db = "disabled";
+      //   }
+
+      if (quiz[0].answer[j].type == "option") {
+        answerOption =
+          "<td>" +
+          "<div class='answer'>" +
+          "<input type='radio' id='" +
+          id +
+          "_" +
+          i +
+          "_" +
+          j +
+          "' name='" +
+          id +
+          "_" +
+          i +
+          "' required data-parsley-errors-container='#field_error_block_" +
+          id +
+          "_" +
+          j +
+          "' data-points='" +
+          answer_points +
+          "'>" +
+          "<span class='checkmark'></span>" +
+          "</div>" +
+          "</td>";
+
+        answers += answerOption;
+      }
+
+      if (quiz[0].answer[j].type == "select") {
+        answerSelect =
+          '<td><div class="answer">' +
+          '<select class="select2" id="encuesta_' +
+          i +
+          "_" +
+          j +
+          '" name="quiz_select" style="width: 12em;" required ' +
+          db +
+          " " +
+          'data-parsley-errors-container="#field_error_block_' +
+          id +
+          "_" +
+          i +
+          '">';
+
+        options = "";
+        for (var k = 0; k < quiz[0].answer[j].options.length; k++) {
+          option =
+            '<option value="' +
+            quiz[0].answer[j].options[k].key +
+            '">' +
+            quiz[0].answer[j].options[k].value +
+            "</option>";
+          options += option;
+        }
+
+        answersSelect = answerSelect + options + "</select></div>" + "</td>";
+        answers += answersSelect;
+      }
+    }
+
+    questions = question + answers + "</tr>";
+    trElement.append(questions);
   }
 };

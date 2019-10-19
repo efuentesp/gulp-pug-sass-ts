@@ -1,0 +1,11 @@
+.input {
+  &.parsley-error {
+    border: 1px solid $color-red-dark !important;
+  }
+}
+
+.parsley-errors-list {
+  li {
+    color: $color-red-dark;
+  }
+}
