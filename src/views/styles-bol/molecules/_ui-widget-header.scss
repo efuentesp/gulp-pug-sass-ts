@@ -1,0 +1,16 @@
+.ui-widget-header {
+  height: 20px;
+  background: rgb(215, 233, 239);
+  border-radius: 5px;
+  border-width: 0px 1px 1px;
+  border-style: none solid solid;
+  border-color: rgb(132, 129, 129) rgb(132, 129, 129) rgb(132, 129, 129);
+  border-image: initial;
+  border-top: 0px none;
+  padding-left: 8px;
+  padding-top: 3px;
+
+  span {
+    font-size: 0.9em;
+  }
+}

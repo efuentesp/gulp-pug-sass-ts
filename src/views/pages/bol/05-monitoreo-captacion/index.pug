@@ -1,4 +1,4 @@
-extends /layouts/jsp
+extends /layouts/bol-jsp
 
 block title
    title Consultas de Mercado de Dinero
@@ -9,17 +9,17 @@ block styles
 block content
 
     .content.p-4
-        .row.flex.justify-between.border.border-solid.border-gray-500.rounded-lg.p-4
-            p.text-2xl.text-blue-700.font-bold MONITOREO CAPTACIÓN DE NOTA ESTRUCTURADA
+        .row.ui-widget-header
+            span Monitoreo Captación de Nota Estructurada
 
-            +field-group("botones-exportar")
-                +button-pdf({size: "large", disabled: false})
-                +button-xls({size: "large", disabled: false})
-
-        .row.flex.mt-4
-            .column.border.border-solid.border-gray-500.rounded-lg.p-4
+        .row.flex
+            .column
                 include filtros
             .contenido.p-4
+                .row.flex.justify-end
+                    +field-group("botones-exportar")
+                        +button-pdf({size: "large", disabled: false})
+                        +button-xls({size: "large", disabled: false})
                 .row.w-full.overflow-auto
                     +grid("notas-estructuradas")
                 +grid-records-count("notas-estructuradas")
@@ -36,6 +36,8 @@ block content
                     span Reenvío de cierre
                 li#amplia-horario
                     span Ampliación de horario
+
+        include ../17-ampliacion-horario/index
 
 block scripts
     script(src="../../assets/scripts/bol/05-monitoreo-captacion/scripts.js")
