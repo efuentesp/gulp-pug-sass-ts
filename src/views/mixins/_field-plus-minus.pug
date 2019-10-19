@@ -17,7 +17,7 @@ mixin field-plus-minus(id, parms)
       if parms.required
         span.required *
     .field-control
-      .field-plus-minus.has-addons
+      .field-plus-minus.has-addons.flex
         input.input(type="text"
                     id=_input_id
                     required=parms.required
@@ -29,10 +29,10 @@ mixin field-plus-minus(id, parms)
                     data-parsley-validation-threshold="10"
                     data-parsley-errors-container=_field_error_block_id
                     )
-        button.button.is-icon.is-green(id=btn_plus_id type="button")
-          i.fa.fa-plus-circle.fa-lg.icon-button
-        button.button.is-icon.is-red(id=btn_minus_id type="button")
-          i.fa.fa-minus-circle.fa-lg.icon-button
+        button.button-noborder(id=btn_plus_id type="button")
+          img.plus-icon(src="../../assets/images/btn-plus.png")
+        button.button-noborder(id=btn_minus_id type="button")
+          img.minus-icon(src="../../assets/images/btn-minus.png")
       .field-error
         div(id=_field_error_block)
       ul.tag-list(id=tag_list_id
