@@ -6,7 +6,8 @@
   "scripts": {
     "start": "gulp dev",
     "build": "gulp",
-    "json:server": "json-server --watch data/db.json"
+    "json:server": "json-server --watch data/db.json",
+    "json-server": "json-server --watch"
   },
   "babel": {
     "presets": [
