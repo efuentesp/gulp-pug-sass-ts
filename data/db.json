@@ -27,6 +27,7 @@
       "clabe": "2180650543547290",
       "clabe2": "CITI PRIVATE BANK ",
       "stipo_port": "POSICION CONTADO",
+      "saldo": "2000000",
       "titular": {
         "nombre": ""
       },
@@ -530,10 +531,7 @@
       "listaSpc": []
     },
     {
-      "contrato[]": [
-        "CONTRATO01",
-        "CONTRATO02"
-      ],
+      "contrato[]": ["CONTRATO01", "CONTRATO02"],
       "id": "t-eLVZ4"
     },
     {
@@ -1218,6 +1216,12 @@
     },
     {
       "id": 198
+    },
+    {
+      "id": 199
+    },
+    {
+      "id": 200
     }
   ],
   "estudiosService": [
@@ -1533,13 +1537,7 @@
           "valor": "3"
         }
       ],
-      "origenUno": [
-        "3",
-        "3",
-        "1",
-        "1",
-        "1"
-      ],
+      "origenUno": ["3", "3", "1", "1", "1"],
       "id": 1
     }
   ],
@@ -5553,6 +5551,88 @@
       "id": "8",
       "value": "option_1_8",
       "label": "Valor 8"
+    }
+  ],
+  "emisoras": [
+    {
+      "id": "01",
+      "value": "EMISORA 01",
+      "label": "EMISORA 01 SA"
+    },
+    {
+      "id": "02",
+      "value": "EMISORA 02",
+      "label": "EMISORA 02 SA"
+    },
+    {
+      "id": "03",
+      "value": "BANAMEX16022",
+      "label": "BANAMEX16022 SA"
+    }
+  ],
+  "datosEmisora": [
+    {
+      "id": "01",
+      "emisora": "EMISORA 01",
+      "tv": "TV 01",
+      "plazo": "147",
+      "tasa": "7.12",
+      "fechaInicio": "30-11-2019",
+      "fechaFin": "30-12-2019",
+      "monedaBase": "dolares",
+      "monedaAlt": "pesos",
+      "serie": "ISHRS",
+      "perfilEmision": "Emision01",
+      "valorNominal": "100",
+      "totalColocar": "1000",
+      "multiploInversion": "10",
+      "minimoInversion": "100",
+      "precio": "100",
+      "tituloLiq" : "ISHRS",
+      "tipoMed" : "ISHRS",
+      "medLiq" : "ISHRS"
+    },
+    {
+      "id": "02",
+      "emisora": "EMISORA 02",
+      "tv": "TV 02",
+      "plazo": "148",
+      "tasa": "7.20",
+      "fechaInicio": "30-10-2019",
+      "fechaFin": "30-11-2019",
+      "monedaBase": "dolares",
+      "monedaAlt": "pesos",
+      "serie": "ISHRS",
+      "perfilEmision": "Emision02",
+      "valorNominal": "100",
+      "totalColocar": "1000",
+      "multiploInversion": "10",
+      "minimoInversion": "100",
+      "precio": "12000",
+      "tituloLiq" : "ISHRS",
+      "tipoMed" : "ISHRS",
+      "medLiq" : "ISHRS"
+    },
+    {
+      "id": "03",
+      "emisora": "BANAMEX16022",
+      "tv": "TV BMX",
+      "plazo": "150",
+      "tasa": "8.20",
+      "fechaInicio": "12-08-2019",
+      "fechaFin": "15-11-2019",
+      "monedaBase": "euros",
+      "monedaAlt": "pesos",
+      "serie": "ISHRS",
+      "perfilEmision": "Emision03",
+      "valorNominal": "100",
+      "totalColocar": "1000",
+      "multiploInversion": "10",
+      "minimoInversion": "100",
+      "precio": "150",
+      "tituloLiq" : "ISHRS",
+      "tipoMed" : "ISHRS",
+      "medLiq" : "ISHRS"
     }
   ]
 }
