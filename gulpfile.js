@@ -155,7 +155,7 @@ function concatVendorCss() {
   return (
     gulp
       .src([
-        "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+        // "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
         "./node_modules/tailwindcss/dist/tailwind.min.css",
         "./src/views/styles/vendors/jqgrid/ui.jqgrid.min.css",
         "./node_modules/select2/dist/css/select2.min.css",
