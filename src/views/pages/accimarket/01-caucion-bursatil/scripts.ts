@@ -282,3 +282,7 @@ fieldSelectPlusAutocomplete("ejemplo", {
 });
 
 fieldDateClear("fecha");
+
+// DateRange
+fieldBeginDateRangeClear("rango");
+fieldEndDateRangeClear("rango");
