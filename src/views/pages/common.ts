@@ -1762,3 +1762,21 @@ const fieldDateClear = (id: string) => {
     $dates.datepicker("setDate", null);
   });
 };
+
+const fieldBeginDateRangeClear = (id: string) => {
+  var _id = $("#" + id + "_begin_date");
+  var $dates = $(_id).datepicker();
+
+  $("#clear_" + id + "_begin_date").on("click", function() {
+    $dates.datepicker("setDate", null);
+  });
+};
+
+const fieldEndDateRangeClear = (id: string) => {
+  var _id = $("#" + id + "_end_date");
+  var $dates = $(_id).datepicker();
+
+  $("#clear_" + id + "_end_date").on("click", function() {
+    $dates.datepicker("setDate", null);
+  });
+};
