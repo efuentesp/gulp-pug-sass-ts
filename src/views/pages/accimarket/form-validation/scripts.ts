@@ -13,14 +13,14 @@ console.log("form-validation");
     return false;
   });
 
-fieldPlusMinus("contrato1");
-fieldPlusMinus("contrato2");
-fieldPlusMinus("contrato3");
-fieldPlusMinus("contrato4");
-fieldSelectPlusMinus("contrato5");
-fieldSelectPlusMinus("contrato6");
-fieldSelectPlusMinus("contrato7");
-fieldSelectPlusMinus("contrato8");
+fieldPlusMinus("contrato1", {});
+fieldPlusMinus("contrato2", {});
+fieldPlusMinus("contrato3", {});
+fieldPlusMinus("contrato4", {});
+fieldSelectPlusMinus("contrato5", {});
+fieldSelectPlusMinus("contrato6", {});
+fieldSelectPlusMinus("contrato7", {});
+fieldSelectPlusMinus("contrato8", {});
 
 ($("#payment") as any).select2({
   placeholder: "--Seleccione--",

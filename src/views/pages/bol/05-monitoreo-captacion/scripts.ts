@@ -1,5 +1,5 @@
-fieldPlusMinus("tv");
-fieldPlusMinus("emisora");
+fieldPlusMinus("tv", {});
+fieldPlusMinus("emisora", {});
 
 $("#btn_pdf").click(() =>
   $("#").dialog({
