@@ -1753,3 +1753,12 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
     trElement.append(questions);
   }
 };
+
+const fieldDateClear = (id: string) => {
+  var _id = "#" + id;
+  var $dates = $(_id).datepicker();
+
+  $("#clear_" + id).on("click", function() {
+    $dates.datepicker("setDate", null);
+  });
+};
