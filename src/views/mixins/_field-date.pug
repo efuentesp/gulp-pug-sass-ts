@@ -17,7 +17,7 @@ mixin field-date(id, parms)
       if parms.required
         span.required *
     .field-control
-      .field-input.flex
+      .field-input.flex.items-center
         input.input(id=_input_id
           class=_datepicker_class
           required=parms.required
@@ -27,6 +27,6 @@ mixin field-date(id, parms)
           data-parsley-errors-container=_field_error_block_id
         )
         if _btn_clear
-          input(type="image" id="clear_" +_input_id src="../../assets/images/meddelete.png"  style="width:15px;height:15px;")
+          input.pl-1(type="image" id="clear_" +_input_id src="../../assets/images/meddelete.png"  style="width:15px;height:15px;")
       .field-error
         div(id=_field_error_block)

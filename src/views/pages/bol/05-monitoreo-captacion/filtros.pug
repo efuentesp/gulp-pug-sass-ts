@@ -1,7 +1,7 @@
 p.encabezado-filtro Filtro
 +form("criterios-busqueda")
     .row.contenedor-filtros-scroll
-        +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: true})
+        +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: true, clear: true})
         +field-plus-minus("tv", {label: "TV"})
         +field-plus-minus("emisora", {label: "Emisora"})
     .row.footer-filtros

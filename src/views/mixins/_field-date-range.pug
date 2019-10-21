@@ -6,6 +6,7 @@ mixin field-date-range(id, parms)
   - var _style = (parms.size ? parms.size : "8em")
   - var _input_max_length = (parms.max_length ? parms.max_length : "32")
   - var _input_max_length_errmsg = "Solo puedes ingresar hasta " + _input_max_length + " caracteres."
+  - var _btn_clear =  parms.clear ? parms.clear : false
 
   .field(id=_field_id class=_class)
     .field-control.flex
@@ -15,7 +16,8 @@ mixin field-date-range(id, parms)
                   required: parms.required,
                   size: _style,
                   orientation: _class,
-                  datepicker_range: true
+                  datepicker_range: true,
+                  clear: _btn_clear
                 })
     +field-date(_input_id + "_end_date",
                 {
@@ -23,5 +25,6 @@ mixin field-date-range(id, parms)
                   required: parms.required,
                   size: _style,
                   orientation: _class,
-                  datepicker_range: true
+                  datepicker_range: true,
+                  clear: _btn_clear
                 })
