@@ -9,6 +9,82 @@ block styles
 block content
    .content.p-4
       .row
+         .scrollmenu
+            a(href="") Mapa de Liquidez
+            a(href="") I.- Conocimiento del cliente y su Experiencia en productos financieros
+            a(href="") I.- Conocimiento del cliente y su Experiencia en productos financieros
+            a(href="") II.- Objetivos de Inversión
+            a(href="") II.- Objetivos de Inversión
+            a(href="") II.- Objetivos de Inversión
+            a(href="") Tab 4
+            a(href="") Tab 5
+            a(href="") Tab 6
+            a(href="") Tab 7
+            a(href="") Tab 8
+            a(href="") Tab 9
+            a(href="") Tab 10
+            a(href="") Tab 11
+            a(href="") Tab 12
+
+      .row.pt-10
+         nav.arrow#menu-container
+            #btn-nav-previous(style="fill: #fff")
+               img(src="../../assets/images/arrow-left.png")
+            #btn-nav-next(style="fill: #fff")
+               img(src="../../assets/images/arrow-right.png")
+            .menu-inner-box
+               ul.menu
+                  li.menu-item
+                     a.current(href="") Mapa de Liquidez
+                  li.menu-item
+                     a(href="") I.- Conocimiento del cliente y su Experiencia en productos financieros
+                  li.menu-item
+                     a(href="") I.- Conocimiento del cliente y su Experiencia en productos financieros
+                  li.menu-item
+                     a(href="") II.- Objetivos de Inversión
+                  li.menu-item
+                     a(href="") II.- Objetivos de Inversión
+                  li.menu-item
+                     a(href="") II.- Objetivos de Inversión
+                  li.menu-item
+                     a(href="") Tab 4
+                  li.menu-item
+                     a(href="") Tab 5
+                  li.menu-item
+                     a(href="") Tab 6
+                  li.menu-item
+                     a(href="") Tab 7
+                  li.menu-item
+                     a(href="") Tab 8
+                  li.menu-item
+                     a(href="") Tab 9
+                  li.menu-item
+                     a(href="") Tab 10
+                  li.menu-item
+                     a(href="") Tab 11
+                  li.menu-item
+                     a(href="") Tab 12
+
+      .row.pt-10
+         +scrolling_menu
+            +menu_item("tab01", {label: "Mapa de Liquidez"})
+            +menu_item("tab01", {label: "I.- Conocimiento del cliente y su Experiencia en productos financieros"})
+            +menu_item("tab01", {label: "I.- Conocimiento del cliente y su Experiencia en productos financieros"})
+            +menu_item("tab01", {label: "II.- Objetivos de Inversión", active: true})
+            +menu_item("tab01", {label: "II.- Objetivos de Inversión"})
+            +menu_item("tab01", {label: "II.- Objetivos de Inversión"})
+            +menu_item("tab01", {label: "Tab X"})
+            +menu_item("tab01", {label: "Tab X"})
+            +menu_item("tab01", {label: "Tab X"})
+            +menu_item("tab01", {label: "Tab X"})
+            +menu_item("tab01", {label: "Tab X"})
+            +menu_item("tab01", {label: "Tab X"})
+            +menu_item("tab01", {label: "Tab X"})
+            +menu_item("tab01", {label: "Tab X"})
+            +menu_item("tab01", {label: "Tab X"})
+            +menu_item("tab01", {label: "Tab X"})
+
+      .row.pt-10
          .wizard
             h3 Paso 1
             section
@@ -19,39 +95,7 @@ block content
             h3 Paso 3
             section
                p Contenido del Paso 3
-            h3 Paso 3
-            section
-               p Contenido del Paso 3
-            h3 Paso 3
-            section
-               p Contenido del Paso 3
-            h3 Paso 3
-            section
-               p Contenido del Paso 3
-            h3 Paso 3
-            section
-               p Contenido del Paso 3
-            h3 Paso 3
-            section
-               p Contenido del Paso 3
-            h3 Paso 3
-            section
-               p Contenido del Paso 3
-            h3 Paso 3
-            section
-               p Contenido del Paso 3
-            h3 Paso 3
-            section
-               p Contenido del Paso 3
-            h3 Paso 3
-            section
-               p Contenido del Paso 3
-            h3 Paso 3
-            section
-               p Contenido del Paso 3
-            h3 Paso 3
-            section
-               p Contenido del Paso 3
+
 
 block scripts
    script(src="../../assets/scripts/accimarket/10-Test/scripts.js")
