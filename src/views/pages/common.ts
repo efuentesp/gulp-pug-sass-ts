@@ -246,7 +246,7 @@ const http_findOne$ = rest_findOne$;
 const http_create = rest_create;
 // const http_create$ = rest_create$;
 
-const fieldSelectPlusMinus = (id: string) => {
+const fieldSelectPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
@@ -276,14 +276,26 @@ const fieldSelectPlusMinus = (id: string) => {
       });
     }
 
-    if (exist == 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a id = " +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</option></a></li>"
-      );
+    if (params.maxsize != null) {
+      if (
+        exist == 0 &&
+        text_to_add.length > 0 &&
+        $(list + " li").length < params.maxsize
+      ) {
+        $(list).append(
+          "<li><a class='delete_item' href='javascript:void();'>" +
+            text_to_add +
+            "</a></li>"
+        );
+      }
+    } else {
+      if (exist == 0 && text_to_add.length > 0) {
+        $(list).append(
+          "<li><a class='delete_item' href='javascript:void();'>" +
+            text_to_add +
+            "</a></li>"
+        );
+      }
     }
 
     $(idInput)
@@ -296,6 +308,7 @@ const fieldSelectPlusMinus = (id: string) => {
     $(list + " li a").each(function(index) {
       if ($(this).attr("id") === $(idInput).val()) {
         nodelist.childNodes[index].remove();
+        $(list + " li").length = $(list + " li").length - 1;
       }
     });
 
@@ -321,7 +334,7 @@ const fieldSelectPlusMinus = (id: string) => {
   });
 };
 
-const fieldPlusMinus = (id: string) => {
+const fieldPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
@@ -348,12 +361,26 @@ const fieldPlusMinus = (id: string) => {
       });
     }
 
-    if (exist == 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</a></li>"
-      );
+    if (params.maxsize != null) {
+      if (
+        exist == 0 &&
+        text_to_add.length > 0 &&
+        $(list + " li").length < params.maxsize
+      ) {
+        $(list).append(
+          "<li><a class='delete_item' href='javascript:void();'>" +
+            text_to_add +
+            "</a></li>"
+        );
+      }
+    } else {
+      if (exist == 0 && text_to_add.length > 0) {
+        $(list).append(
+          "<li><a class='delete_item' href='javascript:void();'>" +
+            text_to_add +
+            "</a></li>"
+        );
+      }
     }
 
     $(idInput).val("");
@@ -364,6 +391,7 @@ const fieldPlusMinus = (id: string) => {
     $(list + " li a").each(function(index) {
       if ($(this).text() === $(idInput).val()) {
         nodelist.childNodes[index].remove();
+        $(list + " li").length = $(list + " li").length - 1;
       }
     });
 
