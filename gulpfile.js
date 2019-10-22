@@ -268,7 +268,7 @@ exports.watch = watch;
 exports.default = gulp.series(
   clean,
   gulp.parallel(pugIt, handlebarsIt, sassIt, typescriptIt, imageminIt),
-  webfonts,
+  // webfonts,
   concatVendorCss,
   concatJQueryJs,
   concatVendorJs
@@ -277,7 +277,7 @@ exports.default = gulp.series(
 exports.dev = gulp.series(
   clean,
   gulp.parallel(pugIt, handlebarsIt, sassIt, typescriptIt, imageminIt),
-  webfonts,
+  // webfonts,
   concatVendorCss,
   concatJQueryJs,
   concatVendorJs,
