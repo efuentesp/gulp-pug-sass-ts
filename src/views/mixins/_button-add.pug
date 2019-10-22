@@ -3,17 +3,13 @@ mixin button-add(parms)
 
   if _parms.size == "large"
     button.button.big-button(id="btn_add" type="submit" title=_parms.tooltip disabled=_parms.disabled value="validate")
-        span.fa-stack.fa-lg
-          i.fas.fa-file-medical.fa-2x
-        br
-        span Agregar
+      img(src="../../assets/images/btn-agregar.png")
+      span Agregar
 
   if _parms.size == "medium"
     button.button.medium-button(id="btn_add" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-2x
-          i.fas.fa-file-medical.fa-sm
+      img(src="../../assets/images/btn-agregar.png")
 
   if _parms.size == "small"
     button.button.small-button(id="btn_add" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-sm
-          i.fas.fa-file-medical.fa-lg
+      img(src="../../assets/images/btn-agregar.png")

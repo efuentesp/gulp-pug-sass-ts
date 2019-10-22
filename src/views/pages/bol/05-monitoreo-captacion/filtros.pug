@@ -1,10 +1,11 @@
 p.encabezado-filtro Filtro
 +form("criterios-busqueda")
     .row.contenedor-filtros-scroll
-        +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: true, size:"10em"})
+        +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: true, clear: true})
         +field-plus-minus("tv", {label: "TV"})
         +field-plus-minus("emisora", {label: "Emisora"})
     .row.footer-filtros
-        +field-group("botones-filtros")    
-            +button-search({size: "large", disabled: false})
-            +button-clean({size: "large", disabled: false})
+        .barra-filtros.flex.justify-end
+            +field-group("botones-filtros")
+                +button-filter({size: "large", disabled: false, size: "small"})
+                +button-filter-clean({size: "large", disabled: false, size: "small"})

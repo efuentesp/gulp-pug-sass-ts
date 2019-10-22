@@ -21,7 +21,7 @@ console.log("00-distribucion-de-instrucciones");
   minimumResultsForSearch: Infinity
 });
 
-fieldSelectPlusMinus("contrato");
+fieldSelectPlusMinus("contrato", {});
 
 $("#table_grid_promocion").jqGrid({
   url: "http://localhost:3000/fideicomiso",

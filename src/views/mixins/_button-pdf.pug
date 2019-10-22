@@ -8,10 +8,8 @@ mixin button-pdf(parms)
 
   if _parms.size == "medium"
     button.button.medium-button(id="btn_pdf" title=_parms.tooltip disabled=_parms.disabled)
-       span.fa-stack.fa-2x
-          i.fa.fas.fa-file-pdf.fa-sm
+      img(src="../../assets/images/btn-pdf_32x32.png")
 
   if _parms.size == "small"
     button.button.small-button(id="btn_pdf" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-sm
-          i.fa.fas.fa-file-pdf.fa-lg
+      img(src="../../assets/images/btn-pdf_32x32.png")
