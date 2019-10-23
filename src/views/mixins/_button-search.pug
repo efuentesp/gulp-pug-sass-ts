@@ -10,10 +10,8 @@ mixin button-search(parms)
 
   if _parms.size == "medium"
     button.button.medium-button(id=_id title=_parms.tooltip disabled=_parms.disabled)
-      span.fa-stack.fa-2x
-        i.fa.fa-search.fa-sm
+      img(src="../../assets/images/btn-consultar_32x32.png")
 
   if _parms.size == "small"
     button.button.small-button(id=_id title=_parms.tooltip disabled=_parms.disabled)
-      span.fa-stack.fa-sm
-        i.fa.fa-search.fa-lg
+      img(src="../../assets/images/btn-consultar_32x32.png")

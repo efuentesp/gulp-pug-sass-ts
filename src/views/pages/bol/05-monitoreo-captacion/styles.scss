@@ -1,9 +1,24 @@
-.contenido{
-    width: 73%;
+.contenido {
+  width: 73%;
+  flex: 1;
 }
 
-#contextMenu {
-    ul {
-        width: 400px;
-    }
+#jqContextMenu {
+  ul {
+    width: 200px !important;
+    padding: 5px !important;
+  }
+}
+
+#field_tv,
+#field_emisora {
+  margin-left: 6px;
+}
+
+#criterios-busqueda {
+  height: 92vh;
+}
+
+#gbox_table_notas-estructuradas {
+  height: 78vh;
 }

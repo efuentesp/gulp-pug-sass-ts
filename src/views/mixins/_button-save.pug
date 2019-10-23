@@ -5,17 +5,13 @@ mixin button-save(parms)
 
   if _parms.size == "large"
     button.button.big-button(id=_id title=tooltip disabled=_parms.disabled)
-      span.fa-stack.fa-lg
-        i.fas.fa-save.fa-2x
-      br
+      img(src="../../assets/images/btn-enviar.png")
       span=_label
 
   if _parms.size == "medium"
     button.button.medium-button(id=_id title=tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-2x
-          i.fas.fa-save.fa-sm
+      img(src="../../assets/images/btn-enviar.png")
 
   if _parms.size == "small"
     button.button.small-button(id=_id title=tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-sm
-          i.fas.fa-save.fa-lg
+      img(src="../../assets/images/btn-enviar.png")

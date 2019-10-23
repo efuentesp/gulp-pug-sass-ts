@@ -7,8 +7,15 @@
         .row.flex.flex-wrap.justify-between
             +field-input("perfil", {label: "Perfil Contrato", orientation: "horizontal", disabled:true})
             +field-input("digito", {label: "Dígito", orientation: "horizontal", disabled:true})
-        +field-input("operacion", {label: "Operación", required: true, orientation: "horizontal"})
-        +field-input("emisora", {label: "Emisora", required: true, orientation: "horizontal"})
+        +field-input("operacion", {label: "Operación", required: true, orientation: "horizontal", disabled:true, default_value:"Compra"})
+        +field-select("emisora",
+            {
+            label: "Emisora",
+            required: true,
+            size: "12em",
+            orientation: "horizontal"
+            }
+            )
         .row.flex.flex-wrap.justify-between
             +field-input("tv", {label: "TV", orientation: "horizontal", disabled:true})
             +field-input("plazo", {label: "Plazo", orientation: "horizontal", disabled:true})
@@ -30,8 +37,9 @@
             size: "12em",
             orientation: "horizontal"
             },
-            {key: "ET", value:"Electronic transfer"},
-            {key:"CHK", value:"Check"}
+            {key: "01", value:"Ejecución"},
+            {key:"02", value:"Comercialización"},
+            {key:"03", value:"Asesoría"}
             )
         +field-select("medio-cierre",
             {
@@ -40,10 +48,14 @@
             size: "12em",
             orientation: "horizontal"
             },
-            {key: "ET", value:"Electronic transfer"},
-            {key:"CHK", value:"Check"}
+            {key: "01", value:"No Aplica"},
+            {key:"02", value:"Red"},
+            {key:"03", value:"Otro"}
             )
         +field-input("telefono", {label: "Número de Red/Teléfono", required: true, orientation: "horizontal"})
+        input#totalColocar(type="hidden" value="0")
+        input#multiploInversion(type="hidden" value="0")
+        input#minimoInversion(type="hidden" value="0")
     .row.flex.justify-center.pt-5
         +field-group("botones-group")
             +button-add({size: "large", disabled: false})

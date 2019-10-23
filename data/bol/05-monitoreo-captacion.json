@@ -1,0 +1,16 @@
+{
+  "horarioAmpliado": [
+    {
+      "emisora": "Banamex",
+      "fecInicio": "10/20/2019",
+      "horario": "04:00 hrs",
+      "id": 1
+    },
+    {
+      "emisora": "Banamex",
+      "fecInicio": "10/20/2019",
+      "horario": "05:00 hrs",
+      "id": 2
+    }
+  ]
+}

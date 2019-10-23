@@ -3,17 +3,13 @@ mixin button-delete(parms)
 
   if _parms.size == "large"
     button.button.big-button(id="btn_delete" type="submit" title=_parms.tooltip disabled=_parms.disabled value="validate")
-        span.fa-stack.fa-lg
-          i.fas.fa-trash-alt.fa-2x
-        br
-        span Borrar
+      img(src="../../assets/images/btn-borrar.png")
+      span Borrar
 
   if _parms.size == "medium"
     button.button.medium-button(id="btn_delete" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-2x
-          i.fas.fa-trash-alt.fa-sm
+      img(src="../../assets/images/btn-borrar.png")
 
   if _parms.size == "small"
     button.button.small-button(id="btn_delete" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-sm
-          i.fas.fa-trash-alt.fa-lg
+      img(src="../../assets/images/btn-borrar.png")

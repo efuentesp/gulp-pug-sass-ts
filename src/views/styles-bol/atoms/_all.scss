@@ -1,0 +1,8 @@
+@import "../vars";
+
+* {
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}

@@ -40,7 +40,7 @@ const DATE_FORMAT = "dd-mm-yy";
 const DATE_FORMAT_MONTH_YEAR = "MM yy";
 
 const ui_datepicker_settings = {
-  showOn: "button",
+  showOn: "both",
   buttonImage: "../../assets/images/btn-calendario.svg",
   buttonImageOnly: true,
   buttonText: "",
@@ -246,7 +246,7 @@ const http_findOne$ = rest_findOne$;
 const http_create = rest_create;
 // const http_create$ = rest_create$;
 
-const fieldSelectPlusMinus = (id: string) => {
+const fieldSelectPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
@@ -276,14 +276,26 @@ const fieldSelectPlusMinus = (id: string) => {
       });
     }
 
-    if (exist == 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a id = " +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</option></a></li>"
-      );
+    if (params.maxsize != null) {
+      if (
+        exist == 0 &&
+        text_to_add.length > 0 &&
+        $(list + " li").length < params.maxsize
+      ) {
+        $(list).append(
+          "<li><a class='delete_item' href='javascript:void();'>" +
+            text_to_add +
+            "</a></li>"
+        );
+      }
+    } else {
+      if (exist == 0 && text_to_add.length > 0) {
+        $(list).append(
+          "<li><a class='delete_item' href='javascript:void();'>" +
+            text_to_add +
+            "</a></li>"
+        );
+      }
     }
 
     $(idInput)
@@ -296,6 +308,7 @@ const fieldSelectPlusMinus = (id: string) => {
     $(list + " li a").each(function(index) {
       if ($(this).attr("id") === $(idInput).val()) {
         nodelist.childNodes[index].remove();
+        $(list + " li").length = $(list + " li").length - 1;
       }
     });
 
@@ -321,7 +334,7 @@ const fieldSelectPlusMinus = (id: string) => {
   });
 };
 
-const fieldPlusMinus = (id: string) => {
+const fieldPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
@@ -348,12 +361,26 @@ const fieldPlusMinus = (id: string) => {
       });
     }
 
-    if (exist == 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</a></li>"
-      );
+    if (params.maxsize != null) {
+      if (
+        exist == 0 &&
+        text_to_add.length > 0 &&
+        $(list + " li").length < params.maxsize
+      ) {
+        $(list).append(
+          "<li><a class='delete_item' href='javascript:void();'>" +
+            text_to_add +
+            "</a></li>"
+        );
+      }
+    } else {
+      if (exist == 0 && text_to_add.length > 0) {
+        $(list).append(
+          "<li><a class='delete_item' href='javascript:void();'>" +
+            text_to_add +
+            "</a></li>"
+        );
+      }
     }
 
     $(idInput).val("");
@@ -364,6 +391,7 @@ const fieldPlusMinus = (id: string) => {
     $(list + " li a").each(function(index) {
       if ($(this).text() === $(idInput).val()) {
         nodelist.childNodes[index].remove();
+        $(list + " li").length = $(list + " li").length - 1;
       }
     });
 
@@ -784,6 +812,10 @@ const stackChartHorizontal = (params: stackChartHParams) => {
     type: "horizontalBar",
     data: chartData,
     options: {
+      legend: {
+        display: true,
+        position: "right"
+      },
       scales: {
         xAxes: [
           {
@@ -1424,8 +1456,14 @@ const multiLineChart = (params: multiLineChartParams) => {
   });
 };
 
+var pieGraph = null;
+
 // PieGraph
 const pieChart = (params: pieChartParams) => {
+  if (pieGraph != null) {
+    pieGraph.destroy();
+  }
+
   var chartData = {
     labels: params.labels,
     datasets: params.dataSet
@@ -1486,6 +1524,7 @@ const validateDateRage = (id: string) => {
 };
 
 // Clean selects
+// TODO: No amarrar el clean a la clase .is-search-form ya que no siempre se usa.
 $("#btn_clean").click(() => {
   ($(".is-search-form") as any).parsley().reset();
   $("li").remove();
@@ -1540,6 +1579,80 @@ const getCheckedCheckbox = (id: string) => {
 //     }
 //   }
 // }
+
+// Función creada por Guillermo Islas
+function copyGridContentToClipboard(gridNameID, includeGroups) {
+  if (gridNameID && gridNameID.trim()) {
+    gridNameID = gridNameID.trim();
+    var grid = $("#" + gridNameID);
+    if (grid && grid.length > 0) {
+      var gridData = $(grid).getGridParam("data");
+      var totalRecords = $(grid).getGridParam("records");
+      var colModel = $(grid).getGridParam("colModel");
+      var headers = [];
+      if (includeGroups && typeof includeGroups === "boolean") {
+        var groupHeaders = $(grid).getGridParam("groupingView").groupField;
+        $(groupHeaders).each(function(index, value) {
+          headers.push(value);
+        });
+      }
+      var column;
+      var columnName;
+      $(colModel).each(function() {
+        column = $(this)[0];
+        columnName = column.name;
+        if (!column.hidden) {
+          headers.push(columnName);
+        }
+      });
+      var tableHeader = "<thead><tr>";
+      $.each(headers, function(index, value) {
+        tableHeader += "<th>" + value + "</th>";
+      });
+      tableHeader += "</tr></thead>";
+      var totalRecordsTableRow =
+        '<tr><td colspan="' +
+        headers.length +
+        '">Total de registros: ' +
+        totalRecords +
+        "</td></tr>";
+      var row;
+      var tableContent = "";
+      $(gridData).each(function() {
+        tableContent += "<tr>";
+        row = $(this)[0];
+        $.each(headers, function(index, header) {
+          tableContent += "<td>" + row[header] + "</td>";
+        });
+        tableContent += "</tr>";
+      });
+      var tableID = "___" + gridNameID;
+      var table = $(
+        '<table id="' +
+          tableID +
+          '">' +
+          tableHeader +
+          "<tbody>" +
+          totalRecordsTableRow +
+          tableContent +
+          "</tbody></table>"
+      );
+      $(table)
+        .css("position", "absolute")
+        .css("top", "-2000px")
+        .css("left", "-2000px");
+      $("body").append(table);
+      var range = document.createRange();
+      range.selectNodeContents(document.getElementById(tableID));
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      document.execCommand("copy");
+      $(table).remove();
+    }
+  }
+}
+
 const fillSwapList = (id: string, id_list: string, params: any) => {
   var _id = "#" + id;
   var _list = "#" + id_list;
@@ -1568,4 +1681,335 @@ const fillSwapList = (id: string, id_list: string, params: any) => {
       $(this).addClass("selected");
     });
   }
+};
+
+const fillQuiz = (field_group: string, id: string, quiz: any) => {
+  var trElement = $("#" + field_group + " tbody");
+  var answerOption = "";
+  var answerSelect = "";
+  var answersSelect = "";
+  var answers = "";
+  var question = "";
+  var questions = "";
+  var options = "";
+  var option = "";
+  var nAnswers = 0;
+  var nQuestions = 0;
+
+  nQuestions = quiz[0].question.length;
+  nAnswers = quiz[0].answer.length;
+
+  // Questions
+  for (var i = 0; i < nQuestions; i++) {
+    question = "<tr><td class='question'>" + quiz[0].question[i].question;
+
+    if (quiz[0].question[i].required) {
+      question += "<span class='required'>*</span>";
+    }
+
+    question +=
+      "<div class='field-error'><div id='field_error_block_encuesta_" +
+      i +
+      "'></div></div></td>";
+
+    answers = "";
+    options = "";
+
+    // Answers
+    for (var j = 0; j < nAnswers; j++) {
+      var answer_points = quiz[0].question[i].points
+        ? quiz[0].question[i].points[j]
+        : "1";
+      var disabled = quiz[0].answer[j].disabled;
+
+      var db = "";
+      //   if (disabled) {
+      //     db = "disabled";
+      //   }
+
+      if (quiz[0].answer[j].type == "option") {
+        answerOption =
+          "<td>" +
+          "<div class='answer'>" +
+          "<input type='radio' id='" +
+          id +
+          "_" +
+          i +
+          "_" +
+          j +
+          "' name='" +
+          id +
+          "_" +
+          i +
+          "' required data-parsley-errors-container='#field_error_block_" +
+          id +
+          "_" +
+          j +
+          "' data-points='" +
+          answer_points +
+          "'>" +
+          "<span class='checkmark'></span>" +
+          "</div>" +
+          "</td>";
+
+        answers += answerOption;
+      }
+
+      if (quiz[0].answer[j].type == "select") {
+        answerSelect =
+          '<td><div class="answer">' +
+          '<select class="select2" id="encuesta_' +
+          i +
+          "_" +
+          j +
+          '" name="quiz_select" style="width: 12em;" required ' +
+          db +
+          " " +
+          'data-parsley-errors-container="#field_error_block_' +
+          id +
+          "_" +
+          i +
+          '">';
+
+        options = "";
+        for (var k = 0; k < quiz[0].answer[j].options.length; k++) {
+          option =
+            '<option value="' +
+            quiz[0].answer[j].options[k].key +
+            '">' +
+            quiz[0].answer[j].options[k].value +
+            "</option>";
+          options += option;
+        }
+
+        answersSelect = answerSelect + options + "</select></div>" + "</td>";
+        answers += answersSelect;
+      }
+    }
+
+    questions = question + answers + "</tr>";
+    trElement.append(questions);
+  }
+};
+
+const fieldDateClear = (id: string) => {
+  var _id = "#" + id;
+  var $dates = $(_id).datepicker();
+
+  $("#clear_" + id).on("click", function() {
+    $dates.datepicker("setDate", null);
+  });
+};
+
+const fieldBeginDateRangeClear = (id: string) => {
+  var _id = $("#" + id + "_begin_date");
+  var $dates = $(_id).datepicker();
+
+  $("#clear_" + id + "_begin_date").on("click", function() {
+    $dates.datepicker("setDate", null);
+  });
+};
+
+const fieldEndDateRangeClear = (id: string) => {
+  var _id = $("#" + id + "_end_date");
+  var $dates = $(_id).datepicker();
+
+  $("#clear_" + id + "_end_date").on("click", function() {
+    $dates.datepicker("setDate", null);
+  });
+};
+
+const json2xml = (o, tab) => {
+  var toXml = function(v, name, ind) {
+      var xml = "";
+      if (v instanceof Array) {
+        for (var i = 0, n = v.length; i < n; i++)
+          xml += ind + toXml(v[i], name, ind + "\t") + "\n";
+      } else if (typeof v == "object") {
+        var hasChild = false;
+        xml += ind + "<" + name;
+        for (var m in v) {
+          if (m.charAt(0) == "@")
+            xml += " " + m.substr(1) + '="' + v[m].toString() + '"';
+          else hasChild = true;
+        }
+        xml += hasChild ? ">" : "/>";
+        if (hasChild) {
+          for (var m in v) {
+            if (m == "#text") xml += v[m];
+            else if (m == "#cdata") xml += "<![CDATA[" + v[m] + "]]>";
+            else if (m.charAt(0) != "@") xml += toXml(v[m], m, ind + "\t");
+          }
+          xml +=
+            (xml.charAt(xml.length - 1) == "\n" ? ind : "") + "</" + name + ">";
+        }
+      } else {
+        xml += ind + "<" + name + ">" + v.toString() + "</" + name + ">";
+      }
+      return xml;
+    },
+    xml = "";
+  for (var m in o) xml += toXml(o[m], m, "");
+  return tab ? xml.replace(/\t/g, tab) : xml.replace(/\t|\n/g, "");
+};
+
+const xml2json = (xml, tab) => {
+  var X = {
+    toObj: function(xml) {
+      var o = {};
+      if (xml.nodeType == 1) {
+        // element node ..
+        if (xml.attributes.length)
+          // element with attributes  ..
+          for (var i = 0; i < xml.attributes.length; i++)
+            o["@" + xml.attributes[i].nodeName] = (
+              xml.attributes[i].nodeValue || ""
+            ).toString();
+        if (xml.firstChild) {
+          // element has child nodes ..
+          var textChild = 0,
+            cdataChild = 0,
+            hasElementChild = false;
+          for (var n = xml.firstChild; n; n = n.nextSibling) {
+            if (n.nodeType == 1) hasElementChild = true;
+            else if (n.nodeType == 3 && n.nodeValue.match(/[^ \f\n\r\t\v]/))
+              textChild++;
+            // non-whitespace text
+            else if (n.nodeType == 4) cdataChild++; // cdata section node
+          }
+          if (hasElementChild) {
+            if (textChild < 2 && cdataChild < 2) {
+              // structured element with evtl. a single text or/and cdata node ..
+              X.removeWhite(xml);
+              for (var n = xml.firstChild; n; n = n.nextSibling) {
+                if (n.nodeType == 3)
+                  // text node
+                  o["#text"] = X.escape(n.nodeValue);
+                else if (n.nodeType == 4)
+                  // cdata node
+                  o["#cdata"] = X.escape(n.nodeValue);
+                else if (o[n.nodeName]) {
+                  // multiple occurence of element ..
+                  if (o[n.nodeName] instanceof Array)
+                    o[n.nodeName][o[n.nodeName].length] = X.toObj(n);
+                  else o[n.nodeName] = [o[n.nodeName], X.toObj(n)];
+                } // first occurence of element..
+                else o[n.nodeName] = X.toObj(n);
+              }
+            } else {
+              // mixed content
+              if (!xml.attributes.length) o = X.escape(X.innerXml(xml));
+              else o["#text"] = X.escape(X.innerXml(xml));
+            }
+          } else if (textChild) {
+            // pure text
+            if (!xml.attributes.length) o = X.escape(X.innerXml(xml));
+            else o["#text"] = X.escape(X.innerXml(xml));
+          } else if (cdataChild) {
+            // cdata
+            if (cdataChild > 1) o = X.escape(X.innerXml(xml));
+            else
+              for (var n = xml.firstChild; n; n = n.nextSibling)
+                o["#cdata"] = X.escape(n.nodeValue);
+          }
+        }
+        if (!xml.attributes.length && !xml.firstChild) o = null;
+      } else if (xml.nodeType == 9) {
+        // document.node
+        o = X.toObj(xml.documentElement);
+      } else alert("unhandled node type: " + xml.nodeType);
+      return o;
+    },
+    toJson: function(o, name, ind) {
+      var json = name ? '"' + name + '"' : "";
+      if (o instanceof Array) {
+        for (var i = 0, n = o.length; i < n; i++)
+          o[i] = X.toJson(o[i], "", ind + "\t");
+        json +=
+          (name ? ":[" : "[") +
+          (o.length > 1
+            ? "\n" + ind + "\t" + o.join(",\n" + ind + "\t") + "\n" + ind
+            : o.join("")) +
+          "]";
+      } else if (o == null) json += (name && ":") + "null";
+      else if (typeof o == "object") {
+        var arr = [];
+        for (var m in o) arr[arr.length] = X.toJson(o[m], m, ind + "\t");
+        json +=
+          (name ? ":{" : "{") +
+          (arr.length > 1
+            ? "\n" + ind + "\t" + arr.join(",\n" + ind + "\t") + "\n" + ind
+            : arr.join("")) +
+          "}";
+      } else if (typeof o == "string")
+        json += (name && ":") + '"' + o.toString() + '"';
+      else json += (name && ":") + o.toString();
+      return json;
+    },
+    innerXml: function(node) {
+      var s = "";
+      if ("innerHTML" in node) s = node.innerHTML;
+      else {
+        var asXml = function(n) {
+          var s = "";
+          if (n.nodeType == 1) {
+            s += "<" + n.nodeName;
+            for (var i = 0; i < n.attributes.length; i++)
+              s +=
+                " " +
+                n.attributes[i].nodeName +
+                '="' +
+                (n.attributes[i].nodeValue || "").toString() +
+                '"';
+            if (n.firstChild) {
+              s += ">";
+              for (var c = n.firstChild; c; c = c.nextSibling) s += asXml(c);
+              s += "</" + n.nodeName + ">";
+            } else s += "/>";
+          } else if (n.nodeType == 3) s += n.nodeValue;
+          else if (n.nodeType == 4) s += "<![CDATA[" + n.nodeValue + "]]>";
+          return s;
+        };
+        for (var c = node.firstChild; c; c = c.nextSibling) s += asXml(c);
+      }
+      return s;
+    },
+    escape: function(txt) {
+      return txt
+        .replace(/[\\]/g, "\\\\")
+        .replace(/[\"]/g, '\\"')
+        .replace(/[\n]/g, "\\n")
+        .replace(/[\r]/g, "\\r");
+    },
+    removeWhite: function(e) {
+      e.normalize();
+      for (var n = e.firstChild; n; ) {
+        if (n.nodeType == 3) {
+          // text node
+          if (!n.nodeValue.match(/[^ \f\n\r\t\v]/)) {
+            // pure whitespace text node
+            var nxt = n.nextSibling;
+            e.removeChild(n);
+            n = nxt;
+          } else n = n.nextSibling;
+        } else if (n.nodeType == 1) {
+          // element node
+          X.removeWhite(n);
+          n = n.nextSibling;
+        } // any other node
+        else n = n.nextSibling;
+      }
+      return e;
+    }
+  };
+  if (xml.nodeType == 9)
+    // document node
+    xml = xml.documentElement;
+  var json = X.toJson(X.toObj(X.removeWhite(xml)), xml.nodeName, "\t");
+  return (
+    "{\n" +
+    tab +
+    (tab ? json.replace(/\t/g, tab) : json.replace(/\t|\n/g, "")) +
+    "\n}"
+  );
 };

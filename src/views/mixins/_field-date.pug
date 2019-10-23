@@ -9,6 +9,7 @@ mixin field-date(id, parms)
   - var _field_error_block = "field_error_block_" + id
   - var _field_error_block_id = "#" + _field_error_block
   - var _datepicker_class = (parms.datepicker_range ? "datepicker_range" : "datepicker")
+  - var _btn_clear =  parms.clear ? parms.clear : false
 
   .field(id=_field_id class=_class)
     .field-label.flex
@@ -16,7 +17,7 @@ mixin field-date(id, parms)
       if parms.required
         span.required *
     .field-control
-      .field-input.flex
+      .field-input.flex.items-center
         input.input(id=_input_id
           class=_datepicker_class
           required=parms.required
@@ -25,5 +26,7 @@ mixin field-date(id, parms)
           readonly
           data-parsley-errors-container=_field_error_block_id
         )
+        if _btn_clear
+          input.pl-1(type="image" id="clear_" +_input_id src="../../assets/images/meddelete.png"  style="width:15px;height:15px;")
       .field-error
         div(id=_field_error_block)

@@ -17,7 +17,7 @@ mixin field-select-plus-minus(id, parms, ...items)
       if parms.required
         span.required *
     .field-control
-      .field-plus-minus.has-addons
+      .field-plus-minus.has-addons.flex
         select.select2(id=_input_id
                     required=parms.required
                     style=_style
@@ -30,10 +30,10 @@ mixin field-select-plus-minus(id, parms, ...items)
                     )
           each item in items
             option(value=item.key)= item.value
-        button.button.is-icon.is-green(id=btn_plus_id type="button")
-          i.fa.fa-plus-circle.fa-lg.icon-button
-        button.button.is-icon.is-red(id=btn_minus_id type="button")
-          i.fa.fa-minus-circle.fa-lg.icon-button
+        button.button-noborder(id=btn_plus_id type="button")
+          img.plus-icon(src="../../assets/images/plus-icon.png")
+        button.button-noborder(id=btn_minus_id type="button")
+          img.minus-icon(src="../../assets/images/minus-icon.png")
       .field-error
         div(id=_field_error_block)
       ul.tag-list(id=tag_list_id

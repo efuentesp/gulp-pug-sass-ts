@@ -10,10 +10,8 @@ mixin button-xls(parms)
 
   if _parms.size == "medium"
     button.button.medium-button(id=_id title=_parms.tooltip disabled=_parms.disabled)
-      span.fa-stack.fa-2x
-        i.fas.fa-file-excel.fa-sm
+      img(src="../../assets/images/btn-xls_32x32.png")
 
   if _parms.size == "small"
     button.button.small-button(id=_id title=_parms.tooltip disabled=_parms.disabled)
-      span.fa-stack.fa-sm
-        i.fas.fa-file-excel.fa-lg
+      img(src="../../assets/images/btn-xls_32x32.png")

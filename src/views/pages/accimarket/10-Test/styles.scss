@@ -1,0 +1,19 @@
+@import "../../../styles/vars";
+
+.scrollmenu {
+  background-color: darkgray;
+  overflow: auto;
+  white-space: nowrap;
+
+  a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #777;
+    }
+  }
+}
