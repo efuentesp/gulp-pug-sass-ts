@@ -1562,7 +1562,7 @@ const getCheckedCheckbox = (id: string) => {
 //         var summaryIndex = $(summaryColumn).index();
 //         if (-1 != summaryIndex) {
 //           var sum = $(summaryColumn);
-//           var sumValue = $(sum).html();
+//           var sumValue = Number($(sum).html());
 //           if (decimalPlaces && !isNaN(sumValue)) {
 //             sumValue = "$" + Number(sumValue).toFixed(decimalPlaces);
 //             $(sum).html(sumValue);
