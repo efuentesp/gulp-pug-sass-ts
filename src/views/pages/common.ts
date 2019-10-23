@@ -82,6 +82,9 @@ const ui_accordion_settings = {
   heightStyle: "content"
 };
 
+// Timepicker
+// ($(".timepicker") as any).wickedpicker();
+
 // Query UI Tooltip settings
 $(document).tooltip({
   disabled: true

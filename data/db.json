@@ -531,7 +531,10 @@
       "listaSpc": []
     },
     {
-      "contrato[]": ["CONTRATO01", "CONTRATO02"],
+      "contrato[]": [
+        "CONTRATO01",
+        "CONTRATO02"
+      ],
       "id": "t-eLVZ4"
     },
     {
@@ -1537,7 +1540,13 @@
           "valor": "3"
         }
       ],
-      "origenUno": ["3", "3", "1", "1", "1"],
+      "origenUno": [
+        "3",
+        "3",
+        "1",
+        "1",
+        "1"
+      ],
       "id": 1
     }
   ],
@@ -5633,9 +5642,9 @@
       "multiploInversion": "10",
       "minimoInversion": "100",
       "precio": "100",
-      "tituloLiq" : "ISHRS",
-      "tipoMed" : "ISHRS",
-      "medLiq" : "ISHRS"
+      "tituloLiq": "ISHRS",
+      "tipoMed": "ISHRS",
+      "medLiq": "ISHRS"
     },
     {
       "id": "02",
@@ -5654,9 +5663,9 @@
       "multiploInversion": "10",
       "minimoInversion": "100",
       "precio": "12000",
-      "tituloLiq" : "ISHRS",
-      "tipoMed" : "ISHRS",
-      "medLiq" : "ISHRS"
+      "tituloLiq": "ISHRS",
+      "tipoMed": "ISHRS",
+      "medLiq": "ISHRS"
     },
     {
       "id": "03",
@@ -5675,9 +5684,9 @@
       "multiploInversion": "10",
       "minimoInversion": "100",
       "precio": "150",
-      "tituloLiq" : "ISHRS",
-      "tipoMed" : "ISHRS",
-      "medLiq" : "ISHRS"
+      "tituloLiq": "ISHRS",
+      "tipoMed": "ISHRS",
+      "medLiq": "ISHRS"
     }
   ],
   "encuesta": [
@@ -5874,6 +5883,18 @@
       "fecInicio": "10/20/2019",
       "horario": "05:00 hrs",
       "id": 2
+    },
+    {
+      "emisora": "Grupo carso",
+      "fecInicio": "18/10/2019",
+      "horario": "",
+      "id": 3
+    },
+    {
+      "emisora": "Grupo carso",
+      "fecInicio": "18/10/2019",
+      "horario": "",
+      "id": 4
     }
   ]
 }

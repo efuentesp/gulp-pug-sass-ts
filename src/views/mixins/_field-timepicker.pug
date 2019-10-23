@@ -1,0 +1,23 @@
+mixin field-timepicker(id, parms)
+  - var _field_id = "field_" + id
+  - var _input_id = id
+  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
+  - var _field_error_block = "field_error_block_" + id
+  - var _field_error_block_id = "#" + _field_error_block
+
+  .field(id=_field_id class=_class)
+    .field-label.flex
+      label(for=_input_id)= parms.label
+      if parms.required
+        span.required *
+    .field-control
+      .field-input.flex.items-center
+        input.timepicker.input(id=_input_id
+          required=parms.required
+          style=_style
+          disabled=parms.disabled
+          data-parsley-errors-container=_field_error_block_id
+        )
+      .field-error
+        div(id=_field_error_block)
