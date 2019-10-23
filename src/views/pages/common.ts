@@ -812,6 +812,10 @@ const stackChartHorizontal = (params: stackChartHParams) => {
     type: "horizontalBar",
     data: chartData,
     options: {
+      legend: {
+        display: true,
+        position: "right"
+      },
       scales: {
         xAxes: [
           {
