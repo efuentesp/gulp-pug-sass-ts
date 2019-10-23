@@ -1452,8 +1452,14 @@ const multiLineChart = (params: multiLineChartParams) => {
   });
 };
 
+var pieGraph = null;
+
 // PieGraph
 const pieChart = (params: pieChartParams) => {
+  if (pieGraph != null) {
+    pieGraph.destroy();
+  }
+
   var chartData = {
     labels: params.labels,
     datasets: params.dataSet
