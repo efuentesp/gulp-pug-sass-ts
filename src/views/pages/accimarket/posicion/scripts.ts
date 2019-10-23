@@ -455,7 +455,10 @@ function columnas() {
 $("#source, #destination").listswap({
     truncate: true,
     height: 250,
-    is_scroll: true
+    is_scroll: true,
+    id_source: "source",
+    id_destination: "destination",
+    id_listSwap: "listboxswap_swap"
 });
 
 $("#table_detalle").jqGrid({

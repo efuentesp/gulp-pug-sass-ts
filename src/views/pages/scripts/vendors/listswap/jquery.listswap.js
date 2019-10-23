@@ -10,7 +10,10 @@
         label_remove: "<",
         label_down: "v",
         add_class: null,
-        rtl: false
+        rtl: false,
+        id_source: "",
+        id_destination: "",
+        id_listSwap: ""
       },
       options
     );
@@ -20,8 +23,10 @@
     var destination_search = "";
     var source_search = "";
     var rand = Math.floor(Math.random() * 999999 + 1);
-    var div_id = "#listboxswap_" + rand;
-    var div_id_ = "listboxswap_" + rand;
+    // var div_id = "#listboxswap_" + rand;
+    // var div_id_ = "listboxswap_" + rand;
+    var div_id = "#" + settings.id_listSwap;
+    var div_id_ = settings.id_listSwap;
     var div_class_ = "";
     var rtl_class_ = "";
     settings.rtl === true ? (rtl_class_ = " rtl") : rtl_class_;
@@ -62,8 +67,8 @@
         ? (truncate_class = ' class="truncate"')
         : truncate_class;
       i % 2 !== 0
-        ? (class_name = "source_wrapper")
-        : (class_name = "destination_wrapper");
+        ? (class_name = settings.id_source + "_wrapper")
+        : (class_name = settings.id_destination + "_wrapper");
 
       $("#" + listbox_id).addClass(class_name);
 
@@ -95,13 +100,20 @@
 
       if (!$(this).attr("data-text") && !$(this).attr("data-search")) {
         $(
-          div_id + " .source_wrapper ul, " + div_id + " .destination_wrapper ul"
+          div_id +
+            " ." +
+            settings.id_source +
+            "_wrapper ul, " +
+            div_id +
+            " ." +
+            settings.id_destination +
+            "_wrapper ul"
         ).addClass("listbox_round_class");
       }
 
       $(div_id + " #" + select_id + " > option").each(function() {
         var value = this.value;
-        console.log("Value:", value);
+
         var label = this.text;
         var wrapper = "div#" + listbox_id;
 
@@ -125,13 +137,27 @@
 
     if (settings.height) {
       $(
-        div_id + " .source_wrapper ul, " + div_id + " .destination_wrapper ul"
+        div_id +
+          " ." +
+          settings.id_source +
+          "_wrapper ul, " +
+          div_id +
+          " ." +
+          settings.id_destination +
+          "_wrapper ul"
       ).css("height", settings.height);
     }
 
     if (settings.is_scroll === true) {
       $(
-        div_id + " .source_wrapper ul, " + div_id + " .destination_wrapper ul"
+        div_id +
+          " ." +
+          settings.id_source +
+          "_wrapper ul, " +
+          div_id +
+          " ." +
+          settings.id_destination +
+          "_wrapper ul"
       ).css("overflow-y", "scroll");
     }
 
@@ -156,24 +182,30 @@
       "</ul>" +
       "</div>";
 
-    $(controls).insertAfter(div_id + " .source_wrapper");
+    $(controls).insertAfter(div_id + " ." + settings.id_source + "_wrapper");
 
     $(div_id).append('<div class="listbox_clear"></div>');
 
     $(
       div_id +
-        " .source_wrapper .listbox_option, " +
+        " ." +
+        settings.id_source +
+        "_wrapper .listbox_option, " +
         div_id +
-        " .destination_wrapper .listbox_option"
+        " ." +
+        settings.id_destination +
+        "_wrapper .listbox_option"
     ).click(function() {
       $(this).toggleClass("selected");
     });
 
     $(div_id + " .listbox_controls .add").click(function() {
-      $(div_id + " .source_wrapper .listbox_option.selected").each(function() {
+      $(
+        div_id + " ." + settings.id_source + "_wrapper .listbox_option.selected"
+      ).each(function() {
         add_remove_handler(
           $(this),
-          div_id + " .destination_wrapper ul",
+          div_id + " ." + settings.id_destination + "_wrapper ul",
           source_select_id,
           destination_select_id
         );
@@ -182,46 +214,57 @@
     });
 
     $(div_id + " .listbox_controls .remove").click(function() {
-      $(div_id + " .destination_wrapper .listbox_option.selected").each(
-        function() {
-          add_remove_handler(
-            $(this),
-            div_id + " .source_wrapper ul",
-            destination_select_id,
-            source_select_id
-          );
-        }
-      );
+      $(
+        div_id +
+          " ." +
+          settings.id_destination +
+          "_wrapper .listbox_option.selected"
+      ).each(function() {
+        add_remove_handler(
+          $(this),
+          div_id + " ." + settings.id_source + "_wrapper ul",
+          destination_select_id,
+          source_select_id
+        );
+      });
       refresh_list();
     });
 
     $(div_id + " .listbox_controls .up").click(function() {
-      var currents = $(div_id + " .source_wrapper .listbox_option.selected");
+      var currents = $(
+        div_id + " ." + settings.id_source + "_wrapper .listbox_option.selected"
+      );
       currents.prev().before(currents);
       var currentd = $(
-        div_id + " .destination_wrapper .listbox_option.selected"
+        div_id +
+          " ." +
+          settings.id_destination +
+          "_wrapper .listbox_option.selected"
       );
       currentd.prev().before(currentd);
     });
 
     $(div_id + " .listbox_controls .down").click(function() {
-      var currents = $(div_id + " .source_wrapper .listbox_option.selected");
+      var currents = $(
+        div_id + " ." + settings.id_source + "_wrapper .listbox_option.selected"
+      );
       currents.next().after(currents);
       var currentd = $(
-        div_id + " .destination_wrapper .listbox_option.selected"
+        div_id + " ." + settings.id_destination + " .listbox_option.selected"
       );
       currentd.next().after(currentd);
     });
 
     if (source_search) {
-      var search_selector = div_id + " .source_wrapper";
+      var search_selector = div_id + " ." + settings.id_source + "_wrapper";
       search_filter(search_selector);
       reset_search_input(search_selector, source_select_id);
       clear_button(search_selector);
     }
 
     if (destination_search) {
-      var search_selector = div_id + " .destination_wrapper";
+      var search_selector =
+        div_id + " ." + settings.id_destination + "_wrapper";
       search_filter(search_selector);
       reset_search_input(search_selector, destination_select_id);
       clear_button(search_selector);
@@ -251,9 +294,6 @@
       var data_value = target.attr("data-value");
       var text = target[0].textContent;
       let lu = source.parentNode;
-
-      console.log("Dato-lu", lu);
-      console.log("Dato", li.previousElementSibling);
       //var listUl = document.getElementById("source");
       //listUl.insertBefore(li, li.previousElementSibling);
     }
@@ -330,21 +370,25 @@
     function refresh_list() {
       $(
         div_id +
-          " .source_wrapper li.listbox_option, .listboxswap .destination_wrapper li.listbox_option"
+          " ." +
+          settings.id_source +
+          "_wrapper li.listbox_option, .listboxswap ." +
+          settings.id_destination +
+          "_wrapper li.listbox_option"
       ).each(function() {
         if ($(this).hasClass("even")) $(this).removeClass("even");
         if ($(this).hasClass("odd")) $(this).removeClass("odd");
       });
-      $(div_id + " .source_wrapper li.listbox_option")
+      $(div_id + " ." + settings.id_source + "_wrapper li.listbox_option")
         .filter(":even")
         .addClass("even");
-      $(div_id + " .source_wrapper li.listbox_option")
+      $(div_id + " ." + settings.id_source + "_wrapper li.listbox_option")
         .filter(":odd")
         .addClass("odd");
-      $(div_id + " .destination_wrapper li.listbox_option")
+      $(div_id + " ." + settings.id_destination + "_wrapper li.listbox_option")
         .filter(":even")
         .addClass("even");
-      $(div_id + " .destination_wrapper li.listbox_option")
+      $(div_id + " ." + settings.id_destination + "_wrapper li.listbox_option")
         .filter(":odd")
         .addClass("odd");
     }

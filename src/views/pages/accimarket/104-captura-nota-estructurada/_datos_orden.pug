@@ -1,0 +1,50 @@
+.row
+    p.pb-4.font-bold Datos de la Órden
++form("nueva-nota")
+    .card.bg-white.border.border-solid.border-gray-300.rounded
+        +field-input("contrato", {label: "Contrato", required: true, orientation: "horizontal"})
+        +field-input("descripcion", {disabled:true})
+        .row.flex.flex-wrap.justify-between
+            +field-input("perfil", {label: "Perfil Contrato", orientation: "horizontal", disabled:true})
+            +field-input("digito", {label: "Dígito", orientation: "horizontal", disabled:true})
+        +field-input("operacion", {label: "Operación", required: true, orientation: "horizontal"})
+        +field-input("emisora", {label: "Emisora", required: true, orientation: "horizontal"})
+        .row.flex.flex-wrap.justify-between
+            +field-input("tv", {label: "TV", orientation: "horizontal", disabled:true})
+            +field-input("plazo", {label: "Plazo", orientation: "horizontal", disabled:true})
+        +field-input("tasa", {label: "Tasa", required: true, orientation: "horizontal"})
+        +field-input("fechaInicio", {label: "Fecha Inicio", required: true, orientation: "horizontal", disabled:true})
+        +field-input("fechaVencimiento", {label: "Fecha Vencimiento", required: true, orientation: "horizontal", disabled:true})
+        +field-input("monedaBase", {label: "Moneda Base", required: true, orientation: "horizontal", disabled:true})
+        +field-input("monedaAlt", {label: "Moneda Alternativa", required: true, orientation: "horizontal", disabled:true})
+        +field-input("importe", {label: "Importe", required: true, orientation: "horizontal"})
+        +field-input("precio", {label: "Precio", required: true, orientation: "horizontal"})
+        +field-input("efectivo", {label: "Efectivo Disponible", orientation: "horizontal", disabled:true})
+        +field-input("tituloLiq", {label: "Títulos a liquidar", orientation: "horizontal", disabled:true})
+        +field-input("tipoMed", {label: "Tipo de medio de liquidación", orientation: "horizontal", disabled:true})
+        +field-input("medLiq", {label: "Medio de liquidación", orientation: "horizontal", disabled:true})
+        +field-select("servicio-inv",
+            {
+            label: "Servicio de Inv",
+            required: true,
+            size: "12em",
+            orientation: "horizontal"
+            },
+            {key: "ET", value:"Electronic transfer"},
+            {key:"CHK", value:"Check"}
+            )
+        +field-select("medio-cierre",
+            {
+            label: "Medio Cierre",
+            required: true,
+            size: "12em",
+            orientation: "horizontal"
+            },
+            {key: "ET", value:"Electronic transfer"},
+            {key:"CHK", value:"Check"}
+            )
+        +field-input("telefono", {label: "Número de Red/Teléfono", required: true, orientation: "horizontal"})
+    .row.flex.justify-center.pt-5
+        +field-group("botones-group")
+            +button-add({size: "large", disabled: false})
+            +button-clean({size: "large", disabled: false})

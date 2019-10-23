@@ -1,0 +1,21 @@
+extends /layouts/jsp
+
+block title
+   title 01.Causión Bursátil
+
+block styles
+   link(rel="stylesheet" href="../../assets/css/accimarket/104-captura-nota-estructurada/styles.css")
+
+block content
+   .content.p-4
+      +tab-group("tab_group", {id: "tab_captura_nota_estructurada", label: "Captura de Notas Estructuradas"})
+         +tab-item("tab_captura_nota_estructurada")
+            .row.flex
+               .row.bg-gray-100.p-4.border.border-solid.border-gray-300.rounded.mr-4
+                  include _datos_orden
+               .row.bg-gray-100.p-4.border.border-solid.border-gray-300.rounded#contenido
+                  include _lista_ordenes
+
+
+block scripts
+   script(src="../../assets/scripts/accimarket/104-captura-nota-estructurada/scripts.js")
