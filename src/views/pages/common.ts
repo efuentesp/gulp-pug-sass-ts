@@ -815,6 +815,10 @@ const stackChartHorizontal = (params: stackChartHParams) => {
     type: "horizontalBar",
     data: chartData,
     options: {
+      legend: {
+        display: true,
+        position: "right"
+      },
       scales: {
         xAxes: [
           {
@@ -1455,8 +1459,14 @@ const multiLineChart = (params: multiLineChartParams) => {
   });
 };
 
+var pieGraph = null;
+
 // PieGraph
 const pieChart = (params: pieChartParams) => {
+  if (pieGraph != null) {
+    pieGraph.destroy();
+  }
+
   var chartData = {
     labels: params.labels,
     datasets: params.dataSet

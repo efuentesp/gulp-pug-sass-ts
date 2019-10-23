@@ -1,21 +1,21 @@
 let select_params: UrlParams = {};
-
+/*
 rpc("http://localhost:3000/edadesService", "", (data, textStatus, jQxhr) => {
-  console.log(textStatus);
-  ($("#edad") as any).select2({
-    placeholder: "--Seleccione--",
-    minimumResultsForSearch: Infinity,
-    data: data
-  });
-});
-
-/*http_findAll("edadesService", select_params, (payload: any) => {
+    console.log(textStatus);
     ($("#edad") as any).select2({
         placeholder: "--Seleccione--",
         minimumResultsForSearch: Infinity,
-        data: payload
+        data: data
     });
 });*/
+
+http_findAll("edadesService", select_params, (payload: any) => {
+  ($("#edad") as any).select2({
+    placeholder: "--Seleccione--",
+    minimumResultsForSearch: Infinity,
+    data: payload
+  });
+});
 
 http_findAll("estudiosService", select_params, (payload: any) => {
   ($("#estudios") as any).select2({
@@ -105,7 +105,7 @@ http_findAll("horizonteInversion", select_params, (payload: any) => {
       minimumResultsForSearch: Infinity,
       data: payload
     })
-    .change(function() {
+    .change(function () {
       var element = document.getElementById("textoPortafolio");
       element.innerHTML = $(this)
         .find("option:selected")
