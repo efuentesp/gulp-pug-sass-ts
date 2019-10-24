@@ -489,14 +489,15 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     ajax: {
       url: `${REST_URL}/` + restService + ``,
       dataType: "json",
-      type: "POST",
+      type: "GET",
       data: function(params) {
-        return {
+        var query = {
           q: params.term,
-          page: params.page
+          rows: 10
         };
+        return query;
       },
-      processResults: function(data, params) {
+      processResults: function(data) {
         return {
           results: $.map(data, function(item) {
             return {
