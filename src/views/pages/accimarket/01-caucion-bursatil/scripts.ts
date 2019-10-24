@@ -274,7 +274,8 @@ $("#btn_xls").click(() =>
     modal: true,
     closeText: "",
     show: true,
-    title: "Generar XLS"
+    title: "Error",
+    width: 400
   })
 );
 
