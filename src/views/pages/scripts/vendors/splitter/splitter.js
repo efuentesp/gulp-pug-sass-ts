@@ -23,6 +23,7 @@
 
 (function($) {
   var splitterCounter = 0;
+  var splitterPosition = "";
 
   $.fn.splitter = function(args) {
     args = args || {};
@@ -37,6 +38,14 @@
           $.browser && "msie" in $.browser && parseInt($.browser.version) < 9
         );
       }
+
+      // Define position de los paneles
+      if( args.type == 'h' ){
+        splitterPosition = 'relative';
+      }else{
+        splitterPosition = 'absolute';
+      }
+
       function setBarState(state) {
         bar.removeClass(opts.barStateClasses).addClass(state);
       }
@@ -66,6 +75,11 @@
             splitter._DA - B._max,
             Math.min(pos, A._max, splitter._DA - bar._DA - B._min)
           );
+
+        console.log("opts.origin: " + opts.origin);  
+        console.log("pos: " + pos);  
+        console.log("range: " + range);
+        console.log("limit: " + limit);
         if (opts.outline) {
           // Let docking splitbar be dragged to the dock position, even if min width applies
           if (
@@ -121,15 +135,30 @@
           );
         }
         // Resize/position the two panes
-        bar.css(opts.origin, pos).css(opts.fixed, splitter._DF);
         A.css(opts.origin, 0)
           .css(opts.split, pos)
           .css(opts.fixed, splitter._DF);
-        B.css(opts.origin, pos + bar._DA)
+
+        if( args.type == 'h' ){
+          bar.css(opts.origin, 0).css(opts.fixed, splitter._DF);
+
+          B.css(opts.origin, 0)
           .css(opts.split, splitter._DA - bar._DA - pos)
-          .css(opts.fixed, splitter._DF);
+          .css(opts.fixed, splitter._DF);          
+        }else{
+          bar.css(opts.origin, pos).css(opts.fixed, splitter._DF);
+
+          B.css(opts.origin, pos + bar._DA)
+          .css(opts.split, splitter._DA - bar._DA - pos)
+          .css(opts.fixed, splitter._DF);          
+        }
+        //JPB bar.css(opts.origin, pos).css(opts.fixed, splitter._DF);
+        //JPB B.css(opts.origin, pos + bar._DA)
+
         // IE fires resize for us; all others pay cash
         if (!resize_auto_fired()) panes.trigger("resize");
+
+        console.log("generando resize...", pos, splitter._DF, bar._DA, splitter._DA, opts.fixed);
       }
       function dimSum(jq, dims) {
         // Opera returns -1 for missing min/max width, turn into 0
@@ -140,11 +169,16 @@
       }
       function resize(size) {
         // Determine new width/height of splitter container
+        //console.log("splitter._DF: " + splitter._DF + "\t" + splitter[0][opts.pxFixed] + "\t" + splitter._PBF);
+        //console.log("splitter._DA: " + splitter._DA + "\t" + splitter[0][opts.pxSplit] + "\t" + splitter._PBA);
+        //console.log("size:: " + size);
+
         splitter._DF = splitter[0][opts.pxFixed] - splitter._PBF;
         splitter._DA = splitter[0][opts.pxSplit] - splitter._PBA;
         // Bail if splitter isn't visible or content isn't there yet
         if (splitter._DF <= 0 || splitter._DA <= 0) return;
 
+        console.log("-splitter._oldW: " + splitter._oldW + "\t" + "-splitter._oldH: " + splitter._oldH);
         // if nothing changed, no need to resize
         if (
           splitter._oldW == splitter.width() &&
@@ -153,6 +187,8 @@
           return; // nothing changed
         splitter._oldW = splitter.width();
         splitter._oldH = splitter.height();
+        
+        console.log("splitter._oldW: " + splitter._oldW + "\t" + "splitter._oldH: " + splitter._oldH);
 
         // Re-divvy the adjustable dimension; maintain size of the preferred pane
         resplit(
@@ -246,13 +282,15 @@
 
       // Create jQuery object closures for splitter and both panes
       var splitter = $(this)
-        .css({ position: "relative" })
+        .css({ position: "relative"})
+        //JPB.css({ position: "relative", overflow: "auto" })
         .addClass(opts.splitterClass)
         .attr("data-splitter-initialized", true);
       var panes = $(">*", splitter[0])
         .addClass(opts.paneClass)
         .css({
-          position: "absolute", // positioned inside splitter container
+          //JPB position: "absolute", // positioned inside splitter container
+          position: splitterPosition, // positioned inside splitter container
           "z-index": "1", // splitbar is positioned above
           "-moz-outline-style": "none" // don't show dotted outline
         });
@@ -297,7 +335,8 @@
         .append(focuser)
         .attr({ unselectable: "on" })
         .css({
-          position: "absolute",
+          //JPB position: "absolute",
+          position: splitterPosition,
           "user-select": "none",
           "-webkit-user-select": "none",
           "-khtml-user-select": "none",
@@ -381,6 +420,9 @@
           .bind("resize" + opts.eventNamespace, function() {
             var top = splitter.offset().top;
             var eh = $(opts.resizeTo).height();
+
+            console.log("JPB --> top: " + top + "\t splitter-top: " + (eh - top - splitter._hadjust)); 
+
             splitter.css(
               "height",
               Math.max(eh - top - splitter._hadjust, splitter._hmin) + "px"

@@ -9,16 +9,21 @@
 
 p Contrato
 .row.w-full.overflow-auto.heigthTablaC
-    +grid("cotitular2_documentacion_contrato")
+
 p Cliente
 .row.w-full.overflow-auto.heigthTablaC
-    +grid("cotitular2_documentacion_cliente")
+
 
 br
 p Ejemplo de Panel Horizontal (arrastrar la linea que divide a los 2 paneles)
 .row
     +splitter("horizontal-splitter", {orientation: "horizontal"})
         .pane
-            p Panel 1
+            +grid("cotitular2_documentacion_contrato")
         .pane
-            p Panel 2
+            +grid("cotitular2_documentacion_cliente")
+
+.row
+    .foo
+        #leftPane Foo
+        #rightPane Bar
