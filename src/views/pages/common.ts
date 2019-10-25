@@ -1656,36 +1656,6 @@ function copyGridContentToClipboard(gridNameID, includeGroups) {
   }
 }
 
-const fillSwapList = (id: string, id_list: string, params: any) => {
-  var _id = "#" + id;
-  var _list = "#" + id_list;
-  var div_id = _list;
-  var select = $(_id);
-  var list = $("#listbox_" + id + "_wrapper ul");
-
-  for (var i = 0; i < params.length; i++) {
-    var data = params[i];
-    select.append(
-      "<option value = " + data.value + ">" + data.label + "</option>"
-    );
-
-    list.append(
-      "<li class='listbox_option' data-value=" +
-        data.value +
-        "><span class='truncate'>" +
-        data.label +
-        "</span></li>"
-    );
-
-    $(div_id + " ." + id + "_wrapper .listbox_option:odd").addClass("odd");
-    $(div_id + " ." + id + "_wrapper .listbox_option:even").addClass("even");
-
-    $(div_id + " ." + id + "_wrapper .listbox_option").click(function() {
-      $(this).addClass("selected");
-    });
-  }
-};
-
 const fillQuiz = (field_group: string, id: string, quiz: any) => {
   var trElement = $("#" + field_group + " tbody");
   var answerOption = "";
@@ -2016,3 +1986,13 @@ const xml2json = (xml, tab) => {
     "\n}"
   );
 };
+
+// Swaplist
+$("ul.droptrue").sortable({
+  connectWith: "ul"
+});
+
+$("ul.dropfalse").sortable({
+  connectWith: "ul",
+  dropOnEmpty: false
+});

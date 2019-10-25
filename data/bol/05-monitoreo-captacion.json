@@ -12,5 +12,97 @@
       "horario": "05:00 hrs",
       "id": 2
     }
+  ],
+  "notaEstructurada": [
+    {
+      "tv": "Banamex",
+      "emisora": "Banamex",
+      "serie": "Serie",
+      "plazo": "mayo",
+      "fecInicio": "10/20/2019",
+      "horaCierre": "16:00",
+      "limiteCaptado": "10,000",
+      "captado": "7,000",
+      "porColocar": "3000",
+      "mnb": "Pesos",
+      "mna": "dolares",
+      "estatus": "activa",
+      "mensaje": "Correcto"
+    },
+    {
+      "tv": "Banamex",
+      "emisora": "Banamex",
+      "serie": "Serie",
+      "plazo": "mayo",
+      "fecInicio": "10/20/2019",
+      "horaCierre": "16:00",
+      "limiteCaptado": "10,000",
+      "captado": "7,000",
+      "porColocar": "3000",
+      "mnb": "Pesos",
+      "mna": "dolares",
+      "estatus": "activa",
+      "mensaje": "Correcto"
+    },
+    {
+      "tv": "Banamex",
+      "emisora": "Banamex",
+      "serie": "Serie",
+      "plazo": "mayo",
+      "fecInicio": "10/20/2019",
+      "horaCierre": "16:00",
+      "limiteCaptado": "10,000",
+      "captado": "7,000",
+      "porColocar": "3000",
+      "mnb": "Pesos",
+      "mna": "dolares",
+      "estatus": "activa",
+      "mensaje": "Correcto"
+    },
+    {
+      "tv": "Prueba 1",
+      "emisora": "Banamex",
+      "serie": "Serie",
+      "plazo": "mayo",
+      "fecInicio": "10/20/2019",
+      "horaCierre": "16:00",
+      "limiteCaptado": "10,000",
+      "captado": "7,000",
+      "porColocar": "3000",
+      "mnb": "Pesos",
+      "mna": "dolares",
+      "estatus": "activa",
+      "mensaje": "Correcto"
+    },
+    {
+      "tv": "Tipo valor",
+      "emisora": "Grupo carso",
+      "serie": "Serie",
+      "plazo": "mayo",
+      "fecInicio": "18/10/2019",
+      "horaCierre": "16:00",
+      "limiteCaptado": "10,000",
+      "captado": "7,000",
+      "porColocar": "3000",
+      "mnb": "Pesos",
+      "mna": "dolares",
+      "estatus": "activa",
+      "mensaje": "Correcto"
+    },
+    {
+      "tv": "Prueba",
+      "emisora": "alguna",
+      "serie": "Serie",
+      "plazo": "mayo",
+      "fecInicio": "10/20/2019",
+      "horaCierre": "16:00",
+      "limiteCaptado": "10,000",
+      "captado": "7,000",
+      "porColocar": "3000",
+      "mnb": "Pesos",
+      "mna": "dolares",
+      "estatus": "activa",
+      "mensaje": "Correcto"
+    }
   ]
 }

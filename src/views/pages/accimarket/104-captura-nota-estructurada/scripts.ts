@@ -31,7 +31,7 @@ const llenaGridOrdenes = (listaOrdenes: any) => {
   $("#table_ordenes").jqGrid({
     data: listaOrdenes,
     datatype: "local",
-    height: "57em",
+    height: "350px",
     shrinkToFit: false,
     rowList: [10, 20, 30],
     colNames: [
