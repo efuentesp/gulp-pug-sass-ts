@@ -440,6 +440,58 @@
           "total": "0.7"
         }
       ],
+      "listatabla_fuente": [
+        {
+          "Fecha": "Oct-18",
+          "Pos RV": "0.00",
+          "Porc Pos RV": "0.00",
+          "Porc Pos RV Ayer": "0.00",
+          "Porc Pos RV2": "0.00",
+          "Pos RF": "0.00",
+          "Porc Pos RF": "0.00",
+          "Pos RF Ayer": "0.00",
+          "Porc Pos RF Ayer": "0.00",
+          "Pos RF2": "0.00",
+          "Porc RF2": "0.00",
+          "Efectivo": "0.00",
+          "Pos Total": "0.00",
+          "Pos Total Ayer": "0.00",
+          "Pos Total 2": "0.00",
+          "Flujo RV": "0.00",
+          "Flujo RF": "0.00",
+          "Flujo Efectivo": "0.00",
+          "Flujo Total": "0.00",
+          "Pos RVSIC": "0.00",
+          "Pos RVBV": "0.00",
+          "Pos RF Privados": "0.00",
+          "Pos RF Gubernamental": "0.00",
+          "Pos Cobertura Cambiaria": "0.00",
+          "Pos Notas Estructuradas": "0.00",
+          "Flujo RVSIC": "0.00",
+          "FRlujo RVBMV": "0.00",
+          "Flujo RF Privados": "0.00",
+          "Flujo RF Gubernamental": "0.00",
+          "Flujo Cobertura": "0.00",
+          "Flujo Notas Estructuradas": "0.00"
+        }
+      ],
+      "listaMensualesTWP": [
+        {
+          "periodo": "Oct-18",
+          "Valor_Mercado": "0.00",
+          "Aportaciones": "0.00",
+          "Retiros": "0.00",
+          "Cambio_de_valores": "0.00",
+          "crecimiento_%_Portafolio Periodo": "0.00"
+        }
+      ],
+      "listaAcumuladosTWP": [
+        {
+          "periodo": "0.00",
+          "Valor Mercado": "0.00",
+          "crecimiento_%_Portafolio Periodo": "0.00"
+        }
+      ],
       "listaAcumulados": [
         {
           "periodo": "Sep-18",
@@ -530,7 +582,10 @@
       "listaSpc": []
     },
     {
-      "contrato[]": ["CONTRATO01", "CONTRATO02"],
+      "contrato[]": [
+        "CONTRATO01",
+        "CONTRATO02"
+      ],
       "id": "t-eLVZ4"
     },
     {
@@ -1146,6 +1201,78 @@
     },
     {
       "id": 175
+    },
+    {
+      "id": 176
+    },
+    {
+      "id": 177
+    },
+    {
+      "id": 178
+    },
+    {
+      "id": 179
+    },
+    {
+      "id": 180
+    },
+    {
+      "id": 181
+    },
+    {
+      "id": 182
+    },
+    {
+      "id": 183
+    },
+    {
+      "id": 184
+    },
+    {
+      "id": 185
+    },
+    {
+      "id": 186
+    },
+    {
+      "id": 187
+    },
+    {
+      "id": 188
+    },
+    {
+      "id": 189
+    },
+    {
+      "id": 190
+    },
+    {
+      "id": 191
+    },
+    {
+      "id": 192
+    },
+    {
+      "id": 193
+    },
+    {
+      "id": 194
+    },
+    {
+      "id": 195
+    },
+    {
+      "id": 196
+    },
+    {
+      "id": 197
+    },
+    {
+      "id": 198
+    },
+    {
+      "id": 199
     }
   ],
   "estudiosService": [
@@ -1461,7 +1588,13 @@
           "valor": "3"
         }
       ],
-      "origenUno": ["3", "3", "1", "1", "1"],
+      "origenUno": [
+        "3",
+        "3",
+        "1",
+        "1",
+        "1"
+      ],
       "id": 1
     }
   ],
@@ -5387,15 +5520,47 @@
     }
   ],
   "source": [
-    { "id": "1", "value": "option_1_1", "label": "Valor 1" },
-    { "id": "2", "value": "option_1_2", "label": "Valor 2" },
-    { "id": "3", "value": "option_1_3", "label": "Valor 3" },
-    { "id": "4", "value": "option_1_4", "label": "Valor 4" },
-    { "id": "7", "value": "option_1_7", "label": "Valor 7" }
+    {
+      "id": "1",
+      "value": "option_1_1",
+      "label": "Valor 1"
+    },
+    {
+      "id": "2",
+      "value": "option_1_2",
+      "label": "Valor 2"
+    },
+    {
+      "id": "3",
+      "value": "option_1_3",
+      "label": "Valor 3"
+    },
+    {
+      "id": "4",
+      "value": "option_1_4",
+      "label": "Valor 4"
+    },
+    {
+      "id": "7",
+      "value": "option_1_7",
+      "label": "Valor 7"
+    }
   ],
   "destination": [
-    { "id": "5", "value": "option_1_5", "label": "Valor 5" },
-    { "id": "6", "value": "option_1_6", "label": "Valor 6" },
-    { "id": "8", "value": "option_1_8", "label": "Valor 8" }
+    {
+      "id": "5",
+      "value": "option_1_5",
+      "label": "Valor 5"
+    },
+    {
+      "id": "6",
+      "value": "option_1_6",
+      "label": "Valor 6"
+    },
+    {
+      "id": "8",
+      "value": "option_1_8",
+      "label": "Valor 8"
+    }
   ]
 }
