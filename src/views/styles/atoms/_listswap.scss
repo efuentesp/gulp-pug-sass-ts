@@ -20,10 +20,18 @@
   padding: 10px;
 }
 
-.selected {
+.odd.selected,
+.even.selected {
   background: beige;
 }
 
 li {
   cursor: pointer;
+}
+
+.odd {
+  background-color: white;
+}
+.even {
+  background-color: lightgray;
 }

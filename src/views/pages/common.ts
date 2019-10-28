@@ -2008,10 +2008,10 @@ const fillSwapList = (id: string, list_id: string, params: any) => {
 
   $(_id + "_source").disableSelection();
   $(_id + "_destination").disableSelection();
-};
 
-$(".droptrue > li:odd").addClass("odd");
-$(".droptrue > li:even").addClass("even");
+  $(".droptrue > li:odd, .dropfalse > li:odd").addClass("odd");
+  $(".droptrue > li:even, .dropfalse > li:even").addClass("even");
+};
 
 $(".droptrue, .dropfalse").on("click", "li", function() {
   if ($(this).hasClass("selected")) {
