@@ -1,6 +1,20 @@
 /// <reference path="../../typings/index.d.ts" />
 console.log("27-administracion-datos-generales");
 
+$("#titular_contrato_tabgroup")
+  .tabs()
+  .addClass("ui-tabs-vertical ui-helper-clearfix");
+$("#titular_contrato_tabgroup > ul > li")
+  .removeClass("ui-corner-top")
+  .addClass("ui-corner-left");
+
+$("#cotitular2_tabgroup")
+  .tabs()
+  .addClass("ui-tabs-vertical ui-helper-clearfix");
+$("#cotitular2_tabgroup > ul > li")
+  .removeClass("ui-corner-top")
+  .addClass("ui-corner-left");
+
 const form27 = ($("#criterios-busqueda") as any)
   .parsley()
   .on("field:validated", () => {
@@ -566,19 +580,4 @@ function valores(cellvalue, options, rowObject) {
 // const source_cotitulares = $("#hb-cotitulares").html();
 // const template_cotitulares = Handlebars.compile(source_cotitulares);
 // $("#titular-cotitulares").append(template_cotitulares());
-
-$(".tab-group").tabs();
-
-$("#titular_contrato_tabgroup")
-  .tabs()
-  .addClass("ui-tabs-vertical ui-helper-clearfix");
-$("#titular_contrato_tabgroup > ul > li")
-  .removeClass("ui-corner-top")
-  .addClass("ui-corner-left");
-
-$("#cotitular2_tabgroup")
-  .tabs()
-  .addClass("ui-tabs-vertical ui-helper-clearfix");
-$("#cotitular2_tabgroup > ul > li")
-  .removeClass("ui-corner-top")
-  .addClass("ui-corner-left");
+// $(".tab-group").tabs();

@@ -162,7 +162,8 @@ function concatVendorCss() {
         "./src/views/styles/vendors/jquery.toggleinput/jquery.toggleinput.css",
         "./src/views/styles/vendors/jquery.steps/jquery.steps.css",
         "./src/views/styles/vendors/chartjs/chartjs.css",
-        "./src/views/styles/vendors/wickedpicker/wickedpicker.css"
+        "./src/views/styles/vendors/wickedpicker/wickedpicker.css",
+        // "./src/views/styles/vendors/jquery-splitter/jquery-splitter.css"
       ])
       // .pipe(
       //   purgeCSS({
@@ -220,6 +221,7 @@ function concatVendorJs() {
       "./src/views/scripts/vendors/chartjs.min.js",
       "./src/views/pages/scripts/vendors/listswap/jquery.listswap.js",
       "./src/views/pages/scripts/vendors/wickedpicker/wickedpicker.js",
+      // "./src/views/pages/scripts/vendors/splitter/jquery-splitter.js",
       "./src/views/pages/scripts/vendors/handlebars/handlebars-v4.4.3.js"
     ])
     .pipe(concat("libs.min.js"))

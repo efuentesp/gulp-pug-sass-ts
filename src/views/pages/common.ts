@@ -1475,7 +1475,7 @@ const pieChart = (params: pieChartParams) => {
   var ctxBar: any = document.getElementById(params.id);
   var contextBar = ctxBar.getContext("2d");
 
-  var pieGraph = new Chart(contextBar, {
+  pieGraph = new Chart(contextBar, {
     plugins: [
       {
         afterDatasetsDraw: function(pieGraph) {
