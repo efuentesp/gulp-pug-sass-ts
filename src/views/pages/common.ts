@@ -509,11 +509,11 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       }
     },
     placeholder: {
-      id: "0",
-      text: "-- Seleccione --"
+      id: "0"
+      // text: "-- Seleccione --"
     },
-    cache: "true",
-    minimumInputLength: 3
+    cache: "true"
+    // minimumInputLength: 3
   });
 };
 
