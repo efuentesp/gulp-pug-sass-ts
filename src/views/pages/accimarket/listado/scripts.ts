@@ -18,16 +18,3 @@ const llenaSource = (id: string, source: any) => {
 const llenaDestination = (id: string, destination: any) => {
   fillSwapList(id, "destination", destination);
 };
-
-const fillSwapList = (id: string, list_id: string, params: any) => {
-  var _id = "#" + id;
-  var list = $("#listado_" + list_id);
-
-  for (var i = 0; i < params.length; i++) {
-    var data = params[i];
-    list.append("<li value = " + data.value + ">" + data.label + "</li>");
-  }
-
-  $(_id + "_source").disableSelection();
-  $(_id + "_destination").disableSelection();
-};

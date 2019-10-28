@@ -1996,3 +1996,58 @@ $("ul.dropfalse").sortable({
   connectWith: "ul",
   dropOnEmpty: false
 });
+
+const fillSwapList = (id: string, list_id: string, params: any) => {
+  var _id = "#" + id;
+  var list = $("#listado_" + list_id);
+
+  for (var i = 0; i < params.length; i++) {
+    var data = params[i];
+    list.append("<li value = " + data.value + ">" + data.label + "</li>");
+  }
+
+  $(_id + "_source").disableSelection();
+  $(_id + "_destination").disableSelection();
+};
+
+$(".droptrue > li:odd").addClass("odd");
+$(".droptrue > li:even").addClass("even");
+
+$(".droptrue, .dropfalse").on("click", "li", function() {
+  if ($(this).hasClass("selected")) {
+    $(this).removeClass("selected");
+  } else {
+    clearList();
+    $(this).addClass("selected");
+  }
+});
+
+// Up
+$(".up").click(function() {
+  var currents = $("li.selected");
+  currents.prev().before(currents);
+});
+
+// Down
+$(".down").click(function() {
+  var currents = $("li.selected");
+  currents.next().after(currents);
+});
+
+// Add
+$(".add").click(function() {
+  var currents = $("li.selected");
+  $(".dropfalse").append(currents);
+  clearList();
+});
+
+// Remove
+$(".remove").click(function() {
+  var currents = $("li.selected");
+  $(".droptrue").append(currents);
+  clearList();
+});
+
+const clearList = () => {
+  $(".droptrue > li, .dropfalse > li").removeClass("selected");
+};
