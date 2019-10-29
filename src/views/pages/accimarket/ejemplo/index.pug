@@ -47,12 +47,24 @@ block content
                             +button-clean({size: "large", disabled: false})
 
                             +button-add({size:"large", disabled: false})
-                            +button-send({size:"large", label: "Enviar todos", disabled: false})
+                            +button-send({size:"large", label: "Enviar", disabled: false})
                             +button-validate({size:"large", disabled: false})
                             +button-import({size:"large", disabled: false})
                             +button-delete({size:"large", disabled: false})
                             +button-reset({size:"large", disabled: false})
                             +button-filter({size:"large", disabled: false})
+
+                        +field-group("botones-group-sm")
+                            +button-search({size: "small", disabled: false})
+                            +button-clean({size: "small", disabled: false})
+
+                            +button-add({size:"small", disabled: false})
+                            +button-send({size:"small", label: "Enviar", disabled: false})
+                            +button-validate({size:"small", disabled: false})
+                            +button-import({size:"small", disabled: false})
+                            +button-delete({size:"small", disabled: false})
+                            +button-reset({size:"small", disabled: false})
+                            +button-filter({size:"small", disabled: false})
         .row
             p#textoInformativo Listado de Órdenes
         .row.has_border.w-full.overflow-auto
