@@ -1,0 +1,21 @@
+.content {
+  .row {
+    display: flex;
+  }
+
+  #search-actions-column {
+    margin-left: 25em;
+  }
+
+  #field_totalreg {
+    font-weight: 700;
+
+    input {
+      text-align: center;
+    }
+  }
+
+  .heigthTabla {
+    height: 30em;
+  }
+}

@@ -1,0 +1,45 @@
+include /mixins/mixins
+
+.row#graficaPortafolio
+    +field-group("opcionesGraficaA")
+        table.bg-gray-200#tblOpciones
+            tr.border-solid.border.border-gray-500#tituloRF
+                td.font-bold Renta Fija:
+                td.cursor-pointer.text-right#totalRF
+            tr.border-solid.border.border-gray-500#tituloRN
+                td.font-bold Renta Otra:
+                td.cursor-pointer.text-right#totalRO
+            tr.border-solid.border.border-gray-500#tituloN
+                td.font-bold Nota :
+                td.cursor-pointer.text-right#totalN
+            tr.border-solid.border.border-gray-500
+                td.font-bold#tituloTotalCom Total
+                td.cursor-pointer.text-right#totalComp
+            tr.border-solid.border.border-gray-500
+                td.font-bold Efectivo
+                td.cursor-pointer.text-right#totalEfec
+            tr.border-solid.border.border-gray-500
+                td.font-bold Total
+                td.cursor-pointer.text-right#total
+        +field-select("opcionesRenta",
+            {
+                size: "15em"
+            })
+        +canvas("pieChart", {width:'800px', height:'800px'})
+    +field-group("opcionesGraficaB")
+        .row
+            p Liquidez
+        .row
+            p Gracifa
+            +field-checks("solVencimiento",
+                {
+                    label: "",
+                    disabled: true
+                },
+                {key: "S02", value:"Liquidez", color:"red"},
+                {key: "S01", value:"RF", color:"orange"},
+                {key: "S03", value:"RV", color:"yellow"},
+                {key: "S03", value:"NE", color:"blue"}
+                )
+        .row
+            +grid("portafolio")

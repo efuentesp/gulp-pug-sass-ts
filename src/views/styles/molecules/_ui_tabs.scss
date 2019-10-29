@@ -28,7 +28,8 @@
         margin-bottom: -1px;
         // padding-bottom: 1px;
         border-bottom: 1px solid $color-white;
-        // font-weight: bold;
+        font-weight: bold;
+        background: $color-white;
       }
 
       &.ui-tabs-active .ui-tabs-anchor,
@@ -42,6 +43,10 @@
       float: left;
       padding: 0.5em 1em;
       text-decoration: none;
+    }
+
+    .container-img_image {
+      width: 20px;
     }
   }
 
@@ -57,6 +62,11 @@
     // border-top-left-radius: 6px;
     // border-top-right-radius: 6px;
   }
+
+  .ui-tabs-tab {
+    border: 1px solid $color-ink-lightest;
+    background: $color-sky-light;
+  }
 }
 .ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
   cursor: pointer;
@@ -69,23 +79,27 @@
   width: 100%;
 
   & > .ui-tabs-panel {
+    flex: 1;
     border: none;
     padding: 1em;
     float: right;
     //width: 40em;
-    width: 86%;
+    width: 83%;
   }
 
   & > .ui-tabs-nav {
+    border: 0;
     padding: 0.2em 0.1em 0.2em 0.2em;
     float: left;
-    width: 16em;
-    border: 1px solid $color-sky-dark;
-    border-radius: 6px;
+    width: 19em;
+    // border: 1px solid $color-sky-dark;
+    // border-radius: 6px;
 
     & li {
       clear: left;
       width: 100%;
+      background: $color-sky-light;
+      border: 1px solid $color-sky-dark;
       // border-bottom-width: 1px !important;
       // border-right-width: 0 !important;
       // margin: 0 -1px 0.2em 0;
@@ -98,15 +112,16 @@
         padding-bottom: 0;
         padding-right: 0.1em;
         // border-right-width: 1px;
-        border: none;
-        background: $color-sky;
-        border-radius: 6px;
+        // border: none;
+        background: $color-sky-dark;
+        border: 1px solid $color-sky-dark;
+        // border-radius: 6px;
         // font-weight: 500;
       }
 
-      &.ui-state-hover {
-        border: none;
-      }
+      // &.ui-state-hover {
+      //   border: none;
+      // }
     }
   }
 }

@@ -1,0 +1,18 @@
+mixin scrolling_menu()
+  nav.arrow#menu-container
+    #btn-nav-previous(style="fill: #fff")
+        img(src="../../assets/images/arrow-left.png")
+    #btn-nav-next(style="fill: #fff")
+        img(src="../../assets/images/arrow-right.png")
+    .menu-inner-box
+        ul.menu
+          block
+
+mixin menu_item(id, params)
+  - var _label = (params.label ? params.label : "")
+  - var _active = (params.active ? params.active : false)
+  if _active
+    - var _class = "current"
+
+  li.menu-item(id=id)
+      a(href="" class=_class)= _label

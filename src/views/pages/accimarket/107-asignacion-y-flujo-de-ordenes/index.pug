@@ -1,0 +1,99 @@
+extends /layouts/html5
+
+block title
+    title Asignacion y Flujo de Ordenes
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/107-asignacion-y-flujo-de-ordenes/styles.css")
+
+block content
+    .content
+        .row
+            +accordion("criterios_busqueda_asignacion")
+                +accordion-item("busqueda_item")
+                    form#criterios-listAsignacion(data-parsley-validate="")
+                        .form-group
+                            .row#rowFlex
+                                +field-plus-minus("emisora",
+                                    {
+                                        label: "Emisora"      
+                                    })
+                                +field-plus-minus("contrato",
+                                    {
+                                        label: "Contrato"
+                                    })
+                                +field-plus-minus("digito",
+                                    {
+                                        label: "Digito"
+                                    })
+                                +field-plus-minus("usuario",
+                                    {
+                                        label: "Usuario",
+                                        
+                                    }
+                                    
+                                    )
+                                +field-checks("estatus",
+                                    {
+                                        label: "Estatus",
+                                        orientation: "horizontal"
+                                    },
+                                    {key: "S01", value:"Asignados", color:"green"},
+                                    {key: "S02", value:"Pendientes", color:"blue"},
+                                    {key: "S03", value:"Sin Asignar", color:"yellow"},
+                                    {key: "S04", value:"Canceladas", color:"red"},
+                                    {key: "S05", value:"Distribuidas", color:"blue"},
+                                    {key: "S06", value:"Bloqueadas", color:"gray"}
+                                    )
+                            
+                                +field-options("operacion",
+                                    {
+                                        label: "Operacion",
+                                        
+                                    },
+                                    {key: "SI", value:"Todas", color:"gray"},
+                                    {key: "SI", value:"Compras", color:"gray"},
+                                    {key: "SI", value:"Ventas", color:"gray"} 
+                                    )
+                                
+                                +field-checks("id",
+                                    {
+                                        label: "",
+                                    },
+                                    {key: "SI", value:"Solo hoy"},
+                                    {key: "SI", value:"Conf/Ord"}
+                                    )
+
+                                +field-options("vista",
+                                    {
+                                        label: "Vista",
+                                        
+                                    },
+                                    {key: "SI", value:"Asignacion", color:"gray"},
+                                    {key: "SI", value:"Flujo", color:"gray"}
+                                    
+                                    )
+                                #search-actions-column
+                                    +button-search({size: "large", disabled: false})
+                                    +button-clean({size: "large", disabled: false})
+                                    +button-pdf({size: "large", disabled: false})
+                                    +button-xls({size: "large", disabled: false})
+            .row.text-center.h-12.bg-orange-100
+             p.font-bold.text-2xl.p-3 Asignación  
+    
+            .row.w-full.overflow-auto
+                +grid("busquedaAsignacion")
+                +grid-records-count("asignacion")
+
+            .row
+             +field-input("totalreg",
+                    {
+                        label: "Total de registros",
+                        orientation: "horizontal",
+                        size: "8em"
+                    })  
+               include flujo
+
+block scripts
+    script(src="/assets/scripts/accimarket/107-asignacion-y-flujo-de-ordenes/scripts.js")
+    script(src="/assets/scripts/accimarket/107-asignacion-y-flujo-de-ordenes/scriptsflujo.js")

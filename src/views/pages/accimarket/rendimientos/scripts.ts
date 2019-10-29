@@ -175,8 +175,8 @@ $("#table_resultadosMensuales").jqGrid({
         "INMEX %"
     ],
     colModel: [
-        { name: "periodo", width: 300, align: "center" },
-        { name: "portafolio", width: 300, align: "center" },
+        { name: "periodo", width: 300, align: "center", frozen: true },
+        { name: "portafolio", width: 300, align: "center", frozen: true },
         { name: "S01", width: 300, hidden: true, align: "center" },
         { name: "S02", width: 300, hidden: true, align: "center" },
         { name: "S03", width: 300, hidden: true, align: "center" },

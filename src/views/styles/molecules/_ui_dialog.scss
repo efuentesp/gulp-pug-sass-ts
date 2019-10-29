@@ -1,17 +1,29 @@
 @import "../vars";
 
+$border-top-radius: 12px;
+
 .ui-dialog {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0.2em;
+  // padding: 0.2em;
   outline: 0;
   border: 1px solid $color-ink-lightest;
+  border-top-left-radius: $border-top-radius;
+  border-top-right-radius: $border-top-radius;
 
   .ui-dialog-titlebar {
     padding: 0.4em 1em;
     position: relative;
     background: $color-sky;
+
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $color-ink-lightest;
+    border-top-left-radius: $border-top-radius;
+    border-top-right-radius: $border-top-radius;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
   }
 
   .ui-dialog-title {
@@ -31,10 +43,11 @@
     margin: -10px 0 0 0;
     padding: 1px;
     height: 20px;
-    border: 1px solid $color-ink-lightest;
+    border: 1px solid $color-sky;
   }
 
   .ui-dialog-content {
+    margin-top: 6px;
     position: relative;
     border: 0;
     padding: 0.5em 1em;
@@ -62,22 +75,22 @@
   }
 
   .ui-resizable-n {
-    height: 2px;
+    // height: 2px;
     top: 0;
   }
 
   .ui-resizable-e {
-    width: 2px;
+    // width: 2px;
     right: 0;
   }
 
   .ui-resizable-s {
-    height: 2px;
+    // height: 2px;
     bottom: 0;
   }
 
   .ui-resizable-w {
-    width: 2px;
+    // width: 2px;
     left: 0;
   }
 
@@ -85,8 +98,8 @@
   .ui-resizable-sw,
   .ui-resizable-ne,
   .ui-resizable-nw {
-    width: 7px;
-    height: 7px;
+    width: 0;
+    // height: 7px;
   }
 
   .ui-resizable-se {

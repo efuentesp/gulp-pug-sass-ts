@@ -10,6 +10,12 @@
         .row.w-full.overflow-auto
             +grid("ordenes")
         +grid-records-count("ordenes")
+    .contextMenu.hidden#contextMenu
+            ul
+                li#editar-orden
+                    span Editar Orden
+                li#cancelar-orden
+                    span Cancelar Orden
 .row.flex.flex-wrap.justify-end.pt-4
     +field-group("botones-group")
         +button-validate({size:"large", disabled: false})

@@ -2,18 +2,14 @@ mixin button-cancel(parms)
   - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
 
   if _parms.size == "large"
-    button.button.big-button(id="btn_search" type="reset" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-lg
-          i.fas.fa-ban.fa-2x
-        br
-        span Cancelar
+    button.button.big-button(id="btn_cancel" type="reset" title=_parms.tooltip disabled=_parms.disabled)
+      img(src="../../assets/images/btn-cancelar.png")
+      span Cancelar
 
   if _parms.size == "medium"
-    button.button.medium-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-2x
-          i.fas.fa-ban.fa-sm
+    button.button.medium-button(id="btn_cancel" title=_parms.tooltip disabled=_parms.disabled)
+      img(src="../../assets/images/btn-cancelar.png")
 
   if _parms.size == "small"
-    button.button.small-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-sm
-          i.fas.fa-ban.fa-lg
+    button.button.small-button(id="btn_cancel" title=_parms.tooltip disabled=_parms.disabled)
+      img(src="../../assets/images/btn-cancelar.png")

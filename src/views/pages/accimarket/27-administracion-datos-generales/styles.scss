@@ -267,3 +267,21 @@
     }
   }
 }
+
+// Menu style with image
+.container-img {
+  max-width: 100px;
+
+  &_image {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15%;
+  }
+  &_text {
+    display: inline-block;
+    width: 80%;
+    @media (max-width: 100px) {
+      width: 100%;
+    }
+  }
+}

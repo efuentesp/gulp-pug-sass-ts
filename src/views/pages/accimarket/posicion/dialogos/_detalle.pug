@@ -1,0 +1,61 @@
+.row
+    .ui-dialog.hidden(id="detalle")
+        +accordion("criterios_detalle")
+            +accordion-item("detalle_item")
+                .row#rowPrincipales
+                    .row
+                        +field-group("busqueda_detalle")
+                            form.is-search-form#criterios-detalle(data-parsley-validate="")
+                                +field-input("contratoDetalle",
+                                    {
+                                        label: "Contrato:",
+                                        required: true,
+                                        size: "8em",
+                                        orientation: "horizontal",
+                                        disabled: true
+                                    })
+                                +field-date("fechaI",
+                                    {
+                                        label: "Fecha Inicial:",
+                                        required: true,
+                                        size: "12em",
+                                        orientation: "horizontal"
+                                    })
+                                +field-date("fechaF",
+                                    {
+                                        label: "Fecha Final:",
+                                        required: true,
+                                        size: "12em",
+                                        orientation: "horizontal"
+                                    })
+                                #search-actions-column
+                                +button-search({id:"btn_consul_mov",size: "large", disabled: false})
+                                +button-pdf({id:"btn_pdf_mov",size: "large", disabled: false})
+                                +button-xls({id:"btn_xml_mov",size: "large", disabled: false})
+                    .row
+                        .row.h-40
+                            table#tablaFiltros
+                                tr
+                                    td.font-bold
+                                        span Emision
+                                        div.overflow-auto
+                                            <select id = "emisionLst" multiple = "multiple" size = "7">
+                                                <option value = "todos">--TODOS--</option>
+                                            </select>
+                                    td.font-bold 
+                                        span Operacion
+                                        div.overflow-auto
+                                            <select id = "operacionLst" multiple = "multiple" size = "7">
+                                                <option value = "todos">--TODOS--</option>
+                                            </select>
+                                    td.font-bold 
+                                        span Portafolio
+                                        div.overflow-auto
+                                            <select id = "portafolioLst" multiple = "multiple" size = "7">
+                                                <option value = "todos">--TODOS--</option>
+                                            </select>
+                        .row.text-center.mt-3
+                            +button-filter({size: "large", disabled: false})
+                            button#button-clean Limpiar
+        .row.w-full.overflow-auto
+            +grid("detalle")

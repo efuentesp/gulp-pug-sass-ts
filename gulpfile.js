@@ -76,7 +76,11 @@ function handlebarsIt() {
 
 function sassIt() {
   return gulp
-    .src(["./src/views/styles/main.scss", "./src/views/pages/**/*.scss"])
+    .src([
+      "./src/views/styles/main.scss",
+      "./src/views/styles-bol/main-bol.scss",
+      "./src/views/pages/**/*.scss"
+    ])
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(
       sass({
@@ -104,7 +108,7 @@ function typescriptIt() {
         typescript({
           target: "ES5",
           module: "AMD",
-          removeComments: false
+          removeComments: true
         })
       )
       // .pipe(uglify())
@@ -151,13 +155,15 @@ function concatVendorCss() {
   return (
     gulp
       .src([
-        "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+        // "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
         "./node_modules/tailwindcss/dist/tailwind.min.css",
         "./src/views/styles/vendors/jqgrid/ui.jqgrid.min.css",
         "./node_modules/select2/dist/css/select2.min.css",
         "./src/views/styles/vendors/jquery.toggleinput/jquery.toggleinput.css",
         "./src/views/styles/vendors/jquery.steps/jquery.steps.css",
-        "./src/views/styles/vendors/chartjs/chartjs.css"
+        "./src/views/styles/vendors/chartjs/chartjs.css",
+        "./src/views/styles/vendors/wickedpicker/wickedpicker.css",
+        "./node_modules/jquery-contextmenu/dist/jquery.contextMenu.min.css"
       ])
       // .pipe(
       //   purgeCSS({
@@ -214,7 +220,11 @@ function concatVendorJs() {
       "./src/views/scripts/vendors/jquery.steps.js",
       "./src/views/scripts/vendors/chartjs.min.js",
       "./src/views/pages/scripts/vendors/listswap/jquery.listswap.js",
-      "./src/views/pages/scripts/vendors/handlebars/handlebars-v4.4.3.js"
+      "./src/views/pages/scripts/vendors/wickedpicker/wickedpicker.js",
+      "./node_modules/jquery-contextmenu/dist/jquery.contextMenu.min.js",
+      "./node_modules/jquery-contextmenu/dist/jquery.ui.position.min.js"
+      // "./node_modules/handlebars/dist/handlebars.min.js"
+      // "./src/views/pages/scripts/vendors/handlebars/handlebars-v4.4.3.js"
     ])
     .pipe(concat("libs.min.js"))
     .pipe(gulp.dest("./dist/assets/scripts"));
@@ -232,7 +242,11 @@ function watch() {
   });
 
   gulp.watch(
-    ["./src/views/styles/**/*.scss", "./src/views/pages/**/*.scss"],
+    [
+      "./src/views/styles/**/*.scss",
+      "./src/views/styles-bol/**/*.scss",
+      "./src/views/pages/**/*.scss"
+    ],
     sassIt
   );
   gulp.watch("./src/views/pages/**/*.pug", pugIt);
@@ -260,7 +274,7 @@ exports.watch = watch;
 exports.default = gulp.series(
   clean,
   gulp.parallel(pugIt, handlebarsIt, sassIt, typescriptIt, imageminIt),
-  webfonts,
+  // webfonts,
   concatVendorCss,
   concatJQueryJs,
   concatVendorJs
@@ -269,7 +283,7 @@ exports.default = gulp.series(
 exports.dev = gulp.series(
   clean,
   gulp.parallel(pugIt, handlebarsIt, sassIt, typescriptIt, imageminIt),
-  webfonts,
+  // webfonts,
   concatVendorCss,
   concatJQueryJs,
   concatVendorJs,

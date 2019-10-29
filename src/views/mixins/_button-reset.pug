@@ -3,17 +3,13 @@ mixin button-reset(parms)
 
   if _parms.size == "large"
     button.button.big-button(id="btn_reset" type="submit" title=_parms.tooltip disabled=_parms.disabled value="validate")
-        span.fa-stack.fa-lg
-          i.fas.fa-undo.fa-2x
-        br
-        span Reiniciar
+      img(src="../../assets/images/btn-reiniciar.png")
+      span Reiniciar
 
   if _parms.size == "medium"
     button.button.medium-button(id="btn_reset" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-2x
-          i.fas.fa-undo.fa-sm
+      img(src="../../assets/images/btn-reiniciar.png")
 
   if _parms.size == "small"
     button.button.small-button(id="btn_reset" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-sm
-          i.fas.fa-undo.fa-lg
+      img(src="../../assets/images/btn-reiniciar.png")

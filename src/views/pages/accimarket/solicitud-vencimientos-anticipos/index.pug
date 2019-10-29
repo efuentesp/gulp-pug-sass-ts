@@ -1,0 +1,44 @@
+extends /layouts/html5
+
+block title
+    title Solicitud Vencimientos Anticipos
+
+block styles
+    link(rel="stylesheet" href="../../assets/css/accimarket/solicitud-vencimientos-anticipos/styles.css")
+
+block content
+    .content.p-4
+        +accordion("criterios_vencimientos_accordion")
+            +accordion-item("criterios_vencimientos_accordion_item")
+                .row
+                    +field-select("libro",
+                        {
+                            label: "Libro"
+                        },
+                        {key: "ALL", value:"Todos"}
+                        )
+                    +field-plus-minus("contrato", {label: "Contrato"})
+                    +field-plus-minus("digito", {label: "Digito"})
+                    +field-checks("solVencimiento",
+                        {
+                            label: "Solicitudes Vencimientos Anticipado",
+                        },
+                        {key: "S02", value:"Solicitado", color:"yellow"},
+                        {key: "S01", value:"Autorizado", color:"green"},
+                        {key: "S03", value:"Rechazado", color:"black"}
+                        )
+                    #search-actions-column
+                        +button-search({size: "large", disabled: false})
+                        +button-clean({size: "large", disabled: false})
+        .row.w-full.overflow-auto.heigthTabla.mt-4
+            +grid("solicitudesVenc")
+        .row.justify-end
+            +field-input("totalreg",
+                {
+                    label: "Total de registros",
+                    orientation: "horizontal",
+                    size: "8em"
+                })
+
+block scripts
+    script(src="../../assets/scripts/accimarket/solicitud-vencimientos-anticipos/scripts.js")

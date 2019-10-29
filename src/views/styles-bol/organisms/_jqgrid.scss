@@ -1,0 +1,42 @@
+@import "../vars";
+
+.ui-jqgrid-hbox {
+  border-bottom: 1px solid $color-ink-light;
+  // background: $color-sky;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(246, 246, 246, 0.66) 59%,
+    rgba(195, 219, 240, 0.43) 100%
+  );
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  .ui-th-column {
+    color: #4248a5;
+    font-weight: 800;
+  }
+}
+
+.ui-jqgrid-btable {
+  tr:nth-child(even) {
+    background-color: $color-sky-lighter;
+  }
+
+  .jqgrow {
+    &.ui-state-highlight {
+      background: $color-blue-light;
+      color: $font_color;
+    }
+
+    input {
+      line-height: 18px;
+    }
+  }
+}
+
+.ui-jqgrid-count-rec {
+  padding-top: 0.5em;
+  max-width: 12em;
+  margin: auto;
+}

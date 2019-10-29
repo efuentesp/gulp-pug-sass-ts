@@ -8,10 +8,8 @@ mixin button-clean(parms)
 
   if _parms.size == "medium"
     button.button.medium-button(id="btn_clean" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-2x
-          i.far.fa-file.fa-sm
+        img(src="../../assets/images/btn-limpiar_32x32.png")
 
   if _parms.size == "small"
     button.button.small-button(id="btn_clean" title=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-sm
-          i.far.fa-file.fa-lg
+        img(src="../../assets/images/btn-limpiar_32x32.png")

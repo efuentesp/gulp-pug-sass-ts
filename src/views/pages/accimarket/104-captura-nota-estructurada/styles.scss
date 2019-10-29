@@ -31,8 +31,20 @@
   .select2 {
     margin-left: 1em;
   }
+
+  .card {
+    height: 530px;
+    overflow-y: scroll;
+  }
 }
 
 #contenido {
   width: 72%;
+}
+
+#jqContextMenu {
+  ul {
+    width: 200px !important;
+    padding: 5px !important;
+  }
 }

@@ -1,20 +1,6 @@
 /// <reference path="../../typings/index.d.ts" />
 console.log("27-administracion-datos-generales");
 
-$("#titular_contrato_tabgroup")
-  .tabs()
-  .addClass("ui-tabs-vertical ui-helper-clearfix");
-$("#titular_contrato_tabgroup > ul > li")
-  .removeClass("ui-corner-top")
-  .addClass("ui-corner-left");
-
-$("#cotitular2_tabgroup")
-  .tabs()
-  .addClass("ui-tabs-vertical ui-helper-clearfix");
-$("#cotitular2_tabgroup > ul > li")
-  .removeClass("ui-corner-top")
-  .addClass("ui-corner-left");
-
 const form27 = ($("#criterios-busqueda") as any)
   .parsley()
   .on("field:validated", () => {
@@ -494,12 +480,7 @@ $("#table_cotitular2_medio_liquidacion").jqGrid({
 $("#table_persona_fisica_int").jqGrid({
   datatype: "local",
   height: "auto",
-  colNames: [
-    "Nombre",
-    "Apellido Paterno",
-    "Apellido Materno",
-    "Porcentaje %"
-  ],
+  colNames: ["Nombre", "Apellido Paterno", "Apellido Materno", "Porcentaje %"],
   colModel: [
     { name: "nombre_persona_int", width: 220 },
     { name: "apellido_pat_persona_int", width: 220 },
@@ -520,12 +501,7 @@ $("#table_persona_fisica_int").jqGrid({
 $("#table_persona_fisica_nac").jqGrid({
   datatype: "local",
   height: "auto",
-  colNames: [
-    "Nombre",
-    "Apellido Paterno",
-    "Apellido Materno",
-    "Porcentaje %"
-  ],
+  colNames: ["Nombre", "Apellido Paterno", "Apellido Materno", "Porcentaje %"],
   colModel: [
     { name: "nombre_persona_nac", width: 220 },
     { name: "apellido_pat_persona_nac", width: 220 },
@@ -586,3 +562,24 @@ function valores(cellvalue, options, rowObject) {
     return "";
   }
 }
+
+// const source_cotitulares = $("#hb-cotitulares").html();
+// console.log(source_cotitulares);
+// const template_cotitulares = Handlebars.compile(source_cotitulares);
+// $("#titular-cotitulares").append(template_cotitulares(null));
+
+$(".tab-group").tabs();
+
+$("#titular_contrato_tabgroup")
+  .tabs()
+  .addClass("ui-tabs-vertical ui-helper-clearfix");
+$("#titular_contrato_tabgroup > ul > li")
+  .removeClass("ui-corner-top")
+  .addClass("ui-corner-left");
+
+$("#cotitular2_tabgroup")
+  .tabs()
+  .addClass("ui-tabs-vertical ui-helper-clearfix");
+$("#cotitular2_tabgroup > ul > li")
+  .removeClass("ui-corner-top")
+  .addClass("ui-corner-left");

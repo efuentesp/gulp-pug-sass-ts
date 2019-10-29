@@ -1,0 +1,15 @@
+mixin button-accept(parms)
+  - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
+
+  if _parms.size == "large"
+    button.button.big-button(id="btn_cancel" type="reset" title=_parms.tooltip disabled=_parms.disabled)
+      img(src="../../assets/images/btn-aceptar.png")
+      span Aceptar
+
+  if _parms.size == "medium"
+    button.button.medium-button(id="btn_cancel" title=_parms.tooltip disabled=_parms.disabled)
+      img(src="../../assets/images/btn-aceptar.png")
+
+  if _parms.size == "small"
+    button.button.small-button(id="btn_cancel" title=_parms.tooltip disabled=_parms.disabled)
+      img(src="../../assets/images/btn-aceptar.png")
