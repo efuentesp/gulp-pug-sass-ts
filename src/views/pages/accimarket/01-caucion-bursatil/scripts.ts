@@ -21,6 +21,8 @@ let contratos_params: UrlParams = {};
 //   .subscribe(data => llenaGridContratos(data));
 
 http_findAll("contratos", contratos_params, payload => {
+  console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS");
+
   // fillJqGrid("#table_contratos", payload);
   llenaGridContratos(payload);
   const rec_count = payload.length;
@@ -35,6 +37,7 @@ const rpc_parms = {
   rol: "TIT"
 };
 rpc(rpc_url, rpc_parms, (data, textStatus, jQxhr) => {
+  console.log("INGRESA A LA FUNCION  RPC");
   console.log(data, textStatus, jQxhr);
   llenaGridContratos(data);
   const rec_count = data.length;
@@ -51,7 +54,7 @@ const form = ($("#criterios-busqueda") as any)
   })
   .on("form:submit", e => {
     console.log("form:submit", e);
-
+    console.log("INGRESA A LA FUNCION  DE FORMM SUBMIT");
     contratos_params = {};
 
     const fecha = $("#fecha").val();
@@ -78,6 +81,7 @@ const form = ($("#criterios-busqueda") as any)
 
     http_findAll("contratos", contratos_params, payload => {
       // console.log(payload);
+      console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS 2");
       $("#table_contratos").jqGrid("clearGridData");
       $("#table_contratos").jqGrid("setGridParam", { data: payload });
       $("#table_contratos").trigger("reloadGrid");
@@ -91,6 +95,7 @@ const form = ($("#criterios-busqueda") as any)
 
 const llenaGridContratos = (contratos: any) => {
   // console.log(contratos);
+  console.log("INGRESA A LA FUNCION  LLENA GRID");
   $("#table_contratos").jqGrid({
     data: contratos,
     datatype: "local",

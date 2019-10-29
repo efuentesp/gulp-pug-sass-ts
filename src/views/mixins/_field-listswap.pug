@@ -8,19 +8,18 @@ mixin field-swaplist(id, params)
       p.title= params.title_source
       ul.droptrue(id=_id_source)
     .source_control
-      ul
-        li.up
-          button.up-button
-            img(src="../../assets/images/icon_up_arrow.png" style="width:15px;")
-        li.add
-          button.right-button
-            img(src="../../assets/images/icon_right_arrow.png" style="width:15px;")
-        li.remove
-          button.left-button
-            img(src="../../assets/images/icon_left_arrow.png" style="width:15px;")
-        li.down
-          button.down-button
-            img(src="../../assets/images/icon_down_arrow.png" style="width:15px;")
+      .up
+        button.up-button
+          img(src="../../assets/images/icon_up_arrow.png" style="width:15px;")
+      .add
+        button.right-button
+          img(src="../../assets/images/icon_right_arrow.png" style="width:15px;")
+      .remove
+        button.left-button
+          img(src="../../assets/images/icon_left_arrow.png" style="width:15px;")
+      .down
+        button.down-button
+          img(src="../../assets/images/icon_down_arrow.png" style="width:15px;")
     .destination
       p.title= params.title_destination
       ul.dropfalse(id=_id_destination)

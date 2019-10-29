@@ -19,3 +19,19 @@
   width: 4em;
   padding: 10px;
 }
+
+.odd.selected,
+.even.selected {
+  background: beige;
+}
+
+li {
+  cursor: pointer;
+}
+
+.odd {
+  background-color: white;
+}
+.even {
+  background-color: lightgray;
+}

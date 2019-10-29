@@ -1668,9 +1668,11 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
   var option = "";
   var nAnswers = 0;
   var nQuestions = 0;
+  var nResults = 0;
 
   nQuestions = quiz[0].question.length;
   nAnswers = quiz[0].answer.length;
+  nResults = quiz[0].result.length;
 
   // Questions
   for (var i = 0; i < nQuestions; i++) {
@@ -1718,7 +1720,14 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
           id +
           "_" +
           j +
-          "' data-points='" +
+          "'";
+
+        if (quiz[0].result[i].results[j].result) {
+          answerOption += "checked='checked'";
+        }
+
+        answerOption +=
+          "data-points='" +
           answer_points +
           "'>" +
           "<span class='checkmark'></span>" +
@@ -1744,14 +1753,17 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
           i +
           '">';
 
+        let optionValue = quiz[0].result[i].results[j].result;
+
         options = "";
         for (var k = 0; k < quiz[0].answer[j].options.length; k++) {
-          option =
-            '<option value="' +
-            quiz[0].answer[j].options[k].key +
-            '">' +
-            quiz[0].answer[j].options[k].value +
-            "</option>";
+          option = '<option value="' + quiz[0].answer[j].options[k].key + '"';
+
+          if (optionValue == quiz[0].answer[j].options[k].key) {
+            option += " selected";
+          }
+
+          option += ">" + quiz[0].answer[j].options[k].value + "</option>";
           options += option;
         }
 
@@ -1996,3 +2008,58 @@ $("ul.dropfalse").sortable({
   connectWith: "ul",
   dropOnEmpty: false
 });
+
+const fillSwapList = (id: string, list_id: string, params: any) => {
+  var _id = "#" + id;
+  var list = $("#listado_" + list_id);
+
+  for (var i = 0; i < params.length; i++) {
+    var data = params[i];
+    list.append("<li value = " + data.value + ">" + data.label + "</li>");
+  }
+
+  $(_id + "_source").disableSelection();
+  $(_id + "_destination").disableSelection();
+
+  $(".droptrue > li:odd, .dropfalse > li:odd").addClass("odd");
+  $(".droptrue > li:even, .dropfalse > li:even").addClass("even");
+};
+
+$(".droptrue, .dropfalse").on("click", "li", function() {
+  if ($(this).hasClass("selected")) {
+    $(this).removeClass("selected");
+  } else {
+    clearList();
+    $(this).addClass("selected");
+  }
+});
+
+// Up
+$(".up").click(function() {
+  var currents = $("li.selected");
+  currents.prev().before(currents);
+});
+
+// Down
+$(".down").click(function() {
+  var currents = $("li.selected");
+  currents.next().after(currents);
+});
+
+// Add
+$(".add").click(function() {
+  var currents = $("li.selected");
+  $(".dropfalse").append(currents);
+  clearList();
+});
+
+// Remove
+$(".remove").click(function() {
+  var currents = $("li.selected");
+  $(".droptrue").append(currents);
+  clearList();
+});
+
+const clearList = () => {
+  $(".droptrue > li, .dropfalse > li").removeClass("selected");
+};
