@@ -563,10 +563,10 @@ function valores(cellvalue, options, rowObject) {
   }
 }
 
-const source_cotitulares = $("#hb-cotitulares").html();
-console.log(source_cotitulares);
-const template_cotitulares = Handlebars.compile(source_cotitulares);
-$("#titular-cotitulares").append(template_cotitulares(null));
+// const source_cotitulares = $("#hb-cotitulares").html();
+// console.log(source_cotitulares);
+// const template_cotitulares = Handlebars.compile(source_cotitulares);
+// $("#titular-cotitulares").append(template_cotitulares(null));
 
 $(".tab-group").tabs();
 

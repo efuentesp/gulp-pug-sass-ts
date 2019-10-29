@@ -12,15 +12,12 @@ block content
     include _criterios_busqueda
 
     .row
-      #titular-cotitulares
+      +tab-group("titular_cotitular_tabgroup",
+        {id: "tab_titular_contrato", label: "TITULAR DEL CONTRATO"}
+      )
+        +tab-item("tab_titular_contrato")
+          include _tab_titular_contrato
 
 block scripts
-  script#hb-cotitulares(type="text/x-handlebars-template")
-    +tab-group("titular_cotitular_tabgroup",
-      {id: "tab_titular_contrato", label: "TITULAR DEL CONTRATO"}
-    )
-      +tab-item("tab_titular_contrato")
-        include _tab_titular_contrato
-
   script(src="../../assets/scripts/accimarket/27-administracion-datos-generales/scripts.js")
   script(src="../../assets/scripts/accimarket/27-administracion-datos-generales/scripts_funciones.js")
