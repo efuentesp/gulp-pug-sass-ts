@@ -2,6 +2,7 @@
 
 let rates_params: UrlParams = {};
 let rendimientos_params: UrlParams = {};
+let rendimientosh_params: UrlParams = {};
 let promedios_params: UrlParams = {};
 
 // Service line chart
@@ -17,6 +18,11 @@ http_findAll("rates", rates_params, payload => {
 // Services stack chart
 http_findAll("rendimientos", rendimientos_params, payload => {
   fillRendimientos(payload);
+});
+
+// Services stack chart horizontal
+http_findAll("rendimientosh", rendimientosh_params, payload => {
+  fillHorizontalRendimientos(payload);
 });
 
 // Services bar chart
@@ -238,5 +244,57 @@ const fillPromediosPie = (promedios: any) => {
         data: dataSetY
       }
     ]
+  });
+};
+
+// Stack Horizontal
+const fillHorizontalRendimientos = (rendimientosh: any) => {
+  var dataSetY1 = [];
+  var dataSetY2 = [];
+  var dataSetY3 = [];
+  var dataSetY4 = [];
+  var dataSetX = [];
+
+  for (var i = 0; i < rendimientosh.length; i++) {
+    var data = rendimientosh[i];
+    dataSetX.push(data.mes);
+    dataSetY1.push(data.dataA);
+    dataSetY2.push(data.dataB);
+    dataSetY3.push(data.dataC);
+    dataSetY4.push(data.dataD);
+  }
+
+  stackChartHorizontal({
+    id: "stackChartH",
+    titleX: "",
+    titleY: "",
+    labels: dataSetX,
+    tickMaxX: 100.0,
+    tickMinX: 0.0,
+    tickStepX: 20.0,
+    dataSet: [
+      {
+        label: "None",
+        backgroundColor: "yellow",
+        data: dataSetY1
+      },
+      {
+        label: "In Progress",
+        backgroundColor: "orange",
+        data: dataSetY2
+      },
+      {
+        label: "Not Yet Started",
+        backgroundColor: "red",
+        data: dataSetY3
+      },
+      {
+        label: "Recompletion required",
+        backgroundColor: "blue",
+        data: dataSetY4
+      }
+    ],
+    width: "800px",
+    height: "200px"
   });
 };

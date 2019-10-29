@@ -1,0 +1,38 @@
+#nueva-nota {
+  label {
+    width: 15em;
+    text-align: right;
+  }
+
+  #descripcion {
+    width: 28.5em !important;
+  }
+
+  input {
+    width: 12em !important;
+  }
+
+  .row {
+    label {
+      width: auto;
+    }
+    input {
+      width: 6em !important;
+    }
+  }
+
+  #efectivo,
+  #tituloLiq,
+  #tipoMed,
+  #medLiq {
+    margin-left: 1em;
+  }
+
+  .select2 {
+    margin-left: 1em;
+  }
+}
+
+#contenido {
+  width: 72%;
+}

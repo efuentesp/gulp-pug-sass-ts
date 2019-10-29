@@ -17,7 +17,7 @@ include /mixins/mixins
                     orientation: "horizontal",
                     required: true,
                     max_length: "9",
-                    type: "digits",
+                    type: "alphanum",
                     align: "left"
                 })
             +field-input("digito",
@@ -25,11 +25,12 @@ include /mixins/mixins
                     size: "5em",
                     orientation: "horizontal",
                     type: "text",
-                    disabled: true
+                    disabled: true,
+                    align: "center"
                 })
         +field-input("titular",
-           {
-                size: "25em",
+        {
+                size: "23em",
                 orientation: "horizontal",
                 align: "left",
                 disabled: true
@@ -55,12 +56,13 @@ include /mixins/mixins
                 label: "emisora",
                 required: true,
                 size: "15em",
-                orientation: "horizontal"
+                orientation: "horizontal",
+                align: "left"
             })
         +field-input("pemisora",
         {
                 label: "Perfil Emisora",
-                size: "25em",
+                size: "14em",
                 orientation: "horizontal",
                 align: "left",
                 disabled: true
@@ -69,7 +71,8 @@ include /mixins/mixins
             {
                 label: "Operación",
                 size: "15em",
-                orientation: "horizontal"
+                orientation: "horizontal",
+                required: true,
             },
                 {key: "C", value:"compra"},
                 {key: "CPA", value:"Cpa"},
@@ -84,8 +87,8 @@ include /mixins/mixins
                 required: true,
                 size: "15em",
                 orientation: "horizontal",
-                max_length: "17",
-                type: "digits"
+                max_length: "22",
+                type: "number"
             })
         +field-input("precio",
             {
@@ -93,15 +96,18 @@ include /mixins/mixins
                 required: true,
                 size: "15em",
                 orientation: "horizontal",
-                max_length: "9",
+                max_length: "25",
                 type: "digits"
             })
         +field-select("Vigencia",
             {
                 label: "Vigencia",
                 size: "15em",
-                orientation: "horizontal"
-            })
+                orientation: "horizontal",
+                required: true,
+            },
+            {key:"D", value:"Diaria"}
+            )
         +field-options("opciones",
             {label: "Envio",
             required: true,
@@ -114,24 +120,37 @@ include /mixins/mixins
             {
                 label: "Servicio de Inv.",
                 size: "15em",
-                orientation: "horizontal"
+                orientation: "horizontal",
+            required: true
             })
         +field-select("TitulosAP",
             {
                 label: "Titulos a afectar de posición",
                 size: "15em",
-                orientation: "horizontal"
+                orientation: "horizontal",
+            required: true
             })
         +field-select("ModoC",
             {
                 label: "Modo Cierre",
                 size: "15em",
-                orientation: "horizontal"
-            })
+                orientation: "horizontal",
+            required: true
+            },
+            {key:"R", value:"Red"},
+            {key:"O", value:"Otros"})
+        +field-input("red",
+                {
+                    label: "Numero de red/telefono",
+                    size: "15em",
+                    orientation: "horizontal",
+                    max_length: "10",
+                    type: "number",
+                    align: "left"
+                })
         .row
         +field-checks("CapturarDA",
             {
-                label: "",
                 orientation: "horizontal"
                 },
                 {key: "true", value:"capturar datos Avanzados"}
@@ -141,13 +160,18 @@ include /mixins/mixins
                 {
                     label: "MPL",
                     size: "15em",
-                    orientation: "horizontal"
-                })
+                    orientation: "horizontal",
+                    align: "left"
+                },
+                {key: "A", value:"activa"},
+                {key: "P", value:"pasiva"},
+                {key: "O", value:"sentido opuesto"})
             +field-select("difPujas",
                 {
                     label: "Diferencia de pujas",
                     size: "15em",
-                    orientation: "horizontal"
+                    orientation: "horizontal",
+                    align: "left"
                 },
                     {key: "UN", value:".01"},
                     {key: "DO", value:".02"},
@@ -160,15 +184,19 @@ include /mixins/mixins
                     label: "Porcentaje VO",
                     size: "15em",
                     orientation: "horizontal",
-                    max_length: "2",
-                    type: "digits"
+                    max_length: "5",
+                    type: "digits",
+                    align: "left"
                 })
+        .row#posicionlabel
             +field-input("Posicion",
                 {
                     label: "Posicion",
                     size: "15em",
                     orientation: "horizontal",
-                    max_length: "2"
+                    max_length: "2",
+                    align: "rigth",
+                    disabled: true
                 })
         +field-textarea("Mensajes",
             {
@@ -177,13 +205,13 @@ include /mixins/mixins
                 max_length: "2",
                 disabled: true
             })
-        .row#elementosJuntos2
+        .row#elementosJuntos3
             +field-input("precMdo",
                 {
                     label: "Prec Mdo",
-                    size: "6em",
+                    size: "5em",
                     orientation: "horizontal",
-                    max_length: "6.5",
+                    max_length: "6",
                     type: "digits",
                     align: "left",               
                     disabled: true
@@ -191,7 +219,7 @@ include /mixins/mixins
             +field-input("PrecCierre",
             {
                     label: "Prec Cierre",
-                    size: "6em",
+                    size: "5em",
                     orientation: "horizontal",
                     type: "text",
                     disabled: true
@@ -199,3 +227,5 @@ include /mixins/mixins
 .row#botones-final
     +button-add({label: "Agregar",size: "large", disabled: false})
     +button-clean({label: "Limpiar",size: "large", disabled: false})
+
+

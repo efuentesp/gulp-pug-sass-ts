@@ -1,0 +1,21 @@
+@import "../vars";
+
+.field {
+    .tag-list {
+        border: 1px solid $input_border-color;
+        max-height: 7em;
+        overflow: auto;
+
+        &:empty {
+            display: none;
+        }
+
+        li {
+            padding: 5px;
+        }
+
+        li:nth-of-type(odd) {
+            background-color: $color-sky-light;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+extends /layouts/bol-jsp
+
+block title
+   title 17. Ampliación de Horario
+
+block styles
+   link(rel="stylesheet" href="../../assets/css/bol/17-ampliacion-horario/styles.css")
+
+block content
+    .row
+        button#btn_mostrar_ventana Click
+        .ui-dialog.hidden#dialogo_ampliacion_horario
+            +field-select("horario-sacid",
+                {
+                    label: "Horario de cierre SACID",
+                    size: "12em",
+                    orientation: "horizontal",
+                    disabled: true
+                },
+                {key: "HS16", value:"16:00 hrs", selected: true}
+            )
+            +field-select("horario-ampliacion",
+                {
+                    label: "Horario de Ampliación",
+                    size: "12em",
+                    orientation: "horizontal"
+                },
+                {key: "HA00", value:"00:00 hrs"},
+                {key: "HA01", value:"01:00 hrs"},
+                {key: "HA02", value:"02:00 hrs"},
+                {key: "HA03", value:"03:00 hrs"},
+                {key: "HA04", value:"04:00 hrs"},
+                {key: "HA05", value:"05:00 hrs"},
+                {key: "HA06", value:"06:00 hrs"},
+                {key: "HA07", value:"07:00 hrs"},
+                {key: "HA08", value:"08:00 hrs"},
+                {key: "HA09", value:"09:00 hrs"},
+                {key: "HA10", value:"10:00 hrs"},
+                {key: "HA11", value:"11:00 hrs"},
+                {key: "HA12", value:"12:00 hrs"},
+                {key: "HA13", value:"13:00 hrs"},
+                {key: "HA14", value:"14:00 hrs"},
+                {key: "HA15", value:"15:00 hrs"},
+                {key: "HA16", value:"16:00 hrs"},
+                {key: "HA17", value:"17:00 hrs"},
+                {key: "HA18", value:"18:00 hrs"},
+                {key: "HA19", value:"19:00 hrs"},
+                {key: "HA20", value:"20:00 hrs"},
+                {key: "HA21", value:"21:00 hrs"},
+                {key: "HA22", value:"22:00 hrs"},
+                {key: "HA23", value:"23:00 hrs"}
+            )
+           
+
+block scripts
+   script(src="../../assets/scripts/bol/17-ampliacion-horario/scripts.js")

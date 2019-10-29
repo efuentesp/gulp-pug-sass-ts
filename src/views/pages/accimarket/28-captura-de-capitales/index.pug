@@ -14,10 +14,11 @@ block content
                {id: "tab_ofertas_publicas", label: "Ofertas públicas"},
                {id: "tab_captura_masiva", label: "Captura masiva"}
             )
-               +tab-item("tab_captura_de_capitales")  
+               +tab-item("tab_captura_de_capitales")
                         .row
-                        b Captura de Órdenes                                              
-                           include _grupo1 
+                        b Captura de Órdenes  
+                           +form("capturaDeCapitales-validacion")
+                              include _grupo1 
                         .row.w-full.overflow-auto
                            b Lista de Órdenes
                            +tab-group("listas_tab_group",

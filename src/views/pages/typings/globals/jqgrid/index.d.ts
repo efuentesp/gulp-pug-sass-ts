@@ -55,21 +55,21 @@ interface JQueryJqGridColumn {
    * @returns {} the formatted value
    */
   formatter?:
-    | "integer"
-    | "number"
-    | "currency"
-    | "date"
-    | "email"
-    | "link"
-    | "showlink"
-    | "checkbox"
-    | "select"
-    | "actions"
-    | ((
-        cellvalue: any,
-        options: { rowId: any; colModel: any },
-        rowObject: any
-      ) => any);
+  | "integer"
+  | "number"
+  | "currency"
+  | "date"
+  | "email"
+  | "link"
+  | "showlink"
+  | "checkbox"
+  | "select"
+  | "actions"
+  | ((
+    cellvalue: any,
+    options: { rowId: any; colModel: any },
+    rowObject: any
+  ) => any);
 
   /**
    * Defines if this column is hidden at initialization.
@@ -202,14 +202,14 @@ interface JQueryJqGridOptions {
    * or clientSide to manually load data via the data array
    */
   datatype?:
-    | "xml"
-    | "xmlstring"
-    | "json"
-    | "jsonstring"
-    | "local"
-    | "javascript"
-    | Function
-    | "clientSide";
+  | "xml"
+  | "xmlstring"
+  | "json"
+  | "jsonstring"
+  | "local"
+  | "javascript"
+  | Function
+  | "clientSide";
 
   /**
    * If set to true, and a column's width is changed, the adjacent column (to the right) will resize so that the overall grid width is maintained
@@ -371,6 +371,7 @@ interface JQueryJqGridOptions {
   toppager?: boolean;
   loadComplete?: () => void;
   onSortCol?: (index: any, columnIndex: any, sortOrder: any) => string;
+  editParams?: any;
 }
 
 interface JQueryJqGridStatic {
@@ -459,4 +460,6 @@ interface JQuery {
    * @returns {}
    */
   setGridParam(obj: any): void;
+
+  contextMenu(s: string, obj: any): void;
 }

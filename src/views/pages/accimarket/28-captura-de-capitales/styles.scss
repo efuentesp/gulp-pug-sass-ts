@@ -33,6 +33,10 @@
   .field-label {
     width: 8.5em;
   }
+  overflow-y: auto !important;
+  max-height: 500px !important;
+  width: 300px !important; 
+  overflow-x: disabled !important; 
   
   }
   #elementosOcultos{
@@ -48,15 +52,42 @@
   }
 #elementosJuntos2{
     display: flex;
+   // display: none;
     .field-label {
       width: 6em !important;
     }
   }
+#elementosJuntos3{
+    display: flex;
+    .field-label {
+      width: 5em;
+    }
+  }
+  
+#posicionlabel{
+    display: flex;
+    .field-label {
+      width: 5em;
+    }
+  } 
+
+#field_Posicion{
+  display: none; 
+}
 #field_digito{ 
   display: none;      
   .field-label {
     width: 1em !important;
   }
+}
+#field_red{
+  display: none;
+}
+#field_precMdo{
+  display: none;
+}
+#field_PrecCierre{
+  display: none;
 }
   #field_titular{ 
     display: none;      
@@ -86,13 +117,26 @@
       width: 0em !important;
     }
   } 
+  #field_CapturarDA{
+    .field-label {
+      width: 0em !important;
+    } 
+  }
   
   .verde{ color: white;background-color: lightgreen}; 
  // .mySelect option[value="--Seleccione--"] { color: black;background-color: #D3D3D3; } 
   .rojo{ color: white ;background-color: red}; 
 
-  .select2-selected {
-    position: relative;
-    background-color: DodgerBlue;
+  .pemisoranew {
+    display: flex !important;
+    flex-wrap: wrap !important;
   }
+
+.autoTamano{
+  overflow-y: auto !important;
+  max-height: 80px !important;
+  width: 200px !important; 
+  overflow-x: disabled !important;
+}
+
 }

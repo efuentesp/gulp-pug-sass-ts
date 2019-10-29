@@ -59,9 +59,28 @@ function pugIt() {
     .pipe(browserSync.stream());
 }
 
+function handlebarsIt() {
+  return gulp
+    .src("./src/views/pages/**/*.handlebars")
+    .pipe(
+      prettify({
+        indent_inner_html: true,
+        indent_size: 2
+      })
+    )
+    .pipe(rename({ extname: ".html" }))
+    .pipe(lec())
+    .pipe(gulp.dest("./dist"))
+    .pipe(browserSync.stream());
+}
+
 function sassIt() {
   return gulp
-    .src(["./src/views/styles/main.scss", "./src/views/pages/**/*.scss"])
+    .src([
+      "./src/views/styles/main.scss",
+      "./src/views/styles-bol/main-bol.scss",
+      "./src/views/pages/**/*.scss"
+    ])
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(
       sass({
@@ -193,12 +212,13 @@ function concatVendorJs() {
       "./node_modules/select2/dist/js/select2.min.js",
       "./node_modules/select2/dist/js/i18n/es.js",
       "./src/views/pages/scripts/vendors/jqgrid/jqgrid.js",
+      "./src/views/pages/scripts/vendors/jqgrid/context-menu.js",
       "./src/views/pages/scripts/vendors/splitter/splitter.js",
       "./src/views/scripts/vendors/jquery.toggleinput.js",
       "./src/views/scripts/vendors/jquery.steps.js",
       "./src/views/scripts/vendors/chartjs.min.js",
-      "./src/views/pages/scripts/vendors/listswap/jquery.listswap.js"
-      // "./src/views/pages/scripts/vendors/jquery-templating/jquery.loadTemplate.min.js"
+      "./src/views/pages/scripts/vendors/listswap/jquery.listswap.js",
+      "./src/views/pages/scripts/vendors/handlebars/handlebars-v4.4.3.js"
     ])
     .pipe(concat("libs.min.js"))
     .pipe(gulp.dest("./dist/assets/scripts"));
@@ -216,7 +236,11 @@ function watch() {
   });
 
   gulp.watch(
-    ["./src/views/styles/**/*.scss", "./src/views/pages/**/*.scss"],
+    [
+      "./src/views/styles/**/*.scss",
+      "./src/views/styles-bol/**/*.scss",
+      "./src/views/pages/**/*.scss"
+    ],
     sassIt
   );
   gulp.watch("./src/views/pages/**/*.pug", pugIt);
@@ -231,6 +255,7 @@ exports.clean = clean;
 exports.imageminIt = imageminIt;
 exports.sassIt = sassIt;
 exports.pugIt = pugIt;
+exports.handlebarsIt = handlebarsIt;
 exports.typescriptIt = typescriptIt;
 exports.babelIt = babelIt;
 exports.webfonts = webfonts;
@@ -242,7 +267,7 @@ exports.watch = watch;
 
 exports.default = gulp.series(
   clean,
-  gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
+  gulp.parallel(pugIt, handlebarsIt, sassIt, typescriptIt, imageminIt),
   webfonts,
   concatVendorCss,
   concatJQueryJs,
@@ -251,7 +276,7 @@ exports.default = gulp.series(
 
 exports.dev = gulp.series(
   clean,
-  gulp.parallel(pugIt, sassIt, typescriptIt, imageminIt),
+  gulp.parallel(pugIt, handlebarsIt, sassIt, typescriptIt, imageminIt),
   webfonts,
   concatVendorCss,
   concatJQueryJs,
