@@ -2,6 +2,23 @@
 
 console.log("03-seguimiento-de-ordenes-historico");
 
+$.contextMenu({
+  selector: "#btn_pdf",
+  callback: function(key, options) {
+    var m = "clicked: " + key;
+    console.log(m);
+  },
+  items: {
+    opcion1: { name: "Opción 1" },
+    opcion2: { name: "Opción 2" },
+    opcion3: { name: "Opción 3" }
+  }
+});
+
+$("#btn_pdf").on("click", function(e) {
+  console.log("clicked", this);
+});
+
 $("#table_ordenes_historicas").jqGrid({
   url: "http://localhost:3000/fideicomiso",
   datatype: "json",
