@@ -2,40 +2,54 @@
 
 console.log("Rendimientos");
 
-
-    $("#moduloCalculo").change(function(){
-    var valor= $("#moduloCalculo").val();
+    $("#modelosCalculoCombo").change(function(){
+    var valor= $("#modelosCalculoCombo").val();
     if (valor=="T"){
-        $("#renta").prop("disabled", true);
-    }else{
-        $("#renta").prop("disabled", false);
+        $("#cmbRenta").prop("disabled", true);
+    }else{  
+        $("#cmbRenta").prop("disabled", false);
     }
     });
+    
+    $("#btn_edit").click(() =>
+    $("#dialogo_xls").dialog({
+    modal: true,
+    closeText: "",
+    show: true,
+    title: "Generar XLS"
+    })
+    );
 
     $(document).ready(function(){
 
         var fecha = new Date();
         var  dia = fecha.getDate()-1;
         var mes = fecha.getMonth()+1;
-        var anio = fecha.getFullYear();
+        var anio = fecha.getFullYear()-1;
            
             var fechafi = new Date();
             var  diafi = fechafi.getDate()-1;
             var mesfi = fechafi.getMonth()+1;
-            var aniofi = fechafi.getFullYear()-1;
+            var aniofi = fechafi.getFullYear();
 
-            $( "#fechaF" ).val(+dia+"-"+mes+"-"+anio).on("change",function(){
-                $( "fechaF" ).datepicker({ minDate: '25-10-2019' });
+            $("#dtFechaFinal").datepicker("option", "maxDate", "fechafi");
+            $("#dtFecha").datepicker("option", "maxDate", "fechafi");
+            $("#dtFechaFinal").datepicker("option", "minDate", "fechafi-3y");
+            $("#dtFecha").datepicker("option", "minDate", "fechafi-3y");
+            var totfinal;
+            var totini;           
+            $( "#dtFechaFinal" ).val(+diafi+"-"+mesfi+"-"+aniofi).on("change",function(){
+               totfinal=$('#dtFechaFinal').val();
+               $('#totfinal').val($(this).val());
+               alert(totfinal);
             });
-                $( "#fechaI" ).val(+diafi+"-"+mesfi+"-"+aniofi).on("change",function(){
-                    $("#fechaI").datepicker({ minDate: 0 });
+                $( "#dtFecha" ).val(+dia+"-"+mes+"-"+anio).on("change",function(){
+                    totini=$('#dtFecha').val();
+                    $('#totini').val($(this).val());
+                    alert(totini);
                 });
-        });
         
-        $( function() {
-            $( "#resultadosMensuales" ).sortable();
-            $( "#resultadosMensuales" ).disableSelection();
-          } );
+        });
 $('input[name="chk_opcionesRendi"]').change(function () {
     console.log("Checkbox ejemplo " + $(this).is(':checked') + " " + $(this).val());
     if ($(this).is(':checked')) {
@@ -50,10 +64,9 @@ $('input[name="chk_opcionesRendi"]').change(function () {
         $("#table_resultadosAcumuladosTWP").jqGrid('hideCol', $(this).val());
     }
 });
-
     $('#btn_search').click(function() {
 
-    if ($('#moduloCalculo').val() == 'T') {
+    if ($('#modelosCalculoCombo').val() == 'T') {
         const formListOrdenes = ($("#criterios-busqueda-rendimientos") as any)
         .parsley()
         .on("field:validated", () => {
@@ -126,12 +139,12 @@ $('input[name="chk_opcionesRendi"]').change(function () {
         });
     }
 });
-     
+
 $(document).ready(function(){
-    $('#renta> option[value="RT"]').attr('selected', 'selected');
+    $('#cmbRenta> option[value="RT"]').attr('selected', 'selected');
 });
 $(document).ready(function(){
-    $('#moduloCalculo> option[value="TI"]').attr('selected', 'selected');
+    $('#modelosCalculoCombo> option[value="TI"]').attr('selected', 'selected');
 });
 /*
 ($("#renta") as any).select2({
@@ -148,6 +161,7 @@ $(document).ready(function(){
 $("#table_resultadosMensuales").jqGrid({
     datatype: "local",
     height: '150',
+    sortable : true,
     colNames: [
         "Periodo",
         "Portafolio %",
@@ -181,9 +195,89 @@ $("#table_resultadosMensuales").jqGrid({
     caption: ""
 });
 
+$("#table_resultadosfuente").jqGrid({
+    datatype: "local",
+    height: '150',
+    sortable : true,
+    colNames: [
+        "Fecha",
+          "Pos RV",
+          "Porc Pos RV",
+          "Porc Pos RV Ayer",
+          "Porc Pos RV2",
+          "Pos RF",
+          "Porc Pos RF",
+          "Pos RF Ayer",
+          "Porc Pos RF Ayer",
+          "Pos RF2",
+          "Porc RF2",
+          "Efectivo",
+          "Pos Total",
+          "Pos Total Ayer",
+          "Pos Total 2",
+          "Flujo RV",
+          "Flujo RF",
+          "Flujo Efectivo",
+          "Flujo Total",
+          "Pos RVSIC",
+          "Pos RVBV",
+          "Pos RF Privados",
+          "Pos RF Gubernamental",
+          "Pos Cobertura Cambiaria",
+          "Pos Notas Estructuradas",
+          "Flujo RVSIC",
+          "FRlujo RVBMV",
+          "Flujo RF Privados",
+          "Flujo RF Gubernamental",
+          "Flujo Cobertura",
+          "Flujo Notas Estructuradas"
+    ],
+    colModel: [
+        { name: "Fecha", width: 300, align: "center" },
+        { name: "Pos RV", width: 300, align: "center" },
+        { name: "Porc Pos RV", width: 300, align: "center" },
+        { name: "Porc Pos RV Ayer", width: 300, align: "center" },
+        { name: "Porc Pos RV2", width: 300, align: "center" },
+        { name: "Pos RF", width: 300, align: "center" },
+        { name: "Porc Pos RF", width: 300, align: "center" },
+        { name: "Pos RF Ayer", width: 300, align: "center" },
+        { name: "Porc Pos RF Ayer", width: 300, align: "center" },
+        { name: "Pos RF2", width: 300, align: "center" },
+        { name: "Porc RF2", width: 300, align: "center" },
+        { name: "Efectivo", width: 300, align: "center" },
+        { name: "Pos Total", width: 300, align: "center" },
+        { name: "Pos Total Ayer", width: 300, align: "center" },
+        { name: "Pos Total 2", width: 300, align: "center" },
+        { name: "Flujo RV", width: 300, align: "center" },
+        { name: "Flujo RF", width: 300, align: "center" },
+        { name: "Flujo Efectivo", width: 300, align: "center" },
+        { name: "Flujo Total", width: 300, align: "center" },
+        { name: "Pos RVSIC", width: 300, align: "center" },
+        { name: "Pos RVBV", width: 300, align: "center" },
+        { name: "Pos RF Privados", width: 300, align: "center" },
+        { name: "Pos RF Gubernamental", width: 300, align: "center" },
+        { name: "Pos Cobertura Cambiaria", width: 300, align: "center" },
+        { name: "Pos Notas Estructuradas", width: 300, align: "center" },
+        { name: "Flujo RVSIC", width: 300, align: "center" },
+        { name: "FRlujo RVBMV", width: 300, align: "center" },
+        { name: "Flujo RF Privados", width: 300, align: "center" },
+        { name: "Flujo RF Gubernamental", width: 300, align: "center" },
+        { name: "Flujo Cobertura", width: 300, align: "center" },
+        { name: "Flujo Notas Estructuradas", width: 300, align: "center" }
+    ],
+    rowNum: 10,
+    rowList: [10, 20, 30],
+    sortorder: "desc",
+    viewrecords: true,
+    gridview: true,
+    autoencode: true,
+    caption: ""
+});
+
 $("#table_resultadosAcumulados").jqGrid({
     datatype: "local",
     height: '150',
+    sortable : true,
     colNames: [
         "Periodo",
         "Portafolio %",
@@ -219,6 +313,7 @@ $("#table_resultadosAcumulados").jqGrid({
 $("#table_resultadosMensualesTWP").jqGrid({
     datatype: "local",
     height: '150',
+    sortable : true,
     colNames: [
         "periodo",
           "Valor_Mercado",
@@ -264,6 +359,7 @@ $("#table_resultadosMensualesTWP").jqGrid({
 $("#table_resultadosAcumuladosTWP").jqGrid({
     datatype: "local",
     height: '150',
+    sortable : true,
     colNames: [
         "periodo",
         "Valor Mercado",
@@ -300,13 +396,13 @@ $("#table_resultadosAcumuladosTWP").jqGrid({
     caption: ""
 });
 const infoContratoRendimiento = (payload: any) => {
-    $("#digito").val(payload.digito);
-    $("#dv").val(payload.dv);
-    $("#estatus").val(payload.estatus);
-    $("#perfilContrato").val(payload.perfil);
+    $("#iddigito").val(payload.digito);
+    $("#idDigitoVerificador").val(payload.dv);
+    $("#idEstatus").val(payload.estatus);
+    $("#idperfilContrato").val(payload.perfil);
     $("#libro").val(payload.libro);
-    $("#nombreContrato").val(payload.portafolio_uuid);
-    $("#clabe").val(payload.clabe);
+    $("#idnombreContrato").val(payload.portafolio_uuid);
+    $("#idclabe").val(payload.clabe);
 };
 
 const graficaMensuales = (tipoGrafica: string, lista: any) => {
@@ -338,6 +434,7 @@ const graficaMensuales = (tipoGrafica: string, lista: any) => {
         width: "10em",
         height: "20em"
     });
+    
 };
 
 $('#gbox_table_resultadosMensualesTWP').hide(); 

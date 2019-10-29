@@ -9,35 +9,35 @@ include /mixins/mixins
                 size: "10em",
                 max_length: "20"
             })
-        +field-input("digito",
+        +field-input("iddigito",
             {
                 label: "Digito",
                 orientation: "horizontal",
                 disabled: true,
                 size: "4em"
             })
-        +field-input("dv",
+        +field-input("idDigitoVerificador",
             {
                 label: "DV",
                 orientation: "horizontal",
                 disabled: true,
                 size: "4em"
             })
-        +field-input("estatus",
+        +field-input("idEstatus",
             {
                 label: "Estatus",
                 orientation: "horizontal",
                 disabled: true,
                 size: "4em"
             })
-        +field-input("perfilContrato",
+        +field-input("idperfilContrato",
             {
                 label: "Perfil",
                 orientation: "horizontal",
                 disabled: true,
                 size: "13em"
             })
-        +field-input("nombreContrato",
+        +field-input("idnombreContrato",
             {
                 label: "",
                 orientation: "horizontal",
@@ -45,26 +45,26 @@ include /mixins/mixins
                 size: "40em",
                 max_length: "50"
             })
-        +field-input("clabe",
+        +field-input("idclabe",
             {
                 label: "CLABE",
                 orientation: "horizontal",
                 disabled: true,
                 size: "13em"
             })
-        +field-date("fechaI",
+        +field-date("dtFecha",
             {
                 label: "Fecha Inicial",
                 orientation: "horizontal",
                 size: "10em"
             })
-        +field-date("fechaF",
+        +field-date("dtFechaFinal",
             {
                 label: "Fecha Final",
                 orientation: "horizontal",
                 size: "10em"
             })
-        +field-select("renta",
+        +field-select("cmbRenta",
             {
                 label: "Renta",
                 orientation: "horizontal",
@@ -100,7 +100,8 @@ include /mixins/mixins
         +button-clean({size: "large", disabled: false})
         +button-pdf({size: "large", disabled: false})
         +button-xls({size: "large", disabled: false})
-        +field-select("moduloCalculo",
+        +button-edit({size: "large", disabled: false})
+        +field-select("modelosCalculoCombo",
             {
                 label: "Modulo de Calculo",
                 orientation: "horizontal",
