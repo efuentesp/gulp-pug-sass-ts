@@ -1,7 +1,26 @@
-mixin field-listswap(id, params, ...items)
-  - var _select_ids = id
-    select(id=id
-    data-text=params.label)
-        each item in items
-          option(value=item.value)= item.label
+mixin field-swaplist(id, params)
+  - var _id = id
+  - var _id_source = id + "_source"
+  - var _id_destination = id + "_destination"
+
+  .listswap_wrapper(id=id)
+    .source
+      p.title= params.title_source
+      ul.droptrue(id=_id_source)
+    .source_control
+      .up
+        button.up-button
+          img(src="../../assets/images/icon_up_arrow.png" style="width:15px;")
+      .add
+        button.right-button
+          img(src="../../assets/images/icon_right_arrow.png" style="width:15px;")
+      .remove
+        button.left-button
+          img(src="../../assets/images/icon_left_arrow.png" style="width:15px;")
+      .down
+        button.down-button
+          img(src="../../assets/images/icon_down_arrow.png" style="width:15px;")
+    .destination
+      p.title= params.title_destination
+      ul.dropfalse(id=_id_destination)
     

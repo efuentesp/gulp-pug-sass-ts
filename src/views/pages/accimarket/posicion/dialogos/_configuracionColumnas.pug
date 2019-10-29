@@ -1,0 +1,9 @@
+.row
+    .ui-dialog.hidden(id="configColumns")
+        +field-group("groupConsulta")
+            .row.relative.w-full
+                +field-swaplist("listado",{title_source:"Columnas Disponibles",title_destination:"Columnas Seleccionadas"})
+            .row.absolute#mensajesConfig
+                p.mb-8.w-64 Agregue columnas arrastrandolas a la lista de Columnas Visibles
+                p.mb-8.w-64 Para eliminarlas, arrastrelas de regreso a la lista de Columnas Disponibles
+                p.w-64 Defina la posicion de la columna arrastrandola hacia arriab o abajo

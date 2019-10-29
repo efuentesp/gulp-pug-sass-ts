@@ -155,13 +155,15 @@ function concatVendorCss() {
   return (
     gulp
       .src([
-        "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+        // "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
         "./node_modules/tailwindcss/dist/tailwind.min.css",
         "./src/views/styles/vendors/jqgrid/ui.jqgrid.min.css",
         "./node_modules/select2/dist/css/select2.min.css",
         "./src/views/styles/vendors/jquery.toggleinput/jquery.toggleinput.css",
         "./src/views/styles/vendors/jquery.steps/jquery.steps.css",
-        "./src/views/styles/vendors/chartjs/chartjs.css"
+        "./src/views/styles/vendors/chartjs/chartjs.css",
+        "./src/views/styles/vendors/wickedpicker/wickedpicker.css",
+        // "./src/views/styles/vendors/jquery-splitter/jquery-splitter.css"
       ])
       // .pipe(
       //   purgeCSS({
@@ -218,6 +220,8 @@ function concatVendorJs() {
       "./src/views/scripts/vendors/jquery.steps.js",
       "./src/views/scripts/vendors/chartjs.min.js",
       "./src/views/pages/scripts/vendors/listswap/jquery.listswap.js",
+      "./src/views/pages/scripts/vendors/wickedpicker/wickedpicker.js",
+      // "./src/views/pages/scripts/vendors/splitter/jquery-splitter.js",
       "./src/views/pages/scripts/vendors/handlebars/handlebars-v4.4.3.js"
     ])
     .pipe(concat("libs.min.js"))
@@ -268,7 +272,7 @@ exports.watch = watch;
 exports.default = gulp.series(
   clean,
   gulp.parallel(pugIt, handlebarsIt, sassIt, typescriptIt, imageminIt),
-  webfonts,
+  // webfonts,
   concatVendorCss,
   concatJQueryJs,
   concatVendorJs
@@ -277,7 +281,7 @@ exports.default = gulp.series(
 exports.dev = gulp.series(
   clean,
   gulp.parallel(pugIt, handlebarsIt, sassIt, typescriptIt, imageminIt),
-  webfonts,
+  // webfonts,
   concatVendorCss,
   concatJQueryJs,
   concatVendorJs,

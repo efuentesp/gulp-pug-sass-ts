@@ -8,27 +8,32 @@ block styles
 
 block content
     .content.p-4
-        +form("criterios-busqueda-posicion")
+        .row
             include _criteriosPosicion
-            +tab-group("grupo_posicion",
-            {id: "tab_contado", label: "CONTADO"},
-            {id: "tab_difgtia", label: "DIF/GTIA"},
-            {id: "tab_spc", label: "SPC"})
-                +tab-item("tab_contado")
-                    +grid("contado")
-                    +grid("totales")
-                +tab-item("tab_difgtia")
-                    +grid("difgtia")
-                    +grid("totalesDifgtia")
-                +tab-item("tab_spc")
-                    +grid("spc")
-                    +grid("totalesSpc")
-            +grid("liquidacion")
+            button#Dialog DialogConfiguracion
+            +tab-group("grupo_posicion",{})
+        .row.has_border.overflow-auto
+            include _tablaLiquidaciones
 
-    .row
-        .ui-dialog.hidden(id="dialogo_msg")
-            p Posicion-0. La consulta de Posicion no obtuvo resultados.
+
+        include dialogos/_configuracionColumnas
+        include dialogos/_detalle
+        include dialogos/_mensajes
+
+        <div class="contextMenu" id="contextMenu" style="display:none; width:400px;">
+            <ul style="width: 400px; font-size: 65%;">
+                <li id="personaliza">
+                    <span class="ui-icon ui-icon-plus" style="float:left"></span>
+                    <span style="font-size:130%; font-family:Verdana">Personalizacion</span>
+                </li>
+                <li id="consultaMov">
+                    <span class="ui-icon ui-icon-pencil" style="float:left"></span>
+                    <span style="font-size:130%; font-family:Verdana">Consulta Movimientos</span>
+                </li>
+            </ul>
+        </div>
 
 block scripts
     script(src="/assets/scripts/accimarket/posicion/scripts.js")
+    script(src="/assets/scripts/accimarket/posicion/scriptsDinamicTab.js")
     script(src="/assets/scripts/accimarket/posicion/scriptsTables.js")

@@ -4,9 +4,9 @@ console.log("01-caucion-bursatil");
 
 const rest_url = `${REST_URL}/fideicomiso`;
 
-fieldPlusMinus("contrato");
-fieldPlusMinus("digito");
-fieldSelectPlusMinus("contrato1");
+fieldPlusMinus("contrato", { maxsize: 5 });
+fieldPlusMinus("digito", {});
+fieldSelectPlusMinus("contrato1", {});
 
 ($("#payment") as any).select2({
   placeholder: "--Seleccione--",
@@ -253,28 +253,34 @@ $("#btn_pdf").click(() =>
     modal: true,
     closeText: "",
     show: true,
-    title: "Generar PDF",
-    buttons: [
-      {
-        text: "Aceptar",
-        icon: "ui-icon-check",
-        click: function () {
-          $(this).dialog("close");
-        }
-
-        // Uncommenting the following line would hide the text,
-        // resulting in the label being used as a tooltip
-        //showText: false
-      }
-    ]
+    title: "Confirmación",
+    width: 400
+    // buttons: [
+    //   {
+    //     text: "Aceptar",
+    //     // icon: "ui-icon-check",
+    //     click: function() {
+    //       $(this).dialog("close");
+    //     }
+    //   },
+    //   {
+    //     text: "Cancelar",
+    //     // icon: "ui-icon-check",
+    //     click: function() {
+    //       $(this).dialog("close");
+    //     }
+    //   }
+    // ]
   })
 );
+
 $("#btn_xls").click(() =>
   $("#dialogo_xls").dialog({
     modal: true,
     closeText: "",
     show: true,
-    title: "Generar XLS"
+    title: "Error",
+    width: 400
   })
 );
 
@@ -285,3 +291,9 @@ fieldSelectPlusAutocomplete("ejemplo", {
   id: "id",
   text: "contrato"
 });
+
+fieldDateClear("fecha");
+
+// DateRange
+fieldBeginDateRangeClear("rango");
+fieldEndDateRangeClear("rango");

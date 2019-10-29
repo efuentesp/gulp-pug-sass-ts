@@ -1,6 +1,15 @@
 /// <reference path="../../typings/index.d.ts" />
 console.log("27-administracion-datos-generales");
 
+// const splitter = ($('#foo').height(200) as any).split({
+//   orientation: 'vertical',
+//   limit: 10,
+//   position: '50%', // if there is no percentage it interpret it as pixels
+//   onDrag: function(event) {
+//       console.log(splitter.position());
+//   }
+// });
+
 $("#titular_contrato_tabgroup")
   .tabs()
   .addClass("ui-tabs-vertical ui-helper-clearfix");

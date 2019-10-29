@@ -40,7 +40,7 @@ const DATE_FORMAT = "dd-mm-yy";
 const DATE_FORMAT_MONTH_YEAR = "MM yy";
 
 const ui_datepicker_settings = {
-  showOn: "button",
+  showOn: "both",
   buttonImage: "../../assets/images/btn-calendario.svg",
   buttonImageOnly: true,
   buttonText: "",
@@ -81,6 +81,9 @@ const ui_accordion_settings = {
   icons: icons,
   heightStyle: "content"
 };
+
+// Timepicker
+// ($(".timepicker") as any).wickedpicker();
 
 // Query UI Tooltip settings
 $(document).tooltip({
@@ -246,7 +249,7 @@ const http_findOne$ = rest_findOne$;
 const http_create = rest_create;
 // const http_create$ = rest_create$;
 
-const fieldSelectPlusMinus = (id: string) => {
+const fieldSelectPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
@@ -276,14 +279,26 @@ const fieldSelectPlusMinus = (id: string) => {
       });
     }
 
-    if (exist == 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a id = " +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</option></a></li>"
-      );
+    if (params.maxsize != null) {
+      if (
+        exist == 0 &&
+        text_to_add.length > 0 &&
+        $(list + " li").length < params.maxsize
+      ) {
+        $(list).append(
+          "<li><a class='delete_item' href='javascript:void();'>" +
+            text_to_add +
+            "</a></li>"
+        );
+      }
+    } else {
+      if (exist == 0 && text_to_add.length > 0) {
+        $(list).append(
+          "<li><a class='delete_item' href='javascript:void();'>" +
+            text_to_add +
+            "</a></li>"
+        );
+      }
     }
 
     $(idInput)
@@ -296,6 +311,7 @@ const fieldSelectPlusMinus = (id: string) => {
     $(list + " li a").each(function(index) {
       if ($(this).attr("id") === $(idInput).val()) {
         nodelist.childNodes[index].remove();
+        $(list + " li").length = $(list + " li").length - 1;
       }
     });
 
@@ -321,7 +337,7 @@ const fieldSelectPlusMinus = (id: string) => {
   });
 };
 
-const fieldPlusMinus = (id: string) => {
+const fieldPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
@@ -348,12 +364,26 @@ const fieldPlusMinus = (id: string) => {
       });
     }
 
-    if (exist == 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</a></li>"
-      );
+    if (params.maxsize != null) {
+      if (
+        exist == 0 &&
+        text_to_add.length > 0 &&
+        $(list + " li").length < params.maxsize
+      ) {
+        $(list).append(
+          "<li><a class='delete_item' href='javascript:void();'>" +
+            text_to_add +
+            "</a></li>"
+        );
+      }
+    } else {
+      if (exist == 0 && text_to_add.length > 0) {
+        $(list).append(
+          "<li><a class='delete_item' href='javascript:void();'>" +
+            text_to_add +
+            "</a></li>"
+        );
+      }
     }
 
     $(idInput).val("");
@@ -364,6 +394,7 @@ const fieldPlusMinus = (id: string) => {
     $(list + " li a").each(function(index) {
       if ($(this).text() === $(idInput).val()) {
         nodelist.childNodes[index].remove();
+        $(list + " li").length = $(list + " li").length - 1;
       }
     });
 
@@ -784,6 +815,10 @@ const stackChartHorizontal = (params: stackChartHParams) => {
     type: "horizontalBar",
     data: chartData,
     options: {
+      legend: {
+        display: true,
+        position: "right"
+      },
       scales: {
         xAxes: [
           {
@@ -1424,8 +1459,14 @@ const multiLineChart = (params: multiLineChartParams) => {
   });
 };
 
+var pieGraph = null;
+
 // PieGraph
 const pieChart = (params: pieChartParams) => {
+  if (pieGraph != null) {
+    pieGraph.destroy();
+  }
+
   var chartData = {
     labels: params.labels,
     datasets: params.dataSet
@@ -1434,7 +1475,7 @@ const pieChart = (params: pieChartParams) => {
   var ctxBar: any = document.getElementById(params.id);
   var contextBar = ctxBar.getContext("2d");
 
-  var pieGraph = new Chart(contextBar, {
+  pieGraph = new Chart(contextBar, {
     plugins: [
       {
         afterDatasetsDraw: function(pieGraph) {
@@ -1521,7 +1562,7 @@ const getCheckedCheckbox = (id: string) => {
 //         var summaryIndex = $(summaryColumn).index();
 //         if (-1 != summaryIndex) {
 //           var sum = $(summaryColumn);
-//           var sumValue = $(sum).html();
+//           var sumValue = Number($(sum).html());
 //           if (decimalPlaces && !isNaN(sumValue)) {
 //             sumValue = "$" + Number(sumValue).toFixed(decimalPlaces);
 //             $(sum).html(sumValue);
@@ -1614,36 +1655,6 @@ function copyGridContentToClipboard(gridNameID, includeGroups) {
     }
   }
 }
-
-const fillSwapList = (id: string, id_list: string, params: any) => {
-  var _id = "#" + id;
-  var _list = "#" + id_list;
-  var div_id = _list;
-  var select = $(_id);
-  var list = $("#listbox_" + id + "_wrapper ul");
-
-  for (var i = 0; i < params.length; i++) {
-    var data = params[i];
-    select.append(
-      "<option value = " + data.value + ">" + data.label + "</option>"
-    );
-
-    list.append(
-      "<li class='listbox_option' data-value=" +
-        data.value +
-        "><span class='truncate'>" +
-        data.label +
-        "</span></li>"
-    );
-
-    $(div_id + " ." + id + "_wrapper .listbox_option:odd").addClass("odd");
-    $(div_id + " ." + id + "_wrapper .listbox_option:even").addClass("even");
-
-    $(div_id + " ." + id + "_wrapper .listbox_option").click(function() {
-      $(this).addClass("selected");
-    });
-  }
-};
 
 const fillQuiz = (field_group: string, id: string, quiz: any) => {
   var trElement = $("#" + field_group + " tbody");
@@ -1752,4 +1763,291 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
     questions = question + answers + "</tr>";
     trElement.append(questions);
   }
+};
+
+const fieldDateClear = (id: string) => {
+  var _id = "#" + id;
+  var $dates = $(_id).datepicker();
+
+  $("#clear_" + id).on("click", function() {
+    $dates.datepicker("setDate", null);
+  });
+};
+
+const fieldBeginDateRangeClear = (id: string) => {
+  var _id = $("#" + id + "_begin_date");
+  var $dates = $(_id).datepicker();
+
+  $("#clear_" + id + "_begin_date").on("click", function() {
+    $dates.datepicker("setDate", null);
+  });
+};
+
+const fieldEndDateRangeClear = (id: string) => {
+  var _id = $("#" + id + "_end_date");
+  var $dates = $(_id).datepicker();
+
+  $("#clear_" + id + "_end_date").on("click", function() {
+    $dates.datepicker("setDate", null);
+  });
+};
+
+const json2xml = (o, tab) => {
+  var toXml = function(v, name, ind) {
+      var xml = "";
+      if (v instanceof Array) {
+        for (var i = 0, n = v.length; i < n; i++)
+          xml += ind + toXml(v[i], name, ind + "\t") + "\n";
+      } else if (typeof v == "object") {
+        var hasChild = false;
+        xml += ind + "<" + name;
+        for (var m in v) {
+          if (m.charAt(0) == "@")
+            xml += " " + m.substr(1) + '="' + v[m].toString() + '"';
+          else hasChild = true;
+        }
+        xml += hasChild ? ">" : "/>";
+        if (hasChild) {
+          for (var m in v) {
+            if (m == "#text") xml += v[m];
+            else if (m == "#cdata") xml += "<![CDATA[" + v[m] + "]]>";
+            else if (m.charAt(0) != "@") xml += toXml(v[m], m, ind + "\t");
+          }
+          xml +=
+            (xml.charAt(xml.length - 1) == "\n" ? ind : "") + "</" + name + ">";
+        }
+      } else {
+        xml += ind + "<" + name + ">" + v.toString() + "</" + name + ">";
+      }
+      return xml;
+    },
+    xml = "";
+  for (var m in o) xml += toXml(o[m], m, "");
+  return tab ? xml.replace(/\t/g, tab) : xml.replace(/\t|\n/g, "");
+};
+
+const xml2json = (xml, tab) => {
+  var X = {
+    toObj: function(xml) {
+      var o = {};
+      if (xml.nodeType == 1) {
+        // element node ..
+        if (xml.attributes.length)
+          // element with attributes  ..
+          for (var i = 0; i < xml.attributes.length; i++)
+            o["@" + xml.attributes[i].nodeName] = (
+              xml.attributes[i].nodeValue || ""
+            ).toString();
+        if (xml.firstChild) {
+          // element has child nodes ..
+          var textChild = 0,
+            cdataChild = 0,
+            hasElementChild = false;
+          for (var n = xml.firstChild; n; n = n.nextSibling) {
+            if (n.nodeType == 1) hasElementChild = true;
+            else if (n.nodeType == 3 && n.nodeValue.match(/[^ \f\n\r\t\v]/))
+              textChild++;
+            // non-whitespace text
+            else if (n.nodeType == 4) cdataChild++; // cdata section node
+          }
+          if (hasElementChild) {
+            if (textChild < 2 && cdataChild < 2) {
+              // structured element with evtl. a single text or/and cdata node ..
+              X.removeWhite(xml);
+              for (var n = xml.firstChild; n; n = n.nextSibling) {
+                if (n.nodeType == 3)
+                  // text node
+                  o["#text"] = X.escape(n.nodeValue);
+                else if (n.nodeType == 4)
+                  // cdata node
+                  o["#cdata"] = X.escape(n.nodeValue);
+                else if (o[n.nodeName]) {
+                  // multiple occurence of element ..
+                  if (o[n.nodeName] instanceof Array)
+                    o[n.nodeName][o[n.nodeName].length] = X.toObj(n);
+                  else o[n.nodeName] = [o[n.nodeName], X.toObj(n)];
+                } // first occurence of element..
+                else o[n.nodeName] = X.toObj(n);
+              }
+            } else {
+              // mixed content
+              if (!xml.attributes.length) o = X.escape(X.innerXml(xml));
+              else o["#text"] = X.escape(X.innerXml(xml));
+            }
+          } else if (textChild) {
+            // pure text
+            if (!xml.attributes.length) o = X.escape(X.innerXml(xml));
+            else o["#text"] = X.escape(X.innerXml(xml));
+          } else if (cdataChild) {
+            // cdata
+            if (cdataChild > 1) o = X.escape(X.innerXml(xml));
+            else
+              for (var n = xml.firstChild; n; n = n.nextSibling)
+                o["#cdata"] = X.escape(n.nodeValue);
+          }
+        }
+        if (!xml.attributes.length && !xml.firstChild) o = null;
+      } else if (xml.nodeType == 9) {
+        // document.node
+        o = X.toObj(xml.documentElement);
+      } else alert("unhandled node type: " + xml.nodeType);
+      return o;
+    },
+    toJson: function(o, name, ind) {
+      var json = name ? '"' + name + '"' : "";
+      if (o instanceof Array) {
+        for (var i = 0, n = o.length; i < n; i++)
+          o[i] = X.toJson(o[i], "", ind + "\t");
+        json +=
+          (name ? ":[" : "[") +
+          (o.length > 1
+            ? "\n" + ind + "\t" + o.join(",\n" + ind + "\t") + "\n" + ind
+            : o.join("")) +
+          "]";
+      } else if (o == null) json += (name && ":") + "null";
+      else if (typeof o == "object") {
+        var arr = [];
+        for (var m in o) arr[arr.length] = X.toJson(o[m], m, ind + "\t");
+        json +=
+          (name ? ":{" : "{") +
+          (arr.length > 1
+            ? "\n" + ind + "\t" + arr.join(",\n" + ind + "\t") + "\n" + ind
+            : arr.join("")) +
+          "}";
+      } else if (typeof o == "string")
+        json += (name && ":") + '"' + o.toString() + '"';
+      else json += (name && ":") + o.toString();
+      return json;
+    },
+    innerXml: function(node) {
+      var s = "";
+      if ("innerHTML" in node) s = node.innerHTML;
+      else {
+        var asXml = function(n) {
+          var s = "";
+          if (n.nodeType == 1) {
+            s += "<" + n.nodeName;
+            for (var i = 0; i < n.attributes.length; i++)
+              s +=
+                " " +
+                n.attributes[i].nodeName +
+                '="' +
+                (n.attributes[i].nodeValue || "").toString() +
+                '"';
+            if (n.firstChild) {
+              s += ">";
+              for (var c = n.firstChild; c; c = c.nextSibling) s += asXml(c);
+              s += "</" + n.nodeName + ">";
+            } else s += "/>";
+          } else if (n.nodeType == 3) s += n.nodeValue;
+          else if (n.nodeType == 4) s += "<![CDATA[" + n.nodeValue + "]]>";
+          return s;
+        };
+        for (var c = node.firstChild; c; c = c.nextSibling) s += asXml(c);
+      }
+      return s;
+    },
+    escape: function(txt) {
+      return txt
+        .replace(/[\\]/g, "\\\\")
+        .replace(/[\"]/g, '\\"')
+        .replace(/[\n]/g, "\\n")
+        .replace(/[\r]/g, "\\r");
+    },
+    removeWhite: function(e) {
+      e.normalize();
+      for (var n = e.firstChild; n; ) {
+        if (n.nodeType == 3) {
+          // text node
+          if (!n.nodeValue.match(/[^ \f\n\r\t\v]/)) {
+            // pure whitespace text node
+            var nxt = n.nextSibling;
+            e.removeChild(n);
+            n = nxt;
+          } else n = n.nextSibling;
+        } else if (n.nodeType == 1) {
+          // element node
+          X.removeWhite(n);
+          n = n.nextSibling;
+        } // any other node
+        else n = n.nextSibling;
+      }
+      return e;
+    }
+  };
+  if (xml.nodeType == 9)
+    // document node
+    xml = xml.documentElement;
+  var json = X.toJson(X.toObj(X.removeWhite(xml)), xml.nodeName, "\t");
+  return (
+    "{\n" +
+    tab +
+    (tab ? json.replace(/\t/g, tab) : json.replace(/\t|\n/g, "")) +
+    "\n}"
+  );
+};
+
+// Swaplist
+$("ul.droptrue").sortable({
+  connectWith: "ul"
+});
+
+$("ul.dropfalse").sortable({
+  connectWith: "ul",
+  dropOnEmpty: false
+});
+
+const fillSwapList = (id: string, list_id: string, params: any) => {
+  var _id = "#" + id;
+  var list = $("#listado_" + list_id);
+
+  for (var i = 0; i < params.length; i++) {
+    var data = params[i];
+    list.append("<li value = " + data.value + ">" + data.label + "</li>");
+  }
+
+  $(_id + "_source").disableSelection();
+  $(_id + "_destination").disableSelection();
+
+  $(".droptrue > li:odd, .dropfalse > li:odd").addClass("odd");
+  $(".droptrue > li:even, .dropfalse > li:even").addClass("even");
+};
+
+$(".droptrue, .dropfalse").on("click", "li", function() {
+  if ($(this).hasClass("selected")) {
+    $(this).removeClass("selected");
+  } else {
+    clearList();
+    $(this).addClass("selected");
+  }
+});
+
+// Up
+$(".up").click(function() {
+  var currents = $("li.selected");
+  currents.prev().before(currents);
+});
+
+// Down
+$(".down").click(function() {
+  var currents = $("li.selected");
+  currents.next().after(currents);
+});
+
+// Add
+$(".add").click(function() {
+  var currents = $("li.selected");
+  $(".dropfalse").append(currents);
+  clearList();
+});
+
+// Remove
+$(".remove").click(function() {
+  var currents = $("li.selected");
+  $(".droptrue").append(currents);
+  clearList();
+});
+
+const clearList = () => {
+  $(".droptrue > li, .dropfalse > li").removeClass("selected");
 };

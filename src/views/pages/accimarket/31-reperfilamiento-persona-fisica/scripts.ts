@@ -72,8 +72,8 @@ $("#contrato").change(() => {
 				mostrarOcultar(false);
 			}*/
     } else {
-      $("#nombre").val("");
-      $("#perfil").val("");
+      $('#nombre').val('');
+      $('#perfil').val('');
     }
   });
 });
@@ -219,7 +219,7 @@ $("#btn_send").click(() => {
 
       //Grupo 3 es la encuesta
       var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-      $.each(numbers, function(index, value) {
+      $.each(numbers, function (index, value) {
         pf_encuestaU = {};
         pf_encuestaU.idEncuesta = value;
 
@@ -269,7 +269,7 @@ $("#btn_send").click(() => {
 
       //Grupo 5 es la encuesta
       var numberEncuesta = [0, 1, 2];
-      $.each(numberEncuesta, function(index, value) {
+      $.each(numberEncuesta, function (index, value) {
         pf_encuestaD = {};
         pf_encuestaD.idEncuesta = value;
         var radioCompE = "encuesta2_" + value;
@@ -286,7 +286,7 @@ $("#btn_send").click(() => {
 
       //Grupo 6
       var origenUno = new Array();
-      $("input[name='chk_origen_uno']:checked").each(function() {
+      $("input[name='chk_origen_uno']:checked").each(function () {
         origenUno.push($(this).val());
       });
       if (origenUno) {

@@ -4,15 +4,11 @@ block title
    title Listas
 
 block styles
-   link(rel="stylesheet" href="/assets/css/accimarket/listado/styles.css")
+   //- link(rel="stylesheet" href="/assets/css/accimarket/listado/style.scss")
 
 block content
    .row.p-6
-      +field-listswap("source",
-         {label:'Columnas Disponibles'}
-         )
-      +field-listswap("destination",
-         {label:'Columnas Seleccionadas'})
-
+      +field-swaplist("listado",{title_source:"Columnas Disponibles",title_destination:"Columnas Seleccionadas"})
+      
 block scripts
    script(src="/assets/scripts/accimarket/listado/scripts.js")

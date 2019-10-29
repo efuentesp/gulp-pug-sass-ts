@@ -8,8 +8,14 @@ block styles
 
 block content
     .row
-        button#btn_mostrar_ventana Click
         .ui-dialog.hidden#dialogo_ampliacion_horario
+            +field-timepicker("horario-sacid-time",
+                {
+                    label: "Horario de cierre SACID",
+                    orientation: "horizontal",
+                    disabled: true
+                }
+            )
             +field-select("horario-sacid",
                 {
                     label: "Horario de cierre SACID",
