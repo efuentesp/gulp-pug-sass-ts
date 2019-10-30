@@ -620,11 +620,12 @@ const getList = (id: string) => {
   var list: any = [];
 
   $("#tag_list_" + id + " li").each(function() {
-    list.push(
-      $(this)
-        .text()
-        .trim()
-    );
+    let value = $(this)
+      .text()
+      .trim();
+    if (value != "") {
+      list.push(value);
+    }
   });
 
   return list;
