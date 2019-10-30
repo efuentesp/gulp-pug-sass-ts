@@ -249,58 +249,187 @@ const http_findOne$ = rest_findOne$;
 const http_create = rest_create;
 // const http_create$ = rest_create$;
 
+const existText = (text_to_add: string, list: string) => {
+  let exist = false;
+  let count = 1;
+
+  $.each($(list + " li a"), function() {
+    if (
+      $(list + " li:nth-child(" + count + ")").text() === text_to_add.trim()
+    ) {
+      exist = true;
+      return false;
+    }
+    count++;
+  });
+  return exist;
+};
+
+// Plus Minus
+const fieldPlusMinus = (id: string, params: any) => {
+  const idBtnPlus = "#btn_plus_" + id;
+  const idBtnMinus = "#btn_minus_" + id;
+  const idInput = "#" + id;
+  const list = "ul#tag_list_" + id;
+  const node = "tag_list_" + id;
+  let definedNodes = true;
+  const numNodes = 4;
+
+  if (params.nodes == undefined) {
+    definedNodes = true;
+  } else {
+    definedNodes = params.nodes;
+  }
+
+  if (definedNodes) {
+    for (let i = 0; i < numNodes; i++) {
+      $(list).append(
+        "<li><a class='delete_item' href='javascript:void();'></a></li>"
+      );
+    }
+  }
+
+  $(idBtnPlus).click(() => {
+    const text_to_add = $(idInput).val() as string;
+    let count = 1;
+
+    if (!existText(text_to_add, list)) {
+      if ($(list + " li:nth-child(4) a").text() == "" && definedNodes) {
+        $.each($(list + " li a"), function() {
+          if ($(list + " li:nth-child(" + count + ") a").text() === "") {
+            $(list + " li:nth-child(" + count + ") a").append(text_to_add);
+            $(idInput).val("");
+            return false;
+          }
+          count++;
+        });
+      } else {
+        if (params.maxsize != null) {
+          if (
+            text_to_add.length > 0 &&
+            $(list + " li").length < params.maxsize
+          ) {
+            $(list).append(
+              "<li><a class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
+        } else {
+          if (text_to_add.length > 0) {
+            $(list).append(
+              "<li><a class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
+        }
+      }
+    }
+    $(idInput).val("");
+  });
+
+  $(idBtnMinus).click(() => {
+    var nodelist = document.getElementById(node);
+    $(list + " li a").each(function(index) {
+      if ($(idInput).val() != "") {
+        if ($(this).text() === $(idInput).val()) {
+          if (!definedNodes) {
+            nodelist.childNodes[index].remove();
+            $(list + " li").length = $(list + " li").length - 1;
+          } else {
+            if ($(list + " li").length <= 4) {
+              $(this).text("");
+            } else {
+              nodelist.childNodes[index].remove();
+              $(list + " li").length = $(list + " li").length - 1;
+            }
+          }
+        }
+      }
+    });
+    $(idInput).val("");
+  });
+
+  // Set to input
+  $(list).delegate(".delete_item", "click", function() {
+    $(idInput).val(
+      $(this)
+        .parent()
+        .find(".delete_item")
+        .html()
+    );
+  });
+};
+
+// Select Plus Minus
 const fieldSelectPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
   const list = "ul#tag_list_" + id;
   const node = "tag_list_" + id;
+  let definedNodes = true;
+  const numNodes = 4;
+
+  if (params.nodes == undefined) {
+    definedNodes = true;
+  } else {
+    definedNodes = params.nodes;
+  }
+
+  if (definedNodes) {
+    for (let i = 0; i < numNodes; i++) {
+      $(list).append(
+        "<li><a class='delete_item' href='javascript:void();'></a></li>"
+      );
+    }
+  }
 
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput + " option:selected").text() as string;
     const value_to_add = $(idInput + " option:selected").val() as string;
-    var exist = 0;
+    let count = 1;
 
-    if ($("li").length <= 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a id = " +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</option></a></li>"
-      );
-      exist = 1;
-    } else {
-      $(list + " li a").each(function(index) {
-        if ($(this).text() === text_to_add) {
-          exist = 1;
-          return false;
+    if (!existText(text_to_add, list)) {
+      if ($(list + " li:nth-child(4) a").text() == "" && definedNodes) {
+        $.each($(list + " li a"), function() {
+          if ($(list + " li:nth-child(" + count + ") a").text() === "") {
+            $(list + " li:nth-child(" + count + ") a").attr("id", value_to_add);
+            $(list + " li:nth-child(" + count + ") a").append(text_to_add);
+
+            $(idInput).val("");
+            return false;
+          }
+          count++;
+        });
+      } else {
+        if (params.maxsize != null) {
+          if (
+            text_to_add.length > 0 &&
+            $(list + " li").length < params.maxsize
+          ) {
+            $(list).append(
+              "<li><a " +
+                value_to_add +
+                " class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
+        } else {
+          if (text_to_add.length > 0) {
+            $(list).append(
+              "<li><a id = " +
+                value_to_add +
+                " class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
         }
-      });
-    }
-
-    if (params.maxsize != null) {
-      if (
-        exist == 0 &&
-        text_to_add.length > 0 &&
-        $(list + " li").length < params.maxsize
-      ) {
-        $(list).append(
-          "<li><a class='delete_item' href='javascript:void();'>" +
-            text_to_add +
-            "</a></li>"
-        );
-      }
-    } else {
-      if (exist == 0 && text_to_add.length > 0) {
-        $(list).append(
-          "<li><a class='delete_item' href='javascript:void();'>" +
-            text_to_add +
-            "</a></li>"
-        );
       }
     }
-
     $(idInput)
       .val(null)
       .trigger("change");
@@ -310,8 +439,17 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
     var nodelist = document.getElementById(node);
     $(list + " li a").each(function(index) {
       if ($(this).attr("id") === $(idInput).val()) {
-        nodelist.childNodes[index].remove();
-        $(list + " li").length = $(list + " li").length - 1;
+        if (!definedNodes) {
+          nodelist.childNodes[index].remove();
+          $(list + " li").length = $(list + " li").length - 1;
+        } else {
+          if ($(list + " li").length <= 4) {
+            $(this).text("");
+          } else {
+            nodelist.childNodes[index].remove();
+            $(list + " li").length = $(list + " li").length - 1;
+          }
+        }
       }
     });
 
@@ -337,82 +475,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
   });
 };
 
-const fieldPlusMinus = (id: string, params: any) => {
-  const idBtnPlus = "#btn_plus_" + id;
-  const idBtnMinus = "#btn_minus_" + id;
-  const idInput = "#" + id;
-  const list = "ul#tag_list_" + id;
-  const node = "tag_list_" + id;
-
-  $(idBtnPlus).click(() => {
-    const text_to_add = $(idInput).val() as string;
-    var exist = 0;
-
-    if ($("li").length <= 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</a></li>"
-      );
-      exist = 1;
-    } else {
-      $(list + " li a").each(function(index) {
-        if ($(this).text() === text_to_add) {
-          exist = 1;
-          return false;
-        }
-      });
-    }
-
-    if (params.maxsize != null) {
-      if (
-        exist == 0 &&
-        text_to_add.length > 0 &&
-        $(list + " li").length < params.maxsize
-      ) {
-        $(list).append(
-          "<li><a class='delete_item' href='javascript:void();'>" +
-            text_to_add +
-            "</a></li>"
-        );
-      }
-    } else {
-      if (exist == 0 && text_to_add.length > 0) {
-        $(list).append(
-          "<li><a class='delete_item' href='javascript:void();'>" +
-            text_to_add +
-            "</a></li>"
-        );
-      }
-    }
-
-    $(idInput).val("");
-  });
-
-  $(idBtnMinus).click(() => {
-    var nodelist = document.getElementById(node);
-    $(list + " li a").each(function(index) {
-      if ($(this).text() === $(idInput).val()) {
-        nodelist.childNodes[index].remove();
-        $(list + " li").length = $(list + " li").length - 1;
-      }
-    });
-
-    $(idInput).val("");
-  });
-
-  // Set to input
-  $(list).delegate(".delete_item", "click", function() {
-    $(idInput).val(
-      $(this)
-        .parent()
-        .find(".delete_item")
-        .html()
-    );
-  });
-};
-
-// Autocomplete
+// Autocomplete Plus Minus
 const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
@@ -422,40 +485,67 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   const restService = params.service;
   const attrId = params.id;
   const attrText = params.text;
+  let definedNodes = true;
+  const numNodes = 4;
+
+  if (params.nodes == undefined) {
+    definedNodes = true;
+  } else {
+    definedNodes = params.nodes;
+  }
+
+  if (definedNodes) {
+    for (let i = 0; i < numNodes; i++) {
+      $(list).append(
+        "<li><a class='delete_item' href='javascript:void();'></a></li>"
+      );
+    }
+  }
 
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput + " option:selected").text() as string;
     const value_to_add = $(idInput + " option:selected").val() as string;
-    var exist = 0;
+    let count = 1;
 
-    if ($("li").length <= 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a id = " +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</option></a></li>"
-      );
-      exist = 1;
-    } else {
-      $(list + " li a").each(function(index) {
-        if ($(this).text() === text_to_add) {
-          exist = 1;
-          return false;
+    if (!existText(text_to_add, list)) {
+      if ($(list + " li:nth-child(4) a").text() == "" && definedNodes) {
+        $.each($(list + " li a"), function() {
+          if ($(list + " li:nth-child(" + count + ") a").text() === "") {
+            $(list + " li:nth-child(" + count + ") a").attr("id", value_to_add);
+            $(list + " li:nth-child(" + count + ") a").append(text_to_add);
+
+            $(idInput).val("");
+            return false;
+          }
+          count++;
+        });
+      } else {
+        if (params.maxsize != null) {
+          if (
+            text_to_add.length > 0 &&
+            $(list + " li").length < params.maxsize
+          ) {
+            $(list).append(
+              "<li><a " +
+                value_to_add +
+                " class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
+        } else {
+          if (text_to_add.length > 0) {
+            $(list).append(
+              "<li><a id = " +
+                value_to_add +
+                " class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
         }
-      });
+      }
     }
-
-    if (exist == 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a id = " +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</option></a></li>"
-      );
-    }
-
     $(idInput)
       .val(null)
       .trigger("change");
@@ -465,7 +555,17 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     var nodelist = document.getElementById(node);
     $(list + " li a").each(function(index) {
       if ($(this).attr("id") === $(idInput).val()) {
-        nodelist.childNodes[index].remove();
+        if (!definedNodes) {
+          nodelist.childNodes[index].remove();
+          $(list + " li").length = $(list + " li").length - 1;
+        } else {
+          if ($(list + " li").length <= 4) {
+            $(this).text("");
+          } else {
+            nodelist.childNodes[index].remove();
+            $(list + " li").length = $(list + " li").length - 1;
+          }
+        }
       }
     });
 
@@ -516,19 +616,38 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     minimumInputLength: 3
   });
 };
-
 const getList = (id: string) => {
   var list: any = [];
 
   $("#tag_list_" + id + " li").each(function() {
-    list.push(
-      $(this)
-        .text()
-        .trim()
-    );
+    let value = $(this)
+      .text()
+      .trim();
+    if (value != "") {
+      list.push(value);
+    }
   });
 
   return list;
+};
+
+const getChecked = (id: string) => {
+  let selected = [];
+  const query_select = "#field_" + id + " input[type=checkbox]";
+
+  $(query_select).each(function() {
+    if ($(this).is(":checked")) {
+      selected.push($(this).attr("value"));
+    }
+  });
+
+  return selected;
+};
+
+const getOptionSelected = (id: string) => {
+  const query_select = "input[name='" + id + "']:checked";
+
+  return $(query_select).val();
 };
 
 interface stackChartParams {
@@ -555,6 +674,7 @@ interface stackChartHParams {
   dataSet: any[];
   width: string;
   height: string;
+  format: string;
 }
 
 interface barChartParams {
@@ -759,6 +879,7 @@ const stackChartHorizontal = (params: stackChartHParams) => {
     datasets: params.dataSet
   };
 
+  let format = params.format;
   var ctx: any = document.getElementById(params.id);
   var context = ctx.getContext("2d");
 
@@ -802,11 +923,19 @@ const stackChartHorizontal = (params: stackChartHParams) => {
               ctx.textBaseline = "middle";
               var padding = 20;
 
-              ctx.fillText(
-                dataset.data[index] + "%",
-                element._view.x - padding,
-                element._view.y
-              );
+              if (format == "%") {
+                ctx.fillText(
+                  formatNumber.new(dataset.data[index], "") + format,
+                  element._view.x - padding,
+                  element._view.y
+                );
+              } else {
+                ctx.fillText(
+                  format + formatNumber.new(dataset.data[index], ""),
+                  element._view.x - padding,
+                  element._view.y
+                );
+              }
             });
           });
         }
@@ -815,6 +944,34 @@ const stackChartHorizontal = (params: stackChartHParams) => {
     type: "horizontalBar",
     data: chartData,
     options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            let label = "";
+            if (format == "%") {
+              label =
+                data.datasets[tooltipItem.datasetIndex].label +
+                " " +
+                formatNumber.new(
+                  data.datasets[tooltipItem.datasetIndex].data[0],
+                  ""
+                ) +
+                format;
+            } else {
+              label =
+                data.datasets[tooltipItem.datasetIndex].label +
+                " " +
+                format +
+                formatNumber.new(
+                  data.datasets[tooltipItem.datasetIndex].data[0],
+                  ""
+                );
+            }
+
+            return label;
+          }
+        }
+      },
       legend: {
         display: true,
         position: "right"
@@ -832,7 +989,14 @@ const stackChartHorizontal = (params: stackChartHParams) => {
               display: true,
               stepSize: params.tickStepX,
               callback: function(value) {
-                return value + "%";
+                let label = "";
+                if (format == "%") {
+                  label = formatNumber.new(value, "") + format;
+                } else {
+                  label = format + formatNumber.new(value, "");
+                }
+
+                return label;
               }
             },
             gridLines: {
@@ -1488,12 +1652,18 @@ const pieChart = (params: pieChartParams) => {
     type: "pie",
     data: chartData,
     options: {
+      responsive: true,
       legend: {
-        display: true
+        display: true,
+        position: "bottom",
+        labels: {
+          padding: 50
+        }
       },
       title: {
         display: true,
-        text: params.titleX
+        text: params.titleX,
+        padding: 50
       }
     }
   });
@@ -1668,9 +1838,11 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
   var option = "";
   var nAnswers = 0;
   var nQuestions = 0;
+  var nResults = 0;
 
   nQuestions = quiz[0].question.length;
   nAnswers = quiz[0].answer.length;
+  nResults = quiz[0].result.length;
 
   // Questions
   for (var i = 0; i < nQuestions; i++) {
@@ -1718,7 +1890,14 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
           id +
           "_" +
           j +
-          "' data-points='" +
+          "'";
+
+        if (quiz[0].result[i].results[j].result) {
+          answerOption += "checked='checked'";
+        }
+
+        answerOption +=
+          "data-points='" +
           answer_points +
           "'>" +
           "<span class='checkmark'></span>" +
@@ -1744,14 +1923,17 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
           i +
           '">';
 
+        let optionValue = quiz[0].result[i].results[j].result;
+
         options = "";
         for (var k = 0; k < quiz[0].answer[j].options.length; k++) {
-          option =
-            '<option value="' +
-            quiz[0].answer[j].options[k].key +
-            '">' +
-            quiz[0].answer[j].options[k].value +
-            "</option>";
+          option = '<option value="' + quiz[0].answer[j].options[k].key + '"';
+
+          if (optionValue == quiz[0].answer[j].options[k].key) {
+            option += " selected";
+          }
+
+          option += ">" + quiz[0].answer[j].options[k].value + "</option>";
           options += option;
         }
 
@@ -1996,3 +2178,78 @@ $("ul.dropfalse").sortable({
   connectWith: "ul",
   dropOnEmpty: false
 });
+
+const fillSwapList = (id: string, list_id: string, params: any) => {
+  var _id = "#" + id;
+  var list = $("#listado_" + list_id);
+
+  for (var i = 0; i < params.length; i++) {
+    var data = params[i];
+    list.append("<li value = " + data.value + ">" + data.label + "</li>");
+  }
+
+  $(_id + "_source").disableSelection();
+  $(_id + "_destination").disableSelection();
+
+  $(".droptrue > li:odd, .dropfalse > li:odd").addClass("odd");
+  $(".droptrue > li:even, .dropfalse > li:even").addClass("even");
+};
+
+$(".droptrue, .dropfalse").on("click", "li", function() {
+  if ($(this).hasClass("selected")) {
+    $(this).removeClass("selected");
+  } else {
+    clearList();
+    $(this).addClass("selected");
+  }
+});
+
+// Up
+$(".up").click(function() {
+  var currents = $("li.selected");
+  currents.prev().before(currents);
+});
+
+// Down
+$(".down").click(function() {
+  var currents = $("li.selected");
+  currents.next().after(currents);
+});
+
+// Add
+$(".add").click(function() {
+  var currents = $("li.selected");
+  $(".dropfalse").append(currents);
+  clearList();
+});
+
+// Remove
+$(".remove").click(function() {
+  var currents = $("li.selected");
+  $(".droptrue").append(currents);
+  clearList();
+});
+
+const clearList = () => {
+  $(".droptrue > li, .dropfalse > li").removeClass("selected");
+};
+
+const formatNumber = {
+  separador: ",",
+  sepDecimal: ".",
+  formatear: function(num) {
+    num += "";
+    var splitStr = num.split(".");
+    var splitLeft = splitStr[0];
+    var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : "";
+    var regx = /(\d+)(\d{3})/;
+    while (regx.test(splitLeft)) {
+      splitLeft = splitLeft.replace(regx, "$1" + this.separador + "$2");
+    }
+    return this.simbol + splitLeft + splitRight;
+  },
+  new: function(num, simbol) {
+    this.simbol = simbol || "";
+    return this.formatear(num);
+  }
+};

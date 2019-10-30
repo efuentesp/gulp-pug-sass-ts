@@ -67,18 +67,38 @@
 
     &.is_red {
       background-color: $color-red;
+      // background-image: linear-gradient(
+      //   to bottom,
+      //   rgba(222, 54, 24, 0.15),
+      //   rgba(222, 54, 24, 1)
+      // );
     }
 
     &.is_green {
       background-color: $color-green;
+      // background-image: linear-gradient(
+      //   to bottom,
+      //   rgba(16, 128, 67, 0.2),
+      //   rgba(16, 128, 67, 1)
+      // );
     }
 
     &.is_yellow {
       background-color: $color-yellow;
+      // background-image: linear-gradient(
+      //   to bottom,
+      //   rgba(238, 194, 0, 0.2),
+      //   rgba(238, 194, 0, 1)
+      // );
     }
 
     &.is_blue {
       background-color: $color-indigo;
+      // background-image: linear-gradient(
+      //   to bottom,
+      //   rgba(32, 46, 120, 0.2),
+      //   rgba(32, 46, 120, 1)
+      // );
     }
 
     &.is_cyan {
@@ -92,6 +112,14 @@
     &.is_black {
       background-color: $color-ink;
       color: $color-white;
+    }
+
+    &.is_orange {
+      background-color: $color-orange;
+    }
+
+    &.is_purple {
+      background-color: $color-purple;
     }
   }
 }

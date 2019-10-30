@@ -4,9 +4,9 @@ console.log("01-caucion-bursatil");
 
 const rest_url = `${REST_URL}/fideicomiso`;
 
-fieldPlusMinus("contrato", { maxsize: 5 });
-fieldPlusMinus("digito", {});
-fieldSelectPlusMinus("contrato1", {});
+fieldPlusMinus("contrato", { nodes: false });
+fieldPlusMinus("digito", { maxsize: 5 }); // Max number of elements
+fieldSelectPlusMinus("contrato1", { nodes: false });
 
 ($("#payment") as any).select2({
   placeholder: "--Seleccione--",
@@ -21,6 +21,8 @@ let contratos_params: UrlParams = {};
 //   .subscribe(data => llenaGridContratos(data));
 
 http_findAll("contratos", contratos_params, payload => {
+  console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS");
+
   // fillJqGrid("#table_contratos", payload);
   llenaGridContratos(payload);
   const rec_count = payload.length;
@@ -35,6 +37,7 @@ const rpc_parms = {
   rol: "TIT"
 };
 rpc(rpc_url, rpc_parms, (data, textStatus, jQxhr) => {
+  console.log("INGRESA A LA FUNCION  RPC");
   console.log(data, textStatus, jQxhr);
   llenaGridContratos(data);
   const rec_count = data.length;
@@ -51,14 +54,16 @@ const form = ($("#criterios-busqueda") as any)
   })
   .on("form:submit", e => {
     console.log("form:submit", e);
-
+    console.log("INGRESA A LA FUNCION  DE FORMM SUBMIT");
     contratos_params = {};
 
     const fecha = $("#fecha").val();
-    const negocio = $("input[name='negocio']:checked").val();
+    const negocio = getOptionSelected("negocio");
 
-    var listContrato = getList("contrato");
-    var listDigito = getList("digito");
+    let listContrato = getList("contrato");
+    let listDigito = getList("digito");
+
+    let productTypes = getChecked("products3");
 
     if (fecha) {
       contratos_params.fecha = fecha;
@@ -76,8 +81,13 @@ const form = ($("#criterios-busqueda") as any)
       contratos_params.negocio = negocio;
     }
 
+    if (productTypes.length > 0) {
+      contratos_params.product = productTypes;
+    }
+
     http_findAll("contratos", contratos_params, payload => {
       // console.log(payload);
+      console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS 2");
       $("#table_contratos").jqGrid("clearGridData");
       $("#table_contratos").jqGrid("setGridParam", { data: payload });
       $("#table_contratos").trigger("reloadGrid");
@@ -91,6 +101,7 @@ const form = ($("#criterios-busqueda") as any)
 
 const llenaGridContratos = (contratos: any) => {
   // console.log(contratos);
+  console.log("INGRESA A LA FUNCION  LLENA GRID");
   $("#table_contratos").jqGrid({
     data: contratos,
     datatype: "local",
@@ -284,7 +295,8 @@ validateDateRage("rango");
 fieldSelectPlusAutocomplete("ejemplo", {
   service: "contratos",
   id: "id",
-  text: "contrato"
+  text: "contrato",
+  nodes: true
 });
 
 fieldDateClear("fecha");

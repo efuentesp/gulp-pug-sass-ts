@@ -1,0 +1,26 @@
+include /mixins/mixins
+
+.row#botones-final
+    +field-options("menuSimulado",
+          {label: "Menu simulado",
+           orientation: "horizontal"
+          },
+          {key: "P", value:"Personalizar"},
+          {key: "E", value:"Editar"},
+          {key: "C", value:"Copiar"},
+          {key: "B", value:"Borrar"},
+          {key: "V", value:"Validar"},
+          {key: "S", value:"Enviar"},
+          {key: "CE", value:"CopiarExcel"}
+        )
+    +field-options("opcionesEnvio",
+          {label: "Método de envío",
+           orientation: "horizontal"
+          },
+          {key: "ENSEC", value:"En secuencia"},
+          {key: "SIMUL", value:"Simultaneo"}
+        )
+    +button-send({label: "Enviar Todas",size: "large", disabled: false,orientation: "horizontal"})
+    +button-validate({label: "Validar",size: "large", disabled: false,orientation: "horizontal"})
+    +button-delete({label: "Borrar",size: "large", disabled: false,orientation: "horizontal"})
+    +button-reset({label: "Reiniciar",size: "large", disabled: false,orientation: "horizontal"})

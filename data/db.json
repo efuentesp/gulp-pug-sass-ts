@@ -1,4 +1,58 @@
 {
+  "contratoP": [
+    {
+      "id": "C001",
+      "contrato": "CONTRATO01",
+      "digito": "01",
+      "cliente": "CLIENTE 01",
+      "perfilC": "P 01",
+      "elegibilidad": "E 01"
+    },
+    {
+      "id": "E001",
+      "contrato": "El contrato no existe. Consulte a contratos.",
+      "digito": "",
+      "cliente": "",
+      "perfilC": "",
+      "elegibilidad": "E 01"
+    },
+    {
+      "id": "E002",
+      "contrato": "El contrato está dado de baja. Consulte a contratos.",
+      "digito": "",
+      "cliente": "",
+      "perfilC": "",
+      "elegibilidad": "E 01"
+    },
+    {
+      "id": "E003",
+      "contrato": "El usuario no tiene autoridad para realizar esta operación",
+      "digito": "",
+      "cliente": "",
+      "perfilC": "",
+      "elegibilidad": "E 01"
+    }
+  ],
+  "emisoras": [
+    {
+      "nombre": "emisora 1"
+    },
+    {
+      "nombre": "emisora 2"
+    },
+    {
+      "nombre": "emisora 3"
+    },
+    {
+      "nombre": "emisora 4"
+    },
+    {
+      "nombre": "emisora 5"
+    },
+    {
+      "nombre": "emisora 6"
+    }
+  ],
   "contratos": [
     {
       "id": "C001",
@@ -4959,11 +5013,11 @@
   ],
   "rendimientosh": [
     {
-      "mes": "May",
+      "mes": "Liquidez",
       "dataA": 5,
       "dataB": 16,
       "dataC": 38,
-      "dataD": 46
+      "dataD": 41
     }
   ],
   "promedios": [
@@ -5603,23 +5657,6 @@
       "label": "Valor 8"
     }
   ],
-  "emisoras": [
-    {
-      "id": "01",
-      "value": "EMISORA 01",
-      "label": "EMISORA 01 SA"
-    },
-    {
-      "id": "02",
-      "value": "EMISORA 02",
-      "label": "EMISORA 02 SA"
-    },
-    {
-      "id": "03",
-      "value": "BANAMEX16022",
-      "label": "BANAMEX16022 SA"
-    }
-  ],
   "datosEmisora": [
     {
       "id": "01",
@@ -5689,6 +5726,7 @@
     {
       "question": [
         {
+          "id": 0,
           "question": "2.1. Instrumentos de Deuda Gubernamental",
           "required": true,
           "points": [
@@ -5698,6 +5736,7 @@
           ]
         },
         {
+          "id": 1,
           "question": "2.2. Instrumentos de Deuda Corporativa",
           "required": true,
           "points": [
@@ -5707,6 +5746,7 @@
           ]
         },
         {
+          "id": 2,
           "question": "2.3. Sociedades de Inversión",
           "required": true,
           "points": [
@@ -5716,6 +5756,7 @@
           ]
         },
         {
+          "id": 3,
           "question": "2.4. Valores Estructurados",
           "required": true,
           "points": [
@@ -5725,6 +5766,7 @@
           ]
         },
         {
+          "id": 4,
           "question": "2.5. Certificados Bursátiles Fiduciarios (Cebures, Cedevis) y Fideicomisos Privados",
           "required": true,
           "points": [
@@ -5734,6 +5776,7 @@
           ]
         },
         {
+          "id": 5,
           "question": "2.6. Títulos Opcionales (Warrants)",
           "required": true,
           "points": [
@@ -5743,6 +5786,7 @@
           ]
         },
         {
+          "id": 6,
           "question": "2.7. Acciones",
           "required": true,
           "points": [
@@ -5752,6 +5796,7 @@
           ]
         },
         {
+          "id": 7,
           "question": "2.8. Valores Extranjeros",
           "required": true,
           "points": [
@@ -5761,6 +5806,7 @@
           ]
         },
         {
+          "id": 8,
           "question": "2.9. Trackers TRACs o EFTs",
           "required": true,
           "points": [
@@ -5770,6 +5816,7 @@
           ]
         },
         {
+          "id": 9,
           "question": "2.10. Certificados de Capital de Desarrollo",
           "required": true,
           "points": [
@@ -5780,19 +5827,11 @@
         }
       ],
       "answer": [
+        { "id": 0, "answer": "No conoce ni ha invertido", "type": "option" },
+        { "id": 1, "answer": "Sólo conoce", "type": "option" },
+        { "id": 2, "answer": "Conoce y ha invertido", "type": "option" },
         {
-          "answer": "No conoce ni ha invertido",
-          "type": "option"
-        },
-        {
-          "answer": "Sólo conoce",
-          "type": "option"
-        },
-        {
-          "answer": "Conoce y ha invertido",
-          "type": "option"
-        },
-        {
+          "id": 3,
           "answer": "Frecuencia",
           "type": "select",
           "options": [
@@ -5817,6 +5856,7 @@
           "disabled": true
         },
         {
+          "id": 4,
           "answer": "Plazo",
           "type": "select",
           "options": [
@@ -5841,6 +5881,7 @@
           "disabled": true
         },
         {
+          "id": 5,
           "answer": "Volumen",
           "type": "select",
           "options": [
@@ -5863,6 +5904,327 @@
           ],
           "size": "12em",
           "disabled": true
+        }
+      ],
+      "result": [
+        {
+          "id": 0,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
         }
       ]
     }
