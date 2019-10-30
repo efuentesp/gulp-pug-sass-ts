@@ -249,58 +249,175 @@ const http_findOne$ = rest_findOne$;
 const http_create = rest_create;
 // const http_create$ = rest_create$;
 
+const existText = (text_to_add: string, list: string) => {
+  let exist = false;
+  let count = 1;
+
+  $.each($(list + " li a"), function() {
+    if (
+      $(list + " li:nth-child(" + count + ")").text() === text_to_add.trim()
+    ) {
+      exist = true;
+      return false;
+    }
+    count++;
+  });
+  return exist;
+};
+
+// Plus Minus
+const fieldPlusMinus = (id: string, params: any) => {
+  const idBtnPlus = "#btn_plus_" + id;
+  const idBtnMinus = "#btn_minus_" + id;
+  const idInput = "#" + id;
+  const list = "ul#tag_list_" + id;
+  const node = "tag_list_" + id;
+  const definedNodes = params.nodes;
+  const numNodes = 4;
+
+  if (definedNodes) {
+    for (let i = 0; i < numNodes; i++) {
+      $(list).append(
+        "<li><a class='delete_item' href='javascript:void();'></a></li>"
+      );
+    }
+  }
+
+  $(idBtnPlus).click(() => {
+    const text_to_add = $(idInput).val() as string;
+    let count = 1;
+
+    if (!existText(text_to_add, list)) {
+      if ($(list + " li:nth-child(4) a").text() == "" && definedNodes) {
+        $.each($(list + " li a"), function() {
+          if ($(list + " li:nth-child(" + count + ") a").text() === "") {
+            $(list + " li:nth-child(" + count + ") a").append(text_to_add);
+            $(idInput).val("");
+            return false;
+          }
+          count++;
+        });
+      } else {
+        if (params.maxsize != null) {
+          if (
+            text_to_add.length > 0 &&
+            $(list + " li").length < params.maxsize
+          ) {
+            $(list).append(
+              "<li><a class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
+        } else {
+          if (text_to_add.length > 0) {
+            $(list).append(
+              "<li><a class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
+        }
+      }
+    }
+    $(idInput).val("");
+  });
+
+  $(idBtnMinus).click(() => {
+    var nodelist = document.getElementById(node);
+    $(list + " li a").each(function(index) {
+      if ($(idInput).val() != "") {
+        if ($(this).text() === $(idInput).val()) {
+          if (!definedNodes) {
+            nodelist.childNodes[index].remove();
+            $(list + " li").length = $(list + " li").length - 1;
+          } else {
+            if ($(list + " li").length <= 4) {
+              $(this).text("");
+            } else {
+              nodelist.childNodes[index].remove();
+              $(list + " li").length = $(list + " li").length - 1;
+            }
+          }
+        }
+      }
+    });
+    $(idInput).val("");
+  });
+
+  // Set to input
+  $(list).delegate(".delete_item", "click", function() {
+    $(idInput).val(
+      $(this)
+        .parent()
+        .find(".delete_item")
+        .html()
+    );
+  });
+};
+
+// Select Plus Minus
 const fieldSelectPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
   const list = "ul#tag_list_" + id;
   const node = "tag_list_" + id;
+  const definedNodes = params.nodes;
+  const numNodes = 4;
+
+  if (definedNodes) {
+    for (let i = 0; i < numNodes; i++) {
+      $(list).append(
+        "<li><a class='delete_item' href='javascript:void();'></a></li>"
+      );
+    }
+  }
 
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput + " option:selected").text() as string;
     const value_to_add = $(idInput + " option:selected").val() as string;
-    var exist = 0;
+    let count = 1;
 
-    if ($("li").length <= 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a id = " +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</option></a></li>"
-      );
-      exist = 1;
-    } else {
-      $(list + " li a").each(function(index) {
-        if ($(this).text() === text_to_add) {
-          exist = 1;
-          return false;
+    if (!existText(text_to_add, list)) {
+      if ($(list + " li:nth-child(4) a").text() == "" && definedNodes) {
+        $.each($(list + " li a"), function() {
+          if ($(list + " li:nth-child(" + count + ") a").text() === "") {
+            $(list + " li:nth-child(" + count + ") a").attr("id", value_to_add);
+            $(list + " li:nth-child(" + count + ") a").append(text_to_add);
+
+            $(idInput).val("");
+            return false;
+          }
+          count++;
+        });
+      } else {
+        if (params.maxsize != null) {
+          if (
+            text_to_add.length > 0 &&
+            $(list + " li").length < params.maxsize
+          ) {
+            $(list).append(
+              "<li><a " +
+                value_to_add +
+                " class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
+        } else {
+          if (text_to_add.length > 0) {
+            $(list).append(
+              "<li><a id = " +
+                value_to_add +
+                " class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
         }
-      });
-    }
-
-    if (params.maxsize != null) {
-      if (
-        exist == 0 &&
-        text_to_add.length > 0 &&
-        $(list + " li").length < params.maxsize
-      ) {
-        $(list).append(
-          "<li><a class='delete_item' href='javascript:void();'>" +
-            text_to_add +
-            "</a></li>"
-        );
-      }
-    } else {
-      if (exist == 0 && text_to_add.length > 0) {
-        $(list).append(
-          "<li><a class='delete_item' href='javascript:void();'>" +
-            text_to_add +
-            "</a></li>"
-        );
       }
     }
-
     $(idInput)
       .val(null)
       .trigger("change");
@@ -310,8 +427,17 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
     var nodelist = document.getElementById(node);
     $(list + " li a").each(function(index) {
       if ($(this).attr("id") === $(idInput).val()) {
-        nodelist.childNodes[index].remove();
-        $(list + " li").length = $(list + " li").length - 1;
+        if (!definedNodes) {
+          nodelist.childNodes[index].remove();
+          $(list + " li").length = $(list + " li").length - 1;
+        } else {
+          if ($(list + " li").length <= 4) {
+            $(this).text("");
+          } else {
+            nodelist.childNodes[index].remove();
+            $(list + " li").length = $(list + " li").length - 1;
+          }
+        }
       }
     });
 
@@ -337,82 +463,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
   });
 };
 
-const fieldPlusMinus = (id: string, params: any) => {
-  const idBtnPlus = "#btn_plus_" + id;
-  const idBtnMinus = "#btn_minus_" + id;
-  const idInput = "#" + id;
-  const list = "ul#tag_list_" + id;
-  const node = "tag_list_" + id;
-
-  $(idBtnPlus).click(() => {
-    const text_to_add = $(idInput).val() as string;
-    var exist = 0;
-
-    if ($("li").length <= 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</a></li>"
-      );
-      exist = 1;
-    } else {
-      $(list + " li a").each(function(index) {
-        if ($(this).text() === text_to_add) {
-          exist = 1;
-          return false;
-        }
-      });
-    }
-
-    if (params.maxsize != null) {
-      if (
-        exist == 0 &&
-        text_to_add.length > 0 &&
-        $(list + " li").length < params.maxsize
-      ) {
-        $(list).append(
-          "<li><a class='delete_item' href='javascript:void();'>" +
-            text_to_add +
-            "</a></li>"
-        );
-      }
-    } else {
-      if (exist == 0 && text_to_add.length > 0) {
-        $(list).append(
-          "<li><a class='delete_item' href='javascript:void();'>" +
-            text_to_add +
-            "</a></li>"
-        );
-      }
-    }
-
-    $(idInput).val("");
-  });
-
-  $(idBtnMinus).click(() => {
-    var nodelist = document.getElementById(node);
-    $(list + " li a").each(function(index) {
-      if ($(this).text() === $(idInput).val()) {
-        nodelist.childNodes[index].remove();
-        $(list + " li").length = $(list + " li").length - 1;
-      }
-    });
-
-    $(idInput).val("");
-  });
-
-  // Set to input
-  $(list).delegate(".delete_item", "click", function() {
-    $(idInput).val(
-      $(this)
-        .parent()
-        .find(".delete_item")
-        .html()
-    );
-  });
-};
-
-// Autocomplete
+// Autocomplete Plus Minus
 const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
@@ -422,40 +473,61 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   const restService = params.service;
   const attrId = params.id;
   const attrText = params.text;
+  const definedNodes = params.nodes;
+  const numNodes = 4;
+
+  if (definedNodes) {
+    for (let i = 0; i < numNodes; i++) {
+      $(list).append(
+        "<li><a class='delete_item' href='javascript:void();'></a></li>"
+      );
+    }
+  }
 
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput + " option:selected").text() as string;
     const value_to_add = $(idInput + " option:selected").val() as string;
-    var exist = 0;
+    let count = 1;
 
-    if ($("li").length <= 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a id = " +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</option></a></li>"
-      );
-      exist = 1;
-    } else {
-      $(list + " li a").each(function(index) {
-        if ($(this).text() === text_to_add) {
-          exist = 1;
-          return false;
+    if (!existText(text_to_add, list)) {
+      if ($(list + " li:nth-child(4) a").text() == "" && definedNodes) {
+        $.each($(list + " li a"), function() {
+          if ($(list + " li:nth-child(" + count + ") a").text() === "") {
+            $(list + " li:nth-child(" + count + ") a").attr("id", value_to_add);
+            $(list + " li:nth-child(" + count + ") a").append(text_to_add);
+
+            $(idInput).val("");
+            return false;
+          }
+          count++;
+        });
+      } else {
+        if (params.maxsize != null) {
+          if (
+            text_to_add.length > 0 &&
+            $(list + " li").length < params.maxsize
+          ) {
+            $(list).append(
+              "<li><a " +
+                value_to_add +
+                " class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
+        } else {
+          if (text_to_add.length > 0) {
+            $(list).append(
+              "<li><a id = " +
+                value_to_add +
+                " class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
         }
-      });
+      }
     }
-
-    if (exist == 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a id = " +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</option></a></li>"
-      );
-    }
-
     $(idInput)
       .val(null)
       .trigger("change");
@@ -465,7 +537,17 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     var nodelist = document.getElementById(node);
     $(list + " li a").each(function(index) {
       if ($(this).attr("id") === $(idInput).val()) {
-        nodelist.childNodes[index].remove();
+        if (!definedNodes) {
+          nodelist.childNodes[index].remove();
+          $(list + " li").length = $(list + " li").length - 1;
+        } else {
+          if ($(list + " li").length <= 4) {
+            $(this).text("");
+          } else {
+            nodelist.childNodes[index].remove();
+            $(list + " li").length = $(list + " li").length - 1;
+          }
+        }
       }
     });
 
@@ -509,14 +591,13 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       }
     },
     placeholder: {
-      id: "0"
-      // text: "-- Seleccione --"
+      id: "0",
+      text: "-- Seleccione --"
     },
-    cache: "true"
-    // minimumInputLength: 3
+    cache: "true",
+    minimumInputLength: 3
   });
 };
-
 const getList = (id: string) => {
   var list: any = [];
 

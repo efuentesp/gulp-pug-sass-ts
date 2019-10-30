@@ -4,9 +4,9 @@ console.log("01-caucion-bursatil");
 
 const rest_url = `${REST_URL}/fideicomiso`;
 
-fieldPlusMinus("contrato", { maxsize: 5 });
-fieldPlusMinus("digito", {});
-fieldSelectPlusMinus("contrato1", {});
+fieldPlusMinus("contrato", { nodes: true });
+fieldPlusMinus("digito", { maxsize: 5 }); // Max number of elements
+fieldSelectPlusMinus("contrato1", { nodes: false });
 
 ($("#payment") as any).select2({
   placeholder: "--Seleccione--",
@@ -289,7 +289,8 @@ validateDateRage("rango");
 fieldSelectPlusAutocomplete("ejemplo", {
   service: "contratos",
   id: "id",
-  text: "contrato"
+  text: "contrato",
+  nodes: false
 });
 
 fieldDateClear("fecha");
