@@ -13,7 +13,7 @@ block content
             +accordion-item("criterios_busqueda_accordion_item")
                +form("criterios-busqueda", {class: "is-search-form"})
                   +field-date("fecha", {label: "Fecha", clear:true})
-                  +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: true, size:"10em",  clear:true})
+                  //- +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: true, size:"10em",  clear:true})
                   +field-plus-minus("contrato", {label: "Contrato"})
                   +field-plus-minus("digito", {label: "Digito"})
                   +field-options("negocio",
@@ -21,14 +21,14 @@ block content
                      {key: "CB", value:"Casa de Bolsa"},
                      {key:"B", value:"Banco"}
                   )
-                  +field-select-plus-minus("contrato1", {label: "Contrato", size: "10em"},
-                     {key: "", value:""},
-                     {key: "C001", value:"Contrato 01"},
-                     {key: "C002", value:"Contrato 02"},
-                     {key: "C003", value:"Contrato 03"},
-                     {key: "C004", value:"Contrato 04"},
-                     {key: "C005", value:"Contrato 05"}
-                  )
+                  //- +field-select-plus-minus("contrato1", {label: "Contrato", size: "10em"},
+                  //-    {key: "", value:""},
+                  //-    {key: "C001", value:"Contrato 01"},
+                  //-    {key: "C002", value:"Contrato 02"},
+                  //-    {key: "C003", value:"Contrato 03"},
+                  //-    {key: "C004", value:"Contrato 04"},
+                  //-    {key: "C005", value:"Contrato 05"}
+                  //- )
                   +field-checks("products3",
                      {
                      label: "Product Type",
