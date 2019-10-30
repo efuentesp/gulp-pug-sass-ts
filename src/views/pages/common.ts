@@ -470,7 +470,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
   });
 
   ($(idInput) as any).select2({
-    placeholder: "--Seleccione--",
+    placeholder: "",
     minimumResultsForSearch: Infinity
   });
 };
@@ -610,7 +610,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     },
     placeholder: {
       id: "0",
-      text: "-- Seleccione --"
+      text: ""
     },
     cache: "true",
     minimumInputLength: 3

@@ -4,12 +4,12 @@ console.log("01-caucion-bursatil");
 
 const rest_url = `${REST_URL}/fideicomiso`;
 
-fieldPlusMinus("contrato", { nodes: false });
+fieldPlusMinus("contrato", {});
 fieldPlusMinus("digito", { maxsize: 5 }); // Max number of elements
-fieldSelectPlusMinus("contrato1", { nodes: false });
+fieldSelectPlusMinus("contrato1", {});
 
 ($("#payment") as any).select2({
-  placeholder: "--Seleccione--",
+  placeholder: "",
   minimumResultsForSearch: Infinity
 });
 
@@ -62,6 +62,7 @@ const form = ($("#criterios-busqueda") as any)
 
     let listContrato = getList("contrato");
     let listDigito = getList("digito");
+    console.log(listDigito);
 
     let productTypes = getChecked("products3");
 
