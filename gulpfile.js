@@ -219,6 +219,7 @@ function concatVendorJs() {
       "./src/views/scripts/vendors/jquery.toggleinput.js",
       "./src/views/scripts/vendors/jquery.steps.js",
       "./src/views/scripts/vendors/chartjs.min.js",
+      "./node_modules/chartjs-plugin-piechart-outlabels/dist/chartjs-plugin-piechart-outlabels.min.js",
       "./src/views/pages/scripts/vendors/listswap/jquery.listswap.js",
       "./src/views/pages/scripts/vendors/wickedpicker/wickedpicker.js",
       "./node_modules/jquery-contextmenu/dist/jquery.contextMenu.min.js",
