@@ -612,6 +612,25 @@ const getList = (id: string) => {
   return list;
 };
 
+const getChecked = (id: string) => {
+  let selected = [];
+  const query_select = "#field_" + id + " input[type=checkbox]";
+
+  $(query_select).each(function() {
+    if ($(this).is(":checked")) {
+      selected.push($(this).attr("value"));
+    }
+  });
+
+  return selected;
+};
+
+const getOptionSelected = (id: string) => {
+  const query_select = "input[name='" + id + "']:checked";
+
+  return $(query_select).val();
+};
+
 interface stackChartParams {
   id: string;
   titleX: string;

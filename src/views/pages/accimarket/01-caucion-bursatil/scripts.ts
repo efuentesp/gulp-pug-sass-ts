@@ -58,10 +58,12 @@ const form = ($("#criterios-busqueda") as any)
     contratos_params = {};
 
     const fecha = $("#fecha").val();
-    const negocio = $("input[name='negocio']:checked").val();
+    const negocio = getOptionSelected("negocio");
 
-    var listContrato = getList("contrato");
-    var listDigito = getList("digito");
+    let listContrato = getList("contrato");
+    let listDigito = getList("digito");
+
+    let productTypes = getChecked("products3");
 
     if (fecha) {
       contratos_params.fecha = fecha;
@@ -77,6 +79,10 @@ const form = ($("#criterios-busqueda") as any)
 
     if (negocio) {
       contratos_params.negocio = negocio;
+    }
+
+    if (productTypes.length > 0) {
+      contratos_params.product = productTypes;
     }
 
     http_findAll("contratos", contratos_params, payload => {
