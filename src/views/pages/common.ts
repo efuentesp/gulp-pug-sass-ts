@@ -620,11 +620,12 @@ const getList = (id: string) => {
   var list: any = [];
 
   $("#tag_list_" + id + " li").each(function() {
-    list.push(
-      $(this)
-        .text()
-        .trim()
-    );
+    let value = $(this)
+      .text()
+      .trim();
+    if (value != "") {
+      list.push(value);
+    }
   });
 
   return list;
@@ -673,6 +674,7 @@ interface stackChartHParams {
   dataSet: any[];
   width: string;
   height: string;
+  format: string;
 }
 
 interface barChartParams {
@@ -877,6 +879,7 @@ const stackChartHorizontal = (params: stackChartHParams) => {
     datasets: params.dataSet
   };
 
+  let format = params.format;
   var ctx: any = document.getElementById(params.id);
   var context = ctx.getContext("2d");
 
@@ -920,11 +923,19 @@ const stackChartHorizontal = (params: stackChartHParams) => {
               ctx.textBaseline = "middle";
               var padding = 20;
 
-              ctx.fillText(
-                dataset.data[index] + "%",
-                element._view.x - padding,
-                element._view.y
-              );
+              if (format == "%") {
+                ctx.fillText(
+                  formatNumber.new(dataset.data[index], "") + format,
+                  element._view.x - padding,
+                  element._view.y
+                );
+              } else {
+                ctx.fillText(
+                  format + formatNumber.new(dataset.data[index], ""),
+                  element._view.x - padding,
+                  element._view.y
+                );
+              }
             });
           });
         }
@@ -933,6 +944,34 @@ const stackChartHorizontal = (params: stackChartHParams) => {
     type: "horizontalBar",
     data: chartData,
     options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            let label = "";
+            if (format == "%") {
+              label =
+                data.datasets[tooltipItem.datasetIndex].label +
+                " " +
+                formatNumber.new(
+                  data.datasets[tooltipItem.datasetIndex].data[0],
+                  ""
+                ) +
+                format;
+            } else {
+              label =
+                data.datasets[tooltipItem.datasetIndex].label +
+                " " +
+                format +
+                formatNumber.new(
+                  data.datasets[tooltipItem.datasetIndex].data[0],
+                  ""
+                );
+            }
+
+            return label;
+          }
+        }
+      },
       legend: {
         display: true,
         position: "right"
@@ -950,7 +989,14 @@ const stackChartHorizontal = (params: stackChartHParams) => {
               display: true,
               stepSize: params.tickStepX,
               callback: function(value) {
-                return value + "%";
+                let label = "";
+                if (format == "%") {
+                  label = formatNumber.new(value, "") + format;
+                } else {
+                  label = format + formatNumber.new(value, "");
+                }
+
+                return label;
               }
             },
             gridLines: {
@@ -2180,4 +2226,24 @@ $(".remove").click(function() {
 
 const clearList = () => {
   $(".droptrue > li, .dropfalse > li").removeClass("selected");
+};
+
+const formatNumber = {
+  separador: ",",
+  sepDecimal: ".",
+  formatear: function(num) {
+    num += "";
+    var splitStr = num.split(".");
+    var splitLeft = splitStr[0];
+    var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : "";
+    var regx = /(\d+)(\d{3})/;
+    while (regx.test(splitLeft)) {
+      splitLeft = splitLeft.replace(regx, "$1" + this.separador + "$2");
+    }
+    return this.simbol + splitLeft + splitRight;
+  },
+  new: function(num, simbol) {
+    this.simbol = simbol || "";
+    return this.formatear(num);
+  }
 };
