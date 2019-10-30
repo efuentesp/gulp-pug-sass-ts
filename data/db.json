@@ -648,7 +648,10 @@
       "listaSpc": []
     },
     {
-      "contrato[]": ["CONTRATO01", "CONTRATO02"],
+      "contrato[]": [
+        "CONTRATO01",
+        "CONTRATO02"
+      ],
       "id": "t-eLVZ4"
     },
     {
@@ -1129,7 +1132,13 @@
           "valor": "3"
         }
       ],
-      "origenUno": ["3", "3", "1", "1", "1"],
+      "origenUno": [
+        "3",
+        "3",
+        "1",
+        "1",
+        "1"
+      ],
       "id": 1
     }
   ],
@@ -5682,52 +5691,92 @@
         {
           "question": "2.1. Instrumentos de Deuda Gubernamental",
           "required": true,
-          "points": ["1", "2", "3"]
+          "points": [
+            "1",
+            "2",
+            "3"
+          ]
         },
         {
           "question": "2.2. Instrumentos de Deuda Corporativa",
           "required": true,
-          "points": ["1", "2", "3"]
+          "points": [
+            "1",
+            "2",
+            "3"
+          ]
         },
         {
           "question": "2.3. Sociedades de Inversión",
           "required": true,
-          "points": ["2", "4", "6"]
+          "points": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "question": "2.4. Valores Estructurados",
           "required": true,
-          "points": ["2", "4", "6"]
+          "points": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "question": "2.5. Certificados Bursátiles Fiduciarios (Cebures, Cedevis) y Fideicomisos Privados",
           "required": true,
-          "points": ["2", "4", "6"]
+          "points": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "question": "2.6. Títulos Opcionales (Warrants)",
           "required": true,
-          "points": ["2", "4", "6"]
+          "points": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "question": "2.7. Acciones",
           "required": true,
-          "points": ["3", "6", "9"]
+          "points": [
+            "3",
+            "6",
+            "9"
+          ]
         },
         {
           "question": "2.8. Valores Extranjeros",
           "required": true,
-          "points": ["3", "6", "9"]
+          "points": [
+            "3",
+            "6",
+            "9"
+          ]
         },
         {
           "question": "2.9. Trackers TRACs o EFTs",
           "required": true,
-          "points": ["3", "6", "9"]
+          "points": [
+            "3",
+            "6",
+            "9"
+          ]
         },
         {
           "question": "2.10. Certificados de Capital de Desarrollo",
           "required": true,
-          "points": ["3", "6", "9"]
+          "points": [
+            "3",
+            "6",
+            "9"
+          ]
         }
       ],
       "answer": [
@@ -5894,5 +5943,89 @@
         "tipoPos": 2
       }
     ]
-  }
+  },
+  "asignacion": [
+    {
+      "columnaEstatus": "N/A",
+      "columnadeSeleccion": "N/A",
+      "oper": "1",
+      "contrato": "001",
+      "ordenada": "05",
+      "preciOrden": "1500",
+      "envio": "Terrestre",
+      "emisora": "23",
+      "ppp": "1500",
+      "%asig.": "100",
+      "cliente": "CEMEX",
+      "canc.": "Ninguna",
+      "%confirm.": "99",
+      "confirmada": "Si",
+      "porconfirmar": "No",
+      "stsImp.": "Ninguno",
+      "vigencia": "11/11/2019",
+      "tipo": "e",
+      "nombredeUsuario": "Jesus",
+      "extension": "3819",
+      "%VOcapt.": "89",
+      "asignada": "Si",
+      "precLim.": "Si",
+      "tipoMPL": "Ninguna",
+      "volBolsa": "98",
+      "%volBolsa": "88",
+      "volOculto": "92",
+      "justificacion": "Ninguna",
+      "medioInstr.": "Ninguno",
+      "servicioInversion": "95",
+      "titulosPreAsignados": "23",
+      "usuario": "Jesus",
+      "fecVenc": "11/11/2019",
+      "difPuja": "25",
+      "tipoMediodeLiq.": "Efectivo",
+      "mediodeLiq.": "Efectivo",
+      "pendiente": "Ninguna",
+      "digito": "95",
+      "precioOrden": "231",
+      "fecha": "11/11/2019",
+      "orden": "328",
+      "rompe": "28",
+      "tipoOrden": "Venta",
+      "perfildelclientealmomentodelaOperacion": "Si",
+      "perfildelproductoalmomentodelaOperacion": "49",
+      "medioCierre": "No",
+      "numerodeRed/Telefono": "5519847627",
+      "clasificacionETF": "Si"
+    }
+  ],
+  "flujo": [
+    {
+      "emisora": "23",
+      "mkt": "54",
+      "totaldeordenes": "35",
+      "precOrdenados": "24",
+      "precAsignado": "100",
+      "volOrdenado": "90",
+      "volPendiente": "80",
+      "volAsigando": "99"
+    }
+  ],
+  "hechos": [
+    {
+      "cantidad": "23",
+      "hora": "10:38 p.m",
+      "precios": "35"
+    }
+  ],
+  "cancelarordenes": [
+    {
+      "orden": "23",
+      "stsCancela": "ok",
+      "contacto": "Cemex",
+      "promotor": "Jesus",
+      "tipo": "VTA",
+      "emisora": "AMX",
+      "cantidad": "25",
+      "precio": "100",
+      "fechaCaptura": "29-10-2019"
+    }
+  ]
 }
