@@ -1652,12 +1652,18 @@ const pieChart = (params: pieChartParams) => {
     type: "pie",
     data: chartData,
     options: {
+      responsive: true,
       legend: {
-        display: true
+        display: true,
+        position: "bottom",
+        labels: {
+          padding: 50
+        }
       },
       title: {
         display: true,
-        text: params.titleX
+        text: params.titleX,
+        padding: 50
       }
     }
   });
