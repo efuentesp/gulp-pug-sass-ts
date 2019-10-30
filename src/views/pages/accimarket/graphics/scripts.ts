@@ -295,6 +295,7 @@ const fillHorizontalRendimientos = (rendimientosh: any) => {
       }
     ],
     width: "800px",
-    height: "200px"
+    height: "200px",
+    format: "%"
   });
 };
