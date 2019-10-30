@@ -272,8 +272,14 @@ const fieldPlusMinus = (id: string, params: any) => {
   const idInput = "#" + id;
   const list = "ul#tag_list_" + id;
   const node = "tag_list_" + id;
-  const definedNodes = params.nodes;
+  let definedNodes = true;
   const numNodes = 4;
+
+  if (params.nodes == undefined) {
+    definedNodes = true;
+  } else {
+    definedNodes = params.nodes;
+  }
 
   if (definedNodes) {
     for (let i = 0; i < numNodes; i++) {
@@ -363,8 +369,14 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
   const idInput = "#" + id;
   const list = "ul#tag_list_" + id;
   const node = "tag_list_" + id;
-  const definedNodes = params.nodes;
+  let definedNodes = true;
   const numNodes = 4;
+
+  if (params.nodes == undefined) {
+    definedNodes = true;
+  } else {
+    definedNodes = params.nodes;
+  }
 
   if (definedNodes) {
     for (let i = 0; i < numNodes; i++) {
@@ -473,8 +485,14 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   const restService = params.service;
   const attrId = params.id;
   const attrText = params.text;
-  const definedNodes = params.nodes;
+  let definedNodes = true;
   const numNodes = 4;
+
+  if (params.nodes == undefined) {
+    definedNodes = true;
+  } else {
+    definedNodes = params.nodes;
+  }
 
   if (definedNodes) {
     for (let i = 0; i < numNodes; i++) {
