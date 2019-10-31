@@ -48,10 +48,10 @@ block content
                   )
                   +field-select-plus-minus("ejemplo", {label: "Contrato", size: "10em", maxsize: 3}, {key: "", value:""})
                   .column#botones-accion
-                     +button-search({size: "large", disabled: false})
-                     +button-clean({size: "large", disabled: false})
-                     +button-pdf({size: "large", disabled: false})
-                     +button-xls({size: "large", disabled: false})
+                     +button-search({size: "large", tooltip: "Consultar", disabled: false})
+                     +button-clean({size: "large", tooltip: "Limpiar", disabled: false})
+                     +button-pdf({size: "large", tooltip: "PDF", disabled: false})
+                     +button-xls({size: "large", tooltip: "XLS", disabled: false})
 
       .row.has_border
          .row.w-full.overflow-auto
