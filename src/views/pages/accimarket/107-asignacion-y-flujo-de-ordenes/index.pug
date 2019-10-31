@@ -39,7 +39,7 @@ block content
                                         label: "Usuario",  
                                     })
                             .row
-                                .row#rowEstatus
+                                .row#rowEstatus.h-40
                                     +field-checks("estatus",
                                         {
                                             label: "Estatus",
@@ -49,9 +49,9 @@ block content
                                         {key: "S02", value:"Pendientes", color:"blue"},
                                         {key: "S03", value:"Sin Asignar", color:"yellow"},
                                         {key: "S04", value:"Canceladas", color:"red"},
-                                        {key: "S05", value:"Distribuidas", color:"blue"},
-                                        {key: "S06", value:"Bloqueadas", color:"gray"}
-                                        )
+                                        {key: "S05", value:"Distribuidas", color:"teal"},
+                                        {key: "S06", value:"Bloqueadas", color:"black"}
+                                    )  
                                 .row.flex#rowOpciones
                                     +field-options("",
                                         {   
@@ -67,6 +67,21 @@ block content
                                             label: "",
                                             size: "5em"
                                         })
+                                .row
+                                    .row.flex.items-center.justify-center
+                                        +field-input("segundos-actualizar",
+                                            {
+                                                label:"Actualizar cada",
+                                                size: "4em",
+                                                orientation: "horizontal",
+                                                width: "11em",
+                                                default_value: "60"
+                                            }
+                                        )
+                                        p segundos
+                                    .row.flex.justify-center.text-blue-700
+                                        span#segundos-restantes.pr-3 x
+                                        p segundos restantes
                             .row.flex#rowVolumen
                                 +field-options("",
                                     {
@@ -82,17 +97,16 @@ block content
                                         size: "5em",
                                         orientation: "horizontal"
                                     })
-                                
-
+                            
                             .row
                                 +field-options("operacion",
                                     {
                                         label: "Operacion",
                                     
                                     },
-                                    {key: "SI", value:"Todas", color:"gray"},
-                                    {key: "SI", value:"Compras", color:"gray"},
-                                    {key: "SI", value:"Ventas", color:"gray"} 
+                                    {key: "ALL", value:"Todas", color:"gray"},
+                                    {key: "C", value:"Compras", color:"gray"},
+                                    {key: "V", value:"Ventas", color:"gray"} 
                                     )
                                 .row#rowSolo
                                     +field-checks("id",

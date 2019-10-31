@@ -13,7 +13,7 @@ $("#rowOpciones").hide();
 $("#rowFlujo").hide();
 $("#rowVolumen").hide();
 
-$("input[type='radio']").click(function () {
+$("input[name='vista']").click(function () {
     var radio = $("input[name='vista']:checked").val();
     if (radio == 'SI') {
         $("#rowEstatus").show();
@@ -53,7 +53,7 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
         colNames: [
             "",
             "Columna de Seleccion",
-            "Oper",
+            "Operacion",
             "Contrato",
             "Ordenada",
             "Precio Orden",
@@ -107,8 +107,35 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
                 width: 50,
                 sortable: false,
                 formatter: (cellvalue, options, rowobject) => {
-                    // console.log(cellvalue, options, rowobject);
-                    return "<div class='w-5 h-5 bg-red-600'></div>";
+                    // console.log(rowobject.estatus);
+                    let color = "desconocido";
+                    switch (rowobject.estatus) {
+                        case "S01": {
+                            color = "asignado";
+                            break;
+                        }
+                        case "S02": {
+                            color = "pendientes";
+                            break;
+                        }
+                        case "S03": {
+                            color = "sin-asignar";
+                            break;
+                        }
+                        case "S04": {
+                            color = "canceladas";
+                            break;
+                        }
+                        case "S05": {
+                            color = "distribuidas";
+                            break;
+                        }
+                        case "S06": {
+                            color = "bloqueadas";
+                            break;
+                        }
+                    }
+                    return `<div class='w-5 h-5 ${color}'></div>`;
                 }
             },
             {
@@ -166,7 +193,27 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
             { name: "medioCierre", width: 100 },
             { name: "numerodeRed/Telefono", width: 110 },
             { name: "clasificacionETF", width: 110 }
-        ]
+        ],
+        loadComplete: function () {
+            console.log("Menu");
+            ($("tr.jqgrow", this) as any).contextMenu("contextMenu", {
+                bindings: {
+                    "cierre-definitivo": function (event) {
+                        console.log("Cierre definitivo");
+                    },
+                    "detalle-captacion": function (event) {
+                        console.log("Detalle de captacion");
+                    },
+                    "cancela-notae": function (event) {
+                        console.log("Cancela nota estructurada");
+                    },
+                    "reenvio-cierre": function (event) {
+                        console.log("Reenvio de cierre");
+                    }
+                },
+                onContexMenu: function (event, menu) { }
+            });
+        }
     });
 }
 
@@ -296,74 +343,90 @@ const formAsignacionOrdenes = ($("#criterios-listAsignacion") as any)
     .on("form:submit", e => {
         console.log("form:submit", e);
 
-        listaAsignacion_params = {};
-
-        const emisora = getList("emisora");
-        if (emisora.length > 0) {
-            listaAsignacion_params.emisora = emisora;
-        }
-
-        const contrato = getList("contrato");
-        if (contrato.length > 0) {
-            listaAsignacion_params.contrato = contrato;
-        }
-
-        const digito = getList("digito");
-        if (digito.length > 0) {
-            listaAsignacion_params.digito = digito;
-        }
-
-        const usuario = getList("usuario");
-        if (usuario.length > 0) {
-            listaAsignacion_params.usuario = usuario;
-        }
-
-        const estatus = $("input[name='chk_estatus']:checked").val();
-        console.log(estatus);
-        if (estatus) {
-            listaAsignacion_params.estatus = estatus;
-        }
-
-        const operacion = $("input[name='chk_operacion']:checked").val();
-        if (operacion) {
-            listaAsignacion_params.operacion = operacion;
-        }
-
-        // const vista = $("#radio_vista']:checked").val();
-        // if (vista) {
-        //     listaAsignacion_params.vista = vista;
-        // }
-
-        http_findAll("asignacion", listaAsignacion_params, payload => {
-            $("#table_busquedaAsignacion").jqGrid("clearGridData");
-            $("#table_busquedaAsignacion").jqGrid("setGridParam", { data: payload });
-            $("#table_busquedaAsignacion").trigger("reloadGrid");
-            const rec_count = payload.length;
-            $("#count_asignacion").html(rec_count);
-        });
+        rellenarGridAsignacion()
 
         return false;
     });
 
+const rellenarGridAsignacion = () => {
+    console.log("Llena de nuevo grid Asignación");
 
+    listaAsignacion_params = {};
 
-$("#btn_pdf").click(() =>
-    $("#dialogo_pdf").dialog({
-        modal: true,
-        closeText: "",
-        show: true,
-        title: "Generar PDF"
-    })
-);
+    const emisora = getList("emisora");
+    if (emisora.length > 0) {
+        listaAsignacion_params.emisora = emisora;
+    }
 
-$("#btn_xls").click(() =>
-    $("#dialogo_xls").dialog({
-        modal: true,
-        closeText: "",
-        show: true,
-        title: "Generar XLS"
-    })
-);
+    const contrato = getList("contrato");
+    if (contrato.length > 0) {
+        listaAsignacion_params.contrato = contrato;
+    }
+
+    const digito = getList("digito");
+    if (digito.length > 0) {
+        listaAsignacion_params.digito = digito;
+    }
+
+    const usuario = getList("usuario");
+    if (usuario.length > 0) {
+        listaAsignacion_params.usuario = usuario;
+    }
+
+    let estatus = getChecked("estatus");
+    if (estatus.length > 0) {
+        listaAsignacion_params.estatus = estatus;
+    }
+
+    const operacion = getOptionSelected("operacion");
+    if (operacion) {
+        if (operacion !== "ALL") {
+            listaAsignacion_params.operacion = operacion;
+        }
+    }
+
+    http_findAll("asignacion", listaAsignacion_params, payload => {
+        $("#table_busquedaAsignacion").jqGrid("clearGridData");
+        $("#table_busquedaAsignacion").jqGrid("setGridParam", { data: payload });
+        $("#table_busquedaAsignacion").trigger("reloadGrid");
+        const rec_count = payload.length;
+        $("#count_asignacion").html(rec_count);
+    });
+}
+
+$.contextMenu({
+    selector: "#btn_pdf",
+    callback: function (key, options) {
+        var m = "clicked: " + key;
+
+    },
+    items: {
+        opcion1: { name: "PDF Reporte de Asignación " },
+        opcion2: { name: "PDF Confirmación Global" },
+        opcion3: { name: "PDF Confirmación Detallada" }
+    }
+});
+
+$("#btn_pdf").on("click", function (e) {
+
+});
+
+$.contextMenu({
+    selector: "#btn_xls",
+    callback: function (key, options) {
+        var m = "clicked: " + key;
+
+    },
+    items: {
+        opcion1: { name: "Excel Reporte de Asignación" },
+        opcion2: { name: "Excel Confirmación Global" },
+        opcion3: { name: "Excel Confirmación Detallada" }
+    }
+});
+
+$("#btn_xls").on("click", function (e) {
+
+});
 
 $("#idcancelar").click(() =>
     $("#cancelar").dialog({
@@ -413,3 +476,22 @@ $("#idmantenimiento").click(() =>
 
     })
 );
+
+
+
+const cuentaRegresiva = (segundos: number) => {
+    if (segundos > 0) {
+        const segundosRestantes = $("#segundos-restantes");
+        segundosRestantes.html(segundos.toString());
+        setTimeout(() => {
+            cuentaRegresiva(segundos - 1)
+        }, 1000);
+    } else {
+        rellenarGridAsignacion()
+        const segundos_actualizar = $("#segundos-actualizar").val();
+        cuentaRegresiva(+segundos_actualizar);
+    }
+}
+
+const segundos_actualizar = $("#segundos-actualizar").val();
+cuentaRegresiva(+segundos_actualizar);

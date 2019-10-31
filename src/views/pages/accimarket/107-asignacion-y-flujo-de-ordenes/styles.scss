@@ -99,12 +99,29 @@
     flex-wrap: wrap;   
   }
 }
-  #estatus {
-    &.sin-asignar {background: $color-yellow-light;
-  }
-    &.asignado {background: $color-green-light;
-  }
+
+.desconocido {
+  background: pink;
 }
+.asignado {
+  background: green;
+}
+.sin-asignar {
+  background: yellow;
+}
+.distribuidas {
+  background: teal;
+}
+.pendientes {
+  background: blue;
+}
+.canceladas {
+  background: red;
+}
+.bloqueadas {
+  background: black;
+}
+
 
 #modificar {
     label {
