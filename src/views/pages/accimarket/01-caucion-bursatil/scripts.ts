@@ -295,7 +295,6 @@ validateDateRage("rango");
 
 const llenaSelectContratos = (contratos: any) => {
   fieldSelectPlusAutocomplete("ejemplo", {
-    service: "contratos",
     id: "id",
     text: "contrato",
     payload: contratos
