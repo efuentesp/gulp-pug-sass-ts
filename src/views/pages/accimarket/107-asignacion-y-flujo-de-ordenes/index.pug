@@ -20,7 +20,7 @@ block content
             +accordion("criterios_busqueda_asignacion")
                 +accordion-item("busqueda_item")
                     form#criterios-listAsignacion
-                        .form-group.flex.flex-wrap.justify-between
+                        .form-group.flex.justify-between
                             +field-plus-minus("emisora",
                                 {
                                     label: "Emisora"      
@@ -124,7 +124,7 @@ block content
                                         orientation: "horizontal"                                            
                                     },
                                     {key: "SI", value:"Asignacion", checked: true},
-                                    {key: "SI", value:"Flujo"}
+                                    {key: "NO", value:"Flujo"}
                                 )
                                 #search-actions-column
                                     +button-search({size: "large", disabled: false})

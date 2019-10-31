@@ -52,7 +52,7 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
         rowList: [10, 20, 30],
         colNames: [
             "",
-            "Columna de Seleccion",
+            "",
             "Operacion",
             "Contrato",
             "Ordenada",
@@ -104,7 +104,7 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
             {
                 name: "columnaEstatus",
                 index: "columnaEstatus",
-                width: 50,
+                width: 20,
                 sortable: false,
                 formatter: (cellvalue, options, rowobject) => {
                     // console.log(rowobject.estatus);
@@ -141,13 +141,13 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
             {
                 name: "columnadeSeleccion",
                 index: "columnadeSeleccion",
-                width: 50,
+                width: 20,
                 sortable: false,
                 formatter: (cellvalue, options, rowobject) => {
                     return "<input type='checkbox' name='' value=''>";
                 }
             },
-            { name: "oper", width: 110 },
+            { name: "operacion", width: 110 },
             { name: "contrato", width: 110 },
             { name: "ordenada", width: 110 },
             { name: "preciOrden", width: 110 },
