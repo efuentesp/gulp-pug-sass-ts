@@ -101,6 +101,10 @@
       // );
     }
 
+    &.is_teal {
+      background-color: $color-teal;
+    }
+
     &.is_cyan {
       background-color: $color-teal;
     }
