@@ -25,6 +25,7 @@ http_findAll("contratos", contratos_params, payload => {
 
   // fillJqGrid("#table_contratos", payload);
   llenaGridContratos(payload);
+  llenaSelectContratos(payload);
   const rec_count = payload.length;
   $("#count_contratos").html(rec_count);
   // console.log(rec_count);
@@ -293,12 +294,13 @@ $("#btn_xls").click(() =>
 
 validateDateRage("rango");
 
-fieldSelectPlusAutocomplete("ejemplo", {
-  service: "contratos",
-  id: "id",
-  text: "contrato",
-  nodes: true
-});
+const llenaSelectContratos = (contratos: any) => {
+  fieldSelectPlusAutocomplete("ejemplo", {
+    id: "id",
+    text: "contrato",
+    payload: contratos
+  });
+};
 
 fieldDateClear("fecha");
 

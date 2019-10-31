@@ -492,6 +492,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   const restService = params.service;
   const attrId = params.id;
   const attrText = params.text;
+  const payload = params.payload;
   let definedNodes = true;
   const numNodes = 4;
 
@@ -592,37 +593,20 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       .trigger("change");
   });
 
+  var data = $.map(payload, function(item) {
+    return {
+      text: item[attrText],
+      id: item[attrId]
+    };
+  });
+
   ($(idInput) as any).select2({
-    ajax: {
-      url: `${REST_URL}/` + restService + ``,
-      dataType: "json",
-      type: "GET",
-      data: function(params) {
-        var query = {
-          q: params.term,
-          rows: 10
-        };
-        return query;
-      },
-      processResults: function(data) {
-        return {
-          results: $.map(data, function(item) {
-            return {
-              text: item[attrText],
-              id: item[attrId]
-            };
-          })
-        };
-      }
-    },
-    placeholder: {
-      id: "0",
-      text: ""
-    },
-    cache: "true",
+    data: data,
+    placeholder: "",
     minimumInputLength: 3
   });
 };
+
 const getList = (id: string) => {
   var list: any = [];
 
