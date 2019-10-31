@@ -2,14 +2,14 @@ mixin button-filter(parms)
   - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
 
   if _parms.size == "large"
-    button.button.big-button(id="btn_search" type="submit" title=_parms.tooltip disabled=_parms.disabled value="validate")
+    button.button.big-button(id="btn_search" type="submit" data-tooltip=_parms.tooltip disabled=_parms.disabled value="validate")
       img(src="../../assets/images/btn-filter.png")
       span Consultar
 
   if _parms.size == "medium"
-    button.button.medium-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
+    button.button.medium-button(id="btn_search" data-tooltip=_parms.tooltip disabled=_parms.disabled)
       img(src="../../assets/images/btn-filter.png")
 
   if _parms.size == "small"
-    button.button.small-button(id="btn_search" title=_parms.tooltip disabled=_parms.disabled)
+    button.button.small-button(id="btn_search" data-tooltip=_parms.tooltip disabled=_parms.disabled)
       img(src="../../assets/images/btn-filter.png")

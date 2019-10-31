@@ -90,6 +90,13 @@ $(document).tooltip({
   disabled: true
 });
 
+// Coloca el atributo "title" al botón para que aparezca el tooltip
+$(".button").each(function(i, obj) {
+  // const label = $(`#${obj.id} span`).html();
+  const label = $(`#${obj.id}`).attr("data-tooltip");
+  $(`#${obj.id}`).attr("title", label);
+});
+
 // Tabs
 $(".tab-group").tabs();
 
