@@ -2,14 +2,14 @@
 
 console.log("01-caucion-bursatil");
 
-const rest_url = `${REST_URL}/fideicomiso`;
+// const rest_url = `${REST_URL}/fideicomiso`;
 
-fieldPlusMinus("contrato", { nodes: false });
+fieldPlusMinus("contrato", {});
 fieldPlusMinus("digito", { maxsize: 5 }); // Max number of elements
-fieldSelectPlusMinus("contrato1", { nodes: false });
+fieldSelectPlusMinus("contrato1", {});
 
 ($("#payment") as any).select2({
-  placeholder: "--Seleccione--",
+  placeholder: "",
   minimumResultsForSearch: Infinity
 });
 
@@ -25,6 +25,7 @@ http_findAll("contratos", contratos_params, payload => {
 
   // fillJqGrid("#table_contratos", payload);
   llenaGridContratos(payload);
+  llenaSelectContratos(payload);
   const rec_count = payload.length;
   $("#count_contratos").html(rec_count);
   // console.log(rec_count);
@@ -62,6 +63,7 @@ const form = ($("#criterios-busqueda") as any)
 
     let listContrato = getList("contrato");
     let listDigito = getList("digito");
+    console.log(listDigito);
 
     let productTypes = getChecked("products3");
 
@@ -292,12 +294,13 @@ $("#btn_xls").click(() =>
 
 validateDateRage("rango");
 
-fieldSelectPlusAutocomplete("ejemplo", {
-  service: "contratos",
-  id: "id",
-  text: "contrato",
-  nodes: true
-});
+const llenaSelectContratos = (contratos: any) => {
+  fieldSelectPlusAutocomplete("ejemplo", {
+    id: "id",
+    text: "contrato",
+    payload: contratos
+  });
+};
 
 fieldDateClear("fecha");
 

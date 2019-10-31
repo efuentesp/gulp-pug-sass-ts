@@ -209,6 +209,7 @@ function concatVendorJs() {
       // "./node_modules/rx/dist/rx.js",
       // "./node_modules/rx/dist/rx.binding.js",
       // "./node_modules/rx-jquery/rx.jquery.js",
+      // "./node_modules/moment/min/moment-with-locales.min.js",
       "./node_modules/parsleyjs/dist/parsley.min.js",
       "./node_modules/parsleyjs/dist/i18n/es.js",
       "./node_modules/select2/dist/js/select2.min.js",
