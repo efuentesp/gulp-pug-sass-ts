@@ -1,88 +1,84 @@
 @import "../../../styles/vars";
 
 .content {
-    
   #search-actions-column {
     width: 20em;
     height: 25em;
-    }
-  
+  }
+
   #field_estatus {
     flex-wrap: wrap;
     width: 23em;
     height: 5em;
-  
+
     label[for="chk_estatus"] {
       width: 19em;
       text-align: center;
       font-weight: bold;
     }
 
-  .field-control {
-    .flex {
+    .field-control {
+      .flex {
         label {
-          display:flex;
+          display: flex;
           width: 11em;
         }
         width: 30em;
         flex-wrap: wrap;
+      }
     }
-  }
 
-  #field_mayor{
-    .field-control{
-      margin-top: 1em;
+    #field_mayor {
+      .field-control {
+        margin-top: 1em;
+      }
     }
   }
-}
-  #field_id{
-    .field-control{
+  #field_id {
+    .field-control {
       margin-top: 0.5em;
     }
   }
 }
-  #field_totalreg {
-    font-weight: 700;
-    justify-content: flex-end;
+#field_totalreg {
+  font-weight: 700;
+  justify-content: flex-end;
 
-    input {
-      text-align: center;
-    }
+  input {
+    text-align: center;
   }
-  
-  
- 
- .field-control1 {
+}
+
+.field-control1 {
   .flex {
-      label {
-        display:flex;
-        width: 11em;
-      }
-      width: 30em;
-      flex-wrap: wrap;
+    label {
+      display: flex;
+      width: 11em;
+    }
+    width: 30em;
+    flex-wrap: wrap;
   }
 }
 .field-control2 {
   .flex {
-      label {
-        display:flex;
-        width: 11em;
-      }
-      width: 30em;
-      flex-wrap: wrap;
+    label {
+      display: flex;
+      width: 11em;
+    }
+    width: 30em;
+    flex-wrap: wrap;
   }
 }
-#grupo3{
+#grupo3 {
   display: flex;
   flex-wrap: wrap;
-  width: 40em;  
+  width: 40em;
 }
-#grupo4{
+#grupo4 {
   display: flex;
   flex-wrap: wrap;
- 
 }
-  
+
 #cancelar {
   label {
     width: 100px;
@@ -92,11 +88,11 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 0.5em;
-    // width: 40em;  
+    // width: 40em;
   }
-  #grupo2{
+  #grupo2 {
     display: flex;
-    flex-wrap: wrap;   
+    flex-wrap: wrap;
   }
 }
 
@@ -122,30 +118,36 @@
   background: black;
 }
 
+.compra {
+  color: red !important;
+}
+
+.venta {
+  color: green !important;
+}
 
 #modificar {
-    label {
-      width: 100px;
-    }
-  
+  label {
+    width: 100px;
+  }
+
   #grupo3 {
     display: flex;
     flex-wrap: wrap;
     padding-left: 0.5em;
-    // width: 40em;  
+    // width: 40em;
   }
-  #grupo4{
+  #grupo4 {
     display: flex;
-    flex-wrap: wrap;   
+    flex-wrap: wrap;
   }
-  #row.flex{
+  #row.flex {
     display: flex;
   }
 }
- 
 
-
-
-
-
- 
+#field_segundos-actualizar {
+  label {
+    padding-top: 6px;
+  }
+}

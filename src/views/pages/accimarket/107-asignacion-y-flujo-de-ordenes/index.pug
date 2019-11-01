@@ -65,7 +65,9 @@ block content
                                     +field-input("mayor",
                                         {
                                             label: "",
-                                            size: "5em"
+                                            size: "5em",
+                                            type: "currency",
+                                            max_length: "9"
                                         })
                                 .row
                                     .row.flex.items-center.justify-center
@@ -75,7 +77,9 @@ block content
                                                 size: "4em",
                                                 orientation: "horizontal",
                                                 width: "11em",
-                                                default_value: "60"
+                                                default_value: "60",
+                                                type: "integer",
+                                                max_length: "3"
                                             }
                                         )
                                         p segundos
@@ -86,7 +90,7 @@ block content
                                 +field-options("",
                                     {
                                         label: "Volumen",
-                                        orientacion: "vertical,"
+                                        orientacion: "vertical"
                                     },
                                     {key: "SI", value:"Mayor ="},
                                     {key: "SI", value:"Menor"}
@@ -95,7 +99,9 @@ block content
                                     {
                                         label: "",
                                         size: "5em",
-                                        orientation: "horizontal"
+                                        orientation: "horizontal",
+                                        type: "integer",
+                                        max_length: "6"
                                     })
                             
                             .row

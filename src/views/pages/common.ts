@@ -2244,3 +2244,11 @@ const formatNumber = {
     return this.formatear(num);
   }
 };
+
+$("input[data-type='integer']").keyup(function() {
+  let element = this as HTMLInputElement;
+  element.value = element.value.replace(/[^0-9]/g, "");
+});
+
+($("input[data-type='number']") as any).maskMoney();
+($("input[data-type='currency']") as any).maskMoney();

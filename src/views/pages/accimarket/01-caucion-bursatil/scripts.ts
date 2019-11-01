@@ -295,6 +295,7 @@ $("#btn_xls").click(() =>
 validateDateRage("rango");
 
 const llenaSelectContratos = (contratos: any) => {
+  console.log(contratos);
   fieldSelectPlusAutocomplete("ejemplo", {
     id: "id",
     text: "contrato",
