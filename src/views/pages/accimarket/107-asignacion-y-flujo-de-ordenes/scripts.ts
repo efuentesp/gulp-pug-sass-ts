@@ -213,6 +213,18 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
         },
         onContexMenu: function(event, menu) {}
       });
+    },
+    rowattr: function(item) {
+      switch (item.operacion) {
+        case "C": {
+          return { class: "table-row-compra" };
+          break;
+        }
+        case "V": {
+          return { class: "table-row-venta" };
+          break;
+        }
+      }
     }
   });
 };

@@ -118,12 +118,12 @@
   background: black;
 }
 
-.compra {
-  color: red !important;
+.table-row-compra {
+  color: $color-red !important;
 }
 
-.venta {
-  color: green !important;
+.table-row-venta {
+  color: $color-green !important;
 }
 
 #modificar {
