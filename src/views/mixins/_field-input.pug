@@ -2,7 +2,6 @@ mixin field-input(id, parms)
   - var _field_id = "field_" + id
   - var _input_id = id
   - var _type = (parms.type ? parms.type : "alphanum") // alphanum, integer, number, currency
-  - var _prefix = (_type == "currency" ? "$ " : "")
   - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   - var _input_max_length = (parms.max_length ? parms.max_length : "32")
@@ -14,8 +13,11 @@ mixin field-input(id, parms)
       label(for=_input_id)= parms.label
       if parms.required
         span.required *
-    .field-control
+    .field-control.flex
+      if _type=="currency"
+        span.currency-prefix $
       input.input(type="text"
+        class=_type
         id=_input_id
         required=parms.required
         value=_default_value
@@ -25,6 +27,4 @@ mixin field-input(id, parms)
         data-parsley-maxlength=_input_max_length
         data-parsley-maxlength-message=_input_max_length_errmsg
         data-parsley-validation-threshold="10"
-        data-type=_type
-        data-symbol=_prefix
         )

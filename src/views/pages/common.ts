@@ -2245,10 +2245,6 @@ const formatNumber = {
   }
 };
 
-$("input[data-type='integer']").keyup(function() {
-  let element = this as HTMLInputElement;
-  element.value = element.value.replace(/[^0-9]/g, "");
-});
-
-($("input[data-type='number']") as any).maskMoney();
-($("input[data-type='currency']") as any).maskMoney();
+$(".currency").mask("###,###,##0", { reverse: true });
+$(".number").mask("###,###,##0.00", { reverse: true });
+$(".integer").mask("###,###,##0", { reverse: true });
