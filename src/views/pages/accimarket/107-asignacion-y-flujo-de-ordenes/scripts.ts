@@ -196,23 +196,40 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
     ],
     loadComplete: function() {
       console.log("Context Menu");
-      ($("tr.jqgrow", this) as any).contextMenu("contextMenu", {
-        bindings: {
-          "cierre-definitivo": function(event) {
-            console.log("Cierre definitivo");
+      ($("tr.jqgrow.table-row-compra", this) as any).contextMenu(
+        "contextMenu",
+        {
+          bindings: {
+            "cierre-definitivo": function(event) {
+              console.log("Cierre definitivo");
+            },
+            "detalle-captacion": function(event) {
+              console.log("Detalle de captacion");
+            },
+            "cancela-notae": function(event) {
+              console.log("Cancela nota estructurada");
+            },
+            "reenvio-cierre": function(event) {
+              console.log("Reenvio de cierre");
+            }
           },
-          "detalle-captacion": function(event) {
-            console.log("Detalle de captacion");
+          onContexMenu: function(event, menu) {}
+        }
+      );
+      ($("tr.jqgrow.table-row-venta", this) as any).contextMenu(
+        "menu-alterno",
+        {
+          bindings: {
+            submenu1: function(event) {
+              console.log("SubMenu 1");
+            },
+            submenu2: function(event) {
+              console.log("SubMenu 2");
+            }
           },
-          "cancela-notae": function(event) {
-            console.log("Cancela nota estructurada");
-          },
-          "reenvio-cierre": function(event) {
-            console.log("Reenvio de cierre");
-          }
-        },
-        onContexMenu: function(event, menu) {}
-      });
+          onContexMenu: function(event, menu) {}
+        }
+      );
     },
     rowattr: function(item) {
       switch (item.operacion) {
