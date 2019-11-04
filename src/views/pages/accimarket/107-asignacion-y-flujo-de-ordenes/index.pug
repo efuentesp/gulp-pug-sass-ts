@@ -15,6 +15,7 @@ block content
                button#idhechos HECHOS
                button#idcancelarordenes ORDENES
                button#idmantenimiento MANTENIMIENTO
+               button#idcolumnas COLUMNAS
             
         .row
             +accordion("criterios_busqueda_asignacion")
@@ -35,9 +36,9 @@ block content
                                 })
                             .row#rowEmisora
                                 +field-plus-minus("usuario",
-                                    {
-                                        label: "Usuario",  
-                                    })
+                                {
+                                    label: "Usuario"
+                                })
                             .row
                                 .row#rowEstatus.h-40
                                     +field-checks("estatus",
@@ -155,6 +156,7 @@ block content
     include hechos
     include cancelarordenes
     include mantenimiento
+    include columnas
 
 block scripts
     script(src="/assets/scripts/accimarket/107-asignacion-y-flujo-de-ordenes/scripts.js")

@@ -3,6 +3,8 @@ let listaAsignacion_params: UrlParams = {};
 let listaFlujo_params: UrlParams = {};
 let listaHechos_params: UrlParams = {};
 let listaCancelarOrdenes_params: UrlParams = {};
+let source1_params: UrlParams = {};
+let destination1_params: UrlParams = {};
 
 fieldPlusMinus("emisora", {});
 fieldPlusMinus("contrato", {});
@@ -230,10 +232,15 @@ const llenaGridFlujoOrdenes = (flujos: any) => {
         datatype: "local",
         height: "auto",
         shrinkToFit: false,
-        sortname: "emisora",
+        sortname: "flujo",
         sortorder: "desc",
+        pager: "#pager_busquedaFlujo",
         rowNum: 10,
         rowList: [10, 20, 30],
+        viewrecords: true,
+        gridview: true,
+        autoencode: true,
+        caption: "",
 
         colNames: [
             "Emisora",
@@ -320,8 +327,8 @@ const llenaGridCancelarOrdenes = (cancelarordenes: any) => {
 
         colModel: [
             { name: "orden", width: 90 },
-            { name: "stsCancela", width: 250 },
-            { name: "contacto", width: 90 },
+            { name: "stsCancela", width: 220 },
+            { name: "contacto", width: 100 },
             { name: "promotor", width: 80 },
             { name: "tipo", width: 80 },
             { name: "emisora", width: 80 },
@@ -476,6 +483,19 @@ $("#idmantenimiento").click(() =>
 
     })
 );
+$("#idcolumnas").click(() =>
+    $("#columnas").dialog({
+        modal: true,
+        closeText: "",
+        show: true,
+        title: "Configuración de Columnas",
+        width: 600,
+        height: 500
+
+
+    })
+);
+
 
 
 
@@ -495,3 +515,19 @@ const cuentaRegresiva = (segundos: number) => {
 
 const segundos_actualizar = $("#segundos-actualizar").val();
 cuentaRegresiva(+segundos_actualizar);
+
+http_findAll("source1", source1_params, payload => {
+    llenaSource1("listado", payload);
+});
+
+http_findAll("destination1", destination1_params, payload => {
+    llenaDestination1("listado", payload);
+});
+
+const llenaSource1 = (id: string, source1: any) => {
+    fillSwapList(id, "source1", source1);
+};
+
+const llenaDestination1 = (id: string, destination1: any) => {
+    fillSwapList(id, "destination1", destination1);
+};
