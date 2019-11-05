@@ -324,11 +324,34 @@ const fieldPlusMinus = (id: string, params: any) => {
           }
         } else {
           if (text_to_add.length > 0) {
-            $(list).append(
-              "<li><a class='delete_item' href='javascript:void();'>" +
-                text_to_add +
-                "</a></li>"
-            );
+            console.log("Longitud: ---->", $(list + " li").length);
+            if ($(list + " li").length > 0) {
+              $.each($(list + " li a"), function() {
+                console.log("HAY VACIO EN: " + count);
+                if ($(list + " li:nth-child(" + count + ") a").text() === "") {
+                  $(list + " li:nth-child(" + count + ") a").append(
+                    text_to_add
+                  );
+                  $(idInput).val("");
+                  return false;
+                } else {
+                  $(list).append(
+                    "<li><a class='delete_item' href='javascript:void();'>" +
+                      text_to_add +
+                      "</a></li>"
+                  );
+                  return false;
+                }
+
+                count++;
+              });
+            } else {
+              $(list).append(
+                "<li><a class='delete_item' href='javascript:void();'>" +
+                  text_to_add +
+                  "</a></li>"
+              );
+            }
           }
         }
       }
@@ -1691,10 +1714,7 @@ const validateDateRage = (id: string) => {
 // TODO: No amarrar el clean a la clase .is-search-form ya que no siempre se usa.
 $("#btn_clean").click(() => {
   ($(".is-search-form") as any).parsley().reset();
-  $("li").remove();
-  $(".select2")
-    .val(null)
-    .trigger("change");
+  $("li a").text("");
 });
 
 const getCheckedCheckbox = (id: string) => {
