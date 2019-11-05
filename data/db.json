@@ -5784,61 +5784,101 @@
           "id": 0,
           "question": "2.1. Instrumentos de Deuda Gubernamental",
           "required": true,
-          "points": ["1", "2", "3"]
+          "points": [
+            "1",
+            "2",
+            "3"
+          ]
         },
         {
           "id": 1,
           "question": "2.2. Instrumentos de Deuda Corporativa",
           "required": true,
-          "points": ["1", "2", "3"]
+          "points": [
+            "1",
+            "2",
+            "3"
+          ]
         },
         {
           "id": 2,
           "question": "2.3. Sociedades de Inversión",
           "required": true,
-          "points": ["2", "4", "6"]
+          "points": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "id": 3,
           "question": "2.4. Valores Estructurados",
           "required": true,
-          "points": ["2", "4", "6"]
+          "points": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "id": 4,
           "question": "2.5. Certificados Bursátiles Fiduciarios (Cebures, Cedevis) y Fideicomisos Privados",
           "required": true,
-          "points": ["2", "4", "6"]
+          "points": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "id": 5,
           "question": "2.6. Títulos Opcionales (Warrants)",
           "required": true,
-          "points": ["2", "4", "6"]
+          "points": [
+            "2",
+            "4",
+            "6"
+          ]
         },
         {
           "id": 6,
           "question": "2.7. Acciones",
           "required": true,
-          "points": ["3", "6", "9"]
+          "points": [
+            "3",
+            "6",
+            "9"
+          ]
         },
         {
           "id": 7,
           "question": "2.8. Valores Extranjeros",
           "required": true,
-          "points": ["3", "6", "9"]
+          "points": [
+            "3",
+            "6",
+            "9"
+          ]
         },
         {
           "id": 8,
           "question": "2.9. Trackers TRACs o EFTs",
           "required": true,
-          "points": ["3", "6", "9"]
+          "points": [
+            "3",
+            "6",
+            "9"
+          ]
         },
         {
           "id": 9,
           "question": "2.10. Certificados de Capital de Desarrollo",
           "required": true,
-          "points": ["3", "6", "9"]
+          "points": [
+            "3",
+            "6",
+            "9"
+          ]
         }
       ],
       "answer": [
@@ -6270,48 +6310,139 @@
       "id": 4
     }
   ],
-  "source": [
+  "listaEmision": {
+    "arregloUno": [
+      {
+        "costo": 254.729,
+        "descrTipoPos": "Renta Fija",
+        "emis": "ALSEA",
+        "porcInver": 12.499999979453776,
+        "serie": "15",
+        "tipoPos": 1,
+        "valCierre": 2628219.98,
+        "cambio": 12
+      },
+      {
+        "costo": 7243.68,
+        "descrTipoPos": "Renta Variable",
+        "emis": "AAPL",
+        "porcInver": 9.99999998356302,
+        "serie": "*",
+        "tipoPos": 2,
+        "valCierre": 2628219.98,
+        "cambio": 12
+      },
+      {
+        "costo": 393.786,
+        "descrTipoPos": "Renta Variable",
+        "emis": "WALMEX",
+        "porcInver": 9.99999998356302,
+        "serie": "V",
+        "tipoPos": 2,
+        "valCierre": 2628219.98,
+        "cambio": 12
+      },
+      {
+        "descrTipoPos": "Total",
+        "inver": 109702562.05000001,
+        "rf": 21025759.87456,
+        "rv": 26282199.8432,
+        "tipoPos": null
+      }
+    ],
+    "arregloDos": [
+      {
+        "descrTipoPos": "Renta Fija",
+        "tipoPos": 1
+      },
+      {
+        "descrTipoPos": "Renta Variable",
+        "tipoPos": 2
+      }
+    ]
+  },
+  "asignacion": [
     {
-      "id": "1",
-      "value": "option_1_1",
-      "label": "Valor 1"
-    },
-    {
-      "id": "2",
-      "value": "option_1_2",
-      "label": "Valor 2"
-    },
-    {
-      "id": "3",
-      "value": "option_1_3",
-      "label": "Valor 3"
-    },
-    {
-      "id": "4",
-      "value": "option_1_4",
-      "label": "Valor 4"
-    },
-    {
-      "id": "7",
-      "value": "option_1_7",
-      "label": "Valor 7"
+      "columnaEstatus": "N/A",
+      "columnadeSeleccion": "N/A",
+      "oper": "1",
+      "contrato": "001",
+      "ordenada": "05",
+      "preciOrden": "1500",
+      "envio": "Terrestre",
+      "emisora": "23",
+      "ppp": "1500",
+      "%asig.": "100",
+      "cliente": "CEMEX",
+      "canc.": "Ninguna",
+      "%confirm.": "99",
+      "confirmada": "Si",
+      "porconfirmar": "No",
+      "stsImp.": "Ninguno",
+      "vigencia": "11/11/2019",
+      "tipo": "e",
+      "nombredeUsuario": "Jesus",
+      "extension": "3819",
+      "%VOcapt.": "89",
+      "asignada": "Si",
+      "precLim.": "Si",
+      "tipoMPL": "Ninguna",
+      "volBolsa": "98",
+      "%volBolsa": "88",
+      "volOculto": "92",
+      "justificacion": "Ninguna",
+      "medioInstr.": "Ninguno",
+      "servicioInversion": "95",
+      "titulosPreAsignados": "23",
+      "usuario": "Jesus",
+      "fecVenc": "11/11/2019",
+      "difPuja": "25",
+      "tipoMediodeLiq.": "Efectivo",
+      "mediodeLiq.": "Efectivo",
+      "pendiente": "Ninguna",
+      "digito": "95",
+      "precioOrden": "231",
+      "fecha": "11/11/2019",
+      "orden": "328",
+      "rompe": "28",
+      "tipoOrden": "Venta",
+      "perfildelclientealmomentodelaOperacion": "Si",
+      "perfildelproductoalmomentodelaOperacion": "49",
+      "medioCierre": "No",
+      "numerodeRed/Telefono": "5519847627",
+      "clasificacionETF": "Si"
     }
   ],
-  "destination": [
+  "flujo": [
     {
-      "id": "5",
-      "value": "option_1_5",
-      "label": "Valor 5"
-    },
+      "emisora": "23",
+      "mkt": "54",
+      "totaldeordenes": "35",
+      "precOrdenados": "24",
+      "precAsignado": "100",
+      "volOrdenado": "90",
+      "volPendiente": "80",
+      "volAsigando": "99"
+    }
+  ],
+  "hechos": [
     {
-      "id": "6",
-      "value": "option_1_6",
-      "label": "Valor 6"
-    },
+      "cantidad": "23",
+      "hora": "10:38 p.m",
+      "precios": "35"
+    }
+  ],
+  "cancelarordenes": [
     {
-      "id": "8",
-      "value": "option_1_8",
-      "label": "Valor 8"
+      "orden": "23",
+      "stsCancela": "ok",
+      "contacto": "Cemex",
+      "promotor": "Jesus",
+      "tipo": "VTA",
+      "emisora": "AMX",
+      "cantidad": "25",
+      "precio": "100",
+      "fechaCaptura": "29-10-2019"
     }
   ]
 }

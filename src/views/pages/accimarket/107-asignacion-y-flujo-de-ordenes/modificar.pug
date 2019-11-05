@@ -1,0 +1,100 @@
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/107-asignacion-y-flujo-de-ordenes/styles.css")
+
+    .ui-dialog.hidden(id="modificar")
+        .row.flex
+            .row.margin-100px-auto
+                .row
+            
+                        .form-group
+                            
+                            .row#grupo3
+                              
+                                +field-input("orden",
+                                    {
+                                        label: "Orden",
+                                        size: "9em",
+                                        disabled: true,
+                                        orientation:"horizontal"
+                                    }
+                                )
+                                +field-input("fecha",
+                                    {
+                                        label: "Fecha de Captura",
+                                        size: "9em",
+                                        disabled: true,
+                                        orientation:"horizontal"
+                                    }
+                                )
+                        .row.has_border
+                            .row#grupo4
+                                                                    
+                                +field-input("contrato",
+                                    {
+                                        label: "Contrato", 
+                                        size: "9em",
+                                        disabled: true,
+                                        orientation:"horizontal"                     
+                                    }
+                                )
+                                +field-input("promotor",
+                                    {
+                                        label: "Promotor", 
+                                        size: "9em",
+                                        disabled: true,
+                                        orientation:"horizontal"
+                                    }
+                                )
+                                +field-input("tipo",
+                                    {
+                                        label: "Tipo", 
+                                        size: "9em",
+                                        disabled: true,
+                                        orientation: "horizontal"
+                                    }
+                                )  
+                                +field-input("emisora",
+                                    {
+                                        label: "Emisora", 
+                                        size: "9em",
+                                        disabled: true,
+                                        orientation: "horizontal"   
+                                    }
+                                )
+                                +field-input("cantidad",
+                                    {
+                                        label: "Cantidad", 
+                                        size: "9em",
+                                        disabled: true,
+                                        orientation: "horizontal" 
+                                    }
+                                )
+                                +field-input("precio",
+                                    {
+                                        label: "Precio", 
+                                        size: "9em",
+                                        disabled: true,
+                                        orientation: "horizontal"
+                                    }
+                                )
+                                +field-input("estatus",
+                                    {
+                                        label: "Estatus", 
+                                        size: "9em",
+                                        disabled: true,
+                                        orientation: "horizontal"      
+                                    }
+                                )
+                                +field-input("asignada",
+                                    {
+                                        label: "Asignada", 
+                                        size: "9em",
+                                        disabled: true,   
+                                        orientation: "horizontal"
+                                    }
+                                )
+                        .row.flex
+                            +field-input("cantidad",{label: "Cantidad a Modificar", size: "16em"})
+                            .column.pt-4.flex.justify-center
+                                 +button-accept
+                                 +button-cancel

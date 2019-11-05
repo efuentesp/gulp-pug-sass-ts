@@ -1,0 +1,19 @@
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/107-asignacion-y-flujo-de-ordenes/styles.css")
+
+    .ui-dialog.hidden(id="mantenimiento")
+        .row
+          p Solicitud Pendiente de Autorización
+        .form-group.flex
+          .column
+            +field-plus-minus("usuario",
+              {
+                  label: "Usuario"      
+              })
+          .column                
+            +field-input("ultima",{label: "Ult. modificación"})
+            +field-input("maker",{label: "Maker", size: "15em"}) 
+            +field-input("checker",{label: "Checker", size: "15em"})                                                            
+        .row.pt-4.flex.justify-center
+          +button-accept
+          +button-cancel

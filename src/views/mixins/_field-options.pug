@@ -20,6 +20,7 @@ mixin field-options(id, parms, ...items)
                 id=item_id
                 value=item.key
                 required=parms.required
+                checked=item.checked
                 data-parsley-errors-container=_field_error_block_id
           )
           span.checkmark

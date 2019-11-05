@@ -4,14 +4,14 @@ mixin button-save(parms)
   - var _id = (parms.id ? parms.id : "btn_save")
 
   if _parms.size == "large"
-    button.button.big-button(id=_id title=tooltip disabled=_parms.disabled)
+    button.button.big-button(id=_id data-tooltip=_parms.tooltip disabled=_parms.disabled)
       img(src="../../assets/images/btn-enviar.png")
       span=_label
 
   if _parms.size == "medium"
-    button.button.medium-button(id=_id title=tooltip disabled=_parms.disabled)
+    button.button.medium-button(id=_id data-tooltip=_parms.tooltip disabled=_parms.disabled)
       img(src="../../assets/images/btn-enviar.png")
 
   if _parms.size == "small"
-    button.button.small-button(id=_id title=tooltip disabled=_parms.disabled)
+    button.button.small-button(id=_id data-tooltip=_parms.tooltip disabled=_parms.disabled)
       img(src="../../assets/images/btn-enviar.png")

@@ -90,6 +90,13 @@ $(document).tooltip({
   disabled: true
 });
 
+// Coloca el atributo "title" al botón para que aparezca el tooltip
+$(".button").each(function(i, obj) {
+  // const label = $(`#${obj.id} span`).html();
+  const label = $(`#${obj.id}`).attr("data-tooltip");
+  $(`#${obj.id}`).attr("title", label);
+});
+
 // Tabs
 $(".tab-group").tabs();
 
@@ -249,155 +256,105 @@ const http_findOne$ = rest_findOne$;
 const http_create = rest_create;
 // const http_create$ = rest_create$;
 
-const fieldSelectPlusMinus = (id: string, params: any) => {
-  const idBtnPlus = "#btn_plus_" + id;
-  const idBtnMinus = "#btn_minus_" + id;
-  const idInput = "#" + id;
-  const list = "ul#tag_list_" + id;
-  const node = "tag_list_" + id;
+const existText = (text_to_add: string, list: string) => {
+  let exist = false;
+  let count = 1;
 
-  $(idBtnPlus).click(() => {
-    const text_to_add = $(idInput + " option:selected").text() as string;
-    const value_to_add = $(idInput + " option:selected").val() as string;
-    var exist = 0;
-
-    if ($("li").length <= 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a id = " +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</option></a></li>"
-      );
-      exist = 1;
-    } else {
-      $(list + " li a").each(function(index) {
-        if ($(this).text() === text_to_add) {
-          exist = 1;
-          return false;
-        }
-      });
+  $.each($(list + " li a"), function() {
+    if (
+      $(list + " li:nth-child(" + count + ")").text() === text_to_add.trim()
+    ) {
+      exist = true;
+      return false;
     }
-
-    if (params.maxsize != null) {
-      if (
-        exist == 0 &&
-        text_to_add.length > 0 &&
-        $(list + " li").length < params.maxsize
-      ) {
-        $(list).append(
-          "<li><a class='delete_item' href='javascript:void();'>" +
-            text_to_add +
-            "</a></li>"
-        );
-      }
-    } else {
-      if (exist == 0 && text_to_add.length > 0) {
-        $(list).append(
-          "<li><a class='delete_item' href='javascript:void();'>" +
-            text_to_add +
-            "</a></li>"
-        );
-      }
-    }
-
-    $(idInput)
-      .val(null)
-      .trigger("change");
+    count++;
   });
-
-  $(idBtnMinus).click(() => {
-    var nodelist = document.getElementById(node);
-    $(list + " li a").each(function(index) {
-      if ($(this).attr("id") === $(idInput).val()) {
-        nodelist.childNodes[index].remove();
-        $(list + " li").length = $(list + " li").length - 1;
-      }
-    });
-
-    $(idInput)
-      .val(null)
-      .trigger("change");
-  });
-
-  $(list).delegate(".delete_item", "click", function() {
-    $(idInput)
-      .val(
-        $(this)
-          .parent()
-          .find(".delete_item")
-          .attr("id")
-      )
-      .trigger("change");
-  });
-
-  ($(idInput) as any).select2({
-    placeholder: "--Seleccione--",
-    minimumResultsForSearch: Infinity
-  });
+  return exist;
 };
 
+// Plus Minus
 const fieldPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
   const list = "ul#tag_list_" + id;
   const node = "tag_list_" + id;
+  let definedNodes = true;
+  const numNodes = 4;
+
+  if (params.nodes == undefined) {
+    definedNodes = true;
+  } else {
+    definedNodes = params.nodes;
+  }
+
+  if (definedNodes) {
+    for (let i = 0; i < numNodes; i++) {
+      $(list).append(
+        "<li><a class='delete_item' href='javascript:void();'></a></li>"
+      );
+    }
+  }
 
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput).val() as string;
-    var exist = 0;
+    let count = 1;
 
-    if ($("li").length <= 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</a></li>"
-      );
-      exist = 1;
-    } else {
-      $(list + " li a").each(function(index) {
-        if ($(this).text() === text_to_add) {
-          exist = 1;
-          return false;
+    if (!existText(text_to_add, list)) {
+      if ($(list + " li:nth-child(4) a").text() == "" && definedNodes) {
+        $.each($(list + " li a"), function() {
+          if ($(list + " li:nth-child(" + count + ") a").text() === "") {
+            $(list + " li:nth-child(" + count + ") a").append(text_to_add);
+            $(idInput).val("");
+            return false;
+          }
+          count++;
+        });
+      } else {
+        if (params.maxsize != null) {
+          if (
+            text_to_add.length > 0 &&
+            $(list + " li").length < params.maxsize
+          ) {
+            $(list).append(
+              "<li><a class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
+        } else {
+          if (text_to_add.length > 0) {
+            $(list).append(
+              "<li><a class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
         }
-      });
-    }
-
-    if (params.maxsize != null) {
-      if (
-        exist == 0 &&
-        text_to_add.length > 0 &&
-        $(list + " li").length < params.maxsize
-      ) {
-        $(list).append(
-          "<li><a class='delete_item' href='javascript:void();'>" +
-            text_to_add +
-            "</a></li>"
-        );
-      }
-    } else {
-      if (exist == 0 && text_to_add.length > 0) {
-        $(list).append(
-          "<li><a class='delete_item' href='javascript:void();'>" +
-            text_to_add +
-            "</a></li>"
-        );
       }
     }
-
     $(idInput).val("");
   });
 
   $(idBtnMinus).click(() => {
     var nodelist = document.getElementById(node);
     $(list + " li a").each(function(index) {
-      if ($(this).text() === $(idInput).val()) {
-        nodelist.childNodes[index].remove();
-        $(list + " li").length = $(list + " li").length - 1;
+      if ($(idInput).val() != "") {
+        if ($(this).text() === $(idInput).val()) {
+          if (!definedNodes) {
+            nodelist.childNodes[index].remove();
+            $(list + " li").length = $(list + " li").length - 1;
+          } else {
+            if ($(list + " li").length <= 4) {
+              $(this).text("");
+            } else {
+              nodelist.childNodes[index].remove();
+              $(list + " li").length = $(list + " li").length - 1;
+            }
+          }
+        }
       }
     });
-
     $(idInput).val("");
   });
 
@@ -412,50 +369,74 @@ const fieldPlusMinus = (id: string, params: any) => {
   });
 };
 
-// Autocomplete
-const fieldSelectPlusAutocomplete = (id: string, params: any) => {
+// Select Plus Minus
+const fieldSelectPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
   const list = "ul#tag_list_" + id;
   const node = "tag_list_" + id;
-  const restService = params.service;
-  const attrId = params.id;
-  const attrText = params.text;
+  let definedNodes = true;
+  const numNodes = 4;
+
+  if (params.nodes == undefined) {
+    definedNodes = true;
+  } else {
+    definedNodes = params.nodes;
+  }
+
+  if (definedNodes) {
+    for (let i = 0; i < numNodes; i++) {
+      $(list).append(
+        "<li><a class='delete_item' href='javascript:void();'></a></li>"
+      );
+    }
+  }
 
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput + " option:selected").text() as string;
     const value_to_add = $(idInput + " option:selected").val() as string;
-    var exist = 0;
+    let count = 1;
 
-    if ($("li").length <= 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a id = " +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</option></a></li>"
-      );
-      exist = 1;
-    } else {
-      $(list + " li a").each(function(index) {
-        if ($(this).text() === text_to_add) {
-          exist = 1;
-          return false;
+    if (!existText(text_to_add, list)) {
+      if ($(list + " li:nth-child(4) a").text() == "" && definedNodes) {
+        $.each($(list + " li a"), function() {
+          if ($(list + " li:nth-child(" + count + ") a").text() === "") {
+            $(list + " li:nth-child(" + count + ") a").attr("id", value_to_add);
+            $(list + " li:nth-child(" + count + ") a").append(text_to_add);
+
+            $(idInput).val("");
+            return false;
+          }
+          count++;
+        });
+      } else {
+        if (params.maxsize != null) {
+          if (
+            text_to_add.length > 0 &&
+            $(list + " li").length < params.maxsize
+          ) {
+            $(list).append(
+              "<li><a " +
+                value_to_add +
+                " class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
+        } else {
+          if (text_to_add.length > 0) {
+            $(list).append(
+              "<li><a id = " +
+                value_to_add +
+                " class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
         }
-      });
+      }
     }
-
-    if (exist == 0 && text_to_add.length > 0) {
-      $(list).append(
-        "<li><a id = " +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</option></a></li>"
-      );
-    }
-
     $(idInput)
       .val(null)
       .trigger("change");
@@ -465,7 +446,17 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     var nodelist = document.getElementById(node);
     $(list + " li a").each(function(index) {
       if ($(this).attr("id") === $(idInput).val()) {
-        nodelist.childNodes[index].remove();
+        if (!definedNodes) {
+          nodelist.childNodes[index].remove();
+          $(list + " li").length = $(list + " li").length - 1;
+        } else {
+          if ($(list + " li").length <= 4) {
+            $(this).text("");
+          } else {
+            nodelist.childNodes[index].remove();
+            $(list + " li").length = $(list + " li").length - 1;
+          }
+        }
       }
     });
 
@@ -486,34 +477,133 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   });
 
   ($(idInput) as any).select2({
-    ajax: {
-      url: `${REST_URL}/` + restService + ``,
-      dataType: "json",
-      type: "GET",
-      data: function(params) {
-        var query = {
-          q: params.term,
-          rows: 10
-        };
-        return query;
-      },
-      processResults: function(data) {
-        return {
-          results: $.map(data, function(item) {
-            return {
-              text: item[attrText],
-              id: item[attrId]
-            };
-          })
-        };
+    placeholder: "",
+    minimumResultsForSearch: Infinity
+  });
+};
+
+// Autocomplete Plus Minus
+const fieldSelectPlusAutocomplete = (id: string, params: any) => {
+  const idBtnPlus = "#btn_plus_" + id;
+  const idBtnMinus = "#btn_minus_" + id;
+  const idInput = "#" + id;
+  const list = "ul#tag_list_" + id;
+  const node = "tag_list_" + id;
+  const restService = params.service;
+  const attrId = params.id;
+  const attrText = params.text;
+  const payload = params.payload;
+  let definedNodes = true;
+  const numNodes = 4;
+
+  if (params.nodes == undefined) {
+    definedNodes = true;
+  } else {
+    definedNodes = params.nodes;
+  }
+
+  if (definedNodes) {
+    for (let i = 0; i < numNodes; i++) {
+      $(list).append(
+        "<li><a class='delete_item' href='javascript:void();'></a></li>"
+      );
+    }
+  }
+
+  $(idBtnPlus).click(() => {
+    const text_to_add = $(idInput + " option:selected").text() as string;
+    const value_to_add = $(idInput + " option:selected").val() as string;
+    let count = 1;
+
+    if (!existText(text_to_add, list)) {
+      if ($(list + " li:nth-child(4) a").text() == "" && definedNodes) {
+        $.each($(list + " li a"), function() {
+          if ($(list + " li:nth-child(" + count + ") a").text() === "") {
+            $(list + " li:nth-child(" + count + ") a").attr("id", value_to_add);
+            $(list + " li:nth-child(" + count + ") a").append(text_to_add);
+
+            $(idInput).val("");
+            return false;
+          }
+          count++;
+        });
+      } else {
+        if (params.maxsize != null) {
+          if (
+            text_to_add.length > 0 &&
+            $(list + " li").length < params.maxsize
+          ) {
+            $(list).append(
+              "<li><a " +
+                value_to_add +
+                " class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
+        } else {
+          if (text_to_add.length > 0) {
+            $(list).append(
+              "<li><a id = " +
+                value_to_add +
+                " class='delete_item' href='javascript:void();'>" +
+                text_to_add +
+                "</a></li>"
+            );
+          }
+        }
       }
-    },
-    placeholder: {
-      id: "0"
-      // text: "-- Seleccione --"
-    },
-    cache: "true"
-    // minimumInputLength: 3
+    }
+    $(idInput)
+      .val(null)
+      .trigger("change");
+  });
+
+  $(idBtnMinus).click(() => {
+    var nodelist = document.getElementById(node);
+    $(list + " li a").each(function(index) {
+      if ($(this).attr("id") === $(idInput).val()) {
+        if (!definedNodes) {
+          nodelist.childNodes[index].remove();
+          $(list + " li").length = $(list + " li").length - 1;
+        } else {
+          if ($(list + " li").length <= 4) {
+            $(this).text("");
+          } else {
+            nodelist.childNodes[index].remove();
+            $(list + " li").length = $(list + " li").length - 1;
+          }
+        }
+      }
+    });
+
+    $(idInput)
+      .val(null)
+      .trigger("change");
+  });
+
+  $(list).delegate(".delete_item", "click", function() {
+    $(idInput)
+      .val(
+        $(this)
+          .parent()
+          .find(".delete_item")
+          .attr("id")
+      )
+      .trigger("change");
+  });
+
+  var data = $.map(payload, function(item) {
+    return {
+      text: item[attrText],
+      id: item[attrId]
+    };
+  });
+
+  ($(idInput) as any).select2({
+    data: data,
+    placeholder: "",
+    minimumInputLength: 3
   });
 };
 
@@ -521,14 +611,34 @@ const getList = (id: string) => {
   var list: any = [];
 
   $("#tag_list_" + id + " li").each(function() {
-    list.push(
-      $(this)
-        .text()
-        .trim()
-    );
+    let value = $(this)
+      .text()
+      .trim();
+    if (value != "") {
+      list.push(value);
+    }
   });
 
   return list;
+};
+
+const getChecked = (id: string) => {
+  let selected = [];
+  const query_select = "#field_" + id + " input[type=checkbox]";
+
+  $(query_select).each(function() {
+    if ($(this).is(":checked")) {
+      selected.push($(this).attr("value"));
+    }
+  });
+
+  return selected;
+};
+
+const getOptionSelected = (id: string) => {
+  const query_select = "input[name='" + id + "']:checked";
+
+  return $(query_select).val();
 };
 
 interface stackChartParams {
@@ -555,6 +665,7 @@ interface stackChartHParams {
   dataSet: any[];
   width: string;
   height: string;
+  format: string;
 }
 
 interface barChartParams {
@@ -759,6 +870,7 @@ const stackChartHorizontal = (params: stackChartHParams) => {
     datasets: params.dataSet
   };
 
+  let format = params.format;
   var ctx: any = document.getElementById(params.id);
   var context = ctx.getContext("2d");
 
@@ -802,11 +914,19 @@ const stackChartHorizontal = (params: stackChartHParams) => {
               ctx.textBaseline = "middle";
               var padding = 20;
 
-              ctx.fillText(
-                dataset.data[index] + "%",
-                element._view.x - padding,
-                element._view.y
-              );
+              if (format == "%") {
+                ctx.fillText(
+                  formatNumber.new(dataset.data[index], "") + format,
+                  element._view.x - padding,
+                  element._view.y
+                );
+              } else {
+                ctx.fillText(
+                  format + formatNumber.new(dataset.data[index], ""),
+                  element._view.x - padding,
+                  element._view.y
+                );
+              }
             });
           });
         }
@@ -815,6 +935,34 @@ const stackChartHorizontal = (params: stackChartHParams) => {
     type: "horizontalBar",
     data: chartData,
     options: {
+      tooltips: {
+        callbacks: {
+          label: function(tooltipItem, data) {
+            let label = "";
+            if (format == "%") {
+              label =
+                data.datasets[tooltipItem.datasetIndex].label +
+                " " +
+                formatNumber.new(
+                  data.datasets[tooltipItem.datasetIndex].data[0],
+                  ""
+                ) +
+                format;
+            } else {
+              label =
+                data.datasets[tooltipItem.datasetIndex].label +
+                " " +
+                format +
+                formatNumber.new(
+                  data.datasets[tooltipItem.datasetIndex].data[0],
+                  ""
+                );
+            }
+
+            return label;
+          }
+        }
+      },
       legend: {
         display: true,
         position: "right"
@@ -832,7 +980,14 @@ const stackChartHorizontal = (params: stackChartHParams) => {
               display: true,
               stepSize: params.tickStepX,
               callback: function(value) {
-                return value + "%";
+                let label = "";
+                if (format == "%") {
+                  label = formatNumber.new(value, "") + format;
+                } else {
+                  label = format + formatNumber.new(value, "");
+                }
+
+                return label;
               }
             },
             gridLines: {
@@ -1488,12 +1643,18 @@ const pieChart = (params: pieChartParams) => {
     type: "pie",
     data: chartData,
     options: {
+      responsive: true,
       legend: {
-        display: true
+        display: true,
+        position: "bottom",
+        labels: {
+          padding: 50
+        }
       },
       title: {
         display: true,
-        text: params.titleX
+        text: params.titleX,
+        padding: 50
       }
     }
   });
@@ -2063,3 +2224,27 @@ $(".remove").click(function() {
 const clearList = () => {
   $(".droptrue > li, .dropfalse > li").removeClass("selected");
 };
+
+const formatNumber = {
+  separador: ",",
+  sepDecimal: ".",
+  formatear: function(num) {
+    num += "";
+    var splitStr = num.split(".");
+    var splitLeft = splitStr[0];
+    var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : "";
+    var regx = /(\d+)(\d{3})/;
+    while (regx.test(splitLeft)) {
+      splitLeft = splitLeft.replace(regx, "$1" + this.separador + "$2");
+    }
+    return this.simbol + splitLeft + splitRight;
+  },
+  new: function(num, simbol) {
+    this.simbol = simbol || "";
+    return this.formatear(num);
+  }
+};
+
+$(".currency").mask("###,###,##0", { reverse: true });
+$(".number").mask("###,###,##0.00", { reverse: true });
+$(".integer").mask("###,###,##0", { reverse: true });

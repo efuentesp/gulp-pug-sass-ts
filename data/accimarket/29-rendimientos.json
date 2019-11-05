@@ -1,0 +1,905 @@
+{
+  "listaMensuales": [
+    {
+      "periodo": "Sep-18",
+      "portafolio": "15.00",
+      "S01": "50.00",
+      "S02": "23.00",
+      "S03": "232.00",
+      "S04": "22.00",
+      "S05": "24.00",
+      "S06": "70.00",
+      "S07": "99.00",
+      "S08": "100.00",
+      "total": "0.4"
+    },
+    {
+      "periodo": "Oct-18",
+      "portafolio": "100.00",
+      "S01": "30.00",
+      "S02": "20.00",
+      "S03": "10.00",
+      "S04": "7.00",
+      "S05": "8.00",
+      "S06": "5.00",
+      "S07": "4.00",
+      "S08": "2.00",
+      "total": "0.7"
+    }
+  ],
+  "listatabla_fuente": [
+    {
+      "Fecha": "Oct-18",
+      "Pos RV": "0.00",
+      "Porc Pos RV": "0.00",
+      "Porc Pos RV Ayer": "0.00",
+      "Porc Pos RV2": "0.00",
+      "Pos RF": "0.00",
+      "Porc Pos RF": "0.00",
+      "Pos RF Ayer": "0.00",
+      "Porc Pos RF Ayer": "0.00",
+      "Pos RF2": "0.00",
+      "Porc RF2": "0.00",
+      "Efectivo": "0.00",
+      "Pos Total": "0.00",
+      "Pos Total Ayer": "0.00",
+      "Pos Total 2": "0.00",
+      "Flujo RV": "0.00",
+      "Flujo RF": "0.00",
+      "Flujo Efectivo": "0.00",
+      "Flujo Total": "0.00",
+      "Pos RVSIC": "0.00",
+      "Pos RVBV": "0.00",
+      "Pos RF Privados": "0.00",
+      "Pos RF Gubernamental": "0.00",
+      "Pos Cobertura Cambiaria": "0.00",
+      "Pos Notas Estructuradas": "0.00",
+      "Flujo RVSIC": "0.00",
+      "FRlujo RVBMV": "0.00",
+      "Flujo RF Privados": "0.00",
+      "Flujo RF Gubernamental": "0.00",
+      "Flujo Cobertura": "0.00",
+      "Flujo Notas Estructuradas": "0.00",
+      "total": "0.4"
+    }
+  ],
+  "listaMensualesTWP": [
+    {
+      "periodo": "Oct-18",
+      "Valor_Mercado": "0.00",
+      "Aportaciones": "0.00",
+      "Retiros": "0.00",
+      "Cambio_de_valores": "0.00",
+      "crecimiento_%_Portafolio Periodo": "0.00",
+      "total": "0.4"
+    }
+  ],
+  "listaAcumuladosTWP": [
+    {
+      "periodo": "Oct-18",
+      "Valor Mercado": "0.00",
+      "crecimiento_%_Portafolio Periodo": "0.00",
+      "total": "0.4"
+    }
+  ],
+  "listaAcumulados": [
+    {
+      "periodo": "Sep-18",
+      "portafolio": "0.00",
+      "S01": "0.00",
+      "S02": "0.00",
+      "S03": "0.00",
+      "S04": "0.00",
+      "S05": "0.00",
+      "S06": "0.00",
+      "S07": "0.00",
+      "S08": "0.00",
+      "total": "0.8"
+    },
+    {
+      "periodo": "Oct-18",
+      "portafolio": "0.00",
+      "S01": "0.00",
+      "S02": "0.00",
+      "S03": "0.00",
+      "S04": "0.00",
+      "S05": "0.00",
+      "S06": "0.00",
+      "S07": "0.00",
+      "S08": "0.00",
+      "total": "0.2"
+    }
+  ],
+  "contratos": [
+    {
+      "id": "C001",
+      "contrato": "CONTRATO01",
+      "libro": "LIBRO 01",
+      "cliente": "CLIENTE 01",
+      "digito": "DIGITO 01",
+      "tv": "TV 01",
+      "descr_tv": "DESC TV 01",
+      "emisora": "EMISORA 01",
+      "serie": "SERIE 01",
+      "cantidad": "CANTIDAD 01",
+      "precio": "PRECIO 01",
+      "valuacion": "VALORACION 01",
+      "promotor": "PROMOTOR 01",
+      "folio": "FOLIO 01",
+      "fecha": "30-08-2019",
+      "negocio": "CB",
+      "fechaFinal": "02-09-2019",
+      "dv": "5",
+      "estatus": "A",
+      "perfil": "PRESERVACIÓN(IR1)",
+      "perfil2": "ELEGIBLE",
+      "portafolio": "CLIENTES",
+      "portafolio_uuid": "TitCli Nom 12118 APPAT12118 APMAT12118",
+      "clabe": "2180650543547290",
+      "clabe2": "CITI PRIVATE BANK ",
+      "stipo_port": "POSICION CONTADO",
+      "saldo": "2000000",
+      "titular": {
+        "nombre": ""
+      },
+      "cotitulares": [
+        {
+          "persona_fisica": {
+            "nombre": ""
+          },
+          "clasificacion_contrato": {
+            "asesor_inversion": "",
+            "tipo_manifiesto": "",
+            "servicio_inversion": "ASESORÍA,GESTIÓN,COMERCIALIZACIÓN Y EJECUCIÓN",
+            "carta_ejecucion": "GRABACIÓN TELEFÓNICA",
+            "fecha_carta_ejecucion": "19/09/2014",
+            "carta_ejecucion_2": "CARTA ORIGINAL",
+            "fecha_carta_ejecucion_2": "04/05/2016",
+            "institucional_pract_vta": "INSTITUCIONAL PRACT. VTA.",
+            "justificacion_institucional_pract_vta": "ANEXO 1 BIS (INST PV)",
+            "fecha_institucional_pract_vta": "29/01/2015",
+            "sofisticado_nosofisticado": "SOFISTICADO",
+            "justificacion_sofisticado_nosofisticado": "CARTA DECLARACION SOFISTICADO",
+            "fecha_sofisticado_nosofisticado": "04/05/2016",
+            "elegible_noelegible": "NO ELEGIBLE",
+            "justificacion_elegible_noelegible": "NO APLICA",
+            "fecha_elegible_noelegible": "NO APLICA",
+            "calificado_nocalificado": "CALIFICADO",
+            "justificacion_calificado_nocalificado": "CARTA DE CALIFICADO",
+            "fecha_calificado_nocalificado": "04/05/2016",
+            "discrecional_nodiscrecional": "NO DISCRECIONAL",
+            "justificacion_discrecional_nodiscrecional": "NO APLICA",
+            "fecha_discrecional_nodiscrecional": "NO APLICA",
+            "anexo_descriptivo": "",
+            "limitantes_invertitr": [
+              {
+                "grupo_instrumentos": "Prueba GrupoInstru",
+                "tipo_valor": "Prueba Tipo Valor",
+                "emisoras": "Prueba Emisora",
+                "tipo_valor_emisora": "Prueba Tipo Valor Emisora"
+              },
+              {
+                "grupo_instrumentos": "Prueba GrupoInstru2",
+                "tipo_valor": "Prueba Tipo Valor2",
+                "emisoras": "Prueba Emisora2",
+                "tipo_valor_emisora": "Prueba Tipo Valor Emisora2"
+              },
+              {
+                "grupo_instrumentos": "Prueba GrupoInstru3",
+                "tipo_valor": "Prueba Tipo Valor3",
+                "emisoras": "Prueba Emisora3",
+                "tipo_valor_emisora": "Prueba Tipo Valor Emisora3"
+              }
+            ],
+            "relacion_emisor": [
+              {
+                "emisor": "[BEF] FRANCO BELGA (USD)",
+                "relacion": "Vicepresidente"
+              },
+              {
+                "emisor": "[DOP]REP. DOMINICANA PESO (USD)",
+                "relacion": "Presidente"
+              },
+              {
+                "emisor": "[BEF] FRANCO BELGA (USD)",
+                "relacion": "Presidente"
+              }
+            ]
+          },
+          "comisiones": [
+            {
+              "tipo": "Obligaciones",
+              "porcentaje": "0.250000"
+            },
+            {
+              "tipo": "Renta Variable",
+              "porcentaje": "0.062500"
+            }
+          ],
+          "documentacion": {
+            "contrato": [
+              {
+                "sts": "check green",
+                "documentacion": "MIFT",
+                "tipo": "MIFT",
+                "observaciones": ""
+              },
+              {
+                "sts": "check red",
+                "documentacion": "CONTRATO DE INTERMEDIACION",
+                "tipo": "SIN TIPO",
+                "observaciones": ""
+              },
+              {
+                "sts": "check red",
+                "documentacion": "ADDENDUM",
+                "tipo": "SIN TIPO",
+                "observaciones": ""
+              },
+              {
+                "sts": "check red",
+                "documentacion": "ANEXO W9",
+                "tipo": "ANEXO",
+                "observaciones": ""
+              },
+              {
+                "sts": "check red",
+                "documentacion": "ANEXO W8",
+                "tipo": "FECHAS DE FIRMA",
+                "observaciones": ""
+              }
+            ],
+            "cliente": [
+              {
+                "sts": "check green",
+                "documentacion": "CREDENCIAL DE ELECTOR",
+                "tipo": "IDENTIFICACION",
+                "observaciones": "2021/12/31"
+              },
+              {
+                "sts": "check green",
+                "documentacion": "INSCRIPCION EN EL R.F.C.",
+                "tipo": "COMPROBANTE DE DOMICILIO",
+                "observaciones": ""
+              },
+              {
+                "sts": "check green",
+                "documentacion": "REGISTRO FEDERAL DE CONTRIBUYENTES",
+                "tipo": "COMPROBANTE FISCAL",
+                "observaciones": ""
+              },
+              {
+                "sts": "check green",
+                "documentacion": "CREDENCIAL IFE",
+                "tipo": "COMPROBANTE DE NACIONALIDAD",
+                "observaciones": ""
+              },
+              {
+                "sts": "check green",
+                "documentacion": "COMPROBANTE CHEQUERA",
+                "tipo": "COMPROBANTE CHEQUERA BANAMEX",
+                "observaciones": "2014/01/13"
+              }
+            ]
+          },
+          "domicilio": [
+            {
+              "tipo_dom": "FISCAL",
+              "direccion": "AV DE LA CALLE NO. 12118 NumExter NumInterior",
+              "colonia": "COL COLONIA X",
+              "municipio_del": "CUAUHTEMOC",
+              "cp": "06700",
+              "ciudad": "CIUDAD DE MEXICO",
+              "estado": "Ciudad de México"
+            },
+            {
+              "tipo_dom": "CORRESPONDENCIA",
+              "direccion": "AV DE LA CALLE NO. 12118 NumExter NumInterior",
+              "colonia": "COL COLONIA X",
+              "municipio_del": "CUAUHTEMOC",
+              "cp": "06700",
+              "ciudad": "CIUDAD DE MEXICO",
+              "estado": "Ciudad de México"
+            }
+          ],
+          "firmas_autorizadas": [
+            {
+              "tipo": "SINTIPO",
+              "nombre": "LUIS",
+              "ap_paterno": "CASAS",
+              "ap_materno": "PEREZ",
+              "no_escri": "0",
+              "no_not": "",
+              "reg_pub_comer": "",
+              "obs_firma": ""
+            }
+          ],
+          "formatos_fiscales": [
+            {
+              "custodio": "Deutshe Bank AG, NY",
+              "w8_ben": "yellow check",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "JP Morgan",
+              "w8_ben": "yellow check",
+              "w8_imy": "CASAS",
+              "w9": "PEREZ",
+              "prueba2": "0",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "The Bank of New York",
+              "w8_ben": "yellow check",
+              "w8_imy": "CASAS",
+              "w9": "PEREZ",
+              "prueba2": "0",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "Clearstream Banking",
+              "w8_ben": "yellow check",
+              "w8_imy": "CASAS",
+              "w9": "PEREZ",
+              "prueba2": "0",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "Euroclear Bank",
+              "w8_ben": "yellow check",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "INDEVAL",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            },
+            {
+              "custodio": "Santander España",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            },
+            {
+              "custodio": "BBVA",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            },
+            {
+              "custodio": "PRUEBA",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            },
+            {
+              "custodio": "PRUEBA21",
+              "w8_ben": "yellow check",
+              "w8_imy": "CASAS",
+              "w9": "PEREZ",
+              "prueba2": "0",
+              "pruebajquery": "",
+              "fecha_formato": "31/Mar/2010",
+              "fecha_vencimiento": "31/Dec/2013"
+            },
+            {
+              "custodio": "PRUEBA JQUERY3",
+              "w8_ben": "",
+              "w8_imy": "",
+              "w9": "",
+              "prueba2": "",
+              "pruebajquery": "",
+              "fecha_formato": "",
+              "fecha_vencimiento": ""
+            }
+          ],
+          "medio_comunicacion": [
+            {
+              "tipo": "TELEFONO OFICINA",
+              "descripcion": "1226121181",
+              "observaciones": ""
+            }
+          ],
+          "medio_liquidacion": [
+            {
+              "sts": "1",
+              "titular_cuenta": "NomTitCta12118Fcta1",
+              "medio_liq": "Maestra",
+              "inst_financiera": "BANCO NACIONAL DE MEXICO, S.A.",
+              "no_cuenta": "71531",
+              "no_cliente_banco": "8491424",
+              "no_succ": "509",
+              "plaza": "0",
+              "fut_cta": "",
+              "fut_benef": ""
+            }
+          ],
+          "observaciones": {
+            "text_area_observaciones": "",
+            "fecha_apertura": "06/Nov/1984",
+            "monto_inicial": "0",
+            "sector": "PARTICULARES PERSONAS FISICAS",
+            "residencia": "MEXICO",
+            "envio_correspondencia": "No",
+            "tipo_cuenta": "INDIVIDUAL",
+            "manejo_cuenta": "NO DISCRECIONAL",
+            "custodia_admon": "Si",
+            "lim_max_operacion": "0",
+            "isr_mdo_din": "Si",
+            "fecha_ult_mov": "02/Mar/2017",
+            "porcentaje_acum_isr": "100.00",
+            "porcentaje_acum_ide": "100.00",
+            "imprime_estado_cuenta": "Si"
+          }
+        }
+      ],
+      "listaContado": [
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONDES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Fija"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONDES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Fija"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Fija"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        }
+      ],
+      "listaDifGtia": [],
+      "listaSpc": [],
+      "listaMensuales": [
+        {
+          "periodo": "Sep-18",
+          "portafolio": "15.00",
+          "S01": "50.00",
+          "S02": "23.00",
+          "S03": "232.00",
+          "S04": "22.00",
+          "S05": "24.00",
+          "S06": "70.00",
+          "S07": "99.00",
+          "S08": "100.00",
+          "total": "0.4"
+        },
+        {
+          "periodo": "Oct-18",
+          "portafolio": "100.00",
+          "S01": "30.00",
+          "S02": "20.00",
+          "S03": "10.00",
+          "S04": "7.00",
+          "S05": "8.00",
+          "S06": "5.00",
+          "S07": "4.00",
+          "S08": "2.00",
+          "total": "0.7"
+        }
+      ],
+      "listatabla_fuente": [
+        {
+          "Fecha": "Oct-18",
+          "Pos RV": "0.00",
+          "Porc Pos RV": "0.00",
+          "Porc Pos RV Ayer": "0.00",
+          "Porc Pos RV2": "0.00",
+          "Pos RF": "0.00",
+          "Porc Pos RF": "0.00",
+          "Pos RF Ayer": "0.00",
+          "Porc Pos RF Ayer": "0.00",
+          "Pos RF2": "0.00",
+          "Porc RF2": "0.00",
+          "Efectivo": "0.00",
+          "Pos Total": "0.00",
+          "Pos Total Ayer": "0.00",
+          "Pos Total 2": "0.00",
+          "Flujo RV": "0.00",
+          "Flujo RF": "0.00",
+          "Flujo Efectivo": "0.00",
+          "Flujo Total": "0.00",
+          "Pos RVSIC": "0.00",
+          "Pos RVBV": "0.00",
+          "Pos RF Privados": "0.00",
+          "Pos RF Gubernamental": "0.00",
+          "Pos Cobertura Cambiaria": "0.00",
+          "Pos Notas Estructuradas": "0.00",
+          "Flujo RVSIC": "0.00",
+          "FRlujo RVBMV": "0.00",
+          "Flujo RF Privados": "0.00",
+          "Flujo RF Gubernamental": "0.00",
+          "Flujo Cobertura": "0.00",
+          "Flujo Notas Estructuradas": "0.00",
+          "total": "0.4"
+        }
+      ],
+      "listaMensualesTWP": [
+        {
+          "periodo": "Oct-18",
+          "Valor_Mercado": "0.00",
+          "Aportaciones": "0.00",
+          "Retiros": "0.00",
+          "Cambio_de_valores": "0.00",
+          "crecimiento_%_Portafolio Periodo": "0.00",
+          "total": "0.4"
+        }
+      ],
+      "listaAcumuladosTWP": [
+        {
+          "periodo": "Oct-18",
+          "Valor Mercado": "0.00",
+          "crecimiento_%_Portafolio Periodo": "0.00",
+          "total": "0.4"
+        }
+      ],
+      "listaAcumulados": [
+        {
+          "periodo": "Sep-18",
+          "portafolio": "0.00",
+          "S01": "0.00",
+          "S02": "0.00",
+          "S03": "0.00",
+          "S04": "0.00",
+          "S05": "0.00",
+          "S06": "0.00",
+          "S07": "0.00",
+          "S08": "0.00",
+          "total": "0.8"
+        },
+        {
+          "periodo": "Oct-18",
+          "portafolio": "0.00",
+          "S01": "0.00",
+          "S02": "0.00",
+          "S03": "0.00",
+          "S04": "0.00",
+          "S05": "0.00",
+          "S06": "0.00",
+          "S07": "0.00",
+          "S08": "0.00",
+          "total": "0.2"
+        }
+      ]
+    },
+    {
+      "id": "C002",
+      "contrato": "CONTRATO02",
+      "libro": "LIBRO 02",
+      "cliente": "CLIENTE 02",
+      "digito": "DIGITO 02",
+      "tv": "TV 02",
+      "descr_tv": "DESC TV 02",
+      "emisora": "EMISORA 02",
+      "serie": "SERIE 02",
+      "cantidad": "CANTIDAD 02",
+      "precio": "PRECIO 02",
+      "valuacion": "VALORACION 02",
+      "promotor": "PROMOTOR 02",
+      "folio": "FOLIO 02",
+      "fecha": "31-08-2019",
+      "negocio": "B",
+      "fechaFinal": "02-09-2019"
+    },
+    {
+      "id": "C003",
+      "contrato": "CONTRATO03",
+      "libro": "LIBRO 03",
+      "cliente": "CLIENTE 03",
+      "digito": "DIGITO 03",
+      "tv": "TV 03",
+      "descr_tv": "DESC TV 03",
+      "emisora": "EMISORA 03",
+      "serie": "SERIE 03",
+      "cantidad": "CANTIDAD 03",
+      "precio": "PRECIO 03",
+      "valuacion": "VALORACION 03",
+      "promotor": "PROMOTOR 03",
+      "folio": "FOLIO 03",
+      "fecha": "30-08-2019",
+      "negocio": "CB",
+      "fechaFinal": "03-09-2019"
+    },
+    {
+      "id": "C004",
+      "contrato": "CONTRATO04",
+      "libro": "LIBRO 04",
+      "cliente": "CLIENTE 04",
+      "digito": "DIGITO 04",
+      "tv": "TV 04",
+      "descr_tv": "DESC TV 04",
+      "emisora": "EMISORA 04",
+      "serie": "SERIE 04",
+      "cantidad": "CANTIDAD 04",
+      "precio": "PRECIO 04",
+      "valuacion": "VALORACION 04",
+      "promotor": "PROMOTOR 04",
+      "folio": "FOLIO 04",
+      "fecha": "31-08-2019",
+      "negocio": "B",
+      "fechaFinal": "02-09-2019",
+      "listaContado": [],
+      "listaDifGtia": [],
+      "listaSpc": []
+    },
+    {
+      "contrato[]": ["CONTRATO01", "CONTRATO02"],
+      "id": "t-eLVZ4"
+    },
+    {
+      "contrato[]": "CONTRATO01",
+      "id": "BrADWlE"
+    },
+    {
+      "contrato[]": "CONTRATO01",
+      "id": "WDWvlMD"
+    },
+    {
+      "contrato[]": "CONTRATO01",
+      "id": "ySIsno_"
+    },
+    {
+      "contrato[]": "CONTRATO01",
+      "id": "9tCP1tB"
+    },
+    {
+      "contrato[]": "CONTRATO01",
+      "id": "bo2KBhm"
+    },
+    {
+      "12345": "",
+      "id": "enQenEl"
+    },
+    {
+      "CONTRATO01": "",
+      "id": "-779XwA"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "uDnn6U7"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "7i-gblD"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "DthSPCW"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "cS71juN"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "s1bO4H-"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "4a3ADCR"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "1M1oE-h"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "2v2j5Ju"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "a3bStT0"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "4hx4GMz"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "XissOxY"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "_pSkkD8"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "_1R4yIB"
+    },
+    {
+      "contrato": "CONTRATO01",
+      "id": "IZ-zXAS"
+    }
+  ]
+}

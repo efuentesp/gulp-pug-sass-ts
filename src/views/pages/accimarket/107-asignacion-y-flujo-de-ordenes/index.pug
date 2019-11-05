@@ -9,91 +9,160 @@ block styles
 block content
     .content
         .row
+           
+        button#idcancelar CANCELAR
+               button#idmodificar MODIFICAR
+               button#idhechos HECHOS
+               button#idcancelarordenes ORDENES
+               button#idmantenimiento MANTENIMIENTO
+            
+        .row
             +accordion("criterios_busqueda_asignacion")
                 +accordion-item("busqueda_item")
-                    form#criterios-listAsignacion(data-parsley-validate="")
-                        .form-group
-                            .row#rowFlex
-                                +field-plus-minus("emisora",
-                                    {
-                                        label: "Emisora"      
-                                    })
-                                +field-plus-minus("contrato",
-                                    {
-                                        label: "Contrato"
-                                    })
-                                +field-plus-minus("digito",
-                                    {
-                                        label: "Digito"
-                                    })
+                    form#criterios-listAsignacion
+                        .form-group.flex.justify-between
+                            +field-plus-minus("emisora",
+                                {
+                                    label: "Emisora"      
+                                })
+                            +field-plus-minus("contrato",
+                                {
+                                    label: "Contrato"
+                                })
+                            +field-plus-minus("digito",
+                                {
+                                    label: "Digito"
+                                })
+                            .row#rowEmisora
                                 +field-plus-minus("usuario",
                                     {
-                                        label: "Usuario",
-                                        
-                                    }
-                                    
-                                    )
-                                +field-checks("estatus",
+                                        label: "Usuario",  
+                                    })
+                            .row
+                                .row#rowEstatus.h-40
+                                    +field-checks("estatus",
+                                        {
+                                            label: "Estatus",
+                                            orientation: "horizontal"
+                                        },
+                                        {key: "S01", value:"Asignados", color:"green"},
+                                        {key: "S02", value:"Pendientes", color:"blue"},
+                                        {key: "S03", value:"Sin Asignar", color:"yellow"},
+                                        {key: "S04", value:"Canceladas", color:"red"},
+                                        {key: "S05", value:"Distribuidas", color:"teal"},
+                                        {key: "S06", value:"Bloqueadas", color:"black"}
+                                    )  
+                                .row.flex#rowOpciones
+                                    +field-options("",
+                                        {   
+                                            label: "Precio",
+                                            orientation: "vertical",     
+                                        },
+                                        {key: "SI", value:"Mayor ="},
+                                        {key: "SI", value:"Igual a"},
+                                        {key: "SI", value:"Menor ="} 
+                                        )
+                                    +field-input("mayor",
+                                        {
+                                            label: "",
+                                            size: "8em",
+                                            type: "currency",
+                                            max_length: "9"
+                                        })
+                                .row
+                                    .row.flex.items-center.justify-center
+                                        +field-input("segundos-actualizar",
+                                            {
+                                                label:"Actualizar cada",
+                                                size: "4em",
+                                                orientation: "horizontal",
+                                                width: "11em",
+                                                default_value: "60",
+                                                type: "integer",
+                                                max_length: "3"
+                                            }
+                                        )
+                                        p segundos
+                                    .row.flex.justify-center.text-blue-700
+                                        span#segundos-restantes.pr-3 x
+                                        p segundos restantes
+                            .row.flex#rowVolumen
+                                +field-options("",
                                     {
-                                        label: "Estatus",
-                                        orientation: "horizontal"
+                                        label: "Volumen",
+                                        orientacion: "vertical"
                                     },
-                                    {key: "S01", value:"Asignados", color:"green"},
-                                    {key: "S02", value:"Pendientes", color:"blue"},
-                                    {key: "S03", value:"Sin Asignar", color:"yellow"},
-                                    {key: "S04", value:"Canceladas", color:"red"},
-                                    {key: "S05", value:"Distribuidas", color:"blue"},
-                                    {key: "S06", value:"Bloqueadas", color:"gray"}
+                                    {key: "SI", value:"Mayor ="},
+                                    {key: "SI", value:"Menor"}
                                     )
+                                +field-input("id",
+                                    {
+                                        label: "",
+                                        size: "5em",
+                                        orientation: "horizontal",
+                                        type: "integer",
+                                        max_length: "6"
+                                    })
                             
+                            .row
                                 +field-options("operacion",
                                     {
                                         label: "Operacion",
-                                        
+                                    
                                     },
-                                    {key: "SI", value:"Todas", color:"gray"},
-                                    {key: "SI", value:"Compras", color:"gray"},
-                                    {key: "SI", value:"Ventas", color:"gray"} 
+                                    {key: "ALL", value:"Todas", color:"gray"},
+                                    {key: "C", value:"Compras", color:"gray"},
+                                    {key: "V", value:"Ventas", color:"gray"} 
                                     )
-                                
-                                +field-checks("id",
-                                    {
-                                        label: "",
-                                    },
-                                    {key: "SI", value:"Solo hoy"},
-                                    {key: "SI", value:"Conf/Ord"}
-                                    )
-
+                                .row#rowSolo
+                                    +field-checks("id",
+                                        {
+                                            label: "",
+                                        },
+                                        {key: "SI", value:"Solo hoy"},
+                                        {key: "SI", value:"Conf/Ord"}
+                                        )
+                            
+                            .row
                                 +field-options("vista",
                                     {
                                         label: "Vista",
-                                        
+                                        orientation: "horizontal"                                            
                                     },
-                                    {key: "SI", value:"Asignacion", color:"gray"},
-                                    {key: "SI", value:"Flujo", color:"gray"}
-                                    
-                                    )
+                                    {key: "SI", value:"Asignacion", checked: true},
+                                    {key: "NO", value:"Flujo"}
+                                )
                                 #search-actions-column
                                     +button-search({size: "large", disabled: false})
                                     +button-clean({size: "large", disabled: false})
                                     +button-pdf({size: "large", disabled: false})
-                                    +button-xls({size: "large", disabled: false})
+                                    +button-xls({size: "large", disabled: false})                                  
+    
+        .row.has_border#rowAsignacion
             .row.text-center.h-12.bg-orange-100
              p.font-bold.text-2xl.p-3 Asignación  
-    
+
             .row.w-full.overflow-auto
                 +grid("busquedaAsignacion")
-                +grid-records-count("asignacion")
+            +grid-records-count("asignacion") 
+    
+        .row.has_border#rowFlujo
+            .row.text-center.h-12.bg-orange-100
+             p.font-bold.text-2xl.p-3 Flujo de Órdenes
 
-            .row
-             +field-input("totalreg",
-                    {
-                        label: "Total de registros",
-                        orientation: "horizontal",
-                        size: "8em"
-                    })  
-               include flujo
+            .row.w-full.overflow-auto
+                +grid("busquedaFlujo")
+            +grid-records-count("flujo")
+
+    include _context_menus
+
+    include dialogo_pdf
+    include dialogo_xls
+    include cancelar
+    include modificar
+    include hechos
+    include cancelarordenes
+    include mantenimiento
 
 block scripts
     script(src="/assets/scripts/accimarket/107-asignacion-y-flujo-de-ordenes/scripts.js")
-    script(src="/assets/scripts/accimarket/107-asignacion-y-flujo-de-ordenes/scriptsflujo.js")
