@@ -587,28 +587,28 @@
       "listaMensuales": [
         {
           "periodo": "Sep-18",
-          "portafolio": "0.00",
-          "S01": "0.00",
-          "S02": "0.00",
-          "S03": "0.00",
-          "S04": "0.00",
-          "S05": "0.00",
-          "S06": "0.00",
-          "S07": "0.00",
-          "S08": "0.00",
+          "portafolio": "15.00",
+          "S01": "50.00",
+          "S02": "23.00",
+          "S03": "232.00",
+          "S04": "22.00",
+          "S05": "24.00",
+          "S06": "70.00",
+          "S07": "99.00",
+          "S08": "100.00",
           "total": "0.4"
         },
         {
           "periodo": "Oct-18",
-          "portafolio": "0.00",
-          "S01": "0.00",
-          "S02": "0.00",
-          "S03": "0.00",
-          "S04": "0.00",
-          "S05": "0.00",
-          "S06": "0.00",
-          "S07": "0.00",
-          "S08": "0.00",
+          "portafolio": "100.00",
+          "S01": "30.00",
+          "S02": "20.00",
+          "S03": "10.00",
+          "S04": "7.00",
+          "S05": "8.00",
+          "S06": "5.00",
+          "S07": "4.00",
+          "S08": "2.00",
           "total": "0.7"
         }
       ],
@@ -644,7 +644,8 @@
           "Flujo RF Privados": "0.00",
           "Flujo RF Gubernamental": "0.00",
           "Flujo Cobertura": "0.00",
-          "Flujo Notas Estructuradas": "0.00"
+          "Flujo Notas Estructuradas": "0.00",
+          "total": "0.4"
         }
       ],
       "listaMensualesTWP": [
@@ -654,14 +655,16 @@
           "Aportaciones": "0.00",
           "Retiros": "0.00",
           "Cambio_de_valores": "0.00",
-          "crecimiento_%_Portafolio Periodo": "0.00"
+          "crecimiento_%_Portafolio Periodo": "0.00",
+          "total": "0.4"
         }
       ],
       "listaAcumuladosTWP": [
         {
-          "periodo": "0.00",
+          "periodo": "Oct-18",
           "Valor Mercado": "0.00",
-          "crecimiento_%_Portafolio Periodo": "0.00"
+          "crecimiento_%_Portafolio Periodo": "0.00",
+          "total": "0.4"
         }
       ],
       "listaAcumulados": [
@@ -6267,7 +6270,6 @@
       "id": 4
     }
   ],
-<<<<<<< HEAD
   "source": [
     {
       "id": "1",
@@ -6313,57 +6315,3 @@
     }
   ]
 }
-=======
-  "listaEmision": {
-    "arregloUno": [
-      {
-        "costo": 254.729,
-        "descrTipoPos": "Renta Fija",
-        "emis": "ALSEA",
-        "porcInver": 12.499999979453776,
-        "serie": "15",
-        "tipoPos": 1,
-        "valCierre": 2628219.98,
-        "cambio": 12
-      },
-      {
-        "costo": 7243.68,
-        "descrTipoPos": "Renta Variable",
-        "emis": "AAPL",
-        "porcInver": 9.99999998356302,
-        "serie": "*",
-        "tipoPos": 2,
-        "valCierre": 2628219.98,
-        "cambio": 12
-      },
-      {
-        "costo": 393.786,
-        "descrTipoPos": "Renta Variable",
-        "emis": "WALMEX",
-        "porcInver": 9.99999998356302,
-        "serie": "V",
-        "tipoPos": 2,
-        "valCierre": 2628219.98,
-        "cambio": 12
-      },
-      {
-        "descrTipoPos": "Total",
-        "inver": 109702562.05000001,
-        "rf": 21025759.87456,
-        "rv": 26282199.8432,
-        "tipoPos": null
-      }
-    ],
-    "arregloDos": [
-      {
-        "descrTipoPos": "Renta Fija",
-        "tipoPos": 1
-      },
-      {
-        "descrTipoPos": "Renta Variable",
-        "tipoPos": 2
-      }
-    ]
-  }
-}
->>>>>>> 5d8098ab89e92afa5be90ab6463dfd4beb789b08

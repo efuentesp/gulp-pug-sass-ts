@@ -1,13 +1,17 @@
 include /mixins/mixins
 
 +splitter("simple")
+    .pane 
+        p Resultados Mensuales
+        #resultadosMensuales
+            +grid("resultadosMensuales")
+            +canvas("graficaMensual", {width:'600px', height:'600px'})
+        #resultadosMensualesTWP
+            +grid("resultadosMensualesTWP")
+            +canvas("graficaMensualTWP", {width:'600px', height:'600px'})
     .pane
-        +grid("resultadosMensuales")
-        +canvas("graficaMensual", {width:'600px', height:'400px'})
-        +grid("resultadosMensualesTWP")
-        +canvas("graficaMensualTWP", {width:'600px', height:'400px'})
-    .pane
+        p Resultados Acumulados
         +grid("resultadosAcumulados")
-        +canvas("graficaAcumulados", {width:'600px', height:'400px'})
+        +canvas("graficaAcumulados", {width:'600px', height:'600px'})
         +grid("resultadosAcumuladosTWP")
-        +canvas("graficaAcumuladosTWP", {width:'600px', height:'400px'})
+        +canvas("graficaAcumuladosTWP", {width:'600px', height:'600px'})  

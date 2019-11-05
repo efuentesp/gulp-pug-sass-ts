@@ -2,55 +2,110 @@
 
 console.log("Rendimientos");
 
-    $("#modelosCalculoCombo").change(function(){
-    var valor= $("#modelosCalculoCombo").val();
+($("#cmbRenta") as any).select2({
+    placeholder: "",
+    minimumResultsForSearch: Infinity
+  });
+  ($("#cmbModelosCalculoCombo") as any).select2({
+    placeholder: "",
+    minimumResultsForSearch: Infinity
+  });
+
+
+/*  
+$("#cmbModelosCalculoCombo").change(function(){
+    var valor= $("#cmbModelosCalculoCombo").val();
     if (valor=="T"){
         $("#cmbRenta").prop("disabled", true);
     }else{  
         $("#cmbRenta").prop("disabled", false);
     }
-    });
-    
-    $("#btn_edit").click(() =>
-    $("#dialogo_xls").dialog({
-    modal: true,
-    closeText: "",
-    show: true,
-    title: "Generar XLS"
-    })
-    );
+    }); 
+*/
+    /*$( "#btn_edit" ).click(function() {
 
-    $(document).ready(function(){
+            //const txtContrato: string = String($("#txtContrato").val());
 
-        var fecha = new Date();
-        var  dia = fecha.getDate()-1;
-        var mes = fecha.getMonth()+1;
-        var anio = fecha.getFullYear()-1;
-           
-            var fechafi = new Date();
-            var  diafi = fechafi.getDate()-1;
-            var mesfi = fechafi.getMonth()+1;
-            var aniofi = fechafi.getFullYear();
+           // http_findOne("contratos", txtContrato, payload => {
+                infoContratoRendimiento(payload);
 
-            $("#dtFechaFinal").datepicker("option", "maxDate", "fechafi");
+            
+                fillJqGrid("#table_resultadosfuente", payload.listatabla_fuente);
+            
+        });
+        
+        $("#dialogo_xls").dialog({
+            modal: true,
+            closeText: "",
+            show: true,
+            width: 650,
+            height: 650,
+            title: "Table Fuente"
+            })
+      });
+*/
+
+            var test=true;
+            var fecha = new Date();
+            var  dia = fecha.getDate()-1;
+            var mes = fecha.getMonth()+1;
+            var anio = fecha.getFullYear()-1;
+               
+                var fechafi = new Date();
+                var  diafi = fechafi.getDate()-1;
+                var mesfi = fechafi.getMonth()+1;
+                var aniofi = fechafi.getFullYear();
+                //alert(fechafi.toString('dd/mm/yyyy'));
+                //var fec=fechafi.toString('dd/mm/yyyy');  
+            $("#dtFecha").val(dia+"-"+mes+"-"+anio);
+            $("#dtFechaFinal").val(diafi+"-"+mesfi+"-"+aniofi);
+            
+            $("#dtFecha").on("change", function (event) {
+                validaFechaInicial();
+            });
+            
+            $("#dtFechaFinal").on("change", function (event) {
+                validaFechaInicial();
+            });
+            
+            $("#dtFecha").datepicker("option", "minDate", "fechafi-3y");
             $("#dtFecha").datepicker("option", "maxDate", "fechafi");
             $("#dtFechaFinal").datepicker("option", "minDate", "fechafi-3y");
-            $("#dtFecha").datepicker("option", "minDate", "fechafi-3y");
-            var totfinal;
-            var totini;           
-            $( "#dtFechaFinal" ).val(+diafi+"-"+mesfi+"-"+aniofi).on("change",function(){
-               totfinal=$('#dtFechaFinal').val();
-               $('#totfinal').val($(this).val());
-               alert(totfinal);
-            });
-                $( "#dtFecha" ).val(+dia+"-"+mes+"-"+anio).on("change",function(){
-                    totini=$('#dtFecha').val();
-                    $('#totini').val($(this).val());
-                    alert(totini);
-                });
+            $("#dtFechaFinal").datepicker("option", "maxDate", "fechafi");
+            $("#dtFecha").val(dia+"-"+mes+"-"+anio);
+            $("#dtFechaFinal").val(diafi+"-"+mesfi+"-"+aniofi);
+
+            var validaFechaInicial = function () {
+                var dtFecha = $("#dtFecha").val().toString();
+                var dtFechaFinal = $("#dtFechaFinal").val().toString();
+            
+                if (dtFecha != "" && dtFechaFinal != "") {
+                    var fechaSplit = [];
+                    var fechaSplitD = [];
+                    fechaSplit = dtFecha.split("-");
+                    fechaSplitD = dtFechaFinal.split("-");
+                    var fechaI = new Date(fechaSplit[2], fechaSplit[1], fechaSplit[0]);
+                    var fechaF = new Date(fechaSplitD[2], fechaSplitD[1], fechaSplitD[0]);
+                    if (fechaI.getTime() > fechaF.getTime()) {
+                        alert("La fecha Inicial es MAYOR");
+                        test=false;
+                    } else {
+                        var rangoAnio = Number(fechaSplitD[2] - fechaSplit[2]);
+                        if (rangoAnio == 0 || rangoAnio == 1) {
+                            test=true;
+                        }else{
+                            alert("selecciona rango menor a un año");
+                            test=false;
+                        }
+                    }
+                } else {
+                    alert("Falta una fecha por elegir");
+                    test=false;
+                }
+            };
+            
         
-        });
-$('input[name="chk_opcionesRendi"]').change(function () {
+$('input[name="chk_cmbOpcionesRendi"]').change(function () {
     console.log("Checkbox ejemplo " + $(this).is(':checked') + " " + $(this).val());
     if ($(this).is(':checked')) {
         $("#table_resultadosMensuales").jqGrid('showCol', $(this).val());
@@ -65,8 +120,8 @@ $('input[name="chk_opcionesRendi"]').change(function () {
     }
 });
     $('#btn_search').click(function() {
-
-    if ($('#modelosCalculoCombo').val() == 'T') {
+        if(test==true){
+    if ($('#cmbModelosCalculoCombo').val() == 'T') {
         const formListOrdenes = ($("#criterios-busqueda-rendimientos") as any)
         .parsley()
         .on("field:validated", () => {
@@ -75,10 +130,12 @@ $('input[name="chk_opcionesRendi"]').change(function () {
         .on("form:submit", () => {
             console.log("form:submit");
 
-            const contrato: string = String($("#contrato").val());
+            const txtContrato: string = String($("#txtContrato").val());
 
-            http_findOne("contratos", contrato, payload => {
+            http_findOne("contratos", txtContrato, payload => {
                 infoContratoRendimiento(payload);
+            
+            
 
                 $('#gbox_table_resultadosMensuales').hide(); 
                 $('#graficaMensual').hide(); 
@@ -89,8 +146,8 @@ $('input[name="chk_opcionesRendi"]').change(function () {
                 $('#gbox_table_resultadosAcumuladosTWP').show(); 
                 $('#graficaAcumuladosTWP').show();
 
-                $("#gbox_table_resultadosMensualesTWP").css({top: 1, left: 1, position:'absolute'});
-                $("#gbox_table_resultadosAcumuladosTWP").css({top: 1, left: 1, position:'absolute'});
+                $("#gbox_table_resultadosMensualesTWP").css({top: 10, left: 10, position:'absolute'});
+                $("#gbox_table_resultadosAcumuladosTWP").css({top: 10, left: 10, position:'absolute'});
                 $("#graficaMensualTWP").parent().css({position: 'relative'});
                 $("#graficaAcumuladosTWP").parent().css({position: 'relative'});
 
@@ -112,9 +169,9 @@ $('input[name="chk_opcionesRendi"]').change(function () {
         .on("form:submit", () => {
             console.log("form:submit");
 
-            const contrato: string = String($("#contrato").val());
+            const txtContrato: string = String($("#txtContrato").val());
 
-            http_findOne("contratos", contrato, payload => {
+            http_findOne("contratos", txtContrato, payload => {
                 infoContratoRendimiento(payload);
 
                 $('#gbox_table_resultadosMensualesTWP').hide(); 
@@ -125,7 +182,6 @@ $('input[name="chk_opcionesRendi"]').change(function () {
                 $('#graficaMensual').show(); 
                 $('#gbox_table_resultadosAcumulados').show(); 
                 $('#graficaAcumulados').show();
-
                 
 
                 fillJqGrid("#table_resultadosMensuales", payload.listaMensuales);
@@ -137,30 +193,23 @@ $('input[name="chk_opcionesRendi"]').change(function () {
             });
             return false;
         });
+    }}else
+    {
+        alert("ingresa fecha valida");
+        return false;
     }
 });
 
 $(document).ready(function(){
-    $('#cmbRenta> option[value="RT"]').attr('selected', 'selected');
+   $('#cmbRenta> option[value="3"]').attr('selected', 'selected');
 });
 $(document).ready(function(){
-    $('#modelosCalculoCombo> option[value="TI"]').attr('selected', 'selected');
+    $('#cmbModelosCalculoCombo> option[value="TI"]').attr('selected', 'selected');
 });
-/*
-($("#renta") as any).select2({
-    placeholder: "--Seleccione--",
-    minimumResultsForSearch: Infinity
-});
-*/
-/*
-($("#moduloCalculo") as any).select2({
-    placeholder: "--Seleccione--",
-    minimumResultsForSearch: Infinity
-});
-*/
+
 $("#table_resultadosMensuales").jqGrid({
     datatype: "local",
-    height: '150',
+    height: '70',
     sortable : true,
     colNames: [
         "Periodo",
@@ -175,7 +224,7 @@ $("#table_resultadosMensuales").jqGrid({
         "INMEX %"
     ],
     colModel: [
-        { name: "periodo", width: 300, align: "center", frozen: true },
+        { name: "periodo", width: 300, align: "center", frozen: true, },
         { name: "portafolio", width: 300, align: "center", frozen: true },
         { name: "S01", width: 300, hidden: true, align: "center" },
         { name: "S02", width: 300, hidden: true, align: "center" },
@@ -197,7 +246,7 @@ $("#table_resultadosMensuales").jqGrid({
 
 $("#table_resultadosfuente").jqGrid({
     datatype: "local",
-    height: '150',
+    height: '70',
     sortable : true,
     colNames: [
         "Fecha",
@@ -276,7 +325,7 @@ $("#table_resultadosfuente").jqGrid({
 
 $("#table_resultadosAcumulados").jqGrid({
     datatype: "local",
-    height: '150',
+    height: '70',
     sortable : true,
     colNames: [
         "Periodo",
@@ -312,7 +361,7 @@ $("#table_resultadosAcumulados").jqGrid({
 });
 $("#table_resultadosMensualesTWP").jqGrid({
     datatype: "local",
-    height: '150',
+    height: '70',
     sortable : true,
     colNames: [
         "periodo",
@@ -358,7 +407,7 @@ $("#table_resultadosMensualesTWP").jqGrid({
 
 $("#table_resultadosAcumuladosTWP").jqGrid({
     datatype: "local",
-    height: '150',
+    height: '70',
     sortable : true,
     colNames: [
         "periodo",
@@ -396,15 +445,14 @@ $("#table_resultadosAcumuladosTWP").jqGrid({
     caption: ""
 });
 const infoContratoRendimiento = (payload: any) => {
-    $("#iddigito").val(payload.digito);
-    $("#idDigitoVerificador").val(payload.dv);
-    $("#idEstatus").val(payload.estatus);
-    $("#idperfilContrato").val(payload.perfil);
+    $("#txtDigito").val(payload.digito);
+    $("#txtDigitoVerificador").val(payload.dv);
+    $("#txtEstatus").val(payload.estatus);
+    $("#txtPerfilContrato").val(payload.perfil);
     $("#libro").val(payload.libro);
-    $("#idnombreContrato").val(payload.portafolio_uuid);
-    $("#idclabe").val(payload.clabe);
+    $("#txtNombreContrato").val(payload.portafolio_uuid);
+    $("#txtClabe").val(payload.clabe);
 };
-
 const graficaMensuales = (tipoGrafica: string, lista: any) => {
     var dataSetY = [];
     var dataSetX = [];
@@ -431,8 +479,8 @@ const graficaMensuales = (tipoGrafica: string, lista: any) => {
                 data: dataSetY
             }
         ],
-        width: "10em",
-        height: "20em"
+        width: "400px",
+        height: "200px"
     });
     
 };

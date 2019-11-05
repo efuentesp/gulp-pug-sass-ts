@@ -2,42 +2,42 @@ include /mixins/mixins
 
 .row
     +field-group("groupRendimiento")
-        +field-input("contrato",
+        +field-input("txtContrato",
             {
                 label: "Contrato",
                 orientation: "horizontal",
                 size: "10em",
-                max_length: "20"
+                max_length: "10"
             })
-        +field-input("iddigito",
+        +field-input("txtDigito",
             {
                 label: "Digito",
                 orientation: "horizontal",
                 disabled: true,
                 size: "4em"
             })
-        +field-input("idDigitoVerificador",
+        +field-input("txtDigitoVerificador",
             {
                 label: "DV",
                 orientation: "horizontal",
                 disabled: true,
                 size: "4em"
             })
-        +field-input("idEstatus",
+        +field-input("txtEstatus",
             {
                 label: "Estatus",
                 orientation: "horizontal",
                 disabled: true,
                 size: "4em"
             })
-        +field-input("idperfilContrato",
+        +field-input("txtPerfilContrato",
             {
                 label: "Perfil",
                 orientation: "horizontal",
                 disabled: true,
                 size: "13em"
             })
-        +field-input("idnombreContrato",
+        +field-input("txtNombreContrato",
             {
                 label: "",
                 orientation: "horizontal",
@@ -45,7 +45,7 @@ include /mixins/mixins
                 size: "40em",
                 max_length: "50"
             })
-        +field-input("idclabe",
+        +field-input("txtClabe",
             {
                 label: "CLABE",
                 orientation: "horizontal",
@@ -66,24 +66,25 @@ include /mixins/mixins
             })
         +field-select("cmbRenta",
             {
-                label: "Renta",
-                orientation: "horizontal",
-                size: "12.5em"
+            label: "Renta",
+            orientation: "horizontal",
+            size: "12.5em"
             },
-            {key: "RV", value:"Renta Variable"},
-            {key:"RF", value:"Renta Fija"},
-            {key: "RT", value:"Renta_Total"},
-            {key:"P", value:"Privados"},
-            {key: "G", value:"Gubernamentales"},
-            {key:"S", value:"SIC"},
-            {key: "B", value:"BMV"},
-            {key: "C", value:"Cob Cambiaria"},
-            {key:"N", value:"Notas Estructuradas"}
+            {key: "1", value:"Renta Variable"},
+            {key:"2", value:"Renta Fija"},
+            {key: "3", value:"Renta_Total"},
+            {key:"4", value:"Privados"},
+            {key: "5", value:"Gubernamentales"},
+            {key:"6", value:"SIC"},
+            {key: "7", value:"BMV"},
+            {key: "8", value:"Cob Cambiaria"},
+            {key:"9", value:"Notas Estructuradas"}
             )
 .row
-    +field-checks("opcionesRendi",
+    +field-checks("cmbOpcionesRendi",
         {
-            label: ""
+            label: "",
+                position:"fixed"
         },
         {key: "S01", value:"Inflacion", color:"green"},
         {key: "S02", value:"IPC", color:"gray"},
@@ -100,8 +101,7 @@ include /mixins/mixins
         +button-clean({size: "large", disabled: false})
         +button-pdf({size: "large", disabled: false})
         +button-xls({size: "large", disabled: false})
-        +button-edit({size: "large", disabled: false})
-        +field-select("modelosCalculoCombo",
+        +field-select("cmbModelosCalculoCombo",
             {
                 label: "Modulo de Calculo",
                 orientation: "horizontal",

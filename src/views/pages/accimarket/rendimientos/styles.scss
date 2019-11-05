@@ -1,6 +1,5 @@
 .content {
   .row {
-    display: flex;
     flex-wrap: wrap;
   }
 
@@ -9,7 +8,6 @@
   }
 
   #groupRendimiento {
-    display: flex;
     flex-wrap: wrap;
     width: 60em;
 
@@ -25,19 +23,19 @@
     }
   }
 
-  #field_fechaInicial {
+  #field_FechaInicial {
     label {
       width: 7em;
     }
   }
 
-  #field_fechaFinal {
+  #field_FechaFinal {
     label {
       width: 6.5em;
     }
   }
 
-  #field_opcionesRendi {
+  #field_cmbOpcionesRendi {
     width: 20em;
 
     .field-control {
@@ -53,7 +51,7 @@
     }
   }
 
-  #field_moduloCalculo {
+  #field_cmbModuloCalculo {
     justify-content: flex-end;
   }
 }
