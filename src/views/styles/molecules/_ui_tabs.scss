@@ -24,12 +24,20 @@
       padding: 0;
       white-space: nowrap;
 
+      a {
+        color: $font_color;
+      }
+
       &.ui-tabs-active {
         margin-bottom: -1px;
         // padding-bottom: 1px;
         border-bottom: 1px solid $color-white;
         font-weight: bold;
         background: $color-white;
+
+        a {
+          color: darkblue;
+        }
       }
 
       &.ui-tabs-active .ui-tabs-anchor,
@@ -117,6 +125,10 @@
         border: 1px solid $color-sky-dark;
         // border-radius: 6px;
         // font-weight: 500;
+
+        a {
+          color: darkblue;
+        }
       }
 
       // &.ui-state-hover {
