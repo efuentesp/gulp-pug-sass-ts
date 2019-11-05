@@ -4,7 +4,7 @@ console.log("01-caucion-bursatil");
 
 // const rest_url = `${REST_URL}/fideicomiso`;
 
-fieldPlusMinus("contrato", { nodes: false });
+fieldPlusMinus("contrato", {});
 fieldPlusMinus("digito", { maxsize: 5 }); // Max number of elements
 fieldSelectPlusMinus("contrato1", {});
 
