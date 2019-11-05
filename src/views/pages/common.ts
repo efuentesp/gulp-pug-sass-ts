@@ -272,8 +272,53 @@ const existText = (text_to_add: string, list: string) => {
   return exist;
 };
 
+const addedText = (text_to_add: string, value_to_add: string, list: string) => {
+  let added = false;
+  let count = 1;
+
+  $.each($(list + " li a"), function() {
+    if ($(list + " li:nth-child(" + count + ") a").text() === "") {
+      $(list + " li:nth-child(" + count + ") a").attr("id", value_to_add);
+      $(list + " li:nth-child(" + count + ") a").append(text_to_add);
+      added = true;
+      return false;
+    }
+    count++;
+  });
+
+  return added;
+};
+
+const addNode = (
+  text_to_add: string,
+  value_to_add: string,
+  list: string,
+  maxsize: number
+) => {
+  if (maxsize != null) {
+    if ($(list + " li").length < maxsize) {
+      $(list).append(
+        "<li><a " +
+          value_to_add +
+          " class='delete_item' href='javascript:void();'>" +
+          text_to_add +
+          "</a></li>"
+      );
+    }
+  } else {
+    $(list).append(
+      "<li><a " +
+        value_to_add +
+        " class='delete_item' href='javascript:void();'>" +
+        text_to_add +
+        "</a></li>"
+    );
+  }
+};
+
 // Plus Minus
 const fieldPlusMinus = (id: string, params: any) => {
+  console.log("Field Plus Minus");
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
@@ -298,62 +343,11 @@ const fieldPlusMinus = (id: string, params: any) => {
 
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput).val() as string;
-    let count = 1;
+    const value_to_add = $(idInput).val() as string;
 
     if (!existText(text_to_add, list)) {
-      if ($(list + " li:nth-child(4) a").text() == "" && definedNodes) {
-        $.each($(list + " li a"), function() {
-          if ($(list + " li:nth-child(" + count + ") a").text() === "") {
-            $(list + " li:nth-child(" + count + ") a").append(text_to_add);
-            $(idInput).val("");
-            return false;
-          }
-          count++;
-        });
-      } else {
-        if (params.maxsize != null) {
-          if (
-            text_to_add.length > 0 &&
-            $(list + " li").length < params.maxsize
-          ) {
-            $(list).append(
-              "<li><a class='delete_item' href='javascript:void();'>" +
-                text_to_add +
-                "</a></li>"
-            );
-          }
-        } else {
-          if (text_to_add.length > 0) {
-            console.log("Longitud: ---->", $(list + " li").length);
-            if ($(list + " li").length > 0) {
-              $.each($(list + " li a"), function() {
-                console.log("HAY VACIO EN: " + count);
-                if ($(list + " li:nth-child(" + count + ") a").text() === "") {
-                  $(list + " li:nth-child(" + count + ") a").append(
-                    text_to_add
-                  );
-                  $(idInput).val("");
-                  return false;
-                } else {
-                  $(list).append(
-                    "<li><a class='delete_item' href='javascript:void();'>" +
-                      text_to_add +
-                      "</a></li>"
-                  );
-                  return false;
-                }
-
-                count++;
-              });
-            } else {
-              $(list).append(
-                "<li><a class='delete_item' href='javascript:void();'>" +
-                  text_to_add +
-                  "</a></li>"
-              );
-            }
-          }
-        }
+      if (!addedText(text_to_add, value_to_add, list)) {
+        addNode(text_to_add, value_to_add, list, params.maxsize);
       }
     }
     $(idInput).val("");
@@ -419,45 +413,10 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput + " option:selected").text() as string;
     const value_to_add = $(idInput + " option:selected").val() as string;
-    let count = 1;
 
     if (!existText(text_to_add, list)) {
-      if ($(list + " li:nth-child(4) a").text() == "" && definedNodes) {
-        $.each($(list + " li a"), function() {
-          if ($(list + " li:nth-child(" + count + ") a").text() === "") {
-            $(list + " li:nth-child(" + count + ") a").attr("id", value_to_add);
-            $(list + " li:nth-child(" + count + ") a").append(text_to_add);
-
-            $(idInput).val("");
-            return false;
-          }
-          count++;
-        });
-      } else {
-        if (params.maxsize != null) {
-          if (
-            text_to_add.length > 0 &&
-            $(list + " li").length < params.maxsize
-          ) {
-            $(list).append(
-              "<li><a " +
-                value_to_add +
-                " class='delete_item' href='javascript:void();'>" +
-                text_to_add +
-                "</a></li>"
-            );
-          }
-        } else {
-          if (text_to_add.length > 0) {
-            $(list).append(
-              "<li><a id = " +
-                value_to_add +
-                " class='delete_item' href='javascript:void();'>" +
-                text_to_add +
-                "</a></li>"
-            );
-          }
-        }
+      if (!addedText(text_to_add, value_to_add, list)) {
+        addNode(text_to_add, value_to_add, list, params.maxsize);
       }
     }
     $(idInput)
@@ -536,47 +495,13 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput + " option:selected").text() as string;
     const value_to_add = $(idInput + " option:selected").val() as string;
-    let count = 1;
 
     if (!existText(text_to_add, list)) {
-      if ($(list + " li:nth-child(4) a").text() == "" && definedNodes) {
-        $.each($(list + " li a"), function() {
-          if ($(list + " li:nth-child(" + count + ") a").text() === "") {
-            $(list + " li:nth-child(" + count + ") a").attr("id", value_to_add);
-            $(list + " li:nth-child(" + count + ") a").append(text_to_add);
-
-            $(idInput).val("");
-            return false;
-          }
-          count++;
-        });
-      } else {
-        if (params.maxsize != null) {
-          if (
-            text_to_add.length > 0 &&
-            $(list + " li").length < params.maxsize
-          ) {
-            $(list).append(
-              "<li><a " +
-                value_to_add +
-                " class='delete_item' href='javascript:void();'>" +
-                text_to_add +
-                "</a></li>"
-            );
-          }
-        } else {
-          if (text_to_add.length > 0) {
-            $(list).append(
-              "<li><a id = " +
-                value_to_add +
-                " class='delete_item' href='javascript:void();'>" +
-                text_to_add +
-                "</a></li>"
-            );
-          }
-        }
+      if (!addedText(text_to_add, value_to_add, list)) {
+        addNode(text_to_add, value_to_add, list, params.maxsize);
       }
     }
+
     $(idInput)
       .val(null)
       .trigger("change");
