@@ -2195,3 +2195,4 @@ const formatNumber = {
 $(".currency").mask("###,###,##0", { reverse: true });
 $(".number").mask("###,###,##0.00", { reverse: true });
 $(".integer").mask("###,###,##0", { reverse: true });
+$(".datepicker").mask("99-99-9999");
