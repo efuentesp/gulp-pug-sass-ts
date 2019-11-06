@@ -7,8 +7,9 @@ mixin button-add(parms)
       span Agregar
 
   if _parms.size == "medium"
-    button.button.medium-button(id="btn_add" data-tooltip=_parms.tooltip disabled=_parms.disabled)
+    button.button.medium-button.flex.items-center(id="btn_add" data-tooltip=_parms.tooltip disabled=_parms.disabled)
       img(src="../../assets/images/btn-agregar.png")
+      span Agregar
 
   if _parms.size == "small"
     button.button.small-button(id="btn_add" data-tooltip=_parms.tooltip disabled=_parms.disabled)
