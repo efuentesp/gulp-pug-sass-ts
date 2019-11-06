@@ -3,6 +3,7 @@ mixin field-email(id, parms)
   - var input_id = "input_" + id
   - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
   - var size_class = "is-" + (parms.size ? parms.size : "vertical")
+  - var _class = (_class == "is_horizontal" ? _class + " items-center" : _class)
   .field(id=_field_id class=_class)
     .field-label.flex
       label= parms.label
