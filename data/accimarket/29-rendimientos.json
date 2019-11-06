@@ -1,113 +1,56 @@
 {
-  "listaMensuales": [
+  "contratoP": [
     {
-      "periodo": "Sep-18",
-      "portafolio": "15.00",
-      "S01": "50.00",
-      "S02": "23.00",
-      "S03": "232.00",
-      "S04": "22.00",
-      "S05": "24.00",
-      "S06": "70.00",
-      "S07": "99.00",
-      "S08": "100.00",
-      "total": "0.4"
+      "id": "C001",
+      "contrato": "CONTRATO01",
+      "digito": "01",
+      "cliente": "CLIENTE 01",
+      "perfilC": "P 01",
+      "elegibilidad": "E 01"
     },
     {
-      "periodo": "Oct-18",
-      "portafolio": "100.00",
-      "S01": "30.00",
-      "S02": "20.00",
-      "S03": "10.00",
-      "S04": "7.00",
-      "S05": "8.00",
-      "S06": "5.00",
-      "S07": "4.00",
-      "S08": "2.00",
-      "total": "0.7"
-    }
-  ],
-  "listatabla_fuente": [
-    {
-      "Fecha": "Oct-18",
-      "Pos RV": "0.00",
-      "Porc Pos RV": "0.00",
-      "Porc Pos RV Ayer": "0.00",
-      "Porc Pos RV2": "0.00",
-      "Pos RF": "0.00",
-      "Porc Pos RF": "0.00",
-      "Pos RF Ayer": "0.00",
-      "Porc Pos RF Ayer": "0.00",
-      "Pos RF2": "0.00",
-      "Porc RF2": "0.00",
-      "Efectivo": "0.00",
-      "Pos Total": "0.00",
-      "Pos Total Ayer": "0.00",
-      "Pos Total 2": "0.00",
-      "Flujo RV": "0.00",
-      "Flujo RF": "0.00",
-      "Flujo Efectivo": "0.00",
-      "Flujo Total": "0.00",
-      "Pos RVSIC": "0.00",
-      "Pos RVBV": "0.00",
-      "Pos RF Privados": "0.00",
-      "Pos RF Gubernamental": "0.00",
-      "Pos Cobertura Cambiaria": "0.00",
-      "Pos Notas Estructuradas": "0.00",
-      "Flujo RVSIC": "0.00",
-      "FRlujo RVBMV": "0.00",
-      "Flujo RF Privados": "0.00",
-      "Flujo RF Gubernamental": "0.00",
-      "Flujo Cobertura": "0.00",
-      "Flujo Notas Estructuradas": "0.00",
-      "total": "0.4"
-    }
-  ],
-  "listaMensualesTWP": [
-    {
-      "periodo": "Oct-18",
-      "Valor_Mercado": "0.00",
-      "Aportaciones": "0.00",
-      "Retiros": "0.00",
-      "Cambio_de_valores": "0.00",
-      "crecimiento_%_Portafolio Periodo": "0.00",
-      "total": "0.4"
-    }
-  ],
-  "listaAcumuladosTWP": [
-    {
-      "periodo": "Oct-18",
-      "Valor Mercado": "0.00",
-      "crecimiento_%_Portafolio Periodo": "0.00",
-      "total": "0.4"
-    }
-  ],
-  "listaAcumulados": [
-    {
-      "periodo": "Sep-18",
-      "portafolio": "0.00",
-      "S01": "0.00",
-      "S02": "0.00",
-      "S03": "0.00",
-      "S04": "0.00",
-      "S05": "0.00",
-      "S06": "0.00",
-      "S07": "0.00",
-      "S08": "0.00",
-      "total": "0.8"
+      "id": "E001",
+      "contrato": "El contrato no existe. Consulte a contratos.",
+      "digito": "",
+      "cliente": "",
+      "perfilC": "",
+      "elegibilidad": "E 01"
     },
     {
-      "periodo": "Oct-18",
-      "portafolio": "0.00",
-      "S01": "0.00",
-      "S02": "0.00",
-      "S03": "0.00",
-      "S04": "0.00",
-      "S05": "0.00",
-      "S06": "0.00",
-      "S07": "0.00",
-      "S08": "0.00",
-      "total": "0.2"
+      "id": "E002",
+      "contrato": "El contrato está dado de baja. Consulte a contratos.",
+      "digito": "",
+      "cliente": "",
+      "perfilC": "",
+      "elegibilidad": "E 01"
+    },
+    {
+      "id": "E003",
+      "contrato": "El usuario no tiene autoridad para realizar esta operación",
+      "digito": "",
+      "cliente": "",
+      "perfilC": "",
+      "elegibilidad": "E 01"
+    }
+  ],
+  "emisoras": [
+    {
+      "nombre": "emisora 1"
+    },
+    {
+      "nombre": "emisora 2"
+    },
+    {
+      "nombre": "emisora 3"
+    },
+    {
+      "nombre": "emisora 4"
+    },
+    {
+      "nombre": "emisora 5"
+    },
+    {
+      "nombre": "emisora 6"
     }
   ],
   "contratos": [
@@ -900,6 +843,5557 @@
     {
       "contrato": "CONTRATO01",
       "id": "IZ-zXAS"
+    }
+  ],
+  "busquedaContrato": [
+    {
+      "id": 1,
+      "contrato": 12345,
+      "nombre": "LAD",
+      "idPerfilActual": "IR4",
+      "perfilActual": "ARRIESGADO (IR4)",
+      "personasPerfilar": [
+        {
+          "id": 1,
+          "text": "LADP",
+          "fechaNacimiento": "15-Marzo-2005"
+        },
+        {
+          "id": 2,
+          "text": "PDAL",
+          "fechaNacimiento": "28-Mayo-1978"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "contrato": 67890,
+      "nombre": "DAL",
+      "perfilActual": "DBA",
+      "personasPerfilar": [
+        {
+          "id": 1,
+          "text": "Daniel",
+          "fechaNacimiento": "27-Junio-1946"
+        },
+        {
+          "id": 2,
+          "text": "Pablo",
+          "fechaNacimiento": "26-Julio-1967"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "contrato": 67890,
+      "nombre": "DAL",
+      "perfilActual": "DBA",
+      "personasPerfilar": [
+        {
+          "id": 1,
+          "text": "Daniel",
+          "fechaNacimiento": "27-Junio-1946"
+        },
+        {
+          "id": 2,
+          "text": "Pablo",
+          "fechaNacimiento": "26-Julio-1967"
+        }
+      ],
+      "noPermiso": true
+    }
+  ],
+  "edadesService": [
+    {
+      "id": 25,
+      "text": "De 18 a 35 años"
+    },
+    {
+      "id": 20,
+      "text": "De 36 a 45 años"
+    },
+    {
+      "id": 15,
+      "text": "De 46 a 55 años"
+    },
+    {
+      "id": 10,
+      "text": "De 56 a 65 años"
+    },
+    {
+      "id": 5,
+      "text": "66 añosen adelante"
+    }
+  ],
+  "estudiosService": [
+    {
+      "id": 5,
+      "text": "Maestria/Doctorado"
+    },
+    {
+      "id": 4,
+      "text": "Licenciatura"
+    },
+    {
+      "id": 3,
+      "text": "Tecnica/Comercial"
+    },
+    {
+      "id": 3,
+      "text": "Preparatoria"
+    },
+    {
+      "id": 2,
+      "text": "Secundaria"
+    },
+    {
+      "id": 1,
+      "text": "Primaria"
+    },
+    {
+      "id": 1,
+      "text": "Sin escolaridad"
+    }
+  ],
+  "ocupacionService": [
+    {
+      "id": 5,
+      "text": "Estudiante"
+    },
+    {
+      "id": 4,
+      "text": "Empresario"
+    },
+    {
+      "id": 3,
+      "text": "Director"
+    },
+    {
+      "id": 2,
+      "text": "Empleado"
+    },
+    {
+      "id": 1,
+      "text": "Jubilado"
+    },
+    {
+      "id": 1,
+      "text": "Ama de Casa"
+    },
+    {
+      "id": 1,
+      "text": "Otro"
+    }
+  ],
+  "estrategiaService": [
+    {
+      "id": 2,
+      "text": "Especulativa"
+    },
+    {
+      "id": 1,
+      "text": "Patrimonial"
+    }
+  ],
+  "asesoriaService": [
+    {
+      "id": 3,
+      "text": "No asesorado (Ejecucion)"
+    },
+    {
+      "id": 2,
+      "text": "Ocasionalmente No asesorado"
+    },
+    {
+      "id": 1,
+      "text": "Siempre asesorado"
+    }
+  ],
+  "propositoService": [
+    {
+      "id": 5,
+      "text": "Estrategia A (Liquidez)"
+    },
+    {
+      "id": 10,
+      "text": "Estrategia B (Conservacion)"
+    },
+    {
+      "id": 15,
+      "text": "Estrategia C (Equilibrio)"
+    },
+    {
+      "id": 20,
+      "text": "Estrategia D (Incremento)"
+    },
+    {
+      "id": 25,
+      "text": "Estrategia E (Maximizacion)"
+    }
+  ],
+  "toleranciaService": [
+    {
+      "id": 4,
+      "text": "No acostumbra invertir en instrumentos con volatilidad (minima*)"
+    },
+    {
+      "id": 8,
+      "text": "Venderia todo en prevision de perdidas adicionales (baja*)"
+    },
+    {
+      "id": 12,
+      "text": "Venderia solo una parte (media*)"
+    },
+    {
+      "id": 16,
+      "text": "Mantendria la inversion (alta*)"
+    },
+    {
+      "id": 20,
+      "text": "Compraria mas (agresiva*)"
+    }
+  ],
+  "horizonteInversion": [
+    {
+      "id": 4,
+      "text": "Portafolio 1 (Corto Plazo)"
+    },
+    {
+      "id": 8,
+      "text": "Portafolio 2 (Corto/Mediano Plazo)"
+    },
+    {
+      "id": 12,
+      "text": "Portafolio 3 (Mediano Plazo)"
+    },
+    {
+      "id": 16,
+      "text": "Portafolio 4 (Mediano/Largo Plazo)"
+    },
+    {
+      "id": 20,
+      "text": "Portafolio 5 (Largo Plazo)"
+    }
+  ],
+  "detallePortaFolio": [
+    {
+      "id": 4,
+      "menorDeUn": "100",
+      "deUnoaTres": "0",
+      "mayorDeTres": "0"
+    },
+    {
+      "id": 8,
+      "menorDeUn": "70",
+      "deUnoaTres": "30",
+      "mayorDeTres": "0"
+    },
+    {
+      "id": 12,
+      "menorDeUn": "30",
+      "deUnoaTres": "50",
+      "mayorDeTres": "20"
+    },
+    {
+      "id": 16,
+      "menorDeUn": "10",
+      "deUnoaTres": "50",
+      "mayorDeTres": "20"
+    },
+    {
+      "id": 20,
+      "menorDeUn": "5",
+      "deUnoaTres": "25",
+      "mayorDeTres": "70"
+    }
+  ],
+  "servicioLuisP": [
+    {
+      "fechaO": "02-09-2019",
+      "fechaL": "07-09-2019",
+      "operacion": "CLIENTE 01",
+      "emisora": "DIGITO 01",
+      "perfilProd": "PERFIL 01",
+      "tv": "TV 01",
+      "cantidad": "DESC TV 01",
+      "precio": "EMISORA 01",
+      "impBruto": "SERIE 01",
+      "comision": "CANTIDAD 01",
+      "iva": "PRECIO 01",
+      "impuesto": "VALORACION 01",
+      "impNeto": "PROMOTOR 01",
+      "tasa": "FOLIO 01",
+      "plazo": "30-08-2019",
+      "tipoPort": "CB",
+      "rompe": "ROMPE 01",
+      "servInv": "VALORACION 01",
+      "perfilCli": "PROMOTOR 01",
+      "medio": "FOLIO 01",
+      "numRed": "30082019",
+      "clasificacion": "CB",
+      "oper": "020019"
+    }
+  ],
+  "perfilamiento_personas_fisicas": [
+    {
+      "contrato": "1",
+      "nombre": "LAD",
+      "perfil": "Desarrollador",
+      "personaPerfilar": "1",
+      "liquidezPor": "0",
+      "liquidezMonto": "10",
+      "cortoPlazoPor": "0",
+      "cortoPlazoMonto": "20",
+      "medianoPlazoPor": "0",
+      "medianoPlazoMonto": "30",
+      "largoPlazoPor": "0",
+      "largoPlazoMonto": "40",
+      "patrimonioPor": "0",
+      "patrimonioMonto": "100",
+      "edad": "25",
+      "estudios": "4",
+      "ocupacion": "4",
+      "inversiones": "SI",
+      "estrategia": "2",
+      "asesoria": "3",
+      "encuestaLst": [
+        {
+          "idEncuesta": 0,
+          "noConoceNiHaInvertido": false,
+          "punto": "1"
+        },
+        {
+          "idEncuesta": 1,
+          "soloConoce": false,
+          "punto": "2"
+        },
+        {
+          "idEncuesta": 2,
+          "conoceHaInvertido": true,
+          "punto": "6",
+          "frecuencia": "M",
+          "plazo": "C",
+          "volumen": "M"
+        },
+        {
+          "idEncuesta": 3,
+          "conoceHaInvertido": true,
+          "punto": "6",
+          "frecuencia": "S",
+          "plazo": "M",
+          "volumen": "B"
+        },
+        {
+          "idEncuesta": 4,
+          "soloConoce": false,
+          "punto": "4"
+        },
+        {
+          "idEncuesta": 5,
+          "noConoceNiHaInvertido": false,
+          "punto": "2"
+        },
+        {
+          "idEncuesta": 6,
+          "soloConoce": false,
+          "punto": "6"
+        },
+        {
+          "idEncuesta": 7,
+          "conoceHaInvertido": true,
+          "punto": "9",
+          "frecuencia": "A",
+          "plazo": "L",
+          "volumen": "A"
+        },
+        {
+          "idEncuesta": 8,
+          "conoceHaInvertido": true,
+          "punto": "9",
+          "frecuencia": "S",
+          "plazo": "M",
+          "volumen": "B"
+        },
+        {
+          "idEncuesta": 9,
+          "soloConoce": false,
+          "punto": "6"
+        }
+      ],
+      "proposito": "5",
+      "tolerancia": "8",
+      "limitantes": "false",
+      "horizonteInversion": "8",
+      "encuestaLstD": [
+        {
+          "idEncuesta": 0,
+          "valor": "2"
+        },
+        {
+          "idEncuesta": 1,
+          "valor": "2"
+        },
+        {
+          "idEncuesta": 2,
+          "valor": "3"
+        }
+      ],
+      "origenUno": ["3", "3", "1", "1", "1"],
+      "id": 1
+    }
+  ],
+  "movPorContratos": {
+    "consmov": {
+      "mensaje": null,
+      "reporteAGBC": "1",
+      "titpant": "index.movcontrato",
+      "moduloMovCto": "1"
+    },
+    "fecServicio": {
+      "fechaInicial": "01-09-2019",
+      "fechaFinal": "30-09-2019",
+      "fec24Hrs": "2019/09/09",
+      "fec48Hrs": "2019/09/10",
+      "fec72Hr": "2019/09/11",
+      "fecAyer": "2019/09/05",
+      "fecHoy": "2019/09/06"
+    },
+    "dateServInverAopSession": {
+      "session": "1558501200000"
+    },
+    "catParametro": {
+      "id": 18,
+      "descr": "Activa o deshabilita la opción de generar Cartas de Confirmación en la pantalla de Movimientos por Contrato antes de PV",
+      "valor": "0",
+      "servicio": "AS400.dbo.AM_spr_CatParametro",
+      "idRFC": null,
+      "valorParamUsr": null
+    }
+  },
+  "consultaCon": {
+    "id": 1,
+    "contrato": 12345,
+    "digito": "RZ",
+    "idCliente": 12118,
+    "idRoleCliente": 1,
+    "nomCliente": "TitCli Nom12118 APPAT12118 APMAT12118",
+    "rfcCliente": "AAAN731027118",
+    "idClasifContrato": 0,
+    "descrClasifContrato": "Tradicional",
+    "idTipoPersona": 1,
+    "descrTipoPersona": "PERSONA FISICA NACIONAL",
+    "nomPromotor": "NomEmp",
+    "tipoPortf": 1,
+    "stipoPortf": 22,
+    "descrTipoPortf": "Clientes",
+    "descrSTipoPortf": "POSICION CONTADO",
+    "stsContrato": "A",
+    "idTipoContrato": 1,
+    "descrIdTipoContrato": "Cliente",
+    "tercero": 1,
+    "propio": 0,
+    "stsIng": "A",
+    "stsEgreso": "A",
+    "nacionalidad": "MEXICANA",
+    "stipoPortfDefault": null,
+    "stipoPortfContado": null,
+    "especial": 1,
+    "descrCorta": "CONTADO",
+    "idEspecContrato": "2",
+    "digitoVerif": "5",
+    "manejaConfirma": "0",
+    "calificado": "1",
+    "recompra": "0",
+    "socInv": "0",
+    "mesa": "0",
+    "tipoContratoETP": "0",
+    "idGpoETP": "212",
+    "firmaETP": "0",
+    "idPerfil": "1",
+    "stsPerfil": "PRESERVACIÓN (IR1)",
+    "clabe": "2180650543542790",
+    "idElegible": 1,
+    "descrElegible": "E",
+    "idEnvio": 1,
+    "descrEnvio": "Mesa",
+    "idCanal": 1,
+    "lineanegocio": "CITI PRIVATE BANK",
+    "idEspecCliente": 1,
+    "institucional": 0,
+    "vtaCorto": true,
+    "sinPosicion": true,
+    "compra": true,
+    "cruce": true,
+    "conRel": "18139",
+    "rdip": 1,
+    "contRelGpo": null,
+    "idLibro": 1,
+    "libro": "CASA DE BOLSA",
+    "movimientosLst": [
+      {
+        "anoOper": 2019,
+        "mesOper": 8,
+        "pzo": 0,
+        "stipoPortf": 22,
+        "tipoTrans": 2,
+        "folioTrans": 662,
+        "idEmisora": 18257,
+        "cantidad": 228,
+        "prec": 9.6,
+        "importeBruto": 2188.8,
+        "importeComis": 0,
+        "importeIVA": 0,
+        "importeImpuesto": 0,
+        "importeFinal": 2188.8,
+        "tasaRetno": 0,
+        "fecOper": "02-08-2019",
+        "fecLiq": "05-08-2019",
+        "descrOper": "Venta",
+        "tipovalor": "1C",
+        "nom": "CORPTRC",
+        "descrSTipoPortf": "POSICION CONTADO",
+        "serie": "ISHRS",
+        "emiSerie": "CORPTRC ISHRS D",
+        "rompe": 0,
+        "recomend": "No aplica - No aplica",
+        "idSistema": 10,
+        "idRecomend": 0,
+        "idMedioCierre": 0,
+        "descrMedioCierre": "",
+        "red": "",
+        "idPerfilContrato": 0,
+        "descrPerfilContrato": "",
+        "idPerfilEmisora": 0,
+        "descrPerfilEmisora": "",
+        "tipoETF": 0,
+        "descrTipoETF": "",
+        "operArt194": -1
+      },
+      {
+        "anoOper": 2019,
+        "mesOper": 8,
+        "pzo": 0,
+        "stipoPortf": 22,
+        "tipoTrans": 51,
+        "folioTrans": 280,
+        "idEmisora": 18257,
+        "cantidad": 1419300,
+        "prec": 0.059627766,
+        "importeBruto": 84629.69,
+        "importeComis": 0,
+        "importeIVA": 0,
+        "importeImpuesto": 0,
+        "importeFinal": 84629.69,
+        "tasaRetno": 0,
+        "fecOper": "02-08-2019",
+        "fecLiq": "06-08-2019",
+        "descrOper": "Abono Distribucion de Interes",
+        "tipovalor": "1C",
+        "nom": "CORPTRC",
+        "descrSTipoPortf": "POSICION CONTADO",
+        "serie": "ISHRS",
+        "emiSerie": "CORPTRC ISHRS",
+        "rompe": 0,
+        "recomend": "No aplica - No aplica",
+        "idSistema": 60,
+        "idRecomend": 0,
+        "idMedioCierre": 0,
+        "descrMedioCierre": "",
+        "red": "",
+        "idPerfilContrato": 0,
+        "descrPerfilContrato": "",
+        "idPerfilEmisora": 0,
+        "descrPerfilEmisora": "",
+        "tipoETF": 0,
+        "descrTipoETF": "",
+        "operArt194": -1
+      },
+      {
+        "anoOper": 2019,
+        "mesOper": 8,
+        "pzo": 0,
+        "stipoPortf": 22,
+        "tipoTrans": 51,
+        "folioTrans": 145,
+        "idEmisora": 18257,
+        "cantidad": 1419300,
+        "prec": 0.059627766,
+        "importeBruto": 84629.69,
+        "importeComis": 0,
+        "importeIVA": 0,
+        "importeImpuesto": 0,
+        "importeFinal": 84629.69,
+        "tasaRetno": 0,
+        "fecOper": "02-08-2019",
+        "fecLiq": "06-08-2019",
+        "descrOper": "Abono Distribucion de Interes",
+        "tipovalor": "1C",
+        "nom": "CORPTRC",
+        "descrSTipoPortf": "POSICION CONTADO",
+        "serie": "ISHRS",
+        "emiSerie": "CORPTRC ISHRS",
+        "rompe": 0,
+        "recomend": "No aplica - No aplica",
+        "idSistema": 60,
+        "idRecomend": 0,
+        "idMedioCierre": 0,
+        "descrMedioCierre": "",
+        "red": "",
+        "idPerfilContrato": 0,
+        "descrPerfilContrato": "",
+        "idPerfilEmisora": 0,
+        "descrPerfilEmisora": "",
+        "tipoETF": 0,
+        "descrTipoETF": "",
+        "operArt194": -1
+      },
+      {
+        "anoOper": 2019,
+        "mesOper": 8,
+        "pzo": 0,
+        "stipoPortf": 22,
+        "tipoTrans": 2,
+        "folioTrans": 147,
+        "idEmisora": 18257,
+        "cantidad": 228,
+        "prec": 9.6,
+        "importeBruto": 2188.8,
+        "importeComis": 0,
+        "importeIVA": 0,
+        "importeImpuesto": 0,
+        "importeFinal": 2188.8,
+        "tasaRetno": 0,
+        "fecOper": "02-08-2019",
+        "fecLiq": "06-08-2019",
+        "descrOper": "Venta",
+        "tipovalor": "1C",
+        "nom": "CORPTRC",
+        "descrSTipoPortf": "POSICION CONTADO",
+        "serie": "ISHRS",
+        "emiSerie": "CORPTRC ISHRS",
+        "rompe": 0,
+        "recomend": "No aplica - No aplica",
+        "idSistema": 10,
+        "idRecomend": 0,
+        "idMedioCierre": 0,
+        "descrMedioCierre": "",
+        "red": "",
+        "idPerfilContrato": 0,
+        "descrPerfilContrato": "",
+        "idPerfilEmisora": 0,
+        "descrPerfilEmisora": "",
+        "tipoETF": 0,
+        "descrTipoETF": "",
+        "operArt194": -1
+      },
+      {
+        "anoOper": 2019,
+        "mesOper": 8,
+        "pzo": 0,
+        "stipoPortf": 22,
+        "tipoTrans": 51,
+        "folioTrans": 149,
+        "idEmisora": 18257,
+        "cantidad": 35,
+        "prec": 0.059627766,
+        "importeBruto": 2.09,
+        "importeComis": 0,
+        "importeIVA": 0,
+        "importeImpuesto": 0,
+        "importeFinal": 2.09,
+        "tasaRetno": 0,
+        "fecOper": "02-08-2019",
+        "fecLiq": "06-08-2019",
+        "descrOper": "Abono Distribucion de Interes",
+        "tipovalor": "1C",
+        "nom": "CORPTRC",
+        "descrSTipoPortf": "POSICION CONTADO",
+        "serie": "ISHRS",
+        "emiSerie": "CORPTRC ISHRS",
+        "rompe": 0,
+        "recomend": "No aplica - No aplica",
+        "idSistema": 60,
+        "idRecomend": 0,
+        "idMedioCierre": 0,
+        "descrMedioCierre": "",
+        "red": "",
+        "idPerfilContrato": 0,
+        "descrPerfilContrato": "",
+        "idPerfilEmisora": 0,
+        "descrPerfilEmisora": "",
+        "tipoETF": 0,
+        "descrTipoETF": "",
+        "operArt194": -1
+      },
+      {
+        "anoOper": 2019,
+        "mesOper": 8,
+        "pzo": 0,
+        "stipoPortf": 22,
+        "tipoTrans": 51,
+        "folioTrans": 150,
+        "idEmisora": 18257,
+        "cantidad": 1419300,
+        "prec": 0.059627766,
+        "importeBruto": 84629.69,
+        "importeComis": 0,
+        "importeIVA": 0,
+        "importeImpuesto": 0,
+        "importeFinal": 84629.69,
+        "tasaRetno": 0,
+        "fecOper": "02-08-2019",
+        "fecLiq": "06-08-2019",
+        "descrOper": "Abono Distribucion de Interes",
+        "tipovalor": "1C",
+        "nom": "CORPTRC",
+        "descrSTipoPortf": "POSICION CONTADO",
+        "serie": "ISHRS",
+        "emiSerie": "CORPTRC ISHRS",
+        "rompe": 0,
+        "recomend": "No aplica - No aplica",
+        "idSistema": 60,
+        "idRecomend": 0,
+        "idMedioCierre": 0,
+        "descrMedioCierre": "",
+        "red": "",
+        "idPerfilContrato": 0,
+        "descrPerfilContrato": "",
+        "idPerfilEmisora": 0,
+        "descrPerfilEmisora": "",
+        "tipoETF": 0,
+        "descrTipoETF": "",
+        "operArt194": -1
+      }
+    ]
+  },
+  "rates": [
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 12:15:00",
+      "askClose": 1277.25,
+      "bidHigh": 1276.8,
+      "bidLow": 1276.55,
+      "askHigh": 1277.3,
+      "askLow": 1277.05
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 12:20:00",
+      "askClose": 1277.20001,
+      "bidHigh": 1276.8,
+      "bidLow": 1276.55,
+      "askHigh": 1277.3,
+      "askLow": 1277.05
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 12:25:00",
+      "bidOpen": 1276.6,
+      "bidClose": 1276.70001,
+      "askOpen": 1277.1,
+      "askClose": 1277.20001,
+      "bidHigh": 1276.90001,
+      "bidLow": 1276.45001,
+      "askHigh": 1277.40001,
+      "askLow": 1276.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 12:30:00",
+      "bidOpen": 1276.85,
+      "bidClose": 1277.1,
+      "askOpen": 1277.35,
+      "askClose": 1277.6,
+      "bidHigh": 1277.20001,
+      "bidLow": 1276.75,
+      "askHigh": 1277.70001,
+      "askLow": 1277.25
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 12:35:00",
+      "bidOpen": 1277.1,
+      "bidClose": 1276.95001,
+      "askOpen": 1277.6,
+      "askClose": 1277.45001,
+      "bidHigh": 1277.40001,
+      "bidLow": 1276.90001,
+      "askHigh": 1277.90001,
+      "askLow": 1277.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 12:40:00",
+      "bidOpen": 1276.95001,
+      "bidClose": 1277.1,
+      "askOpen": 1277.45001,
+      "askClose": 1277.6,
+      "bidHigh": 1277.1,
+      "bidLow": 1276.6,
+      "askHigh": 1277.6,
+      "askLow": 1277.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 12:45:00",
+      "bidOpen": 1277.1,
+      "bidClose": 1276.95001,
+      "askOpen": 1277.6,
+      "askClose": 1277.45001,
+      "bidHigh": 1277.1,
+      "bidLow": 1276.8,
+      "askHigh": 1277.6,
+      "askLow": 1277.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 12:50:00",
+      "bidOpen": 1276.95001,
+      "bidClose": 1277.40001,
+      "askOpen": 1277.45001,
+      "askClose": 1277.90001,
+      "bidHigh": 1277.40001,
+      "bidLow": 1276.95001,
+      "askHigh": 1277.90001,
+      "askLow": 1277.45001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 12:55:00",
+      "bidOpen": 1277.40001,
+      "bidClose": 1277.5,
+      "askOpen": 1277.90001,
+      "askClose": 1278,
+      "bidHigh": 1277.5,
+      "bidLow": 1277,
+      "askHigh": 1278,
+      "askLow": 1277.5
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 13:00:00",
+      "bidOpen": 1277.55,
+      "bidClose": 1277.05,
+      "askOpen": 1278.05,
+      "askClose": 1277.55,
+      "bidHigh": 1277.6,
+      "bidLow": 1276.90001,
+      "askHigh": 1278.1,
+      "askLow": 1277.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 13:05:00",
+      "bidOpen": 1277.05,
+      "bidClose": 1276.70001,
+      "askOpen": 1277.55,
+      "askClose": 1277.20001,
+      "bidHigh": 1277.05,
+      "bidLow": 1276.65001,
+      "askHigh": 1277.55,
+      "askLow": 1277.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 13:10:00",
+      "bidOpen": 1276.70001,
+      "bidClose": 1277.15001,
+      "askOpen": 1277.20001,
+      "askClose": 1277.65001,
+      "bidHigh": 1277.15001,
+      "bidLow": 1276.70001,
+      "askHigh": 1277.65001,
+      "askLow": 1277.20001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 13:15:00",
+      "bidOpen": 1277.1,
+      "bidClose": 1277.40001,
+      "askOpen": 1277.6,
+      "askClose": 1277.90001,
+      "bidHigh": 1277.65001,
+      "bidLow": 1277.1,
+      "askHigh": 1278.15001,
+      "askLow": 1277.6
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 13:20:00",
+      "bidOpen": 1277.40001,
+      "bidClose": 1277.8,
+      "askOpen": 1277.90001,
+      "askClose": 1278.3,
+      "bidHigh": 1277.90001,
+      "bidLow": 1277.40001,
+      "askHigh": 1278.40001,
+      "askLow": 1277.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 13:25:00",
+      "bidOpen": 1277.8,
+      "bidClose": 1277.8,
+      "askOpen": 1278.3,
+      "askClose": 1278.3,
+      "bidHigh": 1277.90001,
+      "bidLow": 1277.6,
+      "askHigh": 1278.40001,
+      "askLow": 1278.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 13:30:00",
+      "bidOpen": 1277.70001,
+      "bidClose": 1278.20001,
+      "askOpen": 1278.20001,
+      "askClose": 1278.70001,
+      "bidHigh": 1278.20001,
+      "bidLow": 1277.6,
+      "askHigh": 1278.70001,
+      "askLow": 1278.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 13:35:00",
+      "bidOpen": 1278.3,
+      "bidClose": 1278.40001,
+      "askOpen": 1278.8,
+      "askClose": 1278.90001,
+      "bidHigh": 1278.40001,
+      "bidLow": 1278.05,
+      "askHigh": 1278.90001,
+      "askLow": 1278.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 13:40:00",
+      "bidOpen": 1278.40001,
+      "bidClose": 1277.90001,
+      "askOpen": 1278.90001,
+      "askClose": 1278.40001,
+      "bidHigh": 1278.40001,
+      "bidLow": 1277.6,
+      "askHigh": 1278.90001,
+      "askLow": 1278.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 13:45:00",
+      "bidOpen": 1277.8,
+      "bidClose": 1277.6,
+      "askOpen": 1278.3,
+      "askClose": 1278.1,
+      "bidHigh": 1278,
+      "bidLow": 1277.5,
+      "askHigh": 1278.5,
+      "askLow": 1278
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 13:50:00",
+      "bidOpen": 1277.6,
+      "bidClose": 1278,
+      "askOpen": 1278.1,
+      "askClose": 1278.5,
+      "bidHigh": 1278.20001,
+      "bidLow": 1277.20001,
+      "askHigh": 1278.70001,
+      "askLow": 1277.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 13:55:00",
+      "bidOpen": 1278.1,
+      "bidClose": 1277.90001,
+      "askOpen": 1278.6,
+      "askClose": 1278.40001,
+      "bidHigh": 1278.3,
+      "bidLow": 1277.8,
+      "askHigh": 1278.8,
+      "askLow": 1278.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 14:00:00",
+      "bidOpen": 1277.90001,
+      "bidClose": 1279.05,
+      "askOpen": 1278.40001,
+      "askClose": 1279.55,
+      "bidHigh": 1279.75,
+      "bidLow": 1277.8,
+      "askHigh": 1280.25,
+      "askLow": 1278.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 14:05:00",
+      "bidOpen": 1279.05,
+      "bidClose": 1279.8,
+      "askOpen": 1279.55,
+      "askClose": 1280.3,
+      "bidHigh": 1279.8,
+      "bidLow": 1279.05,
+      "askHigh": 1280.3,
+      "askLow": 1279.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 14:10:00",
+      "bidOpen": 1279.75,
+      "bidClose": 1279.8,
+      "askOpen": 1280.25,
+      "askClose": 1280.3,
+      "bidHigh": 1280.1,
+      "bidLow": 1279.35,
+      "askHigh": 1280.6,
+      "askLow": 1279.85
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 14:15:00",
+      "bidOpen": 1279.85,
+      "bidClose": 1279.75,
+      "askOpen": 1280.35,
+      "askClose": 1280.25,
+      "bidHigh": 1280.25,
+      "bidLow": 1279.40001,
+      "askHigh": 1280.75,
+      "askLow": 1279.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 14:20:00",
+      "bidOpen": 1279.8,
+      "bidClose": 1282.35,
+      "askOpen": 1280.3,
+      "askClose": 1282.85,
+      "bidHigh": 1283.8,
+      "bidLow": 1279.45001,
+      "askHigh": 1284.3,
+      "askLow": 1279.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 14:25:00",
+      "bidOpen": 1282.40001,
+      "bidClose": 1281.65001,
+      "askOpen": 1282.90001,
+      "askClose": 1282.15001,
+      "bidHigh": 1283,
+      "bidLow": 1281.15001,
+      "askHigh": 1283.5,
+      "askLow": 1281.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 14:30:00",
+      "bidOpen": 1281.65001,
+      "bidClose": 1281.5,
+      "askOpen": 1282.15001,
+      "askClose": 1282,
+      "bidHigh": 1281.85,
+      "bidLow": 1281.25,
+      "askHigh": 1282.35,
+      "askLow": 1281.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 14:35:00",
+      "bidOpen": 1281.5,
+      "bidClose": 1281.90001,
+      "askOpen": 1282,
+      "askClose": 1282.40001,
+      "bidHigh": 1282.6,
+      "bidLow": 1281.20001,
+      "askHigh": 1283.1,
+      "askLow": 1281.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 14:40:00",
+      "bidOpen": 1281.85,
+      "bidClose": 1281.5,
+      "askOpen": 1282.35,
+      "askClose": 1282,
+      "bidHigh": 1282,
+      "bidLow": 1281.45001,
+      "askHigh": 1282.5,
+      "askLow": 1281.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 14:45:00",
+      "bidOpen": 1281.5,
+      "bidClose": 1281.3,
+      "askOpen": 1282,
+      "askClose": 1281.8,
+      "bidHigh": 1282.15001,
+      "bidLow": 1281.20001,
+      "askHigh": 1282.65001,
+      "askLow": 1281.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 14:50:00",
+      "bidOpen": 1281.25,
+      "bidClose": 1280.70001,
+      "askOpen": 1281.75,
+      "askClose": 1281.20001,
+      "bidHigh": 1281.25,
+      "bidLow": 1280.55,
+      "askHigh": 1281.75,
+      "askLow": 1281.05
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 14:55:00",
+      "bidOpen": 1280.70001,
+      "bidClose": 1281.45001,
+      "askOpen": 1281.20001,
+      "askClose": 1281.95001,
+      "bidHigh": 1281.65001,
+      "bidLow": 1280.70001,
+      "askHigh": 1282.15001,
+      "askLow": 1281.20001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 15:00:00",
+      "bidOpen": 1281.45001,
+      "bidClose": 1282.25,
+      "askOpen": 1281.95001,
+      "askClose": 1282.75,
+      "bidHigh": 1282.70001,
+      "bidLow": 1281.40001,
+      "askHigh": 1283.20001,
+      "askLow": 1281.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 15:05:00",
+      "bidOpen": 1282.25,
+      "bidClose": 1282,
+      "askOpen": 1282.75,
+      "askClose": 1282.5,
+      "bidHigh": 1282.45001,
+      "bidLow": 1281.65001,
+      "askHigh": 1282.95001,
+      "askLow": 1282.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 15:10:00",
+      "bidOpen": 1282,
+      "bidClose": 1280.70001,
+      "askOpen": 1282.5,
+      "askClose": 1281.20001,
+      "bidHigh": 1282.1,
+      "bidLow": 1280.35,
+      "askHigh": 1282.6,
+      "askLow": 1280.85
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 15:15:00",
+      "bidOpen": 1280.70001,
+      "bidClose": 1280.70001,
+      "askOpen": 1281.20001,
+      "askClose": 1281.20001,
+      "bidHigh": 1281.65001,
+      "bidLow": 1280.35,
+      "askHigh": 1282.15001,
+      "askLow": 1280.85
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 15:20:00",
+      "bidOpen": 1280.75,
+      "bidClose": 1281.25,
+      "askOpen": 1281.25,
+      "askClose": 1281.75,
+      "bidHigh": 1281.75,
+      "bidLow": 1280.70001,
+      "askHigh": 1282.25,
+      "askLow": 1281.20001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 15:25:00",
+      "bidOpen": 1281.35,
+      "bidClose": 1281.05,
+      "askOpen": 1281.85,
+      "askClose": 1281.55,
+      "bidHigh": 1281.65001,
+      "bidLow": 1281,
+      "askHigh": 1282.15001,
+      "askLow": 1281.5
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 15:30:00",
+      "bidOpen": 1281,
+      "bidClose": 1281,
+      "askOpen": 1281.5,
+      "askClose": 1281.5,
+      "bidHigh": 1281.25,
+      "bidLow": 1280.85,
+      "askHigh": 1281.75,
+      "askLow": 1281.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 15:35:00",
+      "bidOpen": 1281.05,
+      "bidClose": 1281.25,
+      "askOpen": 1281.55,
+      "askClose": 1281.75,
+      "bidHigh": 1281.45001,
+      "bidLow": 1280.65001,
+      "askHigh": 1281.95001,
+      "askLow": 1281.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 15:40:00",
+      "bidOpen": 1281.25,
+      "bidClose": 1281.20001,
+      "askOpen": 1281.75,
+      "askClose": 1281.70001,
+      "bidHigh": 1281.35,
+      "bidLow": 1281,
+      "askHigh": 1281.85,
+      "askLow": 1281.5
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 15:45:00",
+      "bidOpen": 1281.20001,
+      "bidClose": 1281.20001,
+      "askOpen": 1281.70001,
+      "askClose": 1281.70001,
+      "bidHigh": 1281.20001,
+      "bidLow": 1280.85,
+      "askHigh": 1281.70001,
+      "askLow": 1281.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 15:50:00",
+      "bidOpen": 1281.20001,
+      "bidClose": 1280.8,
+      "askOpen": 1281.70001,
+      "askClose": 1281.3,
+      "bidHigh": 1281.3,
+      "bidLow": 1280.70001,
+      "askHigh": 1281.8,
+      "askLow": 1281.20001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 15:55:00",
+      "bidOpen": 1280.8,
+      "bidClose": 1280.5,
+      "askOpen": 1281.3,
+      "askClose": 1281,
+      "bidHigh": 1280.85,
+      "bidLow": 1280.40001,
+      "askHigh": 1281.35,
+      "askLow": 1280.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 16:00:00",
+      "bidOpen": 1280.5,
+      "bidClose": 1280.3,
+      "askOpen": 1281,
+      "askClose": 1280.8,
+      "bidHigh": 1280.85,
+      "bidLow": 1279.90001,
+      "askHigh": 1281.35,
+      "askLow": 1280.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 16:05:00",
+      "bidOpen": 1280.25,
+      "bidClose": 1281,
+      "askOpen": 1280.75,
+      "askClose": 1281.5,
+      "bidHigh": 1281,
+      "bidLow": 1280,
+      "askHigh": 1281.5,
+      "askLow": 1280.5
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 16:10:00",
+      "bidOpen": 1281,
+      "bidClose": 1281.15001,
+      "askOpen": 1281.5,
+      "askClose": 1281.65001,
+      "bidHigh": 1281.15001,
+      "bidLow": 1280.75,
+      "askHigh": 1281.65001,
+      "askLow": 1281.25
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 16:15:00",
+      "bidOpen": 1281.15001,
+      "bidClose": 1280.40001,
+      "askOpen": 1281.65001,
+      "askClose": 1280.90001,
+      "bidHigh": 1281.55,
+      "bidLow": 1280.25,
+      "askHigh": 1282.05,
+      "askLow": 1280.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 16:20:00",
+      "bidOpen": 1280.40001,
+      "bidClose": 1281.8,
+      "askOpen": 1280.90001,
+      "askClose": 1282.3,
+      "bidHigh": 1282,
+      "bidLow": 1280.40001,
+      "askHigh": 1282.5,
+      "askLow": 1280.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 16:25:00",
+      "bidOpen": 1281.8,
+      "bidClose": 1282.05,
+      "askOpen": 1282.3,
+      "askClose": 1282.55,
+      "bidHigh": 1282.15001,
+      "bidLow": 1281.25,
+      "askHigh": 1282.65001,
+      "askLow": 1281.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 16:30:00",
+      "bidOpen": 1282,
+      "bidClose": 1281.25,
+      "askOpen": 1282.5,
+      "askClose": 1281.75,
+      "bidHigh": 1282.15001,
+      "bidLow": 1281.15001,
+      "askHigh": 1282.65001,
+      "askLow": 1281.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 16:35:00",
+      "bidOpen": 1281.25,
+      "bidClose": 1280.95001,
+      "askOpen": 1281.75,
+      "askClose": 1281.45001,
+      "bidHigh": 1281.45001,
+      "bidLow": 1280.85,
+      "askHigh": 1281.95001,
+      "askLow": 1281.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 16:40:00",
+      "bidOpen": 1280.95001,
+      "bidClose": 1281.25,
+      "askOpen": 1281.45001,
+      "askClose": 1281.75,
+      "bidHigh": 1281.3,
+      "bidLow": 1280.55,
+      "askHigh": 1281.8,
+      "askLow": 1281.05
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 16:45:00",
+      "bidOpen": 1281.3,
+      "bidClose": 1280.40001,
+      "askOpen": 1281.8,
+      "askClose": 1280.90001,
+      "bidHigh": 1281.3,
+      "bidLow": 1280.40001,
+      "askHigh": 1281.8,
+      "askLow": 1280.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 16:50:00",
+      "bidOpen": 1280.35,
+      "bidClose": 1280.45001,
+      "askOpen": 1280.85,
+      "askClose": 1280.95001,
+      "bidHigh": 1280.55,
+      "bidLow": 1278.8,
+      "askHigh": 1281.05,
+      "askLow": 1279.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 16:55:00",
+      "bidOpen": 1280.5,
+      "bidClose": 1281.40001,
+      "askOpen": 1281,
+      "askClose": 1281.90001,
+      "bidHigh": 1282.95001,
+      "bidLow": 1280.20001,
+      "askHigh": 1283.45001,
+      "askLow": 1280.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 17:00:00",
+      "bidOpen": 1281.40001,
+      "bidClose": 1281.6,
+      "askOpen": 1281.90001,
+      "askClose": 1282.1,
+      "bidHigh": 1281.90001,
+      "bidLow": 1281.40001,
+      "askHigh": 1282.40001,
+      "askLow": 1281.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 17:05:00",
+      "bidOpen": 1281.70001,
+      "bidClose": 1282.1,
+      "askOpen": 1282.20001,
+      "askClose": 1282.6,
+      "bidHigh": 1282.3,
+      "bidLow": 1281.6,
+      "askHigh": 1282.8,
+      "askLow": 1282.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 17:10:00",
+      "bidOpen": 1282.1,
+      "bidClose": 1281.6,
+      "askOpen": 1282.6,
+      "askClose": 1282.1,
+      "bidHigh": 1282.1,
+      "bidLow": 1281.5,
+      "askHigh": 1282.6,
+      "askLow": 1282
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 17:15:00",
+      "bidOpen": 1281.6,
+      "bidClose": 1282,
+      "askOpen": 1282.1,
+      "askClose": 1282.5,
+      "bidHigh": 1282,
+      "bidLow": 1281.55,
+      "askHigh": 1282.5,
+      "askLow": 1282.05
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 17:20:00",
+      "bidOpen": 1281.95001,
+      "bidClose": 1281.6,
+      "askOpen": 1282.45001,
+      "askClose": 1282.1,
+      "bidHigh": 1282.1,
+      "bidLow": 1281.5,
+      "askHigh": 1282.6,
+      "askLow": 1282
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 17:25:00",
+      "bidOpen": 1281.55,
+      "bidClose": 1281.55,
+      "askOpen": 1282.05,
+      "askClose": 1282.05,
+      "bidHigh": 1281.8,
+      "bidLow": 1281.20001,
+      "askHigh": 1282.3,
+      "askLow": 1281.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 17:30:00",
+      "bidOpen": 1281.55,
+      "bidClose": 1281.15001,
+      "askOpen": 1282.05,
+      "askClose": 1281.65001,
+      "bidHigh": 1281.65001,
+      "bidLow": 1280.90001,
+      "askHigh": 1282.15001,
+      "askLow": 1281.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 17:35:00",
+      "bidOpen": 1281,
+      "bidClose": 1281.1,
+      "askOpen": 1281.5,
+      "askClose": 1281.6,
+      "bidHigh": 1281.35,
+      "bidLow": 1280.85,
+      "askHigh": 1281.85,
+      "askLow": 1281.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 17:40:00",
+      "bidOpen": 1281.15001,
+      "bidClose": 1281.65001,
+      "askOpen": 1281.65001,
+      "askClose": 1282.15001,
+      "bidHigh": 1281.95001,
+      "bidLow": 1281.05,
+      "askHigh": 1282.45001,
+      "askLow": 1281.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 17:45:00",
+      "bidOpen": 1281.70001,
+      "bidClose": 1281.70001,
+      "askOpen": 1282.20001,
+      "askClose": 1282.20001,
+      "bidHigh": 1281.85,
+      "bidLow": 1281.45001,
+      "askHigh": 1282.35,
+      "askLow": 1281.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 17:50:00",
+      "bidOpen": 1281.8,
+      "bidClose": 1281.6,
+      "askOpen": 1282.3,
+      "askClose": 1282.1,
+      "bidHigh": 1281.8,
+      "bidLow": 1281.25,
+      "askHigh": 1282.3,
+      "askLow": 1281.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 17:55:00",
+      "bidOpen": 1281.6,
+      "bidClose": 1281.6,
+      "askOpen": 1282.1,
+      "askClose": 1282.1,
+      "bidHigh": 1281.70001,
+      "bidLow": 1281.45001,
+      "askHigh": 1282.20001,
+      "askLow": 1281.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 18:00:00",
+      "bidOpen": 1281.70001,
+      "bidClose": 1282.15001,
+      "askOpen": 1282.20001,
+      "askClose": 1282.65001,
+      "bidHigh": 1282.35,
+      "bidLow": 1281.45001,
+      "askHigh": 1282.85,
+      "askLow": 1281.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 18:05:00",
+      "bidOpen": 1282.05,
+      "bidClose": 1281.95001,
+      "askOpen": 1282.55,
+      "askClose": 1282.45001,
+      "bidHigh": 1282.35,
+      "bidLow": 1281.75,
+      "askHigh": 1282.85,
+      "askLow": 1282.25
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 18:10:00",
+      "bidOpen": 1281.95001,
+      "bidClose": 1281.35,
+      "askOpen": 1282.45001,
+      "askClose": 1281.85,
+      "bidHigh": 1281.95001,
+      "bidLow": 1281.25,
+      "askHigh": 1282.45001,
+      "askLow": 1281.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 18:15:00",
+      "bidOpen": 1281.3,
+      "bidClose": 1281.55,
+      "askOpen": 1281.8,
+      "askClose": 1282.05,
+      "bidHigh": 1281.70001,
+      "bidLow": 1280.95001,
+      "askHigh": 1282.20001,
+      "askLow": 1281.45001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 18:20:00",
+      "bidOpen": 1281.65001,
+      "bidClose": 1281.6,
+      "askOpen": 1282.15001,
+      "askClose": 1282.1,
+      "bidHigh": 1281.75,
+      "bidLow": 1281.55,
+      "askHigh": 1282.25,
+      "askLow": 1282.05
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 18:25:00",
+      "bidOpen": 1281.6,
+      "bidClose": 1281.75,
+      "askOpen": 1282.1,
+      "askClose": 1282.25,
+      "bidHigh": 1281.95001,
+      "bidLow": 1281.55,
+      "askHigh": 1282.45001,
+      "askLow": 1282.05
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 18:30:00",
+      "bidOpen": 1281.65001,
+      "bidClose": 1281.8,
+      "askOpen": 1282.15001,
+      "askClose": 1282.3,
+      "bidHigh": 1282.15001,
+      "bidLow": 1281.65001,
+      "askHigh": 1282.65001,
+      "askLow": 1282.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 18:35:00",
+      "bidOpen": 1281.85,
+      "bidClose": 1281.55,
+      "askOpen": 1282.35,
+      "askClose": 1282.05,
+      "bidHigh": 1281.95001,
+      "bidLow": 1281.45001,
+      "askHigh": 1282.45001,
+      "askLow": 1281.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 18:40:00",
+      "bidOpen": 1281.55,
+      "bidClose": 1281.35,
+      "askOpen": 1282.05,
+      "askClose": 1281.85,
+      "bidHigh": 1281.8,
+      "bidLow": 1281.25,
+      "askHigh": 1282.3,
+      "askLow": 1281.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 18:45:00",
+      "bidOpen": 1281.40001,
+      "bidClose": 1282.15001,
+      "askOpen": 1281.90001,
+      "askClose": 1282.65001,
+      "bidHigh": 1282.20001,
+      "bidLow": 1281.05,
+      "askHigh": 1282.70001,
+      "askLow": 1281.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 18:50:00",
+      "bidOpen": 1282.15001,
+      "bidClose": 1282.55,
+      "askOpen": 1282.65001,
+      "askClose": 1283.05,
+      "bidHigh": 1282.65001,
+      "bidLow": 1282.15001,
+      "askHigh": 1283.15001,
+      "askLow": 1282.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 18:55:00",
+      "bidOpen": 1282.5,
+      "bidClose": 1282.25,
+      "askOpen": 1283,
+      "askClose": 1282.75,
+      "bidHigh": 1282.6,
+      "bidLow": 1281.85,
+      "askHigh": 1283.1,
+      "askLow": 1282.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 19:00:00",
+      "bidOpen": 1282.3,
+      "bidClose": 1282.05,
+      "askOpen": 1282.8,
+      "askClose": 1282.55,
+      "bidHigh": 1282.35,
+      "bidLow": 1281.95001,
+      "askHigh": 1282.85,
+      "askLow": 1282.45001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 19:05:00",
+      "bidOpen": 1282.05,
+      "bidClose": 1282.45001,
+      "askOpen": 1282.55,
+      "askClose": 1282.95001,
+      "bidHigh": 1282.8,
+      "bidLow": 1282.05,
+      "askHigh": 1283.3,
+      "askLow": 1282.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 19:10:00",
+      "bidOpen": 1282.45001,
+      "bidClose": 1281.90001,
+      "askOpen": 1282.95001,
+      "askClose": 1282.40001,
+      "bidHigh": 1282.70001,
+      "bidLow": 1281.85,
+      "askHigh": 1283.20001,
+      "askLow": 1282.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 19:15:00",
+      "bidOpen": 1281.85,
+      "bidClose": 1281.8,
+      "askOpen": 1282.35,
+      "askClose": 1282.3,
+      "bidHigh": 1282.1,
+      "bidLow": 1281.65001,
+      "askHigh": 1282.6,
+      "askLow": 1282.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 19:20:00",
+      "bidOpen": 1281.85,
+      "bidClose": 1282,
+      "askOpen": 1282.35,
+      "askClose": 1282.5,
+      "bidHigh": 1282.15001,
+      "bidLow": 1281.70001,
+      "askHigh": 1282.65001,
+      "askLow": 1282.20001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 19:25:00",
+      "bidOpen": 1282.05,
+      "bidClose": 1282.05,
+      "askOpen": 1282.55,
+      "askClose": 1282.55,
+      "bidHigh": 1282.25,
+      "bidLow": 1281.95001,
+      "askHigh": 1282.75,
+      "askLow": 1282.45001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 19:30:00",
+      "bidOpen": 1281.85,
+      "bidClose": 1281,
+      "askOpen": 1282.35,
+      "askClose": 1281.5,
+      "bidHigh": 1282,
+      "bidLow": 1280.95001,
+      "askHigh": 1282.5,
+      "askLow": 1281.45001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 19:35:00",
+      "bidOpen": 1281.05,
+      "bidClose": 1281.45001,
+      "askOpen": 1281.55,
+      "askClose": 1281.95001,
+      "bidHigh": 1281.45001,
+      "bidLow": 1280.65001,
+      "askHigh": 1281.95001,
+      "askLow": 1281.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 19:40:00",
+      "bidOpen": 1281.40001,
+      "bidClose": 1281.6,
+      "askOpen": 1281.90001,
+      "askClose": 1282.1,
+      "bidHigh": 1281.65001,
+      "bidLow": 1281.15001,
+      "askHigh": 1282.15001,
+      "askLow": 1281.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 19:45:00",
+      "bidOpen": 1281.5,
+      "bidClose": 1281.45001,
+      "askOpen": 1282,
+      "askClose": 1281.95001,
+      "bidHigh": 1281.65001,
+      "bidLow": 1281.1,
+      "askHigh": 1282.15001,
+      "askLow": 1281.6
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 19:50:00",
+      "bidOpen": 1281.5,
+      "bidClose": 1281.5,
+      "askOpen": 1282,
+      "askClose": 1282,
+      "bidHigh": 1281.55,
+      "bidLow": 1281.15001,
+      "askHigh": 1282.05,
+      "askLow": 1281.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 19:55:00",
+      "bidOpen": 1281.55,
+      "bidClose": 1281.85,
+      "askOpen": 1282.05,
+      "askClose": 1282.35,
+      "bidHigh": 1281.85,
+      "bidLow": 1281.35,
+      "askHigh": 1282.35,
+      "askLow": 1281.85
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 20:00:00",
+      "bidOpen": 1281.8,
+      "bidClose": 1282.6,
+      "askOpen": 1282.3,
+      "askClose": 1283.1,
+      "bidHigh": 1282.65001,
+      "bidLow": 1281.8,
+      "askHigh": 1283.15001,
+      "askLow": 1282.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 20:05:00",
+      "bidOpen": 1282.6,
+      "bidClose": 1282.8,
+      "askOpen": 1283.1,
+      "askClose": 1283.3,
+      "bidHigh": 1283.15001,
+      "bidLow": 1282.5,
+      "askHigh": 1283.65001,
+      "askLow": 1283
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 20:10:00",
+      "bidOpen": 1282.6,
+      "bidClose": 1282.35,
+      "askOpen": 1283.1,
+      "askClose": 1282.85,
+      "bidHigh": 1282.85,
+      "bidLow": 1281.85,
+      "askHigh": 1283.35,
+      "askLow": 1282.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 20:15:00",
+      "bidOpen": 1282.3,
+      "bidClose": 1283.75,
+      "askOpen": 1282.8,
+      "askClose": 1284.25,
+      "bidHigh": 1283.75,
+      "bidLow": 1282.25,
+      "askHigh": 1284.25,
+      "askLow": 1282.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 20:20:00",
+      "bidOpen": 1284.35,
+      "bidClose": 1282.75,
+      "askOpen": 1284.85,
+      "askClose": 1283.25,
+      "bidHigh": 1284.55,
+      "bidLow": 1282.1,
+      "askHigh": 1285.05,
+      "askLow": 1282.6
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 20:25:00",
+      "bidOpen": 1282.75,
+      "bidClose": 1283.5,
+      "askOpen": 1283.25,
+      "askClose": 1284,
+      "bidHigh": 1283.95001,
+      "bidLow": 1282.55,
+      "askHigh": 1284.45001,
+      "askLow": 1283.05
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 20:30:00",
+      "bidOpen": 1284.6,
+      "bidClose": 1284.65001,
+      "askOpen": 1285.1,
+      "askClose": 1285.15001,
+      "bidHigh": 1285.40001,
+      "bidLow": 1283.40001,
+      "askHigh": 1285.90001,
+      "askLow": 1283.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 20:35:00",
+      "bidOpen": 1284.65001,
+      "bidClose": 1286.15001,
+      "askOpen": 1285.15001,
+      "askClose": 1286.65001,
+      "bidHigh": 1286.35,
+      "bidLow": 1284.45001,
+      "askHigh": 1286.85,
+      "askLow": 1284.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 20:40:00",
+      "bidOpen": 1286.20001,
+      "bidClose": 1287.45001,
+      "askOpen": 1286.70001,
+      "askClose": 1287.95001,
+      "bidHigh": 1287.55,
+      "bidLow": 1286.20001,
+      "askHigh": 1288.05,
+      "askLow": 1286.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 20:45:00",
+      "bidOpen": 1287.40001,
+      "bidClose": 1287.20001,
+      "askOpen": 1287.90001,
+      "askClose": 1287.70001,
+      "bidHigh": 1288.5,
+      "bidLow": 1286.75,
+      "askHigh": 1289,
+      "askLow": 1287.25
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 20:50:00",
+      "bidOpen": 1287.25,
+      "bidClose": 1286.75,
+      "askOpen": 1287.75,
+      "askClose": 1287.25,
+      "bidHigh": 1287.65001,
+      "bidLow": 1286.65001,
+      "askHigh": 1288.15001,
+      "askLow": 1287.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 20:55:00",
+      "bidOpen": 1286.70001,
+      "bidClose": 1286.40001,
+      "askOpen": 1287.20001,
+      "askClose": 1286.90001,
+      "bidHigh": 1287.05,
+      "bidLow": 1286.20001,
+      "askHigh": 1287.55,
+      "askLow": 1286.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 21:00:00",
+      "bidOpen": 1286.40001,
+      "bidClose": 1286.15001,
+      "askOpen": 1286.90001,
+      "askClose": 1286.65001,
+      "bidHigh": 1287.20001,
+      "bidLow": 1285.90001,
+      "askHigh": 1287.70001,
+      "askLow": 1286.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 21:05:00",
+      "bidOpen": 1286.20001,
+      "bidClose": 1286.3,
+      "askOpen": 1286.70001,
+      "askClose": 1286.8,
+      "bidHigh": 1287.20001,
+      "bidLow": 1286.1,
+      "askHigh": 1287.70001,
+      "askLow": 1286.6
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 21:10:00",
+      "bidOpen": 1286.3,
+      "bidClose": 1286,
+      "askOpen": 1286.8,
+      "askClose": 1286.5,
+      "bidHigh": 1286.40001,
+      "bidLow": 1285.3,
+      "askHigh": 1286.90001,
+      "askLow": 1285.8
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 21:15:00",
+      "bidOpen": 1285.90001,
+      "bidClose": 1287.5,
+      "askOpen": 1286.40001,
+      "askClose": 1288,
+      "bidHigh": 1287.6,
+      "bidLow": 1285.90001,
+      "askHigh": 1288.1,
+      "askLow": 1286.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 21:20:00",
+      "bidOpen": 1287.5,
+      "bidClose": 1286.3,
+      "askOpen": 1288,
+      "askClose": 1286.8,
+      "bidHigh": 1287.8,
+      "bidLow": 1286.3,
+      "askHigh": 1288.3,
+      "askLow": 1286.8
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 21:25:00",
+      "bidOpen": 1286.20001,
+      "bidClose": 1286.20001,
+      "askOpen": 1286.70001,
+      "askClose": 1286.70001,
+      "bidHigh": 1286.40001,
+      "bidLow": 1285.5,
+      "askHigh": 1286.90001,
+      "askLow": 1286
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 21:30:00",
+      "bidOpen": 1286.20001,
+      "bidClose": 1286.05,
+      "askOpen": 1286.70001,
+      "askClose": 1286.55,
+      "bidHigh": 1286.70001,
+      "bidLow": 1285.8,
+      "askHigh": 1287.20001,
+      "askLow": 1286.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 21:35:00",
+      "bidOpen": 1286.05,
+      "bidClose": 1285.05,
+      "askOpen": 1286.55,
+      "askClose": 1285.55,
+      "bidHigh": 1286.20001,
+      "bidLow": 1284.75,
+      "askHigh": 1286.70001,
+      "askLow": 1285.25
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 21:40:00",
+      "bidOpen": 1285.05,
+      "bidClose": 1286,
+      "askOpen": 1285.55,
+      "askClose": 1286.5,
+      "bidHigh": 1286.45001,
+      "bidLow": 1284.8,
+      "askHigh": 1286.95001,
+      "askLow": 1285.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 21:45:00",
+      "bidOpen": 1285.95001,
+      "bidClose": 1285.6,
+      "askOpen": 1286.45001,
+      "askClose": 1286.1,
+      "bidHigh": 1286.45001,
+      "bidLow": 1285.35,
+      "askHigh": 1286.95001,
+      "askLow": 1285.85
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 21:50:00",
+      "bidOpen": 1285.6,
+      "bidClose": 1285.45001,
+      "askOpen": 1286.1,
+      "askClose": 1285.95001,
+      "bidHigh": 1285.70001,
+      "bidLow": 1284.95001,
+      "askHigh": 1286.20001,
+      "askLow": 1285.45001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 21:55:00",
+      "bidOpen": 1285.40001,
+      "bidClose": 1285.1,
+      "askOpen": 1285.90001,
+      "askClose": 1285.6,
+      "bidHigh": 1285.65001,
+      "bidLow": 1284.75,
+      "askHigh": 1286.15001,
+      "askLow": 1285.25
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 22:00:00",
+      "bidOpen": 1284.95001,
+      "bidClose": 1285.55,
+      "askOpen": 1285.45001,
+      "askClose": 1286.05,
+      "bidHigh": 1285.6,
+      "bidLow": 1284.85,
+      "askHigh": 1286.1,
+      "askLow": 1285.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 22:05:00",
+      "bidOpen": 1285.6,
+      "bidClose": 1285.6,
+      "askOpen": 1286.1,
+      "askClose": 1286.1,
+      "bidHigh": 1286.35,
+      "bidLow": 1285.5,
+      "askHigh": 1286.85,
+      "askLow": 1286
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 22:10:00",
+      "bidOpen": 1285.6,
+      "bidClose": 1285.6,
+      "askOpen": 1286.1,
+      "askClose": 1286.1,
+      "bidHigh": 1285.6,
+      "bidLow": 1284.90001,
+      "askHigh": 1286.1,
+      "askLow": 1285.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 22:15:00",
+      "bidOpen": 1285.6,
+      "bidClose": 1285.6,
+      "askOpen": 1286.1,
+      "askClose": 1286.1,
+      "bidHigh": 1286,
+      "bidLow": 1285.20001,
+      "askHigh": 1286.5,
+      "askLow": 1285.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 22:20:00",
+      "bidOpen": 1285.6,
+      "bidClose": 1282.6,
+      "askOpen": 1286.1,
+      "askClose": 1283.1,
+      "bidHigh": 1285.90001,
+      "bidLow": 1281.15001,
+      "askHigh": 1286.40001,
+      "askLow": 1281.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 22:25:00",
+      "bidOpen": 1282.70001,
+      "bidClose": 1280.15001,
+      "askOpen": 1283.20001,
+      "askClose": 1280.65001,
+      "bidHigh": 1283.1,
+      "bidLow": 1279.90001,
+      "askHigh": 1283.6,
+      "askLow": 1280.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 22:30:00",
+      "bidOpen": 1280.1,
+      "bidClose": 1277.8,
+      "askOpen": 1280.6,
+      "askClose": 1278.3,
+      "bidHigh": 1280.20001,
+      "bidLow": 1276.75,
+      "askHigh": 1280.70001,
+      "askLow": 1277.25
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 22:35:00",
+      "bidOpen": 1277.8,
+      "bidClose": 1275.05,
+      "askOpen": 1278.3,
+      "askClose": 1275.55,
+      "bidHigh": 1277.90001,
+      "bidLow": 1274.8,
+      "askHigh": 1278.40001,
+      "askLow": 1275.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 22:40:00",
+      "bidOpen": 1275.1,
+      "bidClose": 1275.40001,
+      "askOpen": 1275.6,
+      "askClose": 1275.90001,
+      "bidHigh": 1276.1,
+      "bidLow": 1274,
+      "askHigh": 1276.6,
+      "askLow": 1274.5
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 22:45:00",
+      "bidOpen": 1275.3,
+      "bidClose": 1275.3,
+      "askOpen": 1275.8,
+      "askClose": 1275.8,
+      "bidHigh": 1275.5,
+      "bidLow": 1274.40001,
+      "askHigh": 1276,
+      "askLow": 1274.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 22:50:00",
+      "bidOpen": 1275.35,
+      "bidClose": 1274.15001,
+      "askOpen": 1275.85,
+      "askClose": 1274.65001,
+      "bidHigh": 1275.40001,
+      "bidLow": 1274.05,
+      "askHigh": 1275.90001,
+      "askLow": 1274.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 22:55:00",
+      "bidOpen": 1274.25,
+      "bidClose": 1273.85,
+      "askOpen": 1274.75,
+      "askClose": 1274.35,
+      "bidHigh": 1274.45001,
+      "bidLow": 1273.15001,
+      "askHigh": 1274.95001,
+      "askLow": 1273.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 23:00:00",
+      "bidOpen": 1273.85,
+      "bidClose": 1274.95001,
+      "askOpen": 1274.35,
+      "askClose": 1275.45001,
+      "bidHigh": 1275.05,
+      "bidLow": 1273.75,
+      "askHigh": 1275.55,
+      "askLow": 1274.25
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 23:05:00",
+      "bidOpen": 1274.95001,
+      "bidClose": 1275.25,
+      "askOpen": 1275.45001,
+      "askClose": 1275.75,
+      "bidHigh": 1275.25,
+      "bidLow": 1274.5,
+      "askHigh": 1275.75,
+      "askLow": 1275
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 23:10:00",
+      "bidOpen": 1275.20001,
+      "bidClose": 1275.15001,
+      "askOpen": 1275.70001,
+      "askClose": 1275.65001,
+      "bidHigh": 1275.55,
+      "bidLow": 1274.95001,
+      "askHigh": 1276.05,
+      "askLow": 1275.45001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 23:15:00",
+      "bidOpen": 1275.15001,
+      "bidClose": 1274.20001,
+      "askOpen": 1275.65001,
+      "askClose": 1274.70001,
+      "bidHigh": 1275.3,
+      "bidLow": 1274.20001,
+      "askHigh": 1275.8,
+      "askLow": 1274.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 23:20:00",
+      "bidOpen": 1274.15001,
+      "bidClose": 1274.85,
+      "askOpen": 1274.65001,
+      "askClose": 1275.35,
+      "bidHigh": 1275.5,
+      "bidLow": 1274.1,
+      "askHigh": 1276,
+      "askLow": 1274.6
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 23:25:00",
+      "bidOpen": 1274.8,
+      "bidClose": 1274.95001,
+      "askOpen": 1275.3,
+      "askClose": 1275.45001,
+      "bidHigh": 1274.95001,
+      "bidLow": 1274.40001,
+      "askHigh": 1275.45001,
+      "askLow": 1274.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 23:30:00",
+      "bidOpen": 1275.05,
+      "bidClose": 1275.15001,
+      "askOpen": 1275.55,
+      "askClose": 1275.65001,
+      "bidHigh": 1275.5,
+      "bidLow": 1274.85,
+      "askHigh": 1276,
+      "askLow": 1275.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 23:35:00",
+      "bidOpen": 1275.15001,
+      "bidClose": 1275.15001,
+      "askOpen": 1275.65001,
+      "askClose": 1275.65001,
+      "bidHigh": 1275.25,
+      "bidLow": 1274.65001,
+      "askHigh": 1275.75,
+      "askLow": 1275.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 23:40:00",
+      "bidOpen": 1275.15001,
+      "bidClose": 1275.55,
+      "askOpen": 1275.65001,
+      "askClose": 1276.05,
+      "bidHigh": 1275.90001,
+      "bidLow": 1274.85,
+      "askHigh": 1276.40001,
+      "askLow": 1275.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 23:45:00",
+      "bidOpen": 1275.5,
+      "bidClose": 1275.15001,
+      "askOpen": 1276,
+      "askClose": 1275.65001,
+      "bidHigh": 1275.5,
+      "bidLow": 1274.8,
+      "askHigh": 1276,
+      "askLow": 1275.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 23:50:00",
+      "bidOpen": 1275.15001,
+      "bidClose": 1275.5,
+      "askOpen": 1275.65001,
+      "askClose": 1276,
+      "bidHigh": 1275.65001,
+      "bidLow": 1274.95001,
+      "askHigh": 1276.15001,
+      "askLow": 1275.45001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-16 23:55:00",
+      "bidOpen": 1275.55,
+      "bidClose": 1275.25,
+      "askOpen": 1276.05,
+      "askClose": 1275.75,
+      "bidHigh": 1275.55,
+      "bidLow": 1275.15001,
+      "askHigh": 1276.05,
+      "askLow": 1275.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 00:00:00",
+      "bidOpen": 1275.25,
+      "bidClose": 1275.25,
+      "askOpen": 1275.75,
+      "askClose": 1275.75,
+      "bidHigh": 1275.3,
+      "bidLow": 1275.15001,
+      "askHigh": 1275.8,
+      "askLow": 1275.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 00:05:00",
+      "bidOpen": 1275.25,
+      "bidClose": 1274.6,
+      "askOpen": 1275.75,
+      "askClose": 1275.1,
+      "bidHigh": 1275.40001,
+      "bidLow": 1274.40001,
+      "askHigh": 1275.90001,
+      "askLow": 1274.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 00:10:00",
+      "bidOpen": 1274.55,
+      "bidClose": 1276.05,
+      "askOpen": 1275.05,
+      "askClose": 1276.55,
+      "bidHigh": 1276.05,
+      "bidLow": 1274.55,
+      "askHigh": 1276.55,
+      "askLow": 1275.05
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 00:15:00",
+      "bidOpen": 1276.05,
+      "bidClose": 1275.3,
+      "askOpen": 1276.55,
+      "askClose": 1275.8,
+      "bidHigh": 1276.05,
+      "bidLow": 1275.15001,
+      "askHigh": 1276.55,
+      "askLow": 1275.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 00:20:00",
+      "bidOpen": 1275.20001,
+      "bidClose": 1275.5,
+      "askOpen": 1275.70001,
+      "askClose": 1276,
+      "bidHigh": 1275.55,
+      "bidLow": 1275.1,
+      "askHigh": 1276.05,
+      "askLow": 1275.6
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 00:25:00",
+      "bidOpen": 1275.55,
+      "bidClose": 1275.5,
+      "askOpen": 1276.05,
+      "askClose": 1276,
+      "bidHigh": 1275.70001,
+      "bidLow": 1275.20001,
+      "askHigh": 1276.20001,
+      "askLow": 1275.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 00:30:00",
+      "bidOpen": 1275.55,
+      "bidClose": 1275.3,
+      "askOpen": 1276.05,
+      "askClose": 1275.8,
+      "bidHigh": 1275.70001,
+      "bidLow": 1275.3,
+      "askHigh": 1276.20001,
+      "askLow": 1275.8
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 00:35:00",
+      "bidOpen": 1275.3,
+      "bidClose": 1275.35,
+      "askOpen": 1275.8,
+      "askClose": 1275.85,
+      "bidHigh": 1275.5,
+      "bidLow": 1275,
+      "askHigh": 1276,
+      "askLow": 1275.5
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 00:40:00",
+      "bidOpen": 1275.3,
+      "bidClose": 1275.5,
+      "askOpen": 1275.8,
+      "askClose": 1276,
+      "bidHigh": 1275.90001,
+      "bidLow": 1275.20001,
+      "askHigh": 1276.40001,
+      "askLow": 1275.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 00:45:00",
+      "bidOpen": 1275.5,
+      "bidClose": 1275.6,
+      "askOpen": 1276,
+      "askClose": 1276.1,
+      "bidHigh": 1275.6,
+      "bidLow": 1275.40001,
+      "askHigh": 1276.1,
+      "askLow": 1275.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 00:50:00",
+      "bidOpen": 1275.6,
+      "bidClose": 1275.90001,
+      "askOpen": 1276.1,
+      "askClose": 1276.40001,
+      "bidHigh": 1276,
+      "bidLow": 1275.6,
+      "askHigh": 1276.5,
+      "askLow": 1276.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 00:55:00",
+      "bidOpen": 1275.90001,
+      "bidClose": 1275.5,
+      "askOpen": 1276.40001,
+      "askClose": 1276,
+      "bidHigh": 1275.90001,
+      "bidLow": 1275.3,
+      "askHigh": 1276.40001,
+      "askLow": 1275.8
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 01:00:00",
+      "bidOpen": 1275.5,
+      "bidClose": 1272.75,
+      "askOpen": 1276,
+      "askClose": 1273.25,
+      "bidHigh": 1275.5,
+      "bidLow": 1272.35,
+      "askHigh": 1276,
+      "askLow": 1272.85
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 01:05:00",
+      "bidOpen": 1272.85,
+      "bidClose": 1271.5,
+      "askOpen": 1273.35,
+      "askClose": 1272,
+      "bidHigh": 1272.85,
+      "bidLow": 1270.40001,
+      "askHigh": 1273.35,
+      "askLow": 1270.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 01:10:00",
+      "bidOpen": 1271.6,
+      "bidClose": 1272,
+      "askOpen": 1272.1,
+      "askClose": 1272.5,
+      "bidHigh": 1272.3,
+      "bidLow": 1271.5,
+      "askHigh": 1272.8,
+      "askLow": 1272
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 01:15:00",
+      "bidOpen": 1271.95001,
+      "bidClose": 1272.70001,
+      "askOpen": 1272.45001,
+      "askClose": 1273.20001,
+      "bidHigh": 1272.75,
+      "bidLow": 1271.8,
+      "askHigh": 1273.25,
+      "askLow": 1272.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 01:20:00",
+      "bidOpen": 1272.65001,
+      "bidClose": 1272.15001,
+      "askOpen": 1273.15001,
+      "askClose": 1272.65001,
+      "bidHigh": 1272.75,
+      "bidLow": 1272.1,
+      "askHigh": 1273.25,
+      "askLow": 1272.6
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 01:25:00",
+      "bidOpen": 1272.15001,
+      "bidClose": 1273.1,
+      "askOpen": 1272.65001,
+      "askClose": 1273.6,
+      "bidHigh": 1273.1,
+      "bidLow": 1271.8,
+      "askHigh": 1273.6,
+      "askLow": 1272.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 01:30:00",
+      "bidOpen": 1273.1,
+      "bidClose": 1272.90001,
+      "askOpen": 1273.6,
+      "askClose": 1273.40001,
+      "bidHigh": 1273.1,
+      "bidLow": 1272.55,
+      "askHigh": 1273.6,
+      "askLow": 1273.05
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 01:35:00",
+      "bidOpen": 1272.8,
+      "bidClose": 1273.05,
+      "askOpen": 1273.3,
+      "askClose": 1273.55,
+      "bidHigh": 1273.40001,
+      "bidLow": 1272.70001,
+      "askHigh": 1273.90001,
+      "askLow": 1273.20001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 01:40:00",
+      "bidOpen": 1273.05,
+      "bidClose": 1274.05,
+      "askOpen": 1273.55,
+      "askClose": 1274.55,
+      "bidHigh": 1274.05,
+      "bidLow": 1273.05,
+      "askHigh": 1274.55,
+      "askLow": 1273.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 01:45:00",
+      "bidOpen": 1274.05,
+      "bidClose": 1272.95001,
+      "askOpen": 1274.55,
+      "askClose": 1273.45001,
+      "bidHigh": 1274.05,
+      "bidLow": 1272.85,
+      "askHigh": 1274.55,
+      "askLow": 1273.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 01:50:00",
+      "bidOpen": 1273.05,
+      "bidClose": 1273.20001,
+      "askOpen": 1273.55,
+      "askClose": 1273.70001,
+      "bidHigh": 1273.55,
+      "bidLow": 1272.85,
+      "askHigh": 1274.05,
+      "askLow": 1273.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 01:55:00",
+      "bidOpen": 1273.20001,
+      "bidClose": 1273.20001,
+      "askOpen": 1273.70001,
+      "askClose": 1273.70001,
+      "bidHigh": 1273.65001,
+      "bidLow": 1273.05,
+      "askHigh": 1274.15001,
+      "askLow": 1273.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 02:00:00",
+      "bidOpen": 1273.20001,
+      "bidClose": 1271.85,
+      "askOpen": 1273.70001,
+      "askClose": 1272.35,
+      "bidHigh": 1273.20001,
+      "bidLow": 1271.8,
+      "askHigh": 1273.70001,
+      "askLow": 1272.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 02:05:00",
+      "bidOpen": 1271.85,
+      "bidClose": 1272.3,
+      "askOpen": 1272.35,
+      "askClose": 1272.8,
+      "bidHigh": 1272.55,
+      "bidLow": 1271.65001,
+      "askHigh": 1273.05,
+      "askLow": 1272.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 02:10:00",
+      "bidOpen": 1272.3,
+      "bidClose": 1271.90001,
+      "askOpen": 1272.8,
+      "askClose": 1272.40001,
+      "bidHigh": 1272.3,
+      "bidLow": 1271.70001,
+      "askHigh": 1272.8,
+      "askLow": 1272.20001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 02:15:00",
+      "bidOpen": 1271.90001,
+      "bidClose": 1271.40001,
+      "askOpen": 1272.40001,
+      "askClose": 1271.90001,
+      "bidHigh": 1271.90001,
+      "bidLow": 1271.40001,
+      "askHigh": 1272.40001,
+      "askLow": 1271.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 02:20:00",
+      "bidOpen": 1271.40001,
+      "bidClose": 1272.15001,
+      "askOpen": 1271.90001,
+      "askClose": 1272.65001,
+      "bidHigh": 1272.15001,
+      "bidLow": 1271.3,
+      "askHigh": 1272.65001,
+      "askLow": 1271.8
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 02:25:00",
+      "bidOpen": 1272.1,
+      "bidClose": 1272.90001,
+      "askOpen": 1272.6,
+      "askClose": 1273.40001,
+      "bidHigh": 1273.35,
+      "bidLow": 1272.05,
+      "askHigh": 1273.85,
+      "askLow": 1272.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 02:30:00",
+      "bidOpen": 1272.85,
+      "bidClose": 1272.40001,
+      "askOpen": 1273.35,
+      "askClose": 1272.90001,
+      "bidHigh": 1272.85,
+      "bidLow": 1272.20001,
+      "askHigh": 1273.35,
+      "askLow": 1272.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 02:35:00",
+      "bidOpen": 1272.55,
+      "bidClose": 1272.5,
+      "askOpen": 1273.05,
+      "askClose": 1273,
+      "bidHigh": 1272.75,
+      "bidLow": 1272.35,
+      "askHigh": 1273.25,
+      "askLow": 1272.85
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 02:40:00",
+      "bidOpen": 1272.45001,
+      "bidClose": 1272.1,
+      "askOpen": 1272.95001,
+      "askClose": 1272.6,
+      "bidHigh": 1272.70001,
+      "bidLow": 1272.1,
+      "askHigh": 1273.20001,
+      "askLow": 1272.6
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 02:45:00",
+      "bidOpen": 1272.05,
+      "bidClose": 1272.40001,
+      "askOpen": 1272.55,
+      "askClose": 1272.90001,
+      "bidHigh": 1272.70001,
+      "bidLow": 1272.05,
+      "askHigh": 1273.20001,
+      "askLow": 1272.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 02:50:00",
+      "bidOpen": 1272.35,
+      "bidClose": 1272.6,
+      "askOpen": 1272.85,
+      "askClose": 1273.1,
+      "bidHigh": 1272.90001,
+      "bidLow": 1272.20001,
+      "askHigh": 1273.40001,
+      "askLow": 1272.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 02:55:00",
+      "bidOpen": 1272.6,
+      "bidClose": 1272.65001,
+      "askOpen": 1273.1,
+      "askClose": 1273.15001,
+      "bidHigh": 1272.65001,
+      "bidLow": 1272.20001,
+      "askHigh": 1273.15001,
+      "askLow": 1272.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 03:00:00",
+      "bidOpen": 1272.6,
+      "bidClose": 1273.1,
+      "askOpen": 1273.1,
+      "askClose": 1273.6,
+      "bidHigh": 1273.1,
+      "bidLow": 1272.6,
+      "askHigh": 1273.6,
+      "askLow": 1273.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 03:05:00",
+      "bidOpen": 1273.05,
+      "bidClose": 1272.70001,
+      "askOpen": 1273.55,
+      "askClose": 1273.20001,
+      "bidHigh": 1273.1,
+      "bidLow": 1272.70001,
+      "askHigh": 1273.6,
+      "askLow": 1273.20001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 03:10:00",
+      "bidOpen": 1272.70001,
+      "bidClose": 1273.40001,
+      "askOpen": 1273.20001,
+      "askClose": 1273.90001,
+      "bidHigh": 1273.40001,
+      "bidLow": 1272.70001,
+      "askHigh": 1273.90001,
+      "askLow": 1273.20001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 03:15:00",
+      "bidOpen": 1273.40001,
+      "bidClose": 1274,
+      "askOpen": 1273.90001,
+      "askClose": 1274.5,
+      "bidHigh": 1274,
+      "bidLow": 1273.35,
+      "askHigh": 1274.5,
+      "askLow": 1273.85
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 03:20:00",
+      "bidOpen": 1274,
+      "bidClose": 1273.05,
+      "askOpen": 1274.5,
+      "askClose": 1273.55,
+      "bidHigh": 1274.1,
+      "bidLow": 1273.05,
+      "askHigh": 1274.6,
+      "askLow": 1273.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 03:25:00",
+      "bidOpen": 1273.05,
+      "bidClose": 1273.20001,
+      "askOpen": 1273.55,
+      "askClose": 1273.70001,
+      "bidHigh": 1273.20001,
+      "bidLow": 1272.90001,
+      "askHigh": 1273.70001,
+      "askLow": 1273.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 03:30:00",
+      "bidOpen": 1273.20001,
+      "bidClose": 1273.90001,
+      "askOpen": 1273.70001,
+      "askClose": 1274.6,
+      "bidHigh": 1273.90001,
+      "bidLow": 1273,
+      "askHigh": 1274.6,
+      "askLow": 1273.6
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 03:35:00",
+      "bidOpen": 1273.90001,
+      "bidClose": 1273.95001,
+      "askOpen": 1274.6,
+      "askClose": 1274.65001,
+      "bidHigh": 1274.3,
+      "bidLow": 1273.6,
+      "askHigh": 1275,
+      "askLow": 1274.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 03:40:00",
+      "bidOpen": 1273.95001,
+      "bidClose": 1274.15001,
+      "askOpen": 1274.65001,
+      "askClose": 1274.85,
+      "bidHigh": 1274.20001,
+      "bidLow": 1273.95001,
+      "askHigh": 1274.90001,
+      "askLow": 1274.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 03:45:00",
+      "bidOpen": 1274.20001,
+      "bidClose": 1274.15001,
+      "askOpen": 1274.90001,
+      "askClose": 1274.85,
+      "bidHigh": 1274.3,
+      "bidLow": 1274.05,
+      "askHigh": 1275,
+      "askLow": 1274.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 03:50:00",
+      "bidOpen": 1274.15001,
+      "bidClose": 1274.35,
+      "askOpen": 1274.85,
+      "askClose": 1275.05,
+      "bidHigh": 1274.45001,
+      "bidLow": 1273.95001,
+      "askHigh": 1275.15001,
+      "askLow": 1274.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 03:55:00",
+      "bidOpen": 1274.3,
+      "bidClose": 1274.40001,
+      "askOpen": 1275,
+      "askClose": 1275.1,
+      "bidHigh": 1274.8,
+      "bidLow": 1274.25,
+      "askHigh": 1275.5,
+      "askLow": 1274.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 04:00:00",
+      "bidOpen": 1274.3,
+      "bidClose": 1274.45001,
+      "askOpen": 1275,
+      "askClose": 1275.15001,
+      "bidHigh": 1274.6,
+      "bidLow": 1274,
+      "askHigh": 1275.3,
+      "askLow": 1274.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 04:05:00",
+      "bidOpen": 1274.45001,
+      "bidClose": 1274.25,
+      "askOpen": 1275.15001,
+      "askClose": 1274.95001,
+      "bidHigh": 1274.65001,
+      "bidLow": 1274.25,
+      "askHigh": 1275.35,
+      "askLow": 1274.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 04:10:00",
+      "bidOpen": 1274.25,
+      "bidClose": 1274.1,
+      "askOpen": 1274.95001,
+      "askClose": 1274.8,
+      "bidHigh": 1274.25,
+      "bidLow": 1274,
+      "askHigh": 1274.95001,
+      "askLow": 1274.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 04:15:00",
+      "bidOpen": 1274.1,
+      "bidClose": 1274.3,
+      "askOpen": 1274.8,
+      "askClose": 1275,
+      "bidHigh": 1274.3,
+      "bidLow": 1274,
+      "askHigh": 1275,
+      "askLow": 1274.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 04:20:00",
+      "bidOpen": 1274.35,
+      "bidClose": 1274.40001,
+      "askOpen": 1275.05,
+      "askClose": 1275.1,
+      "bidHigh": 1274.55,
+      "bidLow": 1274.25,
+      "askHigh": 1275.25,
+      "askLow": 1274.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 04:25:00",
+      "bidOpen": 1274.40001,
+      "bidClose": 1274.3,
+      "askOpen": 1275.1,
+      "askClose": 1275,
+      "bidHigh": 1274.45001,
+      "bidLow": 1274.3,
+      "askHigh": 1275.15001,
+      "askLow": 1275
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 04:30:00",
+      "bidOpen": 1274.3,
+      "bidClose": 1274,
+      "askOpen": 1275,
+      "askClose": 1274.70001,
+      "bidHigh": 1274.3,
+      "bidLow": 1273.85,
+      "askHigh": 1275,
+      "askLow": 1274.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 04:35:00",
+      "bidOpen": 1273.95001,
+      "bidClose": 1274.40001,
+      "askOpen": 1274.65001,
+      "askClose": 1275.1,
+      "bidHigh": 1274.5,
+      "bidLow": 1273.85,
+      "askHigh": 1275.20001,
+      "askLow": 1274.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 04:40:00",
+      "bidOpen": 1274.45001,
+      "bidClose": 1274.3,
+      "askOpen": 1275.15001,
+      "askClose": 1275,
+      "bidHigh": 1274.5,
+      "bidLow": 1274.20001,
+      "askHigh": 1275.20001,
+      "askLow": 1274.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 04:45:00",
+      "bidOpen": 1274.25,
+      "bidClose": 1273.8,
+      "askOpen": 1274.95001,
+      "askClose": 1274.5,
+      "bidHigh": 1274.40001,
+      "bidLow": 1273.70001,
+      "askHigh": 1275.1,
+      "askLow": 1274.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 04:50:00",
+      "bidOpen": 1273.75,
+      "bidClose": 1273.5,
+      "askOpen": 1274.45001,
+      "askClose": 1274.20001,
+      "bidHigh": 1273.85,
+      "bidLow": 1273.45001,
+      "askHigh": 1274.55,
+      "askLow": 1274.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 04:55:00",
+      "bidOpen": 1273.5,
+      "bidClose": 1273.6,
+      "askOpen": 1274.20001,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.5,
+      "askHigh": 1274.3,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 05:00:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 05:05:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 05:10:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 05:15:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 05:20:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 05:25:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 05:30:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 05:35:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 05:40:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 05:45:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 05:50:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 05:55:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 06:00:00",
+      "bidOpen": 1273.6,
+      "bidClose": 1273.6,
+      "askOpen": 1274.1,
+      "askClose": 1274.1,
+      "bidHigh": 1273.6,
+      "bidLow": 1273.6,
+      "askHigh": 1274.1,
+      "askLow": 1274.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 06:05:00",
+      "bidOpen": 1273.95001,
+      "bidClose": 1274.55,
+      "askOpen": 1274.95001,
+      "askClose": 1275.55,
+      "bidHigh": 1274.6,
+      "bidLow": 1273.85,
+      "askHigh": 1275.6,
+      "askLow": 1274.85
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 06:10:00",
+      "bidOpen": 1274.6,
+      "bidClose": 1274.6,
+      "askOpen": 1275.6,
+      "askClose": 1275.6,
+      "bidHigh": 1274.8,
+      "bidLow": 1274.45001,
+      "askHigh": 1275.8,
+      "askLow": 1275.45001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 06:15:00",
+      "bidOpen": 1274.6,
+      "bidClose": 1274.75,
+      "askOpen": 1275.6,
+      "askClose": 1275.75,
+      "bidHigh": 1274.90001,
+      "bidLow": 1274.5,
+      "askHigh": 1275.90001,
+      "askLow": 1275.5
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 06:20:00",
+      "bidOpen": 1274.75,
+      "bidClose": 1274.70001,
+      "askOpen": 1275.75,
+      "askClose": 1275.70001,
+      "bidHigh": 1274.90001,
+      "bidLow": 1274.5,
+      "askHigh": 1275.90001,
+      "askLow": 1275.5
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 06:25:00",
+      "bidOpen": 1274.75,
+      "bidClose": 1274.65001,
+      "askOpen": 1275.75,
+      "askClose": 1275.65001,
+      "bidHigh": 1274.90001,
+      "bidLow": 1274.5,
+      "askHigh": 1275.90001,
+      "askLow": 1275.5
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 06:30:00",
+      "bidOpen": 1274.65001,
+      "bidClose": 1274.75,
+      "askOpen": 1275.65001,
+      "askClose": 1275.75,
+      "bidHigh": 1275.15001,
+      "bidLow": 1274.55,
+      "askHigh": 1276.15001,
+      "askLow": 1275.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 06:35:00",
+      "bidOpen": 1274.70001,
+      "bidClose": 1274.8,
+      "askOpen": 1275.70001,
+      "askClose": 1275.8,
+      "bidHigh": 1275.1,
+      "bidLow": 1274.6,
+      "askHigh": 1276.1,
+      "askLow": 1275.6
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 06:40:00",
+      "bidOpen": 1274.8,
+      "bidClose": 1274.70001,
+      "askOpen": 1275.8,
+      "askClose": 1275.70001,
+      "bidHigh": 1274.90001,
+      "bidLow": 1274.65001,
+      "askHigh": 1275.90001,
+      "askLow": 1275.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 06:45:00",
+      "bidOpen": 1274.65001,
+      "bidClose": 1274.6,
+      "askOpen": 1275.65001,
+      "askClose": 1275.6,
+      "bidHigh": 1274.70001,
+      "bidLow": 1274.25,
+      "askHigh": 1275.70001,
+      "askLow": 1275.25
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 06:50:00",
+      "bidOpen": 1274.55,
+      "bidClose": 1274.45001,
+      "askOpen": 1275.55,
+      "askClose": 1275.45001,
+      "bidHigh": 1274.65001,
+      "bidLow": 1274.40001,
+      "askHigh": 1275.65001,
+      "askLow": 1275.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 06:55:00",
+      "bidOpen": 1274.45001,
+      "bidClose": 1274.55,
+      "askOpen": 1275.45001,
+      "askClose": 1275.55,
+      "bidHigh": 1274.55,
+      "bidLow": 1274.35,
+      "askHigh": 1275.55,
+      "askLow": 1275.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 07:00:00",
+      "bidOpen": 1274.55,
+      "bidClose": 1275.1,
+      "askOpen": 1275.55,
+      "askClose": 1276.1,
+      "bidHigh": 1275.15001,
+      "bidLow": 1274.55,
+      "askHigh": 1276.15001,
+      "askLow": 1275.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 07:05:00",
+      "bidOpen": 1275.15001,
+      "bidClose": 1274.70001,
+      "askOpen": 1276.15001,
+      "askClose": 1275.70001,
+      "bidHigh": 1275.15001,
+      "bidLow": 1274.5,
+      "askHigh": 1276.15001,
+      "askLow": 1275.5
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 07:10:00",
+      "bidOpen": 1274.6,
+      "bidClose": 1274.70001,
+      "askOpen": 1275.6,
+      "askClose": 1275.70001,
+      "bidHigh": 1274.75,
+      "bidLow": 1274.55,
+      "askHigh": 1275.75,
+      "askLow": 1275.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 07:15:00",
+      "bidOpen": 1274.75,
+      "bidClose": 1274.6,
+      "askOpen": 1275.75,
+      "askClose": 1275.6,
+      "bidHigh": 1274.75,
+      "bidLow": 1274.40001,
+      "askHigh": 1275.75,
+      "askLow": 1275.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 07:20:00",
+      "bidOpen": 1274.65001,
+      "bidClose": 1274.40001,
+      "askOpen": 1275.65001,
+      "askClose": 1275.40001,
+      "bidHigh": 1274.75,
+      "bidLow": 1274.3,
+      "askHigh": 1275.75,
+      "askLow": 1275.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 07:25:00",
+      "bidOpen": 1274.3,
+      "bidClose": 1274,
+      "askOpen": 1275.3,
+      "askClose": 1275,
+      "bidHigh": 1274.35,
+      "bidLow": 1273.90001,
+      "askHigh": 1275.35,
+      "askLow": 1274.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 07:30:00",
+      "bidOpen": 1274.05,
+      "bidClose": 1274.25,
+      "askOpen": 1275.05,
+      "askClose": 1275.25,
+      "bidHigh": 1274.25,
+      "bidLow": 1273.8,
+      "askHigh": 1275.25,
+      "askLow": 1274.8
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 07:35:00",
+      "bidOpen": 1274.25,
+      "bidClose": 1273.90001,
+      "askOpen": 1275.25,
+      "askClose": 1274.90001,
+      "bidHigh": 1274.25,
+      "bidLow": 1273.90001,
+      "askHigh": 1275.25,
+      "askLow": 1274.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 07:40:00",
+      "bidOpen": 1273.90001,
+      "bidClose": 1273.85,
+      "askOpen": 1274.90001,
+      "askClose": 1274.85,
+      "bidHigh": 1274,
+      "bidLow": 1273.70001,
+      "askHigh": 1275,
+      "askLow": 1274.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 07:45:00",
+      "bidOpen": 1273.85,
+      "bidClose": 1273.70001,
+      "askOpen": 1274.85,
+      "askClose": 1274.70001,
+      "bidHigh": 1274,
+      "bidLow": 1273.65001,
+      "askHigh": 1275,
+      "askLow": 1274.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 07:50:00",
+      "bidOpen": 1273.65001,
+      "bidClose": 1274.5,
+      "askOpen": 1274.65001,
+      "askClose": 1275.5,
+      "bidHigh": 1274.5,
+      "bidLow": 1273.65001,
+      "askHigh": 1275.5,
+      "askLow": 1274.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 07:55:00",
+      "bidOpen": 1274.40001,
+      "bidClose": 1275.1,
+      "askOpen": 1275.40001,
+      "askClose": 1275.6,
+      "bidHigh": 1275.20001,
+      "bidLow": 1274.25,
+      "askHigh": 1276,
+      "askLow": 1275.25
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 08:00:00",
+      "bidOpen": 1275.05,
+      "bidClose": 1274.45001,
+      "askOpen": 1275.55,
+      "askClose": 1274.95001,
+      "bidHigh": 1275.05,
+      "bidLow": 1274.25,
+      "askHigh": 1275.55,
+      "askLow": 1274.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 08:05:00",
+      "bidOpen": 1274.40001,
+      "bidClose": 1274.85,
+      "askOpen": 1274.90001,
+      "askClose": 1275.35,
+      "bidHigh": 1275.05,
+      "bidLow": 1274.40001,
+      "askHigh": 1275.55,
+      "askLow": 1274.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 08:10:00",
+      "bidOpen": 1274.85,
+      "bidClose": 1275.65001,
+      "askOpen": 1275.35,
+      "askClose": 1276.15001,
+      "bidHigh": 1275.65001,
+      "bidLow": 1274.85,
+      "askHigh": 1276.15001,
+      "askLow": 1275.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 08:15:00",
+      "bidOpen": 1275.65001,
+      "bidClose": 1275.3,
+      "askOpen": 1276.15001,
+      "askClose": 1275.8,
+      "bidHigh": 1276.15001,
+      "bidLow": 1275.20001,
+      "askHigh": 1276.65001,
+      "askLow": 1275.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 08:20:00",
+      "bidOpen": 1275.25,
+      "bidClose": 1275.55,
+      "askOpen": 1275.75,
+      "askClose": 1276.05,
+      "bidHigh": 1275.90001,
+      "bidLow": 1275.15001,
+      "askHigh": 1276.40001,
+      "askLow": 1275.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 08:25:00",
+      "bidOpen": 1275.5,
+      "bidClose": 1276.05,
+      "askOpen": 1276,
+      "askClose": 1276.55,
+      "bidHigh": 1276.05,
+      "bidLow": 1275.40001,
+      "askHigh": 1276.55,
+      "askLow": 1275.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 08:30:00",
+      "bidOpen": 1276.05,
+      "bidClose": 1276.20001,
+      "askOpen": 1276.55,
+      "askClose": 1276.70001,
+      "bidHigh": 1276.90001,
+      "bidLow": 1276,
+      "askHigh": 1277.40001,
+      "askLow": 1276.5
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 08:35:00",
+      "bidOpen": 1276.15001,
+      "bidClose": 1276.40001,
+      "askOpen": 1276.65001,
+      "askClose": 1276.90001,
+      "bidHigh": 1276.40001,
+      "bidLow": 1275.8,
+      "askHigh": 1276.90001,
+      "askLow": 1276.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 08:40:00",
+      "bidOpen": 1276.40001,
+      "bidClose": 1276.90001,
+      "askOpen": 1276.90001,
+      "askClose": 1277.40001,
+      "bidHigh": 1277,
+      "bidLow": 1276.3,
+      "askHigh": 1277.5,
+      "askLow": 1276.8
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 08:45:00",
+      "bidOpen": 1276.90001,
+      "bidClose": 1276.1,
+      "askOpen": 1277.40001,
+      "askClose": 1276.6,
+      "bidHigh": 1276.90001,
+      "bidLow": 1276.1,
+      "askHigh": 1277.40001,
+      "askLow": 1276.6
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 08:50:00",
+      "bidOpen": 1276.20001,
+      "bidClose": 1276.6,
+      "askOpen": 1276.70001,
+      "askClose": 1277.1,
+      "bidHigh": 1276.70001,
+      "bidLow": 1276.20001,
+      "askHigh": 1277.20001,
+      "askLow": 1276.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 08:55:00",
+      "bidOpen": 1276.65001,
+      "bidClose": 1276,
+      "askOpen": 1277.15001,
+      "askClose": 1276.5,
+      "bidHigh": 1276.75,
+      "bidLow": 1275.95001,
+      "askHigh": 1277.25,
+      "askLow": 1276.45001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 09:00:00",
+      "bidOpen": 1276.15001,
+      "bidClose": 1276.3,
+      "askOpen": 1276.65001,
+      "askClose": 1276.8,
+      "bidHigh": 1276.55,
+      "bidLow": 1275.8,
+      "askHigh": 1277.05,
+      "askLow": 1276.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 09:05:00",
+      "bidOpen": 1276.35,
+      "bidClose": 1275.70001,
+      "askOpen": 1276.85,
+      "askClose": 1276.20001,
+      "bidHigh": 1276.35,
+      "bidLow": 1275.6,
+      "askHigh": 1276.85,
+      "askLow": 1276.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 09:10:00",
+      "bidOpen": 1275.70001,
+      "bidClose": 1275.40001,
+      "askOpen": 1276.20001,
+      "askClose": 1275.90001,
+      "bidHigh": 1276.25,
+      "bidLow": 1275.25,
+      "askHigh": 1276.75,
+      "askLow": 1275.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 09:15:00",
+      "bidOpen": 1275.40001,
+      "bidClose": 1276,
+      "askOpen": 1275.90001,
+      "askClose": 1276.5,
+      "bidHigh": 1276.20001,
+      "bidLow": 1275.3,
+      "askHigh": 1276.70001,
+      "askLow": 1275.8
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 09:20:00",
+      "bidOpen": 1276,
+      "bidClose": 1276.40001,
+      "askOpen": 1276.5,
+      "askClose": 1276.90001,
+      "bidHigh": 1276.8,
+      "bidLow": 1276,
+      "askHigh": 1277.3,
+      "askLow": 1276.5
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 09:25:00",
+      "bidOpen": 1276.3,
+      "bidClose": 1276.45001,
+      "askOpen": 1276.8,
+      "askClose": 1276.95001,
+      "bidHigh": 1276.70001,
+      "bidLow": 1276.15001,
+      "askHigh": 1277.20001,
+      "askLow": 1276.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 09:30:00",
+      "bidOpen": 1276.45001,
+      "bidClose": 1277.6,
+      "askOpen": 1276.95001,
+      "askClose": 1278.1,
+      "bidHigh": 1277.6,
+      "bidLow": 1276.45001,
+      "askHigh": 1278.1,
+      "askLow": 1276.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 09:35:00",
+      "bidOpen": 1277.6,
+      "bidClose": 1277.65001,
+      "askOpen": 1278.1,
+      "askClose": 1278.15001,
+      "bidHigh": 1278.20001,
+      "bidLow": 1277.5,
+      "askHigh": 1278.70001,
+      "askLow": 1278
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 09:40:00",
+      "bidOpen": 1277.6,
+      "bidClose": 1277.95001,
+      "askOpen": 1278.1,
+      "askClose": 1278.45001,
+      "bidHigh": 1278.3,
+      "bidLow": 1277.55,
+      "askHigh": 1278.8,
+      "askLow": 1278.05
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 09:45:00",
+      "bidOpen": 1277.90001,
+      "bidClose": 1278,
+      "askOpen": 1278.40001,
+      "askClose": 1278.5,
+      "bidHigh": 1278.35,
+      "bidLow": 1277.70001,
+      "askHigh": 1278.85,
+      "askLow": 1278.20001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 09:50:00",
+      "bidOpen": 1278,
+      "bidClose": 1278.65001,
+      "askOpen": 1278.5,
+      "askClose": 1279.15001,
+      "bidHigh": 1279.6,
+      "bidLow": 1277.90001,
+      "askHigh": 1280.1,
+      "askLow": 1278.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 09:55:00",
+      "bidOpen": 1278.65001,
+      "bidClose": 1279.25,
+      "askOpen": 1279.15001,
+      "askClose": 1279.75,
+      "bidHigh": 1279.25,
+      "bidLow": 1278.65001,
+      "askHigh": 1279.75,
+      "askLow": 1279.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 10:00:00",
+      "bidOpen": 1279.25,
+      "bidClose": 1279.25,
+      "askOpen": 1279.75,
+      "askClose": 1279.75,
+      "bidHigh": 1279.35,
+      "bidLow": 1278.8,
+      "askHigh": 1279.85,
+      "askLow": 1279.3
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 10:05:00",
+      "bidOpen": 1279.3,
+      "bidClose": 1278.65001,
+      "askOpen": 1279.8,
+      "askClose": 1279.15001,
+      "bidHigh": 1279.35,
+      "bidLow": 1278.25,
+      "askHigh": 1279.85,
+      "askLow": 1278.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 10:10:00",
+      "bidOpen": 1278.65001,
+      "bidClose": 1278.5,
+      "askOpen": 1279.15001,
+      "askClose": 1279,
+      "bidHigh": 1278.8,
+      "bidLow": 1278.45001,
+      "askHigh": 1279.3,
+      "askLow": 1278.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 10:15:00",
+      "bidOpen": 1278.40001,
+      "bidClose": 1278.55,
+      "askOpen": 1278.90001,
+      "askClose": 1279.05,
+      "bidHigh": 1278.65001,
+      "bidLow": 1278.40001,
+      "askHigh": 1279.15001,
+      "askLow": 1278.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 10:20:00",
+      "bidOpen": 1278.55,
+      "bidClose": 1278.70001,
+      "askOpen": 1279.05,
+      "askClose": 1279.20001,
+      "bidHigh": 1278.8,
+      "bidLow": 1278.45001,
+      "askHigh": 1279.3,
+      "askLow": 1278.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 10:25:00",
+      "bidOpen": 1278.70001,
+      "bidClose": 1278.90001,
+      "askOpen": 1279.20001,
+      "askClose": 1279.40001,
+      "bidHigh": 1279.15001,
+      "bidLow": 1278.70001,
+      "askHigh": 1279.65001,
+      "askLow": 1279.20001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 10:30:00",
+      "bidOpen": 1278.90001,
+      "bidClose": 1279.90001,
+      "askOpen": 1279.40001,
+      "askClose": 1280.40001,
+      "bidHigh": 1280,
+      "bidLow": 1278.90001,
+      "askHigh": 1280.5,
+      "askLow": 1279.40001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 10:35:00",
+      "bidOpen": 1279.90001,
+      "bidClose": 1279.15001,
+      "askOpen": 1280.40001,
+      "askClose": 1279.65001,
+      "bidHigh": 1279.90001,
+      "bidLow": 1279.05,
+      "askHigh": 1280.40001,
+      "askLow": 1279.55
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 10:40:00",
+      "bidOpen": 1279.05,
+      "bidClose": 1279.25,
+      "askOpen": 1279.55,
+      "askClose": 1279.75,
+      "bidHigh": 1279.35,
+      "bidLow": 1278.95001,
+      "askHigh": 1279.85,
+      "askLow": 1279.45001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 10:45:00",
+      "bidOpen": 1279.35,
+      "bidClose": 1279.70001,
+      "askOpen": 1279.85,
+      "askClose": 1280.20001,
+      "bidHigh": 1279.95001,
+      "bidLow": 1279.20001,
+      "askHigh": 1280.45001,
+      "askLow": 1279.70001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 10:50:00",
+      "bidOpen": 1279.70001,
+      "bidClose": 1280.05,
+      "askOpen": 1280.20001,
+      "askClose": 1280.55,
+      "bidHigh": 1280.05,
+      "bidLow": 1279.65001,
+      "askHigh": 1280.55,
+      "askLow": 1280.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 10:55:00",
+      "bidOpen": 1280.15001,
+      "bidClose": 1279.85,
+      "askOpen": 1280.65001,
+      "askClose": 1280.35,
+      "bidHigh": 1280.85,
+      "bidLow": 1279.65001,
+      "askHigh": 1281.35,
+      "askLow": 1280.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 11:00:00",
+      "bidOpen": 1279.8,
+      "bidClose": 1278.95001,
+      "askOpen": 1280.3,
+      "askClose": 1279.45001,
+      "bidHigh": 1280.15001,
+      "bidLow": 1278.65001,
+      "askHigh": 1280.65001,
+      "askLow": 1279.15001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 11:05:00",
+      "bidOpen": 1278.90001,
+      "bidClose": 1278.55,
+      "askOpen": 1279.40001,
+      "askClose": 1279.05,
+      "bidHigh": 1278.90001,
+      "bidLow": 1277.95001,
+      "askHigh": 1279.40001,
+      "askLow": 1278.45001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 11:10:00",
+      "bidOpen": 1278.45001,
+      "bidClose": 1278.65001,
+      "askOpen": 1278.95001,
+      "askClose": 1279.15001,
+      "bidHigh": 1279.25,
+      "bidLow": 1278.25,
+      "askHigh": 1279.75,
+      "askLow": 1278.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 11:15:00",
+      "bidOpen": 1278.6,
+      "bidClose": 1278.45001,
+      "askOpen": 1279.1,
+      "askClose": 1278.95001,
+      "bidHigh": 1279.5,
+      "bidLow": 1278.45001,
+      "askHigh": 1280,
+      "askLow": 1278.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 11:20:00",
+      "bidOpen": 1278.45001,
+      "bidClose": 1278.65001,
+      "askOpen": 1278.95001,
+      "askClose": 1279.15001,
+      "bidHigh": 1278.75,
+      "bidLow": 1278.45001,
+      "askHigh": 1279.25,
+      "askLow": 1278.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 11:25:00",
+      "bidOpen": 1278.65001,
+      "bidClose": 1278.25,
+      "askOpen": 1279.15001,
+      "askClose": 1278.75,
+      "bidHigh": 1278.75,
+      "bidLow": 1278.15001,
+      "askHigh": 1279.25,
+      "askLow": 1278.65001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 11:30:00",
+      "bidOpen": 1278.20001,
+      "bidClose": 1278.45001,
+      "askOpen": 1278.70001,
+      "askClose": 1278.95001,
+      "bidHigh": 1278.75,
+      "bidLow": 1277.85,
+      "askHigh": 1279.25,
+      "askLow": 1278.35
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 11:35:00",
+      "bidOpen": 1278.45001,
+      "bidClose": 1278.85,
+      "askOpen": 1278.95001,
+      "askClose": 1279.35,
+      "bidHigh": 1278.95001,
+      "bidLow": 1278.45001,
+      "askHigh": 1279.45001,
+      "askLow": 1278.95001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 11:40:00",
+      "bidOpen": 1278.85,
+      "bidClose": 1278.45001,
+      "askOpen": 1279.35,
+      "askClose": 1278.95001,
+      "bidHigh": 1278.90001,
+      "bidLow": 1278.40001,
+      "askHigh": 1279.40001,
+      "askLow": 1278.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 11:45:00",
+      "bidOpen": 1278.45001,
+      "bidClose": 1278.85,
+      "askOpen": 1278.95001,
+      "askClose": 1279.35,
+      "bidHigh": 1279.05,
+      "bidLow": 1278.40001,
+      "askHigh": 1279.55,
+      "askLow": 1278.90001
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 11:50:00",
+      "bidOpen": 1278.90001,
+      "bidClose": 1278.65001,
+      "askOpen": 1279.40001,
+      "askClose": 1279.15001,
+      "bidHigh": 1279.45001,
+      "bidLow": 1278.6,
+      "askHigh": 1279.95001,
+      "askLow": 1279.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 11:55:00",
+      "bidOpen": 1278.65001,
+      "bidClose": 1278.40001,
+      "askOpen": 1279.15001,
+      "askClose": 1278.90001,
+      "bidHigh": 1278.75,
+      "bidLow": 1278.25,
+      "askHigh": 1279.25,
+      "askLow": 1278.75
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 12:00:00",
+      "bidOpen": 1278.5,
+      "bidClose": 1278.90001,
+      "askOpen": 1279,
+      "askClose": 1279.40001,
+      "bidHigh": 1279.35,
+      "bidLow": 1278.5,
+      "askHigh": 1279.85,
+      "askLow": 1279
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 12:05:00",
+      "bidOpen": 1278.90001,
+      "bidClose": 1278.90001,
+      "askOpen": 1279.40001,
+      "askClose": 1279.40001,
+      "bidHigh": 1279.1,
+      "bidLow": 1278.6,
+      "askHigh": 1279.6,
+      "askLow": 1279.1
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 12:10:00",
+      "bidOpen": 1278.90001,
+      "bidClose": 1278.95001,
+      "askOpen": 1279.40001,
+      "askClose": 1279.45001,
+      "bidHigh": 1279,
+      "bidLow": 1278.55,
+      "askHigh": 1279.5,
+      "askLow": 1279.05
+    },
+    {
+      "symbol": "XAUUSD",
+      "updatedDate": "2016-05-17 12:15:00",
+      "bidOpen": 1278.90001,
+      "bidClose": 1278.90001,
+      "askOpen": 1279.40001,
+      "askClose": 1279.40001,
+      "bidHigh": 1279,
+      "bidLow": 1278.65001,
+      "askHigh": 1279.5,
+      "askLow": 1279.15001
+    }
+  ],
+  "rendimientos": [
+    {
+      "mes": "January",
+      "dataA": 0.5,
+      "dataB": 0.23
+    },
+    {
+      "mes": "February",
+      "dataA": 1,
+      "dataB": -0.5
+    },
+    {
+      "mes": "March",
+      "dataA": 2.2,
+      "dataB": -1.6
+    },
+    {
+      "mes": "April",
+      "dataA": 4.5,
+      "dataB": -3.5
+    },
+    {
+      "mes": "May",
+      "dataA": 7.5,
+      "dataB": -5.5
+    }
+  ],
+  "rendimientosh": [
+    {
+      "mes": "Liquidez",
+      "dataA": 5,
+      "dataB": 16,
+      "dataC": 38,
+      "dataD": 41
+    }
+  ],
+  "promedios": [
+    {
+      "horizonte": "A (Liquidez)",
+      "dataA": 4,
+      "dataB": 3.8
+    },
+    {
+      "horizonte": "B (Conservación)",
+      "dataA": 4,
+      "dataB": 4.2
+    },
+    {
+      "horizonte": "C (Equilibrio)",
+      "dataA": 4,
+      "dataB": 5.5
+    },
+    {
+      "horizonte": "D (Incremento)",
+      "dataA": 4,
+      "dataB": 7
+    },
+    {
+      "horizonte": "E (Maximización)",
+      "dataA": 4,
+      "dataB": 9
+    }
+  ],
+  "averages": [
+    {
+      "dataA": "Sep-18",
+      "dataB": 0.4
+    },
+    {
+      "dataA": "Sep-18",
+      "dataB": 0.6
+    }
+  ],
+  "spreads": [
+    {
+      "rango-min-mx": "0 - 49,999.99",
+      "tasa-banda": "4"
+    },
+    {
+      "rango-min-mx": "50,000.00 - 99,999.99",
+      "tasa-banda": "4"
+    },
+    {
+      "rango-min-mx": "100,000.00 - 249,999.99",
+      "tasa-banda": "4"
+    }
+  ],
+  "ultimoContrato": {
+    "contrato": "12345"
+  },
+  "datosContrato": [
+    {
+      "contrato": 12345,
+      "digito": "RZ",
+      "dv": "5",
+      "nombre": "XXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXXxx",
+      "perfil": "PRESERVACIÓN (IR1)",
+      "status": "A",
+      "clabe": "0000000000000000",
+      "stipoportf": 22,
+      "jbLiquidacion": {
+        "efvoDiaAnt": 2628219.98432,
+        "liqHoy": 5256439.96864,
+        "liq24HRS": 2628219.98432,
+        "liq48HRS": 2628219.98432,
+        "liqMas48HRS": 2628219.98432,
+        "efvoFecha": 2628219.98432,
+        "deposito": 50.0,
+        "retiro": 1070.0,
+        "valorChequera": 0.0,
+        "contrato": null,
+        "efvoDiaAntStr": null,
+        "liqHoyStr": null,
+        "liq24HRSStr": null,
+        "liq48HRSStr": null,
+        "liqMas48HRSStr": null,
+        "efvoFechaStr": null,
+        "depositoStr": null,
+        "retiroStr": null,
+        "valorChequeraStr": null
+      },
+      "usrsesion": "dise",
+      "idLibro": 1,
+      "libro": "CASA DE BOLSA",
+      "listaContrato": [
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONDES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Fija"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONDES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Fija"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Fija"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        },
+        {
+          "contrato": "12345",
+          "plazo": "147",
+          "emisora": "BONES",
+          "cantidad": "100,000",
+          "costo": "89,900",
+          "precio": "89900",
+          "inversion": "899000.00",
+          "valor": "899000",
+          "tasa": "7.18",
+          "porTot": "11.06",
+          "porInv": "11.06",
+          "ultMov": "01-Ago-19",
+          "fechaVen": "26-Dic-19",
+          "impVenc": "0.00",
+          "nat": "D",
+          "isrDia": "0.00",
+          "descripcion": "Renta Otra"
+        }
+      ]
+    }
+  ],
+  "sTipoPort": [
+    {
+      "descrCorta": "CONTADO",
+      "stipoPortf": 22,
+      "descrLarga": "POSICION CONTADO",
+      "idServicioPos": -1,
+      "idServicio": 1
+    },
+    {
+      "descrCorta": "DIF/GTIA",
+      "stipoPortf": 28,
+      "descrLarga": "POR DIFERENTES GARANTIAS",
+      "idServicioPos": -1,
+      "idServicio": 1
+    }
+  ],
+  "sTipoPortfContratosV2": [
+    {
+      "descrCorta": "CONTADO",
+      "stipoPortf": 22,
+      "descrLarga": "POSICION CONTADO",
+      "idServicioPos": -1,
+      "idServicio": 1
+    },
+    {
+      "descrCorta": "DIFGTIA",
+      "stipoPortf": 28,
+      "descrLarga": "POR DIFERENTES GARANTIAS",
+      "idServicioPos": -1,
+      "idServicio": -1
+    },
+    {
+      "descrCorta": "SPC",
+      "stipoPortf": 44,
+      "descrLarga": "Fideicomiso Corporativo",
+      "idServicioPos": -1,
+      "idServicio": -1
+    },
+    {
+      "descrCorta": "CONTADO ASESORES",
+      "stipoPortf": 22,
+      "descrLarga": "POSICION CONTADO ASESORES",
+      "idServicioPos": 1,
+      "idServicio": 1
+    },
+    {
+      "descrCorta": "CONTADO EJECUCIÓN",
+      "stipoPortf": 22,
+      "descrLarga": "POSICION CONTADO EJECUCIÓN",
+      "idServicioPos": 0,
+      "idServicio": 4
+    }
+  ],
+  "configInicialPosV2": [
+    {
+      "configArr": [
+        {
+          "idColumna": "1",
+          "ancho": 120,
+          "columna": "contrato",
+          "nombre": "Contrato"
+        },
+        {
+          "idColumna": "2",
+          "ancho": 85,
+          "columna": "plazo",
+          "nombre": "Plazo"
+        },
+        {
+          "idColumna": "3",
+          "ancho": 140,
+          "columna": "emisora",
+          "nombre": "Emisora"
+        },
+        {
+          "idColumna": "4",
+          "ancho": 75,
+          "columna": "cantidad",
+          "nombre": "Cantidad"
+        },
+        {
+          "idColumna": "5",
+          "ancho": 75,
+          "columna": "costo",
+          "nombre": "Costo"
+        },
+        {
+          "idColumna": "6",
+          "ancho": 75,
+          "columna": "precio",
+          "nombre": "Precio"
+        },
+        {
+          "idColumna": "7",
+          "ancho": 75,
+          "columna": "inversion",
+          "nombre": "Inversion"
+        },
+        {
+          "idColumna": "8",
+          "ancho": 70,
+          "columna": "valor",
+          "nombre": "Valor"
+        },
+        {
+          "idColumna": "9",
+          "ancho": 55,
+          "columna": "tasa",
+          "nombre": "Tasa"
+        },
+        {
+          "idColumna": "10",
+          "ancho": 55,
+          "columna": "porTot",
+          "nombre": "%Tot"
+        },
+        {
+          "idColumna": "11",
+          "ancho": 55,
+          "columna": "porInv",
+          "nombre": "%Inv"
+        },
+        {
+          "idColumna": "12",
+          "ancho": 80,
+          "columna": "ultMov",
+          "nombre": "Ult. Mov."
+        },
+        {
+          "idColumna": "13",
+          "ancho": 80,
+          "columna": "fechaVen",
+          "nombre": "Fec. Ve..."
+        },
+        {
+          "idColumna": "14",
+          "ancho": 80,
+          "columna": "impVenc",
+          "nombre": "Imp. Venc."
+        },
+        {
+          "idColumna": "15",
+          "ancho": 45,
+          "columna": "nat",
+          "nombre": "Nat."
+        },
+        {
+          "idColumna": "16",
+          "ancho": 70,
+          "columna": "isrDia",
+          "nombre": "ISR Dia"
+        },
+        {
+          "idColumna": "17",
+          "ancho": 70,
+          "columna": "descripcion",
+          "nombre": "Descripcion"
+        }
+      ],
+      "emisoras": [
+        {
+          "precioMercado": null,
+          "idEmision": 10,
+          "nomEmision": "EDOARDO B"
+        },
+        {
+          "precioMercado": null,
+          "idEmision": 19,
+          "nomEmision": "EAIPC90 DC052"
+        },
+        {
+          "precioMercado": null,
+          "idEmision": 27,
+          "nomEmision": "PLAVICO *"
+        },
+        {
+          "precioMercado": null,
+          "idEmision": 55300,
+          "nomEmision": "DOLAR  "
+        }
+      ],
+      "catDigitos": [
+        "AA",
+        "AB",
+        "AC",
+        "AD",
+        "BV",
+        "VJ",
+        "VK",
+        "VM",
+        "VN",
+        "VO",
+        "WP",
+        "WQ",
+        "WR",
+        "WS",
+        "WT",
+        "ZY",
+        "ZZ"
+      ]
+    }
+  ],
+  "lisColumnasActuales": [
+    {
+      "idColumna": "1",
+      "ancho": 120,
+      "columna": "contrato",
+      "nombre": "Contrato"
+    },
+    {
+      "idColumna": "2",
+      "ancho": 85,
+      "columna": "plazo",
+      "nombre": "Plazo"
+    },
+    {
+      "idColumna": "3",
+      "ancho": 140,
+      "columna": "emisora",
+      "nombre": "Emisora"
+    },
+    {
+      "idColumna": "4",
+      "ancho": 75,
+      "columna": "cantidad",
+      "nombre": "Cantidad"
+    },
+    {
+      "idColumna": "5",
+      "ancho": 75,
+      "columna": "costo",
+      "nombre": "Costo"
+    },
+    {
+      "idColumna": "6",
+      "ancho": 75,
+      "columna": "precio",
+      "nombre": "Precio"
+    },
+    {
+      "idColumna": "7",
+      "ancho": 75,
+      "columna": "inversion",
+      "nombre": "Inversion"
+    },
+    {
+      "idColumna": "8",
+      "ancho": 70,
+      "columna": "valor",
+      "nombre": "Valor"
+    },
+    {
+      "idColumna": "9",
+      "ancho": 55,
+      "columna": "tasa",
+      "nombre": "Tasa"
+    },
+    {
+      "idColumna": "10",
+      "ancho": 55,
+      "columna": "porTot",
+      "nombre": "%Tot"
+    },
+    {
+      "idColumna": "11",
+      "ancho": 55,
+      "columna": "porInv",
+      "nombre": "%Inv"
+    },
+    {
+      "idColumna": "12",
+      "ancho": 80,
+      "columna": "ultMov",
+      "nombre": "Ult. Mov."
+    },
+    {
+      "idColumna": "13",
+      "ancho": 80,
+      "columna": "fechaVen",
+      "nombre": "Fec. Ve..."
+    },
+    {
+      "idColumna": "14",
+      "ancho": 80,
+      "columna": "impVenc",
+      "nombre": "Imp. Venc."
+    },
+    {
+      "idColumna": "15",
+      "ancho": 45,
+      "columna": "nat",
+      "nombre": "Nat."
+    }
+  ],
+  "lisColumnasDisponibles": [
+    {
+      "idColumna": "16",
+      "ancho": 70,
+      "columna": "isrDia",
+      "nombre": "ISR Dia"
+    },
+    {
+      "idColumna": "17",
+      "ancho": 70,
+      "columna": "descripcion",
+      "nombre": "Descripcion"
+    }
+  ],
+  "cotizacion_reportos": [
+    {
+      "grupo": "BONDE D (BONDE D)",
+      "instrumento": "BONDE D (BONDE D)",
+      "plazo": "1 - 1",
+      "rango": "1 - 49999",
+      "tasa": "9.0"
+    }
+  ],
+  "orden_en_directo": [
+    {
+      "folio_operacion": "8123456",
+      "solicitudes_cancelacion": "CS",
+      "fecha_operacion": "22/03/2019",
+      "fecha_asignacion": "22/03/2019",
+      "libro": "Banco",
+      "contrato": "21377",
+      "digito": "RG",
+      "emisora": "BONDESO 190328",
+      "usuario": "USUARIO01"
+    }
+  ],
+  "source": [
+    {
+      "id": "1",
+      "value": "option_1_1",
+      "label": "Valor 1"
+    },
+    {
+      "id": "2",
+      "value": "option_1_2",
+      "label": "Valor 2"
+    },
+    {
+      "id": "3",
+      "value": "option_1_3",
+      "label": "Valor 3"
+    },
+    {
+      "id": "4",
+      "value": "option_1_4",
+      "label": "Valor 4"
+    },
+    {
+      "id": "5",
+      "value": "option_1_5",
+      "label": "Valor 5"
+    }
+  ],
+  "destination": [
+    {
+      "id": "6",
+      "value": "option_1_6",
+      "label": "Valor 6"
+    },
+    {
+      "id": "7",
+      "value": "option_1_7",
+      "label": "Valor 7"
+    },
+    {
+      "id": "8",
+      "value": "option_1_8",
+      "label": "Valor 8"
+    }
+  ],
+  "datosEmisora": [
+    {
+      "id": "01",
+      "emisora": "EMISORA 01",
+      "tv": "TV 01",
+      "plazo": "147",
+      "tasa": "7.12",
+      "fechaInicio": "30-11-2019",
+      "fechaFin": "30-12-2019",
+      "monedaBase": "dolares",
+      "monedaAlt": "pesos",
+      "serie": "ISHRS",
+      "perfilEmision": "Emision01",
+      "valorNominal": "100",
+      "totalColocar": "1000",
+      "multiploInversion": "10",
+      "minimoInversion": "100",
+      "precio": "100",
+      "tituloLiq": "ISHRS",
+      "tipoMed": "ISHRS",
+      "medLiq": "ISHRS"
+    },
+    {
+      "id": "02",
+      "emisora": "EMISORA 02",
+      "tv": "TV 02",
+      "plazo": "148",
+      "tasa": "7.20",
+      "fechaInicio": "30-10-2019",
+      "fechaFin": "30-11-2019",
+      "monedaBase": "dolares",
+      "monedaAlt": "pesos",
+      "serie": "ISHRS",
+      "perfilEmision": "Emision02",
+      "valorNominal": "100",
+      "totalColocar": "1000",
+      "multiploInversion": "10",
+      "minimoInversion": "100",
+      "precio": "12000",
+      "tituloLiq": "ISHRS",
+      "tipoMed": "ISHRS",
+      "medLiq": "ISHRS"
+    },
+    {
+      "id": "03",
+      "emisora": "BANAMEX16022",
+      "tv": "TV BMX",
+      "plazo": "150",
+      "tasa": "8.20",
+      "fechaInicio": "12-08-2019",
+      "fechaFin": "15-11-2019",
+      "monedaBase": "euros",
+      "monedaAlt": "pesos",
+      "serie": "ISHRS",
+      "perfilEmision": "Emision03",
+      "valorNominal": "100",
+      "totalColocar": "1000",
+      "multiploInversion": "10",
+      "minimoInversion": "100",
+      "precio": "150",
+      "tituloLiq": "ISHRS",
+      "tipoMed": "ISHRS",
+      "medLiq": "ISHRS"
+    }
+  ],
+  "encuesta": [
+    {
+      "question": [
+        {
+          "id": 0,
+          "question": "2.1. Instrumentos de Deuda Gubernamental",
+          "required": true,
+          "points": ["1", "2", "3"]
+        },
+        {
+          "id": 1,
+          "question": "2.2. Instrumentos de Deuda Corporativa",
+          "required": true,
+          "points": ["1", "2", "3"]
+        },
+        {
+          "id": 2,
+          "question": "2.3. Sociedades de Inversión",
+          "required": true,
+          "points": ["2", "4", "6"]
+        },
+        {
+          "id": 3,
+          "question": "2.4. Valores Estructurados",
+          "required": true,
+          "points": ["2", "4", "6"]
+        },
+        {
+          "id": 4,
+          "question": "2.5. Certificados Bursátiles Fiduciarios (Cebures, Cedevis) y Fideicomisos Privados",
+          "required": true,
+          "points": ["2", "4", "6"]
+        },
+        {
+          "id": 5,
+          "question": "2.6. Títulos Opcionales (Warrants)",
+          "required": true,
+          "points": ["2", "4", "6"]
+        },
+        {
+          "id": 6,
+          "question": "2.7. Acciones",
+          "required": true,
+          "points": ["3", "6", "9"]
+        },
+        {
+          "id": 7,
+          "question": "2.8. Valores Extranjeros",
+          "required": true,
+          "points": ["3", "6", "9"]
+        },
+        {
+          "id": 8,
+          "question": "2.9. Trackers TRACs o EFTs",
+          "required": true,
+          "points": ["3", "6", "9"]
+        },
+        {
+          "id": 9,
+          "question": "2.10. Certificados de Capital de Desarrollo",
+          "required": true,
+          "points": ["3", "6", "9"]
+        }
+      ],
+      "answer": [
+        { "id": 0, "answer": "No conoce ni ha invertido", "type": "option" },
+        { "id": 1, "answer": "Sólo conoce", "type": "option" },
+        { "id": 2, "answer": "Conoce y ha invertido", "type": "option" },
+        {
+          "id": 3,
+          "answer": "Frecuencia",
+          "type": "select",
+          "options": [
+            {
+              "key": "",
+              "value": "--Seleccionar--"
+            },
+            {
+              "key": "M",
+              "value": "Mensual"
+            },
+            {
+              "key": "S",
+              "value": "Semestral"
+            },
+            {
+              "key": "A",
+              "value": "Anual"
+            }
+          ],
+          "size": "12em",
+          "disabled": true
+        },
+        {
+          "id": 4,
+          "answer": "Plazo",
+          "type": "select",
+          "options": [
+            {
+              "key": "",
+              "value": "--Seleccionar--"
+            },
+            {
+              "key": "C",
+              "value": "Corto"
+            },
+            {
+              "key": "M",
+              "value": "Medio"
+            },
+            {
+              "key": "L",
+              "value": "Largo"
+            }
+          ],
+          "size": "10em",
+          "disabled": true
+        },
+        {
+          "id": 5,
+          "answer": "Volumen",
+          "type": "select",
+          "options": [
+            {
+              "key": "",
+              "value": "--Seleccionar--"
+            },
+            {
+              "key": "M",
+              "value": "Medio"
+            },
+            {
+              "key": "B",
+              "value": "Bajo"
+            },
+            {
+              "key": "A",
+              "value": "Alto"
+            }
+          ],
+          "size": "12em",
+          "disabled": true
+        }
+      ],
+      "result": [
+        {
+          "id": 0,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "results": [
+            {
+              "id": 0,
+              "result": false
+            },
+            {
+              "id": 1,
+              "result": false
+            },
+            {
+              "id": 2,
+              "result": true
+            },
+            {
+              "id": 3,
+              "result": "S"
+            },
+            {
+              "id": 4,
+              "result": "M"
+            },
+            {
+              "id": 5,
+              "result": "A"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "horarioAmpliado": [
+    {
+      "emisora": "Banamex",
+      "fecInicio": "10/20/2019",
+      "horario": "04:00 hrs",
+      "id": 1
+    },
+    {
+      "emisora": "Banamex",
+      "fecInicio": "10/20/2019",
+      "horario": "05:00 hrs",
+      "id": 2
+    },
+    {
+      "emisora": "Grupo carso",
+      "fecInicio": "18/10/2019",
+      "horario": "",
+      "id": 3
+    },
+    {
+      "emisora": "Grupo carso",
+      "fecInicio": "18/10/2019",
+      "horario": "",
+      "id": 4
+    }
+  ],
+  "listaEmision": {
+    "arregloUno": [
+      {
+        "costo": 254.729,
+        "descrTipoPos": "Renta Fija",
+        "emis": "ALSEA",
+        "porcInver": 12.499999979453776,
+        "serie": "15",
+        "tipoPos": 1,
+        "valCierre": 2628219.98,
+        "cambio": 12
+      },
+      {
+        "costo": 7243.68,
+        "descrTipoPos": "Renta Variable",
+        "emis": "AAPL",
+        "porcInver": 9.99999998356302,
+        "serie": "*",
+        "tipoPos": 2,
+        "valCierre": 2628219.98,
+        "cambio": 12
+      },
+      {
+        "costo": 393.786,
+        "descrTipoPos": "Renta Variable",
+        "emis": "WALMEX",
+        "porcInver": 9.99999998356302,
+        "serie": "V",
+        "tipoPos": 2,
+        "valCierre": 2628219.98,
+        "cambio": 12
+      },
+      {
+        "descrTipoPos": "Total",
+        "inver": 109702562.05000001,
+        "rf": 21025759.87456,
+        "rv": 26282199.8432,
+        "tipoPos": null
+      }
+    ],
+    "arregloDos": [
+      {
+        "descrTipoPos": "Renta Fija",
+        "tipoPos": 1
+      },
+      {
+        "descrTipoPos": "Renta Variable",
+        "tipoPos": 2
+      }
+    ]
+  },
+  "asignacion": [
+    {
+      "columnaEstatus": "N/A",
+      "columnadeSeleccion": "N/A",
+      "oper": "1",
+      "contrato": "001",
+      "ordenada": "05",
+      "preciOrden": "1500",
+      "envio": "Terrestre",
+      "emisora": "23",
+      "ppp": "1500",
+      "%asig.": "100",
+      "cliente": "CEMEX",
+      "canc.": "Ninguna",
+      "%confirm.": "99",
+      "confirmada": "Si",
+      "porconfirmar": "No",
+      "stsImp.": "Ninguno",
+      "vigencia": "11/11/2019",
+      "tipo": "e",
+      "nombredeUsuario": "Jesus",
+      "extension": "3819",
+      "%VOcapt.": "89",
+      "asignada": "Si",
+      "precLim.": "Si",
+      "tipoMPL": "Ninguna",
+      "volBolsa": "98",
+      "%volBolsa": "88",
+      "volOculto": "92",
+      "justificacion": "Ninguna",
+      "medioInstr.": "Ninguno",
+      "servicioInversion": "95",
+      "titulosPreAsignados": "23",
+      "usuario": "Jesus",
+      "fecVenc": "11/11/2019",
+      "difPuja": "25",
+      "tipoMediodeLiq.": "Efectivo",
+      "mediodeLiq.": "Efectivo",
+      "pendiente": "Ninguna",
+      "digito": "95",
+      "precioOrden": "231",
+      "fecha": "11/11/2019",
+      "orden": "328",
+      "rompe": "28",
+      "tipoOrden": "Venta",
+      "perfildelclientealmomentodelaOperacion": "Si",
+      "perfildelproductoalmomentodelaOperacion": "49",
+      "medioCierre": "No",
+      "numerodeRed/Telefono": "5519847627",
+      "clasificacionETF": "Si"
+    }
+  ],
+  "flujo": [
+    {
+      "emisora": "23",
+      "mkt": "54",
+      "totaldeordenes": "35",
+      "precOrdenados": "24",
+      "precAsignado": "100",
+      "volOrdenado": "90",
+      "volPendiente": "80",
+      "volAsigando": "99"
+    }
+  ],
+  "hechos": [
+    {
+      "cantidad": "23",
+      "hora": "10:38 p.m",
+      "precios": "35"
+    }
+  ],
+  "cancelarordenes": [
+    {
+      "orden": "23",
+      "stsCancela": "ok",
+      "contacto": "Cemex",
+      "promotor": "Jesus",
+      "tipo": "VTA",
+      "emisora": "AMX",
+      "cantidad": "25",
+      "precio": "100",
+      "fechaCaptura": "29-10-2019"
     }
   ]
 }

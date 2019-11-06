@@ -3,24 +3,28 @@
 console.log("Rendimientos");
 
 ($("#cmbRenta") as any).select2({
-  placeholder: "",
+  placeholder:"";
   minimumResultsForSearch: Infinity
 });
 ($("#cmbModelosCalculoCombo") as any).select2({
-  placeholder: "",
+  placeholder:"";
   minimumResultsForSearch: Infinity
 });
-
-/*
-$("#cmbModelosCalculoCombo").change(function(){
-    var valor= $("#cmbModelosCalculoCombo").val();
-    if (valor=="T"){
-        $("#cmbRenta").prop("disabled", true);
-    }else{
-        $("#cmbRenta").prop("disabled", false);
-    }
-    });
-*/
+//document.getElementById('cmbRenta').selectedIndex="3"
+$(document).ready(function() {
+  $('#cmbRenta> option[value="3"]').attr("selected", "selected");
+});
+$(document).ready(function() {
+  $('#cmbModelosCalculoCombo> option[value="TI"]').attr("selected", "selected");
+});
+$("#cmbModelosCalculoCombo").change(function() {
+  var valor = $("#cmbModelosCalculoCombo").val();
+  if (valor == "T") {
+    $("#cmbRenta").prop("disabled", true);
+  } else {
+    $("#cmbRenta").prop("disabled", false);
+  }
+});
 /*$( "#btn_edit" ).click(function() {
 
             //const txtContrato: string = String($("#txtContrato").val());
@@ -218,13 +222,6 @@ $("#btn_search").click(function() {
     alert("ingresa fecha valida");
     return false;
   }
-});
-
-$(document).ready(function() {
-  $('#cmbRenta> option[value="3"]').attr("selected", "selected");
-});
-$(document).ready(function() {
-  $('#cmbModelosCalculoCombo> option[value="TI"]').attr("selected", "selected");
 });
 
 $("#table_resultadosMensuales").jqGrid({
