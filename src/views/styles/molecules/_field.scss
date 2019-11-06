@@ -19,6 +19,13 @@
       padding-right: 1.5em;
     }
 
+    // .field-label {
+    //   label,
+    //   span {
+    //     padding-top: 5px;
+    //   }
+    // }
+
     .field-control {
       margin-left: 8px;
     }
@@ -55,6 +62,8 @@
 
     &:disabled {
       background-color: $input_background-color_disabled;
+      font-weight: bold;
+      color: darkblue;
     }
 
     &.is-extra-small {
