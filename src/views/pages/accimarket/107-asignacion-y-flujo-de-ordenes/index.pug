@@ -11,11 +11,11 @@ block content
         .row
            
         button#idcancelar CANCELAR
-               button#idmodificar MODIFICAR
-               button#idhechos HECHOS
-               button#idcancelarordenes ORDENES
-               button#idmantenimiento MANTENIMIENTO
-               button#idcolumnas COLUMNAS
+        button#idmodificar MODIFICAR
+        button#idhechos HECHOS
+        button#idcancelarordenes ORDENES
+        button#idmantenimiento MANTENIMIENTO
+        button#idcolumnas COLUMNAS
             
         .row
             +accordion("criterios_busqueda_asignacion")
@@ -24,17 +24,28 @@ block content
                         .form-group.flex.justify-between
                             +field-plus-minus("emisora",
                                 {
-                                    label: "Emisora"      
+                                    label: "Emisora",
                                 })
                             +field-plus-minus("contrato",
                                 {
                                     label: "Contrato"
                                 })
+                            +field-checks("excluir",
+                                {
+                                    label: "",
+                                },
+                                {key: "SI", value:"Excluir"})
                             +field-plus-minus("digito",
                                 {
                                     label: "Digito"
                                 })
-                            .row#rowEmisora
+                            
+                            +field-checks("exclu",
+                                {
+                                    label: "",
+                                },
+                                {key: "SI", value:"Excluir"})
+                            .row#rowUsuario
                                 +field-plus-minus("usuario",
                                 {
                                     label: "Usuario"
@@ -44,9 +55,10 @@ block content
                                     +field-checks("estatus",
                                         {
                                             label: "Estatus",
-                                            orientation: "horizontal"
+                                            orientation: "horizontal",
+                                            
                                         },
-                                        {key: "S01", value:"Asignados", color:"green"},
+                                        {key: "S01", value:"Asignados", color:"green",},
                                         {key: "S02", value:"Pendientes", color:"blue"},
                                         {key: "S03", value:"Sin Asignar", color:"yellow"},
                                         {key: "S04", value:"Canceladas", color:"red"},
@@ -66,7 +78,9 @@ block content
                                     +field-input("mayor",
                                         {
                                             label: "",
-                                            size: "5em"
+                                            size: "8em",
+                                            type: "currency",
+                                            max_length: "9"
                                         })
                                 .row
                                     .row.flex.items-center.justify-center
@@ -76,7 +90,9 @@ block content
                                                 size: "4em",
                                                 orientation: "horizontal",
                                                 width: "11em",
-                                                default_value: "60"
+                                                default_value: "60",
+                                                type: "integer",
+                                                max_length: "3"
                                             }
                                         )
                                         p segundos
@@ -87,7 +103,7 @@ block content
                                 +field-options("",
                                     {
                                         label: "Volumen",
-                                        orientacion: "vertical,"
+                                        orientacion: "vertical"
                                     },
                                     {key: "SI", value:"Mayor ="},
                                     {key: "SI", value:"Menor"}
@@ -96,18 +112,20 @@ block content
                                     {
                                         label: "",
                                         size: "5em",
-                                        orientation: "horizontal"
+                                        orientation: "horizontal",
+                                        type: "integer",
+                                        max_length: "6"
                                     })
                             
                             .row
-                                +field-options("operacion",
+                                +field-options("tipo",
                                     {
-                                        label: "Operacion",
+                                        label: "Tipo",
                                     
                                     },
                                     {key: "ALL", value:"Todas", color:"gray"},
-                                    {key: "C", value:"Compras", color:"gray"},
-                                    {key: "V", value:"Ventas", color:"gray"} 
+                                    {key: "CPA", value:"Compras", color:"gray"},
+                                    {key: "VTA", value:"Ventas", color:"gray"} 
                                     )
                                 .row#rowSolo
                                     +field-checks("id",
@@ -148,6 +166,8 @@ block content
             .row.w-full.overflow-auto
                 +grid("busquedaFlujo")
             +grid-records-count("flujo")
+
+    include _context_menus
 
     include dialogo_pdf
     include dialogo_xls

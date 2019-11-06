@@ -17,22 +17,24 @@ $("#rowVolumen").hide();
 
 $("input[name='vista']").click(function () {
     var radio = $("input[name='vista']:checked").val();
-    if (radio == 'SI') {
+    if (radio == "SI") {
         $("#rowEstatus").show();
         $("#rowOpciones").hide();
-        $("#rowEmisora").show();
+        $("#rowUsuario").show();
         $("#rowSolo").show();
         $("#rowAsignacion").show();
         $("#rowFlujo").hide();
         $("#rowVolumen").hide();
+
     } else {
         $("#rowEstatus").hide();
         $("#rowOpciones").show();
-        $("#rowEmisora").hide();
+        $("#rowUsuario").hide();
         $("#rowSolo").hide();
         $("#rowAsignacion").hide();
         $("#rowFlujo").show();
         $("#rowVolumen").show();
+
     }
 });
 
@@ -53,8 +55,9 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
         rowNum: 10,
         rowList: [10, 20, 30],
         colNames: [
+            "Estatus",
             "",
-            "",
+            "<input type= 'checkbox' name = 'chkAllOutputField'/>",
             "Operacion",
             "Contrato",
             "Ordenada",
@@ -103,6 +106,10 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
             "Clasificacion ETF"
         ],
         colModel: [
+            {
+                name: "estatus",
+                // hidden: true
+            },
             {
                 name: "columnaEstatus",
                 index: "columnaEstatus",
@@ -197,28 +204,233 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
             { name: "clasificacionETF", width: 110 }
         ],
         loadComplete: function () {
-            console.log("Menu");
-            ($("tr.jqgrow", this) as any).contextMenu("contextMenu", {
-                bindings: {
-                    "cierre-definitivo": function (event) {
-                        console.log("Cierre definitivo");
+            console.log("Context Menu");
+            ($("tr.jqgrow.table-row-asignados", this) as any).contextMenu(
+                "AsignadosMenu",
+                {
+                    bindings: {
+                        "configuracion-de-columnas": function (event) {
+                            console.log("Configuracion de columnas");
+                        },
+                        "copiar-excel": function (event) {
+                            console.log("Copiar excel");
+                        },
+                        "hechos": function (event) {
+                            console.log("Hechos");
+                        },
+                        "compra": function (event) {
+                            console.log("Compra");
+                        },
+                        "venta": function (event) {
+                            console.log("Venta");
+                        },
+                        "reporte-detallado-PDF": function (event) {
+                            console.log("Reporte detallado PDF");
+                        },
+                        "reporte-detallado-Excel": function (event) {
+                            console.log("Reporte detallado Excel");
+                        }
                     },
-                    "detalle-captacion": function (event) {
-                        console.log("Detalle de captacion");
+                    onContexMenu: function (event, menu) { }
+                }
+            );
+            ($("tr.jqgrow.table-row-pendientes", this) as any).contextMenu(
+                "PendientesMenu",
+                {
+                    bindings: {
+                        "configuracion-de-columnas": function (event) {
+                            console.log("Configuracion de columnas");
+                        },
+                        "copiar-excel": function (event) {
+                            console.log("Copiar excel");
+                        },
+                        "modificar-cantidad": function (event) {
+                            console.log("Modificar cantidad");
+                        },
+                        "cancelar": function (event) {
+                            console.log("Cancelar");
+                        },
+                        "cancelar-ordenes-seleccionadas": function (event) {
+                            console.log("Cancelar ordenes seleccionadas");
+                        },
+                        "hechos": function (event) {
+                            console.log("Hechos");
+                        },
+                        "compra": function (event) {
+                            console.log("Compra");
+                        },
+                        "venta": function (event) {
+                            console.log("Venta");
+                        },
+                        "reporte-detallado-PDF": function (event) {
+                            console.log("Reporte detallado PDF");
+                        },
+                        "reporte-detallado-Excel": function (event) {
+                            console.log("Reporte detallado Excel");
+                        }
                     },
-                    "cancela-notae": function (event) {
-                        console.log("Cancela nota estructurada");
+                    onContexMenu: function (event, menu) { }
+                }
+            );
+            ($("tr.jqgrow.table-row-sin-asignar", this) as any).contextMenu(
+                "AsignarMenu",
+                {
+                    bindings: {
+                        "configuracion-de-columnas": function (event) {
+                            console.log("Configuracion de columnas");
+                        },
+                        "copiar-excel": function (event) {
+                            console.log("Copiar excel");
+                        },
+                        "cancelar": function (event) {
+                            console.log("Cancelar");
+                        },
+                        "modificar-cantidad": function (event) {
+                            console.log("Modificar cantidad");
+                        },
+                        "compra": function (event) {
+                            console.log("Compra");
+                        },
+                        "venta": function (event) {
+                            console.log("Venta");
+                        },
+                        "reporte-detallado-PDF": function (event) {
+                            console.log("Reporte detallado PDF");
+                        },
+                        "reporte-detallado-Excel": function (event) {
+                            console.log("Reporte detallado Excel");
+                        }
                     },
-                    "reenvio-cierre": function (event) {
-                        console.log("Reenvio de cierre");
-                    }
-                },
-                onContexMenu: function (event, menu) { }
-            });
+                    onContexMenu: function (event, menu) { }
+                }
+            );
+
+            ($("tr.jqgrow.table-row-canceladas", this) as any).contextMenu(
+                "CanceladasMenu",
+                {
+                    bindings: {
+                        "configuracion-de-columnas": function (event) {
+                            console.log("Configuracion de columnas");
+                        },
+                        "copiar-excel": function (event) {
+                            console.log("Copiar excel");
+                        },
+                        "compra": function (event) {
+                            console.log("Compra");
+                        },
+                        "reporte-detallado-PDF": function (event) {
+                            console.log("Reporte detallado PDF");
+                        },
+                        "reporte-detallado-Excel": function (event) {
+                            console.log("Reporte detallado Excel");
+                        }
+                    },
+                    onContexMenu: function (event, menu) { }
+                }
+            );
+            ($("tr.jqgrow.table-row-distribuidas", this) as any).contextMenu(
+                "DistribuidasMenu",
+                {
+                    bindings: {
+                        "configuracion-de-columnas": function (event) {
+                            console.log("Configuracion de columnas");
+                        },
+                        "copiar-excel": function (event) {
+                            console.log("Copiar excel");
+                        },
+                        "hechos": function (event) {
+                            console.log("Hechos");
+                        },
+                        "compra": function (event) {
+                            console.log("Compra");
+                        },
+                        "venta": function (event) {
+                            console.log("Venta");
+                        }
+                    },
+                    onContexMenu: function (event, menu) { }
+                }
+            );
+            ($("tr.jqgrow.table-row-bloqueadas", this) as any).contextMenu(
+                "BloqueadasMenu",
+                {
+                    bindings: {
+                        "configuracion-de-columnas": function (event) {
+                            console.log("Configuracion de columnas");
+                        },
+                        "copiar-excel": function (event) {
+                            console.log("Copiar excel");
+                        },
+                        "cancelar": function (event) {
+                            console.log("Cancelar");
+                        },
+                        "modificar-cantidad": function (event) {
+                            console.log("Modificar cantidad");
+                        },
+                        "compra": function (event) {
+                            console.log("Compra");
+                        },
+                        "venta": function (event) {
+                            console.log("Venta");
+                        },
+                        "reporte-detallado-PDF": function (event) {
+                            console.log("Reporte detallado PDF");
+                        },
+                        "reporte-detallado-Excel": function (event) {
+                            console.log("Reporte detallado Excel");
+                        }
+                    },
+                    onContexMenu: function (event, menu) { }
+                }
+            );
+        },
+        rowattr: function (item) {
+            let table_row_class = {}
+
+            switch (item.tipo) {
+                case "CPA": {
+                    // return { class: "table-row-compra" };
+                    break;
+                }
+                case "VTA": {
+                    return { class: "table-row-venta" };
+                    break;
+                }
+            }
+            console.log(item);
+
+            switch (item.estatus) {
+                case "S01": {
+                    return { class: "table-row-asignados" };
+                    break;
+                }
+                case "S02": {
+                    return { class: "table-row-pendientes" };
+                    break;
+                }
+                case "S03": {
+                    return { class: "table-row-sin-asignar" };
+                    break;
+                }
+                case "S04": {
+                    return { class: "table-row-cancelaas" };
+                    break;
+                }
+                case "S05": {
+                    return { class: "table-row-distribuidas" };
+                    break;
+                }
+                case "S06": {
+                    return { class: "table-row-bloqueadas" };
+                    break;
+                }
+
+                    console.log(table_row_class)
+                    return table_row_class; // {class: "table-row-compra table-row-pendientes"}
+            }
         }
     });
-}
-
+};
 
 http_findAll("flujo", listaFlujo_params, payload => {
     llenaGridFlujoOrdenes(payload);
@@ -281,21 +493,15 @@ const llenaGridHechos = (hechos: any) => {
         rowNum: 10,
         rowList: [10, 20, 30],
 
-
-        colNames: [
-            "Cantidad",
-            "Hora",
-            "Precio"
-        ],
+        colNames: ["Cantidad", "Hora", "Precio"],
 
         colModel: [
             { name: "cantidad", width: 110 },
             { name: "hora", width: 110 },
             { name: "precio", width: 110 }
-        ],
-
+        ]
     });
-}
+};
 http_findAll("cancelarordenes", listaCancelarOrdenes_params, payload => {
     llenaGridCancelarOrdenes(payload);
     const rec_count = payload.length;
@@ -350,7 +556,7 @@ const formAsignacionOrdenes = ($("#criterios-listAsignacion") as any)
     .on("form:submit", e => {
         console.log("form:submit", e);
 
-        rellenarGridAsignacion()
+        rellenarGridAsignacion();
 
         return false;
     });
@@ -379,16 +585,15 @@ const rellenarGridAsignacion = () => {
     if (usuario.length > 0) {
         listaAsignacion_params.usuario = usuario;
     }
-
     let estatus = getChecked("estatus");
     if (estatus.length > 0) {
         listaAsignacion_params.estatus = estatus;
     }
 
-    const operacion = getOptionSelected("operacion");
-    if (operacion) {
-        if (operacion !== "ALL") {
-            listaAsignacion_params.operacion = operacion;
+    const tipo = getOptionSelected("tipo");
+    if (tipo) {
+        if (tipo !== "ALL") {
+            listaAsignacion_params.tipo = tipo;
         }
     }
 
@@ -399,41 +604,39 @@ const rellenarGridAsignacion = () => {
         const rec_count = payload.length;
         $("#count_asignacion").html(rec_count);
     });
-}
+};
 
-$.contextMenu({
-    selector: "#btn_pdf",
-    callback: function (key, options) {
-        var m = "clicked: " + key;
-
+$("#btn_pdf").contextMenu("menu-pdf", {
+    bindings: {
+        "pdf-reporte-asignacion": function (event) {
+            console.log("PDF Reporte de Asignación");
+        },
+        "pdf-confirmacion-global": function (event) {
+            console.log("PDF Confirmación Global");
+        },
+        "pdf-confirmacion-detallada": function (event) {
+            console.log("PDF Confirmación Detallada");
+        }
     },
-    items: {
-        opcion1: { name: "PDF Reporte de Asignación " },
-        opcion2: { name: "PDF Confirmación Global" },
-        opcion3: { name: "PDF Confirmación Detallada" }
-    }
+    onContexMenu: function (event, menu) { }
 });
 
-$("#btn_pdf").on("click", function (e) {
-
-});
-
-$.contextMenu({
-    selector: "#btn_xls",
-    callback: function (key, options) {
-        var m = "clicked: " + key;
-
+$("#btn_xls").contextMenu("menu-xls", {
+    bindings: {
+        "xls-reporte-asignacion": function (event) {
+            console.log("XLS Reporte de Asignación");
+        },
+        "xls-confirmacion-global": function (event) {
+            console.log("XLS Confirmación Global");
+        },
+        "xls-confirmacion-detallada": function (event) {
+            console.log("XLS Confirmación Detallada");
+        }
     },
-    items: {
-        opcion1: { name: "Excel Reporte de Asignación" },
-        opcion2: { name: "Excel Confirmación Global" },
-        opcion3: { name: "Excel Confirmación Detallada" }
-    }
+    onContexMenu: function (event, menu) { }
 });
 
-$("#btn_xls").on("click", function (e) {
-
-});
+$("#btn_xls").on("click", function (e) { });
 
 $("#idcancelar").click(() =>
     $("#cancelar").dialog({
@@ -442,7 +645,6 @@ $("#idcancelar").click(() =>
         show: true,
         title: "Cancelar Órden",
         width: 500
-
     })
 );
 $("#idmodificar").click(() =>
@@ -480,7 +682,6 @@ $("#idmantenimiento").click(() =>
         show: true,
         title: "Mantenimiento de Filtro de Usuarios de Asignación",
         width: 400
-
     })
 );
 $("#idcolumnas").click(() =>
@@ -497,21 +698,19 @@ $("#idcolumnas").click(() =>
 );
 
 
-
-
 const cuentaRegresiva = (segundos: number) => {
     if (segundos > 0) {
         const segundosRestantes = $("#segundos-restantes");
         segundosRestantes.html(segundos.toString());
         setTimeout(() => {
-            cuentaRegresiva(segundos - 1)
+            cuentaRegresiva(segundos - 1);
         }, 1000);
     } else {
-        rellenarGridAsignacion()
+        // rellenarGridAsignacion();
         const segundos_actualizar = $("#segundos-actualizar").val();
         cuentaRegresiva(+segundos_actualizar);
     }
-}
+};
 
 const segundos_actualizar = $("#segundos-actualizar").val();
 cuentaRegresiva(+segundos_actualizar);

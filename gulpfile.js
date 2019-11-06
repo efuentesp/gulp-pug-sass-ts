@@ -162,8 +162,7 @@ function concatVendorCss() {
         "./src/views/styles/vendors/jquery.toggleinput/jquery.toggleinput.css",
         "./src/views/styles/vendors/jquery.steps/jquery.steps.css",
         "./src/views/styles/vendors/chartjs/chartjs.css",
-        "./src/views/styles/vendors/wickedpicker/wickedpicker.css",
-        "./node_modules/jquery-contextmenu/dist/jquery.contextMenu.min.css"
+        "./src/views/styles/vendors/wickedpicker/wickedpicker.css"
       ])
       // .pipe(
       //   purgeCSS({
@@ -211,6 +210,8 @@ function concatVendorJs() {
       // "./node_modules/rx-jquery/rx.jquery.js",
       // "./node_modules/moment/min/moment-with-locales.min.js",
       "./node_modules/parsleyjs/dist/parsley.min.js",
+      "./node_modules/jquery-mask-plugin/dist/jquery.mask.min.js",
+      // "./node_modules/jquery-maskmoney/dist/jquery.maskMoney.min.js",
       "./node_modules/parsleyjs/dist/i18n/es.js",
       "./node_modules/select2/dist/js/select2.min.js",
       "./node_modules/select2/dist/js/i18n/es.js",
@@ -222,9 +223,7 @@ function concatVendorJs() {
       "./src/views/scripts/vendors/chartjs.min.js",
       "./node_modules/chartjs-plugin-piechart-outlabels/dist/chartjs-plugin-piechart-outlabels.min.js",
       "./src/views/pages/scripts/vendors/listswap/jquery.listswap.js",
-      "./src/views/pages/scripts/vendors/wickedpicker/wickedpicker.js",
-      "./node_modules/jquery-contextmenu/dist/jquery.contextMenu.min.js",
-      "./node_modules/jquery-contextmenu/dist/jquery.ui.position.min.js"
+      "./src/views/pages/scripts/vendors/wickedpicker/wickedpicker.js"
       // "./node_modules/handlebars/dist/handlebars.min.js"
       // "./src/views/pages/scripts/vendors/handlebars/handlebars-v4.4.3.js"
     ])

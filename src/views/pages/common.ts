@@ -2244,3 +2244,7 @@ const formatNumber = {
     return this.formatear(num);
   }
 };
+
+$(".currency").mask("###,###,##0", { reverse: true });
+$(".number").mask("###,###,##0.00", { reverse: true });
+$(".integer").mask("###,###,##0", { reverse: true });
