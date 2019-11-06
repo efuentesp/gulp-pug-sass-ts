@@ -28,6 +28,9 @@ $("#btn_xls").click(() =>
 );
 
 validateDateRage("rango");
+// Add if the date has clear button
+fieldBeginDateRangeClear("rango");
+fieldEndDateRangeClear("rango");
 
 let notaEstructurada_params: UrlParams = {};
 
