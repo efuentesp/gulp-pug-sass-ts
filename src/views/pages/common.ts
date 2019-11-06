@@ -104,7 +104,9 @@ $(".tab-group").tabs();
 $(".accordion").accordion(ui_accordion_settings);
 
 // DatePicker
-$(".datepicker").datepicker(ui_datepicker_settings);
+$(".datepicker")
+  .datepicker(ui_datepicker_settings)
+  .prop("readonly", false);
 
 // DatePicker Month Year
 $(".monthpicker").datepicker(ui_datepicker_month_year_settings);
