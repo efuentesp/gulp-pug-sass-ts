@@ -79,7 +79,7 @@
   flex-wrap: wrap;
 }
 
-#cancelar {
+#cancelarasignacionyflujo {
   label {
     width: 100px;
   }
@@ -88,7 +88,7 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 0.5em;
-    // width: 40em;
+    width: 40em;
   }
   #grupo2 {
     display: flex;
@@ -127,6 +127,31 @@
 }
 
 #modificar {
+  label {
+    width: 100px;
+  }
+
+  #grupo3 {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0.5em;
+    // width: 40em;
+  }
+  #grupo4 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #row.flex {
+    display: flex;
+  }
+}
+#botones{
+  position: relative;
+  top: 25em;
+  right: 12em;
+}
+
+#cancelarasignacionyflujo {
   label {
     width: 100px;
   }

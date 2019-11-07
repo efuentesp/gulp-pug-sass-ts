@@ -22,10 +22,11 @@ block content
                 +accordion-item("busqueda_item")
                     form#criterios-listAsignacion
                         .form-group.flex.justify-between
-                            +field-plus-minus("emisora",
-                                {
-                                    label: "Emisora",
-                                })
+                            +field-select-plus-minus("emisora", 
+                                {label: "Emisora", 
+                                 size: "8em"},
+                                {key: "", value:""}
+                            )
                             +field-plus-minus("contrato",
                                 {
                                     label: "Contrato"
@@ -46,7 +47,7 @@ block content
                                 },
                                 {key: "SI", value:"Excluir"})
                             .row#rowUsuario
-                                +field-plus-minus("usuario",
+                                +field-plus-minus("usuario-asignacion-flujo",
                                 {
                                     label: "Usuario"
                                 })
@@ -112,7 +113,6 @@ block content
                                     {
                                         label: "",
                                         size: "5em",
-                                        orientation: "horizontal",
                                         type: "integer",
                                         max_length: "6"
                                     })

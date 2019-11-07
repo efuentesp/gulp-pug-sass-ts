@@ -3,13 +3,14 @@ let listaAsignacion_params: UrlParams = {};
 let listaFlujo_params: UrlParams = {};
 let listaHechos_params: UrlParams = {};
 let listaCancelarOrdenes_params: UrlParams = {};
-let source1_params: UrlParams = {};
-let destination1_params: UrlParams = {};
+let source_asignacion_params: UrlParams = {};
+let destination_asignacion_params: UrlParams = {};
 
-fieldPlusMinus("emisora", {});
+// fieldSelectPlusMinus("emisora", {});
+fieldPlusMinus("usuario-asignacion-flujo", {});
 fieldPlusMinus("contrato", {});
 fieldPlusMinus("digito", {});
-fieldPlusMinus("usuario", {});
+
 
 $("#rowOpciones").hide();
 $("#rowFlujo").hide();
@@ -40,6 +41,7 @@ $("input[name='vista']").click(function () {
 
 http_findAll("asignacion", listaAsignacion_params, payload => {
     llenaGridAsignacionOrdenes(payload);
+    llenaSelectEmisora(payload);
     const rec_count = payload.length;
     $("#count_asignacion").html(rec_count);
 });
@@ -108,7 +110,7 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
         colModel: [
             {
                 name: "estatus",
-                // hidden: true
+                hidden: true
             },
             {
                 name: "columnaEstatus",
@@ -385,49 +387,57 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
             );
         },
         rowattr: function (item) {
-            let table_row_class = {}
+            let table_row_class = { class: "" }
+            let class_content = ""
 
             switch (item.tipo) {
                 case "CPA": {
-                    // return { class: "table-row-compra" };
+                    class_content = class_content + "table-row-compra"
                     break;
                 }
                 case "VTA": {
-                    return { class: "table-row-venta" };
+                    class_content = class_content + "table-row-venta"
                     break;
                 }
             }
-            console.log(item);
+            console.log(class_content);
 
             switch (item.estatus) {
                 case "S01": {
-                    return { class: "table-row-asignados" };
+                    class_content = class_content + " table-row-asignados"
                     break;
                 }
                 case "S02": {
-                    return { class: "table-row-pendientes" };
+                    class_content = class_content + " table-row-pendientes"
                     break;
                 }
                 case "S03": {
-                    return { class: "table-row-sin-asignar" };
+                    class_content = class_content + " table-row-sin-asignar"
                     break;
                 }
                 case "S04": {
-                    return { class: "table-row-cancelaas" };
+                    class_content = class_content + " table-row-canceladas"
                     break;
                 }
                 case "S05": {
-                    return { class: "table-row-distribuidas" };
+                    class_content = class_content + " table-row-distribuidas"
                     break;
                 }
                 case "S06": {
-                    return { class: "table-row-bloqueadas" };
+                    class_content = class_content + " table-row-bloqueadas"
                     break;
                 }
-
-                    console.log(table_row_class)
-                    return table_row_class; // {class: "table-row-compra table-row-pendientes"}
             }
+            console.log("---> ", table_row_class)
+            table_row_class.class = class_content;
+            console.log(table_row_class)
+            return table_row_class; // {class: "table-row-compra table-row-pendientes"}
+            // {class: "table-row-venta table-row-bloqueadas"}
+            // {class: "table-row-venta table-row-distribuidas"}
+            // {class: "table-row-venta table-row-canceladas"}
+            // {class: "table-row-compra table-row-sin-asignar"}
+            // {class: "table-row-compra table-row-pendientes"}
+            // {class: "table-row-venta table-row-asignados"}
         }
     });
 };
@@ -561,15 +571,21 @@ const formAsignacionOrdenes = ($("#criterios-listAsignacion") as any)
         return false;
     });
 
+const llenaSelectEmisora = (emisora: any) => {
+    console.log("Lista:" + emisora);
+    fieldSelectPlusAutocomplete("emisora", {
+        id: "digito",
+        text: "emisora",
+        payload: emisora
+    });
+};
+
 const rellenarGridAsignacion = () => {
     console.log("Llena de nuevo grid Asignación");
 
     listaAsignacion_params = {};
 
-    const emisora = getList("emisora");
-    if (emisora.length > 0) {
-        listaAsignacion_params.emisora = emisora;
-    }
+
 
     const contrato = getList("contrato");
     if (contrato.length > 0) {
@@ -581,9 +597,9 @@ const rellenarGridAsignacion = () => {
         listaAsignacion_params.digito = digito;
     }
 
-    const usuario = getList("usuario");
-    if (usuario.length > 0) {
-        listaAsignacion_params.usuario = usuario;
+    const usuario_asignacion_flujo = getList("usuario-asignacion-flujo");
+    if (usuario_asignacion_flujo.length > 0) {
+        listaAsignacion_params.usuario_asignacion_flujo = usuario_asignacion_flujo;
     }
     let estatus = getChecked("estatus");
     if (estatus.length > 0) {
@@ -636,16 +652,18 @@ $("#btn_xls").contextMenu("menu-xls", {
     onContexMenu: function (event, menu) { }
 });
 
-$("#btn_xls").on("click", function (e) { });
+//$("#btn_xls").on("click", function (e) { });
 
-$("#idcancelar").click(() =>
-    $("#cancelar").dialog({
+$("#idcancelar").click(() => {
+    console.log("ventanaCancelar")
+    $("#cancelarasignacionyflujo").dialog({
         modal: true,
         closeText: "",
         show: true,
         title: "Cancelar Órden",
         width: 500
     })
+}
 );
 $("#idmodificar").click(() =>
     $("#modificar").dialog({
@@ -657,7 +675,7 @@ $("#idmodificar").click(() =>
     })
 );
 $("#idhechos").click(() =>
-    $("#hechos").dialog({
+    $("#hechos_asignacion_flujo").dialog({
         modal: true,
         closeText: "",
         show: true,
@@ -715,18 +733,18 @@ const cuentaRegresiva = (segundos: number) => {
 const segundos_actualizar = $("#segundos-actualizar").val();
 cuentaRegresiva(+segundos_actualizar);
 
-http_findAll("source1", source1_params, payload => {
-    llenaSource1("listado", payload);
+http_findAll("source", source_asignacion_params, payload => {
+    llenaSource_asignacion("listado", payload);
 });
 
-http_findAll("destination1", destination1_params, payload => {
-    llenaDestination1("listado", payload);
+http_findAll("destination", destination_asignacion_params, payload => {
+    llenaDestination_asignacion("listado", payload);
 });
 
-const llenaSource1 = (id: string, source1: any) => {
-    fillSwapList(id, "source1", source1);
+const llenaSource_asignacion = (id: string, source: any) => {
+    fillSwapList(id, "source", source);
 };
 
-const llenaDestination1 = (id: string, destination1: any) => {
-    fillSwapList(id, "destination1", destination1);
+const llenaDestination_asignacion = (id: string, destination: any) => {
+    fillSwapList(id, "destination", destination);
 };
