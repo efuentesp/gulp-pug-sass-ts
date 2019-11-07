@@ -10,9 +10,10 @@ mixin button-edit(parms)
       span= _label
 
   if _parms.size == "medium"
-    button.button.medium-button(id="btn_edit" data-tooltip=_parms.tooltip disabled=_parms.disabled)
-        span.fa-stack.fa-2x
-          i.fas.fa-edit.fa-sm
+    button.button.medium-button.flex.items-center(id="btn_edit" data-tooltip=_parms.tooltip disabled=_parms.disabled)
+      span.fa-stack.fa-2x
+        i.fas.fa-edit.fa-sm
+      span= _label
 
   if _parms.size == "small"
     button.button.small-button(id="btn_edit" data-tooltip=_parms.tooltip disabled=_parms.disabled)

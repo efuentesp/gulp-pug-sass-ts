@@ -7,8 +7,9 @@ mixin button-cancel(parms)
       span Cancelar
 
   if _parms.size == "medium"
-    button.button.medium-button(id="btn_cancel" data-tooltip=_parms.tooltip disabled=_parms.disabled)
+    button.button.medium-button.flex.items-center(id="btn_cancel" data-tooltip=_parms.tooltip disabled=_parms.disabled)
       img(src="../../assets/images/btn-cancelar.png")
+      span Cancelar
 
   if _parms.size == "small"
     button.button.small-button(id="btn_cancel" data-tooltip=_parms.tooltip disabled=_parms.disabled)

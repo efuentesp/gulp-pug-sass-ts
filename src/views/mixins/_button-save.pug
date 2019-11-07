@@ -9,8 +9,9 @@ mixin button-save(parms)
       span=_label
 
   if _parms.size == "medium"
-    button.button.medium-button(id=_id data-tooltip=_parms.tooltip disabled=_parms.disabled)
+    button.button.medium-button.flex.items-center(id=_id data-tooltip=_parms.tooltip disabled=_parms.disabled)
       img(src="../../assets/images/btn-enviar.png")
+      span=_label
 
   if _parms.size == "small"
     button.button.small-button(id=_id data-tooltip=_parms.tooltip disabled=_parms.disabled)
