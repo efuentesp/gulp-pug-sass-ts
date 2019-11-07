@@ -53,7 +53,7 @@
   .input {
     //display: block;
     background-color: $input_background_color;
-    border: 1px solid $button_border_color;
+    border: 1px solid rgb(196, 190, 190);
     border-radius: 6px;
     color: $font_color;
     padding-left: 0.5rem;
@@ -63,7 +63,7 @@
     &:disabled {
       background-color: $input_background-color_disabled;
       font-weight: bold;
-      color: darkblue;
+      color: $darkblue;
     }
 
     &.is-extra-small {

@@ -283,11 +283,11 @@ $("#btn_pdf").click(() =>
 );
 
 $("#btn_xls").click(() =>
-  $("#dialogo_xls").dialog({
+  $("#dialogo_aviso").dialog({
     modal: true,
     closeText: "",
     show: true,
-    title: "Error",
+    title: "Aviso",
     width: 400
   })
 );
