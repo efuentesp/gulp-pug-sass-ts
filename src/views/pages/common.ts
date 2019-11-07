@@ -365,6 +365,10 @@ const fieldPlusMinus = (id: string, params: any) => {
             $(list + " li").length = $(list + " li").length - 1;
           } else {
             if ($(list + " li").length <= 4) {
+              $(this)
+                .find("a")
+                .first()
+                .removeAttr("id");
               $(this).text("");
             } else {
               nodelist.childNodes[index].remove();
@@ -435,6 +439,10 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
           $(list + " li").length = $(list + " li").length - 1;
         } else {
           if ($(list + " li").length <= 4) {
+            $(this)
+              .find("a")
+              .first()
+              .removeAttr("id");
             $(this).text("");
           } else {
             nodelist.childNodes[index].remove();
@@ -518,6 +526,10 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
           $(list + " li").length = $(list + " li").length - 1;
         } else {
           if ($(list + " li").length <= 4) {
+            $(this)
+              .find("a")
+              .first()
+              .removeAttr("id");
             $(this).text("");
           } else {
             nodelist.childNodes[index].remove();

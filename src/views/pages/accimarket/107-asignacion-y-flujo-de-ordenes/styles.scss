@@ -79,7 +79,7 @@
   flex-wrap: wrap;
 }
 
-#cancelar {
+#cancelarasignacionyflujo {
   label {
     width: 100px;
   }
@@ -88,7 +88,7 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 0.5em;
-    // width: 40em;
+    width: 40em;
   }
   #grupo2 {
     display: flex;
@@ -119,11 +119,11 @@
 }
 
 .table-row-compra {
-  color: $color-red !important;
+  color: $color-green !important;
 }
 
 .table-row-venta {
-  color: $color-green !important;
+  color: $color-red !important;
 }
 
 #modificar {
@@ -145,6 +145,39 @@
     display: flex;
   }
 }
+#botones{
+  position: relative;
+  top: 25em;
+  right: 12em;
+}
+
+#cancelarasignacionyflujo {
+  label {
+    width: 100px;
+  }
+
+  #grupo3 {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0.5em;
+    // width: 40em;
+  }
+  #grupo4 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #row.flex {
+    display: flex;
+  }
+}
+#botones{
+  position: relative;
+  top: 25em;
+  right: 12em;
+}
+ 
+
+
 
 #field_segundos-actualizar {
   label {
@@ -163,4 +196,14 @@
     width: 200px !important;
     padding: 5px !important;
   }
+}
+
+#gbox_table_busquedaFlujo {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#pager_busquedaFlujo {
+  display: flex;
+  justify-content: flex-end;
 }
