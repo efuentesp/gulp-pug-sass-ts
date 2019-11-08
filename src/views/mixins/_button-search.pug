@@ -9,8 +9,9 @@ mixin button-search(parms)
       span=_label
 
   if _parms.size == "medium"
-    button.button.medium-button(id=_id title=_label data-tooltip=_parms.tooltip disabled=_parms.disabled)
+    button.button.medium-button.flex.items-center(id=_id title=_label data-tooltip=_parms.tooltip disabled=_parms.disabled)
       img(src="../../assets/images/btn-consultar_32x32.png")
+      span=_label
 
   if _parms.size == "small"
     button.button.small-button(id=_id title=_label data-tooltip=_parms.tooltip disabled=_parms.disabled)

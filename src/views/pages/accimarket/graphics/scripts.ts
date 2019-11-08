@@ -97,15 +97,6 @@ const fillPromedios = (promedios: any) => {
     height: "200px",
     dataSet: [
       {
-        type: "line",
-        label: "Promedio",
-        backgroundColor: "#c53030",
-        data: dataSetY1,
-        fill: false,
-        borderColor: "#c53030",
-        borderWidth: 2
-      },
-      {
         type: "bar",
         label: "Real",
         backgroundColor: "#2b6cb0",

@@ -3,20 +3,19 @@
 console.log("Rendimientos");
 
 ($("#cmbRenta") as any).select2({
-  placeholder:"";
+  placeholder: "",
   minimumResultsForSearch: Infinity
 });
+$("#cmbRenta").val("3");
+$("#cmbRenta").trigger("change");
+
 ($("#cmbModelosCalculoCombo") as any).select2({
-  placeholder:"";
+  placeholder: "",
   minimumResultsForSearch: Infinity
 });
-//document.getElementById('cmbRenta').selectedIndex="3"
-$(document).ready(function() {
-  $('#cmbRenta> option[value="3"]').attr("selected", "selected");
-});
-$(document).ready(function() {
-  $('#cmbModelosCalculoCombo> option[value="TI"]').attr("selected", "selected");
-});
+$("#cmbModelosCalculoCombo").val("TI");
+$("#cmbModelosCalculoCombo").trigger("change");
+
 $("#cmbModelosCalculoCombo").change(function() {
   var valor = $("#cmbModelosCalculoCombo").val();
   if (valor == "T") {
@@ -32,11 +31,8 @@ $("#cmbModelosCalculoCombo").change(function() {
            // http_findOne("contratos", txtContrato, payload => {
                 infoContratoRendimiento(payload);
 
-            
                 fillJqGrid("#table_resultadosfuente", payload.listatabla_fuente);
-            
         });
-        
         $("#dialogo_xls").dialog({
             modal: true,
             closeText: "",
@@ -214,6 +210,9 @@ $("#btn_search").click(function() {
 
             fillJqGrid("#table_resultadosAcumulados", payload.listaAcumulados);
             graficaMensuales("graficaAcumulados", payload.listaAcumulados);
+            $("#table_resultadosMensuales").jqGrid("setColProp", "amount", {
+              width: 800
+            });
           });
           return false;
         });
@@ -228,6 +227,7 @@ $("#table_resultadosMensuales").jqGrid({
   datatype: "local",
   height: "70",
   sortable: true,
+  width: 600,
   colNames: [
     "Periodo",
     "Portafolio %",
@@ -241,16 +241,16 @@ $("#table_resultadosMensuales").jqGrid({
     "INMEX %"
   ],
   colModel: [
-    { name: "periodo", width: 300, align: "center", frozen: true },
-    { name: "portafolio", width: 300, align: "center", frozen: true },
-    { name: "S01", width: 300, hidden: true, align: "center" },
-    { name: "S02", width: 300, hidden: true, align: "center" },
-    { name: "S03", width: 300, hidden: true, align: "center" },
-    { name: "S04", width: 300, hidden: true, align: "center" },
-    { name: "S05", width: 300, hidden: true, align: "center" },
-    { name: "S06", width: 300, hidden: true, align: "center" },
-    { name: "S07", width: 300, hidden: true, align: "center" },
-    { name: "S08", width: 300, hidden: true, align: "center" }
+    { name: "periodo", width: 60, align: "center", frozen: true },
+    { name: "portafolio", width: 60, align: "center", frozen: true },
+    { name: "S01", width: 60, hidden: true, align: "center" },
+    { name: "S02", width: 60, hidden: true, align: "center" },
+    { name: "S03", width: 60, hidden: true, align: "center" },
+    { name: "S04", width: 60, hidden: true, align: "center" },
+    { name: "S05", width: 60, hidden: true, align: "center" },
+    { name: "S06", width: 60, hidden: true, align: "center" },
+    { name: "S07", width: 60, hidden: true, align: "center" },
+    { name: "S08", width: 60, hidden: true, align: "center" }
   ],
   rowNum: 10,
   rowList: [10, 20, 30],
@@ -469,13 +469,13 @@ const infoContratoRendimiento = (payload: any) => {
   $("#txtClabe").val(payload.clabe);
 };
 const graficaMensuales = (tipoGrafica: string, lista: any) => {
-  var dataSetY = [];
+  var dataSetY1 = [];
   var dataSetX = [];
 
   for (var i = 0; i < lista.length; i++) {
     var data = lista[i];
     dataSetX.push(data.periodo);
-    dataSetY.push(data.total);
+    dataSetY1.push(data.total);
   }
 
   simpleBarChart({
@@ -491,7 +491,7 @@ const graficaMensuales = (tipoGrafica: string, lista: any) => {
         type: "bar",
         label: "Real",
         backgroundColor: "#2b6cb0",
-        data: dataSetY
+        data: dataSetY1
       }
     ],
     width: "400px",

@@ -1,12 +1,9 @@
 include /mixins/mixins
-
 +splitter("simple")
-    .pane 
+    .pane
         p Resultados Mensuales
-        #resultadosMensuales
             +grid("resultadosMensuales")
             +canvas("graficaMensual", {width:'600px', height:'600px'})
-        #resultadosMensualesTWP
             +grid("resultadosMensualesTWP")
             +canvas("graficaMensualTWP", {width:'600px', height:'600px'})
     .pane
@@ -14,4 +11,4 @@ include /mixins/mixins
         +grid("resultadosAcumulados")
         +canvas("graficaAcumulados", {width:'600px', height:'600px'})
         +grid("resultadosAcumuladosTWP")
-        +canvas("graficaAcumuladosTWP", {width:'600px', height:'600px'})  
+        +canvas("graficaAcumuladosTWP", {width:'600px', height:'600px'})
