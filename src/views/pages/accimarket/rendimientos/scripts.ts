@@ -470,12 +470,28 @@ const infoContratoRendimiento = (payload: any) => {
 };
 const graficaMensuales = (tipoGrafica: string, lista: any) => {
   var dataSetY1 = [];
+  var dataSetY2 = [];
+  var dataSetY3 = [];
+  var dataSetY4 = [];
+  var dataSetY5 = [];
+  var dataSetY6 = [];
+  var dataSetY7 = [];
+  var dataSetY8 = [];
+  var dataSetY9 = [];
   var dataSetX = [];
 
   for (var i = 0; i < lista.length; i++) {
     var data = lista[i];
     dataSetX.push(data.periodo);
-    dataSetY1.push(data.total);
+    dataSetY1.push(data.portafolio);
+    dataSetY2.push(data.S01);
+    dataSetY3.push(data.S02);
+    dataSetY4.push(data.S03);
+    dataSetY5.push(data.S04);
+    dataSetY6.push(data.S05);
+    dataSetY7.push(data.S06);
+    dataSetY8.push(data.S07);
+    dataSetY9.push(data.S08);
   }
 
   simpleBarChart({
@@ -483,19 +499,67 @@ const graficaMensuales = (tipoGrafica: string, lista: any) => {
     titleX: "Período",
     titleY: "Portafolio",
     labels: dataSetX,
-    tickMaxY: 1.0,
-    tickMinY: 0,
-    tickStepY: 0.2,
+    tickMaxY: 15.0,
+    tickMinY: -15 /*0*/,
+    tickStepY: 1,
+    width: "400px",
+    height: "200px",
     dataSet: [
       {
         type: "bar",
         label: "Real",
         backgroundColor: "#2b6cb0",
         data: dataSetY1
+      },
+      {
+        type: "bar",
+        label: "Real",
+        backgroundColor: "#2b6cb0",
+        data: dataSetY2
+      },
+      {
+        type: "bar",
+        label: "Real2",
+        backgroundColor: "#ffb3b3",
+        data: dataSetY3
+      },
+      {
+        type: "bar",
+        label: "Real3",
+        backgroundColor: "#b3ffb3",
+        data: dataSetY4
+      },
+      {
+        type: "bar",
+        label: "Real4",
+        backgroundColor: "#ffff66",
+        data: dataSetY5
+      },
+      {
+        type: "bar",
+        label: "Real4",
+        backgroundColor: "#ffff66",
+        data: dataSetY6
+      },
+      {
+        type: "bar",
+        label: "Real4",
+        backgroundColor: "#ffff66",
+        data: dataSetY7
+      },
+      {
+        type: "bar",
+        label: "Real4",
+        backgroundColor: "#ffff66",
+        data: dataSetY8
+      },
+      {
+        type: "bar",
+        label: "Real4",
+        backgroundColor: "#ffff66",
+        data: dataSetY9
       }
-    ],
-    width: "400px",
-    height: "200px"
+    ]
   });
 };
 
