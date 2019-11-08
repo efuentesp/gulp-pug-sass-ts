@@ -30,6 +30,10 @@ http_findAll("promedios", promedios_params, payload => {
   fillPromedios(payload);
 });
 
+http_findAll("promediosNBar", promedios_params, payload => {
+  fillPromediosNBar(payload);
+});
+
 // Services bar chart
 http_findAll("promedios", promedios_params, payload => {
   fillPromediosPie(payload);
@@ -110,6 +114,72 @@ const fillPromedios = (promedios: any) => {
         label: "Real",
         backgroundColor: "#2b6cb0",
         data: dataSetY2
+      }
+    ]
+  });
+};
+
+const fillPromediosNBar = (promediosNBar: any) => {
+  var dataSetY1 = [];
+  var dataSetY2 = [];
+  var dataSetY3 = [];
+  var dataSetY4 = [];
+  var dataSetY5 = [];
+  var dataSetX = [];
+
+  for (var i = 0; i < promediosNBar.length; i++) {
+    var data = promediosNBar[i];
+    dataSetX.push(data.horizonte);
+    dataSetY1.push(data.dataA);
+    dataSetY2.push(data.dataB);
+    dataSetY3.push(data.dataC);
+    dataSetY4.push(data.dataD);
+    dataSetY5.push(data.dataE);
+  }
+
+  barChartNBar({
+    id: "barChartNBar",
+    titleX: "Cifras de rendimientos, tasas e inflación con fines ilustrativos",
+    titleY: "Rendimientos Promedio Anual",
+    labels: dataSetX,
+    tickMaxY: 15.0,
+    tickMinY: -15/*0*/,
+    tickStepY: 1,
+    width: "400px",
+    height: "200px",
+    dataSet: [
+      {
+        type: "line",
+        label: "Promedio",
+        backgroundColor: "#c53030",
+        data: dataSetY1,
+        fill: false,
+        borderColor: "#c53030",
+        borderWidth: 2
+      },
+      {
+        type: "bar",
+        label: "Real",
+        backgroundColor: "#2b6cb0",
+        data: dataSetY2
+      },
+      {
+        type: "bar",
+        label: "Real2",
+        backgroundColor: "#ffb3b3",
+        data: dataSetY3
+      },
+      {
+        type: "bar",
+        label: "Real3",
+        backgroundColor: "#b3ffb3",
+        data: dataSetY4
+      },
+      {
+        type: "bar",
+        label: "Real4",
+        backgroundColor: "#ffff66",
+        data: dataSetY5
       }
     ]
   });
