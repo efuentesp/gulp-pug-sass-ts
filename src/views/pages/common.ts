@@ -1039,7 +1039,7 @@ const simpleBarChart = (params: barChartParams) => {
             gridLines: {
               display: true
             },
-            stacked: true,
+            stacked: false,
             ticks: {
               display: true
             },
@@ -1055,7 +1055,7 @@ const simpleBarChart = (params: barChartParams) => {
             gridLines: {
               display: false
             },
-            stacked: true,
+            stacked: false,
             scaleLabel: {
               display: true,
               labelString: params.titleY,
