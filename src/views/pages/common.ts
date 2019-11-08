@@ -1355,6 +1355,131 @@ const barChart = (params: barChartParams) => {
   });
 };
 
+// BarGraph
+const barChartNBar = (params: barChartParams) => {
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  var ctxBar: any = document.getElementById(params.id);
+  var contextBar = ctxBar.getContext("2d");
+  // Style legends
+  Chart.defaults.global.legend.labels.usePointStyle = true;
+  Chart.defaults.global.legend.labels.fontSize = 9;
+  Chart.defaults.global.legend.labels.boxWidth = 9;
+  Chart.defaults.global.legend.position = "bottom";
+  Chart.defaults.global.legend.display = false;
+  // Style tittle graph
+  Chart.defaults.global.title.display = false;
+  Chart.defaults.global.title.text = "";
+  // Graph responsive
+  Chart.defaults.global.responsive = true;
+  // Data point
+  Chart.defaults.global.elements.point.radius = 0;
+
+  var barGraph = new Chart(contextBar, {
+    plugins: [
+      {
+        afterDatasetsDraw: function(barGraph) {
+          var ctx = barGraph.ctx;
+
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+
+          barGraph.data.datasets.forEach(function(dataset, i) {
+            var meta = barGraph.getDatasetMeta(i);
+            if (!meta.hidden) {
+              meta.data.forEach(function(element, index) {
+                ctx.fillStyle = "#000";
+                var fontSize = 12;
+                var fontStyle = "normal";
+                var fontFamily = "Arial";
+
+                ctx.font = Chart.helpers.fontString(
+                  fontSize,
+                  fontStyle,
+                  fontFamily
+                );
+                // Line
+                if (i == 0 && index == 4) {
+                  ctx.textAlign = "center";
+                  ctx.textBaseline = "top";
+                  var padding = 15;
+                  // var position = element.tooltipPosition();
+
+                  ctx.fillText(
+                    "Inflación",
+                    element._view.x + 120,
+                    element._view.y - 10
+                  );
+                  ctx.fillText(
+                    "esperada: 4.0%",
+                    element._view.x + 120,
+                    element._view.y
+                  );
+
+                  ctx.beginPath();
+                  // ctx.lineWidth = "1";
+                  ctx.strokeStyle = "#000";
+                  // Tamaño 130 x 60
+                  ctx.rect(element._view.x + 80, element._view.y - 30, 120, 60);
+                  ctx.stroke();
+                }
+              });
+            }
+          });
+        }
+      }
+    ],
+    type: "bar",
+    data: chartData,
+    options: {
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: true
+            },/**/
+            stacked: false,/**/
+            ticks: {
+              display: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: params.titleX,
+              fontColor: "#000"
+            }
+          }
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: false
+            },/**/
+            stacked: false,/**/
+            scaleLabel: {
+              display: true,
+              labelString: params.titleY,
+              fontColor: "#000"
+            }/**/,
+            ticks: {
+              display: true,
+              // Y escale
+              max: params.tickMaxY,
+              min: params.tickMinY,
+              stepSize: params.tickStepY,
+              callback: function(value) {
+                return value + ".0%";
+              }
+            }/**/
+          }
+        ]
+      }
+    }
+  });
+};
+
 // lineGraph
 const lineChart = (params: lineChartParams) => {
   var chartData = {

@@ -5093,6 +5093,43 @@
       "dataB": 9
     }
   ],
+  "promediosNBar": [
+    {
+      "horizonte": "A (Liquidez)",
+      "dataA": 0,
+      "dataB": 3.8,
+      "dataC": -6,
+      "dataD": 9.8
+    },
+    {
+      "horizonte": "B (Conservación)",
+      "dataA": 0,
+      "dataB": 4.2,
+      "dataC": 5.6,
+      "dataD": -6.9
+    },
+    {
+      "horizonte": "C (Equilibrio)",
+      "dataA": 0,
+      "dataB": -5.5,
+      "dataC": 7.8,
+      "dataD": 5.5
+    },
+    {
+      "horizonte": "D (Incremento)",
+      "dataA": 0,
+      "dataB": 7,
+      "dataC": 8,
+      "dataD": 10,
+      "dataE": 11
+    },
+    {
+      "horizonte": "E (Maximización)",
+      "dataA": 0,
+      "dataB": 9,
+      "dataC": 6
+    }    
+  ],
   "averages": [
     {
       "dataA": "Sep-18",
