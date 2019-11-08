@@ -117,6 +117,29 @@ block content
             {key: "P03", value:"Product 3"}
           )
         .row
+          +field-checks("servicio_inversion",
+            {
+                label: "Servicio de Inversión",
+            },
+            {key: "S01", value:"Aplicados", color:"green"},
+            {key: "S02", value:"Cancelados", color:"red"},
+            {key: "S03", value:"Pendientes", color:"orange"},
+            {key: "S04", value:"En Revisión", color:"blue"},
+            {key: "S05", value:"En Proceso", color:"grey"},
+            {key: "S05", value:"En Revisión Sans", color:"cyan"}
+            )
+          +field-checks("servicio_inversion_2",
+            {
+                label: "Servicio de Inversión",
+            },
+            {key: "S01", value:"Asignadas", color:"green"},
+            {key: "S02", value:"Cancelados", color:"red"},
+            {key: "S03", value:"Pendientes", color:"orange"},
+            {key: "S04", value:"En Revisión", color:"blue"},
+            {key: "S05", value:"En Proceso", color:"grey"},
+            {key: "S05", value:"En Revisión Sans", color:"cyan"}
+            )
+        .row
           +field-select("payment",
             {
               label: "Payment method",
@@ -155,6 +178,23 @@ block content
           )
         .row
           +field-search("buscar", {})
+        .row
+          +field-multiselect("multi",
+            {
+              label: "Multiselect",
+              required: true,
+              size: "12em",
+              orientation: "horizontal"
+            },
+            {key: "O1", value: "Opción 1"},
+            {key: "O2", value: "Opción 2"},
+            {key: "O3", value: "Opción 3"},
+            {key: "O4", value: "Opción 4"},
+            {key: "O5", value: "Opción 5"},
+            {key: "O6", value: "Opción 6"},
+            {key: "O7", value: "Opción 7"},
+            {key: "O8", value: "Opción 8"}
+          )
         .row
           +button-send({size: "large", disabled: false})
 

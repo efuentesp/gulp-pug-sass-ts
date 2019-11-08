@@ -11,41 +11,55 @@ block content
         .row
            
         button#idcancelar CANCELAR
-               button#idmodificar MODIFICAR
-               button#idhechos HECHOS
-               button#idcancelarordenes ORDENES
-               button#idmantenimiento MANTENIMIENTO
+        button#idmodificar MODIFICAR
+        button#idhechos HECHOS
+        button#idcancelarordenes ORDENES
+        button#idmantenimiento MANTENIMIENTO
+        button#idcolumnas COLUMNAS
             
         .row
             +accordion("criterios_busqueda_asignacion")
                 +accordion-item("busqueda_item")
                     form#criterios-listAsignacion
                         .form-group.flex.justify-between
-                            +field-plus-minus("emisora",
-                                {
-                                    label: "Emisora"      
-                                })
+                            +field-select-plus-minus("emisora", 
+                                {label: "Emisora", 
+                                 size: "8em"},
+                                {key: "", value:""}
+                            )
                             +field-plus-minus("contrato",
                                 {
                                     label: "Contrato"
                                 })
+                            +field-checks("excluir",
+                                {
+                                    label: "",
+                                },
+                                {key: "SI", value:"Excluir"})
                             +field-plus-minus("digito",
                                 {
                                     label: "Digito"
                                 })
-                            .row#rowEmisora
-                                +field-plus-minus("usuario",
-                                    {
-                                        label: "Usuario",  
-                                    })
+                            
+                            +field-checks("exclu",
+                                {
+                                    label: "",
+                                },
+                                {key: "SI", value:"Excluir"})
+                            .row#rowUsuario
+                                +field-plus-minus("usuario-asignacion-flujo",
+                                {
+                                    label: "Usuario"
+                                })
                             .row
                                 .row#rowEstatus.h-40
                                     +field-checks("estatus",
                                         {
                                             label: "Estatus",
-                                            orientation: "horizontal"
+                                            orientation: "horizontal",
+                                            
                                         },
-                                        {key: "S01", value:"Asignados", color:"green"},
+                                        {key: "S01", value:"Asignados", color:"green",},
                                         {key: "S02", value:"Pendientes", color:"blue"},
                                         {key: "S03", value:"Sin Asignar", color:"yellow"},
                                         {key: "S04", value:"Canceladas", color:"red"},
@@ -99,20 +113,19 @@ block content
                                     {
                                         label: "",
                                         size: "5em",
-                                        orientation: "horizontal",
                                         type: "integer",
                                         max_length: "6"
                                     })
                             
                             .row
-                                +field-options("operacion",
+                                +field-options("tipo",
                                     {
-                                        label: "Operacion",
+                                        label: "Tipo",
                                     
                                     },
                                     {key: "ALL", value:"Todas", color:"gray"},
-                                    {key: "C", value:"Compras", color:"gray"},
-                                    {key: "V", value:"Ventas", color:"gray"} 
+                                    {key: "CPA", value:"Compras", color:"gray"},
+                                    {key: "VTA", value:"Ventas", color:"gray"} 
                                     )
                                 .row#rowSolo
                                     +field-checks("id",
@@ -163,6 +176,7 @@ block content
     include hechos
     include cancelarordenes
     include mantenimiento
+    include columnas
 
 block scripts
     script(src="/assets/scripts/accimarket/107-asignacion-y-flujo-de-ordenes/scripts.js")

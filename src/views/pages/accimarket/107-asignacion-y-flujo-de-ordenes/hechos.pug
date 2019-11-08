@@ -1,21 +1,13 @@
 block styles
     link(rel="stylesheet" href="/assets/css/accimarket/107-asignacion-y-flujo-de-ordenes/styles.css")
 
-    .ui-dialog.hidden(id="hechos")
+    .ui-dialog.hidden(id="hechos_asignacion_flujo")
         .row.flex
-            
-                .row
-            
-                            .form-group1
-                                
-                              
-                                p.font-bold.text-2xl.p-3 
+            .row
+                .form-group1        
+                    p.font-bold.text-2xl.p-3 
+                        .row.has_border
+                            .row.w-full.overflow-auto
+                                +grid("busquedaHechos")
+                            +grid-records-count("hechos")
         
-                            .row.has_border
-                                .row.w-full.overflow-auto
-                                    +grid("busquedaHechos")
-                                +grid-records-count("hechos")
-                            
-        .row.pt-4.flex.justify-center
-            +button-accept
-            +button-cancel

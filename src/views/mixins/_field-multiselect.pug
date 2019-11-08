@@ -1,0 +1,30 @@
+mixin field-multiselect(id, parms, ...items)
+  - var _field_id = "field_" + id
+  - var _input_id = id
+  - var _field_error_block = "field_error_block_" + id
+  - var _field_error_block_id = "#" + _field_error_block
+  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
+  //- - var _class = (_class == "is_horizontal" ? _class + " items-center" : _class)
+  .field(id=_field_id class=_class)
+    .field-label.flex
+      label(for=_input_id)= parms.label
+        if parms.required
+          span.pr-3.required *
+        else
+          span.pr-3
+    .field-control
+      select.multiselect(id=id
+            name=id
+            multiple
+            required=parms.required
+            style=_style
+            disabled=parms.disabled
+            data-parsley-trigger="change"
+            data-parsley-errors-container=_field_error_block_id
+      )
+        each item in items
+          - var _item_selected = (item.selected ? "selected" : "")
+          option(value=item.key)= item.value
+      .field-error
+        div(id=_field_error_block)
