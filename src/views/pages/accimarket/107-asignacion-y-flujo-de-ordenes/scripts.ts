@@ -26,6 +26,9 @@ $("input[name='vista']").click(function () {
         $("#rowAsignacion").show();
         $("#rowFlujo").hide();
         $("#rowVolumen").hide();
+        $("#field_exclu").hide();
+        $("#field_excluir").hide();
+
 
     } else {
         $("#rowEstatus").hide();
@@ -35,6 +38,8 @@ $("input[name='vista']").click(function () {
         $("#rowAsignacion").hide();
         $("#rowFlujo").show();
         $("#rowVolumen").show();
+        $("#field_exclu").show();
+        $("#field_excluir").show();
 
     }
 });
