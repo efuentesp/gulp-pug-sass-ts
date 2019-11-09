@@ -5,8 +5,22 @@
     height: 28px;
     color: $color-ink-lightest;
 
+    &.left {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    &.right {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+
     &.active {
-      background: $color-ink-lightest;
+      background-image: linear-gradient(
+        to bottom,
+        rgb(54, 114, 219),
+        rgb(114, 171, 252)
+      );
       border-color: $color-ink-lightest;
     }
   }
