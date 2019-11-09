@@ -117,6 +117,29 @@ block content
             {key: "P03", value:"Product 3"}
           )
         .row
+          +field-checks("servicio_inversion",
+            {
+                label: "Servicio de Inversión",
+            },
+            {key: "S01", value:"Aplicados", color:"green"},
+            {key: "S02", value:"Cancelados", color:"red"},
+            {key: "S03", value:"Pendientes", color:"orange"},
+            {key: "S04", value:"En Revisión", color:"blue"},
+            {key: "S05", value:"En Proceso", color:"grey"},
+            {key: "S05", value:"En Revisión Sans", color:"cyan"}
+            )
+          +field-checks("servicio_inversion_2",
+            {
+                label: "Servicio de Inversión",
+            },
+            {key: "S01", value:"Asignadas", color:"green"},
+            {key: "S02", value:"Cancelados", color:"red"},
+            {key: "S03", value:"Pendientes", color:"orange"},
+            {key: "S04", value:"En Revisión", color:"blue"},
+            {key: "S05", value:"En Proceso", color:"grey"},
+            {key: "S05", value:"En Revisión Sans", color:"cyan"}
+            )
+        .row
           +field-select("payment",
             {
               label: "Payment method",
