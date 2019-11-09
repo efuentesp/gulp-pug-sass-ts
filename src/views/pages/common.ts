@@ -74,7 +74,7 @@ const ui_datepicker_month_year_settings = {
 };
 
 // Query UI Accordion settings
-const icons = { header: "ui-icon-plus", activeHeader: "ui-icon-minus" };
+const icons = { header: "plus-icon", activeHeader: "minus-icon" };
 
 const ui_accordion_settings = {
   collapsible: true,
