@@ -563,6 +563,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   });
 
   ($(idInput) as any).select2({
+    language: "es",
     data: data,
     placeholder: "",
     minimumInputLength: 3

@@ -9,6 +9,7 @@ fieldPlusMinus("digito", { maxsize: 5 }); // Max number of elements
 fieldSelectPlusMinus("contrato1", {});
 
 ($("#payment") as any).select2({
+  language: "es",
   placeholder: "",
   minimumResultsForSearch: Infinity
 });
