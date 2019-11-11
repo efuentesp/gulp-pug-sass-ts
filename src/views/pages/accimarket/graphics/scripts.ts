@@ -143,7 +143,7 @@ const fillPromediosNBar = (promediosNBar: any) => {
     titleY: "Rendimientos Promedio Anual",
     labels: dataSetX,
     tickMaxY: 15.0,
-    tickMinY: -15/*0*/,
+    tickMinY: -15 /*0*/,
     tickStepY: 1,
     width: "400px",
     height: "200px",

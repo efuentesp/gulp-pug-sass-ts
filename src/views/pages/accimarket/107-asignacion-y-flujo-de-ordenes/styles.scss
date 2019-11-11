@@ -2,7 +2,7 @@
 
 .content {
   #search-actions-column {
-    width: 20em;
+    width: 15em;
     height: 25em;
   }
 
@@ -27,6 +27,7 @@
         flex-wrap: wrap;
       }
     }
+    
 
     #field_mayor {
       .field-control {
@@ -207,3 +208,28 @@
   display: flex;
   justify-content: flex-end;
 }
+
+#field_excluir{
+  .field-control{
+    right: 95px;
+    top: 45px;
+    bottom: 30%;
+    height: 1px;
+    width: 1px;
+    margin-top: 2px;
+    z-index: 4;
+  }
+}
+
+#field_exclu{
+  .field-control{
+    right: 95px;
+    top: 45px;
+    bottom: 30%;
+    height: 1px;
+    width: 1px;
+    margin-top: 2px;
+    z-index: 4;
+  }
+}
+

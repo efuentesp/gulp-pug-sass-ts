@@ -9,33 +9,6 @@ interface UrlParams {
 }
 
 // Query UI DatePicker settings
-const DAY_NAMES = [
-  "Domingo",
-  "Lunes",
-  "Martes",
-  "Miércoles",
-  "Jueves",
-  "Viernes",
-  "Sábado"
-];
-
-const DAY_NAMES_MIN = ["D", "L ", "M ", "M ", "J ", "V ", "S "];
-
-const MONTH_NAMES = [
-  "Enero",
-  "Febrero",
-  "Marzo",
-  "Abril",
-  "Mayo",
-  "Junio",
-  "Julio",
-  "Agosto",
-  "Septiembre",
-  "Octubre",
-  "Noviembre",
-  "Diciembre"
-];
-
 const DATE_FORMAT = "dd-mm-yy";
 const DATE_FORMAT_MONTH_YEAR = "MM yy";
 
@@ -44,9 +17,6 @@ const ui_datepicker_settings = {
   buttonImage: "../../assets/images/btn-calendario.svg",
   buttonImageOnly: true,
   buttonText: "",
-  dayNames: DAY_NAMES,
-  dayNamesMin: DAY_NAMES_MIN,
-  monthNames: MONTH_NAMES,
   dateFormat: DATE_FORMAT,
   changeMonth: true,
   changeYear: true,
@@ -59,6 +29,50 @@ const ui_datepicker_settings = {
     }
   }
 };
+
+$.datepicker.regional["es"] = {
+  monthNames: [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre"
+  ],
+  monthNamesShort: [
+    "Ene",
+    "Feb",
+    "Mar",
+    "Abr",
+    "May",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dic"
+  ],
+  dayNames: [
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sábado"
+  ],
+  dayNamesShort: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+  dayNamesMin: ["D", "L ", "M ", "M ", "J ", "V ", "S "]
+};
+
+$.datepicker.setDefaults($.datepicker.regional["es"]);
 
 const ui_datepicker_month_year_settings = {
   changeMonth: true,
@@ -74,7 +88,7 @@ const ui_datepicker_month_year_settings = {
 };
 
 // Query UI Accordion settings
-const icons = { header: "ui-icon-plus", activeHeader: "ui-icon-minus" };
+const icons = { header: "plus-icon", activeHeader: "minus-icon" };
 
 const ui_accordion_settings = {
   collapsible: true,
@@ -145,17 +159,24 @@ $(".sidebar_button").click(() => {
   headerTag: "h3",
   bodyTag: "section",
   transitionEffect: "slideLeft",
+  titleTemplate: "#title#",
   autoFocus: true,
   labels: {
     cancel: "Cancelar",
     current: "paso actual:",
     pagination: "Paginación",
     finish: "Terminar",
-    next: "Siguiente",
-    previous: "Anterior",
     loading: "Cargando ..."
   }
 });
+
+// Button images - Wizard
+$("[href='#next']").html(
+  '<img src="../../assets/images/boton_siguiente2.png">Siguiente</img>'
+);
+$("[href='#previous']").html(
+  '<img src="../../assets/images/boton_regresar2.png">Anterior</img>'
+);
 
 // REST APIs}
 const rest_findAll = (resource: string, params: any, cb: Function) => {
@@ -300,7 +321,7 @@ const addNode = (
   if (maxsize != null) {
     if ($(list + " li").length < maxsize) {
       $(list).append(
-        "<li><a " +
+        "<li><a id=" +
           value_to_add +
           " class='delete_item' href='javascript:void();'>" +
           text_to_add +
@@ -309,7 +330,7 @@ const addNode = (
     }
   } else {
     $(list).append(
-      "<li><a " +
+      "<li><a id=" +
         value_to_add +
         " class='delete_item' href='javascript:void();'>" +
         text_to_add +
@@ -317,6 +338,41 @@ const addNode = (
     );
   }
 };
+
+function fieldPlusMinusRepaintList(node) {
+  let listcontentid = [];
+  let listcontentvalue = [];
+  let nodelist: HTMLUListElement = document.getElementById(
+    node
+  ) as HTMLUListElement;
+  let listSize = nodelist.childNodes.length;
+  $(nodelist.childNodes).each(function(childNode) {
+    if (nodelist.childNodes[childNode].childNodes[0].textContent) {
+      listcontentid.push(
+        (nodelist.childNodes[childNode]
+          .childNodes[0] as HTMLElement).getAttribute("id")
+      );
+      listcontentvalue.push(
+        nodelist.childNodes[childNode].childNodes[0].textContent
+      );
+    }
+  });
+  while (nodelist.firstChild) {
+    nodelist.removeChild(nodelist.firstChild);
+  }
+  for (let i = 0; i < listSize; i++) {
+    let tagLi = document.createElement("LI");
+    let tagA = document.createElement("A");
+    tagA.setAttribute("class", "delete_item");
+    tagA.setAttribute("href", "javascript:void();");
+    if (i < listcontentid.length) {
+      tagA.setAttribute("id", listcontentid[i]);
+      tagA.innerHTML = listcontentvalue[i];
+    }
+    tagLi.appendChild(tagA);
+    nodelist.appendChild(tagLi);
+  }
+}
 
 // Plus Minus
 const fieldPlusMinus = (id: string, params: any) => {
@@ -378,6 +434,7 @@ const fieldPlusMinus = (id: string, params: any) => {
         }
       }
     });
+    fieldPlusMinusRepaintList(node);
     $(idInput).val("");
   });
 
@@ -451,6 +508,8 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
         }
       }
     });
+
+    fieldPlusMinusRepaintList(node);
 
     $(idInput)
       .val(null)
@@ -539,6 +598,8 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       }
     });
 
+    fieldPlusMinusRepaintList(node);
+
     $(idInput)
       .val(null)
       .trigger("change");
@@ -563,6 +624,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   });
 
   ($(idInput) as any).select2({
+    language: "es",
     data: data,
     placeholder: "",
     minimumInputLength: 3
@@ -1039,7 +1101,7 @@ const simpleBarChart = (params: barChartParams) => {
             gridLines: {
               display: true
             },
-            stacked: true,
+            stacked: false,
             ticks: {
               display: true
             },
@@ -1055,7 +1117,7 @@ const simpleBarChart = (params: barChartParams) => {
             gridLines: {
               display: false
             },
-            stacked: true,
+            stacked: false,
             scaleLabel: {
               display: true,
               labelString: params.titleY,
@@ -1378,17 +1440,17 @@ const barChartNBar = (params: barChartParams) => {
   // Data point
   Chart.defaults.global.elements.point.radius = 0;
 
-  var barGraph = new Chart(contextBar, {
+  var barNGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(barGraph) {
-          var ctx = barGraph.ctx;
+        afterDatasetsDraw: function(barNGraph) {
+          var ctx = barNGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          barGraph.data.datasets.forEach(function(dataset, i) {
-            var meta = barGraph.getDatasetMeta(i);
+          barNGraph.data.datasets.forEach(function(dataset, i) {
+            var meta = barNGraph.getDatasetMeta(i);
             if (!meta.hidden) {
               meta.data.forEach(function(element, index) {
                 ctx.fillStyle = "#000";
@@ -1440,8 +1502,8 @@ const barChartNBar = (params: barChartParams) => {
           {
             gridLines: {
               display: true
-            },/**/
-            stacked: false,/**/
+            } /**/,
+            stacked: false /**/,
             ticks: {
               display: true
             },
@@ -1456,13 +1518,13 @@ const barChartNBar = (params: barChartParams) => {
           {
             gridLines: {
               display: false
-            },/**/
-            stacked: false,/**/
+            } /**/,
+            stacked: false /**/,
             scaleLabel: {
               display: true,
               labelString: params.titleY,
               fontColor: "#000"
-            }/**/,
+            } /**/,
             ticks: {
               display: true,
               // Y escale
@@ -1472,7 +1534,7 @@ const barChartNBar = (params: barChartParams) => {
               callback: function(value) {
                 return value + ".0%";
               }
-            }/**/
+            } /**/
           }
         ]
       }
@@ -2244,33 +2306,23 @@ const xml2json = (xml, tab) => {
   );
 };
 
-// Swaplist
-$("ul.droptrue").sortable({
-  connectWith: "ul"
-});
-
-$("ul.dropfalse").sortable({
-  connectWith: "ul",
-  dropOnEmpty: false
-});
-
 const fillSwapList = (id: string, list_id: string, params: any) => {
   var _id = "#" + id;
   var list = $("#listado_" + list_id);
 
   for (var i = 0; i < params.length; i++) {
     var data = params[i];
-    list.append("<li value = " + data.value + ">" + data.label + "</li>");
+    list.append(
+      "<li class='portlet' value=" +
+        data.value +
+        "><div class='portlet-content'>" +
+        data.label +
+        "</div></li>"
+    );
   }
-
-  $(_id + "_source").disableSelection();
-  $(_id + "_destination").disableSelection();
-
-  $(".droptrue > li:odd, .dropfalse > li:odd").addClass("odd");
-  $(".droptrue > li:even, .dropfalse > li:even").addClass("even");
 };
 
-$(".droptrue, .dropfalse").on("click", "li", function() {
+$("ul.column").on("click", "li", function() {
   if ($(this).hasClass("selected")) {
     $(this).removeClass("selected");
   } else {
@@ -2281,32 +2333,44 @@ $(".droptrue, .dropfalse").on("click", "li", function() {
 
 // Up
 $(".up").click(function() {
-  var currents = $("li.selected");
+  var currents = $(".portlet.selected");
   currents.prev().before(currents);
 });
 
 // Down
 $(".down").click(function() {
-  var currents = $("li.selected");
+  var currents = $(".portlet.selected");
   currents.next().after(currents);
 });
 
 // Add
 $(".add").click(function() {
-  var currents = $("li.selected");
-  $(".dropfalse").append(currents);
+  var currents = $(".portlet.selected");
+  $(".column.destination").append(currents);
   clearList();
 });
 
 // Remove
 $(".remove").click(function() {
-  var currents = $("li.selected");
-  $(".droptrue").append(currents);
+  var currents = $(".portlet.selected");
+  $(".column.source").append(currents);
   clearList();
 });
 
+$(".column").sortable({
+  connectWith: ".column",
+  handle: ".portlet-content",
+  cancel: ".portlet-toggle",
+  placeholder: "portlet-placeholder ui-corner-all"
+});
+
+$(".portlet")
+  .addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
+  .find(".portlet-content")
+  .addClass("ui-corner-all");
+
 const clearList = () => {
-  $(".droptrue > li, .dropfalse > li").removeClass("selected");
+  $("ul.column li").removeClass("selected");
 };
 
 const formatNumber = {

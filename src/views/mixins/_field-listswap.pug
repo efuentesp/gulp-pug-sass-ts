@@ -4,23 +4,30 @@ mixin field-swaplist(id, params)
   - var _id_destination = id + "_destination"
 
   .listswap_wrapper(id=id)
-    .source
-      p.title= params.title_source
-      ul.droptrue(id=_id_source)
-    .source_control
-      .up
-        button.up-button
-          img(src="../../assets/images/icon_up_arrow.png" style="width:15px;")
-      .add
-        button.right-button
-          img(src="../../assets/images/icon_right_arrow.png" style="width:15px;")
-      .remove
-        button.left-button
-          img(src="../../assets/images/icon_left_arrow.png" style="width:15px;")
-      .down
-        button.down-button
-          img(src="../../assets/images/icon_down_arrow.png" style="width:15px;")
-    .destination
-      p.title= params.title_destination
-      ul.dropfalse(id=_id_destination)
+    .row
+      div(id="swaplist")
+        div(id="swaplist-source")
+          p.title= params.title_source
+          ul.column.source(id=_id_source)
+        .source_control
+          .up
+            button.up-button
+              img(src="../../assets/images/flecha_arriba2.png" style="width:18px;")
+          .add
+            button.right-button
+              img(src="../../assets/images/flecha_derecha2.png" style="width:18px;")
+          .remove
+            button.left-button
+              img(src="../../assets/images/flecha_izquierda2.png" style="width:18px;")
+          .down
+            button.down-button
+              img(src="../../assets/images/flecha_abajo2.png" style="width:18px;")
+        div(id="swaplist-destination")
+          p.title= params.title_source
+          ul.column.destination(id=_id_destination)              
+      .row
+         div(id="swaplist-buttons")
+          +button-accept
+          +button-cancel
+    
     
