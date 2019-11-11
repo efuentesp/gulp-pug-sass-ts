@@ -6,7 +6,7 @@ console.log("01-caucion-bursatil");
 
 fieldPlusMinus("contrato", {});
 fieldPlusMinus("digito", { maxsize: 5 }); // Max number of elements
-fieldSelectPlusMinus("contrato1", {});
+fieldSelectPlusAutocomplete("ejemplo", {});
 
 ($("#payment") as any).select2({
   language: "es",
