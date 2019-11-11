@@ -17,9 +17,8 @@
   padding: 12px;
 }
 
-li .odd.selected,
-li .even.selected {
-  background: beige;
+ul.column > li.portlet.selected {
+  background: $color-blue-lighter;
 }
 
 li {
