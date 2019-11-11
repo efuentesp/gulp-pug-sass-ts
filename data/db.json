@@ -595,8 +595,7 @@
           "S05": "24.00",
           "S06": "-70.00",
           "S07": "99.00",
-          "S08": "100.00",
-          "total": "0.4"
+          "S08": "100.00"
         },
         {
           "periodo": "Oct-18",
@@ -608,8 +607,7 @@
           "S05": "32.00",
           "S06": "-15.00",
           "S07": "43.00",
-          "S08": "10.00",
-          "total": "0.7"
+          "S08": "10.00"
         }
       ],
       "listatabla_fuente": [
@@ -646,25 +644,107 @@
           "Flujo Cobertura": "0.00",
           "Flujo Notas Estructuradas": "0.00",
           "total": "0.4"
+        },
+        {
+          "Fecha": "nov-19",
+          "Pos RV": "0.00",
+          "Porc Pos RV": "0.00",
+          "Porc Pos RV Ayer": "0.00",
+          "Porc Pos RV2": "0.00",
+          "Pos RF": "0.00",
+          "Porc Pos RF": "0.00",
+          "Pos RF Ayer": "0.00",
+          "Porc Pos RF Ayer": "0.00",
+          "Pos RF2": "0.00",
+          "Porc RF2": "0.00",
+          "Efectivo": "0.00",
+          "Pos Total": "0.00",
+          "Pos Total Ayer": "0.00",
+          "Pos Total 2": "0.00",
+          "Flujo RV": "0.00",
+          "Flujo RF": "0.00",
+          "Flujo Efectivo": "0.00",
+          "Flujo Total": "0.00",
+          "Pos RVSIC": "0.00",
+          "Pos RVBV": "0.00",
+          "Pos RF Privados": "0.00",
+          "Pos RF Gubernamental": "0.00",
+          "Pos Cobertura Cambiaria": "0.00",
+          "Pos Notas Estructuradas": "0.00",
+          "Flujo RVSIC": "0.00",
+          "FRlujo RVBMV": "0.00",
+          "Flujo RF Privados": "0.00",
+          "Flujo RF Gubernamental": "0.00",
+          "Flujo Cobertura": "0.00",
+          "Flujo Notas Estructuradas": "0.00",
+          "total": "0.4"
+        },
+        {
+          "Fecha": "Dic-18",
+          "Pos RV": "0.00",
+          "Porc Pos RV": "0.00",
+          "Porc Pos RV Ayer": "0.00",
+          "Porc Pos RV2": "0.00",
+          "Pos RF": "0.00",
+          "Porc Pos RF": "0.00",
+          "Pos RF Ayer": "0.00",
+          "Porc Pos RF Ayer": "0.00",
+          "Pos RF2": "0.00",
+          "Porc RF2": "0.00",
+          "Efectivo": "0.00",
+          "Pos Total": "0.00",
+          "Pos Total Ayer": "0.00",
+          "Pos Total 2": "0.00",
+          "Flujo RV": "0.00",
+          "Flujo RF": "0.00",
+          "Flujo Efectivo": "0.00",
+          "Flujo Total": "0.00",
+          "Pos RVSIC": "0.00",
+          "Pos RVBV": "0.00",
+          "Pos RF Privados": "0.00",
+          "Pos RF Gubernamental": "0.00",
+          "Pos Cobertura Cambiaria": "0.00",
+          "Pos Notas Estructuradas": "0.00",
+          "Flujo RVSIC": "0.00",
+          "FRlujo RVBMV": "0.00",
+          "Flujo RF Privados": "0.00",
+          "Flujo RF Gubernamental": "0.00",
+          "Flujo Cobertura": "0.00",
+          "Flujo Notas Estructuradas": "0.00",
+          "total": "0.4"
         }
       ],
       "listaMensualesTWP": [
         {
           "periodo": "Oct-18",
-          "Valor_Mercado": "0.00",
-          "Aportaciones": "0.00",
-          "Retiros": "0.00",
-          "Cambio_de_valores": "0.00",
-          "crecimiento_%_Portafolio Periodo": "0.00",
-          "total": "0.4"
+          "Valor_Mercado": "12.00",
+          "Aportaciones": "32.00",
+          "Retiros": "62.00",
+          "Cambio_de_valores": "-30.00",
+          "crecimiento_Portafolio_Periodo": "32.00",
+          "S01": "20.00",
+          "S02": "50.00",
+          "S03": "-10.00",
+          "S04": "50.00",
+          "S05": "40.00",
+          "S06": "30.00",
+          "S07": "20.00",
+          "S08": "38.00"
         }
       ],
       "listaAcumuladosTWP": [
         {
           "periodo": "Oct-18",
-          "Valor Mercado": "0.00",
-          "crecimiento_%_Portafolio Periodo": "0.00",
-          "total": "0.4"
+          "Valor_Mercado": "32.00",
+          "crecimiento_Portafolio_Periodo": "-23.00",
+          "S01": "20.00",
+          "S02": "50.00",
+          "S03": "-10.00",
+          "S04": "50.00",
+          "S05": "40.00",
+          "S06": "30.00",
+          "S07": "20.00",
+          "S08": "38.00"
         }
       ],
       "listaAcumulados": [
@@ -678,8 +758,7 @@
           "S05": "40.00",
           "S06": "30.00",
           "S07": "20.00",
-          "S08": "38.00",
-          "total": "0.8"
+          "S08": "38.00"
         },
         {
           "periodo": "Oct-18",
@@ -691,8 +770,7 @@
           "S05": "-23.00",
           "S06": "10.00",
           "S07": "25.00",
-          "S08": "50.00",
-          "total": "0.2"
+          "S08": "50.00"
         }
       ]
     },
