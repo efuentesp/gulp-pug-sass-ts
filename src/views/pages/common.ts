@@ -2322,7 +2322,7 @@ const fillSwapList = (id: string, list_id: string, params: any) => {
   }
 };
 
-$(".portlet > li").on("click", function() {
+$("ul.column").on("click", "li", function() {
   if ($(this).hasClass("selected")) {
     $(this).removeClass("selected");
   } else {
