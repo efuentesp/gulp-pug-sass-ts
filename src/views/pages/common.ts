@@ -2370,7 +2370,7 @@ $(".portlet")
   .addClass("ui-corner-all");
 
 const clearList = () => {
-  $(".portlet > li").removeClass("selected");
+  $("ul.column li").removeClass("selected");
 };
 
 const formatNumber = {
