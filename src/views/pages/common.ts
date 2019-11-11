@@ -1440,17 +1440,17 @@ const barChartNBar = (params: barChartParams) => {
   // Data point
   Chart.defaults.global.elements.point.radius = 0;
 
-  var barGraph = new Chart(contextBar, {
+  var barNGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(barGraph) {
-          var ctx = barGraph.ctx;
+        afterDatasetsDraw: function(barNGraph) {
+          var ctx = barNGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          barGraph.data.datasets.forEach(function(dataset, i) {
-            var meta = barGraph.getDatasetMeta(i);
+          barNGraph.data.datasets.forEach(function(dataset, i) {
+            var meta = barNGraph.getDatasetMeta(i);
             if (!meta.hidden) {
               meta.data.forEach(function(element, index) {
                 ctx.fillStyle = "#000";
