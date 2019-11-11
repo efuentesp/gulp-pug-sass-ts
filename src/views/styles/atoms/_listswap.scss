@@ -1,37 +1,71 @@
 .listswap_wrapper {
-  padding: 10px;
-}
-
-.source,
-.destination {
-  float: left;
-  width: 20em;
+  padding: 2px;
+  width: 60em;
 }
 
 .title {
   text-align: center;
   border-bottom: 1px solid black;
   font-weight: bold;
+  width: 22em;
 }
 
 .source_control {
-  float: left;
   width: 4em;
-  padding: 10px;
+  float: left;
+  vertical-align: middle;
+  padding: 12px;
 }
 
-.odd.selected,
-.even.selected {
-  background: beige;
+ul.column > li.portlet.selected {
+  background: $color-blue-lighter;
 }
 
 li {
   cursor: pointer;
 }
 
-.odd {
-  background-color: white;
+li.portlet:nth-child(odd) {
+  background: $color-sky;
 }
-.even {
-  background-color: lightgray;
+li.portlet:nth-child(even) {
+  background: $color-white;
+}
+
+.column {
+  float: left;
+  overflow: auto;
+  height: 200px;
+  width: 22em;
+}
+.portlet {
+  padding: 0.3em;
+}
+.portlet-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -8px;
+}
+.portlet-placeholder {
+  border: 1px dotted black;
+  margin: 0 1em 1em 0;
+  height: 20px;
+}
+
+#swaplist-buttons {
+  width: 20em;
+  float: left;
+  margin-left: 35em;
+}
+#swaplist-source {
+  width: 22em;
+  float: left;
+  height: 20em;
+}
+
+#swaplist-destination {
+  width: 22em;
+  float: left;
+  height: 20em;
 }

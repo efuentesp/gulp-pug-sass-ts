@@ -16,15 +16,29 @@ mixin field-switch(id, parms, ...items)
             each item, index in items
                 - var item_id = "radio_" + id + "_" + index
                 - var _checked = (index==0 ? true : false)
-                label.form-check-label
-                    input.form-check-input(type="radio"
-                        name=id
-                        id=item_id
-                        value=item.key
-                        required=parms.required
-                        checked=_checked
-                        data-parsley-errors-container=_field_error_block_id
-                    )
-                    span= item.value
+                
+                if index==0
+                  label.form-check-label.left
+                      input.form-check-input(type="radio"
+                          name=id
+                          id=item_id
+                          value=item.key
+                          required=parms.required
+                          checked=_checked
+                          data-parsley-errors-container=_field_error_block_id
+                      )
+                      span= item.value
+                else
+                  label.form-check-label.right
+                      input.form-check-input(type="radio"
+                          name=id
+                          id=item_id
+                          value=item.key
+                          required=parms.required
+                          checked=_checked
+                          data-parsley-errors-container=_field_error_block_id
+                      )
+                      span= item.value
+
         .field-error
         div(id=_field_error_block)

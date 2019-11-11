@@ -3,3 +3,14 @@
 // .select2-selection__rendered[title] {
 //   display : none !important;
 // }
+
+
+.select2-container--default
+  .select2-results__option--highlighted[aria-selected] {
+  background-color: #b4e1fa;
+  color: $font_color;
+}
+ 
+.select2-results li:nth-child(odd) {
+  background-color: $color-sky-light;
+}
