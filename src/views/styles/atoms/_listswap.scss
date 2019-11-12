@@ -1,72 +1,81 @@
 .listswap_wrapper {
   padding: 2px;
   width: 60em;
-}
 
-.title {
-  text-align: center;
-  border-bottom: 1px solid black;
-  font-weight: bold;
-  width: 22em;
-}
+  .title {
+    text-align: center;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    width: 22em;
+  }
 
-.source_control {
-  width: 3em;
-  float: left;
-  vertical-align: middle;
-  padding: 0.5em;
-  margin-top: 2em;
-}
+  .source_control {
+    width: 3em;
+    float: left;
+    vertical-align: middle;
+    padding: 0.5em;
+    margin-top: 2em;
+  }
 
-ul.column > li.portlet.selected {
-  background: $color-blue-lighter;
-}
+  ul.column > li.portlet.selected {
+    background: $color-blue-lighter;
+  }
 
-li {
-  cursor: pointer;
-}
+  li {
+    cursor: pointer;
+  }
 
-li.portlet:nth-child(odd) {
-  background: $color-sky;
-}
-li.portlet:nth-child(even) {
-  background: $color-white;
-}
+  li.portlet:nth-child(odd) {
+    background: $color-sky-light;
+    height: 22px;
+    padding: 5px;
+  }
+  li.portlet:nth-child(even) {
+    background: $color-white;
+    height: 22px;
+    padding: 5px;
+  }
 
-.column {
-  float: left;
-  overflow: auto;
-  height: 200px;
-  width: 22em;
-}
-.portlet {
-  padding: 0.3em;
-}
-.portlet-toggle {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  margin-top: -8px;
-}
-.portlet-placeholder {
-  border: 1px dotted black;
-  margin: 0 1em 1em 0;
-  height: 20px;
-}
+  .column {
+    float: left;
+    overflow: auto;
+    height: 200px;
+    width: 22em;
+  }
+  .portlet {
+    padding: 0.3em;
+  }
+  .portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+  }
+  .portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 20px;
+  }
 
-#swaplist-buttons {
-  width: 20em;
-  float: left;
-  margin-left: 35em;
-}
-#swaplist-source {
-  width: 22em;
-  float: left;
-  height: 20em;
-}
+  #swaplist-buttons {
+    width: 20em;
+    float: left;
+    margin-left: 34em;
+  }
+  #swaplist-source {
+    width: 22em;
+    float: left;
+    height: 20em;
+  }
 
-#swaplist-destination {
-  width: 22em;
-  float: left;
-  height: 20em;
+  #swaplist-destination {
+    width: 22em;
+    float: left;
+    height: 20em;
+  }
+
+  #swaplist li:hover {
+    background-color: #b4e1fa;
+    color: $font_color;
+  }
 }

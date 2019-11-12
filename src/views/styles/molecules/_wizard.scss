@@ -30,6 +30,11 @@
   }
 
   .actions {
+    
+    ul {
+      display: flex;
+      justify-content: space-between;
+    }
 
     a {
       background: $color_white;
@@ -42,6 +47,12 @@
       width: 70px;
       height: 60px;
       color: black;
+
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     a:active{
