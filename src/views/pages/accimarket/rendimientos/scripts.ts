@@ -981,7 +981,7 @@ const graficaMensualesTWP = (tipoGrafica3: string, listaMensualesTWP: any) => {
       });
     }
 
-    simpleBarChart({
+    simpleBarAux1Chart({
       id: id,
       titleX: "Período",
       titleY: "Portafolio",
@@ -1042,9 +1042,9 @@ const graficaAcumuladosTWP = (
     // else alert("Debes seleccionar al menos una opción.");
     // return false;
 
-    pintaGrafica3(selected4, "graficaAcumuladosTWP");
+    pintaGrafica4(selected4, "graficaAcumuladosTWP");
   });
-  const pintaGrafica3 = (arrayCkeck: [], id: string) => {
+  const pintaGrafica4 = (arrayCkeck: [], id: string) => {
     let array = [];
 
     console.log("Check Pinta:" + arrayCkeck);
@@ -1147,7 +1147,7 @@ const graficaAcumuladosTWP = (
       });
     }
 
-    simpleBarChart({
+    simpleBarAux2Chart({
       id: id,
       titleX: "Período",
       titleY: "Portafolio",
@@ -1160,7 +1160,7 @@ const graficaAcumuladosTWP = (
       dataSet: array
     });
   };
-  pintaGrafica3(null, tipoGrafica3);
+  pintaGrafica4(null, tipoGrafica3);
 };
 // const graficaMensuales = (tipoGrafica: string, listaMensuales: any) => {
 //   var dataSetY1 = [];
