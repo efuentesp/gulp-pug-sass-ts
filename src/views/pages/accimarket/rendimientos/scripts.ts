@@ -777,7 +777,7 @@ const graficaAcumulados = (tipoGrafica2: string, listaAcumulados: any) => {
       });
     }
 
-    simpleBarChart({
+    simpleBarAuxChart({
       id: id,
       titleX: "Período",
       titleY: "Portafolio",
