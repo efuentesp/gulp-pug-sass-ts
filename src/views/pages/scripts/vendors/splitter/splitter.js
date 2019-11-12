@@ -24,6 +24,7 @@
 (function($) {
   var splitterCounter = 0;
   var splitterPosition = "";
+  var splitterExpand = 0;// 1 --> arriba o derecha, 0 --> abajo o izquierda.
 
   $.fn.splitter = function(args) {
     args = args || {};
@@ -67,6 +68,52 @@
           .bind("mousemove" + opts.eventNamespace, doSplitMouse)
           .bind("mouseup" + opts.eventNamespace, endSplitMouse);
       }
+
+      function dblclickDoSplitMouse() {
+        var pos = 0;//A._posSplit + evt[opts.eventPos],
+
+        if( splitterExpand == 0 ){
+          console.log("pos: " + pos);
+          pos = 9999;
+          splitterExpand = 1;
+        }else{
+          console.log("pos: " + pos);
+          pos = 0;
+          splitterExpand = 0;
+        }
+
+        range = Math.max(0, Math.min(pos, splitter._DA - bar._DA)),
+        limit = Math.max(
+          A._min,
+          splitter._DA - B._max,
+          Math.min(pos, A._max, splitter._DA - bar._DA - B._min)
+        );
+       
+       console.log("opts.origin: " + opts.origin);  
+       console.log("pos: " + pos);  
+       console.log("range: " + range);
+       console.log("limit: " + limit);        
+       console.log("dblclickDoSplitMouse --> B._max: " + B._max);
+       console.log("dblclickDoSplitMouse --> A._max: " + A._max);
+
+        /**/
+        if (opts.outline) {
+          // Let docking splitbar be dragged to the dock position, even if min width applies
+          if (
+            (opts.dockPane == A && pos < Math.max(A._min, bar._DA)) ||
+            (opts.dockPane == B &&
+              pos > Math.min(pos, A._max, splitter._DA - bar._DA - B._min))
+          ) {
+            bar.addClass(opts.barDockedClass).css(opts.origin, range);
+          } else {
+            bar.removeClass(opts.barDockedClass).css(opts.origin, limit);
+          }
+          bar._DA = bar[0][opts.pxSplit];
+        } else resplit(pos);
+        setBarState(pos == limit ? opts.barActiveClass : opts.barLimitClass);
+        /**/
+      }
+
       function doSplitMouse(evt) {
         var pos = A._posSplit + evt[opts.eventPos],
           range = Math.max(0, Math.min(pos, splitter._DA - bar._DA)),
@@ -342,6 +389,15 @@
           "-khtml-user-select": "none",
           "-moz-user-select": "none",
           "z-index": "100"
+        })
+        .dblclick("dblclick", function(){
+          console.log("En el evento doble click del spliter bar...");
+          console.log("opts.side1: " + opts.side1);
+          console.log("opts.side2: " + opts.side2);
+          console.log("opts.split: " + opts.split);
+          console.log("A._init: " + A._init);
+          
+          dblclickDoSplitMouse();
         })
         .bind("mousedown" + opts.eventNamespace, startSplitMouse)
         .bind("mouseover" + opts.eventNamespace, function() {
