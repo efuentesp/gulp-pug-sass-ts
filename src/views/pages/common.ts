@@ -23,7 +23,7 @@ const ui_datepicker_settings = {
   showButtonPanel: true,
   currentText: "Hoy",
   closeText: "Limpiar",
-  onClose: function(dateText, inst) {
+  onClose: function (dateText, inst) {
     if ($(window.event.srcElement).hasClass("ui-datepicker-close")) {
       (document.getElementById(this.id) as HTMLInputElement).value = "";
     }
@@ -79,7 +79,7 @@ const ui_datepicker_month_year_settings = {
   changeYear: true,
   showButtonPanel: false,
   dateFormat: DATE_FORMAT_MONTH_YEAR,
-  onChangeMonthYear: function(year, month, inst) {
+  onChangeMonthYear: function (year, month, inst) {
     $(this).datepicker(
       "setDate",
       new Date(inst.selectedYear, inst.selectedMonth, 1)
@@ -105,7 +105,7 @@ $(document).tooltip({
 });
 
 // Coloca el atributo "title" al botón para que aparezca el tooltip
-$(".button").each(function(i, obj) {
+$(".button").each(function (i, obj) {
   // const label = $(`#${obj.id} span`).html();
   const label = $(`#${obj.id}`).attr("data-tooltip");
   $(`#${obj.id}`).attr("title", label);
@@ -165,7 +165,6 @@ $(".sidebar_button").click(() => {
     cancel: "Cancelar",
     current: "paso actual:",
     pagination: "Paginación",
-    finish: "Terminar",
     loading: "Cargando ..."
   }
 });
@@ -176,6 +175,9 @@ $("[href='#next']").html(
 );
 $("[href='#previous']").html(
   '<img src="../../assets/images/boton_regresar2.png">Anterior</img>'
+);
+$("[href='#finish']").html(
+  '<img src="../../assets/images/btn-enviar.png">Enviar</img>'
 );
 
 // REST APIs}
@@ -283,7 +285,7 @@ const existText = (text_to_add: string, list: string) => {
   let exist = false;
   let count = 1;
 
-  $.each($(list + " li a"), function() {
+  $.each($(list + " li a"), function () {
     if (
       $(list + " li:nth-child(" + count + ")").text() === text_to_add.trim()
     ) {
@@ -299,7 +301,7 @@ const addedText = (text_to_add: string, value_to_add: string, list: string) => {
   let added = false;
   let count = 1;
 
-  $.each($(list + " li a"), function() {
+  $.each($(list + " li a"), function () {
     if ($(list + " li:nth-child(" + count + ") a").text() === "") {
       $(list + " li:nth-child(" + count + ") a").attr("id", value_to_add);
       $(list + " li:nth-child(" + count + ") a").append(text_to_add);
@@ -322,19 +324,19 @@ const addNode = (
     if ($(list + " li").length < maxsize) {
       $(list).append(
         "<li><a id=" +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</a></li>"
+        value_to_add +
+        " class='delete_item' href='javascript:void();'>" +
+        text_to_add +
+        "</a></li>"
       );
     }
   } else {
     $(list).append(
       "<li><a id=" +
-        value_to_add +
-        " class='delete_item' href='javascript:void();'>" +
-        text_to_add +
-        "</a></li>"
+      value_to_add +
+      " class='delete_item' href='javascript:void();'>" +
+      text_to_add +
+      "</a></li>"
     );
   }
 };
@@ -346,7 +348,7 @@ function fieldPlusMinusRepaintList(node) {
     node
   ) as HTMLUListElement;
   let listSize = nodelist.childNodes.length;
-  $(nodelist.childNodes).each(function(childNode) {
+  $(nodelist.childNodes).each(function (childNode) {
     if (nodelist.childNodes[childNode].childNodes[0].textContent) {
       listcontentid.push(
         (nodelist.childNodes[childNode]
@@ -413,7 +415,7 @@ const fieldPlusMinus = (id: string, params: any) => {
 
   $(idBtnMinus).click(() => {
     var nodelist = document.getElementById(node);
-    $(list + " li a").each(function(index) {
+    $(list + " li a").each(function (index) {
       if ($(idInput).val() != "") {
         if ($(this).text() === $(idInput).val()) {
           if (!definedNodes) {
@@ -439,7 +441,7 @@ const fieldPlusMinus = (id: string, params: any) => {
   });
 
   // Set to input
-  $(list).delegate(".delete_item", "click", function() {
+  $(list).delegate(".delete_item", "click", function () {
     $(idInput).val(
       $(this)
         .parent()
@@ -489,7 +491,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
 
   $(idBtnMinus).click(() => {
     var nodelist = document.getElementById(node);
-    $(list + " li a").each(function(index) {
+    $(list + " li a").each(function (index) {
       if ($(this).attr("id") === $(idInput).val()) {
         if (!definedNodes) {
           nodelist.childNodes[index].remove();
@@ -516,7 +518,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
       .trigger("change");
   });
 
-  $(list).delegate(".delete_item", "click", function() {
+  $(list).delegate(".delete_item", "click", function () {
     $(idInput)
       .val(
         $(this)
@@ -578,7 +580,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
 
   $(idBtnMinus).click(() => {
     var nodelist = document.getElementById(node);
-    $(list + " li a").each(function(index) {
+    $(list + " li a").each(function (index) {
       if ($(this).attr("id") === $(idInput).val()) {
         if (!definedNodes) {
           nodelist.childNodes[index].remove();
@@ -605,7 +607,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       .trigger("change");
   });
 
-  $(list).delegate(".delete_item", "click", function() {
+  $(list).delegate(".delete_item", "click", function () {
     $(idInput)
       .val(
         $(this)
@@ -616,7 +618,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       .trigger("change");
   });
 
-  var data = $.map(payload, function(item) {
+  var data = $.map(payload, function (item) {
     return {
       text: item[attrText],
       id: item[attrId]
@@ -634,7 +636,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
 const getList = (id: string) => {
   var list: any = [];
 
-  $("#tag_list_" + id + " li").each(function() {
+  $("#tag_list_" + id + " li").each(function () {
     let value = $(this)
       .text()
       .trim();
@@ -650,7 +652,7 @@ const getChecked = (id: string) => {
   let selected = [];
   const query_select = "#field_" + id + " input[type=checkbox]";
 
-  $(query_select).each(function() {
+  $(query_select).each(function () {
     if ($(this).is(":checked")) {
       selected.push($(this).attr("value"));
     }
@@ -806,15 +808,15 @@ const stackChart = (params: stackChartParams) => {
   const stackGraph = new Chart(context, {
     plugins: [
       {
-        afterDatasetsDraw: function(stackGraph) {
+        afterDatasetsDraw: function (stackGraph) {
           var ctx = stackGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          stackGraph.data.datasets.forEach(function(dataset, i) {
+          stackGraph.data.datasets.forEach(function (dataset, i) {
             var meta = stackGraph.getDatasetMeta(i);
-            meta.data.forEach(function(element, index) {
+            meta.data.forEach(function (element, index) {
               // GeneralFont
               ctx.fillStyle = "#000";
               var fontSize = 10;
@@ -873,7 +875,7 @@ const stackChart = (params: stackChartParams) => {
               max: params.tickMaxY,
               min: params.tickMinY,
               stepSize: params.tickStepY,
-              callback: function(value) {
+              callback: function (value) {
                 return value + ".00%";
               }
             },
@@ -913,15 +915,15 @@ const stackChartHorizontal = (params: stackChartHParams) => {
   const stackGraphH = new Chart(context, {
     plugins: [
       {
-        afterDatasetsDraw: function(stackGraphH) {
+        afterDatasetsDraw: function (stackGraphH) {
           var ctx = stackGraphH.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          stackGraphH.data.datasets.forEach(function(dataset, i) {
+          stackGraphH.data.datasets.forEach(function (dataset, i) {
             var meta = stackGraphH.getDatasetMeta(i);
-            meta.data.forEach(function(element, index) {
+            meta.data.forEach(function (element, index) {
               // GeneralFont
               ctx.fillStyle = "#fff";
               var fontSize = 10;
@@ -961,7 +963,7 @@ const stackChartHorizontal = (params: stackChartHParams) => {
     options: {
       tooltips: {
         callbacks: {
-          label: function(tooltipItem, data) {
+          label: function (tooltipItem, data) {
             let label = "";
             if (format == "%") {
               label =
@@ -1003,7 +1005,7 @@ const stackChartHorizontal = (params: stackChartHParams) => {
             ticks: {
               display: true,
               stepSize: params.tickStepX,
-              callback: function(value) {
+              callback: function (value) {
                 let label = "";
                 if (format == "%") {
                   label = formatNumber.new(value, "") + format;
@@ -1066,16 +1068,16 @@ const simpleBarChart = (params: barChartParams) => {
   var barGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(barGraph) {
+        afterDatasetsDraw: function (barGraph) {
           var ctx = barGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          barGraph.data.datasets.forEach(function(dataset, i) {
+          barGraph.data.datasets.forEach(function (dataset, i) {
             var meta = barGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1125,7 +1127,7 @@ const simpleBarChart = (params: barChartParams) => {
             },
             ticks: {
               display: true,
-              callback: function(value) {
+              callback: function (value) {
                 return value + "";
               }
             }
@@ -1162,16 +1164,16 @@ const barChart = (params: barChartParams) => {
   var barGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(barGraph) {
+        afterDatasetsDraw: function (barGraph) {
           var ctx = barGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          barGraph.data.datasets.forEach(function(dataset, i) {
+          barGraph.data.datasets.forEach(function (dataset, i) {
             var meta = barGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1406,7 +1408,7 @@ const barChart = (params: barChartParams) => {
               max: params.tickMaxY,
               min: params.tickMinY,
               stepSize: params.tickStepY,
-              callback: function(value) {
+              callback: function (value) {
                 return value + ".0%";
               }
             }
@@ -1443,16 +1445,16 @@ const barChartNBar = (params: barChartParams) => {
   var barNGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(barNGraph) {
+        afterDatasetsDraw: function (barNGraph) {
           var ctx = barNGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          barNGraph.data.datasets.forEach(function(dataset, i) {
+          barNGraph.data.datasets.forEach(function (dataset, i) {
             var meta = barNGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1531,7 +1533,7 @@ const barChartNBar = (params: barChartParams) => {
               max: params.tickMaxY,
               min: params.tickMinY,
               stepSize: params.tickStepY,
-              callback: function(value) {
+              callback: function (value) {
                 return value + ".0%";
               }
             } /**/
@@ -1568,16 +1570,16 @@ const lineChart = (params: lineChartParams) => {
   var lineGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(lineGraph) {
+        afterDatasetsDraw: function (lineGraph) {
           var ctx = lineGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          lineGraph.data.datasets.forEach(function(dataset, i) {
+          lineGraph.data.datasets.forEach(function (dataset, i) {
             var meta = lineGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1692,7 +1694,7 @@ const multiLineChart = (params: multiLineChartParams) => {
   var multiLineGraph = new Chart(contextBar, {
     plugins: [
       {
-        beforeDraw: function(multiLineGraph) {
+        beforeDraw: function (multiLineGraph) {
           var ctx = multiLineGraph.ctx;
 
           ctx.canvas.style.width = params.width;
@@ -1711,12 +1713,12 @@ const multiLineChart = (params: multiLineChartParams) => {
           ctx.restore();
         },
 
-        afterDatasetsDraw: function(multiLineGraph) {
+        afterDatasetsDraw: function (multiLineGraph) {
           var ctx = multiLineGraph.ctx;
-          multiLineGraph.data.datasets.forEach(function(dataset, i) {
+          multiLineGraph.data.datasets.forEach(function (dataset, i) {
             var meta = multiLineGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 //ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1782,7 +1784,7 @@ const pieChart = (params: pieChartParams) => {
   pieGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(pieGraph) {
+        afterDatasetsDraw: function (pieGraph) {
           var ctx = pieGraph.ctx;
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
@@ -1813,7 +1815,7 @@ const pieChart = (params: pieChartParams) => {
 const validateDateRage = (id: string) => {
   $("#" + id + "_begin_date").datepicker({
     ...ui_datepicker_settings,
-    onClose: function(selectedDate, instance) {
+    onClose: function (selectedDate, instance) {
       if (selectedDate != "") {
         $("#" + id + "_end_date").datepicker("option", "minDate", selectedDate);
         var date = $.datepicker.parseDate(
@@ -1830,7 +1832,7 @@ const validateDateRage = (id: string) => {
 
   $("#" + id + "_end_date").datepicker({
     ...ui_datepicker_settings,
-    onClose: function(selectedDate) {
+    onClose: function (selectedDate) {
       $("#" + id + "_begin_date").datepicker("option", "maxDate", selectedDate);
     }
   });
@@ -1847,7 +1849,7 @@ const getCheckedCheckbox = (id: string) => {
   var list: any = [];
 
   list = $("input[name='chk_" + id + "']:checked")
-    .map(function() {
+    .map(function () {
       return $(this).val();
     })
     .toArray();
@@ -1902,13 +1904,13 @@ function copyGridContentToClipboard(gridNameID, includeGroups) {
       var headers = [];
       if (includeGroups && typeof includeGroups === "boolean") {
         var groupHeaders = $(grid).getGridParam("groupingView").groupField;
-        $(groupHeaders).each(function(index, value) {
+        $(groupHeaders).each(function (index, value) {
           headers.push(value);
         });
       }
       var column;
       var columnName;
-      $(colModel).each(function() {
+      $(colModel).each(function () {
         column = $(this)[0];
         columnName = column.name;
         if (!column.hidden) {
@@ -1916,7 +1918,7 @@ function copyGridContentToClipboard(gridNameID, includeGroups) {
         }
       });
       var tableHeader = "<thead><tr>";
-      $.each(headers, function(index, value) {
+      $.each(headers, function (index, value) {
         tableHeader += "<th>" + value + "</th>";
       });
       tableHeader += "</tr></thead>";
@@ -1928,10 +1930,10 @@ function copyGridContentToClipboard(gridNameID, includeGroups) {
         "</td></tr>";
       var row;
       var tableContent = "";
-      $(gridData).each(function() {
+      $(gridData).each(function () {
         tableContent += "<tr>";
         row = $(this)[0];
-        $.each(headers, function(index, header) {
+        $.each(headers, function (index, header) {
           tableContent += "<td>" + row[header] + "</td>";
         });
         tableContent += "</tr>";
@@ -1939,13 +1941,13 @@ function copyGridContentToClipboard(gridNameID, includeGroups) {
       var tableID = "___" + gridNameID;
       var table = $(
         '<table id="' +
-          tableID +
-          '">' +
-          tableHeader +
-          "<tbody>" +
-          totalRecordsTableRow +
-          tableContent +
-          "</tbody></table>"
+        tableID +
+        '">' +
+        tableHeader +
+        "<tbody>" +
+        totalRecordsTableRow +
+        tableContent +
+        "</tbody></table>"
       );
       $(table)
         .css("position", "absolute")
@@ -2088,7 +2090,7 @@ const fieldDateClear = (id: string) => {
   var _id = "#" + id;
   var $dates = $(_id).datepicker();
 
-  $("#clear_" + id).on("click", function() {
+  $("#clear_" + id).on("click", function () {
     $dates.datepicker("setDate", null);
   });
 };
@@ -2097,7 +2099,7 @@ const fieldBeginDateRangeClear = (id: string) => {
   var _id = $("#" + id + "_begin_date");
   var $dates = $(_id).datepicker();
 
-  $("#clear_" + id + "_begin_date").on("click", function() {
+  $("#clear_" + id + "_begin_date").on("click", function () {
     $dates.datepicker("setDate", null);
   });
 };
@@ -2106,40 +2108,40 @@ const fieldEndDateRangeClear = (id: string) => {
   var _id = $("#" + id + "_end_date");
   var $dates = $(_id).datepicker();
 
-  $("#clear_" + id + "_end_date").on("click", function() {
+  $("#clear_" + id + "_end_date").on("click", function () {
     $dates.datepicker("setDate", null);
   });
 };
 
 const json2xml = (o, tab) => {
-  var toXml = function(v, name, ind) {
-      var xml = "";
-      if (v instanceof Array) {
-        for (var i = 0, n = v.length; i < n; i++)
-          xml += ind + toXml(v[i], name, ind + "\t") + "\n";
-      } else if (typeof v == "object") {
-        var hasChild = false;
-        xml += ind + "<" + name;
-        for (var m in v) {
-          if (m.charAt(0) == "@")
-            xml += " " + m.substr(1) + '="' + v[m].toString() + '"';
-          else hasChild = true;
-        }
-        xml += hasChild ? ">" : "/>";
-        if (hasChild) {
-          for (var m in v) {
-            if (m == "#text") xml += v[m];
-            else if (m == "#cdata") xml += "<![CDATA[" + v[m] + "]]>";
-            else if (m.charAt(0) != "@") xml += toXml(v[m], m, ind + "\t");
-          }
-          xml +=
-            (xml.charAt(xml.length - 1) == "\n" ? ind : "") + "</" + name + ">";
-        }
-      } else {
-        xml += ind + "<" + name + ">" + v.toString() + "</" + name + ">";
+  var toXml = function (v, name, ind) {
+    var xml = "";
+    if (v instanceof Array) {
+      for (var i = 0, n = v.length; i < n; i++)
+        xml += ind + toXml(v[i], name, ind + "\t") + "\n";
+    } else if (typeof v == "object") {
+      var hasChild = false;
+      xml += ind + "<" + name;
+      for (var m in v) {
+        if (m.charAt(0) == "@")
+          xml += " " + m.substr(1) + '="' + v[m].toString() + '"';
+        else hasChild = true;
       }
-      return xml;
-    },
+      xml += hasChild ? ">" : "/>";
+      if (hasChild) {
+        for (var m in v) {
+          if (m == "#text") xml += v[m];
+          else if (m == "#cdata") xml += "<![CDATA[" + v[m] + "]]>";
+          else if (m.charAt(0) != "@") xml += toXml(v[m], m, ind + "\t");
+        }
+        xml +=
+          (xml.charAt(xml.length - 1) == "\n" ? ind : "") + "</" + name + ">";
+      }
+    } else {
+      xml += ind + "<" + name + ">" + v.toString() + "</" + name + ">";
+    }
+    return xml;
+  },
     xml = "";
   for (var m in o) xml += toXml(o[m], m, "");
   return tab ? xml.replace(/\t/g, tab) : xml.replace(/\t|\n/g, "");
@@ -2147,7 +2149,7 @@ const json2xml = (o, tab) => {
 
 const xml2json = (xml, tab) => {
   var X = {
-    toObj: function(xml) {
+    toObj: function (xml) {
       var o = {};
       if (xml.nodeType == 1) {
         // element node ..
@@ -2212,7 +2214,7 @@ const xml2json = (xml, tab) => {
       } else alert("unhandled node type: " + xml.nodeType);
       return o;
     },
-    toJson: function(o, name, ind) {
+    toJson: function (o, name, ind) {
       var json = name ? '"' + name + '"' : "";
       if (o instanceof Array) {
         for (var i = 0, n = o.length; i < n; i++)
@@ -2238,11 +2240,11 @@ const xml2json = (xml, tab) => {
       else json += (name && ":") + o.toString();
       return json;
     },
-    innerXml: function(node) {
+    innerXml: function (node) {
       var s = "";
       if ("innerHTML" in node) s = node.innerHTML;
       else {
-        var asXml = function(n) {
+        var asXml = function (n) {
           var s = "";
           if (n.nodeType == 1) {
             s += "<" + n.nodeName;
@@ -2266,16 +2268,16 @@ const xml2json = (xml, tab) => {
       }
       return s;
     },
-    escape: function(txt) {
+    escape: function (txt) {
       return txt
         .replace(/[\\]/g, "\\\\")
         .replace(/[\"]/g, '\\"')
         .replace(/[\n]/g, "\\n")
         .replace(/[\r]/g, "\\r");
     },
-    removeWhite: function(e) {
+    removeWhite: function (e) {
       e.normalize();
-      for (var n = e.firstChild; n; ) {
+      for (var n = e.firstChild; n;) {
         if (n.nodeType == 3) {
           // text node
           if (!n.nodeValue.match(/[^ \f\n\r\t\v]/)) {
@@ -2314,15 +2316,15 @@ const fillSwapList = (id: string, list_id: string, params: any) => {
     var data = params[i];
     list.append(
       "<li class='portlet' value=" +
-        data.value +
-        "><div class='portlet-content'>" +
-        data.label +
-        "</div></li>"
+      data.value +
+      "><div class='portlet-content'>" +
+      data.label +
+      "</div></li>"
     );
   }
 };
 
-$("ul.column").on("click", "li", function() {
+$("ul.column").on("click", "li", function () {
   if ($(this).hasClass("selected")) {
     $(this).removeClass("selected");
   } else {
@@ -2332,26 +2334,26 @@ $("ul.column").on("click", "li", function() {
 });
 
 // Up
-$(".up").click(function() {
+$(".up").click(function () {
   var currents = $(".portlet.selected");
   currents.prev().before(currents);
 });
 
 // Down
-$(".down").click(function() {
+$(".down").click(function () {
   var currents = $(".portlet.selected");
   currents.next().after(currents);
 });
 
 // Add
-$(".add").click(function() {
+$(".add").click(function () {
   var currents = $(".portlet.selected");
   $(".column.destination").append(currents);
   clearList();
 });
 
 // Remove
-$(".remove").click(function() {
+$(".remove").click(function () {
   var currents = $(".portlet.selected");
   $(".column.source").append(currents);
   clearList();
@@ -2376,7 +2378,7 @@ const clearList = () => {
 const formatNumber = {
   separador: ",",
   sepDecimal: ".",
-  formatear: function(num) {
+  formatear: function (num) {
     num += "";
     var splitStr = num.split(".");
     var splitLeft = splitStr[0];
@@ -2387,7 +2389,7 @@ const formatNumber = {
     }
     return this.simbol + splitLeft + splitRight;
   },
-  new: function(num, simbol) {
+  new: function (num, simbol) {
     this.simbol = simbol || "";
     return this.formatear(num);
   }
