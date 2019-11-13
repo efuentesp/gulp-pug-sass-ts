@@ -10,18 +10,18 @@ mixin field-swaplist(id, params)
           p.title= params.title_source
           ul.column.source(id=_id_source)
         .source_control
-          .up
+          .up(style="margin-top:3px;")
             button.up-button
-              img(src="../../assets/images/flecha_arriba2.png" style="width:18px;")
-          .add
+              img(src="../../assets/images/arrowup.png" style="width:18px;")
+          .add(style="margin-top:3px;")
             button.right-button
-              img(src="../../assets/images/flecha_derecha2.png" style="width:18px;")
-          .remove
+              img(src="../../assets/images/arrowright.png" style="width:18px;")
+          .remove(style="margin-top:3px;")
             button.left-button
-              img(src="../../assets/images/flecha_izquierda2.png" style="width:18px;")
-          .down
+              img(src="../../assets/images/arrowleft.png" style="width:18px;")
+          .down(style="margin-top:3px;")
             button.down-button
-              img(src="../../assets/images/flecha_abajo2.png" style="width:18px;")
+              img(src="../../assets/images/arrowdown.png" style="width:18px;")
         div(id="swaplist-destination")
           p.title= params.title_source
           ul.column.destination(id=_id_destination)              

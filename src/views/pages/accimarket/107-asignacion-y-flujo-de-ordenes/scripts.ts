@@ -467,6 +467,7 @@ const llenaGridFlujoOrdenes = (flujos: any) => {
         viewrecords: true,
         gridview: true,
         autoencode: true,
+        multiselect: false,
         caption: "",
 
         colNames: [
