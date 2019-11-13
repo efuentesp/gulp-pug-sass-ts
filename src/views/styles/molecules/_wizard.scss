@@ -4,22 +4,34 @@
   .steps {
     ul {
       li {
-        width: 20em;
-      }
-    }
-    .current {
-      a {
-        background: $color-blue-dark;
+        width: 9.5em;
       }
     }
     .disabled {
       a {
-        background: $color-sky;
+        //background: $color-sky;
+        //---------------------------------------
+        background-image: url("../../assets/images/wizard_siguiente.png"); 
+        height: 50px; 
+        width: 95px;
       }
     }
     .done {
       a {
         opacity: 1;
+        //------------------------------------
+        background-image: url("../../../assets/images/wizard_siguiente.png") !important; 
+        height: 50px; 
+        width: 95px;            
+      }
+    }
+    .current {
+      a {
+        //background: $color-blue-dark;
+        //------------------------------------
+        background-image: url("../../../assets/images/wizard_actual.png") !important; 
+        height: 50px; 
+        width: 95px;            
       }
     }
   }
