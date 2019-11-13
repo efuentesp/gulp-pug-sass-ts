@@ -14,6 +14,7 @@
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 
+
     li {
       list-style: none;
       float: left;
@@ -37,6 +38,14 @@
 
         a {
           color: $darkblue;
+          padding-left: 0px;
+          padding-right: 0px;
+
+          div {
+            background-image: url("../../../assets/images/wizard_actual.png") !important; 
+            height: 50px; 
+            width: 95px;            
+          }
         }
       }
 
@@ -44,7 +53,66 @@
       &.ui-state-disabled .ui-tabs-anchor,
       &.ui-tabs-loading .ui-tabs-anchor {
         cursor: text;
+        border: 0px !important;
       }
+
+
+      &.ui-state-focus .ui-state-hover .ui-state-active .ui-tabs-active .ui-tab .ui-state-default .ui-corner-top .ui-tabs-tab {
+        border: 0px !important;
+      }
+      /*
+      &.ui-state-focus, &.ui-state-active, &.ui-state-hover {
+        border: 0px solid red !important;
+      }
+
+      &.ui-tabs-active .ui-state-focus {
+        border: 0px solid lime !important;
+      }
+
+      &.ui-tabs-tab {
+        border: 1px solid magenta !important;
+      }
+
+      &.ui.ui-corner-top {
+        border: 1px solid cyan !important;
+      }
+
+      &.ui-state-default {
+        border: 1px solid pink !important;
+      }
+
+      &.ui-tab {
+        border: 1px solid rgb(243, 6, 46) !important;
+      }*/
+      &.ui-tabs-active .ui-state-focus {
+        border: 1px solid rgb(170, 101, 248) !important;
+      }
+
+      /*
+      &.ui-tabs-active {
+        border: 2px solid lime !important;
+      }
+
+      &.ui-state-active {
+        border: 0px solid lime !important;
+      }
+
+      &.ui-state-focus {
+        border: 0px solid lime !important;
+      }
+
+      &.ui-state-hover {
+        border: 0px solid lime !important;
+      }
+      */
+           
+/*
+      &.ui-tabs-active .ui-tabs-anchor {
+        background-image: url('../../assets/images/wizard_actual.png'); 
+        height: 50px; 
+        width: 95px;
+      }
+*/      
     }
 
     .ui-tabs-anchor {
