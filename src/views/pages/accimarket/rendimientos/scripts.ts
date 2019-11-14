@@ -236,27 +236,6 @@ $("#btn_search").click(function() {
   selected = verificaSeleccionados();
 
   if (selected.length > 0) {
-
-    if ($("#cmbModelosCalculoCombo").val() == "T") {
-      $("#gbox_table_resultadosMensuales").hide();
-      $("#graficaMensual").hide();
-      $("#gbox_table_resultadosAcumulados").hide();
-      $("#graficaAcumulados").hide();
-      $("#gbox_table_resultadosMensualesTWP").show();
-      $("#graficaMensualTWP").show();
-      $("#gbox_table_resultadosAcumuladosTWP").show();
-      $("#graficaAcumuladosTWP").show();
-    }else{
-      $("#gbox_table_resultadosMensualesTWP").hide();
-      $("#graficaMensualTWP").hide();
-      $("#gbox_table_resultadosAcumuladosTWP").hide();
-      $("#graficaAcumuladosTWP").hide();
-      $("#gbox_table_resultadosMensuales").show();
-      $("#graficaMensual").show();
-      $("#gbox_table_resultadosAcumulados").show();
-      $("#graficaAcumulados").show();
-    }
-
     return false;
   } else {
     
