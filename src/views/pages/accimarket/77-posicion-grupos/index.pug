@@ -1,0 +1,43 @@
+extends /layouts/jsp
+
+block title
+   title 01.Causión Bursátil
+
+block styles
+   link(rel="stylesheet" href="../../assets/css/accimarket/77-posicion-grupos/styles.css")
+
+block content
+   .content.p-4
+      .row
+         +accordion("criterios_busqueda_accordion")
+            +accordion-item("criterios_busqueda_accordion_item")
+               +form("criterios-busqueda", {class: "is-search-form"})
+                  +field-select("payment",
+                     {
+                     label: "Grupos",
+                     size: "12em"
+                     },
+                     {key: "ET", value:"Grupo 1"},
+                     {key:"CHK", value:"Grupo 2"}
+                   )
+                  +field-input("contratos",
+                        {
+                          label: "Contratos",
+                          size: "12em",
+                          disabled: true,
+                          orientation: "horizontal"
+                        })
+                  .column#botones-accion
+                     +button-search({size: "large", tooltip: "Consultar", disabled: false})
+                     +button-clean({size: "large", tooltip: "Limpiar", disabled: false})
+      .row.has_border
+         .row.w-full.overflow-auto
+            +tab-group("seguimiento_ordenes_tab_group",
+               {id: "tab_item_grupos", label: "Grupos"})
+                +tab-item("tab_item_grupos")
+                    +grid("contratos")
+                    +grid-records-count("contratos")
+   include _search
+
+block scripts
+   script(src="../../assets/scripts/accimarket/77-posicion-grupos/scripts.js")

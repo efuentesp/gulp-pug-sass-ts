@@ -6,10 +6,10 @@ let listaCancelarOrdenes_params: UrlParams = {};
 let source_asignacion_params: UrlParams = {};
 let destination_asignacion_params: UrlParams = {};
 
-// fieldSelectPlusMinus("emisora", {});
+// fieldSelectPlusAutocomplete("emisora", {});
 fieldPlusMinus("usuario-asignacion-flujo", {});
 fieldPlusMinus("contrato", {});
-fieldPlusMinus("digito", {});
+//fieldPlusMinus("digito", {});
 
 
 $("#rowOpciones").hide();
@@ -47,6 +47,7 @@ $("input[name='vista']").click(function () {
 http_findAll("asignacion", listaAsignacion_params, payload => {
     llenaGridAsignacionOrdenes(payload);
     llenaSelectEmisora(payload);
+    llenaSelectDigito(payload);
     const rec_count = payload.length;
     $("#count_asignacion").html(rec_count);
 });
@@ -455,18 +456,19 @@ http_findAll("flujo", listaFlujo_params, payload => {
 
 const llenaGridFlujoOrdenes = (flujos: any) => {
     $("#table_busquedaFlujo").jqGrid({
+        pager: "#pager_busquedaFlujo",
         data: flujos,
         datatype: "local",
         height: "auto",
         shrinkToFit: false,
         sortname: "flujo",
         sortorder: "desc",
-        pager: "#pager_busquedaFlujo",
         rowNum: 10,
-        rowList: [10, 20, 30],
+        rowList: [5, 10, 15, 20],
         viewrecords: true,
         gridview: true,
         autoencode: true,
+        sortable: true,
         multiselect: false,
         caption: "",
 
@@ -492,6 +494,7 @@ const llenaGridFlujoOrdenes = (flujos: any) => {
         ]
     });
 }
+
 http_findAll("hechos", listaHechos_params, payload => {
     llenaGridHechos(payload);
     const rec_count = payload.length;
@@ -580,9 +583,18 @@ const formAsignacionOrdenes = ($("#criterios-listAsignacion") as any)
 const llenaSelectEmisora = (emisora: any) => {
     console.log("Lista:" + emisora);
     fieldSelectPlusAutocomplete("emisora", {
-        id: "digito",
+        id: "emisora",
         text: "emisora",
         payload: emisora
+    });
+};
+
+const llenaSelectDigito = (digito: any) => {
+    console.log("Lista:" + digito);
+    fieldSelectPlusAutocomplete("digito", {
+        id: "emisora",
+        text: "digito",
+        payload: digito
     });
 };
 
