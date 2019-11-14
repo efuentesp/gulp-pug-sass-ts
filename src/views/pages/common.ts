@@ -834,7 +834,7 @@ const gradientBarChart = (params: barGradientChartParams) => {
   simpleGradientGraph = new Chart(params.contexto, {
     plugins: [
       {
-
+        
         afterDatasetsDraw: function (simpleBarGraph) {
 
           console.log("Se ejecuta la funcion");
@@ -956,22 +956,22 @@ const stackChart = (params: stackChartParams) => {
 
               ctx.textAlign = "center";
               ctx.textBaseline = "middle";
-
+              
               var padding = 10;
 
-              if (((dataset.data[index]).toString()).indexOf("-") >= 0) {
-                ctx.fillText(
-                  dataset.data[index] + "%",
-                  element._view.x,
-                  (element._view.y - 10)
-                );
-              } else {
-                ctx.fillText(
-                  dataset.data[index] + "%",
-                  element._view.x,
-                  (element._view.y + 10)
-                );
-              }
+                if (((dataset.data[index]).toString()).indexOf("-")  >= 0){
+                  ctx.fillText(
+                    dataset.data[index] + "%",
+                    element._view.x,
+                    (element._view.y - 10)
+                  );  
+                }else{
+                  ctx.fillText(
+                    dataset.data[index] + "%",
+                    element._view.x,
+                    (element._view.y + 10)
+                  );
+                }
             });
           });
         }
@@ -1615,6 +1615,7 @@ const barChart = (params: barChartParams) => {
     plugins: [
       {
         afterDatasetsDraw: function (barGraph) {
+
           var ctx = barGraph.ctx;
 
           ctx.canvas.style.width = params.width;
@@ -1832,7 +1833,10 @@ const barChart = (params: barChartParams) => {
             },
             stacked: true,
             ticks: {
-              display: true
+              display: true,
+              fontFamily: 'Verdana',
+              fontSize: 12,
+              fontStyle: "bold"
             },
             scaleLabel: {
               display: true,
