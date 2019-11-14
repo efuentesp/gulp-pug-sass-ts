@@ -694,6 +694,22 @@ interface stackChartHParams {
   format: string;
 }
 
+
+interface barGradientChartParams {
+  id: string;
+  titleX: string;
+  titleY: string;
+  labels: any[];
+  tickMaxY: number;
+  tickMinY: number;
+  width: string;
+  height: string;
+  tickStepY: number;
+  contexto: any;
+  dataSet: any[];
+}
+
+
 interface barChartParams {
   id: string;
   titleX: string;
@@ -782,6 +798,115 @@ const backgroundSet = (elements: number) => {
 
   return backgroundColorSet;
 };
+
+
+// simpleGradientGraph
+var simpleGradientGraph = null;
+
+const gradientBarChart = (params: barGradientChartParams) => {
+
+  console.log("GradientBarChart");
+  if (simpleGradientGraph != null) {
+    simpleGradientGraph.destroy();
+  }
+
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  // var ctxBar: any = document.getElementById(params.id);
+  // var contextBar = ctxBar.getContext("2d");
+  // Style legends
+  Chart.defaults.global.legend.labels.usePointStyle = true;
+  Chart.defaults.global.legend.labels.fontSize = 9;
+  Chart.defaults.global.legend.labels.boxWidth = 9;
+  Chart.defaults.global.legend.position = "bottom";
+  Chart.defaults.global.legend.display = false;
+  // Style tittle graph
+  Chart.defaults.global.title.display = false;
+  Chart.defaults.global.title.text = "";
+  // Graph responsive
+  Chart.defaults.global.responsive = true;
+  // Data point
+  Chart.defaults.global.elements.point.radius = 0;
+
+  simpleGradientGraph = new Chart(params.contexto, {
+    plugins: [
+      {
+        
+        afterDatasetsDraw: function (simpleBarGraph) {
+
+          console.log("Se ejecuta la funcion");
+          var ctx = simpleBarGraph.ctx;
+
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+
+          simpleBarGraph.data.datasets.forEach(function (dataset, i) {
+            var meta = simpleBarGraph.getDatasetMeta(i);
+            if (!meta.hidden) {
+              meta.data.forEach(function (element, index) {
+                ctx.fillStyle = "#000";
+                var fontSize = 12;
+                var fontStyle = "normal";
+                var fontFamily = "Arial";
+
+                ctx.font = Chart.helpers.fontString(
+                  fontSize,
+                  fontStyle,
+                  fontFamily
+                );
+              });
+            }
+          });
+        }
+      }
+    ],
+    type: "bar",
+    data: chartData,
+    options: {
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: true
+            },
+            stacked: false,
+            ticks: {
+              display: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: params.titleX,
+              fontColor: "#000"
+            }
+          }
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: false
+            },
+            stacked: false,
+            scaleLabel: {
+              display: true,
+              labelString: params.titleY,
+              fontColor: "#000"
+            },
+            ticks: {
+              display: true,
+              callback: function (value) {
+                return value + "";
+              }
+            }
+          }
+        ]
+      }
+    }
+  });
+};
+
 
 // StackGraph
 const stackChart = (params: stackChartParams) => {
@@ -1074,16 +1199,16 @@ const simpleBarChart = (params: barChartParams) => {
   simpleBGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(simpleBarGraph) {
+        afterDatasetsDraw: function (simpleBarGraph) {
           var ctx = simpleBarGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
+          simpleBarGraph.data.datasets.forEach(function (dataset, i) {
             var meta = simpleBarGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1133,7 +1258,7 @@ const simpleBarChart = (params: barChartParams) => {
             },
             ticks: {
               display: true,
-              callback: function(value) {
+              callback: function (value) {
                 return value + "";
               }
             }
@@ -1176,16 +1301,16 @@ const simpleBarAuxChart = (params: barChartParams) => {
   simpleBAuxGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(simpleBarGraph) {
+        afterDatasetsDraw: function (simpleBarGraph) {
           var ctx = simpleBarGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
+          simpleBarGraph.data.datasets.forEach(function (dataset, i) {
             var meta = simpleBarGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1235,7 +1360,7 @@ const simpleBarAuxChart = (params: barChartParams) => {
             },
             ticks: {
               display: true,
-              callback: function(value) {
+              callback: function (value) {
                 return value + "";
               }
             }
@@ -1280,16 +1405,16 @@ const simpleBarAux1Chart = (params: barChartParams) => {
   simpleBAux1Graph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(simpleBarGraph) {
+        afterDatasetsDraw: function (simpleBarGraph) {
           var ctx = simpleBarGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
+          simpleBarGraph.data.datasets.forEach(function (dataset, i) {
             var meta = simpleBarGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1339,7 +1464,7 @@ const simpleBarAux1Chart = (params: barChartParams) => {
             },
             ticks: {
               display: true,
-              callback: function(value) {
+              callback: function (value) {
                 return value + "";
               }
             }
@@ -1384,16 +1509,16 @@ const simpleBarAux2Chart = (params: barChartParams) => {
   simpleBAux2Graph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(simpleBarGraph) {
+        afterDatasetsDraw: function (simpleBarGraph) {
           var ctx = simpleBarGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
+          simpleBarGraph.data.datasets.forEach(function (dataset, i) {
             var meta = simpleBarGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1443,7 +1568,7 @@ const simpleBarAux2Chart = (params: barChartParams) => {
             },
             ticks: {
               display: true,
-              callback: function(value) {
+              callback: function (value) {
                 return value + "";
               }
             }
@@ -1735,7 +1860,7 @@ const barChart = (params: barChartParams) => {
   });
 };
 
-// BarGraph
+// barChartNBar
 const barChartNBar = (params: barChartParams) => {
   var chartData = {
     labels: params.labels,

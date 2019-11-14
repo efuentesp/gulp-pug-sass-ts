@@ -104,7 +104,14 @@ const fillAverage = (average: any) => {
     dataSetY.push(data.dataB);
   }
 
-  simpleBarChart({
+  var ctxBar: any = document.getElementById("averageChart");
+  var contextBar = ctxBar.getContext("2d");
+
+  var gradientFill = contextBar.createLinearGradient(400, 0, 350, 0);
+  gradientFill.addColorStop(0, "rgba(10, 10, 180, 1)");
+  gradientFill.addColorStop(1, "rgba(55, 55, 255, 1)");
+
+  gradientBarChart({
     id: "averageChart",
     titleX: "Período",
     titleY: "Portafolio",
@@ -114,11 +121,12 @@ const fillAverage = (average: any) => {
     tickStepY: 0.2,
     width: "500px",
     height: "300px",
+    contexto: contextBar,
     dataSet: [
       {
         type: "bar",
         label: "Real",
-        backgroundColor: "#2b6cb0",
+        backgroundColor: gradientFill,
         data: dataSetY
       }
     ]
