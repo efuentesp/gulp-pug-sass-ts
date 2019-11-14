@@ -1,0 +1,45 @@
+extends /layouts/jsp
+
+block title
+   title 01.Ventas Asesoradas
+
+block styles
+   link(rel="stylesheet" href="../../assets/css/accimarket/80-ventas-asesoradas/styles.css")
+
+block content
+   .content.p-4
+      .row
+         +accordion("criterios_busqueda_accordion")
+            +accordion-item("criterios_busqueda_accordion_item")
+               +form("criterios-busqueda", {class: "is-search-form"})
+                  +field-date-range("dateRangeVencimiento", {begin_label:"Fecha Inicial", end_label:"Fecha Final",required:true})
+                  +field-select("negocios",
+                     {
+                     label: "Lista de Negocios",
+                     size: "12em",
+                     required:true,
+                     orientation:"horizontal"
+                     },
+                     {key:"TD", value:"TODAS"},
+                     {key:"BK", value:"BANCA PATRIMONIAL"},
+                     {key:"BP", value:"BANCA PRIVADA"}
+                     )
+                  .column#botones-accion
+                     +button-search({size: "large", tooltip: "Consultar", disabled: false})
+                     +button-clean({size: "large", tooltip: "Limpiar", disabled: false})
+      //- .row.has_border
+      .row.w-full.overflow-auto.heigthTabla.mt-4
+         +grid("ventas")
+         //- +grid-records-count("ventas")
+      .row.justify-end
+         +field-input("totalreg",
+            {
+            label: "Total de registros",
+            orientation: "horizontal",
+            size: "6em",
+            disabled:true
+            })
+
+
+block scripts
+   script(src="../../assets/scripts/accimarket/80-ventas-asesoradas/scripts.js")
