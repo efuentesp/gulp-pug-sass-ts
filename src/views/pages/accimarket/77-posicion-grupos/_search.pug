@@ -1,0 +1,13 @@
+.row
+    .ui-dialog.hidden(id="dialogo_busqueda")
+        .row.flex
+            .column.w-30
+               +field-input("grupoPosicion", {label: "Grupo", orientation: "horizontal"})
+               +field-plus-minus("contratoPosicion", {label: "Contrato", orientation: "horizontal"})
+            .column.w-9
+                p Tiene Solicitudes Pendientes por aplicar. Favor de validar con la Mesa de Control. Si desea continuar las Solicitudes Pendientes se cancelarán.
+                br
+                p ¿Deseas continuar?
+        .row.pt-4.flex.justify-center
+            +button-accept
+            +button-cancel

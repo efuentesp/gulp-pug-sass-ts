@@ -1,0 +1,44 @@
+extends /layouts/jsp
+
+block title
+   title 01.Causión Bursátil
+
+block styles
+   link(rel="stylesheet" href="../../assets/css/accimarket/78-movimiento-vencimiento/styles.css")
+
+block content
+   .content.p-4
+      .row
+         +accordion("criterios_busqueda_accordion")
+            +accordion-item("criterios_busqueda_accordion_item")
+               +form("criterios-busqueda", {class: "is-search-form"})
+                  .row
+                     +field-options("digitos",
+                        {},
+                        {key:"TD", value:"Digitos Todos"},
+                        {key:"D", value:"Digitos"})
+                  .column.ml-10
+                     +field-input("digiVen", {label: "",size:"6em"})
+
+                  .row
+                     +field-input("montoInv", {label: "Monto Inversion:", required: true, type: "number",size:"11em"})
+                     p.ml-3  Mayor o Igual:
+                  .row
+                     +field-input("montoVen", {label: "Monto Vencimientos:", required: true, type: "number",size:"11em"})
+                     p.ml-3  Mayor o Igual:
+                  +field-input("contratoVen", {label: "Contrato:",size:"6em"})
+                  +field-date-range("dateRangeVencimiento", {begin_label:"Fecha Inicial", end_label:"Fecha Final",required:true})
+                  .column#botones-accion
+                     +button-search({size: "large", tooltip: "Consultar", disabled: false})
+                     +button-clean({size: "large", tooltip: "Limpiar", disabled: false})
+                     +button-pdf({size: "large", tooltip: "PDF", disabled: true})
+                     +button-xls({size: "large", tooltip: "XLS", disabled: true})
+
+      .row.has_border
+         .row.w-full.overflow-auto
+            +grid("vencidos")
+         +grid-records-count("vencidos")
+
+
+block scripts
+   script(src="../../assets/scripts/accimarket/78-movimiento-vencimiento/scripts.js")
