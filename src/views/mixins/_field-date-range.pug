@@ -9,43 +9,23 @@ mixin field-date-range(id, parms)
   - var _btn_clear =  parms.clear ? parms.clear : false
 
   .field(id=_field_id class=_class)
-    if (_class == "horizontal")
-      .field-control.flex
-        +field-date(_input_id + "_begin_date",
-                    {
-                      label: parms.begin_label,
-                      required: parms.required,
-                      size: _style,
-                      orientation: _class,
-                      datepicker_range: true,
-                      clear: _btn_clear
-                    })
-        +field-date(_input_id + "_end_date",
-                    {
-                      label: parms.end_label,
-                      required: parms.required,
-                      size: _style,
-                      orientation: _class,
-                      datepicker_range: true,
-                      clear: _btn_clear
-                    })
-    else
-      .field-control.flex
-      +field-date(_input_id + "_begin_date",
-                  {
-                    label: parms.begin_label,
-                    required: parms.required,
-                    size: _style,
-                    orientation: _class,
-                    datepicker_range: true,
-                    clear: _btn_clear
-                  })
-      +field-date(_input_id + "_end_date",
-                  {
-                    label: parms.end_label,
-                    required: parms.required,
-                    size: _style,
-                    orientation: _class,
-                    datepicker_range: true,
-                    clear: _btn_clear
-                  })                
+    .field-control.flex
+    +field-date(_input_id + "_begin_date",
+                {
+                  label: parms.begin_label,
+                  required: parms.required,
+                  size: _style,
+                  orientation: _class,
+                  datepicker_range: true,
+                  clear: _btn_clear
+                })
+    +field-date(_input_id + "_end_date",
+                {
+                  label: parms.end_label,
+                  required: parms.required,
+                  size: _style,
+                  orientation: _class,
+                  datepicker_range: true,
+                  clear: _btn_clear
+                })
+         
