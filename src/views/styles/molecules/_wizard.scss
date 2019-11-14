@@ -4,22 +4,43 @@
   .steps {
     ul {
       li {
-        width: 20em;
-      }
-    }
-    .current {
-      a {
-        background: $color-blue-dark;
+        width: 9.5em;
       }
     }
     .disabled {
       a {
         background: $color-sky;
       }
+
+      a[id*="steps-uid-0-t-"] {
+        background: white;
+        background-image: url("../../assets/images/arrow_gray.png"); 
+        height: 55px; 
+        width: 96px;        
+      }
     }
     .done {
       a {
         opacity: 1;
+      }
+
+      a[id*="steps-uid-0-t-"] {
+        background: white;
+        background-image: url("../../../assets/images/arrow_gray.png") !important; 
+        height: 55px; 
+        width: 96px;        
+      }
+    }
+    .current {
+      a {
+        background: $color-blue-dark;
+      }
+
+      a[id*="steps-uid-0-t-"] {
+        background:white;
+        background-image: url("../../../assets/images/arrow_blue.png") !important; 
+        height: 55px; 
+        width: 96px;
       }
     }
   }
