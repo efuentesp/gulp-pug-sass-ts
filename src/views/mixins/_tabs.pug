@@ -3,16 +3,15 @@ mixin tab-group(id, ...items)
     ul
       each item in items
         - var tab_item_ref = "#" + item.id
-        li(style="border: 0px;")
-          a(href=tab_item_ref style="padding-left: 0px; padding-right: 0px;")
+        li
+          a(href=tab_item_ref)
             if item.img != null
               .container-imgtxt
                 img.container-img_image(src="../../assets/images/"+item.img align="middle")
                 .container-img_text=item.label
             else 
               //- i.fas.fa-user.pr-3
-              .container-imgtxt(style="background-image: url('../../assets/images/wizard_siguiente.png'); height: 50px; width: 95px;")
-                =""/*item.label*/
+              =item.label
 
     block
 

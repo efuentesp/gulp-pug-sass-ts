@@ -15,11 +15,11 @@ $("#cmbRenta").trigger("change");
 $("#cmbModelosCalculoCombo").val("TI");
 $("#cmbModelosCalculoCombo").trigger("change");
 
-$("#btn_pdf").click(function () {
+$("#btn_pdf").click(function() {
   alert(selected);
 });
 
-$("#cmbModelosCalculoCombo").change(function () {
+$("#cmbModelosCalculoCombo").change(function() {
   var valor = $("#cmbModelosCalculoCombo").val();
   if (valor == "T") {
     $("#cmbRenta").prop("disabled", true);
@@ -43,11 +43,11 @@ var aniofi = fechafi.getFullYear();
 $("#dtFecha").val(dia + "-" + mes + "-" + anio);
 $("#dtFechaFinal").val(diafi + "-" + mesfi + "-" + aniofi);
 
-$("#dtFecha").on("change", function (event) {
+$("#dtFecha").on("change", function(event) {
   validaFechaInicial();
 });
 
-$("#dtFechaFinal").on("change", function (event) {
+$("#dtFechaFinal").on("change", function(event) {
   validaFechaInicial();
 });
 
@@ -58,7 +58,7 @@ $("#dtFechaFinal").datepicker("option", "maxDate", "fechafi");
 $("#dtFecha").val(dia + "-" + mes + "-" + anio);
 $("#dtFechaFinal").val(diafi + "-" + mesfi + "-" + aniofi);
 
-var validaFechaInicial = function () {
+var validaFechaInicial = function() {
   var dtFecha = $("#dtFecha")
     .val()
     .toString();
@@ -91,7 +91,7 @@ var validaFechaInicial = function () {
   }
 };
 
-$('input[name="chk_cmbOpcionesRendi"]').change(function () {
+$('input[name="chk_cmbOpcionesRendi"]').change(function() {
   console.log(
     "Checkbox ejemplo " + $(this).is(":checked") + " " + $(this).val()
   );
@@ -113,69 +113,22 @@ const verificaSeleccionados = () => {
 
   let selected: any = [];
 
-  $('input[name="chk_cmbOpcionesRendi"]').each(function () {
+  $('input[name="chk_cmbOpcionesRendi"]').each(function() {
     if ($(this).is(":checked")) {
       selected.push($(this).val());
     }
   });
 
-  $("#gbox_table_resultadosMensuales").hide();
-  $("#graficaMensual").hide();
-  $("#gbox_table_resultadosAcumulados").hide();
-  $("#graficaAcumulados").hide();
-  $("#gbox_table_resultadosMensualesTWP").show();
-  $("#graficaMensualTWP").show();
-  $("#gbox_table_resultadosAcumuladosTWP").show();
-  $("#graficaAcumuladosTWP").show();
+  console.log("Los seleccionados: " + selected);
 
-  $("#gbox_table_resultadosMensualesTWP").css({
-    top: 10,
-    left: 10,
-    position: "absolute"
-  });
-  $("#gbox_table_resultadosAcumuladosTWP").css({
-    top: 10,
-    left: 10,
-    position: "absolute"
-  });
-  $("#graficaMensualTWP")
-    .parent()
-    .css({ position: "relative" });
-  $("#graficaAcumuladosTWP")
-    .parent()
-    .css({ position: "relative" });
+  return selected;
+};
 
-  fillJqGrid(
-    "#table_resultadosMensualesTWP",
-    payload.listaMensualesTWP
-  );
-  graficaMensualesTWP("graficaMensualTWP", payload.listaMensualesTWP);
+const activaTIR = () => {
+  const txtContrato: string = String($("#txtContrato").val());
 
-  fillJqGrid(
-    "#table_resultadosAcumuladosTWP",
-    payload.listaAcumuladosTWP
-  );
-  graficaAcumuladosTWP(
-    "graficaAcumuladosTWP",
-    payload.listaAcumuladosTWP
-  );
-});
-return false;
-        });
-    } else {
-  const formListOrdenes = ($("#criterios-busqueda-rendimientos") as any)
-    .parsley()
-    .on("field:validated", () => {
-      const ok = $(".parsley-error").length === 0;
-    })
-    .on("form:submit", () => {
-      console.log("form:submit");
-
-      return selected;
-    };
-
-  const activaTIR = () => {
-    const txtContrato: string = String($("#txtContrato").val());
+  http_findOne("contratos", txtContrato, payload => {
+    infoContratoRendimiento(payload);
 
     $("#gbox_table_resultadosMensualesTWP").hide();
     $("#graficaMensualTWP").hide();
@@ -195,19 +148,105 @@ return false;
       width: 800
     });
   });
-  return false;
-});
+};
+
+const activaTWP = () => {
+  const txtContrato: string = String($("#txtContrato").val());
+
+  http_findOne("contratos", txtContrato, payload => {
+    infoContratoRendimiento(payload);
+
+    $("#gbox_table_resultadosMensuales").hide();
+    $("#graficaMensual").hide();
+    $("#gbox_table_resultadosAcumulados").hide();
+    $("#graficaAcumulados").hide();
+    $("#gbox_table_resultadosMensualesTWP").show();
+    $("#graficaMensualTWP").show();
+    $("#gbox_table_resultadosAcumuladosTWP").show();
+    $("#graficaAcumuladosTWP").show();
+
+    $("#gbox_table_resultadosMensualesTWP").css({
+      top: 10,
+      left: 10,
+      position: "absolute"
+    });
+    $("#gbox_table_resultadosAcumuladosTWP").css({
+      top: 10,
+      left: 10,
+      position: "absolute"
+    });
+    $("#graficaMensualTWP")
+      .parent()
+      .css({ position: "relative" });
+    $("#graficaAcumuladosTWP")
+      .parent()
+      .css({ position: "relative" });
+
+    fillJqGrid("#table_resultadosMensualesTWP", payload.listaMensualesTWP);
+    graficaMensualesTWP("graficaMensualTWP", payload.listaMensualesTWP);
+
+    fillJqGrid("#table_resultadosAcumuladosTWP", payload.listaAcumuladosTWP);
+    graficaAcumuladosTWP("graficaAcumuladosTWP", payload.listaAcumuladosTWP);
+  });
+};
+
+const activaSeleccionados = () => {
+  const txtContrato: string = String($("#txtContrato").val());
+
+  http_findOne("contratos", txtContrato, payload => {
+    infoContratoRendimiento(payload);
+    $("#gbox_table_resultadosMensuales").hide();
+    $("#graficaMensual").hide();
+    $("#gbox_table_resultadosAcumulados").hide();
+    $("#graficaAcumulados").hide();
+    $("#gbox_table_resultadosMensualesTWP").show();
+    $("#graficaMensualTWP").show();
+    $("#gbox_table_resultadosAcumuladosTWP").show();
+    $("#graficaAcumuladosTWP").show();
+
+    $("#gbox_table_resultadosMensualesTWP").css({
+      top: 10,
+      left: 10,
+      position: "absolute"
+    });
+    $("#gbox_table_resultadosAcumuladosTWP").css({
+      top: 10,
+      left: 10,
+      position: "absolute"
+    });
+    $("#graficaMensualTWP")
+      .parent()
+      .css({ position: "relative" });
+    $("#graficaAcumuladosTWP")
+      .parent()
+      .css({ position: "relative" });
+
+    fillJqGrid("#table_resultadosMensualesTWP", payload.listaMensualesTWP);
+    graficaMensualesTWP("graficaMensualTWP", payload.listaMensualesTWP);
+
+    fillJqGrid("#table_resultadosAcumuladosTWP", payload.listaAcumuladosTWP);
+    graficaAcumuladosTWP("graficaAcumuladosTWP", payload.listaAcumuladosTWP);
+  });
+};
+
+// Boton search
+$("#btn_search").click(function() {
+  let selected = [];
+
+  selected = verificaSeleccionados();
+
+  if (selected.length > 0) {
+    return false;
+  } else {
+    
+    if ($("#cmbModelosCalculoCombo").val() == "T") {
+      activaTWP();
+    }else{
+      activaTIR();
     }
-  } else {
 
-  if ($("#cmbModelosCalculoCombo").val() == "T") {
-    activaTWP();
-  } else {
-    activaTIR();
+    return false;
   }
-
-  return false;
-}
 });
 
 
@@ -326,14 +365,14 @@ $("#table_resultadosfuente").jqGrid({
   gridview: true,
   autoencode: true,
   caption: "",
-  loadComplete: function () {
+  loadComplete: function() {
     $("#gbox_table_resultadosfuente").contextMenu("menu-excel", {
       bindings: {
-        "obtener-excel": function (event) {
+        "obtener-excel": function(event) {
           console.log("copiar excel");
         }
       },
-      onContexMenu: function (event, menu) { }
+      onContexMenu: function(event, menu) {}
     });
   }
 });
@@ -417,10 +456,10 @@ $("#table_resultadosMensualesTWP").jqGrid({
   gridview: true,
   autoencode: true,
   caption: "",
-  loadComplete: function () {
+  loadComplete: function() {
     $("#gbox_table_resultadosMensualesTWP").contextMenu("menu-pdf", {
       bindings: {
-        "obtener-fuente": function (event) {
+        "obtener-fuente": function(event) {
           const txtContrato: string = String($("#txtContrato").val());
 
           http_findOne("contratos", txtContrato, payload => {
@@ -438,7 +477,7 @@ $("#table_resultadosMensualesTWP").jqGrid({
           });
         }
       },
-      onContexMenu: function (event, menu) { }
+      onContexMenu: function(event, menu) {}
     });
   }
 });
@@ -490,8 +529,6 @@ const infoContratoRendimiento = (payload: any) => {
   $("#txtClabe").val(payload.clabe);
 };
 
-// Arreglo de todos los que estan activos
-
 const graficaMensuales = (tipoGrafica: string, listaMensuales: any) => {
   var dataSetY1 = [];
   var dataSetY2 = [];
@@ -517,11 +554,11 @@ const graficaMensuales = (tipoGrafica: string, listaMensuales: any) => {
     dataSetY8.push(data.S07);
     dataSetY9.push(data.S08);
   }
-  $('input[name="chk_cmbOpcionesRendi"]').change(function () {
+  $('input[name="chk_cmbOpcionesRendi"]').change(function() {
     //selected = "";
     let selected2: any = [];
 
-    $('input[name="chk_cmbOpcionesRendi"]').each(function () {
+    $('input[name="chk_cmbOpcionesRendi"]').each(function() {
       if ($(this).is(":checked")) {
         //selected += $(this).val() + ", ";
         selected2.push($(this).val());
@@ -669,11 +706,11 @@ const graficaAcumulados = (tipoGrafica2: string, listaAcumulados: any) => {
     dataSetY17.push(data.S07);
     dataSetY18.push(data.S08);
   }
-  $('input[name="chk_cmbOpcionesRendi"]').change(function () {
+  $('input[name="chk_cmbOpcionesRendi"]').change(function() {
     //selected = "";
     let selected3: any = [];
 
-    $('input[name="chk_cmbOpcionesRendi"]').each(function () {
+    $('input[name="chk_cmbOpcionesRendi"]').each(function() {
       if ($(this).is(":checked")) {
         //selected += $(this).val() + ", ";
         selected3.push($(this).val());
@@ -828,11 +865,11 @@ const graficaMensualesTWP = (tipoGrafica3: string, listaMensualesTWP: any) => {
     dataSetY12.push(data.S07);
     dataSetY13.push(data.S08);
   }
-  $('input[name="chk_cmbOpcionesRendi"]').change(function () {
+  $('input[name="chk_cmbOpcionesRendi"]').change(function() {
     //selected = "";
     let selected4: any = [];
 
-    $('input[name="chk_cmbOpcionesRendi"]').each(function () {
+    $('input[name="chk_cmbOpcionesRendi"]').each(function() {
       if ($(this).is(":checked")) {
         //selected += $(this).val() + ", ";
         selected4.push($(this).val());
@@ -1029,11 +1066,11 @@ const graficaAcumuladosTWP = (
     dataSetY10.push(data.S08);
   }
 
-  $('input[name="chk_cmbOpcionesRendi"]').change(function () {
+  $('input[name="chk_cmbOpcionesRendi"]').change(function() {
     //selected = "";
     let selected4: any = [];
 
-    $('input[name="chk_cmbOpcionesRendi"]').each(function () {
+    $('input[name="chk_cmbOpcionesRendi"]').each(function() {
       if ($(this).is(":checked")) {
         //selected += $(this).val() + ", ";
         selected4.push($(this).val());
@@ -1164,333 +1201,7 @@ const graficaAcumuladosTWP = (
   };
   pintaGrafica4(null, tipoGrafica3);
 };
-// const graficaMensuales = (tipoGrafica: string, listaMensuales: any) => {
-//   var dataSetY1 = [];
-//   var dataSetY2 = [];
-//   var dataSetY3 = [];
-//   var dataSetY4 = [];
-//   var dataSetY5 = [];
-//   var dataSetY6 = [];
-//   var dataSetY7 = [];
-//   var dataSetY8 = [];
-//   var dataSetY9 = [];
-//   var dataSetX = [];
 
-//   for (var i = 0; i < listaMensuales.length; i++) {
-//     var data = listaMensuales[i];
-//     dataSetX.push(data.periodo);
-//     dataSetY1.push(data.portafolio);
-//     dataSetY2.push(data.S01);
-//     dataSetY3.push(data.S02);
-//     dataSetY4.push(data.S03);
-//     dataSetY5.push(data.S04);
-//     dataSetY6.push(data.S05);
-//     dataSetY7.push(data.S06);
-//     dataSetY8.push(data.S07);
-//     dataSetY9.push(data.S08);
-//   }
-
-//   simpleBarChart({
-//     id: tipoGrafica,
-//     titleX: "Período",
-//     titleY: "Portafolio",
-//     labels: dataSetX,
-//     tickMaxY: 15.0,
-//     tickMinY: -15 /*0*/,
-//     tickStepY: 1,
-//     width: "400px",
-//     height: "200px",
-//     dataSet: [
-//       {
-//         type: "bar",
-//         label: "Real",
-//         backgroundColor: "#2b6cb0",
-//         data: dataSetY1
-//       },
-//       {
-//         type: "bar",
-//         label: "Real",
-//         backgroundColor: "#2b6cb0",
-//         data: dataSetY2
-//       },
-//       {
-//         type: "bar",
-//         label: "Real2",
-//         backgroundColor: "#ffb3b3",
-//         data: dataSetY3
-//       },
-//       {
-//         type: "bar",
-//         label: "Real3",
-//         backgroundColor: "#b3ffb3",
-//         data: dataSetY4
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY5
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY6
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY7
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY8
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY9
-//       }
-//     ]
-//   });
-// };
-
-// const graficaMensualesTWP = (tipoGrafica: string, listaMensuales: any) => {
-//   var dataSetY1 = [];
-//   var dataSetY2 = [];
-//   var dataSetY3 = [];
-//   var dataSetY4 = [];
-//   var dataSetY5 = [];
-//   var dataSetY6 = [];
-//   var dataSetY7 = [];
-//   var dataSetY8 = [];
-//   var dataSetY9 = [];
-//   var dataSetY10 = [];
-//   var dataSetY11 = [];
-//   var dataSetY12 = [];
-//   var dataSetY13 = [];
-//   var dataSetX = [];
-
-//   for (var i = 0; i < listaMensuales.length; i++) {
-//     var data = listaMensuales[i];
-//     dataSetX.push(data.periodo);
-//     dataSetY1.push(data.Valor_Mercado);
-//     dataSetY2.push(data.Aportaciones);
-//     dataSetY3.push(data.Retiros);
-//     dataSetY4.push(data.Cambio_de_valores);
-//     dataSetY5.push(data.crecimiento_Portafolio_Periodo);
-//     dataSetY6.push(data.S01);
-//     dataSetY7.push(data.S02);
-//     dataSetY8.push(data.S03);
-//     dataSetY9.push(data.S04);
-//     dataSetY10.push(data.S05);
-//     dataSetY11.push(data.S06);
-//     dataSetY12.push(data.S07);
-//     dataSetY13.push(data.S08);
-//   }
-
-//   simpleBarChart({
-//     id: tipoGrafica,
-//     titleX: "Período",
-//     titleY: "Portafolio",
-//     labels: dataSetX,
-//     tickMaxY: 15.0,
-//     tickMinY: -15 /*0*/,
-//     tickStepY: 1,
-//     width: "400px",
-//     height: "200px",
-//     dataSet: [
-//       {
-//         type: "bar",
-//         label: "Real",
-//         backgroundColor: "#2b6cb0",
-//         data: dataSetY1
-//       },
-//       {
-//         type: "bar",
-//         label: "Real",
-//         backgroundColor: "#2b6cb0",
-//         data: dataSetY2
-//       },
-//       {
-//         type: "bar",
-//         label: "Real2",
-//         backgroundColor: "#ffb3b3",
-//         data: dataSetY3
-//       },
-//       {
-//         type: "bar",
-//         label: "Real3",
-//         backgroundColor: "#b3ffb3",
-//         data: dataSetY4
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY5
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY6
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY7
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY8
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY9
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY10
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY11
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY12
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY13
-//       }
-//     ]
-//   });
-// };
-
-// const graficaAcumuladosTWP = (
-//   tipoGrafica: string,
-//   listaMensuales: any
-// ) => {
-//   var dataSetY1 = [];
-//   var dataSetY2 = [];
-//   var dataSetY3 = [];
-//   var dataSetY4 = [];
-//   var dataSetY5 = [];
-//   var dataSetY6 = [];
-//   var dataSetY7 = [];
-//   var dataSetY8 = [];
-//   var dataSetY9 = [];
-//   var dataSetY10 = [];
-//   var dataSetX = [];
-
-//   for (var i = 0; i < listaMensuales.length; i++) {
-//     var data = listaMensuales[i];
-//     dataSetX.push(data.periodo);
-//     dataSetY1.push(data.Valor_Mercado);
-//     dataSetY2.push(data.crecimiento_Portafolio_Periodo);
-//     dataSetY3.push(data.S01);
-//     dataSetY4.push(data.S02);
-//     dataSetY5.push(data.S03);
-//     dataSetY6.push(data.S04);
-//     dataSetY7.push(data.S05);
-//     dataSetY8.push(data.S06);
-//     dataSetY9.push(data.S07);
-//     dataSetY10.push(data.S08);
-//   }
-
-//   simpleBarChart({
-//     id: tipoGrafica,
-//     titleX: "Período",
-//     titleY: "Portafolio",
-//     labels: dataSetX,
-//     tickMaxY: 15.0,
-//     tickMinY: -15 /*0*/,
-//     tickStepY: 1,
-//     width: "400px",
-//     height: "200px",
-//     dataSet: [
-//       {
-//         type: "bar",
-//         label: "Real",
-//         backgroundColor: "#2b6cb0",
-//         data: dataSetY1
-//       },
-//       {
-//         type: "bar",
-//         label: "Real",
-//         backgroundColor: "#2b6cb0",
-//         data: dataSetY2
-//       },
-//       {
-//         type: "bar",
-//         label: "Real2",
-//         backgroundColor: "#ffb3b3",
-//         data: dataSetY3
-//       },
-//       {
-//         type: "bar",
-//         label: "Real3",
-//         backgroundColor: "#b3ffb3",
-//         data: dataSetY4
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY5
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY6
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY7
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY8
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY9
-//       },
-//       {
-//         type: "bar",
-//         label: "Real4",
-//         backgroundColor: "#ffff66",
-//         data: dataSetY10
-//       }
-//     ]
-//   });
-// };
 $("#gbox_table_resultadosMensualesTWP").hide();
 $("#graficaMensualTWP").hide();
 $("#gbox_table_resultadosAcumuladosTWP").hide();

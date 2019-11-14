@@ -717,7 +717,7 @@
       "listaMensualesTWP": [
         {
           "periodo": "Oct-18",
-          "Valor_Mercado": "32",
+          "Valor_Mercado": "12.00",
           "Aportaciones": "32.00",
           "Retiros": "62.00",
           "Cambio_de_valores": "-30.00",
@@ -750,7 +750,7 @@
       "listaAcumulados": [
         {
           "periodo": "Sep-18",
-          "portafolio": "40",
+          "portafolio": "30.00",
           "S01": "20.00",
           "S02": "50.00",
           "S03": "-10.00",
@@ -762,7 +762,7 @@
         },
         {
           "periodo": "Oct-18",
-          "portafolio": "40.00",
+          "portafolio": "12.00",
           "S01": "-60.00",
           "S02": "43.00",
           "S03": "52.00",
