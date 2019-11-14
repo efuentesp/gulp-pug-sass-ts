@@ -17,3 +17,30 @@
     }
   }
 }
+
+//------------------------------------------------------------------------------
+
+/* Safari */
+/*
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+*/
+//------------------------------------------------------------------------------
+.spinner-loader {
+  //position: fixed;
+  position: absolute;
+	left: 45%;
+	top: 45%;
+	width: 45px;
+	height: 45px;
+  //background: url(../../../../assets/images/loader.gif) center no-repeat #fff;
+	//background: url(http://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
+}
+//------------------------------------------------------------------------------
