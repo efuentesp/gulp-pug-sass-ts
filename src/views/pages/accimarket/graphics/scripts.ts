@@ -63,12 +63,12 @@ const fillRendimientos = (rendimientos: any) => {
     dataSet: [
       {
         label: "Peor Mes",
-        backgroundColor: "#c53030",
+        backgroundColor: "#2b6cb0",
         data: dataSetY1
       },
       {
         label: "Mejor Mes",
-        backgroundColor: "#2b6cb0",
+        backgroundColor: "#c53030",
         data: dataSetY2
       }
     ],

@@ -1043,7 +1043,13 @@ const stackChartHorizontal = (params: stackChartHParams) => {
 };
 
 // SimpleBarGraph
+var simpleBGraph = null;
+
 const simpleBarChart = (params: barChartParams) => {
+  if (simpleBGraph != null) {
+    simpleBGraph.destroy();
+  }
+
   var chartData = {
     labels: params.labels,
     datasets: params.dataSet
@@ -1065,19 +1071,19 @@ const simpleBarChart = (params: barChartParams) => {
   // Data point
   Chart.defaults.global.elements.point.radius = 0;
 
-  var barGraph = new Chart(contextBar, {
+  simpleBGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function (barGraph) {
-          var ctx = barGraph.ctx;
+        afterDatasetsDraw: function(simpleBarGraph) {
+          var ctx = simpleBarGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          barGraph.data.datasets.forEach(function (dataset, i) {
-            var meta = barGraph.getDatasetMeta(i);
+          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
+            var meta = simpleBarGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function (element, index) {
+              meta.data.forEach(function(element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1127,7 +1133,317 @@ const simpleBarChart = (params: barChartParams) => {
             },
             ticks: {
               display: true,
-              callback: function (value) {
+              callback: function(value) {
+                return value + "";
+              }
+            }
+          }
+        ]
+      }
+    }
+  });
+};
+
+// SimpleBarGraph
+var simpleBAuxGraph = null;
+
+const simpleBarAuxChart = (params: barChartParams) => {
+  if (simpleBAuxGraph != null) {
+    simpleBAuxGraph.destroy();
+  }
+
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  var ctxBar: any = document.getElementById(params.id);
+  var contextBar = ctxBar.getContext("2d");
+  // Style legends
+  Chart.defaults.global.legend.labels.usePointStyle = true;
+  Chart.defaults.global.legend.labels.fontSize = 9;
+  Chart.defaults.global.legend.labels.boxWidth = 9;
+  Chart.defaults.global.legend.position = "bottom";
+  Chart.defaults.global.legend.display = false;
+  // Style tittle graph
+  Chart.defaults.global.title.display = false;
+  Chart.defaults.global.title.text = "";
+  // Graph responsive
+  Chart.defaults.global.responsive = true;
+  // Data point
+  Chart.defaults.global.elements.point.radius = 0;
+
+  simpleBAuxGraph = new Chart(contextBar, {
+    plugins: [
+      {
+        afterDatasetsDraw: function(simpleBarGraph) {
+          var ctx = simpleBarGraph.ctx;
+
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+
+          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
+            var meta = simpleBarGraph.getDatasetMeta(i);
+            if (!meta.hidden) {
+              meta.data.forEach(function(element, index) {
+                ctx.fillStyle = "#000";
+                var fontSize = 12;
+                var fontStyle = "normal";
+                var fontFamily = "Arial";
+
+                ctx.font = Chart.helpers.fontString(
+                  fontSize,
+                  fontStyle,
+                  fontFamily
+                );
+              });
+            }
+          });
+        }
+      }
+    ],
+    type: "bar",
+    data: chartData,
+    options: {
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: true
+            },
+            stacked: false,
+            ticks: {
+              display: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: params.titleX,
+              fontColor: "#000"
+            }
+          }
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: false
+            },
+            stacked: false,
+            scaleLabel: {
+              display: true,
+              labelString: params.titleY,
+              fontColor: "#000"
+            },
+            ticks: {
+              display: true,
+              callback: function(value) {
+                return value + "";
+              }
+            }
+          }
+        ]
+      }
+    }
+  });
+};
+
+// SimpleBarGraph
+var simpleBAux1Graph = null;
+
+const simpleBarAux1Chart = (params: barChartParams) => {
+  if (simpleBAux1Graph != null) {
+    simpleBAux1Graph.destroy();
+  }
+
+  simpleBGraph.destroy();
+
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  var ctxBar: any = document.getElementById(params.id);
+  var contextBar = ctxBar.getContext("2d");
+  // Style legends
+  Chart.defaults.global.legend.labels.usePointStyle = true;
+  Chart.defaults.global.legend.labels.fontSize = 9;
+  Chart.defaults.global.legend.labels.boxWidth = 9;
+  Chart.defaults.global.legend.position = "bottom";
+  Chart.defaults.global.legend.display = false;
+  // Style tittle graph
+  Chart.defaults.global.title.display = false;
+  Chart.defaults.global.title.text = "";
+  // Graph responsive
+  Chart.defaults.global.responsive = true;
+  // Data point
+  Chart.defaults.global.elements.point.radius = 0;
+
+  simpleBAux1Graph = new Chart(contextBar, {
+    plugins: [
+      {
+        afterDatasetsDraw: function(simpleBarGraph) {
+          var ctx = simpleBarGraph.ctx;
+
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+
+          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
+            var meta = simpleBarGraph.getDatasetMeta(i);
+            if (!meta.hidden) {
+              meta.data.forEach(function(element, index) {
+                ctx.fillStyle = "#000";
+                var fontSize = 12;
+                var fontStyle = "normal";
+                var fontFamily = "Arial";
+
+                ctx.font = Chart.helpers.fontString(
+                  fontSize,
+                  fontStyle,
+                  fontFamily
+                );
+              });
+            }
+          });
+        }
+      }
+    ],
+    type: "bar",
+    data: chartData,
+    options: {
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: true
+            },
+            stacked: false,
+            ticks: {
+              display: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: params.titleX,
+              fontColor: "#000"
+            }
+          }
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: false
+            },
+            stacked: false,
+            scaleLabel: {
+              display: true,
+              labelString: params.titleY,
+              fontColor: "#000"
+            },
+            ticks: {
+              display: true,
+              callback: function(value) {
+                return value + "";
+              }
+            }
+          }
+        ]
+      }
+    }
+  });
+};
+
+// SimpleBarGraph
+var simpleBAux2Graph = null;
+
+const simpleBarAux2Chart = (params: barChartParams) => {
+  if (simpleBAux2Graph != null) {
+    simpleBAux2Graph.destroy();
+  }
+
+  simpleBAuxGraph.destroy();
+
+  var chartData = {
+    labels: params.labels,
+    datasets: params.dataSet
+  };
+
+  var ctxBar: any = document.getElementById(params.id);
+  var contextBar = ctxBar.getContext("2d");
+  // Style legends
+  Chart.defaults.global.legend.labels.usePointStyle = true;
+  Chart.defaults.global.legend.labels.fontSize = 9;
+  Chart.defaults.global.legend.labels.boxWidth = 9;
+  Chart.defaults.global.legend.position = "bottom";
+  Chart.defaults.global.legend.display = false;
+  // Style tittle graph
+  Chart.defaults.global.title.display = false;
+  Chart.defaults.global.title.text = "";
+  // Graph responsive
+  Chart.defaults.global.responsive = true;
+  // Data point
+  Chart.defaults.global.elements.point.radius = 0;
+
+  simpleBAux2Graph = new Chart(contextBar, {
+    plugins: [
+      {
+        afterDatasetsDraw: function(simpleBarGraph) {
+          var ctx = simpleBarGraph.ctx;
+
+          ctx.canvas.style.width = params.width;
+          ctx.canvas.style.height = params.height;
+
+          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
+            var meta = simpleBarGraph.getDatasetMeta(i);
+            if (!meta.hidden) {
+              meta.data.forEach(function(element, index) {
+                ctx.fillStyle = "#000";
+                var fontSize = 12;
+                var fontStyle = "normal";
+                var fontFamily = "Arial";
+
+                ctx.font = Chart.helpers.fontString(
+                  fontSize,
+                  fontStyle,
+                  fontFamily
+                );
+              });
+            }
+          });
+        }
+      }
+    ],
+    type: "bar",
+    data: chartData,
+    options: {
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: true
+            },
+            stacked: false,
+            ticks: {
+              display: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: params.titleX,
+              fontColor: "#000"
+            }
+          }
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: false
+            },
+            stacked: false,
+            scaleLabel: {
+              display: true,
+              labelString: params.titleY,
+              fontColor: "#000"
+            },
+            ticks: {
+              display: true,
+              callback: function(value) {
                 return value + "";
               }
             }
