@@ -194,8 +194,8 @@ const fillRates = (rates: any) => {
     var priceDate = new Date(data.updatedDate.replace(" ", "T") + "Z");
     dataSetX.push(
       ("0" + priceDate.getHours()).slice(-2) +
-        ":" +
-        ("0" + priceDate.getMinutes()).slice(-2)
+      ":" +
+      ("0" + priceDate.getMinutes()).slice(-2)
     );
     dataSetY.push(data.askClose);
   }
@@ -237,8 +237,8 @@ const fillEstrategias = (rates: any) => {
     var priceDate = new Date(data.updatedDate.replace(" ", "T") + "Z");
     dataSetX.push(
       ("0" + priceDate.getHours()).slice(-2) +
-        ":" +
-        ("0" + priceDate.getMinutes()).slice(-2)
+      ":" +
+      ("0" + priceDate.getMinutes()).slice(-2)
     );
     dataSetY1.push(data.askClose);
     dataSetY2.push(data.askLow);

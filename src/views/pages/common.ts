@@ -945,8 +945,8 @@ const stackChart = (params: stackChartParams) => {
               // GeneralFont
               ctx.fillStyle = "#000";
               var fontSize = 10;
-              var fontStyle = "normal";
-              var fontFamily = "Arial";
+              var fontStyle = "bold";
+              var fontFamily = "Verdana";
 
               ctx.font = Chart.helpers.fontString(
                 fontSize,
@@ -956,13 +956,22 @@ const stackChart = (params: stackChartParams) => {
 
               ctx.textAlign = "center";
               ctx.textBaseline = "middle";
+              
               var padding = 10;
 
-              ctx.fillText(
-                dataset.data[index] + "%",
-                element._view.x,
-                element._view.y
-              );
+                if (((dataset.data[index]).toString()).indexOf("-")  >= 0){
+                  ctx.fillText(
+                    dataset.data[index] + "%",
+                    element._view.x,
+                    (element._view.y - 10)
+                  );  
+                }else{
+                  ctx.fillText(
+                    dataset.data[index] + "%",
+                    element._view.x,
+                    (element._view.y + 10)
+                  );
+                }
             });
           });
         }
@@ -1606,6 +1615,7 @@ const barChart = (params: barChartParams) => {
     plugins: [
       {
         afterDatasetsDraw: function (barGraph) {
+
           var ctx = barGraph.ctx;
 
           ctx.canvas.style.width = params.width;
@@ -1823,7 +1833,10 @@ const barChart = (params: barChartParams) => {
             },
             stacked: true,
             ticks: {
-              display: true
+              display: true,
+              fontFamily: 'Verdana',
+              fontSize: 12,
+              fontStyle: "bold"
             },
             scaleLabel: {
               display: true,

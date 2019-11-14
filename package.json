@@ -62,7 +62,6 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
     "chart.js": "^2.8.0",
-    "chartjs-plugin-piechart-outlabels": "^0.1.4",
     "jquery": "^3.4.1",
     "jquery-file-upload": "^4.0.11",
     "jquery-mask-plugin": "^1.14.16",
