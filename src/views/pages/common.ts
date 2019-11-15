@@ -341,14 +341,40 @@ const addNode = (
   }
 };
 
+function fieldPlusMinusMaxWidth(node){
+  let listcontentvalue = [];
+  let max_width_size = 0
+  let nodelist: HTMLUListElement = document.getElementById(
+    node
+  ) as HTMLUListElement;
+  $(nodelist.childNodes).each(function(childNode) {
+    if (nodelist.childNodes[childNode].childNodes[0].textContent) {      
+      listcontentvalue.push(
+        nodelist.childNodes[childNode].childNodes[0].textContent
+      );
+    }
+  });
+  let canvas = document.createElement("canvas"); 
+  let context = canvas.getContext("2d"); 
+  context.font="10px verdana";
+  listcontentvalue.forEach(function(text) {
+    let metric = context.measureText(text).width + 10;
+    if(metric > max_width_size){
+      max_width_size = metric
+    }    
+  });
+  return max_width_size
+}
+
 function fieldPlusMinusRepaintList(node) {
+  let max_width_size = fieldPlusMinusMaxWidth(node)
   let listcontentid = [];
   let listcontentvalue = [];
   let nodelist: HTMLUListElement = document.getElementById(
     node
   ) as HTMLUListElement;
   let listSize = nodelist.childNodes.length;
-  $(nodelist.childNodes).each(function (childNode) {
+  $(nodelist.childNodes).each(function(childNode) {
     if (nodelist.childNodes[childNode].childNodes[0].textContent) {
       listcontentid.push(
         (nodelist.childNodes[childNode]
@@ -362,6 +388,7 @@ function fieldPlusMinusRepaintList(node) {
   while (nodelist.firstChild) {
     nodelist.removeChild(nodelist.firstChild);
   }
+  
   for (let i = 0; i < listSize; i++) {
     let tagLi = document.createElement("LI");
     let tagA = document.createElement("A");
@@ -370,11 +397,16 @@ function fieldPlusMinusRepaintList(node) {
     if (i < listcontentid.length) {
       tagA.setAttribute("id", listcontentid[i]);
       tagA.innerHTML = listcontentvalue[i];
+    }    
+
+    if(max_width_size > 84.5){
+      tagLi.setAttribute("style", "width: " + max_width_size + "px;")
     }
     tagLi.appendChild(tagA);
     nodelist.appendChild(tagLi);
   }
 }
+
 
 // Plus Minus
 const fieldPlusMinus = (id: string, params: any) => {
@@ -410,6 +442,7 @@ const fieldPlusMinus = (id: string, params: any) => {
         addNode(text_to_add, value_to_add, list, params.maxsize);
       }
     }
+    fieldPlusMinusRepaintList(node);
     $(idInput).val("");
   });
 
@@ -484,6 +517,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
         addNode(text_to_add, value_to_add, list, params.maxsize);
       }
     }
+    fieldPlusMinusRepaintList(node);
     $(idInput)
       .val(null)
       .trigger("change");
@@ -572,7 +606,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
         addNode(text_to_add, value_to_add, list, params.maxsize);
       }
     }
-
+    fieldPlusMinusRepaintList(node);
     $(idInput)
       .val(null)
       .trigger("change");
