@@ -1,0 +1,22 @@
+@import "../vars";
+
+[custom-tooltip] {
+  position: relative;
+}
+
+[custom-tooltip]:hover::after {
+  content: attr(custom-tooltip);
+  position: absolute;
+  bottom: -26px;
+  z-index: 99999;
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: $tooltip;
+  color: $font_color;
+  font-size: $font_size;
+  font-family: $font_family;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 8px 6px -8px $color-ink-lightest;
+}

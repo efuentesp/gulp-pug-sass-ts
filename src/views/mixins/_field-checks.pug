@@ -7,6 +7,7 @@ mixin field-checks(id, parms, ...items)
   - var _field_control_class = (parms.orientation=="horizontal" ? "flex" : "")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   - var check_name_arr = check_name + "[]"
+  - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
   .field(id=_field_id class=_class)
     .field-label.flex
@@ -15,7 +16,7 @@ mixin field-checks(id, parms, ...items)
         span.required.pr-5 *
       else
         span.pr-5
-    .field-control
+    .field-control(data-tooltip=_tooltip)
       div(class=_field_control_class)
         each item, index in items
           - var check_id = "chk_" + id + "_" + index

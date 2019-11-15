@@ -6,13 +6,14 @@ mixin field-textarea(id, parms)
     - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
     - var _input_max_length = (parms.max_length ? parms.max_length : "32")
     - var _input_max_length_errmsg = "Solo puedes ingresar hasta " + _input_max_length + " caracteres."
+    - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
     .field(id=_field_id class=_class)
         .field-label.flex
             label(for=_input_id)= parms.label
             if parms.required
                 span.required *
-        .field-control
+        .field-control(data-tooltip=_tooltip)
             textarea.input(type="text"
                 id=_input_id
                 rows="4"

@@ -104,11 +104,28 @@ $(document).tooltip({
   disabled: true
 });
 
-// Coloca el atributo "title" al botón para que aparezca el tooltip
-$(".button").each(function (i, obj) {
-  // const label = $(`#${obj.id} span`).html();
+// Coloca el atributo "custom-tooltip" al botón para que aparezca el tooltip
+$(".button").each(function(i, obj) {  
   const label = $(`#${obj.id}`).attr("data-tooltip");
-  $(`#${obj.id}`).attr("title", label);
+  $(`#${obj.id}`).attr("custom-tooltip", label);
+});
+
+// Coloca el atributo "custom-tooltip" a los div, con la clase field-control, para que aparezca el tooltip
+$('div[class*="field-control"]').each(function(index,item){  
+  if(item.attributes.getNamedItem("data-tooltip")){
+    let value = item.attributes.getNamedItem("data-tooltip").value
+    if(value)
+      item.setAttribute("custom-tooltip", value)
+  }
+});
+
+// Coloca el atributo "custom-tooltip" a los div, con la clase field-plus-minus, para que aparezca el tooltip
+$('div[class*="field-plus-minus"]').each(function(index,item){  
+  if(item.attributes.getNamedItem("data-tooltip")){
+    let value = item.attributes.getNamedItem("data-tooltip").value
+    if(value)
+      item.setAttribute("custom-tooltip", value)
+  }
 });
 
 // Tabs
