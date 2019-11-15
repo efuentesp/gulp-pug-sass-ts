@@ -55,3 +55,64 @@
     justify-content: flex-end;
   }
 }
+
+#resizable {
+  background-position: top left;
+  // border: 1px;
+  width: 100%;
+  height: 100%;
+}
+#resizable,
+#also {
+  width: 150px;
+  height: 120px;
+  padding: 0.5em;
+}
+#resizable h3,
+#also h3 {
+  text-align: center;
+  margin: 0;
+}
+#also {
+  margin-top: 1em;
+}
+
+#splitter-container {
+  float: left;
+  width: 100%;
+  height: 700px;
+  // top: 100px;
+  // left: 100px;
+  position: relative;
+  // background: #888;
+}
+.ui-resizable-e {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  position: absolute;
+  // background: #333;
+  cursor: e-resize;
+}
+
+#simple {
+  width: 100%;
+  height: 700px;
+  // top: 100px;
+  // left: 100px;
+  position: relative;
+  // background: #888;
+}
+
+#resultadosMensuales {
+  width: 100%;
+  position: relative;
+  height: 700px;
+}
+
+#resultadosAcumulados {
+  width: 100%;
+  position: relative;
+  height: 700px;
+}
