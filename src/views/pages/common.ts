@@ -409,7 +409,7 @@ function fieldPlusMinusRepaintList(node) {
 
 // Plus Minus
 const fieldPlusMinus = (id: string, params: any) => {
-  console.log("Field Plus Minus");
+  // console.log("Field Plus Minus");
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
@@ -2879,24 +2879,26 @@ $(".number").mask("###,###,##0.00", { reverse: true });
 $(".integer").mask("###,###,##0", { reverse: true });
 $(".datepicker").mask("99-99-9999");
 
-$("input").on({
-  mouseenter: function(e) {
-    // console.log("hover", e);
-    const hasError = $(e.target).hasClass("parsley-error");
-    if (hasError) {
-      const fieldErrorQuerySelector = `#field_${e.target.id} .field-error`;
-      const fieldError = $(fieldErrorQuerySelector);
-      console.log(fieldErrorQuerySelector);
-      fieldError.css("display", "flex");
-    }
-  },
-  mouseleave: function(e) {
-    // console.log("out", e);
-    const hasError = $(e.target).hasClass("parsley-error");
-    if (hasError) {
-      const fieldErrorQuerySelector = `#field_${e.target.id} .field-error`;
-      const fieldError = $(fieldErrorQuerySelector);
-      fieldError.css("display", "none");
-    }
-  }
-});
+const putErrorsInAttrTitle = (e: any) => {
+  return $(e.$element).attr("title", e.getErrorsMessages().join("<br />"));
+}
+// $("input").on({
+//   mouseenter: function(e) {
+//     // console.log("hover", e);
+//     const hasError = $(e.target).hasClass("parsley-error");
+//     if (hasError) {
+//       const fieldErrorQuerySelector = `#field_${e.target.id} .field-error`;
+//       const fieldError = $(fieldErrorQuerySelector);
+//       fieldError.css("display", "flex");
+//     }
+//   },
+//   mouseleave: function(e) {
+//     // console.log("out", e);
+//     const hasError = $(e.target).hasClass("parsley-error");
+//     if (hasError) {
+//       const fieldErrorQuerySelector = `#field_${e.target.id} .field-error`;
+//       const fieldError = $(fieldErrorQuerySelector);
+//       fieldError.css("display", "none");
+//     }
+//   }
+// });

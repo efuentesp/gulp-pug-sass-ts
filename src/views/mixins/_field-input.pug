@@ -16,7 +16,7 @@ mixin field-input(id, parms)
       label(for=_input_id)= parms.label
       if parms.required
         span.required *
-    .flex
+    .field-validated.flex
       if _type=="currency"
         span.currency-prefix $
       input.input(type="text"
