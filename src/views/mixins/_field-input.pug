@@ -1,5 +1,7 @@
 mixin field-input(id, parms)
   - var _field_id = "field_" + id
+  - var _field_error_block = "field_error_block_" + id
+  - var _field_error_block_id = "#" + _field_error_block
   - var _input_id = id
   - var _type = (parms.type ? parms.type : "alphanum") // alphanum, integer, number, currency
   - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
@@ -10,11 +12,11 @@ mixin field-input(id, parms)
   - var _class = (_class == "is_horizontal" ? _class + " items-center" : _class)
 
   .field(id=_field_id class=_class)
-    .field-label.flex
+    .field-label.flex.mr-3
       label(for=_input_id)= parms.label
       if parms.required
         span.required *
-    .field-control
+    .flex
       if _type=="currency"
         span.currency-prefix $
       input.input(type="text"
@@ -28,4 +30,8 @@ mixin field-input(id, parms)
         data-parsley-maxlength=_input_max_length
         data-parsley-maxlength-message=_input_max_length_errmsg
         data-parsley-validation-threshold="10"
+        data-parsley-errors-container=_field_error_block_id
         )
+      span.field-error.flex
+        .error-tip
+        .error-msg(id=_field_error_block)

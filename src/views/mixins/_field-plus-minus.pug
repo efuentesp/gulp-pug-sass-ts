@@ -33,8 +33,9 @@ mixin field-plus-minus(id, parms)
           img.plus-icon(src="../../assets/images/plus-icon.png")
         button.button-noborder(id=btn_minus_id type="button")
           img.minus-icon(src="../../assets/images/minus-icon.png")
-      .field-error
-        div(id=_field_error_block)
+      span.field-error.flex
+        .error-tip
+        .error-msg(id=_field_error_block)
       ul.tag-list(id=tag_list_id
                   style=_style
                   )

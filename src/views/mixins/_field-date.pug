@@ -16,7 +16,7 @@ mixin field-date(id, parms)
       label(for=_input_id)= parms.label
       if parms.required
         span.required *
-    .field-control
+    .flex
       .field-input.flex.items-center
         input.input(id=_input_id
           class=_datepicker_class
@@ -28,5 +28,6 @@ mixin field-date(id, parms)
         )
         if _btn_clear
           input.pl-1(type="image" id="clear_" +_input_id src="../../assets/images/meddelete.png"  style="width:15px;height:15px;")
-      .field-error
-        div(id=_field_error_block)
+        span.field-error.flex
+          .error-tip
+          .error-msg(id=_field_error_block)
