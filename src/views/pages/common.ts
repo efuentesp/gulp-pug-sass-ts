@@ -464,27 +464,27 @@ const fieldPlusMinus = (id: string, params: any) => {
   });
 
   $(idBtnMinus).click(() => {
-    var nodelist = document.getElementById(node);
     $(list + " li a").each(function (index) {
       if ($(idInput).val() != "") {
         if ($(this).text() === $(idInput).val()) {
           if (!definedNodes) {
-            nodelist.childNodes[index].remove();
+            $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
             $(list + " li").length = $(list + " li").length - 1;
-          } else {
+          } else { 
             if ($(list + " li").length <= 4) {
               $(this)
                 .find("a")
                 .first()
                 .removeAttr("id");
               $(this).text("");
-            } else {
-              nodelist.childNodes[index].remove();
+            } else {  
+              $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
+              $(this).text("");
               $(list + " li").length = $(list + " li").length - 1;
             }
-          }
-        }
-      }
+          } 
+        }  
+      }  
     });
     fieldPlusMinusRepaintList(node);
     $(idInput).val("");
@@ -541,32 +541,32 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
   });
 
   $(idBtnMinus).click(() => {
-    var nodelist = document.getElementById(node);
     $(list + " li a").each(function (index) {
-      if ($(this).attr("id") === $(idInput).val()) {
-        if (!definedNodes) {
-          nodelist.childNodes[index].remove();
-          $(list + " li").length = $(list + " li").length - 1;
-        } else {
-          if ($(list + " li").length <= 4) {
-            $(this)
-              .find("a")
-              .first()
-              .removeAttr("id");
-            $(this).text("");
-          } else {
-            nodelist.childNodes[index].remove();
+      if ($(idInput).val() != "") {
+        if ($(this).text() === $(idInput).val()) {
+          if (!definedNodes) {
+            $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
             $(list + " li").length = $(list + " li").length - 1;
-          }
-        }
-      }
+          } else { 
+            if ($(list + " li").length <= 4) {
+              $(this)
+                .find("a")
+                .first()
+                .removeAttr("id");
+              $(this).text("");
+            } else {  
+              $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
+              $(this).text("");
+              $(list + " li").length = $(list + " li").length - 1;
+            }
+          } 
+        }  
+      }  
     });
-
     fieldPlusMinusRepaintList(node);
-
     $(idInput)
-      .val(null)
-      .trigger("change");
+    .val(null)
+    .trigger("change");
   });
 
   $(list).delegate(".delete_item", "click", function () {
@@ -630,11 +630,10 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   });
 
   $(idBtnMinus).click(() => {
-    var nodelist = document.getElementById(node);
     $(list + " li a").each(function (index) {
       if ($(this).attr("id") === $(idInput).val()) {
         if (!definedNodes) {
-          nodelist.childNodes[index].remove();
+          $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
           $(list + " li").length = $(list + " li").length - 1;
         } else {
           if ($(list + " li").length <= 4) {
@@ -644,15 +643,14 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
               .removeAttr("id");
             $(this).text("");
           } else {
-            nodelist.childNodes[index].remove();
+            $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
+            $(this).text("");
             $(list + " li").length = $(list + " li").length - 1;
           }
         }
       }
     });
-
     fieldPlusMinusRepaintList(node);
-
     $(idInput)
       .val(null)
       .trigger("change");
