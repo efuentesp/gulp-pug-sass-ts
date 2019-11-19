@@ -416,7 +416,7 @@ function fieldPlusMinusRepaintList(node) {
       tagA.innerHTML = listcontentvalue[i];
     }    
 
-    if(max_width_size > 84.5){
+    if(max_width_size >= 77.9){
       tagLi.setAttribute("style", "width: " + max_width_size + "px;")
     }
     tagLi.appendChild(tagA);

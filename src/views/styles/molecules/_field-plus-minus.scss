@@ -31,6 +31,12 @@
       background-color: $color-sky-light;
     }
   }
+  .of_none {
+    -ms-overflow-style: none;
+  }
+  .of_scrollbar {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
 }
 
 .button-noborder {
