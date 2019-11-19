@@ -2880,8 +2880,26 @@ $(".integer").mask("###,###,##0", { reverse: true });
 $(".datepicker").mask("99-99-9999");
 
 const putErrorsInAttrTitle = (e: any) => {
-  return $(e.$element).attr("title", e.getErrorsMessages().join("<br />"));
+  if(e.$element.tooltip('instance') != undefined) {
+    e.$element.tooltip('destroy');
+  }
+
+  e.$element.tooltip({
+    content: e.getErrorsMessages().join("<br />"),
+    items: e.$element,
+    position: { my: 'left center', at: 'right+10 center' }
+  });
+
+  // e.$element.tooltip('open');
+  // $(e.$element).attr("title", e.getErrorsMessages().join("<br />"));
 }
+
+const removeErrorsInAttrTitle = (e: any) => {
+  if(e.$element.tooltip('instance') != undefined) {
+    e.$element.tooltip('destroy');
+  }
+}
+
 // $("input").on({
 //   mouseenter: function(e) {
 //     // console.log("hover", e);

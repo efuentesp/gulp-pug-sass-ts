@@ -2,6 +2,9 @@ console.log("form-validation");
 
 ($("#new-customer") as any)
   .parsley()
+  .on("field:success", (e) => {
+    removeErrorsInAttrTitle(e);
+  })
   .on("field:error", (e) => {
     putErrorsInAttrTitle(e);
     // $(e.$element).attr("title", e.getErrorsMessages().join("<br />"));
