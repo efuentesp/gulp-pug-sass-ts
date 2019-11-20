@@ -48,11 +48,11 @@ rpc(rpc_url, rpc_parms, (data, textStatus, jQxhr) => {
 
 const form = ($("#criterios-busqueda") as any)
   .parsley()
-  .on("field:validated", () => {
-    const ok = $(".parsley-error").length === 0;
-    // console.log("Errores de validación", $(".parsley-error"))
-    // $(".callout-info").toggleClass("hidden", !ok);
-    // $(".callout-warning").toggleClass("hidden", ok);
+  .on("field:success", (e) => {
+    removeErrorsInAttrTitle(e);
+  })
+  .on("field:error", (e) => {
+    putErrorsInAttrTitle(e);
   })
   .on("form:submit", e => {
     console.log("form:submit", e);
