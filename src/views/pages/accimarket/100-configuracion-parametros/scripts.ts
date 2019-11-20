@@ -70,6 +70,7 @@ $(window).on("resize", function() {
   const gridWidth = $("#div-spreads-grid")
     .parent()
     .width();
+    console.log("******************************* gridWidth: " + gridWidth);    
   $("#table_spreads").jqGrid("setGridWidth", gridWidth, true);
 });
 

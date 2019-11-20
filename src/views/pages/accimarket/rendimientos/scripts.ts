@@ -1,4 +1,8 @@
 /// <reference path="../../typings/index.d.ts" />
+let numColumns = 2;
+let widthTableResultadosMensuales = 678;
+let widthColumnsResultadosMensuales = widthTableResultadosMensuales / numColumns;
+
 console.log("Rendimientos");
 var selected;
 ($("#cmbRenta") as any).select2({
@@ -91,10 +95,32 @@ var validaFechaInicial = function() {
   }
 };
 
+const isSelectedColumn = (columnName:String, selectedColumns: any) => {
+  let isSelected: boolean = false;
+
+  for( var i=0; i<selectedColumns.length; i++ ){
+    if( selectedColumns[i] == columnName ){
+      isSelected = true;
+      break;
+    }
+  }
+
+  return isSelected;
+};
+
 $('input[name="chk_cmbOpcionesRendi"]').change(function() {
-  console.log(
-    "Checkbox ejemplo " + $(this).is(":checked") + " " + $(this).val()
-  );
+  if( $(this).is(":checked") ){
+    numColumns = numColumns + 1;
+  }else{
+    numColumns = numColumns - 1;
+  }
+  
+  var gridWidth = $("#splitter-container").parent().width();
+  if( gridWidth > widthTableResultadosMensuales ){
+    gridWidth = widthTableResultadosMensuales;
+  }  
+  widthColumnsResultadosMensuales = gridWidth / numColumns;
+  
   if ($(this).is(":checked")) {
     $("#table_resultadosMensuales").jqGrid("showCol", $(this).val());
     $("#table_resultadosAcumulados").jqGrid("showCol", $(this).val());
@@ -106,6 +132,40 @@ $('input[name="chk_cmbOpcionesRendi"]').change(function() {
     $("#table_resultadosMensualesTWP").jqGrid("hideCol", $(this).val());
     $("#table_resultadosAcumuladosTWP").jqGrid("hideCol", $(this).val());
   }
+
+  let selectedColumns: any = verificaSeleccionados();
+
+  //-------------------------------------------------------------------------------------------
+  var colModel = $("#table_resultadosMensuales").jqGrid('getGridParam', 'colModel');
+
+  $("#table_resultadosMensuales").jqGrid("setGridWidth", gridWidth, true);    
+
+  for( var j = 0; j<colModel.length; j++ ) {
+    $("#table_resultadosMensuales").jqGrid('resizeColumn', colModel[j].name, 0);  
+
+    if( j < 2 || isSelectedColumn(colModel[j].name, selectedColumns) ){  
+      $("#table_resultadosMensuales").jqGrid('resizeColumn', colModel[j].name, widthColumnsResultadosMensuales); 
+     }
+  }
+
+  $("#gbox_table_resultadosMensuales").attr("style", "width: " + gridWidth + "px;");
+  $("#gview_table_resultadosMensuales").attr("style", "width: " + gridWidth + "px;");
+  //-------------------------------------------------------------------------------------------
+  var colModel = $("#table_resultadosAcumulados").jqGrid('getGridParam', 'colModel');
+
+  $("#table_resultadosAcumulados").jqGrid("setGridWidth", gridWidth, true);    
+
+  for( var j = 0; j<colModel.length; j++ ) {
+    $("#table_resultadosAcumulados").jqGrid('resizeColumn', colModel[j].name, 0);  
+
+    if( j < 2 || isSelectedColumn(colModel[j].name, selectedColumns) ){  
+      $("#table_resultadosAcumulados").jqGrid('resizeColumn', colModel[j].name, widthColumnsResultadosMensuales); 
+     }
+  }
+
+  $("#gbox_table_resultadosAcumulados").attr("style", "width: " + gridWidth + "px;");
+  $("#gview_table_resultadosAcumulados").attr("style", "width: " + gridWidth + "px;");
+
 });
 
 const verificaSeleccionados = () => {
@@ -249,38 +309,42 @@ $("#btn_search").click(function() {
   }
 });
 
-const gridRMWidth = $("#div-resultadosMensuales-grid")
-.parent()
-.width();
+//_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_
+$(window).on("resize", function() {
+  var gridWidth = $("#splitter-container")
+    .parent()
+    .width();
+
+  if( gridWidth > widthTableResultadosMensuales ){
+    gridWidth = widthTableResultadosMensuales;
+  }  
+
+  console.log("******************************* gridWidth: " + gridWidth);  
+  $("#table_resultadosMensuales").jqGrid("setGridWidth", gridWidth, true);
+  $("#table_resultadosAcumulados").jqGrid("setGridWidth", gridWidth, true);
+});
+//_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_
 
 $("#table_resultadosMensuales").jqGrid({
   datatype: "local",
   height: "70",
   sortable: true,
-  width: gridRMWidth,
+  width: widthTableResultadosMensuales,
   colNames: [
-    "Periodo",
-    "Portafolio %",
-    "Inflacion %",
-    "IPC %",
-    "Cetes 28 %",
-    "Deval %",
-    "Soc Inv RF-PM %",
-    "Cetes 91 %",
-    "Soc Inv RV %",
-    "INMEX %"
+             "Periodo", "Portafolio %", "Inflacion %", "IPC %", "Cetes 28 %", 
+             "Deval %", "Soc Inv RF-PM %", "Cetes 91 %", "Soc Inv RV %", "INMEX %"
   ],
   colModel: [
-    { name: "periodo", width: 60, align: "center", frozen: true },
-    { name: "portafolio", width: 60, align: "center", frozen: true },
-    { name: "S01", width: 60, hidden: true, align: "center" },
-    { name: "S02", width: 60, hidden: true, align: "center" },
-    { name: "S03", width: 60, hidden: true, align: "center" },
-    { name: "S04", width: 60, hidden: true, align: "center" },
-    { name: "S05", width: 60, hidden: true, align: "center" },
-    { name: "S06", width: 60, hidden: true, align: "center" },
-    { name: "S07", width: 60, hidden: true, align: "center" },
-    { name: "S08", width: 60, hidden: true, align: "center" }
+    { name: "periodo", width: widthColumnsResultadosMensuales, align: "center" },
+    { name: "portafolio", width: widthColumnsResultadosMensuales, align: "center" },
+    { name: "S01", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
+    { name: "S02", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
+    { name: "S03", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
+    { name: "S04", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
+    { name: "S05", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
+    { name: "S06", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
+    { name: "S07", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
+    { name: "S08", width: widthColumnsResultadosMensuales, hidden: true, align: "center" }
   ],
   rowNum: 10,
   rowList: [10, 20, 30],
@@ -290,7 +354,6 @@ $("#table_resultadosMensuales").jqGrid({
   autoencode: true,
   caption: ""
 });
-
 
 $("#table_resultadosfuente").jqGrid({
   datatype: "local",
@@ -1218,16 +1281,16 @@ $("#graficaAcumuladosTWP").hide();
 //   maxHeight:100
 // });
 
-$("#splitter-container").resizable({ handles: "e" });
-$("#simple").resizable({ handles: "e" });
+// $("#splitter-container").resizable({ handles: "e" });
+// $("#simple").resizable({ handles: "e" });
 // $("#resultadosMensuales").resizable({ handles: "e" });
 // $("#resultadosAcumulados").resizable({ handles: "e" });
 // $(window).resize(function() { alert("Window resized"); });
 
 // $( "#also" ).resizable();
-$(window).on("resize", function() {
-  const gridRMWidth = $("#div-resultadosMensuales-grid")
-    .parent()
-    .width();
-  $("#table_resultadosMensuales").jqGrid("setGridWidth", gridRMWidth, true);
-});
+// $(window).on("resize", function() {
+//   const gridRMWidth = $("#div-resultadosMensuales-grid")
+//     .parent()
+//     .width();
+//   $("#table_resultadosMensuales").jqGrid("setGridWidth", gridRMWidth, true);
+// });

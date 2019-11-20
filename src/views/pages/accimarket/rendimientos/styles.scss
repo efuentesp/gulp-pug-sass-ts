@@ -102,17 +102,26 @@
   // top: 100px;
   // left: 100px;
   position: relative;
+  margin-left: 0px;
   // background: #888;
 }
 
-#resultadosMensuales {
-  width: 100%;
-  position: relative;
-  height: 700px;
-}
+// #resultadosMensuales {
+//   width: 100%;
+//   position: relative;
+//   height: 700px;
+// }
 
-#resultadosAcumulados {
-  width: 100%;
-  position: relative;
-  height: 700px;
-}
+// #resultadosAcumulados {
+//   width: 100%;
+//   position: relative;
+//   height: 700px;
+// }
+
+//#table_resultadosMensuales {
+  //table-layout: fixed;
+  //width: 678px;
+  //min-width: 678px;
+  //max-width: 600px;
+  //overflow: visible;
+//}
