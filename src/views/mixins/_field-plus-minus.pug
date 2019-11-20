@@ -10,6 +10,7 @@ mixin field-plus-minus(id, parms)
   - var tag_list_id = "tag_list_" + id
   - var _field_error_block = "field_error_block_" + id
   - var _field_error_block_id = "#" + _field_error_block
+  - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
   .field(id=_field_id class=_class)
     .field-label.flex
@@ -17,7 +18,7 @@ mixin field-plus-minus(id, parms)
       if parms.required
         span.required *
     .field-control
-      .field-plus-minus.has-addons.flex
+      .field-plus-minus.has-addons.flex(data-tooltip=_tooltip)
         input.input(type="text"
                     id=_input_id
                     required=parms.required

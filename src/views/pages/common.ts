@@ -108,7 +108,25 @@ $(document).tooltip({
 $(".button").each(function(i, obj) {
   // const label = $(`#${obj.id} span`).html();
   const label = $(`#${obj.id}`).attr("data-tooltip");
-  $(`#${obj.id}`).attr("title", label);
+  $(`#${obj.id}`).attr("custom-tooltip", label);
+});
+
+// Coloca el atributo "custom-tooltip" a los div, con la clase field-control, para que aparezca el tooltip
+$('div[class*="field-control"]').each(function(index,item){
+  if(item.attributes.getNamedItem("data-tooltip")){
+    let value = item.attributes.getNamedItem("data-tooltip").value
+    if(value)
+      item.setAttribute("custom-tooltip", value)
+  }
+});
+
+// Coloca el atributo "custom-tooltip" a los div, con la clase field-plus-minus, para que aparezca el tooltip
+$('div[class*="field-plus-minus"]').each(function(index,item){
+  if(item.attributes.getNamedItem("data-tooltip")){
+    let value = item.attributes.getNamedItem("data-tooltip").value
+    if(value)
+      item.setAttribute("custom-tooltip", value)
+  }
 });
 
 // Tabs
@@ -399,8 +417,8 @@ function fieldPlusMinusRepaintList(node) {
       tagA.innerHTML = listcontentvalue[i];
     }
 
-    if (max_width_size > 84.5) {
-      tagLi.setAttribute("style", "width: " + max_width_size + "px;");
+    if(max_width_size >= 77.9){
+      tagLi.setAttribute("style", "width: " + max_width_size + "px;")
     }
     tagLi.appendChild(tagA);
     nodelist.appendChild(tagLi);
@@ -446,12 +464,11 @@ const fieldPlusMinus = (id: string, params: any) => {
   });
 
   $(idBtnMinus).click(() => {
-    var nodelist = document.getElementById(node);
-    $(list + " li a").each(function(index) {
+    $(list + " li a").each(function (index) {
       if ($(idInput).val() != "") {
         if ($(this).text() === $(idInput).val()) {
           if (!definedNodes) {
-            nodelist.childNodes[index].remove();
+            $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
             $(list + " li").length = $(list + " li").length - 1;
           } else {
             if ($(list + " li").length <= 4) {
@@ -461,7 +478,8 @@ const fieldPlusMinus = (id: string, params: any) => {
                 .removeAttr("id");
               $(this).text("");
             } else {
-              nodelist.childNodes[index].remove();
+              $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
+              $(this).text("");
               $(list + " li").length = $(list + " li").length - 1;
             }
           }
@@ -523,32 +541,32 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
   });
 
   $(idBtnMinus).click(() => {
-    var nodelist = document.getElementById(node);
-    $(list + " li a").each(function(index) {
-      if ($(this).attr("id") === $(idInput).val()) {
-        if (!definedNodes) {
-          nodelist.childNodes[index].remove();
-          $(list + " li").length = $(list + " li").length - 1;
-        } else {
-          if ($(list + " li").length <= 4) {
-            $(this)
-              .find("a")
-              .first()
-              .removeAttr("id");
-            $(this).text("");
-          } else {
-            nodelist.childNodes[index].remove();
+    $(list + " li a").each(function (index) {
+      if ($(idInput).val() != "") {
+        if ($(this).text() === $(idInput).val()) {
+          if (!definedNodes) {
+            $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
             $(list + " li").length = $(list + " li").length - 1;
+          } else {
+            if ($(list + " li").length <= 4) {
+              $(this)
+                .find("a")
+                .first()
+                .removeAttr("id");
+              $(this).text("");
+            } else {
+              $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
+              $(this).text("");
+              $(list + " li").length = $(list + " li").length - 1;
+            }
           }
         }
       }
     });
-
     fieldPlusMinusRepaintList(node);
-
     $(idInput)
-      .val(null)
-      .trigger("change");
+    .val(null)
+    .trigger("change");
   });
 
   $(list).delegate(".delete_item", "click", function() {
@@ -612,11 +630,10 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   });
 
   $(idBtnMinus).click(() => {
-    var nodelist = document.getElementById(node);
-    $(list + " li a").each(function(index) {
+    $(list + " li a").each(function (index) {
       if ($(this).attr("id") === $(idInput).val()) {
         if (!definedNodes) {
-          nodelist.childNodes[index].remove();
+          $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
           $(list + " li").length = $(list + " li").length - 1;
         } else {
           if ($(list + " li").length <= 4) {
@@ -626,15 +643,14 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
               .removeAttr("id");
             $(this).text("");
           } else {
-            nodelist.childNodes[index].remove();
+            $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
+            $(this).text("");
             $(list + " li").length = $(list + " li").length - 1;
           }
         }
       }
     });
-
     fieldPlusMinusRepaintList(node);
-
     $(idInput)
       .val(null)
       .trigger("change");
@@ -2884,19 +2900,58 @@ const putErrorsInAttrTitle = (e: any) => {
     e.$element.tooltip('destroy');
   }
 
-  e.$element.tooltip({
-    content: e.getErrorsMessages().join("<br />"),
-    items: e.$element,
-    position: { my: 'left center', at: 'right+10 center' }
-  });
+  console.log(e.$element);
+  console.log(e.getErrorsMessages());
+  const isInput = $(e.$element).hasClass("input");
+  const isMultiSelect = $(e.$element).is("select[multiple='multiple']");
+  if (isInput || isMultiSelect) {
+    e.$element.tooltip({
+      content: e.getErrorsMessages().join("<br />"),
+      items: e.$element,
+      position: { my: 'left center', at: 'right+10 center' }
+    });
+  }
 
-  // e.$element.tooltip('open');
-  // $(e.$element).attr("title", e.getErrorsMessages().join("<br />"));
+  if(e.$element.next(".checkmark").tooltip('instance') != undefined) {
+    e.$element.next(".checkmark").tooltip('destroy');
+  }
+
+  const isRadio = $(e.$element).is("input[type='radio']");
+  const isCheckbox = $(e.$element).is("input[type='checkbox']");
+  if (isRadio || isCheckbox) {
+    e.$element.next(".checkmark").tooltip({
+      content: e.getErrorsMessages().join("<br />"),
+      items: e.$element.next(".checkmark"),
+      position: { my: 'left center', at: 'right+10 center' }
+    });
+  }
+
+  if(e.$element.next(".select2").tooltip('instance') != undefined) {
+    e.$element.next(".select2").tooltip('destroy');
+  }
+
+  const isSelect2 = $(e.$element).is("select");
+  if (isSelect2) {
+    console.log(e.$element.next(".select2"));
+    e.$element.next(".select2").tooltip({
+      content: e.getErrorsMessages().join("<br />"),
+      items: e.$element.next(".select2"),
+      position: { my: 'left center', at: 'right+10 center' }
+    });
+  }
 }
 
 const removeErrorsInAttrTitle = (e: any) => {
   if(e.$element.tooltip('instance') != undefined) {
     e.$element.tooltip('destroy');
+  }
+
+  if(e.$element.next(".checkmark").tooltip('instance') != undefined) {
+    e.$element.next(".checkmark").tooltip('destroy');
+  }
+
+  if(e.$element.next(".select2").tooltip('instance') != undefined) {
+    e.$element.next(".select2").tooltip('destroy');
   }
 }
 

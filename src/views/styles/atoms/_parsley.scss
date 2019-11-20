@@ -1,6 +1,24 @@
-.input {
+@import "../vars";
+
+.input,
+.multiselect {
   &.parsley-error {
     border: 1px solid $color-red-dark !important;
+  }
+}
+
+.radio_button.parsley-error,
+.checkbox_input.parsley-error {
+  span.checkmark {
+    border: 1px solid $color-red-dark;
+  }
+}
+
+select.select2.parsley-error {
+  & ~ span.select2 {
+    .select2-selection {
+      border: 1px solid $color-red-dark;
+    }
   }
 }
 

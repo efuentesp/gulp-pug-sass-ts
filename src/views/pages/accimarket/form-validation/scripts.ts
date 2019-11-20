@@ -7,7 +7,6 @@ console.log("form-validation");
   })
   .on("field:error", (e) => {
     putErrorsInAttrTitle(e);
-    // $(e.$element).attr("title", e.getErrorsMessages().join("<br />"));
   })
   .on("form:submit", () => {
     console.log("form:submit");

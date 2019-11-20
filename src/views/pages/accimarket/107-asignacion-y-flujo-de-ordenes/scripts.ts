@@ -448,6 +448,8 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
     });
 };
 
+var pageWidth = screen.width - 100;
+
 http_findAll("flujo", listaFlujo_params, payload => {
     llenaGridFlujoOrdenes(payload);
     const rec_count = payload.length;
@@ -455,12 +457,14 @@ http_findAll("flujo", listaFlujo_params, payload => {
 });
 
 const llenaGridFlujoOrdenes = (flujos: any) => {
+    console.log("---> ", flujos)
     $("#table_busquedaFlujo").jqGrid({
         pager: "#pager_busquedaFlujo",
         data: flujos,
         datatype: "local",
         height: "auto",
         shrinkToFit: false,
+        autoWidth: true,
         sortname: "flujo",
         sortorder: "desc",
         rowNum: 10,
@@ -471,7 +475,6 @@ const llenaGridFlujoOrdenes = (flujos: any) => {
         sortable: true,
         multiselect: false,
         caption: "",
-
         colNames: [
             "Emisora",
             "Mkt",
@@ -480,18 +483,26 @@ const llenaGridFlujoOrdenes = (flujos: any) => {
             "Prec. Asignado",
             "Vol. Ordenado",
             "Vol. Pendiente",
-            "Vol. Asignado"
+            "Vol. Asignado",
+            "Tipo"
         ],
         colModel: [
-            { name: "emisora", width: 200 },
-            { name: "mkt", width: 200 },
-            { name: "totaldeOrdenes", width: 200 },
-            { name: "precOrdenados", width: 150 },
-            { name: "precAsignado", width: 150 },
-            { name: "volOrdenado", width: 150 },
-            { name: "volPendiente", width: 150 },
-            { name: "volAsignado", width: 150 }
-        ]
+            { name: "emisora", width: (pageWidth * (11.11 / 100)) },
+            { name: "mkt", width: (pageWidth * (11.11 / 100)) },
+            { name: "totaldeOrdenes", width: (pageWidth * (11.11 / 100)) },
+            { name: "precOrdenados", width: (pageWidth * (11.11 / 100)) },
+            { name: "precAsignado", width: (pageWidth * (11.11 / 100)) },
+            { name: "volOrdenado", width: (pageWidth * (11.11 / 100)) },
+            { name: "volPendiente", width: (pageWidth * (11.11 / 100)) },
+            { name: "volAsignado", width: (pageWidth * (11.11 / 100)) },
+            { name: "tipo", width: (pageWidth * (11.11 / 100)) }
+        ],
+        grouping: true,
+        groupingView: {
+            groupField: ["emisora"],
+            groupColumnShow: [true],
+            groupOrder: ["asc"]
+        }
     });
 }
 

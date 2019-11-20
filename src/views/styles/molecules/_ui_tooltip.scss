@@ -11,3 +11,41 @@
   color: $color-white;
   box-shadow: 2px 2px $color-sky;
 }
+
+.ui-tooltip-content {
+  position: relative;
+  // padding: 1em;
+}
+
+.ui-tooltip-content::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  display: block;
+  width: 0;
+}
+
+.right .ui-tooltip-content::after {
+  top: 18px;
+  left: -10px;
+  border-color: transparent $color-red-dark;
+  border-width: 10px 10px 10px 0;
+}
+.left .ui-tooltip-content::after {
+  top: 18px;
+  right: -10px;
+  border-color: transparent $color-red-dark;
+  border-width: 10px 0 10px 10px;
+}
+.top .ui-tooltip-content::after {
+  bottom: -10px;
+  left: 72px;
+  border-color: $color-red-dark transparent;
+  border-width: 10px 10px 0;
+}
+.bottom .ui-tooltip-content::after {
+  top: -10px;
+  left: 72px;
+  border-color: $color-red-dark transparent;
+  border-width: 0 10px 10px;
+}
