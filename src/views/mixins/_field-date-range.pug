@@ -7,9 +7,10 @@ mixin field-date-range(id, parms)
   - var _input_max_length = (parms.max_length ? parms.max_length : "32")
   - var _input_max_length_errmsg = "Solo puedes ingresar hasta " + _input_max_length + " caracteres."
   - var _btn_clear =  parms.clear ? parms.clear : false
+  - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
   .field(id=_field_id class=_class)
-    .field-control.flex
+    .field-control.flex(data-tooltip=_tooltip)
     +field-date(_input_id + "_begin_date",
                 {
                   label: parms.begin_label,

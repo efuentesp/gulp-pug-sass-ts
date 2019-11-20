@@ -4,6 +4,8 @@ mixin field-switch(id, parms, ...items)
   - var _field_error_block_id = "#" + _field_error_block
   - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
+  - var _tooltip = (parms.tooltip ? parms.tooltip : "")
+
   .field(id=_field_id class=_class)
     .field-label.flex
       label.field-label= parms.label
@@ -11,7 +13,7 @@ mixin field-switch(id, parms, ...items)
         span.pr-5.required *
       else
         span.pr-5
-    .field-control.radio-toggle.has-toggle-input
+    .field-control.radio-toggle.has-toggle-input(data-tooltip=_tooltip)
         .form-check
             each item, index in items
                 - var item_id = "radio_" + id + "_" + index

@@ -1,11 +1,78 @@
-.input {
+@import "../vars";
+
+.input,
+.multiselect {
   &.parsley-error {
     border: 1px solid $color-red-dark !important;
+
+    &:hover {
+      border: 1px solid $color-blue !important;
+    }
   }
 }
 
-.parsley-errors-list {
-  li {
-    color: $color-red-dark;
+.field.parsley-error {
+  span.checkmark {
+    border: 1px solid $color-red-dark !important;
+
+    &:hover {
+      border: 1px solid $color-blue !important;
+    }
   }
 }
+
+select.select2.parsley-error {
+  & ~ span.select2 {
+    .select2-selection {
+      border: 1px solid $color-red-dark;
+
+      &:hover {
+        border: 1px solid $color-blue !important;
+      }
+    }
+  }
+}
+
+.field-error {
+  display: none;
+  // width: 180px;
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  border-radius: 0px 6px 6px 0px;
+  padding: 5px 0;
+  z-index: 1;
+  left: 30px;
+
+  .error-tip {
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 10px solid $color-red-dark;
+    position: absolute;
+    top: 16%;
+    left: -9px;
+  }
+
+  .error-msg {
+    float: left;
+    color: #fff;
+    background-color: $color-red-dark;
+    font-weight: bold;
+    border-radius: 3px 3px 3px 3px;
+    padding: 5px 8px;
+    margin-left: -1px;
+    margin-top: -5px;
+  }
+
+  &:hover {
+    display: flex;
+  }
+}
+
+// .parsley-errors-list {
+//   li {
+//     color: $color-red-dark;
+//   }
+// }

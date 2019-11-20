@@ -169,7 +169,6 @@ $('input[name="chk_cmbOpcionesRendi"]').change(function() {
 });
 
 const verificaSeleccionados = () => {
-  console.log("Search");
 
   let selected: any = [];
 
@@ -179,137 +178,121 @@ const verificaSeleccionados = () => {
     }
   });
 
-  console.log("Los seleccionados: " + selected);
-
   return selected;
 };
 
-const activaTIR = () => {
+const activaTIR = (selected: any[]) => {
+  
   const txtContrato: string = String($("#txtContrato").val());
 
   http_findOne("contratos", txtContrato, payload => {
     infoContratoRendimiento(payload);
-
-    $("#gbox_table_resultadosMensualesTWP").hide();
-    $("#graficaMensualTWP").hide();
-    $("#gbox_table_resultadosAcumuladosTWP").hide();
-    $("#graficaAcumuladosTWP").hide();
-    $("#gbox_table_resultadosMensuales").show();
-    $("#graficaMensual").show();
-    $("#gbox_table_resultadosAcumulados").show();
-    $("#graficaAcumulados").show();
 
     fillJqGrid("#table_resultadosMensuales", payload.listaMensuales);
-    graficaMensuales("graficaMensual", payload.listaMensuales);
+    graficaMensuales("graficaMensual", selected, payload.listaMensuales);
 
     fillJqGrid("#table_resultadosAcumulados", payload.listaAcumulados);
-    graficaAcumulados("graficaAcumulados", payload.listaAcumulados);
-    $("#table_resultadosMensuales").jqGrid("setColProp", "amount", {
-      width: 800
-    });
+    graficaAcumulados("graficaAcumulados", selected, payload.listaAcumulados);
+
   });
 };
 
-const activaTWP = () => {
+const activaTWP = (selected: any[]) => {
+
   const txtContrato: string = String($("#txtContrato").val());
 
   http_findOne("contratos", txtContrato, payload => {
     infoContratoRendimiento(payload);
 
-    $("#gbox_table_resultadosMensuales").hide();
-    $("#graficaMensual").hide();
-    $("#gbox_table_resultadosAcumulados").hide();
-    $("#graficaAcumulados").hide();
-    $("#gbox_table_resultadosMensualesTWP").show();
-    $("#graficaMensualTWP").show();
-    $("#gbox_table_resultadosAcumuladosTWP").show();
-    $("#graficaAcumuladosTWP").show();
-
-    $("#gbox_table_resultadosMensualesTWP").css({
-      top: 10,
-      left: 10,
-      position: "absolute"
-    });
-    $("#gbox_table_resultadosAcumuladosTWP").css({
-      top: 10,
-      left: 10,
-      position: "absolute"
-    });
-    $("#graficaMensualTWP")
-      .parent()
-      .css({ position: "relative" });
-    $("#graficaAcumuladosTWP")
-      .parent()
-      .css({ position: "relative" });
-
     fillJqGrid("#table_resultadosMensualesTWP", payload.listaMensualesTWP);
-    graficaMensualesTWP("graficaMensualTWP", payload.listaMensualesTWP);
+    graficaMensualesTWP("graficaMensualTWP", selected, payload.listaMensualesTWP);
 
     fillJqGrid("#table_resultadosAcumuladosTWP", payload.listaAcumuladosTWP);
-    graficaAcumuladosTWP("graficaAcumuladosTWP", payload.listaAcumuladosTWP);
+    graficaAcumuladosTWP("graficaAcumuladosTWP", selected, payload.listaAcumuladosTWP);
   });
 };
 
-const activaSeleccionados = () => {
-  const txtContrato: string = String($("#txtContrato").val());
+const openWindow = () => {
+  $("#gbox_table_resultadosMensualesTWP").hide();
+  $("#graficaMensualTWP").hide();
+  $("#gbox_table_resultadosAcumuladosTWP").hide();
+  $("#graficaAcumuladosTWP").hide();
+  $("#gbox_table_resultadosMensuales").show();
+  $("#graficaMensual").show();
+  $("#gbox_table_resultadosAcumulados").show();
+  $("#graficaAcumulados").show();
 
-  http_findOne("contratos", txtContrato, payload => {
-    infoContratoRendimiento(payload);
-    $("#gbox_table_resultadosMensuales").hide();
-    $("#graficaMensual").hide();
-    $("#gbox_table_resultadosAcumulados").hide();
-    $("#graficaAcumulados").hide();
-    $("#gbox_table_resultadosMensualesTWP").show();
-    $("#graficaMensualTWP").show();
-    $("#gbox_table_resultadosAcumuladosTWP").show();
-    $("#graficaAcumuladosTWP").show();
-
-    $("#gbox_table_resultadosMensualesTWP").css({
-      top: 10,
-      left: 10,
-      position: "absolute"
-    });
-    $("#gbox_table_resultadosAcumuladosTWP").css({
-      top: 10,
-      left: 10,
-      position: "absolute"
-    });
-    $("#graficaMensualTWP")
-      .parent()
-      .css({ position: "relative" });
-    $("#graficaAcumuladosTWP")
-      .parent()
-      .css({ position: "relative" });
-
-    fillJqGrid("#table_resultadosMensualesTWP", payload.listaMensualesTWP);
-    graficaMensualesTWP("graficaMensualTWP", payload.listaMensualesTWP);
-
-    fillJqGrid("#table_resultadosAcumuladosTWP", payload.listaAcumuladosTWP);
-    graficaAcumuladosTWP("graficaAcumuladosTWP", payload.listaAcumuladosTWP);
+  $("#table_resultadosMensuales").jqGrid("setColProp", "amount", {
+    width: 800
   });
-};
+};  
+
+const closeWindow = () => {
+  $("#gbox_table_resultadosMensuales").hide();
+  $("#graficaMensual").hide();
+  $("#gbox_table_resultadosAcumulados").hide();
+  $("#graficaAcumulados").hide();
+  $("#gbox_table_resultadosMensualesTWP").show();
+  $("#graficaMensualTWP").show();
+  $("#gbox_table_resultadosAcumuladosTWP").show();
+  $("#graficaAcumuladosTWP").show();
+
+  $("#gbox_table_resultadosMensualesTWP").css({
+    top: 10,
+    left: 10,
+    position: "absolute"
+  });
+  $("#gbox_table_resultadosAcumuladosTWP").css({
+    top: 10,
+    left: 10,
+    position: "absolute"
+  });
+  $("#graficaMensualTWP")
+    .parent()
+    .css({ position: "relative" });
+  $("#graficaAcumuladosTWP")
+    .parent()
+    .css({ position: "relative" });
+}; 
 
 // Boton search
 $("#btn_search").click(function() {
+  
   let selected = [];
-
   selected = verificaSeleccionados();
 
   if (selected.length > 0) {
+
+    if (test == true) {
+      if ($("#cmbModelosCalculoCombo").val() == "T") {
+        closeWindow();
+        activaTWP(selected);
+    }else{
+        openWindow();
+        activaTIR(selected);
+    }
+    }else{
+      alert("Fecha invalida");
+    }  
+
     return false;
   } else {
     
+    if (test == true) {
     if ($("#cmbModelosCalculoCombo").val() == "T") {
-      activaTWP();
+      closeWindow();
+      activaTWP(null);
     }else{
-      activaTIR();
+      openWindow();
+      activaTIR(null);
     }
-
+  }else{
+    alert("Fecha invalida");
+  }
     return false;
   }
 });
 
-//_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_
 $(window).on("resize", function() {
   var gridWidth = $("#splitter-container")
     .parent()
@@ -323,13 +306,13 @@ $(window).on("resize", function() {
   $("#table_resultadosMensuales").jqGrid("setGridWidth", gridWidth, true);
   $("#table_resultadosAcumulados").jqGrid("setGridWidth", gridWidth, true);
 });
-//_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_
 
 $("#table_resultadosMensuales").jqGrid({
   datatype: "local",
   height: "70",
   sortable: true,
   width: widthTableResultadosMensuales,
+
   colNames: [
              "Periodo", "Portafolio %", "Inflacion %", "IPC %", "Cetes 28 %", 
              "Deval %", "Soc Inv RF-PM %", "Cetes 91 %", "Soc Inv RV %", "INMEX %"
@@ -596,7 +579,44 @@ const infoContratoRendimiento = (payload: any) => {
   $("#txtClabe").val(payload.clabe);
 };
 
-const graficaMensuales = (tipoGrafica: string, listaMensuales: any) => {
+$('input[name="chk_cmbOpcionesRendi"]').change(function() {
+  let selected = [];
+  selected = verificaSeleccionados();
+
+  if (selected.length > 0) {
+
+    if (test == true) {
+      if ($("#cmbModelosCalculoCombo").val() == "T") {
+        closeWindow();
+        activaTWP(selected);
+    }else{
+        openWindow();
+        activaTIR(selected);
+    }
+    }else{
+      alert("Fecha invalida");
+    }  
+
+    return false;
+  } else {
+    
+    if (test == true) {
+    if ($("#cmbModelosCalculoCombo").val() == "T") {
+      closeWindow();
+      activaTWP(null);
+    }else{
+      openWindow();
+      activaTIR(null);
+    }
+  }else{
+    alert("Fecha invalida");
+  }
+    return false;
+  }
+});
+
+
+const graficaMensuales = (tipoGrafica: string, arrayCkeck:any[], listaMensuales: any) => {
   var dataSetY1 = [];
   var dataSetY2 = [];
   var dataSetY3 = [];
@@ -621,28 +641,11 @@ const graficaMensuales = (tipoGrafica: string, listaMensuales: any) => {
     dataSetY8.push(data.S07);
     dataSetY9.push(data.S08);
   }
-  $('input[name="chk_cmbOpcionesRendi"]').change(function() {
-    //selected = "";
-    let selected2: any = [];
 
-    $('input[name="chk_cmbOpcionesRendi"]').each(function() {
-      if ($(this).is(":checked")) {
-        //selected += $(this).val() + ", ";
-        selected2.push($(this).val());
-      }
-    });
-
-    // if (selected != "") alert("Has seleccionado: " + selected);
-    // else alert("Debes seleccionar al menos una opción.");
-    // return false;
-
-    pintaGrafica(selected2, "graficaMensual");
-  });
-  const pintaGrafica = (arrayCkeck: [], id: string) => {
+  // pintaGrafica(arrayCkeck, tipoGrafica);
+  // const pintaGrafica = (arrayCkeck: [], id: string) => {
     let array = [];
-
-    console.log("Check Pinta:" + arrayCkeck);
-
+  
     if (arrayCkeck == undefined) {
       array = [
         {
@@ -670,7 +673,7 @@ const graficaMensuales = (tipoGrafica: string, listaMensuales: any) => {
             data: dataSetY2
           });
         }
-
+  
         if (element == "S02") {
           array.push({
             type: "bar",
@@ -679,7 +682,7 @@ const graficaMensuales = (tipoGrafica: string, listaMensuales: any) => {
             data: dataSetY3
           });
         }
-
+  
         if (element == "S03") {
           array.push({
             type: "bar",
@@ -688,7 +691,7 @@ const graficaMensuales = (tipoGrafica: string, listaMensuales: any) => {
             data: dataSetY4
           });
         }
-
+  
         if (element == "S04") {
           array.push({
             type: "bar",
@@ -731,24 +734,25 @@ const graficaMensuales = (tipoGrafica: string, listaMensuales: any) => {
         }
       });
     }
+  // };
+  
+  simpleBarChart({
+    id: tipoGrafica,
+    titleX: "Período",
+    titleY: "Portafolio",
+    labels: dataSetX,
+    tickMaxY: 15.0,
+    tickMinY: -15 /*0*/,
+    tickStepY: 1,
+    width: "400px",
+    height: "200px",
+    dataSet: array
+  });
 
-    simpleBarChart({
-      id: id,
-      titleX: "Período",
-      titleY: "Portafolio",
-      labels: dataSetX,
-      tickMaxY: 15.0,
-      tickMinY: -15 /*0*/,
-      tickStepY: 1,
-      width: "400px",
-      height: "200px",
-      dataSet: array
-    });
-  };
-  pintaGrafica(null, tipoGrafica);
 };
 
-const graficaAcumulados = (tipoGrafica2: string, listaAcumulados: any) => {
+
+const graficaAcumulados = (tipoGrafica2: string, arrayCkeck:any[], listaAcumulados: any) => {
   var dataSetY10 = [];
   var dataSetY11 = [];
   var dataSetY12 = [];
@@ -773,28 +777,9 @@ const graficaAcumulados = (tipoGrafica2: string, listaAcumulados: any) => {
     dataSetY17.push(data.S07);
     dataSetY18.push(data.S08);
   }
-  $('input[name="chk_cmbOpcionesRendi"]').change(function() {
-    //selected = "";
-    let selected3: any = [];
 
-    $('input[name="chk_cmbOpcionesRendi"]').each(function() {
-      if ($(this).is(":checked")) {
-        //selected += $(this).val() + ", ";
-        selected3.push($(this).val());
-      }
-    });
-
-    // if (selected != "") alert("Has seleccionado: " + selected);
-    // else alert("Debes seleccionar al menos una opción.");
-    // return false;
-
-    pintaGrafica2(selected3, "graficaAcumulados");
-  });
-  const pintaGrafica2 = (arrayCkeck: [], id: string) => {
     let array = [];
-
-    console.log("Check Pinta:" + arrayCkeck);
-
+  
     if (arrayCkeck == undefined) {
       array = [
         {
@@ -822,7 +807,7 @@ const graficaAcumulados = (tipoGrafica2: string, listaAcumulados: any) => {
             data: dataSetY11
           });
         }
-
+  
         if (element == "S02") {
           array.push({
             type: "bar",
@@ -831,7 +816,7 @@ const graficaAcumulados = (tipoGrafica2: string, listaAcumulados: any) => {
             data: dataSetY12
           });
         }
-
+  
         if (element == "S03") {
           array.push({
             type: "bar",
@@ -840,7 +825,7 @@ const graficaAcumulados = (tipoGrafica2: string, listaAcumulados: any) => {
             data: dataSetY13
           });
         }
-
+  
         if (element == "S04") {
           array.push({
             type: "bar",
@@ -883,9 +868,9 @@ const graficaAcumulados = (tipoGrafica2: string, listaAcumulados: any) => {
         }
       });
     }
-
+  
     simpleBarAuxChart({
-      id: id,
+      id: tipoGrafica2,
       titleX: "Período",
       titleY: "Portafolio",
       labels: dataSetX1,
@@ -896,10 +881,14 @@ const graficaAcumulados = (tipoGrafica2: string, listaAcumulados: any) => {
       height: "200px",
       dataSet: array
     });
-  };
-  pintaGrafica2(null, tipoGrafica2);
+  
+  
 };
-const graficaMensualesTWP = (tipoGrafica3: string, listaMensualesTWP: any) => {
+
+
+
+
+const graficaMensualesTWP = (tipoGrafica3: string, arrayCkeck:any[], listaMensualesTWP: any) => {
   var dataSetY1 = [];
   var dataSetY2 = [];
   var dataSetY3 = [];
@@ -932,27 +921,8 @@ const graficaMensualesTWP = (tipoGrafica3: string, listaMensualesTWP: any) => {
     dataSetY12.push(data.S07);
     dataSetY13.push(data.S08);
   }
-  $('input[name="chk_cmbOpcionesRendi"]').change(function() {
-    //selected = "";
-    let selected4: any = [];
-
-    $('input[name="chk_cmbOpcionesRendi"]').each(function() {
-      if ($(this).is(":checked")) {
-        //selected += $(this).val() + ", ";
-        selected4.push($(this).val());
-      }
-    });
-
-    // if (selected != "") alert("Has seleccionado: " + selected);
-    // else alert("Debes seleccionar al menos una opción.");
-    // return false;
-    pintaGrafica3(selected4, "graficaMensualTWP");
-  });
-  const pintaGrafica3 = (arrayCkeck: [], id: string) => {
     let array = [];
-
-    console.log("Check Pinta:" + arrayCkeck);
-
+  
     if (arrayCkeck == undefined) {
       array = [
         {
@@ -1086,9 +1056,9 @@ const graficaMensualesTWP = (tipoGrafica3: string, listaMensualesTWP: any) => {
         }
       });
     }
-
+  
     simpleBarAux1Chart({
-      id: id,
+      id: tipoGrafica3,
       titleX: "Período",
       titleY: "Portafolio",
       labels: dataSetX,
@@ -1099,11 +1069,13 @@ const graficaMensualesTWP = (tipoGrafica3: string, listaMensualesTWP: any) => {
       height: "200px",
       dataSet: array
     });
-  };
-  pintaGrafica3(null, tipoGrafica3);
+
 };
+
+
+
 const graficaAcumuladosTWP = (
-  tipoGrafica3: string,
+  tipoGrafica4: string,arrayCkeck:any[],
   listaAcumuladosTWP: any
 ) => {
   var dataSetY1 = [];
@@ -1133,28 +1105,8 @@ const graficaAcumuladosTWP = (
     dataSetY10.push(data.S08);
   }
 
-  $('input[name="chk_cmbOpcionesRendi"]').change(function() {
-    //selected = "";
-    let selected4: any = [];
-
-    $('input[name="chk_cmbOpcionesRendi"]').each(function() {
-      if ($(this).is(":checked")) {
-        //selected += $(this).val() + ", ";
-        selected4.push($(this).val());
-      }
-    });
-
-    // if (selected != "") alert("Has seleccionado: " + selected);
-    // else alert("Debes seleccionar al menos una opción.");
-    // return false;
-
-    pintaGrafica4(selected4, "graficaAcumuladosTWP");
-  });
-  const pintaGrafica4 = (arrayCkeck: [], id: string) => {
     let array = [];
-
-    console.log("Check Pinta:" + arrayCkeck);
-
+  
     if (arrayCkeck == undefined) {
       array = [
         {
@@ -1252,9 +1204,9 @@ const graficaAcumuladosTWP = (
         }
       });
     }
-
+  
     simpleBarAux2Chart({
-      id: id,
+      id: tipoGrafica4,
       titleX: "Período",
       titleY: "Portafolio",
       labels: dataSetX,
@@ -1265,32 +1217,10 @@ const graficaAcumuladosTWP = (
       height: "200px",
       dataSet: array
     });
-  };
-  pintaGrafica4(null, tipoGrafica3);
+
 };
 
 $("#gbox_table_resultadosMensualesTWP").hide();
 $("#graficaMensualTWP").hide();
 $("#gbox_table_resultadosAcumuladosTWP").hide();
 $("#graficaAcumuladosTWP").hide();
-
-
-// $( "#resizable" ).resizable({
-//   // alsoResize: "#also"
-//   maxWidth:100,
-//   maxHeight:100
-// });
-
-// $("#splitter-container").resizable({ handles: "e" });
-// $("#simple").resizable({ handles: "e" });
-// $("#resultadosMensuales").resizable({ handles: "e" });
-// $("#resultadosAcumulados").resizable({ handles: "e" });
-// $(window).resize(function() { alert("Window resized"); });
-
-// $( "#also" ).resizable();
-// $(window).on("resize", function() {
-//   const gridRMWidth = $("#div-resultadosMensuales-grid")
-//     .parent()
-//     .width();
-//   $("#table_resultadosMensuales").jqGrid("setGridWidth", gridRMWidth, true);
-// });

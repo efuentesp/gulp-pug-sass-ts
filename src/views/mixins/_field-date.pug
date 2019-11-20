@@ -10,13 +10,14 @@ mixin field-date(id, parms)
   - var _field_error_block_id = "#" + _field_error_block
   - var _datepicker_class = (parms.datepicker_range ? "datepicker_range" : "datepicker")
   - var _btn_clear =  parms.clear ? parms.clear : false
+  - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
   .field(id=_field_id class=_class)
     .field-label.flex
       label(for=_input_id)= parms.label
       if parms.required
         span.required *
-    .field-control
+    .field-control(data-tooltip=_tooltip)
       .field-input.flex.items-center
         input.input(id=_input_id
           class=_datepicker_class
@@ -28,5 +29,6 @@ mixin field-date(id, parms)
         )
         if _btn_clear
           input.pl-1(type="image" id="clear_" +_input_id src="../../assets/images/meddelete.png"  style="width:15px;height:15px;")
-      .field-error
-        div(id=_field_error_block)
+        span.field-error.flex
+          .error-tip
+          .error-msg(id=_field_error_block)

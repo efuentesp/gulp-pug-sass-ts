@@ -18,10 +18,10 @@ block content
     +form("new-customer")
       .form-group
         .row
-          +field-input("id", {label: "ID", required: true, max_length: "6"})
-          +field-input("id", {label: "Nombre"})
+          +field-input("id", {label: "ID", tooltip: "Tooltip ID", required: true, max_length: "6"})
+          +field-input("id1", {label: "Nombre"})
           +field-input("name", {label: "Nombre", required: true, orientation: "horizontal"})
-          +field-input("name", {label: "Nombre", orientation: "horizontal"})
+          +field-input("name2", {label: "Nombre", orientation: "horizontal"})
         .row
           +field-email("email", {label: "E-mail", required: true})
           +field-email("email2", {label: "E-mail", required: true, orientation: "horizontal"})

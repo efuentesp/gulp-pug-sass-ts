@@ -553,84 +553,15 @@
   ],
   "flujo": [
     {
-      "emisora": "5292",
+      "emisora": "LIVERPOOOL",
       "mkt": "54",
       "totaldeOrdenes": "35",
       "precOrdenados": "24",
       "precAsignado": "100",
       "volOrdenado": "90",
       "volPendiente": "80",
-      "volAsignado": "99"
-    },
-    {
-      "emisora": "9042",
-      "mkt": "54",
-      "totaldeOrdenes": "35",
-      "precOrdenados": "24",
-      "precAsignado": "100",
-      "volOrdenado": "90",
-      "volPendiente": "80",
-      "volAsignado": "99"
-    },
-    {
-      "emisora": "2046",
-      "mkt": "54",
-      "totaldeOrdenes": "35",
-      "precOrdenados": "24",
-      "precAsignado": "100",
-      "volOrdenado": "90",
-      "volPendiente": "80",
-      "volAsignado": "99"
-    },
-    {
-      "emisora": "2383",
-      "mkt": "54",
-      "totaldeOrdenes": "35",
-      "precOrdenados": "24",
-      "precAsignado": "100",
-      "volOrdenado": "90",
-      "volPendiente": "80",
-      "volAsignado": "99"
-    },
-    {
-      "emisora": "8717",
-      "mkt": "54",
-      "totaldeOrdenes": "35",
-      "precOrdenados": "24",
-      "precAsignado": "100",
-      "volOrdenado": "90",
-      "volPendiente": "80",
-      "volAsignado": "99"
-    },
-    {
-      "emisora": "7843",
-      "mkt": "54",
-      "totaldeOrdenes": "35",
-      "precOrdenados": "24",
-      "precAsignado": "100",
-      "volOrdenado": "90",
-      "volPendiente": "80",
-      "volAsignado": "99"
-    },
-    {
-      "emisora": "CEMEX",
-      "mkt": "54",
-      "totaldeOrdenes": "35",
-      "precOrdenados": "24",
-      "precAsignado": "100",
-      "volOrdenado": "90",
-      "volPendiente": "80",
-      "volAsignado": "99"
-    },
-    {
-      "emisora": "NUTRISA",
-      "mkt": "54",
-      "totaldeOrdenes": "35",
-      "precOrdenados": "24",
-      "precAsignado": "100",
-      "volOrdenado": "90",
-      "volPendiente": "80",
-      "volAsignado": "99"
+      "volAsignado": "99",
+      "tipo": "VTA"
     },
     {
       "emisora": "LIVERPOOOL",
@@ -640,7 +571,85 @@
       "precAsignado": "100",
       "volOrdenado": "90",
       "volPendiente": "80",
-      "volAsignado": "99"
+      "volAsignado": "99",
+      "tipo": "VTA"
+    },
+    {
+      "emisora": "LIVERPOOOL",
+      "mkt": "54",
+      "totaldeOrdenes": "35",
+      "precOrdenados": "24",
+      "precAsignado": "100",
+      "volOrdenado": "90",
+      "volPendiente": "80",
+      "volAsignado": "99",
+      "tipo": "CPA"
+    },
+    {
+      "emisora": "NUTRISA",
+      "mkt": "54",
+      "totaldeOrdenes": "35",
+      "precOrdenados": "24",
+      "precAsignado": "100",
+      "volOrdenado": "90",
+      "volPendiente": "80",
+      "volAsignado": "99",
+      "tipo": "CPA"
+    },
+    {
+      "emisora": "NUTRISA",
+      "mkt": "54",
+      "totaldeOrdenes": "35",
+      "precOrdenados": "24",
+      "precAsignado": "100",
+      "volOrdenado": "90",
+      "volPendiente": "80",
+      "volAsignado": "99",
+      "tipo": "VTA"
+    },
+    {
+      "emisora": "NUTRISA",
+      "mkt": "54",
+      "totaldeOrdenes": "35",
+      "precOrdenados": "24",
+      "precAsignado": "100",
+      "volOrdenado": "90",
+      "volPendiente": "80",
+      "volAsignado": "99",
+      "tipo": "VTA"
+    },
+    {
+      "emisora": "CEMEX",
+      "mkt": "54",
+      "totaldeOrdenes": "35",
+      "precOrdenados": "24",
+      "precAsignado": "100",
+      "volOrdenado": "90",
+      "volPendiente": "80",
+      "volAsignado": "99",
+      "tipo": "CPA"
+    },
+    {
+      "emisora": "CEMEX",
+      "mkt": "54",
+      "totaldeOrdenes": "35",
+      "precOrdenados": "24",
+      "precAsignado": "100",
+      "volOrdenado": "90",
+      "volPendiente": "80",
+      "volAsignado": "99",
+      "tipo": "CPA"
+    },
+    {
+      "emisora": "CEMEX",
+      "mkt": "54",
+      "totaldeOrdenes": "35",
+      "precOrdenados": "24",
+      "precAsignado": "100",
+      "volOrdenado": "90",
+      "volPendiente": "80",
+      "volAsignado": "99",
+      "tipo": "VTA"
     },
     {
       "emisora": "CHEDRAUI",
@@ -650,7 +659,52 @@
       "precAsignado": "100",
       "volOrdenado": "90",
       "volPendiente": "80",
-      "volAsignado": "99"
+      "volAsignado": "99",
+      "tipo": "VTA"
+    },
+    {
+      "emisora": "CHEDRAUI",
+      "mkt": "4",
+      "totaldeOrdenes": "35",
+      "precOrdenados": "10",
+      "precAsignado": "100",
+      "volOrdenado": "90",
+      "volPendiente": "80",
+      "volAsignado": "99",
+      "tipo": "CPA"
+    },
+    {
+      "emisora": "CINEPOLIS",
+      "mkt": "54",
+      "totaldeOrdenes": "35",
+      "precOrdenados": "24",
+      "precAsignado": "100",
+      "volOrdenado": "90",
+      "volPendiente": "50",
+      "volAsignado": "20",
+      "tipo": "CPA"
+    },
+    {
+      "emisora": "CINEPOLIS",
+      "mkt": "29",
+      "totaldeOrdenes": "4",
+      "precOrdenados": "43",
+      "precAsignado": "400",
+      "volOrdenado": "90",
+      "volPendiente": "80",
+      "volAsignado": "99",
+      "tipo": "VTA"
+    },
+    {
+      "emisora": "CINEPOLIS",
+      "mkt": "24",
+      "totaldeOrdenes": "09",
+      "precOrdenados": "38",
+      "precAsignado": "10",
+      "volOrdenado": "982",
+      "volPendiente": "30",
+      "volAsignado": "19",
+      "tipo": "VTA"
     }
   ],
   "hechos": [

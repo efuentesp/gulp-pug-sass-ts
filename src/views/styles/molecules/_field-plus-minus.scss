@@ -12,6 +12,7 @@
 
     li {
       height: 22px;
+      white-space: nowrap;
     }
 
     li a:hover {
@@ -29,6 +30,12 @@
     li:nth-of-type(odd) {
       background-color: $color-sky-light;
     }
+  }
+  .of_none {
+    -ms-overflow-style: none;
+  }
+  .of_scrollbar {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 }
 

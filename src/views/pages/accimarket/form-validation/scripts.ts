@@ -2,10 +2,11 @@ console.log("form-validation");
 
 ($("#new-customer") as any)
   .parsley()
-  .on("field:validated", () => {
-    const ok = $(".parsley-error").length === 0;
-    $(".callout-info").toggleClass("hidden", !ok);
-    $(".callout-warning").toggleClass("hidden", ok);
+  .on("field:success", (e) => {
+    removeErrorsInAttrTitle(e);
+  })
+  .on("field:error", (e) => {
+    putErrorsInAttrTitle(e);
   })
   .on("form:submit", () => {
     console.log("form:submit");
