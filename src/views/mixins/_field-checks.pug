@@ -27,6 +27,7 @@ mixin field-checks(id, parms, ...items)
                   id=check_id
                   value=item.key
                   required=parms.required
+                  data-parsley-class-handler=("#" + _field_id)
                   data-parsley-errors-container=_field_error_block_id
             )
             if item.color

@@ -7,10 +7,9 @@
   }
 }
 
-.radio_button.parsley-error,
-.checkbox_input.parsley-error {
+.field.parsley-error {
   span.checkmark {
-    border: 1px solid $color-red-dark;
+    border: 1px solid $color-red-dark !important;
   }
 }
 
