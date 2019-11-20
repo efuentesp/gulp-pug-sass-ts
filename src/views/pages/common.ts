@@ -427,7 +427,6 @@ function fieldPlusMinusRepaintList(node) {
 
 // Plus Minus
 const fieldPlusMinus = (id: string, params: any) => {
-  console.log("Field Plus Minus");
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
@@ -542,26 +541,24 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
 
   $(idBtnMinus).click(() => {
     $(list + " li a").each(function (index) {
-      if ($(idInput).val() != "") {
-        if ($(this).text() === $(idInput).val()) {
-          if (!definedNodes) {
-            $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
+      if ($(this).attr("id") === $(idInput).val()) {
+        if (!definedNodes) {
+          $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
+          $(list + " li").length = $(list + " li").length - 1;
+        } else {
+          if ($(list + " li").length <= 4) {
+            $(this)
+              .find("a")
+              .first()
+              .removeAttr("id");
+            $(this).text("");
+          } else {
+            $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
+            $(this).text("");
             $(list + " li").length = $(list + " li").length - 1;
-          } else { 
-            if ($(list + " li").length <= 4) {
-              $(this)
-                .find("a")
-                .first()
-                .removeAttr("id");
-              $(this).text("");
-            } else {  
-              $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
-              $(this).text("");
-              $(list + " li").length = $(list + " li").length - 1;
-            }
-          } 
-        }  
-      }  
+          }
+        }
+      }
     });
     fieldPlusMinusRepaintList(node);
     $(idInput)
@@ -886,7 +883,6 @@ const gradientBarChart = (params: barGradientChartParams) => {
         
         afterDatasetsDraw: function (simpleBarGraph) {
 
-          console.log("Se ejecuta la funcion");
           var ctx = simpleBarGraph.ctx;
 
           ctx.canvas.style.width = params.width;
