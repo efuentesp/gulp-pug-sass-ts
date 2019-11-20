@@ -12,5 +12,5 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Run to verify if everything is ok
-      run: npm start
+      run: npm build
 
