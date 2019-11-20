@@ -1,10 +1,28 @@
+@import "../vars";
+
 .ui-tooltip {
   padding: 8px;
   position: absolute;
   z-index: 9999;
   max-width: 300px;
   display: none;
+
+  background: $color-red-dark;
+  color: $color-white;
+  box-shadow: 2px 2px $color-sky;
 }
-body .ui-tooltip {
-  border-width: 2px;
+
+.ui-tooltip-content::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid $color-red-dark;
+  left: -8px;
+
+  top: 7px;
 }

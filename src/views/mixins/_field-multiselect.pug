@@ -6,6 +6,8 @@ mixin field-multiselect(id, parms, ...items)
   - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   //- - var _class = (_class == "is_horizontal" ? _class + " items-center" : _class)
+  - var _tooltip = (parms.tooltip ? parms.tooltip : "")
+
   .field(id=_field_id class=_class)
     .field-label.flex
       label(for=_input_id)= parms.label
@@ -13,7 +15,7 @@ mixin field-multiselect(id, parms, ...items)
           span.pr-3.required *
         else
           span.pr-3
-    .field-control
+    .field-control(data-tooltip=_tooltip)
       select.multiselect(id=id
             name=id
             multiple

@@ -29,6 +29,10 @@
     .field-control {
       margin-left: 8px;
     }
+
+    .field-validated {
+      position: relative;
+    }
   }
 
   &.is_vertical {
