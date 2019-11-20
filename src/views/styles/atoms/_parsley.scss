@@ -4,12 +4,20 @@
 .multiselect {
   &.parsley-error {
     border: 1px solid $color-red-dark !important;
+
+    &:hover {
+      border: 1px solid $color-blue !important;
+    }
   }
 }
 
 .field.parsley-error {
   span.checkmark {
     border: 1px solid $color-red-dark !important;
+
+    &:hover {
+      border: 1px solid $color-blue !important;
+    }
   }
 }
 
@@ -17,6 +25,10 @@ select.select2.parsley-error {
   & ~ span.select2 {
     .select2-selection {
       border: 1px solid $color-red-dark;
+
+      &:hover {
+        border: 1px solid $color-blue !important;
+      }
     }
   }
 }
