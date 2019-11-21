@@ -448,7 +448,6 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
     });
 };
 
-var pageWidth = screen.width - 100;
 
 http_findAll("flujo", listaFlujo_params, payload => {
     llenaGridFlujoOrdenes(payload);
@@ -487,22 +486,51 @@ const llenaGridFlujoOrdenes = (flujos: any) => {
             "Tipo"
         ],
         colModel: [
-            { name: "emisora", width: (pageWidth * (11.11 / 100)) },
-            { name: "mkt", width: (pageWidth * (11.11 / 100)) },
-            { name: "totaldeOrdenes", width: (pageWidth * (11.11 / 100)) },
-            { name: "precOrdenados", width: (pageWidth * (11.11 / 100)) },
-            { name: "precAsignado", width: (pageWidth * (11.11 / 100)) },
-            { name: "volOrdenado", width: (pageWidth * (11.11 / 100)) },
-            { name: "volPendiente", width: (pageWidth * (11.11 / 100)) },
-            { name: "volAsignado", width: (pageWidth * (11.11 / 100)) },
-            { name: "tipo", width: (pageWidth * (11.11 / 100)) }
+            { name: "emisora", width: 170 },
+            { name: "mkt", width: 170 },
+            { name: "totaldeOrdenes", width: 170 },
+            { name: "precOrdenados", width: 170 },
+            { name: "precAsignado", width: 170 },
+            { name: "volOrdenado", width: 170 },
+            { name: "volPendiente", width: 170 },
+            { name: "volAsignado", width: 170 },
+            { name: "tipo", width: 170 },
         ],
         grouping: true,
         groupingView: {
-            groupField: ["emisora"],
-            groupColumnShow: [true],
-            groupOrder: ["asc"]
+            groupField: ["emisora", "tipo"],
+            groupColumnShow: [true, false],
+            groupText: ["<b>{0}</b>", "<b>{0}</b>"],
+            groupOrder: ["asc", "asc"],
+
+        },
+        rowattr: function (item) {
+            let table_row_class = { class: "" }
+            let class_content = ""
+
+            switch (item.tipo) {
+                case "CPA": {
+                    class_content = class_content + "table_compra"
+                    break;
+                }
+                case "VTA": {
+                    class_content = class_content + "table_venta"
+                    break;
+                }
+            }
+            table_row_class.class = class_content;
+            return table_row_class;
         }
+    });
+    var i = 0;
+    $(".table_busquedaFlujoghead_1").each(function (index, element) {
+        i = i % 2;
+        if (i == 0) {
+            $(element).addClass("table_compra");
+        } else {
+            $(element).addClass("table_venta");
+        }
+        i++;
     });
 }
 
