@@ -2972,3 +2972,7 @@ const removeErrorsInAttrTitle = (e: any) => {
 //     }
 //   }
 // });
+
+const responsiveEffect = (gridWidth:number, widthTable:number, numColumns:number, selectedColumns:any, idTable:String) => {
+  $(idTable).attr("style", "border: 2px solid yellow;");
+}

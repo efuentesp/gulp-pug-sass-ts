@@ -1,7 +1,7 @@
 /// <reference path="../../typings/index.d.ts" />
 let numColumns = 2;
-let widthTableResultadosMensuales = 678;
-let widthColumnsResultadosMensuales = widthTableResultadosMensuales / numColumns;
+let widthTable = 678;
+let widthColumns = widthTable / numColumns;
 
 console.log("Rendimientos");
 var selected;
@@ -108,19 +108,7 @@ const isSelectedColumn = (columnName:String, selectedColumns: any) => {
   return isSelected;
 };
 
-$('input[name="chk_cmbOpcionesRendi"]').change(function() {
-  if( $(this).is(":checked") ){
-    numColumns = numColumns + 1;
-  }else{
-    numColumns = numColumns - 1;
-  }
-  
-  var gridWidth = $("#splitter-container").parent().width();
-  if( gridWidth > widthTableResultadosMensuales ){
-    gridWidth = widthTableResultadosMensuales;
-  }  
-  widthColumnsResultadosMensuales = gridWidth / numColumns;
-  
+$('input[name="chk_cmbOpcionesRendi"]').change(function() {  
   if ($(this).is(":checked")) {
     $("#table_resultadosMensuales").jqGrid("showCol", $(this).val());
     $("#table_resultadosAcumulados").jqGrid("showCol", $(this).val());
@@ -134,6 +122,13 @@ $('input[name="chk_cmbOpcionesRendi"]').change(function() {
   }
 
   let selectedColumns: any = verificaSeleccionados();
+  numColumns = selectedColumns.length + 2;//Se suma 2 porque es el numero de columnas base en las tablas.
+  
+  var gridWidth = $("#splitter-container").parent().width();
+  if( gridWidth > widthTable ){
+    gridWidth = widthTable;
+  }  
+  widthColumns = gridWidth / numColumns;
 
   //-------------------------------------------------------------------------------------------
   var colModel = $("#table_resultadosMensuales").jqGrid('getGridParam', 'colModel');
@@ -144,12 +139,14 @@ $('input[name="chk_cmbOpcionesRendi"]').change(function() {
     $("#table_resultadosMensuales").jqGrid('resizeColumn', colModel[j].name, 0);  
 
     if( j < 2 || isSelectedColumn(colModel[j].name, selectedColumns) ){  
-      $("#table_resultadosMensuales").jqGrid('resizeColumn', colModel[j].name, widthColumnsResultadosMensuales); 
+      $("#table_resultadosMensuales").jqGrid('resizeColumn', colModel[j].name, widthColumns); 
      }
   }
 
   $("#gbox_table_resultadosMensuales").attr("style", "width: " + gridWidth + "px;");
   $("#gview_table_resultadosMensuales").attr("style", "width: " + gridWidth + "px;");
+
+  //responsiveEffect("#gbox_table_resultadosMensuales");
   //-------------------------------------------------------------------------------------------
   var colModel = $("#table_resultadosAcumulados").jqGrid('getGridParam', 'colModel');
 
@@ -159,7 +156,7 @@ $('input[name="chk_cmbOpcionesRendi"]').change(function() {
     $("#table_resultadosAcumulados").jqGrid('resizeColumn', colModel[j].name, 0);  
 
     if( j < 2 || isSelectedColumn(colModel[j].name, selectedColumns) ){  
-      $("#table_resultadosAcumulados").jqGrid('resizeColumn', colModel[j].name, widthColumnsResultadosMensuales); 
+      $("#table_resultadosAcumulados").jqGrid('resizeColumn', colModel[j].name, widthColumns); 
      }
   }
 
@@ -298,8 +295,8 @@ $(window).on("resize", function() {
     .parent()
     .width();
 
-  if( gridWidth > widthTableResultadosMensuales ){
-    gridWidth = widthTableResultadosMensuales;
+  if( gridWidth > widthTable ){
+    gridWidth = widthTable;
   }  
 
   console.log("******************************* gridWidth: " + gridWidth);  
@@ -311,23 +308,23 @@ $("#table_resultadosMensuales").jqGrid({
   datatype: "local",
   height: "70",
   sortable: true,
-  width: widthTableResultadosMensuales,
+  width: widthTable,
 
   colNames: [
              "Periodo", "Portafolio %", "Inflacion %", "IPC %", "Cetes 28 %", 
              "Deval %", "Soc Inv RF-PM %", "Cetes 91 %", "Soc Inv RV %", "INMEX %"
   ],
   colModel: [
-    { name: "periodo", width: widthColumnsResultadosMensuales, align: "center" },
-    { name: "portafolio", width: widthColumnsResultadosMensuales, align: "center" },
-    { name: "S01", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
-    { name: "S02", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
-    { name: "S03", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
-    { name: "S04", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
-    { name: "S05", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
-    { name: "S06", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
-    { name: "S07", width: widthColumnsResultadosMensuales, hidden: true, align: "center" },
-    { name: "S08", width: widthColumnsResultadosMensuales, hidden: true, align: "center" }
+    { name: "periodo", width: widthColumns, align: "center" },
+    { name: "portafolio", width: widthColumns, align: "center" },
+    { name: "S01", width: widthColumns, hidden: true, align: "center" },
+    { name: "S02", width: widthColumns, hidden: true, align: "center" },
+    { name: "S03", width: widthColumns, hidden: true, align: "center" },
+    { name: "S04", width: widthColumns, hidden: true, align: "center" },
+    { name: "S05", width: widthColumns, hidden: true, align: "center" },
+    { name: "S06", width: widthColumns, hidden: true, align: "center" },
+    { name: "S07", width: widthColumns, hidden: true, align: "center" },
+    { name: "S08", width: widthColumns, hidden: true, align: "center" }
   ],
   rowNum: 10,
   rowList: [10, 20, 30],
