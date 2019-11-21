@@ -119,8 +119,8 @@ $('input[name="chk_cmbOpcionesRendi"]').change(function() {
 });
 
 $(window).on("resize", function() {
-  windowsResize(widthTable, "table_resultadosMensuales", "splitter-container");
-  windowsResize(widthTable, "table_resultadosAcumulados", "splitter-container");
+  windowResize(widthTable, "table_resultadosMensuales", "splitter-container");
+  windowResize(widthTable, "table_resultadosAcumulados", "splitter-container");
 });
 
 

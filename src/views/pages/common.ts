@@ -2701,10 +2701,10 @@ const responsiveEffect = (widthTable:number, numColumnsBase:number, selectedColu
   $("#gbox_" + idTable).attr("style", "width: " + gridWidth + "px;");
   $("#gview_" + idTable).attr("style", "width: " + gridWidth + "px;");
 
-  windowsResize(widthTable, idTable, idSplitterContainer);
+  windowResize(widthTable, idTable, idSplitterContainer);
 }
 
-const windowsResize = (widthTable:number, idTable:String, idSplitterContainer:String) => {
+const windowResize = (widthTable:number, idTable:String, idSplitterContainer:String) => {
   $(window).on("resize", function() {
     var gridWidth = $("#" + idSplitterContainer).parent().width();
 
