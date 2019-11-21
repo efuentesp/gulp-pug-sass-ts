@@ -2973,6 +2973,54 @@ const removeErrorsInAttrTitle = (e: any) => {
 //   }
 // });
 
-const responsiveEffect = (gridWidth:number, widthTable:number, numColumns:number, selectedColumns:any, idTable:String) => {
-  $(idTable).attr("style", "border: 2px solid yellow;");
+const isSelectedColumnn = (columnName:String, selectedColumns: any) => {
+  let isSelected: boolean = false;
+
+  for( var i=0; i<selectedColumns.length; i++ ){
+    if( selectedColumns[i] == columnName ){
+      isSelected = true;
+      break;
+    }
+  }
+
+  return isSelected;
+};
+
+const responsiveEffect = (widthTable:number, numColumnsBase:number, selectedColumns:any, idTable:String, idSplitterContainer:String) => {
+  var colModel = $("#" + idTable).jqGrid('getGridParam', 'colModel');
+  var numColumnas = selectedColumns.length + numColumnsBase;
+  var gridWidth = $("#splitter-container").parent().width();
+
+  if( gridWidth > widthTable ){
+    gridWidth = widthTable;
+  }  
+  widthColumns = gridWidth / numColumnas;  
+
+  $("#"+idTable).jqGrid("setGridWidth", gridWidth, true);    
+
+  for( var j = 0; j<colModel.length; j++ ) {
+    $("#"+idTable).jqGrid('resizeColumn', colModel[j].name, 0);  
+
+    if( j < 2 || isSelectedColumnn(colModel[j].name, selectedColumns) ){  
+      $("#"+idTable).jqGrid('resizeColumn', colModel[j].name, widthColumns); 
+     }
+  }
+
+  $("#gbox_" + idTable).attr("style", "width: " + gridWidth + "px;");
+  $("#gview_" + idTable).attr("style", "width: " + gridWidth + "px;");
+
+  windowsResize(widthTable, idTable, idSplitterContainer);
+}
+
+const windowsResize = (widthTable:number, idTable:String, idSplitterContainer:String) => {
+  $(window).on("resize", function() {
+    var gridWidth = $("#" + idSplitterContainer).parent().width();
+
+    if( gridWidth > widthTable ){
+      gridWidth = widthTable;
+    }  
+
+    console.log("============================>> table resize: " + gridWidth);  
+    $("#"+idTable).jqGrid("setGridWidth", gridWidth, true);
+  });
 }
