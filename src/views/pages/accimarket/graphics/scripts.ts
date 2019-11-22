@@ -457,6 +457,14 @@ const fillPromediosPieHighcharts = (promedios: any) => {
     dataSet: charData
   });
 
+  pieBorderHighchart({
+    id: "containerBorder",
+    title: "Promedios Pie Chart",
+    format: "{series.name}: <b>{point.percentage:.1f}%</b>",
+    plotOptionsFormat: "<b>{point.name}</b>: {point.percentage:.1f} %",
+    labelsX: "Porcentaje",
+    dataSet: charData
+  });
 };
 
 

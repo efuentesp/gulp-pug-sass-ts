@@ -2861,6 +2861,47 @@ const pieHighchart = (params: pieHighchartParams) => {
           enabled: true,
           format: params.plotOptionsFormat,
           connectorColor: "silver"
+        }
+      }
+    },
+    series: [
+      {
+        name: params.labelsX,
+        data: params.dataSet,
+        type: undefined,
+        animation: {
+          duration: 1000
+        },
+        shadow: true
+      }
+    ]
+  });
+};
+
+const pieBorderHighchart = (params: pieHighchartParams) => {
+  // Pie Graph
+  Highcharts.chart(params.id, {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: "pie"
+    },
+    title: {
+      text: params.title
+    },
+    tooltip: {
+      pointFormat: params.format
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        colors: pieColors,
+        dataLabels: {
+          enabled: true,
+          format: params.plotOptionsFormat,
+          connectorColor: "silver"
         },
         borderWidth: 10
       }
