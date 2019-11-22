@@ -37,6 +37,7 @@ http_findAll("promediosNBar", promedios_params, payload => {
 // Services bar chart
 http_findAll("promedios", promedios_params, payload => {
   fillPromediosPie(payload);
+  fillPromediosPieHighcharts(payload);
 });
 
 // Stack
@@ -369,3 +370,217 @@ const fillHorizontalRendimientos = (rendimientosh: any) => {
     format: "%"
   });
 };
+
+  // Radialize the colors
+  Highcharts.setOptions({
+    colors: Highcharts.map(
+      ["#466579", "#9eb7c7", "#becfda", "#dfe7ec", "#afaeb0", "#636165"],
+      function(color) {
+        return {
+          radialGradient: {
+            cx: 0.5,
+            cy: 0.3,
+            r: 0.7
+          },
+          stops: [
+            [0, color],
+            [
+              1,
+              Highcharts.color(color)
+                .brighten(-0.3)
+                .get("rgb")
+            ] // darken
+          ]
+        };
+      }
+    )
+  });
+
+var colors = Highcharts.getOptions().colors;
+
+Highcharts.chart('containerBar', {
+  chart: {
+      type: 'bar',
+      events: {
+        load: function() {
+          let categoryHeight = 45;
+          this.update({
+            chart: {
+              height:
+                categoryHeight * 1 +
+                (this.chartHeight - this.plotHeight)
+            }
+          });
+        }
+      }
+  },
+  title: {
+      text: 'Frutas Bar Chart'
+  },
+  xAxis: {
+      categories: ['Apples']
+  },
+  yAxis: {
+      min: 0,
+      title: {
+          text: 'Total fruit consumption'
+      }
+  },
+  legend: {
+      reversed: true
+  },
+  plotOptions: {
+      series: {
+          stacking: 'normal',
+          shadow: true
+      }
+  },
+  series: [{
+      name: 'John',
+      data: [5],
+      type: undefined,
+      // borderRadius: 15
+  }, {
+      name: 'Jane',
+      data: [2],
+      type: undefined,
+      // borderRadius: 15
+  }, {
+      name: 'Joe',
+      data: [3],
+      type: undefined,
+      // borderRadius: 15
+  }
+ 
+],
+  
+});
+
+const fillPromediosPieHighcharts = (promedios: any) => {
+  let dataSetY = [];
+  let dataSetX = [];
+  let charData = [];
+
+  for (let i = 0; i < promedios.length; i++) {
+    var data = promedios[i];
+    charData.push({name:data.horizonte, y:data.dataB})
+  }
+
+// Pie Graph
+Highcharts.chart("container", {
+  chart: {
+    plotBackgroundColor: null,
+    plotBorderWidth: null,
+    plotShadow: false,
+    type: "pie"
+  },
+  title: {
+    text: "Promedios Pie Chart"
+  },
+  tooltip: {
+    pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>"
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: "pointer",
+      dataLabels: {
+        enabled: true,
+        format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+        // style: {
+        //   color:
+        //     // (Highcharts.theme && Highcharts.theme.contrastTextColor) ||
+        //     "black"
+        // },
+        connectorColor: "silver"
+      },
+      borderWidth: 10
+    }
+  },
+  series: [
+    {
+      name: "Share",
+      data: charData,
+      type: undefined,
+      animation: {
+        duration: 1000
+        //   easing: "easeOutBounce"
+      },
+      shadow: true
+    }
+  ]
+});
+
+};
+
+// Highcharts.chart("containerChart", {
+//   chart: {
+//     type: "timeline"
+//   },
+//   xAxis: {
+//     visible: false
+//   },
+//   yAxis: {
+//     visible: false
+//   },
+//   title: {
+//     text: "Timeline of Space Exploration"
+//   },
+//   subtitle: {
+//     text:
+//       'Info source: <a href="https://en.wikipedia.org/wiki/Timeline_of_space_exploration">www.wikipedia.org</a>'
+//   },
+//   colors: [
+//     "#4185F3",
+//     "#427CDD",
+//     "#406AB2",
+//     "#3E5A8E",
+//     "#3B4A68",
+//     "#363C46"
+//   ],
+//   series: [
+//     {
+//       type:undefined,
+//       data: [
+//         {
+//           name: "First dogs",
+//           label: "1951: First dogs in space",
+//           description:
+//             "22 July 1951 First dogs in space (Dezik and Tsygan) "
+//         },
+//         {
+//           name: "Sputnik 1",
+//           label: "1957: First artificial satellite",
+//           description:
+//             "4 October 1957 First artificial satellite. First signals from space."
+//         },
+//         {
+//           name: "First human spaceflight",
+//           label: "1961: First human spaceflight (Yuri Gagarin)",
+//           description:
+//             "First human spaceflight (Yuri Gagarin), and the first human-crewed orbital flight"
+//         },
+//         {
+//           name: "First human on the Moon",
+//           label: "1969: First human on the Moon",
+//           description:
+//             "First human on the Moon, and first space launch from a celestial body other than the Earth. First sample return from the Moon"
+//         },
+//         {
+//           name: "First space station",
+//           label: "1971: First space station",
+//           description:
+//             "Salyut 1 was the first space station of any kind, launched into low Earth orbit by the Soviet Union on April 19, 1971."
+//         },
+//         {
+//           name: "Apollo–Soyuz Test Project",
+//           label: "1975: First multinational manned mission",
+//           description:
+//             "The mission included both joint and separate scientific experiments, and provided useful engineering experience for future joint US–Russian space flights, such as the Shuttle–Mir Program and the International Space Station."
+//         }
+//       ]
+//     }
+//   ]
+// });
+
+
