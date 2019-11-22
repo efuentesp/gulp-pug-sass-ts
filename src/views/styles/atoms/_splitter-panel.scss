@@ -150,7 +150,7 @@
   }
 
   .splitter-pane {
-    overflow: auto;
+    overflow: hidden;
     background: $color-sky-lighter;
     border-radius: 10px;
     padding: 10px 15px 10px px;

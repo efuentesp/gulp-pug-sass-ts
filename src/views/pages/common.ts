@@ -845,6 +845,8 @@ const backgroundSet = (elements: number) => {
 // simpleGradientGraph
 var simpleGradientGraph = null;
 
+
+
 const gradientBarChart = (params: barGradientChartParams) => {
   console.log("GradientBarChart");
   if (simpleGradientGraph != null) {
@@ -875,15 +877,15 @@ const gradientBarChart = (params: barGradientChartParams) => {
   simpleGradientGraph = new Chart(params.contexto, {
     plugins: [
       {
-        afterDatasetsDraw: function (simpleBarGraph) {
+        afterDatasetsDraw: function (simpleGradientGraph) {
 
-          var ctx = simpleBarGraph.ctx;
+          var ctx = simpleGradientGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
-            var meta = simpleBarGraph.getDatasetMeta(i);
+          simpleGradientGraph.data.datasets.forEach(function(dataset, i) {
+            var meta = simpleGradientGraph.getDatasetMeta(i);
             if (!meta.hidden) {
               meta.data.forEach(function(element, index) {
                 ctx.fillStyle = "#000";
@@ -1244,316 +1246,6 @@ const simpleBarChart = (params: barChartParams) => {
   Chart.defaults.global.elements.point.radius = 0;
 
   simpleBGraph = new Chart(contextBar, {
-    plugins: [
-      {
-        afterDatasetsDraw: function(simpleBarGraph) {
-          var ctx = simpleBarGraph.ctx;
-
-          ctx.canvas.style.width = params.width;
-          ctx.canvas.style.height = params.height;
-
-          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
-            var meta = simpleBarGraph.getDatasetMeta(i);
-            if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
-                ctx.fillStyle = "#000";
-                var fontSize = 12;
-                var fontStyle = "normal";
-                var fontFamily = "Arial";
-
-                ctx.font = Chart.helpers.fontString(
-                  fontSize,
-                  fontStyle,
-                  fontFamily
-                );
-              });
-            }
-          });
-        }
-      }
-    ],
-    type: "bar",
-    data: chartData,
-    options: {
-      scales: {
-        xAxes: [
-          {
-            gridLines: {
-              display: true
-            },
-            stacked: false,
-            ticks: {
-              display: true
-            },
-            scaleLabel: {
-              display: true,
-              labelString: params.titleX,
-              fontColor: "#000"
-            }
-          }
-        ],
-        yAxes: [
-          {
-            gridLines: {
-              display: false
-            },
-            stacked: false,
-            scaleLabel: {
-              display: true,
-              labelString: params.titleY,
-              fontColor: "#000"
-            },
-            ticks: {
-              display: true,
-              callback: function(value) {
-                return value + "";
-              }
-            }
-          }
-        ]
-      }
-    }
-  });
-};
-
-// SimpleBarGraph
-var simpleBAuxGraph = null;
-
-const simpleBarAuxChart = (params: barChartParams) => {
-  if (simpleBAuxGraph != null) {
-    simpleBAuxGraph.destroy();
-  }
-
-  var chartData = {
-    labels: params.labels,
-    datasets: params.dataSet
-  };
-
-  var ctxBar: any = document.getElementById(params.id);
-  var contextBar = ctxBar.getContext("2d");
-  // Style legends
-  Chart.defaults.global.legend.labels.usePointStyle = true;
-  Chart.defaults.global.legend.labels.fontSize = 9;
-  Chart.defaults.global.legend.labels.boxWidth = 9;
-  Chart.defaults.global.legend.position = "bottom";
-  Chart.defaults.global.legend.display = false;
-  // Style tittle graph
-  Chart.defaults.global.title.display = false;
-  Chart.defaults.global.title.text = "";
-  // Graph responsive
-  Chart.defaults.global.responsive = true;
-  // Data point
-  Chart.defaults.global.elements.point.radius = 0;
-
-  simpleBAuxGraph = new Chart(contextBar, {
-    plugins: [
-      {
-        afterDatasetsDraw: function(simpleBarGraph) {
-          var ctx = simpleBarGraph.ctx;
-
-          ctx.canvas.style.width = params.width;
-          ctx.canvas.style.height = params.height;
-
-          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
-            var meta = simpleBarGraph.getDatasetMeta(i);
-            if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
-                ctx.fillStyle = "#000";
-                var fontSize = 12;
-                var fontStyle = "normal";
-                var fontFamily = "Arial";
-
-                ctx.font = Chart.helpers.fontString(
-                  fontSize,
-                  fontStyle,
-                  fontFamily
-                );
-              });
-            }
-          });
-        }
-      }
-    ],
-    type: "bar",
-    data: chartData,
-    options: {
-      scales: {
-        xAxes: [
-          {
-            gridLines: {
-              display: true
-            },
-            stacked: false,
-            ticks: {
-              display: true
-            },
-            scaleLabel: {
-              display: true,
-              labelString: params.titleX,
-              fontColor: "#000"
-            }
-          }
-        ],
-        yAxes: [
-          {
-            gridLines: {
-              display: false
-            },
-            stacked: false,
-            scaleLabel: {
-              display: true,
-              labelString: params.titleY,
-              fontColor: "#000"
-            },
-            ticks: {
-              display: true,
-              callback: function(value) {
-                return value + "";
-              }
-            }
-          }
-        ]
-      }
-    }
-  });
-};
-
-// SimpleBarGraph
-var simpleBAux1Graph = null;
-
-const simpleBarAux1Chart = (params: barChartParams) => {
-  if (simpleBAux1Graph != null) {
-    simpleBAux1Graph.destroy();
-  }
-
-  simpleBGraph.destroy();
-
-  var chartData = {
-    labels: params.labels,
-    datasets: params.dataSet
-  };
-
-  var ctxBar: any = document.getElementById(params.id);
-  var contextBar = ctxBar.getContext("2d");
-  // Style legends
-  Chart.defaults.global.legend.labels.usePointStyle = true;
-  Chart.defaults.global.legend.labels.fontSize = 9;
-  Chart.defaults.global.legend.labels.boxWidth = 9;
-  Chart.defaults.global.legend.position = "bottom";
-  Chart.defaults.global.legend.display = false;
-  // Style tittle graph
-  Chart.defaults.global.title.display = false;
-  Chart.defaults.global.title.text = "";
-  // Graph responsive
-  Chart.defaults.global.responsive = true;
-  // Data point
-  Chart.defaults.global.elements.point.radius = 0;
-
-  simpleBAux1Graph = new Chart(contextBar, {
-    plugins: [
-      {
-        afterDatasetsDraw: function(simpleBarGraph) {
-          var ctx = simpleBarGraph.ctx;
-
-          ctx.canvas.style.width = params.width;
-          ctx.canvas.style.height = params.height;
-
-          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
-            var meta = simpleBarGraph.getDatasetMeta(i);
-            if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
-                ctx.fillStyle = "#000";
-                var fontSize = 12;
-                var fontStyle = "normal";
-                var fontFamily = "Arial";
-
-                ctx.font = Chart.helpers.fontString(
-                  fontSize,
-                  fontStyle,
-                  fontFamily
-                );
-              });
-            }
-          });
-        }
-      }
-    ],
-    type: "bar",
-    data: chartData,
-    options: {
-      scales: {
-        xAxes: [
-          {
-            gridLines: {
-              display: true
-            },
-            stacked: false,
-            ticks: {
-              display: true
-            },
-            scaleLabel: {
-              display: true,
-              labelString: params.titleX,
-              fontColor: "#000"
-            }
-          }
-        ],
-        yAxes: [
-          {
-            gridLines: {
-              display: false
-            },
-            stacked: false,
-            scaleLabel: {
-              display: true,
-              labelString: params.titleY,
-              fontColor: "#000"
-            },
-            ticks: {
-              display: true,
-              callback: function(value) {
-                return value + "";
-              }
-            }
-          }
-        ]
-      }
-    }
-  });
-};
-
-// SimpleBarGraph
-var simpleBAux2Graph = null;
-
-const simpleBarAux2Chart = (params: barChartParams) => {
-  if (simpleBAux2Graph != null) {
-    simpleBAux2Graph.destroy();
-  }
-
-  simpleBAuxGraph.destroy();
-
-  var chartData = {
-    labels: params.labels,
-    datasets: params.dataSet
-  };
-
-  var ctxBar: any = document.getElementById(params.id);
-  var contextBar = ctxBar.getContext("2d");
-  // Style legends
-  Chart.defaults.global.legend.labels.usePointStyle = true;
-  Chart.defaults.global.legend.labels.fontSize = 9;
-  Chart.defaults.global.legend.labels.boxWidth = 9;
-  Chart.defaults.global.legend.position = "bottom";
-  Chart.defaults.global.legend.display = false;
-  // Style tittle graph
-  Chart.defaults.global.title.display = false;
-  Chart.defaults.global.title.text = "";
-  // Graph responsive
-  Chart.defaults.global.responsive = true;
-  // Data point
-  Chart.defaults.global.elements.point.radius = 0;
-
-  simpleBAux2Graph = new Chart(contextBar, {
     plugins: [
       {
         afterDatasetsDraw: function(simpleBarGraph) {
@@ -2971,3 +2663,55 @@ const removeErrorsInAttrTitle = (e: any) => {
 //     }
 //   }
 // });
+
+const isSelectedColumnn = (columnName:String, selectedColumns: any) => {
+  let isSelected: boolean = false;
+
+  for( var i=0; i<selectedColumns.length; i++ ){
+    if( selectedColumns[i] == columnName ){
+      isSelected = true;
+      break;
+    }
+  }
+
+  return isSelected;
+};
+
+const responsiveEffect = (widthTable:number, numColumnsBase:number, selectedColumns:any, idTable:String, idSplitterContainer:String) => {
+  var colModel = $("#" + idTable).jqGrid('getGridParam', 'colModel');
+  var numColumnas = selectedColumns.length + numColumnsBase;
+  var gridWidth = $("#splitter-container").parent().width();
+
+  if( gridWidth > widthTable ){
+    gridWidth = widthTable;
+  }  
+  widthColumns = gridWidth / numColumnas;  
+
+  $("#"+idTable).jqGrid("setGridWidth", gridWidth, true);    
+
+  for( var j = 0; j<colModel.length; j++ ) {
+    $("#"+idTable).jqGrid('resizeColumn', colModel[j].name, 0);  
+
+    if( j < 2 || isSelectedColumnn(colModel[j].name, selectedColumns) ){  
+      $("#"+idTable).jqGrid('resizeColumn', colModel[j].name, widthColumns); 
+     }
+  }
+
+  $("#gbox_" + idTable).attr("style", "width: " + gridWidth + "px;");
+  $("#gview_" + idTable).attr("style", "width: " + gridWidth + "px;");
+
+  windowResize(widthTable, idTable, idSplitterContainer);
+}
+
+const windowResize = (widthTable:number, idTable:String, idSplitterContainer:String) => {
+  $(window).on("resize", function() {
+    var gridWidth = $("#" + idSplitterContainer).parent().width();
+
+    if( gridWidth > widthTable ){
+      gridWidth = widthTable;
+    }  
+
+    console.log("============================>> table resize: " + gridWidth);  
+    $("#"+idTable).jqGrid("setGridWidth", gridWidth, true);
+  });
+}

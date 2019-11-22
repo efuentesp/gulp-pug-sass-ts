@@ -4,39 +4,13 @@ include /mixins/mixins
         +splitter("simple")
             .pane
                 p Resultados Mensuales
-                    +grid("resultadosMensuales")
-                    +canvas("graficaMensual", {width:'600px', height:'600px'})
-                    +grid("resultadosMensualesTWP")
-                    +canvas("graficaMensualTWP", {width:'600px', height:'600px'})
+                +grid("resultadosMensuales")
+                +canvas("graficaMensual", {width:'600px', height:'600px'})                
+                +grid("resultadosMensualesTWP")
+                +canvas("graficaMensualTWP", {width:'600px', height:'600px'})
             .pane(id="pane-right")
                 p Resultados Acumulados
-                    +grid("resultadosAcumulados")
-                    +canvas("graficaAcumulados", {width:'600px', height:'600px'})
-                    +grid("resultadosAcumuladosTWP")
-                    +canvas("graficaAcumuladosTWP", {width:'600px', height:'600px'})
-    
-    //- <div id="resizable" class="ui-widget-header">
-    //-     <h3 class="ui-state-active">Resize</h3>
-
-
-    //- </div>
-    
-    //- <div id="also" class="ui-widget-content">
-    //-     <h3 class="ui-widget-header">will also resize</h3>
-    //- </div>
-
-
-
-    //- +splitter("simple")
-    //-     .pane(style="padding: 1em;")
-    //-         p Resultados Mensuales
-    //-             +grid("resultadosMensuales")
-    //-             +canvas("graficaMensual", {width:'600px', height:'600px'})
-    //-             +grid("resultadosMensualesTWP")
-    //-             +canvas("graficaMensualTWP", {width:'600px', height:'600px'})
-    //-     .pane.resizable(style="width:50%;padding: 1em;")
-    //-         p Resultados Acumulados
-    //-             +grid("resultadosAcumulados")
-    //-             +canvas("graficaAcumulados", {width:'600px', height:'600px'})
-    //-             +grid("resultadosAcumuladosTWP")
-    //-             +canvas("graficaAcumuladosTWP", {width:'600px', height:'600px'})
+                +grid("resultadosAcumulados")
+                +canvas("graficaAcumulados", {width:'600px', height:'600px'})
+                +grid("resultadosAcumuladosTWP")
+                +canvas("graficaAcumuladosTWP", {width:'600px', height:'600px'})

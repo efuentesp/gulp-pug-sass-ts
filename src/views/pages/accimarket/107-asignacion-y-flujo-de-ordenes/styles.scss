@@ -202,12 +202,15 @@
 #gbox_table_busquedaFlujo {
   display: flex;
   flex-direction: column-reverse;
+  
 }
 
 #pager_busquedaFlujo {
   display: flex;
   justify-content: flex-end;
+  
 }
+
 
 #field_excluir{
   .field-control{
@@ -232,4 +235,10 @@
     z-index: 4;
   }
 }
+.table_compra {
+  color: $color-red !important;
+}
 
+.table_venta {
+  color: $color-green !important;
+}

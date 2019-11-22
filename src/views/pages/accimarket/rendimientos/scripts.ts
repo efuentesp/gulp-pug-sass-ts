@@ -1,4 +1,13 @@
 /// <reference path="../../typings/index.d.ts" />
+let numColumnsBase = 2;
+let widthTable = 678;
+let widthColumns = widthTable / numColumnsBase;
+
+let nameGraphMovimientos = null;
+let nameGraphAcumulados = null;
+let nameGraphMovimientosTWP = null;
+let nameGraphAcumuladosTWP = null;
+
 console.log("Rendimientos");
 var selected;
 ($("#cmbRenta") as any).select2({
@@ -91,10 +100,7 @@ var validaFechaInicial = function() {
   }
 };
 
-$('input[name="chk_cmbOpcionesRendi"]').change(function() {
-  console.log(
-    "Checkbox ejemplo " + $(this).is(":checked") + " " + $(this).val()
-  );
+$('input[name="chk_cmbOpcionesRendi"]').change(function() {  
   if ($(this).is(":checked")) {
     $("#table_resultadosMensuales").jqGrid("showCol", $(this).val());
     $("#table_resultadosAcumulados").jqGrid("showCol", $(this).val());
@@ -106,10 +112,19 @@ $('input[name="chk_cmbOpcionesRendi"]').change(function() {
     $("#table_resultadosMensualesTWP").jqGrid("hideCol", $(this).val());
     $("#table_resultadosAcumuladosTWP").jqGrid("hideCol", $(this).val());
   }
+
+  let selectedColumns = verificaSeleccionados();
+  responsiveEffect(widthTable, numColumnsBase, selectedColumns, "table_resultadosMensuales", "splitter-container");
+  responsiveEffect(widthTable, numColumnsBase, selectedColumns, "table_resultadosAcumulados", "splitter-container");
 });
 
-const verificaSeleccionados = () => {
+$(window).on("resize", function() {
+  windowResize(widthTable, "table_resultadosMensuales", "splitter-container");
+  windowResize(widthTable, "table_resultadosAcumulados", "splitter-container");
+});
 
+
+const verificaSeleccionados = () => {
   let selected: any = [];
 
   $('input[name="chk_cmbOpcionesRendi"]').each(function() {
@@ -165,6 +180,10 @@ const openWindow = () => {
   $("#table_resultadosMensuales").jqGrid("setColProp", "amount", {
     width: 800
   });
+
+  $("canvas #graficaMensualTWP").hide();
+  $("canvas #graficaAcumuladosTWP").hide();
+ 
 };  
 
 const closeWindow = () => {
@@ -193,6 +212,10 @@ const closeWindow = () => {
   $("#graficaAcumuladosTWP")
     .parent()
     .css({ position: "relative" });
+
+  $("canvas #graficaMensual").hide();
+  $("canvas #graficaAcumulados").hide();
+
 }; 
 
 // Boton search
@@ -233,34 +256,41 @@ $("#btn_search").click(function() {
   }
 });
 
+//$(window).on("resize", function() {
+  //var gridWidth = $("#splitter-container").parent().width();
+
+  //if( gridWidth > widthTable ){
+    //gridWidth = widthTable;
+  //}  
+
+  //console.log("******************************* gridWidth: " + gridWidth);  
+  //$("#table_resultadosMensuales").jqGrid("setGridWidth", gridWidth, true);
+  //$("#table_resultadosAcumulados").jqGrid("setGridWidth", gridWidth, true);
+  
+  //responsiveEffect(gridWidth, widthTable, 2, selectedColumns, "table_resultadosMensuales");
+//});
+
 $("#table_resultadosMensuales").jqGrid({
   datatype: "local",
   height: "70",
   sortable: true,
-  width: 600,
+  width: widthTable,
+
   colNames: [
-    "Periodo",
-    "Portafolio %",
-    "Inflacion %",
-    "IPC %",
-    "Cetes 28 %",
-    "Deval %",
-    "Soc Inv RF-PM %",
-    "Cetes 91 %",
-    "Soc Inv RV %",
-    "INMEX %"
+             "Periodo", "Portafolio %", "Inflacion %", "IPC %", "Cetes 28 %", 
+             "Deval %", "Soc Inv RF-PM %", "Cetes 91 %", "Soc Inv RV %", "INMEX %"
   ],
   colModel: [
-    { name: "periodo", width: 60, align: "center", frozen: true },
-    { name: "portafolio", width: 60, align: "center", frozen: true },
-    { name: "S01", width: 60, hidden: true, align: "center" },
-    { name: "S02", width: 60, hidden: true, align: "center" },
-    { name: "S03", width: 60, hidden: true, align: "center" },
-    { name: "S04", width: 60, hidden: true, align: "center" },
-    { name: "S05", width: 60, hidden: true, align: "center" },
-    { name: "S06", width: 60, hidden: true, align: "center" },
-    { name: "S07", width: 60, hidden: true, align: "center" },
-    { name: "S08", width: 60, hidden: true, align: "center" }
+    { name: "periodo", width: widthColumns, align: "center" },
+    { name: "portafolio", width: widthColumns, align: "center" },
+    { name: "S01", width: widthColumns, hidden: true, align: "center" },
+    { name: "S02", width: widthColumns, hidden: true, align: "center" },
+    { name: "S03", width: widthColumns, hidden: true, align: "center" },
+    { name: "S04", width: widthColumns, hidden: true, align: "center" },
+    { name: "S05", width: widthColumns, hidden: true, align: "center" },
+    { name: "S06", width: widthColumns, hidden: true, align: "center" },
+    { name: "S07", width: widthColumns, hidden: true, align: "center" },
+    { name: "S08", width: widthColumns, hidden: true, align: "center" }
   ],
   rowNum: 10,
   rowList: [10, 20, 30],
@@ -270,7 +300,6 @@ $("#table_resultadosMensuales").jqGrid({
   autoencode: true,
   caption: ""
 });
-
 
 $("#table_resultadosfuente").jqGrid({
   datatype: "local",
@@ -549,7 +578,6 @@ $('input[name="chk_cmbOpcionesRendi"]').change(function() {
   }
 });
 
-
 const graficaMensuales = (tipoGrafica: string, arrayCkeck:any[], listaMensuales: any) => {
   var dataSetY1 = [];
   var dataSetY2 = [];
@@ -576,8 +604,6 @@ const graficaMensuales = (tipoGrafica: string, arrayCkeck:any[], listaMensuales:
     dataSetY9.push(data.S08);
   }
 
-  // pintaGrafica(arrayCkeck, tipoGrafica);
-  // const pintaGrafica = (arrayCkeck: [], id: string) => {
     let array = [];
   
     if (arrayCkeck == undefined) {
@@ -668,23 +694,104 @@ const graficaMensuales = (tipoGrafica: string, arrayCkeck:any[], listaMensuales:
         }
       });
     }
-  // };
-  
-  simpleBarChart({
-    id: tipoGrafica,
-    titleX: "Período",
-    titleY: "Portafolio",
+
+    if (nameGraphMovimientos != null){
+      nameGraphMovimientos.destroy();
+    }
+
+  var chartData = {
     labels: dataSetX,
-    tickMaxY: 15.0,
-    tickMinY: -15 /*0*/,
-    tickStepY: 1,
-    width: "400px",
-    height: "200px",
-    dataSet: array
+    datasets: array
+  };
+
+  var ctxBar: any = document.getElementById(tipoGrafica);
+  var contextBar = ctxBar.getContext("2d");
+  // Style legends
+  Chart.defaults.global.legend.labels.usePointStyle = true;
+  Chart.defaults.global.legend.labels.fontSize = 9;
+  Chart.defaults.global.legend.labels.boxWidth = 9;
+  Chart.defaults.global.legend.position = "bottom";
+  Chart.defaults.global.legend.display = false;
+  // Style tittle graph
+  Chart.defaults.global.title.display = false;
+  Chart.defaults.global.title.text = "";
+  // Graph responsive
+  Chart.defaults.global.responsive = true;
+  // Data point
+  Chart.defaults.global.elements.point.radius = 0;
+
+  nameGraphMovimientos = new Chart(contextBar, {
+    plugins: [
+      {
+        afterDatasetsDraw: function(nameGraph) {
+          var ctx = nameGraphMovimientos.ctx;
+
+          ctx.canvas.style.width = "400px";
+          ctx.canvas.style.height = "200px";
+
+          nameGraphMovimientos.data.datasets.forEach(function(dataset, i) {
+            var meta = nameGraph.getDatasetMeta(i);
+            if (!meta.hidden) {
+              meta.data.forEach(function(element, index) {
+                ctx.fillStyle = "#000";
+                var fontSize = 12;
+                var fontStyle = "normal";
+                var fontFamily = "Arial";
+
+                ctx.font = Chart.helpers.fontString(
+                  fontSize,
+                  fontStyle,
+                  fontFamily
+                );
+              });
+            }
+          });
+        }
+      }
+    ],
+    type: "bar",
+    data: chartData,
+    options: {
+      scales: {
+        xAxes: [
+          {
+            gridLines: {
+              display: true
+            },
+            stacked: false,
+            ticks: {
+              display: true
+            },
+            scaleLabel: {
+              display: true,
+              labelString: "periodo",
+              fontColor: "#000"
+            }
+          }
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: false
+            },
+            stacked: false,
+            scaleLabel: {
+              display: true,
+              labelString: "portafolio",
+              fontColor: "#000"
+            },
+            ticks: {
+              display: true,
+              callback: function(value) {
+                return value + "";
+              }
+            }
+          }
+        ]
+      }
+    }
   });
-
 };
-
 
 const graficaAcumulados = (tipoGrafica2: string, arrayCkeck:any[], listaAcumulados: any) => {
   var dataSetY10 = [];
@@ -803,24 +910,105 @@ const graficaAcumulados = (tipoGrafica2: string, arrayCkeck:any[], listaAcumulad
       });
     }
   
-    simpleBarAuxChart({
-      id: tipoGrafica2,
-      titleX: "Período",
-      titleY: "Portafolio",
+    if (nameGraphAcumulados != null){
+      nameGraphAcumulados.destroy();
+    }
+
+    var chartData = {
       labels: dataSetX1,
-      tickMaxY: 15.0,
-      tickMinY: -15 /*0*/,
-      tickStepY: 1,
-      width: "400px",
-      height: "200px",
-      dataSet: array
+      datasets: array
+    };
+  
+    var ctxBar: any = document.getElementById(tipoGrafica2);
+    var contextBar = ctxBar.getContext("2d");
+    // Style legends
+    Chart.defaults.global.legend.labels.usePointStyle = true;
+    Chart.defaults.global.legend.labels.fontSize = 9;
+    Chart.defaults.global.legend.labels.boxWidth = 9;
+    Chart.defaults.global.legend.position = "bottom";
+    Chart.defaults.global.legend.display = false;
+    // Style tittle graph
+    Chart.defaults.global.title.display = false;
+    Chart.defaults.global.title.text = "";
+    // Graph responsive
+    Chart.defaults.global.responsive = true;
+    // Data point
+    Chart.defaults.global.elements.point.radius = 0;
+  
+    nameGraphAcumulados = new Chart(contextBar, {
+      plugins: [
+        {
+          afterDatasetsDraw: function(nameGraphAcumulados) {
+            var ctx = nameGraphAcumulados.ctx;
+  
+            ctx.canvas.style.width = "400px";
+            ctx.canvas.style.height = "200px";
+  
+            nameGraphAcumulados.data.datasets.forEach(function(dataset, i) {
+              var meta = nameGraphAcumulados.getDatasetMeta(i);
+              if (!meta.hidden) {
+                meta.data.forEach(function(element, index) {
+                  ctx.fillStyle = "#000";
+                  var fontSize = 12;
+                  var fontStyle = "normal";
+                  var fontFamily = "Arial";
+  
+                  ctx.font = Chart.helpers.fontString(
+                    fontSize,
+                    fontStyle,
+                    fontFamily
+                  );
+                });
+              }
+            });
+          }
+        }
+      ],
+      type: "bar",
+      data: chartData,
+      options: {
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: true
+              },
+              stacked: false,
+              ticks: {
+                display: true
+              },
+              scaleLabel: {
+                display: true,
+                labelString: "periodo",
+                fontColor: "#000"
+              }
+            }
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                display: false
+              },
+              stacked: false,
+              scaleLabel: {
+                display: true,
+                labelString: "portafolio",
+                fontColor: "#000"
+              },
+              ticks: {
+                display: true,
+                callback: function(value) {
+                  return value + "";
+                }
+              }
+            }
+          ]
+        }
+      }
     });
   
   
 };
-
-
-
 
 const graficaMensualesTWP = (tipoGrafica3: string, arrayCkeck:any[], listaMensualesTWP: any) => {
   var dataSetY1 = [];
@@ -990,23 +1178,104 @@ const graficaMensualesTWP = (tipoGrafica3: string, arrayCkeck:any[], listaMensua
         }
       });
     }
-  
-    simpleBarAux1Chart({
-      id: tipoGrafica3,
-      titleX: "Período",
-      titleY: "Portafolio",
+
+    if (nameGraphMovimientosTWP != null){
+      nameGraphMovimientosTWP.destroy();
+    }
+
+    var chartData = {
       labels: dataSetX,
-      tickMaxY: 15.0,
-      tickMinY: -15 /*0*/,
-      tickStepY: 1,
-      width: "400px",
-      height: "200px",
-      dataSet: array
+      datasets: array
+    };
+  
+    var ctxBar: any = document.getElementById(tipoGrafica3);
+    var contextBar = ctxBar.getContext("2d");
+    // Style legends
+    Chart.defaults.global.legend.labels.usePointStyle = true;
+    Chart.defaults.global.legend.labels.fontSize = 9;
+    Chart.defaults.global.legend.labels.boxWidth = 9;
+    Chart.defaults.global.legend.position = "bottom";
+    Chart.defaults.global.legend.display = false;
+    // Style tittle graph
+    Chart.defaults.global.title.display = false;
+    Chart.defaults.global.title.text = "";
+    // Graph responsive
+    Chart.defaults.global.responsive = true;
+    // Data point
+    Chart.defaults.global.elements.point.radius = 0;
+  
+    nameGraphMovimientosTWP = new Chart(contextBar, {
+      plugins: [
+        {
+          afterDatasetsDraw: function(nameGraphMovimientosTWP) {
+            var ctx = nameGraphMovimientosTWP.ctx;
+  
+            ctx.canvas.style.width = "400px";
+            ctx.canvas.style.height = "200px";
+  
+            nameGraphMovimientosTWP.data.datasets.forEach(function(dataset, i) {
+              var meta = nameGraphMovimientosTWP.getDatasetMeta(i);
+              if (!meta.hidden) {
+                meta.data.forEach(function(element, index) {
+                  ctx.fillStyle = "#000";
+                  var fontSize = 12;
+                  var fontStyle = "normal";
+                  var fontFamily = "Arial";
+  
+                  ctx.font = Chart.helpers.fontString(
+                    fontSize,
+                    fontStyle,
+                    fontFamily
+                  );
+                });
+              }
+            });
+          }
+        }
+      ],
+      type: "bar",
+      data: chartData,
+      options: {
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: true
+              },
+              stacked: false,
+              ticks: {
+                display: true
+              },
+              scaleLabel: {
+                display: true,
+                labelString: "periodo",
+                fontColor: "#000"
+              }
+            }
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                display: false
+              },
+              stacked: false,
+              scaleLabel: {
+                display: true,
+                labelString: "portafolio",
+                fontColor: "#000"
+              },
+              ticks: {
+                display: true,
+                callback: function(value) {
+                  return value + "";
+                }
+              }
+            }
+          ]
+        }
+      }
     });
-
 };
-
-
 
 const graficaAcumuladosTWP = (
   tipoGrafica4: string,arrayCkeck:any[],
@@ -1139,17 +1408,101 @@ const graficaAcumuladosTWP = (
       });
     }
   
-    simpleBarAux2Chart({
-      id: tipoGrafica4,
-      titleX: "Período",
-      titleY: "Portafolio",
+    if (nameGraphAcumuladosTWP != null){
+      nameGraphAcumuladosTWP.destroy();
+    }
+
+    var chartData = {
       labels: dataSetX,
-      tickMaxY: 15.0,
-      tickMinY: -15 /*0*/,
-      tickStepY: 1,
-      width: "400px",
-      height: "200px",
-      dataSet: array
+      datasets: array
+    };
+  
+    var ctxBar: any = document.getElementById(tipoGrafica4);
+    var contextBar = ctxBar.getContext("2d");
+    // Style legends
+    Chart.defaults.global.legend.labels.usePointStyle = true;
+    Chart.defaults.global.legend.labels.fontSize = 9;
+    Chart.defaults.global.legend.labels.boxWidth = 9;
+    Chart.defaults.global.legend.position = "bottom";
+    Chart.defaults.global.legend.display = false;
+    // Style tittle graph
+    Chart.defaults.global.title.display = false;
+    Chart.defaults.global.title.text = "";
+    // Graph responsive
+    Chart.defaults.global.responsive = true;
+    // Data point
+    Chart.defaults.global.elements.point.radius = 0;
+  
+    nameGraphAcumuladosTWP = new Chart(contextBar, {
+      plugins: [
+        {
+          afterDatasetsDraw: function(nameGraphAcumuladosTWP) {
+            var ctx = nameGraphAcumuladosTWP.ctx;
+  
+            ctx.canvas.style.width = "400px";
+            ctx.canvas.style.height = "200px";
+  
+            nameGraphAcumuladosTWP.data.datasets.forEach(function(dataset, i) {
+              var meta = nameGraphAcumuladosTWP.getDatasetMeta(i);
+              if (!meta.hidden) {
+                meta.data.forEach(function(element, index) {
+                  ctx.fillStyle = "#000";
+                  var fontSize = 12;
+                  var fontStyle = "normal";
+                  var fontFamily = "Arial";
+  
+                  ctx.font = Chart.helpers.fontString(
+                    fontSize,
+                    fontStyle,
+                    fontFamily
+                  );
+                });
+              }
+            });
+          }
+        }
+      ],
+      type: "bar",
+      data: chartData,
+      options: {
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: true
+              },
+              stacked: false,
+              ticks: {
+                display: true
+              },
+              scaleLabel: {
+                display: true,
+                labelString: "periodo",
+                fontColor: "#000"
+              }
+            }
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                display: false
+              },
+              stacked: false,
+              scaleLabel: {
+                display: true,
+                labelString: "portafolio",
+                fontColor: "#000"
+              },
+              ticks: {
+                display: true,
+                callback: function(value) {
+                  return value + "";
+                }
+              }
+            }
+          ]
+        }
+      }
     });
 
 };
@@ -1158,4 +1511,3 @@ $("#gbox_table_resultadosMensualesTWP").hide();
 $("#graficaMensualTWP").hide();
 $("#gbox_table_resultadosAcumuladosTWP").hide();
 $("#graficaAcumuladosTWP").hide();
-
