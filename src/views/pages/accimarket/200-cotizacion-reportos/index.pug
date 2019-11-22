@@ -1,0 +1,23 @@
+extends /layouts/jsp
+
+block title
+   title 200. Cotización reportos
+
+block styles
+   link(rel="stylesheet" href="../../assets/css/accimarket/200-cotizacion-reportos/styles.css")
+
+block content
+  .page.pl-8.pr-6.flex
+    include _sidebar
+    .content.flex-1
+      .row
+        span.bg-gray-300.block.p-3.font-bold.text-lg Datos de la cotización
+      .row.has_border.w-full.overflow-auto
+        +tab-group("tabs_resultados_busqueda",
+                    {id: "tab_detalle", label: "Detalle"})
+          +tab-item("tab_detalle")
+            .row.w-full.overflow-auto#div-spreads-grid
+              +grid("grid_cotizacion_reportos")
+
+block scripts
+   script(src="../../assets/scripts/accimarket/200-cotizacion-reportos/scripts.js")

@@ -13,7 +13,7 @@ mixin field-input(id, parms)
   - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
   .field(id=_field_id class=_class)
-    .field-label.flex.mr-3
+    .field-label.flex
       label(for=_input_id)= parms.label
       if parms.required
         span.required *
