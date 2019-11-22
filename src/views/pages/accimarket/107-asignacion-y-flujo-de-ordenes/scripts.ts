@@ -532,6 +532,9 @@ const llenaGridFlujoOrdenes = (flujos: any) => {
         }
         i++;
     });
+
+    $(".table_busquedaFlujoghead_1 td:nth-child(9), .table_busquedaFlujoghead_1 td:nth-child(10)").remove();
+    $(".table_busquedaFlujoghead_0 td:nth-child(9), .table_busquedaFlujoghead_0 td:nth-child(10)").remove();
 }
 
 http_findAll("hechos", listaHechos_params, payload => {
