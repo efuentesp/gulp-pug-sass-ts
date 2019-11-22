@@ -1,0 +1,36 @@
+{
+  "cotizacion_reporto": [
+    {
+      "fecha_banda": "08-11-2019",
+      "grupo": "BANCARIO",
+      "instrumento": "Sin Grupo",
+      "plazo": "1 - 30",
+      "rango": "$500,000.00 - $999,999.00",
+      "tasa": 1
+    },
+    {
+      "fecha_banda": "08-11-2019",
+      "grupo": "",
+      "instrumento": "CDS",
+      "plazo": "1 - 30",
+      "rango": "$500,000.00 - $999,999.00",
+      "tasa": 2
+    },
+    {
+      "fecha_banda": "08-11-2019",
+      "grupo": "BANCARIO",
+      "instrumento": "PAGE",
+      "plazo": "1 - 30",
+      "rango": "$500,000.00 - $999,999.00",
+      "tasa": 3
+    },
+    {
+      "fecha_banda": "09-11-2019",
+      "grupo": "BANCARIO",
+      "instrumento": "PAGE",
+      "plazo": "1 - 30",
+      "rango": "$500,000.00 - $999,999.00",
+      "tasa": 3
+    }
+  ]
+}
