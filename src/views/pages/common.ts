@@ -803,6 +803,15 @@ interface pieChartParams {
   height: string;
 }
 
+interface pieHighchartParams {
+  id: string;
+  title: string;
+  format: string;
+  plotOptionsFormat: string;
+  labelsX: string;
+  dataSet: any[];
+}
+
 // Set any colors to pie chart
 const backgroundSet = (elements: number) => {
   // Set principal
@@ -2715,3 +2724,198 @@ const windowResize = (widthTable:number, idTable:String, idSplitterContainer:Str
     $("#"+idTable).jqGrid("setGridWidth", gridWidth, true);
   });
 }
+
+// Get RGB Color
+const colorSet = (
+  rMin: number,
+  rMax : number,
+  gMin : number,
+  gMax : number,
+  bMin : number,
+  bMax : number,
+  min  : number,
+  max  : number) => {
+
+  let c = "";
+  let colorArray = [];
+
+  let arrayR = [];
+  let colorR = rMin
+  while(colorR <= rMax) { 
+    colorR = colorR + 40;
+    arrayR.push(colorR);
+ }  
+ 
+ let arrayG = [];
+ let colorG = gMin
+ while(colorG <= gMax) { 
+   colorG = colorG + 40;
+   arrayG.push(colorG);
+} 
+ 
+let arrayB = [];
+let colorB = bMin
+while(colorB <= bMax) { 
+  colorB = colorB + 40;
+  arrayB.push(colorB);
+} 
+
+let arrayC = [];
+let colorC = min
+while(colorC <= max) { 
+  colorC = colorC + 0.2;
+  arrayC.push(colorC);
+} 
+
+  for (let i = 0; i < arrayR.length; i++) {
+    for (let j= 0; j < arrayG.length; j++){
+      for (let k= 0; k < arrayB.length; k++){
+        for (let z= 0; z < arrayC.length; z++){
+        c = "rgb(" + arrayR[i] + ", " + arrayG[j] + ", " + arrayR[k] + ","+arrayC[z]+")";
+        colorArray.push(c);
+        }
+      }
+    }
+  }
+  return colorArray;
+};
+
+// Get All Set Color
+const getColorPieArray = () => {
+let colorArray = [];
+let colorBase = [];
+let colorArrayG = [];
+let colorArrayB = [];
+let colorArrayBL = [];
+
+  colorBase = [
+  "#becfda", "#dfe7ec", "#d9d9d9", "#00b5cc", "#87d1d9",
+  "#87d1d9", "#5d87a1", "#a6a6a6", "#53565a", "#afaeb0", 
+  "#636165", "#466579", "#9eb7c7"];
+
+  colorArray = colorBase;
+  // Grey
+  colorArrayG = colorSet(83,166,86,166,90,166,0,1);
+  colorArrayG.forEach(element => {
+    colorArray.push(element);
+  });
+  // Blue
+  colorArrayB = colorSet(93,135,135,209,161,217,0,1);
+  colorArrayB.forEach(element => {
+    colorArray.push(element);
+  });
+  // Blue Light
+  colorArrayBL = colorSet(0,135,181,209,204,217,0,1);
+  colorArrayBL.forEach(element => {
+    colorArray.push(element);
+  });
+
+return colorArray;
+}
+
+let pieColors = (function () {
+  let colors = Highcharts.map(getColorPieArray(),
+  function(color) {
+    return {
+      radialGradient: {
+        cx: 0.5,
+        cy: 0.3,
+        r: 0.7
+      },
+      stops: [
+        [0, color],
+        [
+          1,
+          Highcharts.color(color)
+            .brighten(-0.3)
+            .get("rgb")
+        ]
+      ]
+    };
+  }
+)
+  return colors;
+}());
+
+const pieHighchart = (params: pieHighchartParams) => {
+  // Pie Graph
+  Highcharts.chart(params.id, {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: "pie"
+    },
+    title: {
+      text: params.title
+    },
+    tooltip: {
+      pointFormat: params.format
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        colors: pieColors,
+        dataLabels: {
+          enabled: true,
+          format: params.plotOptionsFormat,
+          connectorColor: "silver"
+        }
+      }
+    },
+    series: [
+      {
+        name: params.labelsX,
+        data: params.dataSet,
+        type: undefined,
+        animation: {
+          duration: 1000
+        },
+        shadow: true
+      }
+    ]
+  });
+};
+
+const pieBorderHighchart = (params: pieHighchartParams) => {
+  // Pie Graph
+  Highcharts.chart(params.id, {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: "pie"
+    },
+    title: {
+      text: params.title
+    },
+    tooltip: {
+      pointFormat: params.format
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        colors: pieColors,
+        dataLabels: {
+          enabled: true,
+          format: params.plotOptionsFormat,
+          connectorColor: "silver"
+        },
+        borderWidth: 10
+      }
+    },
+    series: [
+      {
+        name: params.labelsX,
+        data: params.dataSet,
+        type: undefined,
+        animation: {
+          duration: 1000
+        },
+        shadow: true
+      }
+    ]
+  });
+};
