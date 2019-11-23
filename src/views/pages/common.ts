@@ -542,7 +542,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
     $(list + " li a").each(function (index) {
       if ($(this).attr("id") === $(idInput).val()) {
         if (!definedNodes) {
-          $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
+          $(this).parent().remove();
           $(list + " li").length = $(list + " li").length - 1;
         } else {
           if ($(list + " li").length <= 4) {
@@ -550,10 +550,9 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
               .find("a")
               .first()
               .removeAttr("id");
-            $(this).text("");
+          $(this).text("");
           } else {
-            $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
-            $(this).text("");
+            $(this).parent().remove();
             $(list + " li").length = $(list + " li").length - 1;
           }
         }
@@ -589,12 +588,11 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   const idInput = "#" + id;
   const list = "ul#tag_list_" + id;
   const node = "tag_list_" + id;
-  const restService = params.service;
   const attrId = params.id;
   const attrText = params.text;
   const payload = params.payload;
   let definedNodes = true;
-  const numNodes = 4;
+  const numNodes = 2;
 
   if (params.nodes == undefined) {
     definedNodes = true;
@@ -604,9 +602,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
 
   if (definedNodes) {
     for (let i = 0; i < numNodes; i++) {
-      $(list).append(
-        "<li><a class='delete_item' href='javascript:void();'></a></li>"
-      );
+      $(list).append("<li><a class='delete_item' href='javascript:void();'></a></li>");
     }
   }
 
@@ -618,7 +614,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       if (!addedText(text_to_add, value_to_add, list)) {
         addNode(text_to_add, value_to_add, list, params.maxsize);
       }
-    }
+     }
     fieldPlusMinusRepaintList(node);
     $(idInput)
       .val(null)
@@ -629,7 +625,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     $(list + " li a").each(function (index) {
       if ($(this).attr("id") === $(idInput).val()) {
         if (!definedNodes) {
-          $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
+          $(this).parent().remove();
           $(list + " li").length = $(list + " li").length - 1;
         } else {
           if ($(list + " li").length <= 4) {
@@ -639,8 +635,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
               .removeAttr("id");
             $(this).text("");
           } else {
-            $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
-            $(this).text("");
+            $(this).parent().remove();
             $(list + " li").length = $(list + " li").length - 1;
           }
         }

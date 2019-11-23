@@ -376,7 +376,7 @@ Highcharts.chart('containerBar', {
       type: 'bar',
       events: {
         load: function() {
-          let categoryHeight = 45;
+          let categoryHeight = 60;
           this.update({
             chart: {
               height:
@@ -391,7 +391,7 @@ Highcharts.chart('containerBar', {
       text: 'Frutas Bar Chart'
   },
   xAxis: {
-      categories: ['Apples']
+      categories: ['Apples','']
   },
   yAxis: {
       min: 0,
@@ -400,7 +400,8 @@ Highcharts.chart('containerBar', {
       }
   },
   legend: {
-      reversed: true,
+    
+      // reversed: true,
       align: "right",
       verticalAlign: "top",
       layout: 'vertical',
@@ -410,33 +411,95 @@ Highcharts.chart('containerBar', {
   plotOptions: {
       series: {
           stacking: 'normal',
-          shadow: true
+          shadow: false
       }
   },
-  series: [{
+  series: [
+  
+  {
       name: 'John',
-      data: [5],
+      data: [
+        {
+          y: 5,
+          color: '#53565a'
+        },
+        {
+          y: 5,
+          color: {
+            linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+            stops: [
+                [0, '#ffffff'], // start
+                [0.2, '#ffffff'], // middle
+                [1, '#53565a'] // end
+            ]
+          }
+        },
+      ],
       type: undefined,
-      color:"#53565a"
-  }, {
+  }, 
+  {
       name: 'Jane',
-      data: [2],
-      type: undefined,
-      color:"#a6a6a6"
+      data: [
+        {
+          y: 2,
+          color: '#a6a6a6'
+        },
+        {
+          y: 2,
+          color: {
+            linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+            stops: [
+                [0, '#ffffff'], // start
+                [0.2, '#ffffff'], // middle
+                [1, '#a6a6a6'] // end
+            ]
+          }
+        },
+      ],
+      type: undefined
   }, {
       name: 'Joe',
-      data: [3],
-      type: undefined,
-      color:"#5d87a1"
+      data: [
+        {
+          y: 2,
+          color: '#5d87a1'
+        },
+        {
+          y: 2,
+          color: {
+            linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+            stops: [
+                [0, '#ffffff'], // start
+                [0.2, '#ffffff'], // middle
+                [1, '#5d87a1'] // end
+            ]
+          }
+        },
+      ],
+      type: undefined
   },
   {
     name: 'Janin',
-    data: [1],
-    type: undefined,
-    color:"#87d1d9"
-  }
- 
-],
+    data: [
+      {
+        y: 1,
+        color: '#87d1d9'
+      },
+      {
+        y: 1,
+        color: {
+          linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+          stops: [
+              [0, '#ffffff'], // start
+              [0.2, '#ffffff'], // middle
+              [1, '#87d1d9'] // end
+          ]
+        }
+      },
+    ],
+    type: undefined
+  } 
+]
   
 });
 
