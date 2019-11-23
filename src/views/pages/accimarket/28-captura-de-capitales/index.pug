@@ -4,41 +4,48 @@ block title
    title 28.Captura de capitales
 
 block styles
-  link(rel="stylesheet" href="../../assets/css/accimarket/28-captura-de-capitales/styles.css")
+   link(rel="stylesheet" href="../../assets/css/accimarket/28-captura-de-capitales/styles.css")
 
 block content
    .content.p-4
-            +tab-group("consultas_tab_group",
-               {id: "tab_captura_de_capitales", label: "Captura de capitales"},
-               {id: "tab_captura_global", label: "Captura global"},
-               {id: "tab_ofertas_publicas", label: "Ofertas públicas"},
-               {id: "tab_captura_masiva", label: "Captura masiva"}
-            )
-               +tab-item("tab_captura_de_capitales")
-                        .row
-                        b Captura de Órdenes  
-                           +form("capturaDeCapitales-validacion")
-                              include _grupo1 
+      +tab-group("consultas_tab_group",
+         {id: "tab_captura_de_capitales", label: "Captura de capitales"},
+         {id: "tab_captura_global", label: "Captura global"},
+         {id: "tab_ofertas_publicas", label: "Ofertas públicas"},
+         {id: "tab_captura_masiva", label: "Captura masiva"}
+      )
+         +tab-item("tab_captura_de_capitales")
+            .row
+            b Captura de Órdenes
+               +form("capturaDeCapitales-validacion")
+                  include _grupo1
+            .row.w-full.overflow-auto
+               b Lista de Órdenes
+               +tab-group("listas_tab_group",
+                  {id: "tab_ordenes", label: "Órdenes"},
+                  {id: "tab_envios_y_errores", label: "Envíos y Errores"}
+               )
+                  .row
+                     +tab-item("tab_ordenes")
                         .row.w-full.overflow-auto
-                           b Lista de Órdenes
-                           +tab-group("listas_tab_group",
-                              {id: "tab_ordenes", label: "Órdenes"},
-                              {id: "tab_envios_y_errores", label: "Envíos y errores"}
-                           )   
-                              .row                    
-                                 +tab-item("tab_ordenes")
-                                    .row.w-full.overflow-auto                                         
-                                       +grid("Ccapitales")
-                                       include _grupo2
-                                 +tab-item("tab_envios_y_errores")
-                                    .row.w-full.overflow-auto
-                                       b Órdenes enviadas
-                                       +grid("Oenviadas")
-                                    .row.w-full.overflow-auto
-                                       b Órdenes con error
-                                       +grid("Oerror")
-                                    .row#sticky-action-bar
-                                       include _grupo2 
+                           +grid("Ccapitales")
+                           include _grupo2
+                     +tab-item("tab_envios_y_errores")
+                        +splitter("horizontal-splitter", {orientation: "horizontal"})
+                           .pane
+                              .row.w-full.overflow-auto
+                                 b Órdenes enviadas
+                                 +grid("Oenviadas")
+                           .pane
+                              .row.w-full.overflow-auto
+                                 b Órdenes con error
+                                 +grid("Oerror")
+                        .row#sticky-action-bar
+                           include _grupo2
+
+   include contextMenu/_contextMenu
+   include dialogo/_dialogos
+   include dialogo/_dialogColum
+
 block scripts
    script(src="../../assets/scripts/accimarket/28-captura-de-capitales/scripts.js")
-                    

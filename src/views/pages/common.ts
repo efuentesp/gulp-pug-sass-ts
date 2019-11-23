@@ -550,7 +550,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
     $(list + " li a").each(function (index) {
       if ($(this).attr("id") === $(idInput).val()) {
         if (!definedNodes) {
-          $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
+          $(this).parent().remove();
           $(list + " li").length = $(list + " li").length - 1;
         } else {
           if ($(list + " li").length <= 4) {
@@ -558,10 +558,9 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
               .find("a")
               .first()
               .removeAttr("id");
-            $(this).text("");
+          $(this).text("");
           } else {
-            $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
-            $(this).text("");
+            $(this).parent().remove();
             $(list + " li").length = $(list + " li").length - 1;
           }
         }
@@ -597,12 +596,11 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   const idInput = "#" + id;
   const list = "ul#tag_list_" + id;
   const node = "tag_list_" + id;
-  const restService = params.service;
   const attrId = params.id;
   const attrText = params.text;
   const payload = params.payload;
   let definedNodes = true;
-  const numNodes = 4;
+  const numNodes = 2;
 
   if (params.nodes == undefined) {
     definedNodes = true;
@@ -612,9 +610,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
 
   if (definedNodes) {
     for (let i = 0; i < numNodes; i++) {
-      $(list).append(
-        "<li><a class='delete_item' href='javascript:void();'></a></li>"
-      );
+      $(list).append("<li><a class='delete_item' href='javascript:void();'></a></li>");
     }
   }
 
@@ -626,7 +622,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       if (!addedText(text_to_add, value_to_add, list)) {
         addNode(text_to_add, value_to_add, list, params.maxsize);
       }
-    }
+     }
     fieldPlusMinusRepaintList(node);
     $(idInput)
       .val(null)
@@ -637,7 +633,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     $(list + " li a").each(function (index) {
       if ($(this).attr("id") === $(idInput).val()) {
         if (!definedNodes) {
-          $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
+          $(this).parent().remove();
           $(list + " li").length = $(list + " li").length - 1;
         } else {
           if ($(list + " li").length <= 4) {
@@ -647,8 +643,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
               .removeAttr("id");
             $(this).text("");
           } else {
-            $("li:has('a.delete_item'):contains("+$(this).attr("id")+")").remove();
-            $(this).text("");
+            $(this).parent().remove();
             $(list + " li").length = $(list + " li").length - 1;
           }
         }
@@ -809,6 +804,15 @@ interface pieChartParams {
   dataSet: any[];
   width: string;
   height: string;
+}
+
+interface pieHighchartParams {
+  id: string;
+  title: string;
+  format: string;
+  plotOptionsFormat: string;
+  labelsX: string;
+  dataSet: any[];
 }
 
 // Set any colors to pie chart
@@ -2723,3 +2727,198 @@ const windowResize = (widthTable:number, idTable:String, idSplitterContainer:Str
     $("#"+idTable).jqGrid("setGridWidth", gridWidth, true);
   });
 }
+
+// Get RGB Color
+const colorSet = (
+  rMin: number,
+  rMax : number,
+  gMin : number,
+  gMax : number,
+  bMin : number,
+  bMax : number,
+  min  : number,
+  max  : number) => {
+
+  let c = "";
+  let colorArray = [];
+
+  let arrayR = [];
+  let colorR = rMin
+  while(colorR <= rMax) { 
+    colorR = colorR + 40;
+    arrayR.push(colorR);
+ }  
+ 
+ let arrayG = [];
+ let colorG = gMin
+ while(colorG <= gMax) { 
+   colorG = colorG + 40;
+   arrayG.push(colorG);
+} 
+ 
+let arrayB = [];
+let colorB = bMin
+while(colorB <= bMax) { 
+  colorB = colorB + 40;
+  arrayB.push(colorB);
+} 
+
+let arrayC = [];
+let colorC = min
+while(colorC <= max) { 
+  colorC = colorC + 0.2;
+  arrayC.push(colorC);
+} 
+
+  for (let i = 0; i < arrayR.length; i++) {
+    for (let j= 0; j < arrayG.length; j++){
+      for (let k= 0; k < arrayB.length; k++){
+        for (let z= 0; z < arrayC.length; z++){
+        c = "rgb(" + arrayR[i] + ", " + arrayG[j] + ", " + arrayR[k] + ","+arrayC[z]+")";
+        colorArray.push(c);
+        }
+      }
+    }
+  }
+  return colorArray;
+};
+
+// Get All Set Color
+const getColorPieArray = () => {
+let colorArray = [];
+let colorBase = [];
+let colorArrayG = [];
+let colorArrayB = [];
+let colorArrayBL = [];
+
+  colorBase = [
+  "#becfda", "#dfe7ec", "#d9d9d9", "#00b5cc", "#87d1d9",
+  "#87d1d9", "#5d87a1", "#a6a6a6", "#53565a", "#afaeb0", 
+  "#636165", "#466579", "#9eb7c7"];
+
+  colorArray = colorBase;
+  // Grey
+  colorArrayG = colorSet(83,166,86,166,90,166,0,1);
+  colorArrayG.forEach(element => {
+    colorArray.push(element);
+  });
+  // Blue
+  colorArrayB = colorSet(93,135,135,209,161,217,0,1);
+  colorArrayB.forEach(element => {
+    colorArray.push(element);
+  });
+  // Blue Light
+  colorArrayBL = colorSet(0,135,181,209,204,217,0,1);
+  colorArrayBL.forEach(element => {
+    colorArray.push(element);
+  });
+
+return colorArray;
+}
+
+let pieColors = (function () {
+  let colors = Highcharts.map(getColorPieArray(),
+  function(color) {
+    return {
+      radialGradient: {
+        cx: 0.5,
+        cy: 0.3,
+        r: 0.7
+      },
+      stops: [
+        [0, color],
+        [
+          1,
+          Highcharts.color(color)
+            .brighten(-0.3)
+            .get("rgb")
+        ]
+      ]
+    };
+  }
+)
+  return colors;
+}());
+
+const pieHighchart = (params: pieHighchartParams) => {
+  // Pie Graph
+  Highcharts.chart(params.id, {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: "pie"
+    },
+    title: {
+      text: params.title
+    },
+    tooltip: {
+      pointFormat: params.format
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        colors: pieColors,
+        dataLabels: {
+          enabled: true,
+          format: params.plotOptionsFormat,
+          connectorColor: "silver"
+        }
+      }
+    },
+    series: [
+      {
+        name: params.labelsX,
+        data: params.dataSet,
+        type: undefined,
+        animation: {
+          duration: 1000
+        },
+        shadow: true
+      }
+    ]
+  });
+};
+
+const pieBorderHighchart = (params: pieHighchartParams) => {
+  // Pie Graph
+  Highcharts.chart(params.id, {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: "pie"
+    },
+    title: {
+      text: params.title
+    },
+    tooltip: {
+      pointFormat: params.format
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        colors: pieColors,
+        dataLabels: {
+          enabled: true,
+          format: params.plotOptionsFormat,
+          connectorColor: "silver"
+        },
+        borderWidth: 10
+      }
+    },
+    series: [
+      {
+        name: params.labelsX,
+        data: params.dataSet,
+        type: undefined,
+        animation: {
+          duration: 1000
+        },
+        shadow: true
+      }
+    ]
+  });
+};

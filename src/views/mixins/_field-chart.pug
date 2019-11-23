@@ -1,0 +1,3 @@
+mixin chart(id,params)
+  - var _style = "min-width: " + (params.min_width ? params.min_width : "200px") + ";" + "max-width: " + (params.max_width ? params.max_width : "800px") + ";" + "height: " + (params.height ? params.height : "400px") + ";  margin: 0 auto;"
+  div(id=id style=_style)

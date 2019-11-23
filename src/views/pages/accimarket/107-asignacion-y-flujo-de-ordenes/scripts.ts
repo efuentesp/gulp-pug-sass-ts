@@ -463,7 +463,7 @@ const llenaGridFlujoOrdenes = (flujos: any) => {
         datatype: "local",
         height: "auto",
         shrinkToFit: false,
-        autoWidth: true,
+        autowidth: true,
         sortname: "flujo",
         sortorder: "desc",
         rowNum: 10,

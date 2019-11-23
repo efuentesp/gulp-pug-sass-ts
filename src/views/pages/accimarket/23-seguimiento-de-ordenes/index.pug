@@ -1,26 +1,46 @@
 extends /layouts/html5
 
 block title
-    title Movimientos por Contrato
+    title Seguimiento de Ordenes
 
 block styles
     link(rel="stylesheet" href="../../assets/css/accimarket/23-seguimiento-de-ordenes/styles.css")
 
+block content
+    .content.p-4
+        +accordion("criterios_busqueda_accordion")
+            +accordion-item("criterios_busqueda_accordion_item")
+                .row.flex
+                    .row.is-search-form#search-criterias-column
+                        include _grupoParametros
+                        include _grupoChecks
+                    .row#idGrupoBotones
+                        include _grupoBotones
+        .row.has_border.w-full.overflow-auto
+            +tab-group("seguimiento_ordenes_tab_group",
+                {id: "tab_item_intradia", label: "Intradia"},
+                {id: "tab_item_historicos", label: "Históricos"})
+                    +tab-item("tab_item_intradia")
+                        .row.w-full.overflow-auto
+                            +grid("intradiaList")
+                        .row
+                            +field-input("totalRegIntra",
+                                {
+                                    label: "Total de registros",
+                                    orientation: "horizontal",
+                                    size: "8em"
+                                })
+                    +tab-item("tab_item_historicos")
+                        .row.w-full.overflow-auto
+                            +grid("historicList")
+                        .row
+                            +field-input("totalRegHisto",
+                                {
+                                    label: "Total de registros",
+                                    orientation: "horizontal",
+                                    size: "8em"
+                                })
+        include dialog/_dialogOrdenes
+
 block scripts
     script(src="../../assets/scripts/accimarket/23-seguimiento-de-ordenes/scripts.js")
-
-block content
-    .content.acordion
-        +accordion("seguimiento_acordion")
-            +accordion-item("acordion_item")
-                include _grupoParametros
-                include _grupoChecks
-                include _grupoBotones
-        .row.has_border.w-full.overflow-auto
-        +tab-group("grupo_grids",
-            {id: "tab_intradia", label: "Intradia"},
-            {id: "tab_historico", label: "Históricos"})
-            +tab-item("tab_intradia")
-                p -------------------------PENDIENTE---------------------------
-            +tab-item("tab_historico")
-                +grid("grid_mov_contrato")

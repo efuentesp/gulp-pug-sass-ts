@@ -578,7 +578,7 @@ $('input[name="chk_cmbOpcionesRendi"]').change(function() {
   }
 });
 
-const graficaMensuales = (tipoGrafica: string, arrayCkeck:any[], listaMensuales: any) => {
+const graficaMensuales = (GraficaM: string, arrayCkeck:any[], listaMensuales: any) => {
   var dataSetY1 = [];
   var dataSetY2 = [];
   var dataSetY3 = [];
@@ -704,7 +704,7 @@ const graficaMensuales = (tipoGrafica: string, arrayCkeck:any[], listaMensuales:
     datasets: array
   };
 
-  var ctxBar: any = document.getElementById(tipoGrafica);
+  var ctxBar: any = document.getElementById(GraficaM);
   var contextBar = ctxBar.getContext("2d");
   // Style legends
   Chart.defaults.global.legend.labels.usePointStyle = true;
@@ -793,7 +793,7 @@ const graficaMensuales = (tipoGrafica: string, arrayCkeck:any[], listaMensuales:
   });
 };
 
-const graficaAcumulados = (tipoGrafica2: string, arrayCkeck:any[], listaAcumulados: any) => {
+const graficaAcumulados = (GraficaA: string, arrayCkeck:any[], listaAcumulados: any) => {
   var dataSetY10 = [];
   var dataSetY11 = [];
   var dataSetY12 = [];
@@ -919,7 +919,7 @@ const graficaAcumulados = (tipoGrafica2: string, arrayCkeck:any[], listaAcumulad
       datasets: array
     };
   
-    var ctxBar: any = document.getElementById(tipoGrafica2);
+    var ctxBar: any = document.getElementById(GraficaA);
     var contextBar = ctxBar.getContext("2d");
     // Style legends
     Chart.defaults.global.legend.labels.usePointStyle = true;
@@ -1010,7 +1010,7 @@ const graficaAcumulados = (tipoGrafica2: string, arrayCkeck:any[], listaAcumulad
   
 };
 
-const graficaMensualesTWP = (tipoGrafica3: string, arrayCkeck:any[], listaMensualesTWP: any) => {
+const graficaMensualesTWP = (GraficaMTWP: string, arrayCkeck:any[], listaMensualesTWP: any) => {
   var dataSetY1 = [];
   var dataSetY2 = [];
   var dataSetY3 = [];
@@ -1188,7 +1188,7 @@ const graficaMensualesTWP = (tipoGrafica3: string, arrayCkeck:any[], listaMensua
       datasets: array
     };
   
-    var ctxBar: any = document.getElementById(tipoGrafica3);
+    var ctxBar: any = document.getElementById(GraficaMTWP);
     var contextBar = ctxBar.getContext("2d");
     // Style legends
     Chart.defaults.global.legend.labels.usePointStyle = true;
@@ -1278,7 +1278,7 @@ const graficaMensualesTWP = (tipoGrafica3: string, arrayCkeck:any[], listaMensua
 };
 
 const graficaAcumuladosTWP = (
-  tipoGrafica4: string,arrayCkeck:any[],
+  GraficaATWP: string,arrayCkeck:any[],
   listaAcumuladosTWP: any
 ) => {
   var dataSetY1 = [];
@@ -1417,7 +1417,7 @@ const graficaAcumuladosTWP = (
       datasets: array
     };
   
-    var ctxBar: any = document.getElementById(tipoGrafica4);
+    var ctxBar: any = document.getElementById(GraficaATWP);
     var contextBar = ctxBar.getContext("2d");
     // Style legends
     Chart.defaults.global.legend.labels.usePointStyle = true;

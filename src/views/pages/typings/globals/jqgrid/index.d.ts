@@ -169,7 +169,7 @@ interface JQueryJqGridOptions {
    * This is done only initially when the grid is created.
    * In order to resize the grid when the parent element changes width you should apply custom code and use the setGridWidth method for this purpose
    */
-  autoWidth?: boolean;
+  autowidth?: boolean;
 
   /**
    * Defines the caption for the grid. This caption appears in the caption layer, which is above the header layer
@@ -373,6 +373,8 @@ interface JQueryJqGridOptions {
   rowattr?: (item: any) => void;
   onSortCol?: (index: any, columnIndex: any, sortOrder: any) => string;
   editParams?: any;
+  recordtext?: string;
+  pagerpos?: string;
 }
 
 interface JQueryJqGridStatic {

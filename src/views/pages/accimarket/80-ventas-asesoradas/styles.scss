@@ -3,8 +3,29 @@
   justify-content: space-between;
 }
 #field_negocios {
-  margin-top: 4em;
+  margin-top: 1em;
 }
 #field_totalreg {
-  margin-left: 100em;
+  font-weight: 700;
+  justify-content: flex-end;
+
+  input {
+    text-align: center;
+  }
+}
+
+#field_dateRangeVencimiento,
+#field_dateRangeVencimiento_end_date {
+  label {
+    width: 10em;
+  }
+}
+
+#field_msgText {
+  .field-control {
+    #msgText {
+      width: 25em !important;
+      height: 15em !important;
+    }
+  }
 }
