@@ -5,7 +5,16 @@
 
 // const fecha_actual = dd + '-' + mm + '-' + yyyy;
 // $("#fecha_banda").val(fecha_actual);
+//$(".sidebar").attr("style", "border: 10px solid lime; width: 14px !important;");
 
+let expandSideBar:boolean = $(".sidebar").attr("expand") == "true";
+if( expandSideBar ){
+  $(".sidebar_content").parent().attr("style", "width: 250px !important;");
+
+  $(".sidebar_content").addClass("is_open");
+  $(".sidebar_button").addClass("is_open");
+  $(".content").addClass("is_sidebar_open");
+}
 
 ($("#grupo") as any).select2({
   language: "es",
