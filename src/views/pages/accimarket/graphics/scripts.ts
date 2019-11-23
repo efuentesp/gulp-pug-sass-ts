@@ -376,7 +376,7 @@ Highcharts.chart('containerBar', {
       type: 'bar',
       events: {
         load: function() {
-          let categoryHeight = 60;
+          let categoryHeight = 50;
           this.update({
             chart: {
               height:
@@ -388,7 +388,7 @@ Highcharts.chart('containerBar', {
       }
   },
   title: {
-      text: 'Frutas Bar Chart'
+      text: 'Bar Chart'
   },
   xAxis: {
       categories: ['Apples','']
@@ -396,17 +396,21 @@ Highcharts.chart('containerBar', {
   yAxis: {
       min: 0,
       title: {
-          text: 'Total fruit consumption'
-      }
+          text: ''
+      },
+      labels: {
+        enabled: false,
+        style: {
+          color: '#000000',
+        }
+    },
   },
   legend: {
-    
-      // reversed: true,
       align: "right",
       verticalAlign: "top",
       layout: 'vertical',
       x: 20,
-      y: 25
+      y: 0
   },
   plotOptions: {
       series: {
@@ -415,8 +419,8 @@ Highcharts.chart('containerBar', {
       }
   },
   series: [
-  
   {
+      color: '#53565a',
       name: 'John',
       data: [
         {
@@ -430,14 +434,16 @@ Highcharts.chart('containerBar', {
             stops: [
                 [0, '#ffffff'], // start
                 [0.2, '#ffffff'], // middle
-                [1, '#53565a'] // end
+                [1, '#c9cacc'] // end
             ]
           }
         },
       ],
+      pointPadding: -0.15,
       type: undefined,
   }, 
   {
+      color: '#a6a6a6',
       name: 'Jane',
       data: [
         {
@@ -451,13 +457,15 @@ Highcharts.chart('containerBar', {
             stops: [
                 [0, '#ffffff'], // start
                 [0.2, '#ffffff'], // middle
-                [1, '#a6a6a6'] // end
+                [1, '#d9d9d9'] // end
             ]
           }
         },
       ],
+      pointPadding: -0.15,
       type: undefined
   }, {
+      color: '#5d87a1',
       name: 'Joe',
       data: [
         {
@@ -471,19 +479,22 @@ Highcharts.chart('containerBar', {
             stops: [
                 [0, '#ffffff'], // start
                 [0.2, '#ffffff'], // middle
-                [1, '#5d87a1'] // end
+                [1, '#aec3d0'] // end
             ]
           }
         },
       ],
+      pointPadding: -0.15,
       type: undefined
   },
   {
+    color: '#87d1d9',
     name: 'Janin',
     data: [
       {
         y: 1,
-        color: '#87d1d9'
+        color: '#87d1d9',
+        borderRadiusTopLeft: 10
       },
       {
         y: 1,
@@ -492,11 +503,12 @@ Highcharts.chart('containerBar', {
           stops: [
               [0, '#ffffff'], // start
               [0.2, '#ffffff'], // middle
-              [1, '#87d1d9'] // end
+              [1, '#c3e8ec'] // end
           ]
         }
       },
     ],
+    pointPadding: -0.15,
     type: undefined
   } 
 ]
