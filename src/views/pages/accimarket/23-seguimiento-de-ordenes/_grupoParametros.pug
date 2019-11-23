@@ -1,10 +1,8 @@
 include /mixins/mixins
 
-+field-input("fecha",
++field-date("date",
     {
-        label: "Fecha:",
-        required: true,
-        size: "11em",
+        label: "Fecha",
         orientation: "horizontal"
     })
 +field-plus-minus("contrato",
@@ -13,9 +11,11 @@ include /mixins/mixins
         size: "11em",
         orientation: "horizontal"
     })
-+field-plus-minus("digito",
++field-select-plus-minus("digito",
     {
-        label: "Digito: ",
+        label: "Digito",
         size: "11em",
-        orientation: "horizontal"
-    })
+        maxsize: 3,
+        orientation: "horizontal"},
+    {key: "", value:""}
+    )

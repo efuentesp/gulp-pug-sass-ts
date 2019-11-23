@@ -12,7 +12,7 @@ block content
          +accordion("criterios_busqueda_accordion")
             +accordion-item("criterios_busqueda_accordion_item")
                +form("criterios-busqueda", {class: "is-search-form"})
-                  +field-date-range("dateRangeVencimiento", {begin_label:"Fecha Inicial", end_label:"Fecha Final",required:true})
+                  +field-date-range("dateRangeVencimiento", {begin_label:"Fecha Inicial", end_label:"Fecha Final",required:true,orientation:"horizontal"})
                   +field-select("negocios",
                      {
                      label: "Lista de Negocios",
@@ -27,11 +27,13 @@ block content
                   .column#botones-accion
                      +button-search({size: "large", tooltip: "Consultar", disabled: false})
                      +button-clean({size: "large", tooltip: "Limpiar", disabled: false})
+      .row.text-center.h-12.bg-orange-100
+         p.font-bold.text-2xl.p-2 Listado de Ordenes
       //- .row.has_border
       .row.w-full.overflow-auto.heigthTabla.mt-4
          +grid("ventas")
          //- +grid-records-count("ventas")
-      .row.justify-end
+      .row
          +field-input("totalreg",
             {
             label: "Total de registros",
@@ -39,6 +41,8 @@ block content
             size: "6em",
             disabled:true
             })
+
+      include dialog/_dialog
 
 
 block scripts
