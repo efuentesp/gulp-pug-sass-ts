@@ -1,0 +1,14 @@
+.row
+    .ui-dialog.hidden(id="dialogoMessage")
+        .row.flex
+            .w-20#msgWarning
+                img.w-16.mt-4(src="../../assets/images/msgWarning.png")
+            .w-20#msgInfo
+                img.w-16.mt-4(src="../../assets/images/msgInfo.png")
+            .w-20#msgCritical
+                img.w-16.mt-4(src="../../assets/images/msgCritical.png")
+            .ml-4
+                p#textoMensaje
+        .row.pt-4.flex.justify-center
+            +button-accept
+            +button-cancel

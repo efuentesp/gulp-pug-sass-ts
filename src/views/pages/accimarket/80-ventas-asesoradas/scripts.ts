@@ -9,7 +9,7 @@ console.log("80-ventas asesoradas");
   minimumResultsForSearch: Infinity
 });
 
-$("#totalreg").val("1,000,000.00");
+$("#totalreg").val();
 
 validateDateRage("dateRangeVencimiento");
 fieldBeginDateRangeClear("dateRangeVencimiento");
@@ -203,5 +203,33 @@ const llenaGridVentaAsesorada = (ventas: any) => {
     sortorder: "desc",
     shrinkToFit: false
   });
+};
+
+$("#btn_search").click(() => {
+  mensajeDialog(1, "Ejemplo de mensaje search");
+});
+
+const mensajeDialog = (opcion, mensaje) => {
+  $("#msgText").val(mensaje);
+  if (opcion == 1) {
+    $("#msgInfo").show();
+    $("#msgWarning").hide();
+    $("#msgCritical").hide();
+  } else if (opcion == 2) {
+    $("#msgInfo").hide();
+    $("#msgWarning").show();
+    $("#msgCritical").hide();
+  } else {
+    $("#msgInfo").hide();
+    $("#msgWarning").hide();
+    $("#msgCritical").show();
+  }
+  $("#dialogo_aviso").dialog({
+    modal: true,
+    closeText: "",
+    show: true,
+    title: "Aviso de Sistemas",
+    width: 400
+  })
 };
 // $("#table_vencidos").jqGrid("setFrozenColumns");

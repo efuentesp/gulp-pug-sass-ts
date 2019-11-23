@@ -15,128 +15,168 @@
       justify-content: flex-end;
     }
   }
-#botones-final {
-  display: flex;
-  justify-content: center;
-  .field-control{
-    border: 0.5px solid #D3D3D3;
-    border-radius: 8px;
-    padding: 5px;
+  #botones-final {
+    display: flex;
+    justify-content: flex-end;
+    .field-control {
+      border: 2px solid #d3d3d3;
+      border-radius: 8px;
+      padding: 5px;
     }
-}
-#boton-reset {
-  display: flex;
-  justify-content: flex-end;
-}
-#ordenaElementos  {
-  flex-wrap: wrap;
-  .field-label {
-    width: 8.5em;
   }
-  overflow-y: auto !important;
-  max-height: 500px !important;
-  width: 300px !important; 
-  overflow-x: disabled !important; 
-  
+  #boton-reset {
+    display: flex;
+    justify-content: flex-end;
   }
-  #elementosOcultos{
-  display: none;
-  flex-wrap: wrap;
-  .field-label {
-    width: 8.5em;
+  #ordenaElementos {
+    flex-wrap: wrap;
+    .field-label {
+      width: 8.5em;
+    }
+    overflow-y: auto !important;
+    max-height: 500px !important;
+    width: 300px !important;
+    overflow-x: disabled !important;
   }
+  #elementosOcultos {
+    display: none;
+    flex-wrap: wrap;
+    .field-label {
+      width: 8.5em;
+    }
   }
 
-#elementosJuntos{
-  display: flex;
-  }
-#elementosJuntos2{
+  #elementosJuntos {
     display: flex;
-   // display: none;
+  }
+  #elementosJuntos2 {
+    display: flex;
+    // display: none;
     .field-label {
       width: 6em !important;
     }
   }
-#elementosJuntos3{
+  #elementosJuntos3 {
     display: flex;
-    .field-label {
-      width: 5em;
-    }
   }
-  
-#posicionlabel{
-    display: flex;
-    .field-label {
-      width: 5em;
-    }
-  } 
 
-#field_Posicion{
-  display: none; 
-}
-#field_digito{ 
-  display: none;      
-  .field-label {
-    width: 1em !important;
+  #field_Posicion {
+    display: flex;
   }
-}
-#field_red{
-  display: none;
-}
-#field_precMdo{
-  display: none;
-}
-#field_PrecCierre{
-  display: none;
-}
-  #field_titular{ 
-    display: none;      
+
+  #field_digito {
+    display: none;
     .field-label {
       width: 1em !important;
     }
-    }
-#field_perfilC{ 
-    display: none; 
-    .field-label {
-      position: relative; 
-      top: 0.8em; 
-    }         
-} 
-#field_IPContrato{ 
-  display: none;      
-  .field-label {
-    width: 1em !important;
   }
-} 
-  #field_pemisora{ 
+  #field_red {
     display: none;
   }
-  #field_Mensajes{ 
-    display: none;      
+  #field_precMdo {
+    display: flex;
+    .field-label {
+      width: 5.5em;
+    }
+  }
+  #field_PrecCierre {
+    display: flex;
+    .field-label {
+      width: 7em;
+    }
+  }
+  #field_titular {
+    display: none;
+    .field-label {
+      width: 1em !important;
+    }
+  }
+  #field_perfilC {
+    display: none;
+    .field-label {
+      position: relative;
+      top: 0.8em;
+    }
+  }
+  #field_IPContrato {
+    display: none;
+    .field-label {
+      width: 1em !important;
+    }
+  }
+  #field_pemisora {
+    display: none;
+  }
+  #field_Mensajes {
+    display: none;
     .field-label {
       width: 0em !important;
     }
-  } 
-  #field_CapturarDA{
+  }
+  #field_CapturarDA {
     .field-label {
       width: 0em !important;
-    } 
+    }
   }
-  
-  .verde{ color: white;background-color: lightgreen}; 
- // .mySelect option[value="--Seleccione--"] { color: black;background-color: #D3D3D3; } 
-  .rojo{ color: white ;background-color: red}; 
+
+  .verde {
+    color: white;
+    background-color: lightgreen;
+  }
+  // .mySelect option[value="--Seleccione--"] { color: black;background-color: #D3D3D3; }
+  .rojo {
+    color: white;
+    background-color: red;
+  }
 
   .pemisoranew {
     display: flex !important;
     flex-wrap: wrap !important;
   }
 
-.autoTamano{
-  overflow-y: auto !important;
-  max-height: 80px !important;
-  width: 200px !important; 
-  overflow-x: disabled !important;
-}
+  .autoTamano {
+    overflow-y: auto !important;
+    max-height: 80px !important;
+    width: 200px !important;
+    overflow-x: disabled !important;
+  }
 
+  #field_opciones {
+    .field-control {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  #field_cantidad {
+    .field-control {
+      input {
+        text-align: right;
+      }
+    }
+  }
+
+  #field_precio {
+    .field-control {
+      input {
+        text-align: right;
+      }
+    }
+  }
+
+  #field_Posicion {
+    .field-control {
+      input {
+        text-align: right;
+      }
+    }
+  }
+
+  #btn_send {
+    width: 80px !important;
+  }
+  #botones-final_tab {
+    display: flex;
+    justify-content: center;
+  }
 }

@@ -1,0 +1,16 @@
+.row
+    .ui-dialog.hidden(id="dialogo_aviso")
+        .row.flex
+            #msgInfo
+                img.w-16.mt-4(src="../../assets/images/msgInfo.png")
+            #msgWarning
+                img.w-16.mt-4(src="../../assets/images/msgWarning.png")
+            #msgCritical
+                img.w-16.mt-4(src="../../assets/images/msgCritical.png")
+            .ml-4
+                +field-textarea("msgText",
+                    {
+                        label:""
+                    })
+            .row.pt-4.flex.justify-center
+                +button-accept

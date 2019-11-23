@@ -1,0 +1,28 @@
+.content {
+  #search-criterias-column {
+    width: 90em;
+  }
+
+  #idGrupoBotones {
+    margin-left: 30em;
+  }
+
+  #field_totalRegIntra,
+  #field_totalRegHisto {
+    font-weight: 700;
+    justify-content: flex-end;
+
+    input {
+      text-align: center;
+    }
+  }
+}
+
+#field_msgText {
+  .field-control {
+    #msgText {
+      width: 25em !important;
+      height: 15em !important;
+    }
+  }
+}

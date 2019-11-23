@@ -1,5 +1,7 @@
-mixin sidebar
-  .sidebar
+mixin sidebar(params)
+  - var _params = (params ? params : { expanded: true })
+  - var _expanded = (_params.expanded ? "true" : "false")
+  .sidebar(expand=_expanded)
     .sidebar_content
       block
     .sidebar_button

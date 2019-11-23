@@ -32,5 +32,29 @@
       "rango": "$500,000.00 - $999,999.00",
       "tasa": 3
     }
+  ],
+  "grupos": [
+    {
+      "id": 1,
+      "text": "BANCARIO"
+    },
+    {
+      "id": 2,
+      "text": "OTROS"
+    }
+  ],
+  "instrumentos": [
+    {
+      "id": 1,
+      "text": "Sin Grupo"
+    },
+    {
+      "id": 2,
+      "text": "CDS"
+    },
+    {
+      "id": 3,
+      "text": "PAGE"
+    }
   ]
 }
