@@ -16,8 +16,9 @@ block content
         +tab-group("tabs_resultados_busqueda",
                     {id: "tab_detalle", label: "Detalle"})
           +tab-item("tab_detalle")
-            .row.w-full.overflow-auto#div-spreads-grid
+            .row.w-full.overflow-auto#div-cotizacion-reportos-grid
               +grid("grid_cotizacion_reportos")
+            +grid-records-count("cotizacion_reportos")
 
 block scripts
    script(src="../../assets/scripts/accimarket/200-cotizacion-reportos/scripts.js")

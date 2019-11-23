@@ -1,47 +1,55 @@
-// const today = new Date();
-// const dd = String(today.getDate()).padStart(2, '0');
-// const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-// const yyyy = today.getFullYear();
+const today = new Date();
+const dd = String(today.getDate());
+const mm = String(today.getMonth() + 1); //January is 0!
+const yyyy = today.getFullYear();
 
-// const fecha_actual = dd + '-' + mm + '-' + yyyy;
-// $("#fecha_banda").val(fecha_actual);
+const fecha_actual = dd + '-' + mm + '-' + yyyy;
+$("#fecha_banda").val(fecha_actual);
 
-
-($("#grupo") as any).select2({
-  language: "es",
-  placeholder: "",
-  minimumResultsForSearch: Infinity
+http_findAll("grupos", {}, payload => {
+  ($("#grupo") as any).select2({
+    language: "es",
+    placeholder: "",
+    minimumResultsForSearch: Infinity,
+    data: payload
+  });
 });
 
-($("#instrumento") as any).select2({
-  language: "es",
-  placeholder: "",
-  minimumResultsForSearch: Infinity
+
+http_findAll("instrumentos", {}, payload => {
+  ($("#instrumento") as any).select2({
+    language: "es",
+    placeholder: "",
+    minimumResultsForSearch: Infinity,
+    data: payload
+  });
 });
+
 
 let cotizacion_reporto_params: UrlParams = {};
 
-http_findAll("cotizacion_reporto", cotizacion_reporto_params, payload => {
-  llenaGridCotizacionReporto(payload);
-});
+// http_findAll("cotizacion_reporto", cotizacion_reporto_params, payload => {
+//   llenaGridCotizacionReporto(payload);
+//   $("#table_grid_cotizacion_reportos").jqGrid("clearGridData");
+//   $("#table_grid_cotizacion_reportos").trigger("reloadGrid");
+// });
 
 const llenaGridCotizacionReporto = (cotizacion_reporto: any) => {
-  const gridWidth = $("#div-spreads-grid")
-  .parent()
-  .width();
-
   $("#table_grid_cotizacion_reportos").jqGrid({
     data: cotizacion_reporto,
     datatype: "local",
     toppager: true,
+    gridview: true,
     pgtext: "P\u00E1gina {0} de {1}",
+    // recordtext: "Mostrando {0} - {1} de {2}",
+    // pagerpos: "center",
     viewrecords: true,
-    autoWidth: true,
-    forceFit: true,
-    // width: gridWidth,
+    autowidth: true,
+    // forceFit: true,
     height: "auto",
-    shrinkToFit: false,
-    rowList: [10, 20, 30],
+    // shrinkToFit: false,
+    rowNum: 20,
+    // rowList: [10, 20, 30],
     colNames: [
       "Grupo",
       "Instrumento",
@@ -57,75 +65,82 @@ const llenaGridCotizacionReporto = (cotizacion_reporto: any) => {
         width: 100,
         sortable: true
       },
-      { name: "instrumento", index: "instrumento", align: "center", width: 150, sortable: true },
-      { name: "plazo", index: "plazo", align: "center", width: 150, sortable: true },
+      { name: "instrumento", index: "instrumento", align: "center", width: 100, sortable: true },
+      { name: "plazo", index: "plazo", align: "center", width: 100, sortable: true },
       { name: "rango", index: "rango", align: "center", width: 200, sortable: true },
-      { name: "tasa", index: "tasa", align: "center", width: 150, sortable: true }
+      { name: "tasa", index: "tasa", align: "center", width: 50, sortable: true }
     ]
   });
+
+  // resizeGrid("div-cotizacion-reportos-grid", "table_grid_cotizacion_reportos");
 };
 
+
+const resizeGrid = (div: string, grid: string) => {
+  div = "#" + div;
+  const gridWidth: number = $(div)
+  .parent()
+  .width();
+  console.log(gridWidth);
+  grid = "#" + grid;
+  $(grid).jqGrid("setGridWidth", gridWidth, true);
+}
+
+
+
 $(window).on("resize", function() {
-  const gridWidth = $("#div-spreads-grid")
-    .parent()
-    .width();
-  $("#table_grid_cotizacion_reportos").jqGrid("setGridWidth", gridWidth, true);
+  // resizeGrid("div-cotizacion-reportos-grid", "table_grid_cotizacion_reportos");
 });
 
 ($("#criterios-busqueda") as any)
   .parsley()
   .on("field:success", (e) => {
-    console.log(e);
     removeErrorsInAttrTitle(e);
   })
   .on("field:error", (e) => {
-    // console.log(e);
     putErrorsInAttrTitle(e);
   })
   .on("form:submit", e => {
     console.log("form:submit", e);
 
-    // contratos_params = {};
+    cotizacion_reporto_params = {};
 
-    // const fecha = $("#fecha").val();
-    // const negocio = getOptionSelected("negocio");
+    const fecha_banda = $("#fecha_banda").val();
+    if (fecha_banda) {
+      cotizacion_reporto_params.fecha_banda = fecha_banda;
+    }
 
-    // let listContrato = getList("contrato");
-    // let listDigito = getList("digito");
-    // console.log(listDigito);
+    const grupo = $("#grupo :selected").text();
+    if (grupo) {
+      if (grupo !== "Todos") {
+        cotizacion_reporto_params.grupo = grupo;
+      }
+    }
 
-    // let productTypes = getChecked("products3");
+    const instrumento = $("#instrumento :selected").text();
+    if (instrumento) {
+      if (instrumento !== "Todos") {
+        cotizacion_reporto_params.instrumento = instrumento;
+      }
+    }
 
-    // if (fecha) {
-    //   contratos_params.fecha = fecha;
-    // }
+    http_findAll("cotizacion_reporto", cotizacion_reporto_params, payload => {
+      $("#table_grid_cotizacion_reportos").jqGrid("clearGridData");
+      $("#table_grid_cotizacion_reportos").jqGrid("setGridParam", { data: payload });
+      $("#table_grid_cotizacion_reportos").trigger("reloadGrid");
 
-    // if (listContrato.length > 0) {
-    //   contratos_params.contrato = listContrato;
-    // }
-
-    // if (listDigito.length > 0) {
-    //   contratos_params.digito = listDigito;
-    // }
-
-    // if (negocio) {
-    //   contratos_params.negocio = negocio;
-    // }
-
-    // if (productTypes.length > 0) {
-    //   contratos_params.product = productTypes;
-    // }
-
-    // http_findAll("contratos", contratos_params, payload => {
-    //   // console.log(payload);
-    //   console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS 2");
-    //   $("#table_contratos").jqGrid("clearGridData");
-    //   $("#table_contratos").jqGrid("setGridParam", { data: payload });
-    //   $("#table_contratos").trigger("reloadGrid");
-    //   const rec_count = payload.length;
-    //   $("#count_contratos").html(rec_count);
-    //   // console.log(rec_count);
-    // });
+      const last_page = $('#table_grid_cotizacion_reportos').jqGrid('getGridParam','lastpage');
+      $("#sp_1__toppager").text(last_page);
+      const rec_count = payload.length;
+      $("#count_cotizacion_reportos").html(rec_count);
+    });
 
     return false;
   });
+
+$(".sidebar_button").on("click", function() {
+  // resizeGrid("div-cotizacion-reportos-grid", "table_grid_cotizacion_reportos");
+});
+
+llenaGridCotizacionReporto([]);
+
