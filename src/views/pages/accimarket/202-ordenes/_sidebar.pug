@@ -1,0 +1,89 @@
+include /mixins/mixins
+
++sidebar
+  span.bg-gray-300.block.p-3.font-bold.text-lg.mb-3 CONSULTA DE BANDA
+  #filtros
+    +form("criterios-busqueda", {})
+      +field-date("fecha_valor",
+        {
+          label: "Fecha valor",
+          orientation: "horizontal",
+          size: "12em",
+          required: true
+        }
+      )
+      +field-select("operacion",
+        {
+          label: "Operación",
+          orientation: "horizontal",
+          size: "12em",
+          required: true
+        },   
+        {key: "ALL", value:"Todos"}
+      )
+      +field-select("Emisora_serie",
+        {
+          label: "emisora/serie",
+          orientation: "horizontal",
+          size: "12em",
+          required:true 
+        },   
+        {key: "ALL", value:"Todos"}
+        )
+      +field-select("tipo_valor",
+        {
+          label: "Tipo Valor",
+          orientation: "horizontal",
+          size: "12em",
+        },  
+         {key: "ALL", value:"Todos"}
+        )
+      +field-input("precio_banda",
+        {
+          label: "Precio Banda",
+          orientation: "horizontal",
+          size: "10em"
+        })
+
+      .row.mt-8.flex.justify-center
+        
+        +button-search({size: "large", disabled: false})
+        
+ 
+  span.bg-gray-300.block.p-3.font-bold.text-lg.mb-30 Filtros 
+  #filtros
+    +form("criterios-busqueda", {})
+      
+      +field-plus-minus("contrato", {label: "Contrato", tooltip: "Contrato"})
+      +field-plus-minus("digito", {label: "Digito", tooltip: "Digito"})
+
+      .row.mt-6.flex.justify-center
+        
+        +button-search({size: "large", disabled: false})
+        
+  span.bg-gray-300.block.p-3.font-bold.text-lg.mb-3 Datos por aplicar
+  #filtros
+    +form("criterios-busqueda", {})
+       
+      +field-input("titulos",
+        {
+          label: "Titulos",
+          orientation: "horizontal",
+          size: "12em",
+        }
+      )
+      +field-input("precio_pactado",
+        {
+          label: "Precio Pactado",
+          orientation: "horizontal",
+          size: "12em",
+        }
+      )
+      +field-input("monto",
+        {
+          label: "Monto  ",
+          orientation: "horizontal",
+          disabled : true,
+          size: "12em"
+        })
+
