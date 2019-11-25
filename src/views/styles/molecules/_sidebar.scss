@@ -8,7 +8,7 @@
   left: 0;
   background-color: $color-white;
   overflow-x: hidden;
-  transition: 0.0s;
+  transition: 0s;
   // padding-top: 60px;
   display: flex;
 
@@ -29,11 +29,14 @@
     justify-content: center;
     border: 1px solid $color-sky-dark;
     cursor: pointer;
+    background-image: url("../../assets/images/arrow-right.png");
+    background-repeat: no-repeat;
+    background-position: center;
 
     &:after {
-      content: "\f0da";
-      font-family: "Font Awesome\ 5 Free";
-      font-weight: 900; /* Fix version 5.0.9 */
+      // content: "\f000";
+      // font-family: "Font Awesome\ 5 Free";
+      // font-weight: 900; /* Fix version 5.0.9 */
       font-size: 1.5em;
       position: absolute;
       top: 50%;
@@ -41,10 +44,13 @@
     }
 
     &.is_open {
+      background-image: url("../../assets/images/arrow-left.png");
+      background-repeat: no-repeat;
+      background-position: center;
       &:after {
-        content: "\f0d9";
-        font-family: "Font Awesome\ 5 Free";
-        font-weight: 900; /* Fix version 5.0.9 */
+        // content: "\f000";
+        // font-family: "Font Awesome\ 5 Free";
+        // font-weight: 900; /* Fix version 5.0.9 */
         font-size: 1.5em;
         position: absolute;
         top: 50%;

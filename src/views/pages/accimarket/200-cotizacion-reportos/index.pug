@@ -14,7 +14,7 @@ block content
         span.bg-gray-300.block.p-3.font-bold.text-lg Datos de la cotización
       .row.has_border.w-full.overflow-auto
         +tab-group("tabs_resultados_busqueda",
-                    {id: "tab_detalle", label: "Detalle"})
+                   {id: "tab_detalle", label: "Detalle"})
           +tab-item("tab_detalle")
             .row.w-full.overflow-auto#div-cotizacion-reportos-grid
               +grid("grid_cotizacion_reportos")
