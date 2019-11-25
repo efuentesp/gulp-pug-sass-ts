@@ -1,0 +1,30 @@
+extends /layouts/jsp
+
+block title
+   title 201. Captura de reportos
+
+block styles
+   link(rel="stylesheet" href="../../assets/css/accimarket/201-captura-reportos/styles.css")
+
+block content
+  .page.pl-8.pr-6.flex
+    include _sidebar
+    .content.flex-1
+      
+        +tab-group("tabBandas",
+          {id: "tab_detalles", label: "Detalles"},
+          {id: "tab_envios", label: "Envios & Errores"})
+          +tab-item("tab_detalles")
+            +tab-item("tab_grid_captura_reportos")
+              .row.w-full.overflow-auto#div-captura-reportos-grid
+                +grid("gridBandas")
+              +grid-records-count("gridBandas")
+            +tab-item("tab_grid_captura_reportos")
+              .row.w-full.overflow-auto#div-captura-reportos-grid
+                +grid("gridBandas")
+              +grid-records-count("gridBandas")
+          +tab-item("tab_envios")
+            
+
+block scripts
+   script(src="../../assets/scripts/accimarket/201-captura-reportos/scripts.js")

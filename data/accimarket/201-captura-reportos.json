@@ -1,0 +1,54 @@
+{
+    "captura_reportos": [
+      {
+        "grupo": "BANCARIO",
+        "instrumento": "Sin Grupo",
+        "plazo": "1 - 30",
+        "tasa": 1
+      },
+      {
+        "grupo": "",
+        "instrumento": "CDS",
+        "plazo": "1 - 30",
+        "tasa": 2
+      },
+      {
+        "grupo": "BANCARIO",
+        "instrumento": "PAGE",
+        "plazo": "1 - 30",
+        "tasa": 3
+      },
+      {
+        "grupo": "BANCARIO",
+        "instrumento": "PAGE",
+        "plazo": "1 - 30",
+        "tasa": 3
+      }
+    ],
+    "grupos": [
+      {
+        "id": 1,
+        "text": "BANCARIO"
+      },
+      {
+        "id": 2,
+        "text": "OTROS"
+      }
+    ],
+    "instrumentos": [
+      {
+        "id": 1,
+        "text": "Sin Grupo"
+      },
+      {
+        "id": 2,
+        "text": "CDS"
+      },
+      {
+        "id": 3,
+        "text": "PAGE"
+      }
+    ]
+  }
+ 
+  
