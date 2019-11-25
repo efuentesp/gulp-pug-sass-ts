@@ -1,18 +1,45 @@
 #filtros {
+  label {
+    width: 80px;
+  }
+
+  #field_fecha_valor {
     label {
-      width: 80px;
-    }
-  
-    #field_fecha_valor {
-      label {
-        width: 72px;
-      }
+      width: 72px;
     }
   }
-  
-  #table_grid_orden_toppager {
-    display: flex;
-    justify-content: center;
+}
+
+#table_grid_orden_toppager {
+  display: flex;
+  justify-content: center;
+}
+
+#botones {
+  margin-top: 30em;
+}
+
+#total_ordenes {
+  margin-top: 25em;
+}
+
+#boton_resert {
+  margin-top: 30em;
+  display: flex;
+  justify-content: center;
+}
+
+#input_errores {
+  margin-top: 25em;
+  justify-content: center;
+}
+
+#titulo {
+  margin-top: 5em;
+}
+
+#field_serie {
+  span.required {
+    display: none;
   }
-  
-  
+}

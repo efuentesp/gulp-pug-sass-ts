@@ -8,7 +8,7 @@ include /mixins/mixins
         {
           label: "Fecha valor",
           orientation: "horizontal",
-          size: "12em",
+          size: "8em",
           required: true
         }
       )
@@ -16,55 +16,68 @@ include /mixins/mixins
         {
           label: "Operación",
           orientation: "horizontal",
-          size: "12em",
+          size: "10em",
           required: true
-        },   
+        },
         {key: "ALL", value:"Todos"}
       )
-      +field-select("Emisora_serie",
-        {
-          label: "emisora/serie",
-          orientation: "horizontal",
-          size: "12em",
-          required:true 
-        },   
-        {key: "ALL", value:"Todos"}
-        )
+      .row.flex
+        +field-select("emisora",
+          {
+            label: "Emisora/serie",
+            orientation: "horizontal",
+            size: "8em",
+            required:true
+          },
+          {key: "ALL", value:"Todos"}
+          )
+        +field-select("serie",
+          {
+            label: "/",
+            orientation: "horizontal",
+            size: "8em",
+            required:true
+          },
+          {key: "ALL", value:"Todos"}
+          )
       +field-select("tipo_valor",
         {
           label: "Tipo Valor",
           orientation: "horizontal",
-          size: "12em",
-        },  
+          size: "10em",
+          required:true
+        },
          {key: "ALL", value:"Todos"}
         )
       +field-input("precio_banda",
         {
           label: "Precio Banda",
           orientation: "horizontal",
+          disabled : true,
           size: "10em"
         })
 
       .row.mt-8.flex.justify-center
-        
+
         +button-search({size: "large", disabled: false})
-        
- 
-  span.bg-gray-300.block.p-3.font-bold.text-lg.mb-30 Filtros 
+
+  .row#titulo
+  span.bg-gray-300.block.p-3.bottom-80.font-bold.text-lg.mb-30 Filtros
   #filtros
     +form("criterios-busqueda", {})
-      
-      +field-plus-minus("contrato", {label: "Contrato", tooltip: "Contrato"})
-      +field-plus-minus("digito", {label: "Digito", tooltip: "Digito"})
+
+      +field-plus-minus("contrato", {label: "Contrato", tooltip: "Contrato",  size: "14em"})
+      +field-plus-minus("digito", {label: "Digito", tooltip: "Digito", size: "14em"})
 
       .row.mt-6.flex.justify-center
-        
+
         +button-search({size: "large", disabled: false})
-        
+
+  .row#titulo
   span.bg-gray-300.block.p-3.font-bold.text-lg.mb-3 Datos por aplicar
   #filtros
     +form("criterios-busqueda", {})
-       
+
       +field-input("titulos",
         {
           label: "Titulos",
@@ -86,4 +99,7 @@ include /mixins/mixins
           disabled : true,
           size: "12em"
         })
-
+  .row.mt-6.flex.justify-center
+    +field-group("botones-group-md")
+      +button-clean({size: "large", disabled: false})
+      +button-add({size:"large", disabled: false})
