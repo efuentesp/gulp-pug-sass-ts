@@ -1,13 +1,14 @@
-mixin sidebar-wrapper(id, params)
+mixin sidebar-wrapper(id)
   - var _id = "sidebar_wrapper_" + id
-  - var _params = (params ? params : { expanded: true })
-  - var _expanded = (_params.expanded ? "true" : "false")
 
   .sidebar-wrapper(id=_id)
     block
 
-mixin sidebar()
-  .sidebar
+mixin sidebar(parms)
+  - var _parms = parms ? parms : { expanded: true }
+  - var _expanded = _parms.expanded ? "" : "isClosed"
+  - var _class = _expanded
+  .sidebar(class=_class)
     .sidebar-content
       block
     .sidebar-collapsible-button
