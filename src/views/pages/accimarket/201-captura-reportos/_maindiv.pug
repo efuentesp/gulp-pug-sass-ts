@@ -1,0 +1,13 @@
+
+.content.flex-1#mainDiv
+    span.bg-gray-300.block.p-3.font-bold.text-lg Listado de Órdenes
+    .row
+    +tab-group("grupo_grids",
+        {id: "tab_uno", label: "Órdenes"},
+        {id: "tab_dos", label: "Envios y Errores"}
+    )
+        +tab-item("tab_uno")
+            include _tab_uno
+        +tab-item("tab_dos")
+            include _tab_dos
+    

@@ -9,29 +9,7 @@ block styles
 block content
   .page.pl-8.pr-6.flex
     include _sidebar
-    .content.flex-1
-      
-        +tab-group("tabBandas",
-          {id: "tab_detalles", label: "Detalles"},
-          {id: "tab_envios", label: "Envios & Errores"})
-          +tab-item("tab_detalles")
-            +tab-item("tab_grid_captura_reportos")
-              .row.w-full.overflow-auto.justify-center.border-gray-500.text-black#div-captura-reportos-grid
-                +grid("gridBandas")
-                .row.mt-6.flex.justify-center
-                  +button-reset({size:"large", disabled: false})
-            +tab-item("tab_grid_Contratos_reportos")
-              .row.w-full.overflow-auto.border-gray-500.text-black#div-captura-reportos-grid
-                +grid("gridContratos")
-              +grid-records-count("gridContratos")
-          
-          +tab-item("tab_envios")
-            +tab-item("tab_grid_envios_reportos")
-              .row.w-full.overflow-auto.border-gray-500.text-black#div-captura-reportos-grid
-                +grid("gridEnvios")
-                .row.mt-6.flex.justify-center
-                  +button-reset({size:"large", disabled: false})
-            
-
+    include _maindiv
+   
 block scripts
    script(src="../../assets/scripts/accimarket/201-captura-reportos/scripts.js")
