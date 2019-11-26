@@ -1,20 +1,19 @@
-+field-input("envio",
-        {
-          label: "Envío :",
-          orientation: "horizontal",
-          disabled : true,
-          size: "12em"
-        })
+.row
+  +field-input("envio",
+          {
+            label: "Envío :",
+            orientation: "horizontal",
+            disabled : true,
+            size: "12em"
+          })
 
-//- .row.has_border
-//-     .row.w-full.overflow-auto
-//-         +grid("envios_directos")
-//-     +grid-records-count("envios_directos")
-
+.row.has_border
+    .row.w-full.overflow-auto
+        +grid("envios_directos")
+    +grid-records-count("envios_directos")
 
 .row#boton_resert
     +button-reset({size: "large", disabled: false})
-
 
 .row#input_errores
 +field-input("errores",
@@ -25,8 +24,7 @@
           size: "12em"
         })
 
-
-//- .row.has_border
-//-     .row.w-full.overflow-auto
-//-         +grid("errores_directos")
-//-     +grid-records-count("errores_directos")
+.row.has_border
+    .row.w-full.overflow-auto
+        +grid("errores_directos")
+    +grid-records-count("errores_directos")

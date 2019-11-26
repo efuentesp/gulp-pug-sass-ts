@@ -366,33 +366,33 @@ const addNode = (
   }
 };
 
-function fieldPlusMinusMaxWidth(node) {
-  let listcontentvalue = [];
-  let max_width_size = 0;
-  let nodelist: HTMLUListElement = document.getElementById(
-    node
-  ) as HTMLUListElement;
-  $(nodelist.childNodes).each(function(childNode) {
-    if (nodelist.childNodes[childNode].childNodes[0].textContent) {
-      listcontentvalue.push(
-        nodelist.childNodes[childNode].childNodes[0].textContent
-      );
-    }
-  });
-  let canvas = document.createElement("canvas");
-  let context = canvas.getContext("2d");
-  context.font = "10px verdana";
-  listcontentvalue.forEach(function(text) {
-    let metric = context.measureText(text).width + 10;
-    if (metric > max_width_size) {
-      max_width_size = metric;
-    }
-  });
-  return max_width_size;
-}
+// function fieldPlusMinusMaxWidth(node) {
+//   let listcontentvalue = [];
+//   let max_width_size = 0;
+//   let nodelist: HTMLUListElement = document.getElementById(
+//     node
+//   ) as HTMLUListElement;
+//   $(nodelist.childNodes).each(function(childNode) {
+//     if (nodelist.childNodes[childNode].childNodes[0].textContent) {
+//       listcontentvalue.push(
+//         nodelist.childNodes[childNode].childNodes[0].textContent
+//       );
+//     }
+//   });
+//   let canvas = document.createElement("canvas");
+//   let context = canvas.getContext("2d");
+//   context.font = "10px verdana";
+//   listcontentvalue.forEach(function(text) {
+//     let metric = context.measureText(text).width + 10;
+//     if (metric > max_width_size) {
+//       max_width_size = metric;
+//     }
+//   });
+//   return max_width_size;
+// }
 
 function fieldPlusMinusRepaintList(node) {
-  let max_width_size = fieldPlusMinusMaxWidth(node);
+  // let max_width_size = fieldPlusMinusMaxWidth(node);
   let listcontentid = [];
   let listcontentvalue = [];
   let nodelist: HTMLUListElement = document.getElementById(
@@ -424,9 +424,9 @@ function fieldPlusMinusRepaintList(node) {
       tagA.innerHTML = listcontentvalue[i];
     }
 
-    if(max_width_size >= 77.9){
-      tagLi.setAttribute("style", "width: " + max_width_size + "px;")
-    }
+    // if(max_width_size >= 77.9){
+    //   tagLi.setAttribute("style", "width: " + max_width_size + "px;")
+    // }
     tagLi.appendChild(tagA);
     nodelist.appendChild(tagLi);
   }
