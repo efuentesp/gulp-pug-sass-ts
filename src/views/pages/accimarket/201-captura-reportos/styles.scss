@@ -45,3 +45,14 @@ html {
 .currency-prefix {
   margin-right: 4px;
 }
+
+#gbox_table_gridBandas,
+#gview_table_gridBandas,
+#table_gridBandas_toppager,
+#gview_table_gridBandas div:nth-child(2),
+#gview_table_gridBandas div:nth-child(3),
+#gview_table_gridBandas div:nth-child(3) div,
+#gview_table_gridBandas div:nth-child(4),
+#gview_table_gridBandas div:nth-child(4) div {
+  width: 100% !important;
+}
