@@ -7,9 +7,19 @@ block styles
    link(rel="stylesheet" href="../../assets/css/accimarket/201-captura-reportos/styles.css")
 
 block content
-  .page.pl-8.pr-6.flex
-    include _sidebar
-    include _maindiv
+   +sidebar-wrapper("aside")
+      +sidebar({expanded: true})
+         include _leftdiv
+      +sidebar-content()
+         include _maindiv
+   +field-group("modales-group")
+      #modalEnvia
+         #dialog-modalEnvia
+      #modalIKE
+         #dialog-modalIKE
+      #modalTablaDialog2
+         #dialog-modal2
+            table.innerTable#idtablaModal
    
 block scripts
    script(src="../../assets/scripts/accimarket/201-captura-reportos/scripts.js")

@@ -6,6 +6,10 @@
 // const fecha_actualCapReport = ddCapReport + '-' + mmCapReport + '-' + yyyyCapReport;
 // $("#fecha_banda").val(fecha_actualCapReport);
 
+$('.sidebar-collapsible-button').on('click', function() {
+  $('#sidebar_wrapper_aside .sidebar').toggleClass('isClosed');
+});
+
 http_findAll("grupos", {}, payload => {
   ($("#cboGrupo") as any).select2({
     language: "es",
