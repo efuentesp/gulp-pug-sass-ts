@@ -1,7 +1,17 @@
-mixin sidebar(params)
+mixin sidebar-wrapper(id, params)
+  - var _id = "sidebar_wrapper_" + id
   - var _params = (params ? params : { expanded: true })
   - var _expanded = (_params.expanded ? "true" : "false")
-  .sidebar(expand=_expanded)
-    .sidebar_content
+
+  .sidebar-wrapper(id=_id)
+    block
+
+mixin sidebar()
+  .sidebar
+    .sidebar-content
       block
-    .sidebar_button
+    .sidebar-collapsible-button
+
+mixin sidebar-content()
+  .sidebar-content()
+    block

@@ -156,29 +156,6 @@ const fillJqGrid = (grid_id: string, data: any[]) => {
 // Switch / Toggle
 ($(".radio-toggle") as any).toggleInput();
 
-// Sidebar
-//let isSidebarOpened = false;
-$(".sidebar_button").click(() => {
-  let isSidebarOpened:boolean = $(".sidebar").attr("expand") == "true";
-
-  if (isSidebarOpened) {
-    $(".sidebar_content").parent().attr("style", "width: 14px !important;");
-    $(".sidebar").attr("expand", "false");
-
-    $(".sidebar_content").removeClass("is_open");
-    $(".sidebar_button").removeClass("is_open");
-    $(".content").removeClass("is_sidebar_open");
-  } else {
-    $(".sidebar_content").parent().attr("style", "width: 250px !important;");
-    $(".sidebar").attr("expand", "true");
-
-    $(".sidebar_content").addClass("is_open");
-    $(".sidebar_button").addClass("is_open");
-    $(".content").addClass("is_sidebar_open");
-  }
-  //isSidebarOpened = !isSidebarOpened;
-});
-
 // Wizard
 ($(".wizard") as any).steps({
   headerTag: "h3",

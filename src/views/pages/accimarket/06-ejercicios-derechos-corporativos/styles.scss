@@ -16,3 +16,53 @@
     }
   }
 }
+
+.aside {
+  display: flex;
+
+  .aside-sidebar {
+    display: flex;
+    flex-grow: 2;
+    transition: all 0.3s;
+
+    &.isClosed {
+      flex-grow: 0;
+
+      .aside-sidebar-content {
+        display: none;
+      }
+
+      .aside-sidebar-button {
+        .sidebar-button {
+          cursor: pointer;
+          width: 1.5em;
+          border: 1px solid darkgray;
+          border-radius: 1em;
+          height: 100%;
+          background-image: url("../../../../assets/images/arrow-right.png");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+
+    .aside-sidebar-button {
+      .sidebar-button {
+        cursor: pointer;
+        width: 1.5em;
+        border: 1px solid darkgray;
+        border-radius: 1em;
+        height: 100%;
+        background-image: url("../../../../assets/images/arrow-left.png");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+
+  .aside-content {
+    flex-grow: 8;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s;
+  }
+}
