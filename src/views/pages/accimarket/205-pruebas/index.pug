@@ -1,0 +1,22 @@
+extends /layouts/html5
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/205-pruebas/styles.css")
+
+block content
+    .content.p-4
+        +tab-group("grupo_grids",
+            {id: "tab_ordenes", label: "Órdenes"},
+            {id: "tab_envios_errores", label: "Envios / Errores"})
+                +tab-item("tab_ordenes")
+                    include ordenes
+                    .row.w-full.overflow-auto
+                        +grid("contratos_directos")
+                +tab-item("tab_envios_errores")
+                    include errores-directos
+                    .row.w-full.overflow-auto
+                        +grid("errores_directos")
+
+
+block scripts
+    script(src="/assets/scripts/accimarket/205-pruebas/scripts.js")
