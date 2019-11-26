@@ -53,3 +53,7 @@ $("#table_operaciones").jqGrid({
   autoencode: true,
   caption: ""
 });
+
+$('.sidebar-button').on('click', function() {
+  $('.aside-sidebar').toggleClass('isClosed');
+});

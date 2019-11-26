@@ -1,67 +1,47 @@
 @import "../vars";
 
-.sidebar {
-  height: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: $color-white;
-  overflow-x: hidden;
-  transition: 0s;
-  // padding-top: 60px;
+.sidebar-wrapper {
   display: flex;
 
-  .sidebar_content {
-    display: none;
-
-    &.is_open {
-      flex: 1;
-      display: block;
-      width: $sidebar_content_width;
-    }
-  }
-
-  .sidebar_button {
-    background: $color-sky-light;
-    width: $sidebar_closed_width;
+  .sidebar {
     display: flex;
-    justify-content: center;
-    border: 1px solid $color-sky-dark;
-    cursor: pointer;
-    background-image: url("../../assets/images/arrow-right.png");
-    background-repeat: no-repeat;
-    background-position: center;
+    flex-grow: 2;
+    transition: all 0.3s;
 
-    &:after {
-      // content: "\f000";
-      // font-family: "Font Awesome\ 5 Free";
-      // font-weight: 900; /* Fix version 5.0.9 */
-      font-size: 1.5em;
-      position: absolute;
-      top: 50%;
-      color: $color-ink-lighter;
-    }
+    &.isClosed {
+      flex-grow: 0;
 
-    &.is_open {
-      background-image: url("../../assets/images/arrow-left.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      &:after {
-        // content: "\f000";
-        // font-family: "Font Awesome\ 5 Free";
-        // font-weight: 900; /* Fix version 5.0.9 */
-        font-size: 1.5em;
-        position: absolute;
-        top: 50%;
-        color: $color-ink-lighter;
+      .sidebar-content {
+        display: none;
+      }
+
+      .sidebar-collapsible-button {
+        cursor: pointer;
+        width: 1.5em;
+        border: 1px solid darkgray;
+        border-radius: 1em;
+        height: 100%;
+        background-image: url("../../../../assets/images/arrow-right.png");
+        background-repeat: no-repeat;
+        background-position: center;
       }
     }
-  }
-}
 
-.content {
-  &.is_sidebar_open {
-    padding-left: $sidebar_content_width + $sidebar_closed_width + 2px;
+    .sidebar-collapsible-button {
+      cursor: pointer;
+      width: 1.5em;
+      border: 1px solid darkgray;
+      border-radius: 1em;
+      height: 100%;
+      background-image: url("../../../../assets/images/arrow-left.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  .sidebar-content {
+    flex-grow: 8;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s;
   }
 }

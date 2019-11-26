@@ -156,29 +156,6 @@ const fillJqGrid = (grid_id: string, data: any[]) => {
 // Switch / Toggle
 ($(".radio-toggle") as any).toggleInput();
 
-// Sidebar
-//let isSidebarOpened = false;
-$(".sidebar_button").click(() => {
-  let isSidebarOpened:boolean = $(".sidebar").attr("expand") == "true";
-
-  if (isSidebarOpened) {
-    $(".sidebar_content").parent().attr("style", "width: 14px !important;");
-    $(".sidebar").attr("expand", "false");
-
-    $(".sidebar_content").removeClass("is_open");
-    $(".sidebar_button").removeClass("is_open");
-    $(".content").removeClass("is_sidebar_open");
-  } else {
-    $(".sidebar_content").parent().attr("style", "width: 250px !important;");
-    $(".sidebar").attr("expand", "true");
-
-    $(".sidebar_content").addClass("is_open");
-    $(".sidebar_button").addClass("is_open");
-    $(".content").addClass("is_sidebar_open");
-  }
-  //isSidebarOpened = !isSidebarOpened;
-});
-
 // Wizard
 ($(".wizard") as any).steps({
   headerTag: "h3",
@@ -366,33 +343,33 @@ const addNode = (
   }
 };
 
-function fieldPlusMinusMaxWidth(node) {
-  let listcontentvalue = [];
-  let max_width_size = 0;
-  let nodelist: HTMLUListElement = document.getElementById(
-    node
-  ) as HTMLUListElement;
-  $(nodelist.childNodes).each(function(childNode) {
-    if (nodelist.childNodes[childNode].childNodes[0].textContent) {
-      listcontentvalue.push(
-        nodelist.childNodes[childNode].childNodes[0].textContent
-      );
-    }
-  });
-  let canvas = document.createElement("canvas");
-  let context = canvas.getContext("2d");
-  context.font = "10px verdana";
-  listcontentvalue.forEach(function(text) {
-    let metric = context.measureText(text).width + 10;
-    if (metric > max_width_size) {
-      max_width_size = metric;
-    }
-  });
-  return max_width_size;
-}
+// function fieldPlusMinusMaxWidth(node) {
+//   let listcontentvalue = [];
+//   let max_width_size = 0;
+//   let nodelist: HTMLUListElement = document.getElementById(
+//     node
+//   ) as HTMLUListElement;
+//   $(nodelist.childNodes).each(function(childNode) {
+//     if (nodelist.childNodes[childNode].childNodes[0].textContent) {
+//       listcontentvalue.push(
+//         nodelist.childNodes[childNode].childNodes[0].textContent
+//       );
+//     }
+//   });
+//   let canvas = document.createElement("canvas");
+//   let context = canvas.getContext("2d");
+//   context.font = "10px verdana";
+//   listcontentvalue.forEach(function(text) {
+//     let metric = context.measureText(text).width + 10;
+//     if (metric > max_width_size) {
+//       max_width_size = metric;
+//     }
+//   });
+//   return max_width_size;
+// }
 
 function fieldPlusMinusRepaintList(node) {
-  let max_width_size = fieldPlusMinusMaxWidth(node);
+  // let max_width_size = fieldPlusMinusMaxWidth(node);
   let listcontentid = [];
   let listcontentvalue = [];
   let nodelist: HTMLUListElement = document.getElementById(
@@ -424,9 +401,9 @@ function fieldPlusMinusRepaintList(node) {
       tagA.innerHTML = listcontentvalue[i];
     }
 
-    if(max_width_size >= 77.9){
-      tagLi.setAttribute("style", "width: " + max_width_size + "px;")
-    }
+    // if(max_width_size >= 77.9){
+    //   tagLi.setAttribute("style", "width: " + max_width_size + "px;")
+    // }
     tagLi.appendChild(tagA);
     nodelist.appendChild(tagLi);
   }

@@ -15,26 +15,32 @@ block content
                   {id: "tab_consulta_liquidacion_derechos", label: "Consulta Liquidación de Derechos"}
       )
          +tab-item("tab_avisos_convocatoria_asamblea")
-            form#criterios-busqueda(data-parsley-validate="")
-               b Filtro
-               +field-select("tipo_mercado",
-               {
-                  label: "Tipo Mercado"
-               },
-               {key: "ALL", value:"Todos"}
-               )
-               +field-plus-minus("tipo_asamble", {label: "Tipo Asamblea"})
-               +field-plus-minus("emisora", {label: "Tipo Asamblea"})
-               +field-plus-minus("estatus", {label: "Tipo Asamblea"})
-               .column#botones-accion
-                  +button-clean({size: "small", disabled: false})
-                  +button-search({size: "small", disabled: false})
-            .row.has_border
-               .row#grid_toolbar
-                  +button-pdf({size: "small", disabled: false})
-                  +button-xls({size: "small", disabled: false})
-               .row.has_border.w-full.overflow-auto
-                  +grid("operaciones")
+            .aside
+               .aside-sidebar
+                  .aside-sidebar-content
+                     form.border#criterios-busqueda(data-parsley-validate="")
+                        b Filtro
+                        +field-select("tipo_mercado",
+                        {
+                           label: "Tipo Mercado"
+                        },
+                        {key: "ALL", value:"Todos"}
+                        )
+                        +field-plus-minus("tipo_asamble", {label: "Tipo Asamblea"})
+                        +field-plus-minus("emisora", {label: "Tipo Asamblea"})
+                        +field-plus-minus("estatus", {label: "Tipo Asamblea"})
+                        .column#botones-accion
+                           +button-clean({size: "small", disabled: false})
+                           +button-search({size: "small", disabled: false})
+                  .aside-sidebar-button
+                     .sidebar-button
+               .aside-content
+                  .row.has_border
+                     .row#grid_toolbar
+                        +button-pdf({size: "small", disabled: false})
+                        +button-xls({size: "small", disabled: false})
+                     .row.has_border.w-full.overflow-auto
+                        //- +grid("operaciones")
 
          +tab-item("tab_consultar_derechos_capital")
             p Consultar Derechos de Capital
