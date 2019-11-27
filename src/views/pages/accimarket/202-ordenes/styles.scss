@@ -40,10 +40,21 @@
   }
 }
 
+#btn_reset {
+  span.button.big-button {
+    margin-top: 100em;
+  }
+}
 .sidebar-wrapper {
   height: 100vh;
 }
 
 .sidebar-content {
   overflow-y: scroll;
+}
+
+select,
+input {
+  border-radius: 0em;
+  height: 15px;
 }

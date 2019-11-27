@@ -8,7 +8,7 @@ include /mixins/mixins
         {
           label: "Fecha valor",
           orientation: "horizontal",
-          size: "8em",
+          size: "10em",
           required: true
         }
       )
@@ -16,7 +16,7 @@ include /mixins/mixins
         {
           label: "Operación",
           orientation: "horizontal",
-          size: "10em",
+          size: "12em",
           required: true
         },
         {key: "ALL", value:"Todos"}
@@ -26,17 +26,7 @@ include /mixins/mixins
           {
             label: "Emisora/serie",
             orientation: "horizontal",
-            size: "8em",
-            required:true
-          },
-          {key: "ALL", value:"Todos"}
-          )
-        p /
-        +field-select("serie",
-          {
-            label: "",
-            orientation: "horizontal",
-            size: "8em",
+            size: "12em",
             required:true
           },
           {key: "ALL", value:"Todos"}
@@ -45,7 +35,7 @@ include /mixins/mixins
         {
           label: "Tipo Valor",
           orientation: "horizontal",
-          size: "10em",
+          size: "12em",
           required:true
         },
           {key: "ALL", value:"Todos"}
@@ -55,7 +45,7 @@ include /mixins/mixins
           label: "Precio Banda",
           orientation: "horizontal",
           disabled : true,
-          size: "10em"
+          size: "12em"
         })
 
       .row.mt-8.flex.justify-center
