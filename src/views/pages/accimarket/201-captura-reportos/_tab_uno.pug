@@ -1,3 +1,12 @@
+.px-0.mb-1#buscadorTabla
+  +field-input("buscaBandasInput",
+    {
+      label: "Bandas: ",
+      orientation: "horizontal",
+      size: "8em",
+      disabled:true
+    })
+
 .justify-center.mx-32
   +field-group("botones-group")
     .row.w-full.overflow-auto#div-bandas-reportos-grid
@@ -6,7 +15,16 @@
     .row.mt-6.mx-16.flex.justify-center
       +button-reset({size:"large", disabled: false})
 
-.row.w-full.mt-32.overflow-auto.text-black#div-contratos-reportos-grid
+.px-0.mt-32.mb-1#buscadorTabla
+  +field-input("buscaContratosInput",
+    {
+      label: "Contratos: ",
+      orientation: "horizontal",
+      size: "8em",
+      disabled:true
+    })
+
+.row.w-full.overflow-auto.text-black#div-contratos-reportos-grid
   +grid("gridContratos")
 
 .row.mt-6.flex
