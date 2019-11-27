@@ -1,9 +1,28 @@
-.row.has_border
-    .row.w-full.overflow-auto.text-black#div-envios-reportos-grid
-        +grid("gridEnviados")
+.px-0.mb-1#buscadorTabla
+  +field-input("buscaEnviosInput",
+    {
+      label: "Envios: ",
+      orientation: "horizontal",
+      size: "8em",
+      disabled:true
+    })
+
+.row.w-full.overflow-auto.text-black#div-envios-reportos-grid
+    +grid("gridEnviados")
+
 row.mt-6.flex.justify-center
   +button-reset({size:"large", disabled: false})
-.row.has_border
-    .row.w-full.overflow-auto.text-black#div-errores-reportos-grid
-        +grid("gridErrores")
+
+
+.px-0.mt-32.mb-1#buscadorTabla
+  +field-input("buscaErroresInput",
+    {
+      label: "Errores: ",
+      orientation: "horizontal",
+      size: "8em",
+      disabled:true
+    })
+
+.row.w-full.overflow-auto.text-black#div-errores-reportos-grid
+    +grid("gridErrores")
 
