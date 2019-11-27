@@ -14,32 +14,35 @@
   display: none;
 }
 
-.content.is_sidebar_open{
+.content.is_sidebar_open {
   padding-left: 233px !important;
 }
 
-html{
+html {
   color: black;
 }
 
-#mainDiv{
-  width:1250px;
+#mainDiv {
+  width: 1250px;
 }
 
 #div-bandas-reportos-grid,
-#div-contratos-reportos-grid{
+#div-contratos-reportos-grid {
   border: 1px solid #919eab;
 }
 
-#div-bandas-reportos-grid{
+#div-bandas-reportos-grid {
   width: 700px;
 }
 
-.ui-th-div{
-  color:#000;
+.ui-th-div {
+  color: #000;
 }
-
 
 .sidebar-wrapper {
   height: 100vh;
+}
+
+.sidebar-content {
+  overflow-y: scroll;
 }

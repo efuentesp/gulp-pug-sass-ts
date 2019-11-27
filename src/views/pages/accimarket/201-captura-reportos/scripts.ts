@@ -10,6 +10,21 @@ $('.sidebar-collapsible-button').on('click', function() {
   $('#sidebar_wrapper_aside .sidebar').toggleClass('isClosed');
 });
 
+($("#cboGrupo") as any).select2({
+  language: "es",
+  placeholder: "",
+  minimumResultsForSearch: Infinity
+});
+
+($("#cboInstrumento") as any).select2({
+  language: "es",
+  placeholder: "",
+  minimumResultsForSearch: Infinity
+});
+
+fieldPlusMinus("contrato", {});
+fieldPlusMinus("digito", {});
+
 http_findAll("grupos", {}, payload => {
   ($("#cboGrupo") as any).select2({
     language: "es",
