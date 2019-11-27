@@ -34,6 +34,14 @@ html {
   color: #000;
 }
 
+// Para IE11
+.sidebar {
+  width: 320px;
+  &.isClosed {
+    width: 1.5em;
+  }
+}
+
 .sidebar-wrapper {
   height: 100vh;
 }

@@ -40,6 +40,14 @@
   }
 }
 
+// Para IE11
+.sidebar {
+  width: 750px;
+  &.isClosed {
+    width: 1.5em;
+  }
+}
+
 .sidebar-wrapper {
   height: 100vh;
 }
