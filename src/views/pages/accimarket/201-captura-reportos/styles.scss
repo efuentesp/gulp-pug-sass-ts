@@ -21,3 +21,25 @@
 html{
   color: black;
 }
+
+#mainDiv{
+  width:1250px;
+}
+
+#div-bandas-reportos-grid,
+#div-contratos-reportos-grid{
+  border: 1px solid #919eab;
+}
+
+#div-bandas-reportos-grid{
+  width: 700px;
+}
+
+.ui-th-div{
+  color:#000;
+}
+
+
+.sidebar-wrapper {
+  height: 100vh;
+}

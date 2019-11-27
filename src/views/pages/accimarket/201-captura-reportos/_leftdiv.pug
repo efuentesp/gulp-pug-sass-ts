@@ -1,0 +1,76 @@
+include /mixins/mixins
+
+div#baraLateral
+  .block.overflow-y-auto
+    span.bg-gray-300.block.p-3.font-bold.text-lg.mb-3 CONSULTA DE BANDAS
+    #divConsulta
+      +form("criterios-busqueda", {})
+        +field-date("fBanda",
+          {
+            label: "Fecha Banda",
+            orientation: "horizontal",
+            size: "10em"
+          },
+          {}
+        )
+        +field-select("cboGrupo",
+          {
+            label: "Grupo",
+            orientation: "horizontal",
+            size: "12em",
+            max_length: "15"
+          },
+          {key: "ET", value:"Electronic transfer"},
+          {key:"CHK", value:"Check"}
+        )
+        +field-select("cboInstrumento",
+          {
+            label: "Instrumento",
+            orientation: "horizontal",
+            tooltip: "Monto a invertir",
+            size: "12em",
+            max_length: "15"
+          },
+          {key: "ET", value:"Electronic transfer"},
+          {key:"CHK", value:"Check"}
+        )
+      .row.mt-6.flex.justify-center.mb-4
+        +button-search({size:"large", disabled: false})
+
+    span.bg-gray-300.block.p-3.font-bold.text-lg.mb-3 CONSULTA DE BANDAS
+    #filtros
+      +form("criterios-Filtros", {})
+        +field-plus-minus("contrato", {label: "Contrato", tooltip: "Contrato",  size: "14em"})
+        +field-plus-minus("digito", {label: "Digito", tooltip: "Digito", size: "14em"})
+        .row.mt-6.flex.justify-center.mb-4
+          +button-search({size: "large", disabled: false})
+
+    span.bg-gray-300.block.p-3.font-bold.text-lg.mb-3 DATOS POR APLICAR
+    #DatosAplicar
+      +form("Criterios-Datos",{})
+        +field-input("tazaPactada",
+          {
+            label:"Taza Pactada",
+            orientacion:"horizontal",
+            size:"10em",
+            required: true
+          }
+        )
+        +field-input("plazo",
+          {
+            label:"Plazo",
+            orientacion:"horizontal",
+            size:"10em",
+            required: true
+          }
+        )
+        +field-input("montoInvertir",
+          {
+            label:"Monto a Invertir",
+            orientacion:"horizontal",
+            size:"10em"
+          }
+        )
+        .row.mt-6.flex.justify-center.mb-4
+          +button-add({size:"large",disabled:false})
+          +button-clean({size:"large", disabled: false})

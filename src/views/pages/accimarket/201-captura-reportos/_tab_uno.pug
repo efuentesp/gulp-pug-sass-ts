@@ -1,0 +1,23 @@
+.justify-center.mx-32
+  +field-group("botones-group")
+    .row.w-full.overflow-auto#div-bandas-reportos-grid
+      .text-black
+        +grid("gridBandas")
+    .row.mt-6.mx-16.flex.justify-center
+      +button-reset({size:"large", disabled: false})
+
+.row.w-full.mt-32.overflow-auto.text-black#div-contratos-reportos-grid
+  +grid("gridContratos")
+
+.row.mt-6.flex
++field-group("botones-group")
+  +button-send({size:"large", label: "Enviar", disabled: false})
+  +button-validate({size:"large", disabled: false})
+  +button-clean({size: "large", disabled: false})
+  +field-input("totales",
+    {
+        label: "$Total:",
+        orientation: "horizontal",
+        size: "8em"
+    })
+
