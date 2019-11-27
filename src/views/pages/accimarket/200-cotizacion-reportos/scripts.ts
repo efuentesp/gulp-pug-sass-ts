@@ -46,8 +46,21 @@ let cotizacion_reporto_params: UrlParams = {};
 //   $("#table_grid_cotizacion_reportos").trigger("reloadGrid");
 // });
 
+
+($("#grupo") as any).select2({
+  language: "es",
+  placeholder: "",
+  minimumResultsForSearch: Infinity
+});
+
+($("#instrumento") as any).select2({
+  language: "es",
+  placeholder: "",
+  minimumResultsForSearch: Infinity
+});
+
 const llenaGridCotizacionReporto = (cotizacion_reporto: any) => {
-  $("#table_grid_cotizacion_reportos").jqGrid({
+  $("#table_gridCotizacion").jqGrid({
     data: cotizacion_reporto,
     datatype: "local",
     toppager: true,
@@ -58,7 +71,7 @@ const llenaGridCotizacionReporto = (cotizacion_reporto: any) => {
     viewrecords: true,
     autowidth: true,
     // forceFit: true,
-    height: "auto",
+    height: 600,
     // shrinkToFit: false,
     rowNum: 20,
     // rowList: [10, 20, 30],
@@ -156,3 +169,59 @@ $(".sidebar_button").on("click", function() {
 
 llenaGridCotizacionReporto([]);
 
+
+($("#Criterios-busqueda") as any)
+  .parsley()
+  .on("field:success", (e) => {
+    removeErrorsInAttrTitle(e);
+  })
+  .on("field:error", (e) => {
+    putErrorsInAttrTitle(e);
+  })
+  .on("form:submit", e => {
+    // console.log("form:submit", e);
+    // console.log("INGRESA A LA FUNCION  DE FORMM SUBMIT");
+    // contratos_params = {};
+
+    // const fecha = $("#fecha").val();
+    // const negocio = getOptionSelected("negocio");
+
+    // let listContrato = getList("contrato");
+    // let listDigito = getList("digito");
+    // console.log(listDigito);
+
+    // let productTypes = getChecked("products3");
+
+    // if (fecha) {
+    //   contratos_params.fecha = fecha;
+    // }
+
+    // if (listContrato.length > 0) {
+    //   contratos_params.contrato = listContrato;
+    // }
+
+    // if (listDigito.length > 0) {
+    //   contratos_params.digito = listDigito;
+    // }
+
+    // if (negocio) {
+    //   contratos_params.negocio = negocio;
+    // }
+
+    // if (productTypes.length > 0) {
+    //   contratos_params.product = productTypes;
+    // }
+
+    // http_findAll("contratos", contratos_params, payload => {
+    //   // console.log(payload);
+    //   console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS 2");
+    //   $("#table_contratos").jqGrid("clearGridData");
+    //   $("#table_contratos").jqGrid("setGridParam", { data: payload });
+    //   $("#table_contratos").trigger("reloadGrid");
+    //   const rec_count = payload.length;
+    //   $("#count_contratos").html(rec_count);
+    //   // console.log(rec_count);
+    // });
+
+    return false;
+  });

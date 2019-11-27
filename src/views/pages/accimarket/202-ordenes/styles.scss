@@ -77,7 +77,9 @@ input {
   padding: 0px 0px 6px 0px !important;
   
 }
-
+.currency-prefix {
+  margin-right: 4px;
+}
 
 #buscadorTabla{
   background: #e2e8f0;
@@ -85,4 +87,18 @@ input {
 
 #buscadorTabla input{
   height: 18px;
+}
+
+#div-bandas-reportos-grid,
+#div-contratos-reportos-grid,
+#div-envios-reportos-grid,
+#div-errores-reportos-grid {
+  border: 1px solid #919eab;
+}
+
+html {
+  color: black;
+}
+.ui-th-div {
+  color: #000;
 }
