@@ -6,8 +6,10 @@
     .row.mt-6.mx-16.flex.justify-center
       +button-reset({size:"large", disabled: false})
 
-.row.w-full.mt-32.overflow-auto.text-black#div-contratos-reportos-grid
-  +grid("gridContratos")
+.row.has_border
+    .row.w-full.overflow-auto
+        +grid("gridContratos")
+    +grid-records-count("gridContratos")
 
 .row.mt-6.flex
 +field-group("botones-group")

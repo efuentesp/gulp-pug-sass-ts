@@ -82,6 +82,7 @@ $("#table_contratos_directos").jqGrid({
       { name: "prioridad", index: "prioridad", align: "center", width: 200, sortable: true },
       { name: "medio_de_liquidacion", index: "medio_de_liquidacion", align: "center", width: 50, sortable: true }
   ],
+  toppager: true,
   rowNum: 10,
   rowList: [10, 20, 30],
   sortorder: "desc",
@@ -132,6 +133,7 @@ $("#table_envios_directos").jqGrid({
       { name: "observacion", index: "observacion", align: "center", width: 200, sortable: true },
       { name: "flujo", index: "flujo", align: "center", width: 100, sortable: true }
   ],
+  toppager: true,
   rowNum: 10,
   rowList: [10, 20, 30],
   sortorder: "desc",
@@ -173,9 +175,10 @@ $("#table_errores_directos").jqGrid({
       { name: "prioridad", index: "prioridad", align: "center", width: 200, sortable: true },
       { name: "medio_de_liquidacion", index: "medio_de_liquidacion", align: "center", width: 50, sortable: true }
     ],
-  rowNum: 10,
-  rowList: [10, 20, 30],
-  sortorder: "desc",
-  viewrecords: true,
+    toppager: true,
+    rowNum: 10,
+    rowList: [10, 20, 30],
+    sortorder: "desc",
+    viewrecords: true
 });
 

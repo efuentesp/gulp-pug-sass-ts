@@ -86,7 +86,6 @@ const llenaGridCapturaReporto = (captura_reportos: any) => {
     ]
   });
   console.log("TERMINA LLAMADA")
-  
 };
 
 let contratos_reportos_params: UrlParams = {};
