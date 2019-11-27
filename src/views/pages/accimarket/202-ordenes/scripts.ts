@@ -37,7 +37,6 @@ fieldSelectPlusAutocomplete("ejemplo", {});
 
 $("#table_contratos_directos").jqGrid({
   datatype: "local",
-  height: 'auto',
   colNames: [
       "Stat Envio",
       "Contrato",
@@ -92,7 +91,6 @@ $("#table_contratos_directos").jqGrid({
 
 $("#table_envios_directos").jqGrid({
   datatype: "local",
-  height: 250,
   colNames: [
       "Envíos",
       "Folío operación",

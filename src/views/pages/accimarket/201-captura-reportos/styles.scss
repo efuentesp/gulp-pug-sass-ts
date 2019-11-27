@@ -5,6 +5,11 @@
   }
 }
 
+button,
+select {
+  border-radius: 6px !important;
+}
+
 #wilsonDiv {
   display: none;
 }
@@ -17,12 +22,10 @@ html {
   color: black;
 }
 
-#mainDiv {
-  width: 1250px;
-}
-
 #div-bandas-reportos-grid,
-#div-contratos-reportos-grid {
+#div-contratos-reportos-grid,
+#div-envios-reportos-grid,
+#div-errores-reportos-grid {
   border: 1px solid #919eab;
 }
 
@@ -36,7 +39,7 @@ html {
 
 // Para IE11
 .sidebar {
-  width: 320px;
+  width: 500px;
   &.isClosed {
     width: 1.5em;
   }
@@ -56,4 +59,50 @@ html {
 
 #wilsonDiv {
   display: none;
+}
+
+#gbox_table_gridBandas,
+#gview_table_gridBandas,
+#table_gridBandas_toppager,
+#gview_table_gridBandas div:nth-child(2),
+#gview_table_gridBandas div:nth-child(3),
+#gview_table_gridBandas div:nth-child(3) div,
+#gview_table_gridBandas div:nth-child(4),
+#gview_table_gridBandas div:nth-child(4) div {
+  width: 100% !important;
+}
+
+#gbox_table_gridContratos,
+#gview_table_gridContratos,
+#table_gridContratos_toppager,
+#gview_table_gridEnviados div:nth-child(2),
+#gbox_table_gridEnviados,
+#gview_table_gridEnviados,
+#table_gridEnviados_toppager,
+#gview_table_gridEnviados div:nth-child(2),
+#gbox_table_gridErrores,
+#gview_table_gridErrores,
+#table_gridErrores_toppager,
+#gview_table_gridErrores div:nth-child(2) {
+  width: 100% !important;
+}
+
+#pg_table_gridBandas_toppager,
+#pg_table_gridContratos_toppager,
+#pg_table_gridEnviados_toppager,
+#pg_table_gridErrores_toppager {
+  text-align: -webkit-center;
+}
+
+#tab_uno,
+#tab_dos {
+  padding: 0px;
+}
+
+#buscadorTabla {
+  background: #e2e8f0;
+}
+
+#buscadorTabla input {
+  height: 18px;
 }

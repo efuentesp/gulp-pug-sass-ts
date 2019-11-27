@@ -1,11 +1,12 @@
-+field-input("captura",
-    {
-    label: "Captura : ",
-    orientation: "horizontal",
-    disabled : true,
-    size: "14em"
-    }
-)
+span.bg-gray-200.block.mt-6
+    +field-input("captura",
+        {
+        label: "Captura : ",
+        orientation: "horizontal",
+        disabled : true,
+        size: "14em"
+        }
+    )
 
 
 
@@ -15,17 +16,15 @@
     +grid-records-count("contratos_directos")
 
 
-.row.pb-64
+.row.mt-6.flex.pb-64.pt-64
     +button-send({size: "large", disabled: false})
     +button-validate({size: "large", disabled: false})
     +button-clean({size: "large", disabled: false})
-
-.row.pb-64
-+field-input("captura",
-    {
-    label: "Total de Órdenes: ",
-    orientation: "horizontal",
-    disabled : true,
-    size: "8em"
-    }
-)
+    +field-input("captura",
+        {
+        label: "Total de Órdenes: ",
+        orientation: "horizontal",
+        disabled : true,
+        size: "8em"
+        }
+    )

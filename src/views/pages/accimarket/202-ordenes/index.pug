@@ -21,6 +21,14 @@ block content
             include _tab_ordenes
           +tab-item("tab_envios_errores")
             include _tab_envios_errores
+  +field-group("modales-group")
+        #modalEnvia
+          #dialog-modalEnvia
+        #modalIKE
+          #dialog-modalIKE
+        #modalTablaDialog2
+          #dialog-modal2
+              table.innerTable#idtablaModal
 
 block scripts
    script(src="../../assets/scripts/accimarket/202-ordenes/scripts.js")

@@ -40,9 +40,15 @@
   }
 }
 
+#btn_reset {
+  span.button.big-button {
+    margin-top: 100em;
+  }
+}
+
 // Para IE11
 .sidebar {
-  width: 750px;
+  width: 650px;
   &.isClosed {
     width: 1.5em;
   }
@@ -58,4 +64,10 @@
 
 #wilsonDiv {
   display: none;
+}
+
+select,
+input {
+  border-radius: 0em;
+  height: 15px;
 }
