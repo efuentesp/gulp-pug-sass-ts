@@ -1,12 +1,7 @@
-#filtros {
+#divConsulta,
+#DatosAplicar {
   label {
     width: 80px;
-  }
-
-  #field_fecha_banda {
-    label {
-      width: 72px;
-    }
   }
 }
 
@@ -45,4 +40,8 @@ html {
 
 .sidebar-content {
   overflow-y: scroll;
+}
+
+.currency-prefix {
+  margin-right: 4px;
 }

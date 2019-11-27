@@ -51,7 +51,7 @@ div#baraLateral
         +field-input("tazaPactada",
           {
             label:"Taza Pactada",
-            orientacion:"horizontal",
+            orientation:"horizontal",
             size:"10em",
             required: true
           }
@@ -59,7 +59,7 @@ div#baraLateral
         +field-input("plazo",
           {
             label:"Plazo",
-            orientacion:"horizontal",
+            orientation:"horizontal",
             size:"10em",
             required: true
           }
@@ -67,8 +67,9 @@ div#baraLateral
         +field-input("montoInvertir",
           {
             label:"Monto a Invertir",
-            orientacion:"horizontal",
-            size:"10em"
+            orientation:"horizontal",
+            size:"10em",
+            type: "currency"
           }
         )
         .row.mt-6.flex.justify-center.mb-4
