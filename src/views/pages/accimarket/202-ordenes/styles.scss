@@ -45,12 +45,25 @@
     margin-top: 100em;
   }
 }
+
+// Para IE11
+.sidebar {
+  width: 650px;
+  &.isClosed {
+    width: 1.5em;
+  }
+}
+
 .sidebar-wrapper {
   height: 100vh;
 }
 
 .sidebar-content {
   overflow-y: scroll;
+}
+
+#wilsonDiv {
+  display: none;
 }
 
 select,

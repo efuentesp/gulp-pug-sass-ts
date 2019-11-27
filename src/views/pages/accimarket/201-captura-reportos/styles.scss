@@ -5,7 +5,8 @@
   }
 }
 
-button, select{
+button,
+select {
   border-radius: 6px !important;
 }
 
@@ -36,6 +37,14 @@ html {
   color: #000;
 }
 
+// Para IE11
+.sidebar {
+  width: 500px;
+  &.isClosed {
+    width: 1.5em;
+  }
+}
+
 .sidebar-wrapper {
   height: 100vh;
 }
@@ -46,6 +55,10 @@ html {
 
 .currency-prefix {
   margin-right: 4px;
+}
+
+#wilsonDiv {
+  display: none;
 }
 
 #gbox_table_gridBandas,
@@ -70,7 +83,7 @@ html {
 #gbox_table_gridErrores,
 #gview_table_gridErrores,
 #table_gridErrores_toppager,
-#gview_table_gridErrores div:nth-child(2){
+#gview_table_gridErrores div:nth-child(2) {
   width: 100% !important;
 }
 
@@ -81,14 +94,15 @@ html {
   text-align: -webkit-center;
 }
 
-#tab_uno,#tab_dos{
+#tab_uno,
+#tab_dos {
   padding: 0px;
 }
 
-#buscadorTabla{
+#buscadorTabla {
   background: #e2e8f0;
 }
 
-#buscadorTabla input{
+#buscadorTabla input {
   height: 18px;
 }
