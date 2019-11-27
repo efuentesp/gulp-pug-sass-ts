@@ -9,7 +9,7 @@ block styles
 block content
   +sidebar-wrapper ("aside")
     +sidebar
-      include _sidebar
+      include _leftDiv
     +sidebar-content
       span.bg-gray-300.block.p-3.font-bold.text-lg Listado de Órdenes
       .row
@@ -29,6 +29,12 @@ block content
         #modalTablaDialog2
           #dialog-modal2
               table.innerTable#idtablaModal
-
+  
+  
+  include _dialog_pdf
+  include _dialog_xls
+  include _dialog_aviso
+  include _dialog_denegado
+  include _dialog_seleccion
 block scripts
    script(src="../../assets/scripts/accimarket/202-ordenes/scripts.js")

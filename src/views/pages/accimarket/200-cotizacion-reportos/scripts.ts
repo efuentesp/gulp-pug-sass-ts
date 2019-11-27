@@ -46,6 +46,31 @@ let cotizacion_reporto_params: UrlParams = {};
 //   $("#table_grid_cotizacion_reportos").trigger("reloadGrid");
 // });
 
+$("#btn_reset").click(() =>
+  $("#dialogo_xls").dialog({
+    modal: true,
+    closeText: "",
+    show: true,
+    title: "Confirmación",
+    width: 400
+    // buttons: [
+    //   {
+    //     text: "Aceptar",
+    //     // icon: "ui-icon-check",
+    //     click: function() {
+    //       $(this).dialog("close");
+    //     }
+    //   },
+    //   {
+    //     text: "Cancelar",
+    //     // icon: "ui-icon-check",
+    //     click: function() {
+    //       $(this).dialog("close");
+    //     }
+    //   }
+    // ]
+  })
+);
 
 ($("#grupo") as any).select2({
   language: "es",

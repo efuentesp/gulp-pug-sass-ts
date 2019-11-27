@@ -6,6 +6,9 @@
 // const fecha_actualCapReport = ddCapReport + '-' + mmCapReport + '-' + yyyyCapReport;
 // $("#fecha_banda").val(fecha_actualCapReport);
 
+
+$("#gridContratos").jqGrid("setFrozenColumns");
+
 $('.sidebar-collapsible-button').on('click', function() {
   $('#sidebar_wrapper_aside .sidebar').toggleClass('isClosed');
 });
