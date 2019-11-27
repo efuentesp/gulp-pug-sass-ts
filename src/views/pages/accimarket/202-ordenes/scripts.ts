@@ -1,3 +1,7 @@
+$('.sidebar-collapsible-button').on('click', function() {
+  $('#sidebar_wrapper_aside .sidebar').toggleClass('isClosed');
+});
+
 
 fieldPlusMinus("contrato", {});
 fieldPlusMinus("digito", { maxsize: 5 }); // Max number of elements

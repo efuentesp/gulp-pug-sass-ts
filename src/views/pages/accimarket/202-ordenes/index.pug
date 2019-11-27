@@ -7,9 +7,10 @@ block styles
    link(rel="stylesheet" href="../../assets/css/accimarket/202-ordenes/styles.css")
 
 block content
-  .page.pl-8.pr-6.flex
-    include _sidebar
-    .content.flex-1
+  +sidebar-wrapper ("aside")
+    +sidebar
+      include _sidebar
+    +sidebar-content
       span.bg-gray-300.block.p-3.font-bold.text-lg Listado de Órdenes
       .row
         +tab-group("grupo_grids",

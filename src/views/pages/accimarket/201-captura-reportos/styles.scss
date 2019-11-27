@@ -14,6 +14,10 @@
   display: none;
 }
 
-.sidebar-wrapper {
-  height: 100vh;
+.content.is_sidebar_open{
+  padding-left: 233px !important;
+}
+
+html{
+  color: black;
 }

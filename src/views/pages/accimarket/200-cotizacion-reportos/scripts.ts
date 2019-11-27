@@ -6,6 +6,10 @@ const yyyy = today.getFullYear();
 const fecha_actual = dd + '-' + mm + '-' + yyyy;
 $("#fecha_banda").val(fecha_actual);
 
+$('.sidebar-collapsible-button').on('click', function() {
+  $('#sidebar_wrapper_aside .sidebar').toggleClass('isClosed');
+});
+
 http_findAll("grupos", {}, payload => {
   ($("#grupo") as any).select2({
     language: "es",

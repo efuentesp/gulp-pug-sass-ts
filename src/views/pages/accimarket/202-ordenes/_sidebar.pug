@@ -1,6 +1,6 @@
 include /mixins/mixins
 
-+sidebar
+.block.overflow-y-auto
   span.bg-gray-300.block.p-3.font-bold.text-lg.mb-3 CONSULTA DE BANDA
   #filtros
     +form("criterios-busqueda", {})
@@ -21,7 +21,7 @@ include /mixins/mixins
         },
         {key: "ALL", value:"Todos"}
       )
-      .row.flex
+      .row.flex.items-center
         +field-select("emisora",
           {
             label: "Emisora/serie",
@@ -31,9 +31,10 @@ include /mixins/mixins
           },
           {key: "ALL", value:"Todos"}
           )
+        p /
         +field-select("serie",
           {
-            label: "/",
+            label: "",
             orientation: "horizontal",
             size: "8em",
             required:true
@@ -47,7 +48,7 @@ include /mixins/mixins
           size: "10em",
           required:true
         },
-         {key: "ALL", value:"Todos"}
+          {key: "ALL", value:"Todos"}
         )
       +field-input("precio_banda",
         {

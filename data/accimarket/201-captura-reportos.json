@@ -1,0 +1,199 @@
+{
+    "captura_reportos": [
+      {
+        "grupo": "BANCARIO",
+        "instrumento": "Sin Grupo",
+        "plazo": "1 - 30",
+        "tasa": 1
+      },
+      {
+        "grupo": "",
+        "instrumento": "CDS",
+        "plazo": "1 - 30",
+        "tasa": 2
+      },
+      {
+        "grupo": "BANCARIO",
+        "instrumento": "PAGE",
+        "plazo": "1 - 30",
+        "tasa": 3
+      },
+      {
+        "grupo": "BANCARIO",
+        "instrumento": "PAGE",
+        "plazo": "1 - 30",
+        "tasa": 3
+      }
+    ],
+    "grupos": [
+      {
+        "id": 1,
+        "text": "BANCARIO"
+      },
+      {
+        "id": 2,
+        "text": "OTROS"
+      }
+    ],
+    "instrumentos": [
+      {
+        "id": 1,
+        "text": "Sin Grupo"
+      },
+      {
+        "id": 2,
+        "text": "CDS"
+      },
+      {
+        "id": 3,
+        "text": "PAGE"
+      }
+    ],
+    "contratos_reportos": [
+        {
+            "id_Renglon":1,
+            "status Envio":1,
+            "contrato":"acs",
+            "nombre":"Bancom",
+            "digito":"a123",
+            "perfil_del_Contrato":"12",
+            "saldo_Disponible":123,
+            "fecha_Banda":"12-12-12",
+            "grupo":123,
+            "instrumento":"CDS",
+            "fecha_Vencimiento":"12-12-12",
+            "monto_a_Invertir":"12312312",
+            "tasa_Pactada":12,
+            "plazo_Operacion":12,
+            "servicio_de_Inversion":12,
+            "tasa_Maxima":123,
+            "spread":"123",
+            "prioridad":1,
+            "liquidacion(Cargos)":123,
+            "liquidacion(Abonos)":123,
+            "art.194":"2",
+            "fechaLiq":"qwe",
+            "idClasif":123,
+            "idDescParamTipoTasa":"qweqwe",
+            "idUsrGpo":54,
+            "isGpoUser":4576,
+            "plazo_Ini":678,
+            "plazo_Fin":23,
+            "saldo_Banda":234,
+            "arrayServicioInversion":"qweqweqwe",
+            "idBanda":456,
+            "descripCortaLinea":34,
+            "recomend":"PESIMA"
+          },
+          {
+              "id_Renglon":2,
+              "status Envio":1,
+              "contrato":"acs",
+              "nombre":"Bancom",
+              "digito":"a123",
+              "perfil_del_Contrato":"12",
+              "saldo_Disponible":123,
+              "fecha_Banda":"12-12-12",
+              "grupo":123,
+              "instrumento":"CDS",
+              "fecha_Vencimiento":"12-12-12",
+              "monto_a_Invertir":"12312312",
+              "tasa_Pactada":12,
+              "plazo_Operacion":12,
+              "servicio_de_Inversion":12,
+              "tasa_Maxima":123,
+              "spread":"123",
+              "prioridad":1,
+              "liquidacion(Cargos)":123,
+              "liquidacion(Abonos)":123,
+              "art.194":"2",
+              "fechaLiq":"qwe",
+              "idClasif":123,
+              "idDescParamTipoTasa":"qweqwe",
+              "idUsrGpo":54,
+              "isGpoUser":4576,
+              "plazo_Ini":678,
+              "plazo_Fin":23,
+              "saldo_Banda":234,
+              "arrayServicioInversion":"qweqweqwe",
+              "idBanda":456,
+              "descripCortaLinea":34,
+              "recomend":"PESIMA"
+            }
+    ],
+    "envios_reportos": [
+        {
+            "id_Renglon":1,
+            "status Envio":1,
+            "contrato":"acs",
+            "nombre":"Bancom",
+            "digito":"a123",
+            "perfil_del_Contrato":"12",
+            "saldo_Disponible":123,
+            "fecha_Banda":"12-12-12",
+            "grupo":123,
+            "instrumento":"CDS",
+            "fecha_Vencimiento":"12-12-12",
+            "monto_a_Invertir":"12312312",
+            "tasa_Pactada":12,
+            "plazo_Operacion":12,
+            "servicio_de_Inversion":12,
+            "tasa_Maxima":123,
+            "spread":"123",
+            "prioridad":1,
+            "liquidacion(Cargos)":123,
+            "liquidacion(Abonos)":123,
+            "art.194":"2",
+            "fechaLiq":"qwe",
+            "idClasif":123,
+            "idDescParamTipoTasa":"qweqwe",
+            "idUsrGpo":54,
+            "isGpoUser":4576,
+            "plazo_Ini":678,
+            "plazo_Fin":23,
+            "saldo_Banda":234,
+            "arrayServicioInversion":"qweqweqwe",
+            "idBanda":456,
+            "descripCortaLinea":34,
+            "recomend":"PESIMA"
+        },
+        {
+            "id_Renglon":2,
+            "status Envio":1,
+            "contrato":"acs",
+            "nombre":"Bancom",
+            "digito":"a123",
+            "perfil_del_Contrato":"12",
+            "saldo_Disponible":123,
+            "fecha_Banda":"12-12-12",
+            "grupo":123,
+            "instrumento":"CDS",
+            "fecha_Vencimiento":"12-12-12",
+            "monto_a_Invertir":"12312312",
+            "tasa_Pactada":12,
+            "plazo_Operacion":12,
+            "servicio_de_Inversion":12,
+            "tasa_Maxima":123,
+            "spread":"123",
+            "prioridad":1,
+            "liquidacion(Cargos)":123,
+            "liquidacion(Abonos)":123,
+            "art.194":"2",
+            "fechaLiq":"qwe",
+            "idClasif":123,
+            "idDescParamTipoTasa":"qweqwe",
+            "idUsrGpo":54,
+            "isGpoUser":4576,
+            "plazo_Ini":678,
+            "plazo_Fin":23,
+            "saldo_Banda":234,
+            "arrayServicioInversion":"qweqweqwe",
+            "idBanda":456,
+            "descripCortaLinea":34,
+            "recomend":"PESIMA"
+        }
+        
+    ]
+  }
+ 
+  
