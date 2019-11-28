@@ -434,6 +434,17 @@ const fieldPlusMinus = (id: string, params: any) => {
   }
 
   $(idBtnPlus).click(() => {
+    addValueToList();
+  });
+
+  $(idInput).on("keydown", (e) => {
+    if (e.which == 13) {
+      e.preventDefault();
+      addValueToList();
+    }
+  });
+
+  const addValueToList = () => {
     const text_to_add = $(idInput).val() as string;
     const value_to_add = $(idInput).val() as string;
 
@@ -444,7 +455,7 @@ const fieldPlusMinus = (id: string, params: any) => {
     }
     fieldPlusMinusRepaintList(node);
     $(idInput).val("");
-  });
+  }
 
   $(idBtnMinus).click(() => {
     $(list + " li a").each(function (index) {
