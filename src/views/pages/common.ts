@@ -2025,7 +2025,7 @@ const validateDateRage = (id: string) => {
 // TODO: No amarrar el clean a la clase .is-search-form ya que no siempre se usa.
 $("#btn_clean").click(() => {
   ($(".is-search-form") as any).parsley().reset();
-  $("li a").text("");
+  $(".tag-list li a").text("");
 });
 
 const getCheckedCheckbox = (id: string) => {
