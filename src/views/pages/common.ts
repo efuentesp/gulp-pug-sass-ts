@@ -261,6 +261,12 @@ const rest_findOne$ = (resource: string, id: string) => {
   });
 };
 
+/**
+ * Hace el llamado ajax a los web services via POST
+ * @param {string} url - url parcial del web service (p.ej. "obtenerContrato").
+ * @param {object} params - Objeto con los parámetros a enviar al web service (p.ej. {cliente: "C001", estatus: "A"}).
+ * @param {function} callback - Función con la respuesta del web service.
+ */
 const rpc = (url: string, params: any, cb: Function) => {
   $.ajax({
     url,
@@ -409,7 +415,12 @@ function fieldPlusMinusRepaintList(node) {
   }
 }
 
-// Plus Minus
+/**
+ * Funcionalidad para el componente +/- con un input
+ * @param {string} id - Id del componente.
+ * @param {object} params - Objeto con los parámetros para el componente:
+ *   maxsize (opcional): Si la lista solo permite un número limitado de elementos en la lista
+ */
 const fieldPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
@@ -484,7 +495,12 @@ const fieldPlusMinus = (id: string, params: any) => {
   });
 };
 
-// Select Plus Minus
+/**
+ * Funcionalidad para el componente +/- con un select
+ * @param {string} id - Id del componente.
+ * @param {object} params - Objeto con los parámetros para el componente:
+ *   maxsize (opcional): Si la lista solo permite un número limitado de elementos en la lista
+ */
 const fieldSelectPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
@@ -566,7 +582,12 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
   });
 };
 
-// Autocomplete Plus Minus
+/**
+ * Funcionalidad para el componente +/- con Autocomplete
+ * @param {string} id - Id del componente.
+ * @param {object} params - Objeto con los parámetros para el componente:
+ *   maxsize (opcional): Si la lista solo permite un número limitado de elementos en la lista
+ */
 const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
@@ -658,6 +679,11 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   });
 };
 
+/**
+ * Obtiene los elementos de la lista seleccionados por cualquier componente +/-
+ * @param {string} id - Id del componente.
+ * @return {array} Lista de valores seleccionados
+ */
 const getList = (id: string) => {
   var list: any = [];
 
@@ -673,6 +699,11 @@ const getList = (id: string) => {
   return list;
 };
 
+/**
+ * Obtiene los elementos seleccionados de un grupo de checkboxes
+ * @param {string} id - Id del componente.
+ * @return {array} Lista de valores seleccionados
+ */
 const getChecked = (id: string) => {
   let selected = [];
   const query_select = "#field_" + id + " input[type=checkbox]";
@@ -686,6 +717,11 @@ const getChecked = (id: string) => {
   return selected;
 };
 
+/**
+ * Obtiene el elemento seleccionado de un grupo de radio buttons
+ * @param {string} id - Id del componente.
+ * @return {string} valor del elemento seleccionado
+ */
 const getOptionSelected = (id: string) => {
   const query_select = "input[name='" + id + "']:checked";
 
@@ -835,7 +871,10 @@ const backgroundSet = (elements: number) => {
 var simpleGradientGraph = null;
 
 
-
+/**
+ * Genera una gráfica de Barras
+ * @param {object} params - Parámetros para armar la gráfica.
+ */
 const gradientBarChart = (params: barGradientChartParams) => {
   console.log("GradientBarChart");
   if (simpleGradientGraph != null) {
