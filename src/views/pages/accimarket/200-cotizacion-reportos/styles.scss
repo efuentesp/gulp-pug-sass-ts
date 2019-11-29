@@ -26,6 +26,29 @@
   height: 100vh;
 }
 
-// .sidebar-content {
-//   overflow-y: scroll;
-// }
+#div-cotizacion-reportos-grid{
+  border: 1px solid #919eab;
+}
+
+
+#gbox_table_gridCotizacion,
+#gview_table_gridCotizacion,
+#table_gridCotizacion_toppager,
+#gview_table_gridCotizacion div:nth-child(2),
+#gview_table_gridCotizacion div:nth-child(3),
+#gview_table_gridCotizacion div:nth-child(3) div,
+#gview_table_gridCotizacion div:nth-child(4),
+#gview_table_gridCotizacion div:nth-child(4) div {
+  width: 100% !important;
+}
+
+select, input{
+  border-radius: 6px;
+}
+
+html {
+  color: black;
+}
+.ui-th-div {
+  color: #000;
+}

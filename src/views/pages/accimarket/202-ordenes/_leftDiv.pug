@@ -9,7 +9,8 @@ include /mixins/mixins
           label: "Fecha valor",
           orientation: "horizontal",
           size: "10em",
-          required: true
+          required: true,
+          tooltip: "DD/MM/AAAA"
         }
       )
       +field-select("operacion",
@@ -49,31 +50,27 @@ include /mixins/mixins
         })
 
       .row.mt-8.flex.justify-center
-
         +button-search({size: "large", disabled: false})
 
   .row#titulo
   span.bg-gray-300.block.p-3.bottom-80.font-bold.text-lg.mb-30 Filtros
   #filtros
-    +form("criterios-busqueda", {})
-
+    +form("criterios-Filtros", {})
       +field-plus-minus("contrato", {label: "Contrato", tooltip: "Contrato",  size: "14em"})
       +field-plus-minus("digito", {label: "Digito", tooltip: "Digito", size: "14em"})
-
       .row.mt-6.flex.justify-center
-
         +button-search({size: "large", disabled: false})
 
   .row#titulo
   span.bg-gray-300.block.p-3.font-bold.text-lg.mb-3 Datos por aplicar
   #filtros
-    +form("criterios-busqueda", {})
-
+    +form("Criterios-Datos", {})
       +field-input("titulos",
         {
           label: "Titulos",
           orientation: "horizontal",
           size: "12em",
+          required: true
         }
       )
       +field-input("precio_pactado",
@@ -81,6 +78,7 @@ include /mixins/mixins
           label: "Precio Pactado",
           orientation: "horizontal",
           size: "12em",
+          required: true
         }
       )
       +field-input("monto",
@@ -88,9 +86,12 @@ include /mixins/mixins
           label: "Monto  ",
           orientation: "horizontal",
           disabled : true,
-          size: "12em"
+          size: "12em",
+          type: "currency"
         })
-  .row.mt-6.flex.justify-center
-    +field-group("botones-group-md")
-      +button-clean({size: "large", disabled: false})
-      +button-add({size:"large", disabled: false})
+      .row.my-16.flex.justify-center
+        +field-group("botones-group-md")
+          +button-add({size:"large", disabled: false})
+          +button-clean({size: "large", disabled: false})
+      
+      

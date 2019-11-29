@@ -1,33 +1,31 @@
-span.bg-gray-200.block.mt-6
+span.bg-gray-200.block#buscadorTabla
     .row
-    +field-input("envio",
+        +field-input("envio",
             {
                 label: "Envío :",
                 orientation: "horizontal",
                 disabled : true,
-                size: "12em"
+                size: "8em"
             })
 
 
-.row.has_border
-    .row.w-full.overflow-auto
+    .row.w-full.overflow-auto#div-bandas-reportos-grid
         +grid("envios_directos")
     +grid-records-count("envios_directos")
 
 .row#boton_resert.pb-50.pt-20
     +button-reset({size: "large", disabled: false})
 
-span.bg-gray-200.block.p-0
+span.bg-gray-200.block.p-0#buscadorTabla
     .row#input_errores.mt-6.justify-center
     +field-input("errores",
             {
             label: "Errores:",
             orientation: "horizontal",
             disabled : true,
-            size: "12em"
+            size: "8em"
             })
 
-.row.has_border
-    .row.w-full.overflow-auto
+    .row.w-full.overflow-auto#div-errores-reportos-grid
         +grid("errores_directos")
     +grid-records-count("errores_directos")

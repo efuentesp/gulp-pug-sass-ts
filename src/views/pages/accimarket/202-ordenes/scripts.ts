@@ -180,3 +180,115 @@ $("#table_errores_directos").jqGrid({
     viewrecords: true
 });
 
+($("#criterios-busqueda") as any)
+  .parsley()
+  .on("field:success", (e) => {
+    removeErrorsInAttrTitle(e);
+  })
+  .on("field:error", (e) => {
+    putErrorsInAttrTitle(e);
+  })
+  .on("form:submit", e => {
+    // console.log("form:submit", e);
+    // console.log("INGRESA A LA FUNCION  DE FORMM SUBMIT");
+    // contratos_params = {};
+
+    // const fecha = $("#fecha").val();
+    // const negocio = getOptionSelected("negocio");
+
+    // let listContrato = getList("contrato");
+    // let listDigito = getList("digito");
+    // console.log(listDigito);
+
+    // let productTypes = getChecked("products3");
+
+    // if (fecha) {
+    //   contratos_params.fecha = fecha;
+    // }
+
+    // if (listContrato.length > 0) {
+    //   contratos_params.contrato = listContrato;
+    // }
+
+    // if (listDigito.length > 0) {
+    //   contratos_params.digito = listDigito;
+    // }
+
+    // if (negocio) {
+    //   contratos_params.negocio = negocio;
+    // }
+
+    // if (productTypes.length > 0) {
+    //   contratos_params.product = productTypes;
+    // }
+
+    // http_findAll("contratos", contratos_params, payload => {
+    //   // console.log(payload);
+    //   console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS 2");
+    //   $("#table_contratos").jqGrid("clearGridData");
+    //   $("#table_contratos").jqGrid("setGridParam", { data: payload });
+    //   $("#table_contratos").trigger("reloadGrid");
+    //   const rec_count = payload.length;
+    //   $("#count_contratos").html(rec_count);
+    //   // console.log(rec_count);
+    // });
+
+    return false;
+  });
+
+  
+($("#Criterios-Datos") as any)
+.parsley()
+.on("field:success", (e) => {
+  removeErrorsInAttrTitle(e);
+})
+.on("field:error", (e) => {
+  putErrorsInAttrTitle(e);
+})
+.on("form:submit", e => {
+  
+    // console.log("form:submit", e);
+    // console.log("INGRESA A LA FUNCION  DE FORMM SUBMIT");
+    // contratos_params = {};
+
+    // const fecha = $("#fecha").val();
+    // const negocio = getOptionSelected("negocio");
+
+    // let listContrato = getList("contrato");
+    // let listDigito = getList("digito");
+    // console.log(listDigito);
+
+    // let productTypes = getChecked("products3");
+
+    // if (fecha) {
+    //   contratos_params.fecha = fecha;
+    // }
+
+    // if (listContrato.length > 0) {
+    //   contratos_params.contrato = listContrato;
+    // }
+
+    // if (listDigito.length > 0) {
+    //   contratos_params.digito = listDigito;
+    // }
+
+    // if (negocio) {
+    //   contratos_params.negocio = negocio;
+    // }
+
+    // if (productTypes.length > 0) {
+    //   contratos_params.product = productTypes;
+    // }
+
+    // http_findAll("contratos", contratos_params, payload => {
+    //   // console.log(payload);
+    //   console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS 2");
+    //   $("#table_contratos").jqGrid("clearGridData");
+    //   $("#table_contratos").jqGrid("setGridParam", { data: payload });
+    //   $("#table_contratos").trigger("reloadGrid");
+    //   const rec_count = payload.length;
+    //   $("#count_contratos").html(rec_count);
+    //   // console.log(rec_count);
+    // });
+  return false;
+});

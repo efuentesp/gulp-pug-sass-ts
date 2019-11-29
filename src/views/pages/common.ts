@@ -445,6 +445,17 @@ const fieldPlusMinus = (id: string, params: any) => {
   }
 
   $(idBtnPlus).click(() => {
+    addValueToList();
+  });
+
+  $(idInput).on("keydown", (e) => {
+    if (e.which == 13) {
+      e.preventDefault();
+      addValueToList();
+    }
+  });
+
+  const addValueToList = () => {
     const text_to_add = $(idInput).val() as string;
     const value_to_add = $(idInput).val() as string;
 
@@ -455,7 +466,7 @@ const fieldPlusMinus = (id: string, params: any) => {
     }
     fieldPlusMinusRepaintList(node);
     $(idInput).val("");
-  });
+  }
 
   $(idBtnMinus).click(() => {
     $(list + " li a").each(function (index) {
@@ -2053,7 +2064,7 @@ const validateDateRage = (id: string) => {
 // TODO: No amarrar el clean a la clase .is-search-form ya que no siempre se usa.
 $("#btn_clean").click(() => {
   ($(".is-search-form") as any).parsley().reset();
-  $("li a").text("");
+  $(".tag-list li a").text("");
 });
 
 const getCheckedCheckbox = (id: string) => {
