@@ -526,8 +526,8 @@ const fillPromediosPieHighcharts = (promedios: any) => {
   pieHighchart({
     id: "container",
     title: "Promedios Pie Chart",
-    format: "{series.name}: <b>{point.percentage:.1f}%</b>",
-    plotOptionsFormat: "<b>{point.name}</b>: {point.percentage:.1f} %",
+    format: "{series.name}: <b>{point.percentage:.1f}</b>",
+    plotOptionsFormat: "<b>{point.name}</b>: {point.percentage:.1f}",
     labelsX: "Porcentaje",
     dataSet: charData
   });
@@ -535,8 +535,8 @@ const fillPromediosPieHighcharts = (promedios: any) => {
   pieBorderHighchart({
     id: "containerBorder",
     title: "Promedios Pie Chart",
-    format: "{series.name}: <b>{point.percentage:.1f}%</b>",
-    plotOptionsFormat: "<b>{point.name}</b>: {point.percentage:.1f} %",
+    format: "{series.name}: <b>{point.percentage:.1f}</b>",
+    plotOptionsFormat: "<b>{point.name}</b>: {point.percentage:.1f}",
     labelsX: "Porcentaje",
     dataSet: charData
   });
