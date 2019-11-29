@@ -1,6 +1,6 @@
 /// <reference path="typings/index.d.ts" />
 
-console.log("common.ts");
+// console.log("common.ts");
 
 const REST_URL = "http://localhost:3000";
 
@@ -887,7 +887,7 @@ var simpleGradientGraph = null;
  * @param {object} params - Parámetros para armar la gráfica.
  */
 const gradientBarChart = (params: barGradientChartParams) => {
-  console.log("GradientBarChart");
+  // console.log("GradientBarChart");
   if (simpleGradientGraph != null) {
     simpleGradientGraph.destroy();
   }
@@ -2060,11 +2060,11 @@ const validateDateRage = (id: string) => {
   });
 };
 
-// Clean selects
-// TODO: No amarrar el clean a la clase .is-search-form ya que no siempre se usa.
+// Reset Form
 $("#btn_clean").click(() => {
-  ($(".is-search-form") as any).parsley().reset();
-  $(".tag-list li a").text("");
+  ($(".form-group") as any).parsley().reset();
+  $(".form-group .tag-list li a").text("");
+  $(".form-group select.select2").val([]).trigger("change");
 });
 
 const getCheckedCheckbox = (id: string) => {
@@ -2627,8 +2627,8 @@ const putErrorsInAttrTitle = (e: any) => {
     e.$element.tooltip('destroy');
   }
 
-  console.log(e.$element);
-  console.log(e.getErrorsMessages());
+  // console.log(e.$element);
+  // console.log(e.getErrorsMessages());
   const isInput = $(e.$element).hasClass("input");
   const isMultiSelect = $(e.$element).is("select[multiple='multiple']");
   if (isInput || isMultiSelect) {
@@ -2659,7 +2659,7 @@ const putErrorsInAttrTitle = (e: any) => {
 
   const isSelect2 = $(e.$element).is("select");
   if (isSelect2) {
-    console.log(e.$element.next(".select2"));
+    // console.log(e.$element.next(".select2"));
     e.$element.next(".select2").tooltip({
       content: e.getErrorsMessages().join("<br />"),
       items: e.$element.next(".select2"),
@@ -2750,7 +2750,7 @@ const windowResize = (widthTable:number, idTable:String, idSplitterContainer:Str
       gridWidth = widthTable;
     }  
 
-    console.log("============================>> table resize: " + gridWidth);  
+    // console.log("============================>> table resize: " + gridWidth);  
     $("#"+idTable).jqGrid("setGridWidth", gridWidth, true);
   });
 }

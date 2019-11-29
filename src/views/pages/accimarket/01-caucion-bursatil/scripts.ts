@@ -22,14 +22,10 @@ let contratos_params: UrlParams = {};
 //   .subscribe(data => llenaGridContratos(data));
 
 http_findAll("contratos", contratos_params, payload => {
-  console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS");
-
-  // fillJqGrid("#table_contratos", payload);
   llenaGridContratos(payload);
   llenaSelectContratos(payload);
   const rec_count = payload.length;
   $("#count_contratos").html(rec_count);
-  // console.log(rec_count);
 });
 
 // Llamado a servicios via POST
@@ -39,8 +35,7 @@ const rpc_parms = {
   rol: "TIT"
 };
 rpc(rpc_url, rpc_parms, (data, textStatus, jQxhr) => {
-  console.log("INGRESA A LA FUNCION  RPC");
-  console.log(data, textStatus, jQxhr);
+  // console.log(data, textStatus, jQxhr);
   llenaGridContratos(data);
   const rec_count = data.length;
   $("#count_contratos").html(rec_count);
@@ -55,8 +50,7 @@ const form = ($("#criterios-busqueda") as any)
     putErrorsInAttrTitle(e);
   })
   .on("form:submit", e => {
-    console.log("form:submit", e);
-    console.log("INGRESA A LA FUNCION  DE FORMM SUBMIT");
+    // console.log("form:submit", e);
     contratos_params = {};
 
     const fecha = $("#fecha").val();
@@ -64,7 +58,6 @@ const form = ($("#criterios-busqueda") as any)
 
     let listContrato = getList("contrato");
     let listDigito = getList("digito");
-    console.log(listDigito);
 
     let productTypes = getChecked("products3");
 
@@ -90,13 +83,11 @@ const form = ($("#criterios-busqueda") as any)
 
     http_findAll("contratos", contratos_params, payload => {
       // console.log(payload);
-      console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS 2");
       $("#table_contratos").jqGrid("clearGridData");
       $("#table_contratos").jqGrid("setGridParam", { data: payload });
       $("#table_contratos").trigger("reloadGrid");
       const rec_count = payload.length;
       $("#count_contratos").html(rec_count);
-      // console.log(rec_count);
     });
 
     return false;
@@ -104,7 +95,6 @@ const form = ($("#criterios-busqueda") as any)
 
 const llenaGridContratos = (contratos: any) => {
   // console.log(contratos);
-  console.log("INGRESA A LA FUNCION  LLENA GRID");
   $("#table_contratos").jqGrid({
     data: contratos,
     datatype: "local",
@@ -296,7 +286,6 @@ $("#btn_xls").click(() =>
 validateDateRage("rango");
 
 const llenaSelectContratos = (contratos: any) => {
-  console.log(contratos);
   fieldSelectPlusAutocomplete("ejemplo", {
     id: "id",
     text: "contrato",
