@@ -839,6 +839,12 @@ interface pieHighchartParams {
   dataSet: any[];
 }
 
+interface barHighchartParams {
+  id: string;
+  title: string;
+  dataSet: any[];
+}
+
 // Set any colors to pie chart
 const backgroundSet = (elements: number) => {
   // Set principal
@@ -2949,3 +2955,153 @@ const pieBorderHighchart = (params: pieHighchartParams) => {
     ]
   });
 };
+
+const barHighchart = (params: barHighchartParams) => {
+
+  Highcharts.chart(params.id, {
+    chart: {
+        type: 'bar',
+        events: {
+          load: function() {
+            let categoryHeight = 50;
+            this.update({
+              chart: {
+                height:
+                  categoryHeight * 1 +
+                  (this.chartHeight - this.plotHeight)
+              }
+            });
+          }
+        }
+    },
+    title: {
+        text: params.title
+    },
+    xAxis: {
+        categories: [params.dataSet[0]['title'],'']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: ''
+        },
+        labels: {
+          enabled: false,
+          style: {
+            color: '#000000',
+          }
+      },
+    },
+    legend: {
+        align: "right",
+        verticalAlign: "top",
+        layout: 'vertical',
+        x: 20,
+        y: 5
+    },
+    plotOptions: {
+        series: {
+            stacking: 'normal',
+            shadow: false
+        }
+    },
+    series: [
+    {
+        color: '#53565a',
+        name: params.dataSet[0]['value']['x'],
+        data: [
+          {
+            y: params.dataSet[0]['value']['y'],
+            color: '#53565a'
+          },
+          {
+            y: params.dataSet[0]['value']['y'],
+            color: {
+              linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+              stops: [
+                  [0, '#ffffff'], // start
+                  [0.2, '#ffffff'], // middle
+                  [1, '#c9cacc'] // end
+              ]
+            }
+          },
+        ],
+        pointPadding: -0.15,
+        type: undefined,
+    }, 
+    {
+        color: '#a6a6a6',
+        name: params.dataSet[1]['value']['x'],
+        data: [
+          {
+            y: params.dataSet[1]['value']['y'],
+            color: '#a6a6a6'
+          },
+          {
+            y: params.dataSet[1]['value']['y'],
+            color: {
+              linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+              stops: [
+                  [0, '#ffffff'], // start
+                  [0.2, '#ffffff'], // middle
+                  [1, '#d9d9d9'] // end
+              ]
+            }
+          },
+        ],
+        pointPadding: -0.15,
+        type: undefined
+    }, {
+        color: '#5d87a1',
+        name: params.dataSet[2]['value']['x'],
+        data: [
+          {
+            y: params.dataSet[2]['value']['y'],
+            color: '#5d87a1'
+          },
+          {
+            y: params.dataSet[2]['value']['y'],
+            color: {
+              linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+              stops: [
+                  [0, '#ffffff'], // start
+                  [0.2, '#ffffff'], // middle
+                  [1, '#aec3d0'] // end
+              ]
+            }
+          },
+        ],
+        pointPadding: -0.15,
+        type: undefined
+    },
+    {
+      color: '#87d1d9',
+      name: params.dataSet[3]['value']['x'],
+      data: [
+        {
+          y: params.dataSet[3]['value']['y'],
+          color: '#87d1d9',
+          borderRadiusTopLeft: 10
+        },
+        {
+          y: params.dataSet[3]['value']['y'],
+          color: {
+            linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+            stops: [
+                [0, '#ffffff'], // start
+                [0.2, '#ffffff'], // middle
+                [1, '#c3e8ec'] // end
+            ]
+          }
+        },
+      ],
+      pointPadding: -0.15,
+      type: undefined
+    } 
+  ]
+    
+  });
+
+};
+
+

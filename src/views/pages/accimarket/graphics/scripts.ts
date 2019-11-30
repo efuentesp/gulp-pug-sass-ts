@@ -3,6 +3,7 @@
 let rates_params: UrlParams = {};
 let rendimientos_params: UrlParams = {};
 let rendimientosh_params: UrlParams = {};
+let rendimientoshc_params: UrlParams = {};
 let promedios_params: UrlParams = {};
 
 // Service line chart
@@ -24,6 +25,12 @@ http_findAll("rendimientos", rendimientos_params, payload => {
 http_findAll("rendimientosh", rendimientosh_params, payload => {
   fillHorizontalRendimientos(payload);
 });
+
+// Services stack chart horizontal
+http_findAll("rendimientoshc", rendimientoshc_params, payload => {
+  fillPromediosHighchartBar(payload);
+});
+
 
 // Services bar chart
 http_findAll("promedios", promedios_params, payload => {
@@ -371,155 +378,13 @@ const fillHorizontalRendimientos = (rendimientosh: any) => {
   });
 };
 
-Highcharts.chart('containerBar', {
-  chart: {
-      type: 'bar',
-      events: {
-        load: function() {
-          let categoryHeight = 50;
-          this.update({
-            chart: {
-              height:
-                categoryHeight * 1 +
-                (this.chartHeight - this.plotHeight)
-            }
-          });
-        }
-      }
-  },
-  title: {
-      text: 'Bar Chart'
-  },
-  xAxis: {
-      categories: ['Apples','']
-  },
-  yAxis: {
-      min: 0,
-      title: {
-          text: ''
-      },
-      labels: {
-        enabled: false,
-        style: {
-          color: '#000000',
-        }
-    },
-  },
-  legend: {
-      align: "right",
-      verticalAlign: "top",
-      layout: 'vertical',
-      x: 20,
-      y: 0
-  },
-  plotOptions: {
-      series: {
-          stacking: 'normal',
-          shadow: false
-      }
-  },
-  series: [
-  {
-      color: '#53565a',
-      name: 'John',
-      data: [
-        {
-          y: 5,
-          color: '#53565a'
-        },
-        {
-          y: 5,
-          color: {
-            linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
-            stops: [
-                [0, '#ffffff'], // start
-                [0.2, '#ffffff'], // middle
-                [1, '#c9cacc'] // end
-            ]
-          }
-        },
-      ],
-      pointPadding: -0.15,
-      type: undefined,
-  }, 
-  {
-      color: '#a6a6a6',
-      name: 'Jane',
-      data: [
-        {
-          y: 2,
-          color: '#a6a6a6'
-        },
-        {
-          y: 2,
-          color: {
-            linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
-            stops: [
-                [0, '#ffffff'], // start
-                [0.2, '#ffffff'], // middle
-                [1, '#d9d9d9'] // end
-            ]
-          }
-        },
-      ],
-      pointPadding: -0.15,
-      type: undefined
-  }, {
-      color: '#5d87a1',
-      name: 'Joe',
-      data: [
-        {
-          y: 2,
-          color: '#5d87a1'
-        },
-        {
-          y: 2,
-          color: {
-            linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
-            stops: [
-                [0, '#ffffff'], // start
-                [0.2, '#ffffff'], // middle
-                [1, '#aec3d0'] // end
-            ]
-          }
-        },
-      ],
-      pointPadding: -0.15,
-      type: undefined
-  },
-  {
-    color: '#87d1d9',
-    name: 'Janin',
-    data: [
-      {
-        y: 1,
-        color: '#87d1d9',
-        borderRadiusTopLeft: 10
-      },
-      {
-        y: 1,
-        color: {
-          linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
-          stops: [
-              [0, '#ffffff'], // start
-              [0.2, '#ffffff'], // middle
-              [1, '#c3e8ec'] // end
-          ]
-        }
-      },
-    ],
-    pointPadding: -0.15,
-    type: undefined
-  } 
-]
-  
-});
 
 const fillPromediosPieHighcharts = (promedios: any) => {
   let charData = [];
 
   for (let i = 0; i < promedios.length; i++) {
-    var data = promedios[i];
+    let data = promedios[i];
+    // Json property   "promedios": [{"horizonte": "A (Liquidez)", "dataB": 3.8}] 
     charData.push({name:data.horizonte, y:data.dataB})
   }
 
@@ -543,7 +408,25 @@ const fillPromediosPieHighcharts = (promedios: any) => {
 };
 
 
+// Stack Horizontal
+const fillPromediosHighchartBar = (datos: any) => {
 
+  let charData = [];
+  for (let i = 0; i < datos.length; i++) {
+    let data = datos[i];
+    charData.push({title:data.mes, value:data.data1});
+    charData.push({title:data.mes, value:data.data2});
+    charData.push({title:data.mes, value:data.data3});
+    charData.push({title:data.mes, value:data.data4});
+  }
+
+  barHighchart({
+    id: "containerBar",
+    title: "Bar Chart",
+    dataSet: charData
+  });
+
+};  
 
 
 

@@ -5144,6 +5144,27 @@
       "dataD": 41
     }
   ],
+  "rendimientoshc": [
+    {
+      "mes": "Liquidez",
+      "data1": {
+        "x": "Jonh",
+        "y": 5
+      },
+      "data2": {
+        "x": "Jane",
+        "y": 2
+      },
+      "data3": {
+        "x": "Joe",
+        "y": 2
+      },
+      "data4": {
+        "x": "Janin",
+        "y": 1
+      }
+    }
+  ],
   "promedios": [
     {
       "horizonte": "A (Liquidez)",
