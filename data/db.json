@@ -5190,6 +5190,13 @@
       "horizonte": "E (Maximización)",
       "dataA": 4,
       "dataB": 9
+    },
+    {
+      "horizonte": "",
+      "dataA": 4
+    },
+    {
+      "horizonte": ""
     }
   ],
   "promediosNBar": [

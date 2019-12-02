@@ -1400,9 +1400,9 @@ const barChart = (params: barChartParams) => {
             if (!meta.hidden) {
               meta.data.forEach(function(element, index) {
                 ctx.fillStyle = "#000";
-                var fontSize = 12;
+                var fontSize = 9;
                 var fontStyle = "normal";
-                var fontFamily = "Arial";
+                var fontFamily = "Verdana";
 
                 ctx.font = Chart.helpers.fontString(
                   fontSize,
@@ -1429,26 +1429,26 @@ const barChart = (params: barChartParams) => {
                     //ctx.lineWidth = "1";
                     ctx.strokeStyle = "#000";
                     ctx.rect(
-                      element._view.x - 60,
-                      element._view.y - 120,
-                      120,
+                      element._view.x - 40,
+                      element._view.y - 90,
+                      80,
                       60
                     );
                     ctx.stroke();
                     ctx.fillText(
                       "Horizonte de",
                       element._view.x,
-                      element._view.y - 100
+                      element._view.y - 80
                     );
                     ctx.fillText(
                       "Inversión",
                       element._view.x,
-                      element._view.y - 90
+                      element._view.y - 70
                     );
                     ctx.fillText(
                       "menor a 1 año",
                       element._view.x,
-                      element._view.y - 80
+                      element._view.y - 60
                     );
                   }
 
@@ -1457,26 +1457,26 @@ const barChart = (params: barChartParams) => {
                     // ctx.lineWidth = "1";
                     ctx.strokeStyle = "#000";
                     ctx.rect(
-                      element._view.x - 60,
-                      element._view.y - 120,
-                      120,
+                      element._view.x - 40,
+                      element._view.y - 90,
+                      80,
                       60
                     );
                     ctx.stroke();
                     ctx.fillText(
                       "Horizonte de",
                       element._view.x,
-                      element._view.y - 100
+                      element._view.y - 80
                     );
                     ctx.fillText(
                       "Inversión",
                       element._view.x,
-                      element._view.y - 90
+                      element._view.y - 70
                     );
                     ctx.fillText(
                       "entre 1 y 2 años",
                       element._view.x,
-                      element._view.y - 80
+                      element._view.y - 60
                     );
                   }
 
@@ -1485,26 +1485,26 @@ const barChart = (params: barChartParams) => {
                     // ctx.lineWidth = "1";
                     ctx.strokeStyle = "#000";
                     ctx.rect(
-                      element._view.x - 60,
-                      element._view.y - 120,
-                      120,
+                      element._view.x - 40,
+                      element._view.y - 90,
+                      80,
                       60
                     );
                     ctx.stroke();
                     ctx.fillText(
                       "Horizonte de",
                       element._view.x,
-                      element._view.y - 100
+                      element._view.y - 80
                     );
                     ctx.fillText(
                       "Inversión",
                       element._view.x,
-                      element._view.y - 90
+                      element._view.y - 70
                     );
                     ctx.fillText(
                       "entre 2 y 3 años",
                       element._view.x,
-                      element._view.y - 80
+                      element._view.y - 60
                     );
                   }
 
@@ -1513,26 +1513,26 @@ const barChart = (params: barChartParams) => {
                     // ctx.lineWidth = "1";
                     ctx.strokeStyle = "#000";
                     ctx.rect(
-                      element._view.x - 60,
-                      element._view.y - 120,
-                      120,
+                      element._view.x - 40,
+                      element._view.y - 90,
+                      80,
                       60
                     );
                     ctx.stroke();
                     ctx.fillText(
                       "Horizonte de",
                       element._view.x,
-                      element._view.y - 100
+                      element._view.y - 80
                     );
                     ctx.fillText(
                       "Inversión",
                       element._view.x,
-                      element._view.y - 90
+                      element._view.y - 70
                     );
                     ctx.fillText(
                       "entre 3 y 5 años",
                       element._view.x,
-                      element._view.y - 80
+                      element._view.y - 60
                     );
                   }
 
@@ -1541,26 +1541,26 @@ const barChart = (params: barChartParams) => {
                     // ctx.lineWidth = "1";
                     ctx.strokeStyle = "#000";
                     ctx.rect(
-                      element._view.x - 60,
-                      element._view.y - 120,
-                      120,
+                      element._view.x - 40,
+                      element._view.y - 90,
+                      80,
                       60
                     );
                     ctx.stroke();
                     ctx.fillText(
                       "Horizonte de",
                       element._view.x,
-                      element._view.y - 100
+                      element._view.y - 80
                     );
                     ctx.fillText(
                       "Inversión",
                       element._view.x,
-                      element._view.y - 90
+                      element._view.y - 70
                     );
                     ctx.fillText(
                       "mayor a 5 años",
                       element._view.x,
-                      element._view.y - 80
+                      element._view.y - 60
                     );
                   }
                 }
@@ -1574,12 +1574,12 @@ const barChart = (params: barChartParams) => {
 
                   ctx.fillText(
                     "Inflación",
-                    element._view.x + 120,
+                    element._view.x + 145,
                     element._view.y - 10
                   );
                   ctx.fillText(
                     "esperada: 4.0%",
-                    element._view.x + 120,
+                    element._view.x + 145,
                     element._view.y
                   );
 
@@ -1587,7 +1587,7 @@ const barChart = (params: barChartParams) => {
                   // ctx.lineWidth = "1";
                   ctx.strokeStyle = "#000";
                   // Tamaño 130 x 60
-                  ctx.rect(element._view.x + 80, element._view.y - 30, 120, 60);
+                  ctx.rect(element._view.x + 95, element._view.y - 30, 100, 60);
                   ctx.stroke();
                 }
               });
@@ -1609,7 +1609,7 @@ const barChart = (params: barChartParams) => {
             ticks: {
               display: true,
               fontFamily: "Verdana",
-              fontSize: 12,
+              fontSize: 9,
               fontStyle: "bold"
             },
             scaleLabel: {
