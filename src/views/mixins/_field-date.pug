@@ -15,8 +15,10 @@ mixin field-date(id, parms)
   .field(id=_field_id class=_class)
     .field-label.flex
       label(for=_input_id)= parms.label
-      if parms.required
-        span.required *
+        if parms.required
+          span.pr-3.required *
+        else
+          span.pr-3
     .field-control(data-tooltip=_tooltip)
       .field-input.flex.items-center
         input.input(id=_input_id

@@ -15,8 +15,10 @@ mixin field-input(id, parms)
   .field(id=_field_id class=_class)
     .field-label.flex
       label(for=_input_id)= parms.label
-      if parms.required
-        span.required *
+        if parms.required
+          span.pr-3.required *
+        else
+          span.pr-3
     .field-control(data-tooltip=_tooltip)
       if _type=="currency"
         span.currency-prefix $
