@@ -9,11 +9,11 @@ block styles
 block content
     .row
         .ui-dialog.hidden#dialogo_ampliacion_horario
+            input#autofocus.w-0.h-0(autofocus)
             +field-timepicker("horario-sacid-time",
                 {
                     label: "Horario de cierre SACID",
-                    orientation: "horizontal",
-                    disabled: true
+                    orientation: "horizontal"
                 }
             )
             +field-select("horario-sacid",

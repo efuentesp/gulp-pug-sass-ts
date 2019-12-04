@@ -30,6 +30,8 @@ const opcionesHorarioSACID = {
 
 ($("#horario-sacid-time") as any).wickedpicker(opcionesHorarioSACID);
 
+
+
 const mostrarDialogoHorario = (notaEstructurada: any) => {
   params = {};
   $("#dialogo_ampliacion_horario").dialog({
@@ -41,6 +43,7 @@ const mostrarDialogoHorario = (notaEstructurada: any) => {
     buttons: [
       {
         text: "Aceptar",
+        tabIndex: -1,
         click: function() {
           params.emisora = notaEstructurada.emisora;
           params.fecInicio = notaEstructurada.fecInicio;
@@ -52,12 +55,15 @@ const mostrarDialogoHorario = (notaEstructurada: any) => {
           });
           $("#horario-ampliacion").prop("selectedIndex", 0);
           //$(this).dialog("close");
+          ($("#horario-sacid-time") as any).wickedpicker(opcionesHorarioSACID);
         }
       },
       {
         text: "Cancelar",
+        tabIndex: -1,
         click: function() {
           $(this).dialog("close");
+          ($("#horario-sacid-time") as any).wickedpicker(opcionesHorarioSACID);
         }
       }
     ]
