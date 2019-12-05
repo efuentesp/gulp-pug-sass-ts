@@ -503,6 +503,14 @@ const fieldPlusMinus = (id: string, params: any) => {
         .find(".delete_item")
         .html()
     );
+
+    $(list + " li a").each(function () {
+      $(this).removeClass("selected");
+      $(this).css("background-color", "");
+    });  
+
+    $(this).addClass("selected");
+    $(this).css("background-color","#79c3ed");
   });
 };
 
@@ -585,6 +593,14 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
           .attr("id")
       )
       .trigger("change");
+
+      $(list + " li a").each(function () {
+        $(this).removeClass("selected");
+        $(this).css("background-color", "");
+      });  
+  
+      $(this).addClass("selected");
+      $(this).css("background-color","#79c3ed");
   });
 
   ($(idInput) as any).select2({
@@ -673,6 +689,14 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
           .attr("id")
       )
       .trigger("change");
+
+      $(list + " li a").each(function () {
+        $(this).removeClass("selected");
+        $(this).css("background-color", "");
+      });  
+  
+      $(this).addClass("selected");
+      $(this).css("background-color","#79c3ed");
   });
 
   var data = $.map(payload, function(item) {
