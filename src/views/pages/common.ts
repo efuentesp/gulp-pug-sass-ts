@@ -686,7 +686,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     language: "es",
     data: data,
     placeholder: "",
-    minimumInputLength: 3
+    minimumInputLength: 1
   });
 };
 
