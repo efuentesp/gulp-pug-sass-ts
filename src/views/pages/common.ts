@@ -652,8 +652,31 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     $(idInput)
       .val(null)
       .trigger("change");
+
+      $(idInput).removeClass("select-item");
   });
 
+  $(idInput).change(() => {
+
+    if (!$(idInput).hasClass("select-item")){
+      const value_to_add = $(idInput + " option:selected").val() as string;
+
+      if (!(value_to_add  == "")){
+        const text_to_add = $(idInput + " option:selected").text() as string;
+      
+        if (!existText(text_to_add, list)) {
+          if (!addedText(text_to_add, value_to_add, list)) {
+            addNode(text_to_add, value_to_add, list, params.maxsize);
+          }
+        }
+        fieldPlusMinusRepaintList(node);
+        $(idInput).val("");
+      }
+
+      $(idInput).removeClass("select-item");
+    }
+  });
+ 
   $(idBtnMinus).click(() => {
     $(list + " li a").each(function (index) {
       if ($(this).attr("id") === $(idInput).val()) {
@@ -678,25 +701,32 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     $(idInput)
       .val(null)
       .trigger("change");
+
+      $(idInput).removeClass("select-item");
   });
 
   $(list).delegate(".delete_item", "click", function() {
-    $(idInput)
-      .val(
-        $(this)
-          .parent()
-          .find(".delete_item")
-          .attr("id")
-      )
-      .trigger("change");
+
+      $(idInput).val( 
+      $(this)
+        .parent()
+        .find(".delete_item")
+        .attr("id")).trigger("change");
+        
+      $(idInput).addClass("select-item");  
 
       $(list + " li a").each(function () {
-        $(this).removeClass("selected");
-        $(this).css("background-color", "");
+        $(this).removeClass("selected").css("background-color", "");
       });  
   
-      $(this).addClass("selected");
-      $(this).css("background-color","#79c3ed");
+      $(this)
+        .parent()
+        .find(".delete_item").addClass("selected");
+
+        $(this)
+        .parent()
+        .find(".delete_item").css("background-color","#79c3ed");
+      
   });
 
   var data = $.map(payload, function(item) {
