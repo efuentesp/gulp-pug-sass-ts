@@ -3063,6 +3063,8 @@ const barHighchart = (params: barHighchartParams) => {
     {
         color: '#53565a',
         name: params.dataSet[0]['value']['x'],
+        borderRadiusTopLeft: '30px',
+        borderRadiusTopRight: '30px',
         data: [
           {
             y: params.dataSet[0]['value']['y'],
@@ -3131,6 +3133,8 @@ const barHighchart = (params: barHighchartParams) => {
     {
       color: '#87d1d9',
       name: params.dataSet[3]['value']['x'],
+      borderRadiusBottomLeft: '30px',
+      borderRadiusBottomRight: '30px',
       data: [
         {
           y: params.dataSet[3]['value']['y'],
