@@ -414,10 +414,12 @@ const fillPromediosHighchartBar = (datos: any) => {
   let charData = [];
   for (let i = 0; i < datos.length; i++) {
     let data = datos[i];
-    charData.push({title:data.mes, value:data.data1});
-    charData.push({title:data.mes, value:data.data2});
-    charData.push({title:data.mes, value:data.data3});
-    charData.push({title:data.mes, value:data.data4});
+    charData.push({title:data.mes, value:data.data1, radiusLeftTop: '', radiusLeftBottom: '', radiousRightTop: '', radiousRightBottom: ''});
+    charData.push({title:data.mes, value:data.data2, radiusLeftTop: '', radiusLeftBottom: '', radiousRightTop: '30px', radiousRightBottom: '30px'});
+    // Second Stack 
+    charData.push({title:data.mes, value:data.data3, radiusLeftTop: '30px', radiusLeftBottom: '30px', radiousRightTop: '', radiousRightBottom: ''});
+    // First Stack 
+    charData.push({title:data.mes, value:data.data4, radiusLeftTop: '', radiusLeftBottom: '', radiousRightTop: '', radiousRightBottom: ''});
   }
 
   barHighchart({
@@ -427,6 +429,7 @@ const fillPromediosHighchartBar = (datos: any) => {
   });
 
 };  
+
 
 
 
