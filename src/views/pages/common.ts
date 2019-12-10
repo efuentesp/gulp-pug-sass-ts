@@ -3162,4 +3162,163 @@ const barHighchart = (params: barHighchartParams) => {
 
 };
 
+const verifyYear = (day: number, month: number, year: number) => {
+
+  // Day
+  let countMonth = 0;
+  let monthNum = 0;
+  let monthL = 0;
+  let monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];  // Day of month
+  var indexMonth = 0;
+
+  // Month
+  let countMonthYear = 0;
+  
+  if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
+    monthLength[1] = 29;
+  }
+
+  monthNum = month;
+
+  if (day < 0 || day > monthLength[monthNum - 1]) {
+      while (day < 0 || day > monthLength[monthNum - 1]) {
+        indexMonth = monthNum - 1 + countMonth;
+
+        if (indexMonth <= 11) {
+          monthL = monthLength[monthNum - 1];
+        } else {
+          // monthL = monthLength[(monthNum - 1 + countMonth - 12)];
+        }
+        day = day - monthL;
+        countMonth++;
+      }  
+  }
+
+  month = month + countMonth;
+
+  if (!(month > 0 && month < 13)) {
+    while (!(month > 0 && month < 13)) {
+      month = month - 12;
+      countMonthYear++;
+    }
+  }
+
+  year = year + countMonthYear;
+
+  return year;
+};
+
+
+const verifyMonth = (day: number, month: number, year: number) => {
+
+  // Day
+  let countMonth = 0;
+  let monthNum = 0;
+  let monthL = 0;
+  let monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];  // Day of month
+  var indexMonth = 0;
+  
+  if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
+    monthLength[1] = 29;
+  }
+
+  monthNum = month;
+
+  if (day < 0 || day > monthLength[monthNum - 1]) {
+      while (day < 0 || day > monthLength[monthNum - 1]) {
+        
+        indexMonth = monthNum - 1 + countMonth;
+        if (indexMonth <= 11) {
+          monthL = monthLength[monthNum - 1];
+        } else {
+          // monthL = monthLength[(monthNum - 1 + countMonth - 12)];
+        }
+        day = day - monthL;
+        countMonth++;
+      }  
+  }
+
+  month = month + countMonth;
+
+  if (!(month > 0 && month < 13)) {
+    while (!(month > 0 && month < 13)) {
+      month = month - 12;
+    }
+  }
+  return month;
+};
+
+const verifyDay = (day: number, month: number, year: number) => {
+  let countMonth = 0;
+  let monthNum = 0;
+  let monthL = 0;
+  let monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];  // Day of month
+  var indexMonth = 0;
+
+  if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
+    monthLength[1] = 29;
+  }
+
+  // suma numero de meses
+  if (!(month > 0 && month < 13)) {
+    while (!(month > 0 && month < 13)) {
+      month = month - 12;
+    }
+  }
+
+  monthNum = month;
+
+  if (day < 0 || day > monthLength[monthNum - 1]) {
+      while (day < 0 || day > monthLength[monthNum - 1]) {
+        
+        indexMonth = monthNum - 1 + countMonth;
+        if (indexMonth <= 11) {
+          monthL = monthLength[monthNum - 1];
+        } else {
+          // monthL = monthLength[(monthNum - 1 + countMonth - 12)];
+        }
+        day = day - monthL;
+        countMonth++;
+      }  
+  }
+  return day;
+};
+
+$(".datepicker").focusout(function(){
+  verifyDate($(this));
+});
+
+function pad(n, width, z) {
+  z = z || "0";
+  n = n + "";
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
+
+const verifyDate = (data: any) => {
+  let array = new Array();
+  let date = data
+  .val()
+  .toString();
+  array = date.split("-");
+  let day = parseInt(array[0]);
+  let month = parseInt(array[1]);
+  let year = parseInt(array[2]);
+
+  let nMonth = 0;
+  let nDay = 0;
+  let nYear = 0;
+
+  nDay = verifyDay(day, month, year);
+  nMonth = verifyMonth(day, month, year);
+  nYear = verifyYear(day, month, year);
+
+  $(data).val("" + pad(nDay, 2, "") + "-" + pad(nMonth, 2, "") + "-" + nYear);
+}
+
+$(".datepicker").on("keydown",function(e){
+  if (e.which == 13) {
+    e.preventDefault();
+    verifyDate($(this));
+  }
+});
 
