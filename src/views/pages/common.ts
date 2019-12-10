@@ -1038,7 +1038,10 @@ const gradientBarChart = (params: barGradientChartParams) => {
               display: true,
               callback: function(value) {
                 return value + "";
-              }
+              },
+              max: params.tickMaxY,
+              min: params.tickMinY,
+              stepSize: params.tickStepY
             }
           }
         ]
@@ -1408,7 +1411,10 @@ const simpleBarChart = (params: barChartParams) => {
               display: true,
               callback: function(value) {
                 return value + "";
-              }
+              },
+              max: params.tickMaxY,
+              min: params.tickMinY,
+              stepSize: params.tickStepY
             }
           }
         ]
