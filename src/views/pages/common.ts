@@ -2254,25 +2254,26 @@ function copyGridContentToClipboard(gridNameID, includeGroups) {
 }
 
 const fillQuiz = (field_group: string, id: string, quiz: any) => {
-  var trElement = $("#" + field_group + " tbody");
-  var answerOption = "";
-  var answerSelect = "";
-  var answersSelect = "";
-  var answers = "";
-  var question = "";
-  var questions = "";
-  var options = "";
-  var option = "";
-  var nAnswers = 0;
-  var nQuestions = 0;
-  var nResults = 0;
+  let trElement = $("#" + field_group + " tbody");
+  let answerOption = "";
+  let answerSelect = "";
+  let answersSelect = "";
+  let answers = "";
+  let question = "";
+  let questions = "";
+  let options = "";
+  let option = "";
+  let nAnswers = 0;
+  let nQuestions = 0;
+  let nResults = 0;
+  let answerSelectId = []
 
   nQuestions = quiz[0].question.length;
   nAnswers = quiz[0].answer.length;
   nResults = quiz[0].result.length;
 
   // Questions
-  for (var i = 0; i < nQuestions; i++) {
+  for (let i = 0; i < nQuestions; i++) {
     question = "<tr><td class='question'>" + quiz[0].question[i].question;
 
     if (quiz[0].question[i].required) {
@@ -2288,16 +2289,13 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
     options = "";
 
     // Answers
-    for (var j = 0; j < nAnswers; j++) {
-      var answer_points = quiz[0].question[i].points
+    for (let j = 0; j < nAnswers; j++) {
+      let answer_points = quiz[0].question[i].points
         ? quiz[0].question[i].points[j]
         : "1";
-      var disabled = quiz[0].answer[j].disabled;
+      let disabled = quiz[0].answer[j].disabled;
 
-      var db = "";
-      //   if (disabled) {
-      //     db = "disabled";
-      //   }
+      let db = "";
 
       if (quiz[0].answer[j].type == "option") {
         answerOption =
@@ -2350,10 +2348,11 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
           i +
           '">';
 
+        answerSelectId.push(id+"_"+i+"_"+j);
         let optionValue = quiz[0].result[i].results[j].result;
 
         options = "";
-        for (var k = 0; k < quiz[0].answer[j].options.length; k++) {
+        for (let k = 0; k < quiz[0].answer[j].options.length; k++) {
           option = '<option value="' + quiz[0].answer[j].options[k].key + '"';
 
           if (optionValue == quiz[0].answer[j].options[k].key) {
@@ -2371,8 +2370,20 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
 
     questions = question + answers + "</tr>";
     trElement.append(questions);
+    if(answerSelectId.length != 0){
+      initializeSelect2(answerSelectId);
+    }
   }
 };
+
+function initializeSelect2(isQuizSelect2:string[]) {
+  for (let i = 0; i < isQuizSelect2.length; i++) {
+    ($("#"+isQuizSelect2[i]) as any).select2({
+      language: "es",      
+      minimumResultsForSearch: Infinity
+    });   
+  }   
+}
 
 const fieldDateClear = (id: string) => {
   var _id = "#" + id;
@@ -3214,8 +3225,8 @@ const verifyYear = (day: number, month: number, year: number) => {
 
   monthNum = month;
 
-  if (day < 0 || day > monthLength[monthNum - 1]) {
-      while (day < 0 || day > monthLength[monthNum - 1]) {
+  if (day > monthLength[monthNum - 1]) {
+      while (day > monthLength[monthNum - 1]) {
         indexMonth = monthNum - 1 + countMonth;
 
         if (indexMonth <= 11) {
@@ -3230,8 +3241,8 @@ const verifyYear = (day: number, month: number, year: number) => {
 
   month = month + countMonth;
 
-  if (!(month > 0 && month < 13)) {
-    while (!(month > 0 && month < 13)) {
+  if (month > 11) {
+    while (month > 11) {
       month = month - 12;
       countMonthYear++;
     }
@@ -3258,8 +3269,8 @@ const verifyMonth = (day: number, month: number, year: number) => {
 
   monthNum = month;
 
-  if (day < 0 || day > monthLength[monthNum - 1]) {
-      while (day < 0 || day > monthLength[monthNum - 1]) {
+  if (day > monthLength[monthNum - 1]) {
+      while (day > monthLength[monthNum - 1]) {
         
         indexMonth = monthNum - 1 + countMonth;
         if (indexMonth <= 11) {
@@ -3274,11 +3285,12 @@ const verifyMonth = (day: number, month: number, year: number) => {
 
   month = month + countMonth;
 
-  if (!(month > 0 && month < 13)) {
-    while (!(month > 0 && month < 13)) {
+  if (month > 11) {
+    while (month > 11) {
       month = month - 12;
     }
   }
+
   return month;
 };
 
@@ -3293,18 +3305,16 @@ const verifyDay = (day: number, month: number, year: number) => {
     monthLength[1] = 29;
   }
 
-  // suma numero de meses
-  if (!(month > 0 && month < 13)) {
-    while (!(month > 0 && month < 13)) {
+  if (month > 11) {
+    while (month > 11) {
       month = month - 12;
     }
   }
 
   monthNum = month;
 
-  if (day < 0 || day > monthLength[monthNum - 1]) {
-      while (day < 0 || day > monthLength[monthNum - 1]) {
-        
+  if (day > monthLength[monthNum - 1]) {
+      while (day > monthLength[monthNum - 1]) {
         indexMonth = monthNum - 1 + countMonth;
         if (indexMonth <= 11) {
           monthL = monthLength[monthNum - 1];
@@ -3315,6 +3325,7 @@ const verifyDay = (day: number, month: number, year: number) => {
         countMonth++;
       }  
   }
+
   return day;
 };
 
@@ -3330,23 +3341,28 @@ function pad(n, width, z) {
 
 const verifyDate = (data: any) => {
   let array = new Array();
+
   let date = data
   .val()
   .toString();
-  array = date.split("-");
-  let day = parseInt(array[0]);
-  let month = parseInt(array[1]);
-  let year = parseInt(array[2]);
 
-  let nMonth = 0;
-  let nDay = 0;
-  let nYear = 0;
+  if (date != ""){
+    array = date.split("-");
+    let day = parseInt(array[0]);
+    let month = parseInt(array[1]);
+    let year = parseInt(array[2]);
+  
+    let nMonth = 0;
+    let nDay = 0;
+    let nYear = 0;
+  
+    nDay = verifyDay(day, month, year);
+    nMonth = verifyMonth(day, month, year);
+    nYear = verifyYear(day, month, year);
+  
+    $(data).val("" + pad(nDay, 2, "") + "-" + pad(nMonth, 2, "") + "-" + nYear);
+  }
 
-  nDay = verifyDay(day, month, year);
-  nMonth = verifyMonth(day, month, year);
-  nYear = verifyYear(day, month, year);
-
-  $(data).val("" + pad(nDay, 2, "") + "-" + pad(nMonth, 2, "") + "-" + nYear);
 }
 
 $(".datepicker").on("keydown",function(e){
