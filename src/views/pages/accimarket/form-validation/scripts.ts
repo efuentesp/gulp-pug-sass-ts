@@ -45,3 +45,5 @@ $("#payment2").change(() => {
 $("#payment3").change(() => {
   ($("#new-customer") as any).parsley().validate();
 });
+
+$("#id").alphanum({allow: "_-"});

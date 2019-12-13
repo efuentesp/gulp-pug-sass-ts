@@ -5,6 +5,6 @@
 /// <reference path="globals/listswap/index.d.ts" />
 /// <reference path="globals/jquery-mask-plugin/index.d.ts" />
 /// <reference path="globals/moment.js/index.d.ts" />
+/// <reference path="globals/jquery.alphanum/index.d.ts" />
 /// <reference path="globals/handlebars/index.d.ts" />
 /// <reference path="globals/highcharts/highcharts.d.ts" />
-

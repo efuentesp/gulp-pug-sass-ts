@@ -211,6 +211,7 @@ function concatVendorJs() {
       // "./node_modules/moment/min/moment-with-locales.min.js",
       "./node_modules/parsleyjs/dist/parsley.min.js",
       "./node_modules/jquery-mask-plugin/dist/jquery.mask.min.js",
+      "./src/views/pages/scripts/vendors/jquery.alphanum/jquery.alphanum.js",
       // "./node_modules/jquery-maskmoney/dist/jquery.maskMoney.min.js",
       // "./node_modules/parsleyjs/dist/i18n/es.js",
       "./src/views/pages/scripts/vendors/parsley/es.js",
