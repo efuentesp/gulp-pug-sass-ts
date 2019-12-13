@@ -509,8 +509,13 @@ const fieldPlusMinus = (id: string, params: any) => {
       $(this).css("background-color", "");
     });  
 
-    $(this).addClass("selected");
-    $(this).css("background-color","#79c3ed");
+    if ($(this)
+    .parent()
+    .find(".delete_item")
+    .html() != ""){
+      $(this).addClass("selected");
+      $(this).css("background-color","#79c3ed");
+    }
   });
 };
 
@@ -598,9 +603,15 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
         $(this).removeClass("selected");
         $(this).css("background-color", "");
       });  
+
+      if ($(this)
+      .parent()
+      .find(".delete_item")
+      .attr("id") != undefined){
+        $(this).addClass("selected");
+        $(this).css("background-color","#79c3ed");
+      }
   
-      $(this).addClass("selected");
-      $(this).css("background-color","#79c3ed");
   });
 
   ($(idInput) as any).select2({
@@ -718,14 +729,14 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       $(list + " li a").each(function () {
         $(this).removeClass("selected").css("background-color", "");
       });  
-  
-      $(this)
-        .parent()
-        .find(".delete_item").addClass("selected");
 
-        $(this)
-        .parent()
-        .find(".delete_item").css("background-color","#79c3ed");
+      if ($(this)
+      .parent()
+      .find(".delete_item")
+      .attr("id") != undefined){
+        $(this).addClass("selected");
+        $(this).css("background-color","#79c3ed");
+      }
       
   });
 
