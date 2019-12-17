@@ -3219,91 +3219,112 @@ if (params.dataSet[3]['value']['x'] != ""){
 };
 
 const verifyYear = (day: number, month: number, year: number) => {
-  // Day
+  let countMonthYear = 0;
   let countMonth = 0;
   let monthNum = 0;
   let monthL = 0;
   let monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];  // Day of month
-  var indexMonth = 0;
+  let indexMonth = 0;
+  let d = new Date();
+  let yPlus = d.getFullYear()+100;
+  let yMinus = d.getFullYear()-100;
 
-  // Month
-  let countMonthYear = 0;
-  
+  // Para obtener el año bisiesto
   if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
     monthLength[1] = 29;
   }
 
-  monthNum = 0;
-
-  if (day > monthLength[monthNum]) {
-      while (day > monthLength[monthNum]) {
-        indexMonth = monthNum + countMonth;
-
-        if (indexMonth < 12) {
-          monthL = monthLength[monthNum];
-        } else {
-          // monthL = monthLength[(monthNum - 1 + countMonth - 12)];
-        }
-
-        day = day - monthL;
-        monthNum++;
-        countMonth++;
-      }  
+  // Si la fecha está fuera del rango superior 100 años
+  if (year > yPlus){
+    year = d.getFullYear();
+  }
+  
+  // Si la fecha está fuera del rango inferior 100 años
+  if (year < yMinus){
+    year = d.getFullYear();
   }
 
-  month = month + countMonth;
+  if (month > 0){
+  
+    monthNum = month - 1;
 
-  if (month > 11) {
-    while (month > 11) {
-      month = month - 12;
-      countMonthYear++;
+    // Obtener un mes base
+    if (monthNum > 11){
+      while (monthNum > 11) {
+        monthNum = monthNum - 12;
+      }
     }
-  }
 
-  year = year + countMonthYear;
+    if (day > monthLength[monthNum]) {
+        while (day > monthLength[monthNum]) {
+
+          indexMonth = monthNum + countMonth;
+
+          if (indexMonth < 12) {
+              monthL = monthLength[indexMonth];
+          }else{
+              monthL = monthLength[indexMonth-12];
+          }  
+            day = day - monthL;
+            countMonth++;
+        }  
+    }
+  
+    month = month + countMonth;
+
+    if (month > 12) {
+      while (month > 12) {
+        month = month - 12;
+        countMonthYear++;
+      }
+    }
+    year = year + countMonthYear;
+  }
   return year;
 };
 
-
 const verifyMonth = (day: number, month: number, year: number) => {
-  
-  // Day
   let countMonth = 0;
   let monthNum = 0;
   let monthL = 0;
   let monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];  // Day of month
-  var indexMonth = 0;
-  
+  let indexMonth = 0;
+
+  // Para obtener el año bisiesto
   if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
     monthLength[1] = 29;
   }
 
-  monthNum = 0;
- 
-  if (day > monthLength[monthNum]) {
-      while (day > monthLength[monthNum]) {
-        
-        indexMonth = monthNum + countMonth;
-
-        if (indexMonth < 12) {
-          monthL = monthLength[monthNum];
-        } else {
-          // monthL = monthLength[(monthNum - 1 + countMonth - 12)];
-        }
-
-        day = day - monthL;
-        monthNum++;
-        countMonth++;
-      }  
-  }
-
- if (month > 11) {
-    while (month > 11) {
-      month = month - 12;
+    // Verifica si el mes es mayor a 0
+    monthNum = month - 1;
+  
+    // Obtener un mes base
+    if (monthNum > 11){
+      while (monthNum > 11) {
+        monthNum = monthNum - 12;
+      }
     }
-  }
- 
-  month = month + countMonth;
+
+    if (day > monthLength[monthNum]) {
+        while (day > monthLength[monthNum]) {
+          indexMonth = monthNum + countMonth;
+          if (indexMonth < 12) {
+              monthL = monthLength[indexMonth];
+          }else{
+              monthL = monthLength[indexMonth-12];
+          }  
+          day = day - monthL;
+          countMonth++;
+        }  
+    }
+    
+    month = month + countMonth;
+  
+    if (month > 12) {
+      while (month > 12) {
+        month = month - 12;
+      }
+    }
   return month;
 };
 
@@ -3312,28 +3333,83 @@ const verifyDay = (day: number, month: number, year: number) => {
   let monthNum = 0;
   let monthL = 0;
   let monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];  // Day of month
-  var indexMonth = 0;
+  let indexMonth = 0;
 
+  // Para obtener el año bisiesto
   if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
     monthLength[1] = 29;
-  }
+  }  
+
+    // Obtiene el mes para el número de días, mes actual
+    monthNum = month - 1;
   
-  monthNum = 0;
-
-  if (day > monthLength[monthNum]) {
-      while (day > monthLength[monthNum]) {
-        indexMonth = monthNum + countMonth;
-        if (indexMonth < 12) {
-          monthL = monthLength[monthNum];
-        } else {
-          // monthL = monthLength[(monthNum - 1 + countMonth - 12)];
-        }
-        day = day - monthL;
-      }  
-  }
-
+    // Obtener un mes base
+    if (monthNum > 11){
+      while (monthNum > 11) {
+        monthNum = monthNum - 12;
+      }
+    }
+   
+    // Verifica los días permitido
+    if (day > monthLength[monthNum]) {
+        while (day > monthLength[monthNum]) {
+          indexMonth = monthNum + countMonth;
+               
+           if (indexMonth < 12) {
+              monthL = monthLength[indexMonth];
+            }else{
+              monthL = monthLength[indexMonth-12];
+           }
+           
+            day = day - monthL;
+            countMonth++;
+        }  
+    }
   return day;
 };
+
+const verifyDate = (data: string, obj: any) => {
+  let array = [];
+  array = data.split("-");
+
+  let d = new Date();
+  let dd = d.getDate();
+  let dm = d.getMonth();
+  let dy = d.getFullYear();
+
+  let day = parseInt(array[0]);
+  let month = parseInt(array[1]);
+  let year = parseInt(array[2]);
+
+  let dayA = array[0];
+  if (dayA.length != 2 || dayA == "00"){
+    day = dd;
+  }
+
+  let monthA = array[1];
+  if (monthA.length != 2 || monthA == "00"){
+    month = dm + 1;
+  }
+
+  let yearA = array[2];
+  if (yearA.length != 4 || yearA == "0000"){
+    year = dy;
+  }
+
+  let nMonth = 0;
+  let nDay = 0;
+  let nYear = 0;
+
+  console.log("DAY: "+ day);
+  console.log("MONTH: "+ month);
+  console.log("YEAR: "+ year);
+
+  nDay = verifyDay(day, month, year);
+  nMonth = verifyMonth(day, month, year);
+  nYear = verifyYear(day, month, year);
+
+  $(obj).val("" + pad(nDay, 2, "") + "-" + pad(nMonth, 2, "") + "-" + nYear);
+}
 
 $(".datepicker").focusout(function(){
   let date = $(this)
@@ -3349,25 +3425,6 @@ function pad(n, width, z) {
   z = z || "0";
   n = n + "";
   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
-}
-
-const verifyDate = (data: string, obj: any) => {
-  let array = [];
-  array = data.split("-");
-  let day = parseInt(array[0]);
-  let month = parseInt(array[1]);
-  let year = parseInt(array[2]);
-
-  let nMonth = 0;
-  let nDay = 0;
-  let nYear = 0;
-
-  nDay = verifyDay(day, month, year);
-  nMonth = verifyMonth(day, month, year);
-  nYear = verifyYear(day, month, year);
-
-  $(obj).val("" + pad(nDay, 2, "") + "-" + pad(nMonth, 2, "") + "-" + nYear);
-
 }
 
 $(".datepicker").on("keydown",function(e){
