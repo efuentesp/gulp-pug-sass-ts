@@ -3382,27 +3382,23 @@ const verifyDate = (data: string, obj: any) => {
   let year = parseInt(array[2]);
 
   let dayA = array[0];
-  if (dayA.length != 2 || dayA == "00"){
+  if (dayA.length != 2 || dayA == "00" || dayA == undefined){
     day = dd;
   }
 
   let monthA = array[1];
-  if (monthA.length != 2 || monthA == "00"){
+  if (monthA.length != 2 || monthA == "00" || monthA == undefined){
     month = dm + 1;
   }
 
   let yearA = array[2];
-  if (yearA.length != 4 || yearA == "0000"){
+  if (yearA.length != 4 || yearA == "0000" || yearA == undefined){
     year = dy;
   }
 
   let nMonth = 0;
   let nDay = 0;
   let nYear = 0;
-
-  console.log("DAY: "+ day);
-  console.log("MONTH: "+ month);
-  console.log("YEAR: "+ year);
 
   nDay = verifyDay(day, month, year);
   nMonth = verifyMonth(day, month, year);
