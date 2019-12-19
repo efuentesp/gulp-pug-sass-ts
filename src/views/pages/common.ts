@@ -14,7 +14,7 @@ const DATE_FORMAT_MONTH_YEAR = "MM yy";
 
 const ui_datepicker_settings = {
   showOn: "both",
-  buttonImage: "../../assets/images/btn-calendario.svg",
+  buttonImage: "../../assets/images/btn-calendario.png",
   buttonImageOnly: true,
   buttonText: "",
   dateFormat: DATE_FORMAT,
