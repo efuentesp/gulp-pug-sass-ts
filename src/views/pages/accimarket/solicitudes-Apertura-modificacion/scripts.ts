@@ -1,5 +1,5 @@
 /// <reference path="../../typings/index.d.ts" />
-let listaOrdenes_params: UrlParams = {};
+let listaOrdenes_parametros: UrlParams = {};
 
 fieldPlusMinus("contratoApertura", {});
 fieldPlusMinus("digitoApertura", {});
@@ -133,42 +133,42 @@ $("#btn_search").click(() => {
     .on("form:submit", () => {
       console.log("form:submit");
 
-      listaOrdenes_params = {};
+      listaOrdenes_parametros = {};
 
 
       const contratoApertura = getList("contratoApertura");
       if (contratoApertura.length > 0) {
-        listaOrdenes_params.contrato = contratoApertura;
+        listaOrdenes_parametros.contrato = contratoApertura;
       }
 
       const digitoApertura = getList("digitoApertura");
       if (digitoApertura.length > 0) {
-        listaOrdenes_params.digito = digitoApertura;
+        listaOrdenes_parametros.digito = digitoApertura;
       }
 
       const folioApertura = getList("folioApertura");
       if (folioApertura.length > 0) {
-        listaOrdenes_params.folio = folioApertura;
+        listaOrdenes_parametros.folio = folioApertura;
       }
 
       const estatusApertura = $("#estatusApertura").val()
       if (estatusApertura) {
-        listaOrdenes_params.estatus = estatusApertura;
+        listaOrdenes_parametros.estatus = estatusApertura;
       }
 
       const rangoCaptura_begin_date = $("#rangoCaptura_begin_date").val()
       if (rangoCaptura_begin_date) {
-        listaOrdenes_params.fecha_captura = rangoCaptura_begin_date;
+        listaOrdenes_parametros.fecha_captura = rangoCaptura_begin_date;
       }
 
 
       const rangoCaptura_end_date = $("#rangoCaptura_end_date").val()
       if (rangoCaptura_end_date) {
-        listaOrdenes_params.fecha_captura = rangoCaptura_end_date;
+        listaOrdenes_parametros.fecha_captura = rangoCaptura_end_date;
       }
 
 
-      http_findAll("contratos", listaOrdenes_params, payload => {
+      http_findAll("contratos", listaOrdenes_parametros, payload => {
         const rec_count = payload.length;
         $("#count_contratos").html(rec_count);
         fillJqGrid("#table_solicitudesApertura", payload);
@@ -187,35 +187,35 @@ $("#btn_search_modificacion").click(() => {
     .on("form:submit", () => {
       console.log("form:submit");
 
-      listaOrdenes_params = {};
+      listaOrdenes_parametros = {};
 
 
       const contratoModificacion = getList("contratoModificacion");
       if (contratoModificacion.length > 0) {
-        listaOrdenes_params.contrato = contratoModificacion;
+        listaOrdenes_parametros.contrato = contratoModificacion;
       }
 
       const digitoModificacion = getList("digitoModificacion");
       if (digitoModificacion.length > 0) {
-        listaOrdenes_params.digito = digitoModificacion;
+        listaOrdenes_parametros.digito = digitoModificacion;
       }
 
       const estatusModificacion = $("#estatusModificacion").val()
       if (estatusModificacion) {
-        listaOrdenes_params.estatus = estatusModificacion;
+        listaOrdenes_parametros.estatus = estatusModificacion;
       }
 
       const rangoModificacion_begin_date = $("#rangoModificacion_begin_date").val()
       if (rangoModificacion_begin_date) {
-        listaOrdenes_params.fecha_captura = rangoModificacion_begin_date;
+        listaOrdenes_parametros.fecha_captura = rangoModificacion_begin_date;
       }
 
       const rangoModificacion_end_date = $("#rangoModificacion_end_date").val()
       if (rangoModificacion_end_date) {
-        listaOrdenes_params.fecha_captura = rangoModificacion_end_date;
+        listaOrdenes_parametros.fecha_captura = rangoModificacion_end_date;
       }
 
-      http_findAll("contratos", listaOrdenes_params, payload => {
+      http_findAll("contratos", listaOrdenes_parametros, payload => {
         const rec_count = payload.length;
         $("#count_contratos").html(rec_count);
         fillJqGrid("#table_solicitudesModificacion", payload);
