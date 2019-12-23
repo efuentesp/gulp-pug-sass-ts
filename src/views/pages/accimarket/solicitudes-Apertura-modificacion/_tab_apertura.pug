@@ -1,0 +1,42 @@
++tab-item("tab_apertura")
+    +accordion("criterios_busqueda_ordenes")
+        +accordion-item("busqueda_item")
+            +form("criterios_busqueda_apertura", {class: "is-search-form"})
+                .form-group
+                    .row#rowFlex
+                        +field-plus-minus("contratoApertura",
+                            {
+                                label: "Contrato"
+                            })
+                        +field-plus-minus("digitoApertura",
+                            {
+                                label: "Dígito"
+                            })
+                        +field-plus-minus("folioApertura",
+                            {
+                                label: "Folio"
+                            })
+                        +field-date-range("rangoCaptura",{begin_label:"fechainicial",
+                        end_label:"fechafinal",
+                        size:"10em",orientation: "horizontal"
+                        })
+                        .row
+                            +field-select("estatusApertura",
+                                {
+                                    label: "Estatus:",
+                                    orientation: "horizontal",
+                                    size: "20em"
+                                },
+                                    {key: "proceso", value:"proceso"},
+                                    {key:"Captura", value:"Captura Terminada"},
+                                    {key: "Mesa", value:"En Revision Mesa"},
+                                    {key: "CLICON", value:"En Revision CLICON"},
+                                    {key: "Cancelada", value:"Captura Cancelada"},
+                                    {key: "Final", value:"Finalizado"}
+                                )
+                #search-actions-column1
+                                    +button-search({size: "large", disabled: false})
+                                    +button-clean({id:"btn_clean_mov",size: "large", disabled: false})
+    .row.has_border
+        .row.w-full.overflow-auto
+            +grid("solicitudesApertura")

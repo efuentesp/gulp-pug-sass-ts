@@ -1,0 +1,29 @@
+extends /layouts/html5
+
+block title
+    title Lista De Ordenes
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/solicitudes-Apertura-modificacion/styles.css")
+
+block content
+    .content.p-4
+        .row
+            +tab-group("consultas_tab_group",
+                  {id: "tab_apertura", label: "Solicitudes de Apertura"},
+                  {id: "tab_modificacion", label: "Solicitudes de Modificación"}
+            )
+                include _tab_apertura
+                include _tab_modificacion
+                include _context_menus
+                include _dialog_contrato
+                include _dialog_folio
+                include _dialog_numcontrato
+                include _dialog_nigitos
+                include _dialog_numfolios
+                include _dialog_fecha
+                include _dialog_elemento
+                include _dialog_firma
+                include _dialog_datos
+block scripts
+    script(src="/assets/scripts/accimarket/solicitudes-Apertura-modificacion/scripts.js")

@@ -1,0 +1,15 @@
+.row
+    .ui-dialog.hidden(id="dialogo_datos")
+        .row
+            .column.ml-4
+                +field-input("asesor", {label: "Asesor en Inversiones:", orientation: "horizontal",size: "30em"})
+                +field-input("cliente", {label: "Nombre del Cliente:", orientation: "horizontal",size: "30em"})
+                +field-input("namer", {label: "Nombre Representante de Accival:", orientation: "horizontal",size: "30em"})
+                +field-input("namera", {label: "Segundo Nombre Representante de Accival:", orientation: "horizontal",size: "30em"})
+                +field-date("fechaI", {label: "Fecha de contrato entre el cliente y Accival:", orientation: "horizontal",size: "10em"})
+                +field-date("fechaF", {label: "Fecha de contrato entre el cliente y el Asesor en Inversiones:", orientation: "horizontal",size: "10em"})
+                +field-input("dom", {label: "Domicilio del Asesor en Inversiones:", orientation: "horizontal",size: "30em"})
+                +field-input("reg", {label: "Registro CNBV:", orientation: "horizontal",size: "30em"})
+        .row.pt-4.flex.justify-center
+            +button-accept
+            +button-cancel

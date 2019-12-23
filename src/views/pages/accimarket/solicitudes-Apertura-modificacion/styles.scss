@@ -1,0 +1,25 @@
+.content {
+  #rowFlex {
+    display: flex;
+  }
+
+  #search-actions-column1 {
+    width: 20em;
+  }
+  #rowFlex1 {
+    display: flex;
+    text-align: end;
+  }
+
+  #search-actions-column2 {
+    width: 20em;
+  }
+  #div {
+    align-content: flex-end;
+  }
+
+  th.ui-datepicker-week-end,
+  td.ui-datepicker-week-end {
+    display: none;
+  }
+}

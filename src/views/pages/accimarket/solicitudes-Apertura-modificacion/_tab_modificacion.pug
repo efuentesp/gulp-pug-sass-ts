@@ -1,0 +1,35 @@
++tab-item("tab_modificacion")
+    +accordion("criterios_busqueda_ordenes")
+        +accordion-item("busqueda_item")
+            +form("criterios_busqueda_modificacion", {class: "is-search-form"})
+                .form-group
+                    .row#rowFlex
+                        +field-plus-minus("contratoModificacion",
+                            {
+                                label: "Contrato"
+                            })
+                        +field-plus-minus("digitoModificacion",
+                            {
+                                label: "Dígito"
+                            })
+                        .row#rowFlex
+                            +field-date-range("rangoModificacion",{begin_label:"fecha Inicial",
+                            end_label:"fecha final",
+                            size:"10em",orientation: "horizontal"
+                            })
+                            .row
+                                +field-select("estatusModificacion",
+                                    {
+                                        label: "Estatus:",
+                                        orientation: "horizontal",
+                                        size: "20em"
+                                    },
+                                        {key: "Revision", value:"Revision CLICON"},
+                                        {key:"SolCLICON", value:"Solicitud Aplicada en CLICON"}
+                                )
+                #search-actions-column2
+                                    +button-search({id:"btn_search_modificacion",size: "large", disabled: false})
+                                    +button-clean({size: "large", disabled: false})
+    .row.has_border
+        .row.w-full.overflow-auto
+            +grid("solicitudesModificacion")
