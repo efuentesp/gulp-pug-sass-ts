@@ -415,6 +415,14 @@ function fieldPlusMinusRepaintList(node) {
   }
 }
 
+const removeHoverStyle = (list: string) => {
+  $(list + " li a").each(function () {
+    if ($(this).text() == ""){
+      $(this).css("pointer-events","none");
+    }
+  });   
+}
+
 /**
  * Funcionalidad para el componente +/- con un input
  * @param {string} id - Id del componente.
@@ -455,6 +463,8 @@ const fieldPlusMinus = (id: string, params: any) => {
     }
   });
 
+  removeHoverStyle(list);
+
   const addValueToList = () => {
     const text_to_add = $(idInput).val() as string;
     const value_to_add = $(idInput).val() as string;
@@ -466,6 +476,7 @@ const fieldPlusMinus = (id: string, params: any) => {
     }
     fieldPlusMinusRepaintList(node);
     $(idInput).val("");
+    removeHoverStyle(list);
   }
 
   $(idBtnMinus).click(() => {
@@ -493,6 +504,7 @@ const fieldPlusMinus = (id: string, params: any) => {
     });
     fieldPlusMinusRepaintList(node);
     $(idInput).val("");
+    removeHoverStyle(list);
   });
 
   // Set to input
@@ -548,6 +560,8 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
     }
   }
 
+  removeHoverStyle(list);
+
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput + " option:selected").text() as string;
     const value_to_add = $(idInput + " option:selected").val() as string;
@@ -561,6 +575,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
     $(idInput)
       .val(null)
       .trigger("change");
+    removeHoverStyle(list);
   });
 
   $(idBtnMinus).click(() => {
@@ -587,6 +602,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
     $(idInput)
     .val(null)
     .trigger("change");
+    removeHoverStyle(list);
   });
 
   $(list).delegate(".delete_item", "click", function() {
@@ -650,6 +666,8 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     }
   }
 
+  removeHoverStyle(list);
+
   $(idBtnPlus).click(() => {
     const text_to_add = $(idInput + " option:selected").text() as string;
     const value_to_add = $(idInput + " option:selected").val() as string;
@@ -665,6 +683,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       .trigger("change");
 
       $(idInput).removeClass("select-item");
+      removeHoverStyle(list);
   });
 
   $(idInput).change(() => {
@@ -685,6 +704,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       }
 
       $(idInput).removeClass("select-item");
+      removeHoverStyle(list);
     }
   });
  
@@ -714,6 +734,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       .trigger("change");
 
       $(idInput).removeClass("select-item");
+      removeHoverStyle(list);
   });
 
   $(list).delegate(".delete_item", "click", function() {
