@@ -463,6 +463,36 @@ const fieldPlusMinus = (id: string, params: any) => {
     }
   });
 
+  $('body').keydown(function(event){
+    if(event.keyCode == 46){
+      $(list + " li a").each(function (index) {
+        if ($(idInput).val() != "") {
+          if ($(this).text() === $(idInput).val()) {
+            if (!definedNodes) {
+              $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
+              $(list + " li").length = $(list + " li").length - 1;
+            } else {
+              if ($(list + " li").length <= 4) {
+                $(this)
+                  .find("a")
+                  .first()
+                  .removeAttr("id");
+                $(this).text("");
+              } else {
+                $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
+                $(this).text("");
+                $(list + " li").length = $(list + " li").length - 1;
+              }
+            }
+          }
+        }
+      });
+      fieldPlusMinusRepaintList(node);
+      $(idInput).val("");
+      removeHoverStyle(list);      
+    } 
+ });
+
   removeHoverStyle(list);
 
   const addValueToList = () => {
@@ -559,6 +589,35 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
       );
     }
   }
+
+  $('body').keydown(function(event){
+    if(event.keyCode == 46){
+      $(list + " li a").each(function (index) {
+        if ($(this).attr("id") === $(idInput).val()) {
+          if (!definedNodes) {
+            $(this).parent().remove();
+            $(list + " li").length = $(list + " li").length - 1;
+          } else {
+            if ($(list + " li").length <= 4) {
+              $(this)
+                .find("a")
+                .first()
+                .removeAttr("id");
+            $(this).text("");
+            } else {
+              $(this).parent().remove();
+              $(list + " li").length = $(list + " li").length - 1;
+            }
+          }
+        }
+      });
+      fieldPlusMinusRepaintList(node);
+      $(idInput)
+      .val(null)
+      .trigger("change");
+      removeHoverStyle(list);      
+    }
+ });
 
   removeHoverStyle(list);
 
@@ -665,6 +724,37 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       $(list).append("<li><a class='delete_item' href='javascript:void();'></a></li>");
     }
   }
+
+  $('body').keydown(function(event){
+    if(event.keyCode == 46){
+      $(list + " li a").each(function (index) {
+        if ($(this).attr("id") === $(idInput).val()) {
+          if (!definedNodes) {
+            $(this).parent().remove();
+            $(list + " li").length = $(list + " li").length - 1;
+          } else {
+            if ($(list + " li").length <= 4) {
+              $(this)
+                .find("a")
+                .first()
+                .removeAttr("id");
+              $(this).text("");
+            } else {
+              $(this).parent().remove();
+              $(list + " li").length = $(list + " li").length - 1;
+            }
+          }
+        }
+      });
+      fieldPlusMinusRepaintList(node);
+      $(idInput)
+        .val(null)
+        .trigger("change");
+  
+        $(idInput).removeClass("select-item");
+        removeHoverStyle(list);      
+    }
+ });
 
   removeHoverStyle(list);
 
