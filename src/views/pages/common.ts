@@ -433,6 +433,7 @@ const fieldPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
+  const idInputHidden = "#" + id + "_hidden";
   const list = "ul#tag_list_" + id;
   const node = "tag_list_" + id;
   let definedNodes = true;
@@ -466,8 +467,8 @@ const fieldPlusMinus = (id: string, params: any) => {
   $('body').keydown(function(event){
     if(event.keyCode == 46){
       $(list + " li a").each(function (index) {
-        if ($(idInput).val() != "") {
-          if ($(this).text() === $(idInput).val()) {
+        if ($(idInputHidden).val() != "") {
+          if ($(this).text() === $(idInputHidden).val()) {
             if (!definedNodes) {
               $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
               $(list + " li").length = $(list + " li").length - 1;
@@ -488,7 +489,7 @@ const fieldPlusMinus = (id: string, params: any) => {
         }
       });
       fieldPlusMinusRepaintList(node);
-      $(idInput).val("");
+      $(idInputHidden).val("");
       removeHoverStyle(list);      
     } 
  });
@@ -511,8 +512,8 @@ const fieldPlusMinus = (id: string, params: any) => {
 
   $(idBtnMinus).click(() => {
     $(list + " li a").each(function (index) {
-      if ($(idInput).val() != "") {
-        if ($(this).text() === $(idInput).val()) {
+      if ($(idInputHidden).val() != "") {
+        if ($(this).text() === $(idInputHidden).val()) {
           if (!definedNodes) {
             $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
             $(list + " li").length = $(list + " li").length - 1;
@@ -533,13 +534,13 @@ const fieldPlusMinus = (id: string, params: any) => {
       }
     });
     fieldPlusMinusRepaintList(node);
-    $(idInput).val("");
+    $(idInputHidden).val("");
     removeHoverStyle(list);
   });
 
   // Set to input
   $(list).delegate(".delete_item", "click", function() {
-    $(idInput).val(
+    $(idInputHidden).val(
       $(this)
         .parent()
         .find(".delete_item")

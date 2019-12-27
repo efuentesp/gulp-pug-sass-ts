@@ -1,6 +1,7 @@
 mixin field-plus-minus(id, parms)
   - var _field_id = "field_" + id
   - var _input_id = id
+  - var _input_id_h = id + "_hidden"
   - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   - var _input_max_size = "32"
@@ -30,6 +31,9 @@ mixin field-plus-minus(id, parms)
                     data-parsley-validation-threshold="10"
                     data-parsley-errors-container=_field_error_block_id
                     )
+        input.input(type="hidden"
+          id=_input_id_h
+          )
         button.button-noborder(id=btn_plus_id type="button")
           img.plus-icon(src="../../assets/images/plus-icon.png")
         button.button-noborder(id=btn_minus_id type="button")
