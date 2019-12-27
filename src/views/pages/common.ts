@@ -572,6 +572,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
+  const idInputHidden = "#" + id + "_hidden";
   const list = "ul#tag_list_" + id;
   const node = "tag_list_" + id;
   let definedNodes = true;
@@ -594,7 +595,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
   $('body').keydown(function(event){
     if(event.keyCode == 46){
       $(list + " li a").each(function (index) {
-        if ($(this).attr("id") === $(idInput).val()) {
+        if ($(this).attr("id") === $(idInputHidden).val()) {
           if (!definedNodes) {
             $(this).parent().remove();
             $(list + " li").length = $(list + " li").length - 1;
@@ -613,7 +614,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
         }
       });
       fieldPlusMinusRepaintList(node);
-      $(idInput)
+      $(idInputHidden)
       .val(null)
       .trigger("change");
       removeHoverStyle(list);      
@@ -640,7 +641,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
 
   $(idBtnMinus).click(() => {
     $(list + " li a").each(function (index) {
-      if ($(this).attr("id") === $(idInput).val()) {
+      if ($(this).attr("id") === $(idInputHidden).val()) {
         if (!definedNodes) {
           $(this).parent().remove();
           $(list + " li").length = $(list + " li").length - 1;
@@ -659,14 +660,14 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
       }
     });
     fieldPlusMinusRepaintList(node);
-    $(idInput)
+    $(idInputHidden)
     .val(null)
     .trigger("change");
     removeHoverStyle(list);
   });
 
   $(list).delegate(".delete_item", "click", function() {
-    $(idInput)
+    $(idInputHidden)
       .val(
         $(this)
           .parent()
@@ -706,6 +707,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   const idBtnPlus = "#btn_plus_" + id;
   const idBtnMinus = "#btn_minus_" + id;
   const idInput = "#" + id;
+  const idInputHidden = "#" + id + "_hidden";
   const list = "ul#tag_list_" + id;
   const node = "tag_list_" + id;
   const attrId = params.id;
@@ -729,7 +731,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   $('body').keydown(function(event){
     if(event.keyCode == 46){
       $(list + " li a").each(function (index) {
-        if ($(this).attr("id") === $(idInput).val()) {
+        if ($(this).attr("id") === $(idInputHidden).val()) {
           if (!definedNodes) {
             $(this).parent().remove();
             $(list + " li").length = $(list + " li").length - 1;
@@ -748,11 +750,11 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
         }
       });
       fieldPlusMinusRepaintList(node);
-      $(idInput)
+      $(idInputHidden)
         .val(null)
         .trigger("change");
   
-        $(idInput).removeClass("select-item");
+        $(idInputHidden).removeClass("select-item");
         removeHoverStyle(list);      
     }
  });
@@ -779,7 +781,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
 
   $(idInput).change(() => {
 
-    if (!$(idInput).hasClass("select-item")){
+    if (!$(idInputHidden).hasClass("select-item")){
       const value_to_add = $(idInput + " option:selected").val() as string;
 
       if (!(value_to_add  == "")){
@@ -801,7 +803,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
  
   $(idBtnMinus).click(() => {
     $(list + " li a").each(function (index) {
-      if ($(this).attr("id") === $(idInput).val()) {
+      if ($(this).attr("id") === $(idInputHidden).val()) {
         if (!definedNodes) {
           $(this).parent().remove();
           $(list + " li").length = $(list + " li").length - 1;
@@ -820,23 +822,22 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       }
     });
     fieldPlusMinusRepaintList(node);
-    $(idInput)
+    $(idInputHidden)
       .val(null)
       .trigger("change");
 
-      $(idInput).removeClass("select-item");
+      $(idInputHidden).removeClass("select-item");
       removeHoverStyle(list);
   });
 
   $(list).delegate(".delete_item", "click", function() {
-
-      $(idInput).val( 
+      $(idInputHidden).val( 
       $(this)
         .parent()
         .find(".delete_item")
         .attr("id")).trigger("change");
         
-      $(idInput).addClass("select-item");  
+      $(idInputHidden).addClass("select-item");  
 
       $(list + " li a").each(function () {
         $(this).removeClass("selected").css("background-color", "");
