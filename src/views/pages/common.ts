@@ -3297,10 +3297,12 @@ if (params.dataSet[3]['value']['x'] != ""){
         text: params.title
     },
     xAxis: {
-        categories: [params.dataSet[0]['title'],'']
+        categories: [params.dataSet[0]['title'],''],
+        visible: false
     },
     yAxis: {
         min: 0,
+        visible: false,
         title: {
             text: ''
         },
