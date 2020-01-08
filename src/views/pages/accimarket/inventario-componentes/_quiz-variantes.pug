@@ -1,0 +1,35 @@
+//- +quiz("test-quiz-variantes", {name: "2. ¿Cuál es la experiencia en productos de inversión del cliente?", size:"40em"}, [], [
+//-     {answer: "No conoce ni ha invertido", type: "option"},
+//-     {answer: "Sólo conoce", type: "option"},
+//-     {answer: "Conoce y ha invertido", type: "option"},
+//-     {answer: "Frecuencia", type: "select", size: "12em", disabled: true},
+//-     {answer: "Plazo", type: "select", size: "10em", disabled: true},
+//-     {answer: "Volumen", type: "select", size: "12em", disabled: true}
+//- ])
+
+.row
+    p 2.-¿Cual es su experencia y conocimiento en los siguientes productos de inversion en los ultimos dos años?
+.row.justify-end
+    p.font-bold.pr-24 Si conoce y ha invertido, indique:
+.row
+    +quiz("encuesta1", {name: "Valores", size:"40em"}, [
+        {question: "2.1. Instrumentos de Deuda Gubernamental", required: true,  points: ["1","2","3"] },
+        {question: "2.2. Instrumentos de Deuda Corporativa", required: false}
+], [
+    {answer: "No conoce ni ha invertido", type: "option"},
+    {answer: "Sólo conoce", type: "option"},
+    {answer: "Conoce y ha invertido", type: "option"},
+    {answer: "Frecuencia", type: "select", options: [{key: "", value: "--Seleccionar--"},{key: "M", value: "Mensual"}, {key: "S", value: "Semestral"}, {key: "A", value: "Anual"}], size: "12em", disabled: false},
+    {answer: "Plazo", type: "select", options: [{key: "", value: "--Seleccionar--"},{key: "C", value: "Corto"}, {key: "M", value: "Medio"}, {key: "L", value: "Largo"}], size: "10em", disabled: false},
+    {answer: "Volumen", type: "select", options: [{key: "", value: "--Seleccionar--"},{key: "M", value: "Medio"}, {key: "B", value: "Bajo"}, {key: "A", value: "Alto"}], size: "12em", disabled: false}
+])
+//- +field-group("ejemplo_encuesta")
+//-     .row
+//-         +quiz("encuesta", {name: "2. ¿Cuál es la experiencia en productos de inversión del cliente?", size:"40em"}, [], [
+//-         {answer: "No conoce ni ha invertido", type: "option"},
+//-         {answer: "Sólo conoce", type: "option"},
+//-         {answer: "Conoce y ha invertido", type: "option"},
+//-         {answer: "Frecuencia", type: "select", size: "12em", disabled: false},
+//-         {answer: "Plazo", type: "select", size: "10em", disabled: false},
+//-         {answer: "Volumen", type: "select", size: "12em", disabled: false}
+//-     ])

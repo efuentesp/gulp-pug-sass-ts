@@ -1,0 +1,39 @@
+extends /layouts/jsp
+
+block title
+   title 00. Inventario Componentes
+
+block styles
+   link(rel="stylesheet" href="../../assets/css/accimarket/inventario-componentes/styles.css")
+
+block content
+   .content.p-4
+      //- include _field-input-variantes.pug
+      //- include _field-plus-minus-variantes.pug
+      //- include _field-date-variantes.pug
+      //- include _field-date-range-variantes.pug
+      //- include _field-email-variantes.pug
+      //- include _button_variantes.pug
+      //- include _canvas-variantes.pug
+      //- include _accordion-variantes.pug
+      //- include _field-checks-variantes.pug
+      //- include _field-fileupload-variantes.pug
+      //- include _field-options-variantes.pug
+      //- include _field-select-variantes.pug
+      //- include _field_switch_variantes.pug
+      //- include _field-textarea-variantes.pug
+      //- include _field-search-variantes.pug
+      //- include _grid-variantes.pug
+      //- include _field-datepicker-variantes.pug
+      //- include _field_multiselect-variantes.pug
+      //- include _splitter-variantes.pug
+      //- include _tabs-variantes.pug
+      include _field_timepicker-variantes.pug
+      //- include _spinner-variantes.pug
+      //- include _sidebar-variantes.pug
+      //- include _scrolling-menu-variantes.pug
+      //- include _field-select-plus-minus.pug
+      //- include _quiz-variantes.pug
+
+block scripts
+   script(src="../../assets/scripts/accimarket/inventario-componentes/scripts.js")
