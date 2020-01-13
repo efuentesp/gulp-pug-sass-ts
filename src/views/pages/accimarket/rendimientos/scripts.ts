@@ -144,10 +144,10 @@ const activaTIR = (selected: any[]) => {
     infoContratoRendimiento(payload);
 
     fillJqGrid("#table_resultadosMensuales", payload.listaMensuales);
-    graficaMensuales("graficaMensual", selected, payload.listaMensuales);
+    graficaMensuales("divCanvasGraficaMensual", selected, payload.listaMensuales);
 
     fillJqGrid("#table_resultadosAcumulados", payload.listaAcumulados);
-    graficaAcumulados("graficaAcumulados", selected, payload.listaAcumulados);
+    graficaAcumulados("divCanvasGraficaAcumulados", selected, payload.listaAcumulados);
 
   });
 };
@@ -160,10 +160,10 @@ const activaTWP = (selected: any[]) => {
     infoContratoRendimiento(payload);
 
     fillJqGrid("#table_resultadosMensualesTWP", payload.listaMensualesTWP);
-    graficaMensualesTWP("graficaMensualTWP", selected, payload.listaMensualesTWP);
+    graficaMensualesTWP("divCanvasGraficaMensualTWP", selected, payload.listaMensualesTWP);
 
     fillJqGrid("#table_resultadosAcumuladosTWP", payload.listaAcumuladosTWP);
-    graficaAcumuladosTWP("graficaAcumuladosTWP", selected, payload.listaAcumuladosTWP);
+    graficaAcumuladosTWP("divCanvasGraficaAcumuladosTWP", selected, payload.listaAcumuladosTWP);
   });
 };
 
