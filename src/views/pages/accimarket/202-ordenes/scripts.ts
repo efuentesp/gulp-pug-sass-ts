@@ -35,7 +35,7 @@ fieldSelectPlusAutocomplete("ejemplo", {});
   minimumResultsForSearch: Infinity
 });
 
-$("#table_contratos_directos").jqGrid({
+$("#dtgContratosDirectos").jqGrid({
   datatype: "local",
   colNames: [
       "Stat Envio",
@@ -89,7 +89,7 @@ $("#table_contratos_directos").jqGrid({
 });
 
 
-$("#table_envios_directos").jqGrid({
+$("#dtgEnviosDirectos").jqGrid({
   datatype: "local",
   colNames: [
       "Envíos",
@@ -138,7 +138,7 @@ $("#table_envios_directos").jqGrid({
   viewrecords: true,
 });
 
-$("#table_errores_directos").jqGrid({
+$("#dtgErroresDirectos").jqGrid({
   datatype: "local",
   height: 250,
   colNames: [

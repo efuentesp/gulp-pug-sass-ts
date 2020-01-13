@@ -10,8 +10,8 @@ span.bg-gray-200.block#buscadorTabla
 
 
     .row.w-full.overflow-auto#div-bandas-reportos-grid
-        +grid("envios_directos")
-    +grid-records-count("envios_directos")
+        +grid("EnviosDirectos")
+    +grid-records-count("EnviosDirectos")
 
 .row#boton_resert.pb-50.pt-20
     +button-reset({size: "large", disabled: false})
@@ -27,5 +27,5 @@ span.bg-gray-200.block.p-0#buscadorTabla
             })
 
     .row.w-full.overflow-auto#div-errores-reportos-grid
-        +grid("errores_directos")
-    +grid-records-count("errores_directos")
+        +grid("ErroresDirectos")
+    +grid-records-count("ErroresDirectos")

@@ -25,7 +25,7 @@ http_findAll("contratos", contratos_params, payload => {
   llenaGridContratos(payload);
   llenaSelectContratos(payload);
   const rec_count = payload.length;
-  $("#count_contratos").html(rec_count);
+  $("#countContratos").html(rec_count);
 });
 
 // Llamado a servicios via POST
@@ -38,7 +38,7 @@ rpc(rpc_url, rpc_parms, (data, textStatus, jQxhr) => {
   // console.log(data, textStatus, jQxhr);
   llenaGridContratos(data);
   const rec_count = data.length;
-  $("#count_contratos").html(rec_count);
+  $("#countContratos").html(rec_count);
 });
 
 const form = ($("#criterios-busqueda") as any)
@@ -83,11 +83,11 @@ const form = ($("#criterios-busqueda") as any)
 
     http_findAll("contratos", contratos_params, payload => {
       // console.log(payload);
-      $("#table_contratos").jqGrid("clearGridData");
-      $("#table_contratos").jqGrid("setGridParam", { data: payload });
-      $("#table_contratos").trigger("reloadGrid");
+      $("#dtgContratos").jqGrid("clearGridData");
+      $("#dtgContratos").jqGrid("setGridParam", { data: payload });
+      $("#dtgContratos").trigger("reloadGrid");
       const rec_count = payload.length;
-      $("#count_contratos").html(rec_count);
+      $("#countContratos").html(rec_count);
     });
 
     return false;
@@ -95,7 +95,7 @@ const form = ($("#criterios-busqueda") as any)
 
 const llenaGridContratos = (contratos: any) => {
   // console.log(contratos);
-  $("#table_contratos").jqGrid({
+  $("#dtgContratos").jqGrid({
     data: contratos,
     datatype: "local",
     height: "auto",
@@ -245,7 +245,7 @@ const llenaGridContratos = (contratos: any) => {
   });
 };
 
-$("#table_contratos").jqGrid("setFrozenColumns");
+$("#dtgContratos").jqGrid("setFrozenColumns");
 
 $("#btn_pdf").click(() =>
   $("#dialogo_pdf").dialog({

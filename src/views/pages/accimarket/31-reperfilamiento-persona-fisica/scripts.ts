@@ -377,12 +377,12 @@ function mostrarOcultar(tipo) {
 
 $("#boton").click(() => {
   var parametros = '[{ "emisora": "Emi", "tipoValor": "1" }]';
-  $("#table_emisora")
+  $("#dtgEmisora")
     .jqGrid("addRow", { data: parametros })
     .trigger("reloadGrid");
 });
 
-$("#table_emisora").jqGrid({
+$("#dtgEmisora").jqGrid({
   datatype: "local",
   height: 100,
   width: 305,

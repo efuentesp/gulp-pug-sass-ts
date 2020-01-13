@@ -4,9 +4,9 @@
   minimumResultsForSearch: Infinity
 });
 
-$("#table_ventas").jqGrid({
+$("#dtgVentas").jqGrid({
   datatype: "local",
-  height: 250,
+  height: 200,
   colNames: [
     "Folio Trans",
     "Fecha Concertacion",
@@ -33,7 +33,7 @@ $("#table_ventas").jqGrid({
     { name: "fechaFinal", width: 90 },
     { name: "negocio", width: 90 }
   ],
-  pager: "#pager_ventas",
+  pager: "#divPagerVentas",
   rowNum: 10,
   rowList: [10, 20, 30],
   sortname: "ventas",
@@ -49,7 +49,7 @@ let ventas_params: UrlParams = {};
 
 http_findAll("contratos", ventas_params, payload => {
   $("#totalreg").val(payload.length);
-  fillJqGrid("#table_ventas", payload);
+  fillJqGrid("#dtgVentas", payload);
 });
 
 const formu = ($("#criterios-busqueda") as any)
@@ -78,7 +78,7 @@ const formu = ($("#criterios-busqueda") as any)
 
     http_findAll("contratos", ventas_params, payload => {
       $("#totalreg").val(payload.length);
-      fillJqGrid("#table_ventas", payload);
+      fillJqGrid("#dtgVentas", payload);
     });
 
     return false;
@@ -175,16 +175,16 @@ http_findAll("contratos", contratos1_params, payload => {
   // fillJqGrid("#table_contratos", payload);
   llenaGridContratos1(payload);
   const rec_count = payload.length;
-  $("#count_contratos").html(rec_count);
+  $("#CountContratos").html(rec_count);
   // console.log(rec_count);
 });
 
 const llenaGridContratos1 = (contratos: any) => {
   // console.log(contratos);
-  $("#table_contratos").jqGrid({
+  $("#dtgContratos").jqGrid({
     data: contratos,
     datatype: "local",
-    height: "auto",
+    height: 200,
     rowList: [10, 20, 30],
     colNames: [
       "Contrato",
