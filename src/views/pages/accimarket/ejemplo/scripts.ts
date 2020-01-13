@@ -112,7 +112,7 @@ const fillAverage = (average: any) => {
   gradientFill.addColorStop(1, "rgba(55, 55, 255, 1)");
 
   gradientBarChart({
-    id: "averageChart",
+    id: "divCanvasAverageChart",
     titleX: "Período",
     titleY: "Portafolio",
     labels: dataSetX,
@@ -144,7 +144,7 @@ const fillAverage1 = (average: any) => {
   }
 
   simpleBarChart({
-    id: "average1Chart",
+    id: "divCanvasAverage1Chart",
     titleX: "Período",
     titleY: "Portafolio",
     labels: dataSetX,
