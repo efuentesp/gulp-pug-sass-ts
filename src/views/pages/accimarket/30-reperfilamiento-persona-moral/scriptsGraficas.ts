@@ -27,7 +27,7 @@ const fillLiquidez = (rates: any) => {
     }
 
     multiLineChart({
-        id: "multiChart",
+        id: "divCanvasMultiChart",
         titleX: "X",
         titleY: "Y",
         labels: dataSetX,
@@ -89,7 +89,7 @@ const fillObjInversion = (promedios: any) => {
     }
 
     barChart({
-        id: "barChart",
+        id: "divCanvasBarChart",
         titleX: "Cifras de rendimientos, tasas e inflación con fines ilustrativos",
         titleY: "Rendimientos Promedio Anual",
         labels: dataSetX,
@@ -136,7 +136,7 @@ const fillObjInversionRA = (rendimientos: any) => {
     }
 
     stackChart({
-        id: "stackChart",
+        id: "divCanvasStackChart",
         titleX: "Cifras de rendimientos, tasas e inflación con fines ilustrativos",
         titleY: "Tasa Efectiva del Mejor y Peor Mes",
         labels: dataSetX,
@@ -181,7 +181,7 @@ const fillMultileneasObjetivo = (rates: any) => {
     }
 
     lineChart({
-        id: "lineChart",
+        id: "divCanvasLineChart",
         titleX: "X",
         titleY: "Y",
         labels: dataSetX,
