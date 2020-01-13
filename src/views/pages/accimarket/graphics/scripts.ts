@@ -61,7 +61,7 @@ const fillRendimientos = (rendimientos: any) => {
   }
 
   stackChart({
-    id: "stackChart",
+    id: "divCanvasStackChart",
     titleX: "Cifras de rendimientos, tasas e inflación con fines ilustrativos",
     titleY: "Tasa Efectiva del Mejor y Peor Mes",
     labels: dataSetX,
@@ -98,7 +98,7 @@ const fillPromedios = (promedios: any) => {
   }
 
   barChart({
-    id: "barChart",
+    id: "divCanvasBarChart",
     titleX: "Cifras de rendimientos, tasas e inflación con fines ilustrativos",
     titleY: "Rendimientos Promedio Anual",
     labels: dataSetX,
@@ -146,7 +146,7 @@ const fillPromediosNBar = (promediosNBar: any) => {
   }
 
   barChartNBar({
-    id: "barChartNBar",
+    id: "divCanvasBarChartNBar",
     titleX: "Cifras de rendimientos, tasas e inflación con fines ilustrativos",
     titleY: "Rendimientos Promedio Anual",
     labels: dataSetX,
@@ -209,7 +209,7 @@ const fillRates = (rates: any) => {
   }
 
   lineChart({
-    id: "lineChart",
+    id: "divCanvasLineChart",
     titleX: "X",
     titleY: "Y",
     labels: dataSetX,
@@ -254,7 +254,7 @@ const fillEstrategias = (rates: any) => {
   }
 
   multiLineChart({
-    id: "multiChart",
+    id: "divCanvasMultiChart",
     titleX: "X",
     titleY: "Y",
     labels: dataSetX,
@@ -309,7 +309,7 @@ const fillPromediosPie = (promedios: any) => {
   }
 
   pieChart({
-    id: "pieChart",
+    id: "divCanvasPieChart",
     titleX: "Cifras de rendimientos, tasas e inflación con fines ilustrativos",
     labels: dataSetX,
     width: "400px",
@@ -343,7 +343,7 @@ const fillHorizontalRendimientos = (rendimientosh: any) => {
   }
 
   stackChartHorizontal({
-    id: "stackChartH",
+    id: "divCanvasStackChartH",
     titleX: "",
     titleY: "",
     labels: dataSetX,
@@ -389,7 +389,7 @@ const fillPromediosPieHighcharts = (promedios: any) => {
   }
 
   pieHighchart({
-    id: "container",
+    id: "divContainer",
     title: "Promedios Pie Chart",
     format: "{series.name}: <b>{point.percentage:.1f}</b>",
     plotOptionsFormat: "<b>{point.name}</b>: {point.percentage:.1f}",
@@ -398,7 +398,7 @@ const fillPromediosPieHighcharts = (promedios: any) => {
   });
 
   pieBorderHighchart({
-    id: "containerBorder",
+    id: "divContainerBorder",
     title: "Promedios Pie Chart",
     format: "{series.name}: <b>{point.percentage:.1f}</b>",
     plotOptionsFormat: "<b>{point.name}</b>: {point.percentage:.1f}",
@@ -423,7 +423,7 @@ const fillPromediosHighchartBar = (datos: any) => {
   }
 
   barHighchart({
-    id: "containerBar",
+    id: "divContainerBar",
     title: "Bar Chart",
     dataSet: charData
   });

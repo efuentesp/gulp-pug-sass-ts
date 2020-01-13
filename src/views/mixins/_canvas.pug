@@ -1,4 +1,5 @@
 mixin canvas(id,params)
   - var _style = "max-width: " + (params.width ? params.width : "600px") + ";" + "max-height: " + (params.height ? params.height : "600px") + "; padding: 30px;"
+  - var _id = id.charAt(0).toUpperCase() + id.slice(1)
   div(style=_style)
-    canvas(id=id)
+    canvas(id="divCanvas"+_id)
