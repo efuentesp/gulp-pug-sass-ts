@@ -104,7 +104,7 @@ const fillAverage = (average: any) => {
     dataSetY.push(data.dataB);
   }
 
-  var ctxBar: any = document.getElementById("averageChart");
+  var ctxBar: any = document.getElementById("divCanvasAverageChart");
   var contextBar = ctxBar.getContext("2d");
 
   var gradientFill = contextBar.createLinearGradient(400, 0, 350, 0);
