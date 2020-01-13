@@ -133,7 +133,7 @@ $('div[class*="field-plus-minus"]').each(function(index,item){
 $(".tab-group").tabs();
 
 // Accordion
-$(".accordion").accordion(ui_accordion_settings);
+$(".amAccordion").accordion(ui_accordion_settings);
 
 // DatePicker
 $(".datepicker")

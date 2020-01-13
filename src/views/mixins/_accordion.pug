@@ -1,8 +1,8 @@
 mixin accordion(id)
-  .accordion(id=id)
+  .amAccordion(id="div"+id)
     block
 
 mixin accordion-item(id, _label="")
   h3= _label
-  .accordion-content
+  .amAccordionContent
     block
