@@ -2259,7 +2259,7 @@ $("#btnClean").click(() => {
 const getCheckedCheckbox = (id: string) => {
   var list: any = [];
 
-  list = $("input[name='chk_" + id + "']:checked")
+  list = $("input[name='chk" + id + "']:checked")
     .map(function () {
       return $(this).val();
     })

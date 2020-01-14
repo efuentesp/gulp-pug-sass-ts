@@ -1,7 +1,7 @@
 mixin field-checks(id, parms, ...items)
-  - var _field_id = "field_" + id
-  - var check_name = "chk_" + id
-  - var _field_error_block = "field_error_block_" + id
+  - var _field_id = "divField" + id
+  - var check_name = "chk" + id
+  - var _field_error_block = "divFieldErrorBlock" + id
   - var _field_error_block_id = "#" + _field_error_block
   - var _class = "amIs" + (parms.orientation ? parms.orientation[0].toUpperCase() + parms.orientation.substr(1) : "Vertical")
   - var _field_control_class = (parms.orientation=="horizontal" ? "flex" : "")
@@ -19,8 +19,7 @@ mixin field-checks(id, parms, ...items)
     .amFieldControl(data-tooltip=_tooltip)
       div(class=_field_control_class)
         each item, index in items
-          - var check_id = "chk_" + id + "_" + index
-          - var class_color = "is_" + item.color
+          - var check_id = "chk" + id + index
           label.amCheckboxInput.pr-5= item.value
             input(type="checkbox"
                   name=check_name
@@ -31,7 +30,7 @@ mixin field-checks(id, parms, ...items)
                   data-parsley-errors-container=_field_error_block_id
             )
             if item.color
-              span.amCheckmark.amWithColor(class=class_color)
+              span.amCheckmark.amWithColor(class="amIs"+item.color[0].toUpperCase() + item.color.substr(1))
             else
               span.amCheckmark
       .amFieldError
