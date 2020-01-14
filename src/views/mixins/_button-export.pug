@@ -2,19 +2,19 @@ mixin button-export(parms)
   - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
 
   if _parms.size == "large"
-    button.button.big-button(id="btn_search" type="submit" data-tooltip=_parms.tooltip disabled=_parms.disabled value="validate")
+    button.amButton.amBigButton(id="btnExport" type="submit" data-tooltip=_parms.tooltip disabled=_parms.disabled value="validate")
         span.fa-stack.fa-lg
           i.fas.fa-file-upload.fa-2x
         br
         span Exportar
 
   if _parms.size == "medium"
-    button.button.medium-button.flex.items-center(id="btn_search" data-tooltip=_parms.tooltip disabled=_parms.disabled)
+    button.amButton.amMediumButton.flex.items-center(id="btnExport" data-tooltip=_parms.tooltip disabled=_parms.disabled)
         span.fa-stack.fa-2x
           i.fas.fa-file-upload.fa-sm
         span Exportar
 
   if _parms.size == "small"
-    button.button.small-button(id="btn_search" data-tooltip=_parms.tooltip disabled=_parms.disabled)
+    button.amButton.amSmallButton(id="btnExport" data-tooltip=_parms.tooltip disabled=_parms.disabled)
         span.fa-stack.fa-sm
           i.fas.fa-file-upload.fa-lg

@@ -1,6 +1,6 @@
 @import "../vars";
 
-.button {
+.amButton {
   background: $button_background_color;
   color: $button_font_color;
   border: 1px solid $button_border_color;
@@ -19,13 +19,13 @@
     font-weight: 600;
   }
 
-  &.big-button {
+  &.amBigButton {
     width: 60px;
     height: 55px;
     padding: 0;
   }
 
-  &.medium-button {
+  &.amMediumButton {
     width: 112px;
     height: 45px;
     padding-left: 5px;
@@ -37,7 +37,7 @@
     }
   }
 
-  &.small-button {
+  &.amSmallButton {
     width: 35px;
     height: 35px;
     padding: 0.5px;
@@ -47,7 +47,7 @@
     }
   }
 
-  &.is-icon {
+  &.amIsIcon {
     color: $color-ink-lighter;
     border: none;
     background: none;
@@ -56,11 +56,11 @@
     font-size: 16px;
     padding: 0 2px;
 
-    &.is-green {
+    &.amIsGreen {
       color: $color-green;
     }
 
-    &.is-red {
+    &.amIsRed {
       color: $color-red-dark;
     }
   }

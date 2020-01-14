@@ -23,7 +23,7 @@ const ui_datepicker_settings = {
   showButtonPanel: true,
   currentText: "Hoy",
   closeText: "Limpiar",
-  onClose: function(dateText, inst) {
+  onClose: function (dateText, inst) {
     if ($(window.event.srcElement).hasClass("ui-datepicker-close")) {
       (document.getElementById(this.id) as HTMLInputElement).value = "";
     }
@@ -79,7 +79,7 @@ const ui_datepicker_month_year_settings = {
   changeYear: true,
   showButtonPanel: false,
   dateFormat: DATE_FORMAT_MONTH_YEAR,
-  onChangeMonthYear: function(year, month, inst) {
+  onChangeMonthYear: function (year, month, inst) {
     $(this).datepicker(
       "setDate",
       new Date(inst.selectedYear, inst.selectedMonth, 1)
@@ -105,26 +105,26 @@ $(document).tooltip({
 });
 
 // Coloca el atributo "title" al botón para que aparezca el tooltip
-$(".button").each(function(i, obj) {
+$(".amButton").each(function (i, obj) {
   // const label = $(`#${obj.id} span`).html();
   const label = $(`#${obj.id}`).attr("data-tooltip");
   $(`#${obj.id}`).attr("custom-tooltip", label);
 });
 
 // Coloca el atributo "custom-tooltip" a los div, con la clase field-control, para que aparezca el tooltip
-$('div[class*="amFieldControl"]').each(function(index,item){
-  if(item.attributes.getNamedItem("data-tooltip")){
+$('div[class*="amFieldControl"]').each(function (index, item) {
+  if (item.attributes.getNamedItem("data-tooltip")) {
     let value = item.attributes.getNamedItem("data-tooltip").value
-    if(value)
+    if (value)
       item.setAttribute("custom-tooltip", value)
   }
 });
 
 // Coloca el atributo "custom-tooltip" a los div, con la clase field-plus-minus, para que aparezca el tooltip
-$('div[class*="amFeldPlusMinus"]').each(function(index,item){
-  if(item.attributes.getNamedItem("data-tooltip")){
+$('div[class*="amFeldPlusMinus"]').each(function (index, item) {
+  if (item.attributes.getNamedItem("data-tooltip")) {
     let value = item.attributes.getNamedItem("data-tooltip").value
-    if(value)
+    if (value)
       item.setAttribute("custom-tooltip", value)
   }
 });
@@ -293,7 +293,7 @@ const existText = (text_to_add: string, list: string) => {
   let exist = false;
   let count = 1;
 
-  $.each($(list + " li a"), function() {
+  $.each($(list + " li a"), function () {
     if (
       $(list + " li:nth-child(" + count + ")").text() === text_to_add.trim()
     ) {
@@ -309,7 +309,7 @@ const addedText = (text_to_add: string, value_to_add: string, list: string) => {
   let added = false;
   let count = 1;
 
-  $.each($(list + " li a"), function() {
+  $.each($(list + " li a"), function () {
     if ($(list + " li:nth-child(" + count + ") a").text() === "") {
       $(list + " li:nth-child(" + count + ") a").attr("id", value_to_add);
       $(list + " li:nth-child(" + count + ") a").append(text_to_add);
@@ -332,19 +332,19 @@ const addNode = (
     if ($(list + " li").length < maxsize) {
       $(list).append(
         "<li><a id=" +
-          value_to_add +
-          " class='delete_item' href='javascript:void();'>" +
-          text_to_add +
-          "</a></li>"
+        value_to_add +
+        " class='delete_item' href='javascript:void();'>" +
+        text_to_add +
+        "</a></li>"
       );
     }
   } else {
     $(list).append(
       "<li><a id=" +
-        value_to_add +
-        " class='delete_item' href='javascript:void();'>" +
-        text_to_add +
-        "</a></li>"
+      value_to_add +
+      " class='delete_item' href='javascript:void();'>" +
+      text_to_add +
+      "</a></li>"
     );
   }
 };
@@ -382,7 +382,7 @@ function fieldPlusMinusRepaintList(node) {
     node
   ) as HTMLUListElement;
   let listSize = nodelist.childNodes.length;
-  $(nodelist.childNodes).each(function(childNode) {
+  $(nodelist.childNodes).each(function (childNode) {
     if (nodelist.childNodes[childNode].childNodes[0].textContent) {
       listcontentid.push(
         (nodelist.childNodes[childNode]
@@ -417,10 +417,10 @@ function fieldPlusMinusRepaintList(node) {
 
 const removeHoverStyle = (list: string) => {
   $(list + " li a").each(function () {
-    if ($(this).text() == ""){
-      $(this).css("pointer-events","none");
+    if ($(this).text() == "") {
+      $(this).css("pointer-events", "none");
     }
-  });   
+  });
 }
 
 /**
@@ -464,13 +464,13 @@ const fieldPlusMinus = (id: string, params: any) => {
     }
   });
 
-  $('body').keydown(function(event){
-    if(event.keyCode == 46){
+  $('body').keydown(function (event) {
+    if (event.keyCode == 46) {
       $(list + " li a").each(function (index) {
         if ($(idInputHidden).val() != "") {
           if ($(this).text() === $(idInputHidden).val()) {
             if (!definedNodes) {
-              $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
+              $("li:has('a.delete_item'):contains(" + $(this).text() + ")").remove();
               $(list + " li").length = $(list + " li").length - 1;
             } else {
               if ($(list + " li").length <= 4) {
@@ -480,7 +480,7 @@ const fieldPlusMinus = (id: string, params: any) => {
                   .removeAttr("id");
                 $(this).text("");
               } else {
-                $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
+                $("li:has('a.delete_item'):contains(" + $(this).text() + ")").remove();
                 $(this).text("");
                 $(list + " li").length = $(list + " li").length - 1;
               }
@@ -490,9 +490,9 @@ const fieldPlusMinus = (id: string, params: any) => {
       });
       fieldPlusMinusRepaintList(node);
       $(idInputHidden).val("");
-      removeHoverStyle(list);      
-    } 
- });
+      removeHoverStyle(list);
+    }
+  });
 
   removeHoverStyle(list);
 
@@ -515,7 +515,7 @@ const fieldPlusMinus = (id: string, params: any) => {
       if ($(idInputHidden).val() != "") {
         if ($(this).text() === $(idInputHidden).val()) {
           if (!definedNodes) {
-            $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
+            $("li:has('a.delete_item'):contains(" + $(this).text() + ")").remove();
             $(list + " li").length = $(list + " li").length - 1;
           } else {
             if ($(list + " li").length <= 4) {
@@ -525,7 +525,7 @@ const fieldPlusMinus = (id: string, params: any) => {
                 .removeAttr("id");
               $(this).text("");
             } else {
-              $("li:has('a.delete_item'):contains("+$(this).text()+")").remove();
+              $("li:has('a.delete_item'):contains(" + $(this).text() + ")").remove();
               $(this).text("");
               $(list + " li").length = $(list + " li").length - 1;
             }
@@ -539,7 +539,7 @@ const fieldPlusMinus = (id: string, params: any) => {
   });
 
   // Set to input
-  $(list).delegate(".delete_item", "click", function() {
+  $(list).delegate(".delete_item", "click", function () {
     $(idInputHidden).val(
       $(this)
         .parent()
@@ -550,14 +550,14 @@ const fieldPlusMinus = (id: string, params: any) => {
     $(list + " li a").each(function () {
       $(this).removeClass("selected");
       $(this).css("background-color", "");
-    });  
+    });
 
     if ($(this)
-    .parent()
-    .find(".delete_item")
-    .html() != ""){
+      .parent()
+      .find(".delete_item")
+      .html() != "") {
       $(this).addClass("selected");
-      $(this).css("background-color","#79c3ed");
+      $(this).css("background-color", "#79c3ed");
     }
   });
 };
@@ -592,8 +592,8 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
     }
   }
 
-  $('body').keydown(function(event){
-    if(event.keyCode == 46){
+  $('body').keydown(function (event) {
+    if (event.keyCode == 46) {
       $(list + " li a").each(function (index) {
         if ($(this).attr("id") === $(idInputHidden).val()) {
           if (!definedNodes) {
@@ -605,7 +605,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
                 .find("a")
                 .first()
                 .removeAttr("id");
-            $(this).text("");
+              $(this).text("");
             } else {
               $(this).parent().remove();
               $(list + " li").length = $(list + " li").length - 1;
@@ -615,11 +615,11 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
       });
       fieldPlusMinusRepaintList(node);
       $(idInputHidden)
-      .val(null)
-      .trigger("change");
-      removeHoverStyle(list);      
+        .val(null)
+        .trigger("change");
+      removeHoverStyle(list);
     }
- });
+  });
 
   removeHoverStyle(list);
 
@@ -651,7 +651,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
               .find("a")
               .first()
               .removeAttr("id");
-          $(this).text("");
+            $(this).text("");
           } else {
             $(this).parent().remove();
             $(list + " li").length = $(list + " li").length - 1;
@@ -661,12 +661,12 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
     });
     fieldPlusMinusRepaintList(node);
     $(idInputHidden)
-    .val(null)
-    .trigger("change");
+      .val(null)
+      .trigger("change");
     removeHoverStyle(list);
   });
 
-  $(list).delegate(".delete_item", "click", function() {
+  $(list).delegate(".delete_item", "click", function () {
     $(idInputHidden)
       .val(
         $(this)
@@ -676,19 +676,19 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
       )
       .trigger("change");
 
-      $(list + " li a").each(function () {
-        $(this).removeClass("selected");
-        $(this).css("background-color", "");
-      });  
+    $(list + " li a").each(function () {
+      $(this).removeClass("selected");
+      $(this).css("background-color", "");
+    });
 
-      if ($(this)
+    if ($(this)
       .parent()
       .find(".delete_item")
-      .attr("id") != undefined){
-        $(this).addClass("selected");
-        $(this).css("background-color","#79c3ed");
-      }
-  
+      .attr("id") != undefined) {
+      $(this).addClass("selected");
+      $(this).css("background-color", "#79c3ed");
+    }
+
   });
 
   ($(idInput) as any).select2({
@@ -728,8 +728,8 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
     }
   }
 
-  $('body').keydown(function(event){
-    if(event.keyCode == 46){
+  $('body').keydown(function (event) {
+    if (event.keyCode == 46) {
       $(list + " li a").each(function (index) {
         if ($(this).attr("id") === $(idInputHidden).val()) {
           if (!definedNodes) {
@@ -753,11 +753,11 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       $(idInputHidden)
         .val(null)
         .trigger("change");
-  
-        $(idInputHidden).removeClass("select-item");
-        removeHoverStyle(list);      
+
+      $(idInputHidden).removeClass("select-item");
+      removeHoverStyle(list);
     }
- });
+  });
 
   removeHoverStyle(list);
 
@@ -769,24 +769,24 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       if (!addedText(text_to_add, value_to_add, list)) {
         addNode(text_to_add, value_to_add, list, params.maxsize);
       }
-     }
+    }
     fieldPlusMinusRepaintList(node);
     $(idInput)
       .val(null)
       .trigger("change");
 
-      $(idInput).removeClass("select-item");
-      removeHoverStyle(list);
+    $(idInput).removeClass("select-item");
+    removeHoverStyle(list);
   });
 
   $(idInput).change(() => {
 
-    if (!$(idInputHidden).hasClass("select-item")){
+    if (!$(idInputHidden).hasClass("select-item")) {
       const value_to_add = $(idInput + " option:selected").val() as string;
 
-      if (!(value_to_add  == "")){
+      if (!(value_to_add == "")) {
         const text_to_add = $(idInput + " option:selected").text() as string;
-      
+
         if (!existText(text_to_add, list)) {
           if (!addedText(text_to_add, value_to_add, list)) {
             addNode(text_to_add, value_to_add, list, params.maxsize);
@@ -800,7 +800,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       removeHoverStyle(list);
     }
   });
- 
+
   $(idBtnMinus).click(() => {
     $(list + " li a").each(function (index) {
       if ($(this).attr("id") === $(idInputHidden).val()) {
@@ -826,34 +826,34 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
       .val(null)
       .trigger("change");
 
-      $(idInputHidden).removeClass("select-item");
-      removeHoverStyle(list);
+    $(idInputHidden).removeClass("select-item");
+    removeHoverStyle(list);
   });
 
-  $(list).delegate(".delete_item", "click", function() {
-      $(idInputHidden).val( 
+  $(list).delegate(".delete_item", "click", function () {
+    $(idInputHidden).val(
       $(this)
         .parent()
         .find(".delete_item")
         .attr("id")).trigger("change");
-        
-      $(idInputHidden).addClass("select-item");  
 
-      $(list + " li a").each(function () {
-        $(this).removeClass("selected").css("background-color", "");
-      });  
+    $(idInputHidden).addClass("select-item");
 
-      if ($(this)
+    $(list + " li a").each(function () {
+      $(this).removeClass("selected").css("background-color", "");
+    });
+
+    if ($(this)
       .parent()
       .find(".delete_item")
-      .attr("id") != undefined){
-        $(this).addClass("selected");
-        $(this).css("background-color","#79c3ed");
-      }
-      
+      .attr("id") != undefined) {
+      $(this).addClass("selected");
+      $(this).css("background-color", "#79c3ed");
+    }
+
   });
 
-  var data = $.map(payload, function(item) {
+  var data = $.map(payload, function (item) {
     return {
       text: item[attrText],
       id: item[attrId]
@@ -875,7 +875,7 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
 const getList = (id: string) => {
   var list: any = [];
 
-  $("#tag_list_" + id + " li").each(function() {
+  $("#tag_list_" + id + " li").each(function () {
     let value = $(this)
       .text()
       .trim();
@@ -896,7 +896,7 @@ const getChecked = (id: string) => {
   let selected = [];
   const query_select = "#field_" + id + " input[type=checkbox]";
 
-  $(query_select).each(function() {
+  $(query_select).each(function () {
     if ($(this).is(":checked")) {
       selected.push($(this).attr("value"));
     }
@@ -1106,10 +1106,10 @@ const gradientBarChart = (params: barGradientChartParams) => {
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          simpleGradientGraph.data.datasets.forEach(function(dataset, i) {
+          simpleGradientGraph.data.datasets.forEach(function (dataset, i) {
             var meta = simpleGradientGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1159,7 +1159,7 @@ const gradientBarChart = (params: barGradientChartParams) => {
             },
             ticks: {
               display: true,
-              callback: function(value) {
+              callback: function (value) {
                 return value + "";
               },
               max: params.tickMaxY,
@@ -1198,15 +1198,15 @@ const stackChart = (params: stackChartParams) => {
   const stackGraph = new Chart(context, {
     plugins: [
       {
-        afterDatasetsDraw: function(stackGraph) {
+        afterDatasetsDraw: function (stackGraph) {
           var ctx = stackGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          stackGraph.data.datasets.forEach(function(dataset, i) {
+          stackGraph.data.datasets.forEach(function (dataset, i) {
             var meta = stackGraph.getDatasetMeta(i);
-            meta.data.forEach(function(element, index) {
+            meta.data.forEach(function (element, index) {
               // GeneralFont
               ctx.fillStyle = "#000";
               var fontSize = 10;
@@ -1274,7 +1274,7 @@ const stackChart = (params: stackChartParams) => {
               max: params.tickMaxY,
               min: params.tickMinY,
               stepSize: params.tickStepY,
-              callback: function(value) {
+              callback: function (value) {
                 return value + ".00%";
               }
             },
@@ -1314,15 +1314,15 @@ const stackChartHorizontal = (params: stackChartHParams) => {
   const stackGraphH = new Chart(context, {
     plugins: [
       {
-        afterDatasetsDraw: function(stackGraphH) {
+        afterDatasetsDraw: function (stackGraphH) {
           var ctx = stackGraphH.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          stackGraphH.data.datasets.forEach(function(dataset, i) {
+          stackGraphH.data.datasets.forEach(function (dataset, i) {
             var meta = stackGraphH.getDatasetMeta(i);
-            meta.data.forEach(function(element, index) {
+            meta.data.forEach(function (element, index) {
               // GeneralFont
               ctx.fillStyle = "#fff";
               var fontSize = 10;
@@ -1362,7 +1362,7 @@ const stackChartHorizontal = (params: stackChartHParams) => {
     options: {
       tooltips: {
         callbacks: {
-          label: function(tooltipItem, data) {
+          label: function (tooltipItem, data) {
             let label = "";
             if (format == "%") {
               label =
@@ -1404,7 +1404,7 @@ const stackChartHorizontal = (params: stackChartHParams) => {
             ticks: {
               display: true,
               stepSize: params.tickStepX,
-              callback: function(value) {
+              callback: function (value) {
                 let label = "";
                 if (format == "%") {
                   label = formatNumber.new(value, "") + format;
@@ -1473,16 +1473,16 @@ const simpleBarChart = (params: barChartParams) => {
   simpleBGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(simpleBarGraph) {
+        afterDatasetsDraw: function (simpleBarGraph) {
           var ctx = simpleBarGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          simpleBarGraph.data.datasets.forEach(function(dataset, i) {
+          simpleBarGraph.data.datasets.forEach(function (dataset, i) {
             var meta = simpleBarGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1532,7 +1532,7 @@ const simpleBarChart = (params: barChartParams) => {
             },
             ticks: {
               display: true,
-              callback: function(value) {
+              callback: function (value) {
                 return value + "";
               },
               max: params.tickMaxY,
@@ -1572,16 +1572,16 @@ const barChart = (params: barChartParams) => {
   var barGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(barGraph) {
+        afterDatasetsDraw: function (barGraph) {
           var ctx = barGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          barGraph.data.datasets.forEach(function(dataset, i) {
+          barGraph.data.datasets.forEach(function (dataset, i) {
             var meta = barGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 9;
                 var fontStyle = "normal";
@@ -1819,7 +1819,7 @@ const barChart = (params: barChartParams) => {
               max: params.tickMaxY,
               min: params.tickMinY,
               stepSize: params.tickStepY,
-              callback: function(value) {
+              callback: function (value) {
                 return value + ".0%";
               }
             }
@@ -1856,16 +1856,16 @@ const barChartNBar = (params: barChartParams) => {
   var barNGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(barNGraph) {
+        afterDatasetsDraw: function (barNGraph) {
           var ctx = barNGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          barNGraph.data.datasets.forEach(function(dataset, i) {
+          barNGraph.data.datasets.forEach(function (dataset, i) {
             var meta = barNGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -1944,7 +1944,7 @@ const barChartNBar = (params: barChartParams) => {
               max: params.tickMaxY,
               min: params.tickMinY,
               stepSize: params.tickStepY,
-              callback: function(value) {
+              callback: function (value) {
                 return value + ".0%";
               }
             } /**/
@@ -1981,16 +1981,16 @@ const lineChart = (params: lineChartParams) => {
   var lineGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(lineGraph) {
+        afterDatasetsDraw: function (lineGraph) {
           var ctx = lineGraph.ctx;
 
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
 
-          lineGraph.data.datasets.forEach(function(dataset, i) {
+          lineGraph.data.datasets.forEach(function (dataset, i) {
             var meta = lineGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -2105,7 +2105,7 @@ const multiLineChart = (params: multiLineChartParams) => {
   var multiLineGraph = new Chart(contextBar, {
     plugins: [
       {
-        beforeDraw: function(multiLineGraph) {
+        beforeDraw: function (multiLineGraph) {
           var ctx = multiLineGraph.ctx;
 
           ctx.canvas.style.width = params.width;
@@ -2124,12 +2124,12 @@ const multiLineChart = (params: multiLineChartParams) => {
           ctx.restore();
         },
 
-        afterDatasetsDraw: function(multiLineGraph) {
+        afterDatasetsDraw: function (multiLineGraph) {
           var ctx = multiLineGraph.ctx;
-          multiLineGraph.data.datasets.forEach(function(dataset, i) {
+          multiLineGraph.data.datasets.forEach(function (dataset, i) {
             var meta = multiLineGraph.getDatasetMeta(i);
             if (!meta.hidden) {
-              meta.data.forEach(function(element, index) {
+              meta.data.forEach(function (element, index) {
                 //ctx.fillStyle = "#000";
                 var fontSize = 12;
                 var fontStyle = "normal";
@@ -2195,7 +2195,7 @@ const pieChart = (params: pieChartParams) => {
   pieGraph = new Chart(contextBar, {
     plugins: [
       {
-        afterDatasetsDraw: function(pieGraph) {
+        afterDatasetsDraw: function (pieGraph) {
           var ctx = pieGraph.ctx;
           ctx.canvas.style.width = params.width;
           ctx.canvas.style.height = params.height;
@@ -2226,7 +2226,7 @@ const pieChart = (params: pieChartParams) => {
 const validateDateRage = (id: string) => {
   $("#" + id + "_begin_date").datepicker({
     ...ui_datepicker_settings,
-    onClose: function(selectedDate, instance) {
+    onClose: function (selectedDate, instance) {
       if (selectedDate != "") {
         $("#" + id + "_end_date").datepicker("option", "minDate", selectedDate);
         var date = $.datepicker.parseDate(
@@ -2243,24 +2243,24 @@ const validateDateRage = (id: string) => {
 
   $("#" + id + "_end_date").datepicker({
     ...ui_datepicker_settings,
-    onClose: function(selectedDate) {
+    onClose: function (selectedDate) {
       $("#" + id + "_begin_date").datepicker("option", "maxDate", selectedDate);
     }
   });
 };
 
 // Reset Form
-$("#btn_clean").click(() => {
-  ($(".form-group") as any).parsley().reset();
-  $(".form-group .tag-list li a").text("");
-  $(".form-group select.select2").val([]).trigger("change");
+$("#btnClean").click(() => {
+  ($(".amFormGroup") as any).parsley().reset();
+  $(".amFormGroup .amTagList li a").text("");
+  $(".amFormGroup select.select2").val([]).trigger("change");
 });
 
 const getCheckedCheckbox = (id: string) => {
   var list: any = [];
 
   list = $("input[name='chk_" + id + "']:checked")
-    .map(function() {
+    .map(function () {
       return $(this).val();
     })
     .toArray();
@@ -2315,13 +2315,13 @@ function copyGridContentToClipboard(gridNameID, includeGroups) {
       var headers = [];
       if (includeGroups && typeof includeGroups === "boolean") {
         var groupHeaders = $(grid).getGridParam("groupingView").groupField;
-        $(groupHeaders).each(function(index, value) {
+        $(groupHeaders).each(function (index, value) {
           headers.push(value);
         });
       }
       var column;
       var columnName;
-      $(colModel).each(function() {
+      $(colModel).each(function () {
         column = $(this)[0];
         columnName = column.name;
         if (!column.hidden) {
@@ -2329,7 +2329,7 @@ function copyGridContentToClipboard(gridNameID, includeGroups) {
         }
       });
       var tableHeader = "<thead><tr>";
-      $.each(headers, function(index, value) {
+      $.each(headers, function (index, value) {
         tableHeader += "<th>" + value + "</th>";
       });
       tableHeader += "</tr></thead>";
@@ -2341,10 +2341,10 @@ function copyGridContentToClipboard(gridNameID, includeGroups) {
         "</td></tr>";
       var row;
       var tableContent = "";
-      $(gridData).each(function() {
+      $(gridData).each(function () {
         tableContent += "<tr>";
         row = $(this)[0];
-        $.each(headers, function(index, header) {
+        $.each(headers, function (index, header) {
           tableContent += "<td>" + row[header] + "</td>";
         });
         tableContent += "</tr>";
@@ -2352,13 +2352,13 @@ function copyGridContentToClipboard(gridNameID, includeGroups) {
       var tableID = "___" + gridNameID;
       var table = $(
         '<table id="' +
-          tableID +
-          '">' +
-          tableHeader +
-          "<tbody>" +
-          totalRecordsTableRow +
-          tableContent +
-          "</tbody></table>"
+        tableID +
+        '">' +
+        tableHeader +
+        "<tbody>" +
+        totalRecordsTableRow +
+        tableContent +
+        "</tbody></table>"
       );
       $(table)
         .css("position", "absolute")
@@ -2471,7 +2471,7 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
           i +
           '">';
 
-        answerSelectId.push(id+"_"+i+"_"+j);
+        answerSelectId.push(id + "_" + i + "_" + j);
         let optionValue = quiz[0].result[i].results[j].result;
 
         options = "";
@@ -2493,26 +2493,26 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
 
     questions = question + answers + "</tr>";
     trElement.append(questions);
-    if(answerSelectId.length != 0){
+    if (answerSelectId.length != 0) {
       initializeSelect2(answerSelectId);
     }
   }
 };
 
-function initializeSelect2(isQuizSelect2:string[]) {
+function initializeSelect2(isQuizSelect2: string[]) {
   for (let i = 0; i < isQuizSelect2.length; i++) {
-    ($("#"+isQuizSelect2[i]) as any).select2({
-      language: "es",      
+    ($("#" + isQuizSelect2[i]) as any).select2({
+      language: "es",
       minimumResultsForSearch: Infinity
-    });   
-  }   
+    });
+  }
 }
 
 const fieldDateClear = (id: string) => {
   var _id = "#" + id;
   var $dates = $(_id).datepicker();
 
-  $("#clear_" + id).on("click", function() {
+  $("#clear_" + id).on("click", function () {
     $dates.datepicker("setDate", null);
   });
 };
@@ -2521,7 +2521,7 @@ const fieldBeginDateRangeClear = (id: string) => {
   var _id = $("#" + id + "_begin_date");
   var $dates = $(_id).datepicker();
 
-  $("#clear_" + id + "_begin_date").on("click", function() {
+  $("#clear_" + id + "_begin_date").on("click", function () {
     $dates.datepicker("setDate", null);
   });
 };
@@ -2530,40 +2530,40 @@ const fieldEndDateRangeClear = (id: string) => {
   var _id = $("#" + id + "_end_date");
   var $dates = $(_id).datepicker();
 
-  $("#clear_" + id + "_end_date").on("click", function() {
+  $("#clear_" + id + "_end_date").on("click", function () {
     $dates.datepicker("setDate", null);
   });
 };
 
 const json2xml = (o, tab) => {
-  var toXml = function(v, name, ind) {
-      var xml = "";
-      if (v instanceof Array) {
-        for (var i = 0, n = v.length; i < n; i++)
-          xml += ind + toXml(v[i], name, ind + "\t") + "\n";
-      } else if (typeof v == "object") {
-        var hasChild = false;
-        xml += ind + "<" + name;
-        for (var m in v) {
-          if (m.charAt(0) == "@")
-            xml += " " + m.substr(1) + '="' + v[m].toString() + '"';
-          else hasChild = true;
-        }
-        xml += hasChild ? ">" : "/>";
-        if (hasChild) {
-          for (var m in v) {
-            if (m == "#text") xml += v[m];
-            else if (m == "#cdata") xml += "<![CDATA[" + v[m] + "]]>";
-            else if (m.charAt(0) != "@") xml += toXml(v[m], m, ind + "\t");
-          }
-          xml +=
-            (xml.charAt(xml.length - 1) == "\n" ? ind : "") + "</" + name + ">";
-        }
-      } else {
-        xml += ind + "<" + name + ">" + v.toString() + "</" + name + ">";
+  var toXml = function (v, name, ind) {
+    var xml = "";
+    if (v instanceof Array) {
+      for (var i = 0, n = v.length; i < n; i++)
+        xml += ind + toXml(v[i], name, ind + "\t") + "\n";
+    } else if (typeof v == "object") {
+      var hasChild = false;
+      xml += ind + "<" + name;
+      for (var m in v) {
+        if (m.charAt(0) == "@")
+          xml += " " + m.substr(1) + '="' + v[m].toString() + '"';
+        else hasChild = true;
       }
-      return xml;
-    },
+      xml += hasChild ? ">" : "/>";
+      if (hasChild) {
+        for (var m in v) {
+          if (m == "#text") xml += v[m];
+          else if (m == "#cdata") xml += "<![CDATA[" + v[m] + "]]>";
+          else if (m.charAt(0) != "@") xml += toXml(v[m], m, ind + "\t");
+        }
+        xml +=
+          (xml.charAt(xml.length - 1) == "\n" ? ind : "") + "</" + name + ">";
+      }
+    } else {
+      xml += ind + "<" + name + ">" + v.toString() + "</" + name + ">";
+    }
+    return xml;
+  },
     xml = "";
   for (var m in o) xml += toXml(o[m], m, "");
   return tab ? xml.replace(/\t/g, tab) : xml.replace(/\t|\n/g, "");
@@ -2571,7 +2571,7 @@ const json2xml = (o, tab) => {
 
 const xml2json = (xml, tab) => {
   var X = {
-    toObj: function(xml) {
+    toObj: function (xml) {
       var o = {};
       if (xml.nodeType == 1) {
         // element node ..
@@ -2636,7 +2636,7 @@ const xml2json = (xml, tab) => {
       } else alert("unhandled node type: " + xml.nodeType);
       return o;
     },
-    toJson: function(o, name, ind) {
+    toJson: function (o, name, ind) {
       var json = name ? '"' + name + '"' : "";
       if (o instanceof Array) {
         for (var i = 0, n = o.length; i < n; i++)
@@ -2662,11 +2662,11 @@ const xml2json = (xml, tab) => {
       else json += (name && ":") + o.toString();
       return json;
     },
-    innerXml: function(node) {
+    innerXml: function (node) {
       var s = "";
       if ("innerHTML" in node) s = node.innerHTML;
       else {
-        var asXml = function(n) {
+        var asXml = function (n) {
           var s = "";
           if (n.nodeType == 1) {
             s += "<" + n.nodeName;
@@ -2690,16 +2690,16 @@ const xml2json = (xml, tab) => {
       }
       return s;
     },
-    escape: function(txt) {
+    escape: function (txt) {
       return txt
         .replace(/[\\]/g, "\\\\")
         .replace(/[\"]/g, '\\"')
         .replace(/[\n]/g, "\\n")
         .replace(/[\r]/g, "\\r");
     },
-    removeWhite: function(e) {
+    removeWhite: function (e) {
       e.normalize();
-      for (var n = e.firstChild; n; ) {
+      for (var n = e.firstChild; n;) {
         if (n.nodeType == 3) {
           // text node
           if (!n.nodeValue.match(/[^ \f\n\r\t\v]/)) {
@@ -2738,15 +2738,15 @@ const fillSwapList = (id: string, list_id: string, params: any) => {
     var data = params[i];
     list.append(
       "<li class='portlet' value=" +
-        data.value +
-        "><div class='portlet-content'>" +
-        data.label +
-        "</div></li>"
+      data.value +
+      "><div class='portlet-content'>" +
+      data.label +
+      "</div></li>"
     );
   }
 };
 
-$("ul.column").on("click", "li", function() {
+$("ul.column").on("click", "li", function () {
   if ($(this).hasClass("selected")) {
     $(this).removeClass("selected");
   } else {
@@ -2756,26 +2756,26 @@ $("ul.column").on("click", "li", function() {
 });
 
 // Up
-$(".up").click(function() {
+$(".up").click(function () {
   var currents = $(".portlet.selected");
   currents.prev().before(currents);
 });
 
 // Down
-$(".down").click(function() {
+$(".down").click(function () {
   var currents = $(".portlet.selected");
   currents.next().after(currents);
 });
 
 // Add
-$(".add").click(function() {
+$(".add").click(function () {
   var currents = $(".portlet.selected");
   $(".column.destination").append(currents);
   clearList();
 });
 
 // Remove
-$(".remove").click(function() {
+$(".remove").click(function () {
   var currents = $(".portlet.selected");
   $(".column.source").append(currents);
   clearList();
@@ -2800,7 +2800,7 @@ const clearList = () => {
 const formatNumber = {
   separador: ",",
   sepDecimal: ".",
-  formatear: function(num) {
+  formatear: function (num) {
     num += "";
     var splitStr = num.split(".");
     var splitLeft = splitStr[0];
@@ -2811,7 +2811,7 @@ const formatNumber = {
     }
     return this.simbol + splitLeft + splitRight;
   },
-  new: function(num, simbol) {
+  new: function (num, simbol) {
     this.simbol = simbol || "";
     return this.formatear(num);
   }
@@ -2823,7 +2823,7 @@ $(".amInteger").mask("###,###,##0", { reverse: true });
 $(".amDatepicker").mask("99-99-9999");
 
 const putErrorsInAttrTitle = (e: any) => {
-  if(e.$element.tooltip('instance') != undefined) {
+  if (e.$element.tooltip('instance') != undefined) {
     e.$element.tooltip('destroy');
   }
 
@@ -2839,7 +2839,7 @@ const putErrorsInAttrTitle = (e: any) => {
     });
   }
 
-  if(e.$element.next(".amCheckmark").tooltip('instance') != undefined) {
+  if (e.$element.next(".amCheckmark").tooltip('instance') != undefined) {
     e.$element.next(".amCheckmark").tooltip('destroy');
   }
 
@@ -2853,7 +2853,7 @@ const putErrorsInAttrTitle = (e: any) => {
     });
   }
 
-  if(e.$element.next(".select2").tooltip('instance') != undefined) {
+  if (e.$element.next(".select2").tooltip('instance') != undefined) {
     e.$element.next(".select2").tooltip('destroy');
   }
 
@@ -2869,15 +2869,15 @@ const putErrorsInAttrTitle = (e: any) => {
 }
 
 const removeErrorsInAttrTitle = (e: any) => {
-  if(e.$element.tooltip('instance') != undefined) {
+  if (e.$element.tooltip('instance') != undefined) {
     e.$element.tooltip('destroy');
   }
 
-  if(e.$element.next(".amCheckmark").tooltip('instance') != undefined) {
+  if (e.$element.next(".amCheckmark").tooltip('instance') != undefined) {
     e.$element.next(".amCheckmark").tooltip('destroy');
   }
 
-  if(e.$element.next(".select2").tooltip('instance') != undefined) {
+  if (e.$element.next(".select2").tooltip('instance') != undefined) {
     e.$element.next(".select2").tooltip('destroy');
   }
 }
@@ -2903,11 +2903,11 @@ const removeErrorsInAttrTitle = (e: any) => {
 //   }
 // });
 
-const isSelectedColumnn = (columnName:String, selectedColumns: any) => {
+const isSelectedColumnn = (columnName: String, selectedColumns: any) => {
   let isSelected: boolean = false;
 
-  for( var i=0; i<selectedColumns.length; i++ ){
-    if( selectedColumns[i] == columnName ){
+  for (var i = 0; i < selectedColumns.length; i++) {
+    if (selectedColumns[i] == columnName) {
       isSelected = true;
       break;
     }
@@ -2916,24 +2916,24 @@ const isSelectedColumnn = (columnName:String, selectedColumns: any) => {
   return isSelected;
 };
 
-const responsiveEffect = (widthTable:number, numColumnsBase:number, selectedColumns:any, idTable:String, idSplitterContainer:String) => {
+const responsiveEffect = (widthTable: number, numColumnsBase: number, selectedColumns: any, idTable: String, idSplitterContainer: String) => {
   var colModel = $("#" + idTable).jqGrid('getGridParam', 'colModel');
   var numColumnas = selectedColumns.length + numColumnsBase;
   var gridWidth = $("#splitter-container").parent().width();
 
-  if( gridWidth > widthTable ){
+  if (gridWidth > widthTable) {
     gridWidth = widthTable;
-  }  
-  widthColumns = gridWidth / numColumnas;  
+  }
+  widthColumns = gridWidth / numColumnas;
 
-  $("#"+idTable).jqGrid("setGridWidth", gridWidth, true);    
+  $("#" + idTable).jqGrid("setGridWidth", gridWidth, true);
 
-  for( var j = 0; j<colModel.length; j++ ) {
-    $("#"+idTable).jqGrid('resizeColumn', colModel[j].name, 0);  
+  for (var j = 0; j < colModel.length; j++) {
+    $("#" + idTable).jqGrid('resizeColumn', colModel[j].name, 0);
 
-    if( j < 2 || isSelectedColumnn(colModel[j].name, selectedColumns) ){  
-      $("#"+idTable).jqGrid('resizeColumn', colModel[j].name, widthColumns); 
-     }
+    if (j < 2 || isSelectedColumnn(colModel[j].name, selectedColumns)) {
+      $("#" + idTable).jqGrid('resizeColumn', colModel[j].name, widthColumns);
+    }
   }
 
   $("#gbox_" + idTable).attr("style", "width: " + gridWidth + "px;");
@@ -2942,67 +2942,67 @@ const responsiveEffect = (widthTable:number, numColumnsBase:number, selectedColu
   windowResize(widthTable, idTable, idSplitterContainer);
 }
 
-const windowResize = (widthTable:number, idTable:String, idSplitterContainer:String) => {
-  $(window).on("resize", function() {
+const windowResize = (widthTable: number, idTable: String, idSplitterContainer: String) => {
+  $(window).on("resize", function () {
     var gridWidth = $("#" + idSplitterContainer).parent().width();
 
-    if( gridWidth > widthTable ){
+    if (gridWidth > widthTable) {
       gridWidth = widthTable;
-    }  
+    }
 
     // console.log("============================>> table resize: " + gridWidth);  
-    $("#"+idTable).jqGrid("setGridWidth", gridWidth, true);
+    $("#" + idTable).jqGrid("setGridWidth", gridWidth, true);
   });
 }
 
 // Get RGB Color
 const colorSet = (
   rMin: number,
-  rMax : number,
-  gMin : number,
-  gMax : number,
-  bMin : number,
-  bMax : number,
-  min  : number,
-  max  : number) => {
+  rMax: number,
+  gMin: number,
+  gMax: number,
+  bMin: number,
+  bMax: number,
+  min: number,
+  max: number) => {
 
   let c = "";
   let colorArray = [];
 
   let arrayR = [];
   let colorR = rMin
-  while(colorR <= rMax) { 
+  while (colorR <= rMax) {
     colorR = colorR + 40;
     arrayR.push(colorR);
- }  
- 
- let arrayG = [];
- let colorG = gMin
- while(colorG <= gMax) { 
-   colorG = colorG + 40;
-   arrayG.push(colorG);
-} 
- 
-let arrayB = [];
-let colorB = bMin
-while(colorB <= bMax) { 
-  colorB = colorB + 40;
-  arrayB.push(colorB);
-} 
+  }
 
-let arrayC = [];
-let colorC = min
-while(colorC <= max) { 
-  colorC = colorC + 0.2;
-  arrayC.push(colorC);
-} 
+  let arrayG = [];
+  let colorG = gMin
+  while (colorG <= gMax) {
+    colorG = colorG + 40;
+    arrayG.push(colorG);
+  }
+
+  let arrayB = [];
+  let colorB = bMin
+  while (colorB <= bMax) {
+    colorB = colorB + 40;
+    arrayB.push(colorB);
+  }
+
+  let arrayC = [];
+  let colorC = min
+  while (colorC <= max) {
+    colorC = colorC + 0.2;
+    arrayC.push(colorC);
+  }
 
   for (let i = 0; i < arrayR.length; i++) {
-    for (let j= 0; j < arrayG.length; j++){
-      for (let k= 0; k < arrayB.length; k++){
-        for (let z= 0; z < arrayC.length; z++){
-        c = "rgb(" + arrayR[i] + ", " + arrayG[j] + ", " + arrayR[k] + ","+arrayC[z]+")";
-        colorArray.push(c);
+    for (let j = 0; j < arrayG.length; j++) {
+      for (let k = 0; k < arrayB.length; k++) {
+        for (let z = 0; z < arrayC.length; z++) {
+          c = "rgb(" + arrayR[i] + ", " + arrayG[j] + ", " + arrayR[k] + "," + arrayC[z] + ")";
+          colorArray.push(c);
         }
       }
     }
@@ -3012,58 +3012,58 @@ while(colorC <= max) {
 
 // Get All Set Color
 const getColorPieArray = () => {
-let colorArray = [];
-let colorBase = [];
-let colorArrayG = [];
-let colorArrayB = [];
-let colorArrayBL = [];
+  let colorArray = [];
+  let colorBase = [];
+  let colorArrayG = [];
+  let colorArrayB = [];
+  let colorArrayBL = [];
 
   colorBase = [
-  "#becfda", "#dfe7ec", "#d9d9d9", "#00b5cc", "#87d1d9",
-  "#87d1d9", "#5d87a1", "#a6a6a6", "#53565a", "#afaeb0", 
-  "#636165", "#466579", "#9eb7c7"];
+    "#becfda", "#dfe7ec", "#d9d9d9", "#00b5cc", "#87d1d9",
+    "#87d1d9", "#5d87a1", "#a6a6a6", "#53565a", "#afaeb0",
+    "#636165", "#466579", "#9eb7c7"];
 
   colorArray = colorBase;
   // Grey
-  colorArrayG = colorSet(83,166,86,166,90,166,0,1);
+  colorArrayG = colorSet(83, 166, 86, 166, 90, 166, 0, 1);
   colorArrayG.forEach(element => {
     colorArray.push(element);
   });
   // Blue
-  colorArrayB = colorSet(93,135,135,209,161,217,0,1);
+  colorArrayB = colorSet(93, 135, 135, 209, 161, 217, 0, 1);
   colorArrayB.forEach(element => {
     colorArray.push(element);
   });
   // Blue Light
-  colorArrayBL = colorSet(0,135,181,209,204,217,0,1);
+  colorArrayBL = colorSet(0, 135, 181, 209, 204, 217, 0, 1);
   colorArrayBL.forEach(element => {
     colorArray.push(element);
   });
 
-return colorArray;
+  return colorArray;
 }
 
 let pieColors = (function () {
   let colors = Highcharts.map(getColorPieArray(),
-  function(color) {
-    return {
-      radialGradient: {
-        cx: 0.5,
-        cy: 0.3,
-        r: 0.7
-      },
-      stops: [
-        [0, color],
-        [
-          1,
-          Highcharts.color(color)
-            .brighten(-0.3)
-            .get("rgb")
+    function (color) {
+      return {
+        radialGradient: {
+          cx: 0.5,
+          cy: 0.3,
+          r: 0.7
+        },
+        stops: [
+          [0, color],
+          [
+            1,
+            Highcharts.color(color)
+              .brighten(-0.3)
+              .get("rgb")
+          ]
         ]
-      ]
-    };
-  }
-)
+      };
+    }
+  )
   return colors;
 }());
 
@@ -3152,182 +3152,182 @@ const pieBorderHighchart = (params: pieHighchartParams) => {
 
 const barHighchart = (params: barHighchartParams) => {
 
-let arrayData = [];
+  let arrayData = [];
 
-if (params.dataSet[0]['value']['x'] != ""){
-  arrayData.push(
-    {
-      color: '#53565a',
-      name: params.dataSet[0]['value']['x'],
-      borderRadiusBottomLeft: params.dataSet[0]['radiusLeftTop'],
-      borderRadiusBottomRight: params.dataSet[0]['radiusLeftBottom'],
-      borderRadiusTopLeft: params.dataSet[0]['radiousRightTop'], 
-      borderRadiusTopRight: params.dataSet[0]['radiousRightBottom'], 
-      data: [
-        {
-          y: params.dataSet[0]['value']['y'],
-          color: '#53565a'
-        },
-        {
-          y: params.dataSet[0]['value']['y'],
-          color: {
-            linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
-            stops: [
+  if (params.dataSet[0]['value']['x'] != "") {
+    arrayData.push(
+      {
+        color: '#53565a',
+        name: params.dataSet[0]['value']['x'],
+        borderRadiusBottomLeft: params.dataSet[0]['radiusLeftTop'],
+        borderRadiusBottomRight: params.dataSet[0]['radiusLeftBottom'],
+        borderRadiusTopLeft: params.dataSet[0]['radiousRightTop'],
+        borderRadiusTopRight: params.dataSet[0]['radiousRightBottom'],
+        data: [
+          {
+            y: params.dataSet[0]['value']['y'],
+            color: '#53565a'
+          },
+          {
+            y: params.dataSet[0]['value']['y'],
+            color: {
+              linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+              stops: [
                 [0, '#ffffff'], // start
                 [0.2, '#ffffff'], // middle
                 [1, '#c9cacc'] // end
+              ]
+            }
+          },
+        ],
+        pointPadding: -0.15,
+        type: undefined,
+      });
+  }
+
+  if (params.dataSet[1]['value']['x'] != "") {
+    arrayData.push({
+      color: '#a6a6a6',
+      name: params.dataSet[1]['value']['x'],
+      borderRadiusBottomLeft: params.dataSet[1]['radiusLeftTop'],
+      borderRadiusBottomRight: params.dataSet[1]['radiusLeftBottom'],
+      borderRadiusTopLeft: params.dataSet[1]['radiousRightTop'],
+      borderRadiusTopRight: params.dataSet[1]['radiousRightBottom'],
+      data: [
+        {
+          y: params.dataSet[1]['value']['y'],
+          color: '#a6a6a6'
+        },
+        {
+          y: params.dataSet[1]['value']['y'],
+          color: {
+            linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+            stops: [
+              [0, '#ffffff'], // start
+              [0.2, '#ffffff'], // middle
+              [1, '#d9d9d9'] // end
             ]
           }
         },
       ],
       pointPadding: -0.15,
-      type: undefined,
-  });
-}
+      type: undefined
+    });
+  }
 
-if (params.dataSet[1]['value']['x'] != ""){
-  arrayData.push({
-    color: '#a6a6a6',
-    name: params.dataSet[1]['value']['x'],
-    borderRadiusBottomLeft: params.dataSet[1]['radiusLeftTop'],
-    borderRadiusBottomRight: params.dataSet[1]['radiusLeftBottom'],
-    borderRadiusTopLeft: params.dataSet[1]['radiousRightTop'], 
-    borderRadiusTopRight: params.dataSet[1]['radiousRightBottom'], 
-    data: [
-      {
-        y: params.dataSet[1]['value']['y'],
-        color: '#a6a6a6'
-      },
-      {
-        y: params.dataSet[1]['value']['y'],
-        color: {
-          linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
-          stops: [
-              [0, '#ffffff'], // start
-              [0.2, '#ffffff'], // middle
-              [1, '#d9d9d9'] // end
-          ]
-        }
-      },
-    ],
-    pointPadding: -0.15,
-    type: undefined
-  });
-}
-
-if (params.dataSet[2]['value']['x'] != ""){
-  arrayData.push({
-    color: '#5d87a1',
-    name: params.dataSet[2]['value']['x'],
-    borderRadiusBottomLeft: params.dataSet[2]['radiusLeftTop'],
-    borderRadiusBottomRight: params.dataSet[2]['radiusLeftBottom'],
-    borderRadiusTopLeft: params.dataSet[2]['radiousRightTop'], 
-    borderRadiusTopRight: params.dataSet[2]['radiousRightBottom'], 
-    data: [
-      {
-        y: params.dataSet[2]['value']['y'],
-        color: '#5d87a1'
-      },
-      {
-        y: params.dataSet[2]['value']['y'],
-        color: {
-          linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
-          stops: [
+  if (params.dataSet[2]['value']['x'] != "") {
+    arrayData.push({
+      color: '#5d87a1',
+      name: params.dataSet[2]['value']['x'],
+      borderRadiusBottomLeft: params.dataSet[2]['radiusLeftTop'],
+      borderRadiusBottomRight: params.dataSet[2]['radiusLeftBottom'],
+      borderRadiusTopLeft: params.dataSet[2]['radiousRightTop'],
+      borderRadiusTopRight: params.dataSet[2]['radiousRightBottom'],
+      data: [
+        {
+          y: params.dataSet[2]['value']['y'],
+          color: '#5d87a1'
+        },
+        {
+          y: params.dataSet[2]['value']['y'],
+          color: {
+            linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+            stops: [
               [0, '#ffffff'], // start
               [0.2, '#ffffff'], // middle
               [1, '#aec3d0'] // end
-          ]
-        }
-      },
-    ],
-    pointPadding: -0.15,
-    type: undefined
-  });
-}
- 
-if (params.dataSet[3]['value']['x'] != ""){
-  arrayData.push(
-  {
-    color: '#87d1d9',
-    name: params.dataSet[3]['value']['x'],
-    borderRadiusBottomLeft: params.dataSet[3]['radiusLeftTop'],
-    borderRadiusBottomRight: params.dataSet[3]['radiusLeftBottom'],
-    borderRadiusTopLeft: params.dataSet[3]['radiousRightTop'], 
-    borderRadiusTopRight: params.dataSet[3]['radiousRightBottom'], 
-    data: [
+            ]
+          }
+        },
+      ],
+      pointPadding: -0.15,
+      type: undefined
+    });
+  }
+
+  if (params.dataSet[3]['value']['x'] != "") {
+    arrayData.push(
       {
-        y: params.dataSet[3]['value']['y'],
         color: '#87d1d9',
-        borderRadiusTopLeft: 10
-      },
-      {
-        y: params.dataSet[3]['value']['y'],
-        color: {
-          linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
-          stops: [
-              [0, '#ffffff'], // start
-              [0.2, '#ffffff'], // middle
-              [1, '#c3e8ec'] // end
-          ]
-        }
-      },
-    ],
-    pointPadding: -0.15,
-    type: undefined
-  });
-}  
+        name: params.dataSet[3]['value']['x'],
+        borderRadiusBottomLeft: params.dataSet[3]['radiusLeftTop'],
+        borderRadiusBottomRight: params.dataSet[3]['radiusLeftBottom'],
+        borderRadiusTopLeft: params.dataSet[3]['radiousRightTop'],
+        borderRadiusTopRight: params.dataSet[3]['radiousRightBottom'],
+        data: [
+          {
+            y: params.dataSet[3]['value']['y'],
+            color: '#87d1d9',
+            borderRadiusTopLeft: 10
+          },
+          {
+            y: params.dataSet[3]['value']['y'],
+            color: {
+              linearGradient: { x1: 0, x2: 1, y1: 0, y2: 0 },
+              stops: [
+                [0, '#ffffff'], // start
+                [0.2, '#ffffff'], // middle
+                [1, '#c3e8ec'] // end
+              ]
+            }
+          },
+        ],
+        pointPadding: -0.15,
+        type: undefined
+      });
+  }
 
   Highcharts.chart(params.id, {
     chart: {
-        type: 'bar',
-        events: {
-          load: function() {
-            let categoryHeight = 50;
-            this.update({
-              chart: {
-                height:
-                  categoryHeight * 1 +
-                  (this.chartHeight - this.plotHeight)
-              }
-            });
-          }
+      type: 'bar',
+      events: {
+        load: function () {
+          let categoryHeight = 50;
+          this.update({
+            chart: {
+              height:
+                categoryHeight * 1 +
+                (this.chartHeight - this.plotHeight)
+            }
+          });
         }
+      }
     },
     title: {
-        text: params.title
+      text: params.title
     },
     xAxis: {
-        categories: [params.dataSet[0]['title'],''],
-        visible: false
+      categories: [params.dataSet[0]['title'], ''],
+      visible: false
     },
     yAxis: {
-        min: 0,
-        visible: false,
-        title: {
-            text: ''
-        },
-        labels: {
-          enabled: false,
-          style: {
-            color: '#000000',
-          }
+      min: 0,
+      visible: false,
+      title: {
+        text: ''
+      },
+      labels: {
+        enabled: false,
+        style: {
+          color: '#000000',
+        }
       },
     },
     legend: {
-        align: "right",
-        verticalAlign: "top",
-        layout: 'vertical',
-        x: 20,
-        y: 5
+      align: "right",
+      verticalAlign: "top",
+      layout: 'vertical',
+      x: 20,
+      y: 5
     },
     plotOptions: {
-        series: {
-            stacking: 'normal',
-            shadow: false
-        }
+      series: {
+        stacking: 'normal',
+        shadow: false
+      }
     },
     series: arrayData
-    
+
   });
 
 };
@@ -3340,8 +3340,8 @@ const verifyYear = (day: number, month: number, year: number) => {
   let monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];  // Day of month
   let indexMonth = 0;
   let d = new Date();
-  let yPlus = d.getFullYear()+100;
-  let yMinus = d.getFullYear()-100;
+  let yPlus = d.getFullYear() + 100;
+  let yMinus = d.getFullYear() - 100;
 
   // Para obtener el año bisiesto
   if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
@@ -3349,41 +3349,41 @@ const verifyYear = (day: number, month: number, year: number) => {
   }
 
   // Si la fecha está fuera del rango superior 100 años
-  if (year > yPlus){
-    year = d.getFullYear();
-  }
-  
-  // Si la fecha está fuera del rango inferior 100 años
-  if (year < yMinus){
+  if (year > yPlus) {
     year = d.getFullYear();
   }
 
-  if (month > 0){
-  
+  // Si la fecha está fuera del rango inferior 100 años
+  if (year < yMinus) {
+    year = d.getFullYear();
+  }
+
+  if (month > 0) {
+
     monthNum = month - 1;
 
     // Obtener un mes base
-    if (monthNum > 11){
+    if (monthNum > 11) {
       while (monthNum > 11) {
         monthNum = monthNum - 12;
       }
     }
 
     if (day > monthLength[monthNum]) {
-        while (day > monthLength[monthNum]) {
+      while (day > monthLength[monthNum]) {
 
-          indexMonth = monthNum + countMonth;
+        indexMonth = monthNum + countMonth;
 
-          if (indexMonth < 12) {
-              monthL = monthLength[indexMonth];
-          }else{
-              monthL = monthLength[indexMonth-12];
-          }  
-            day = day - monthL;
-            countMonth++;
-        }  
+        if (indexMonth < 12) {
+          monthL = monthLength[indexMonth];
+        } else {
+          monthL = monthLength[indexMonth - 12];
+        }
+        day = day - monthL;
+        countMonth++;
+      }
     }
-  
+
     month = month + countMonth;
 
     if (month > 12) {
@@ -3409,36 +3409,36 @@ const verifyMonth = (day: number, month: number, year: number) => {
     monthLength[1] = 29;
   }
 
-    // Verifica si el mes es mayor a 0
-    monthNum = month - 1;
-  
-    // Obtener un mes base
-    if (monthNum > 11){
-      while (monthNum > 11) {
-        monthNum = monthNum - 12;
-      }
-    }
+  // Verifica si el mes es mayor a 0
+  monthNum = month - 1;
 
-    if (day > monthLength[monthNum]) {
-        while (day > monthLength[monthNum]) {
-          indexMonth = monthNum + countMonth;
-          if (indexMonth < 12) {
-              monthL = monthLength[indexMonth];
-          }else{
-              monthL = monthLength[indexMonth-12];
-          }  
-          day = day - monthL;
-          countMonth++;
-        }  
+  // Obtener un mes base
+  if (monthNum > 11) {
+    while (monthNum > 11) {
+      monthNum = monthNum - 12;
     }
-    
-    month = month + countMonth;
-  
-    if (month > 12) {
-      while (month > 12) {
-        month = month - 12;
+  }
+
+  if (day > monthLength[monthNum]) {
+    while (day > monthLength[monthNum]) {
+      indexMonth = monthNum + countMonth;
+      if (indexMonth < 12) {
+        monthL = monthLength[indexMonth];
+      } else {
+        monthL = monthLength[indexMonth - 12];
       }
+      day = day - monthL;
+      countMonth++;
     }
+  }
+
+  month = month + countMonth;
+
+  if (month > 12) {
+    while (month > 12) {
+      month = month - 12;
+    }
+  }
   return month;
 };
 
@@ -3452,33 +3452,33 @@ const verifyDay = (day: number, month: number, year: number) => {
   // Para obtener el año bisiesto
   if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
     monthLength[1] = 29;
-  }  
+  }
 
-    // Obtiene el mes para el número de días, mes actual
-    monthNum = month - 1;
-  
-    // Obtener un mes base
-    if (monthNum > 11){
-      while (monthNum > 11) {
-        monthNum = monthNum - 12;
+  // Obtiene el mes para el número de días, mes actual
+  monthNum = month - 1;
+
+  // Obtener un mes base
+  if (monthNum > 11) {
+    while (monthNum > 11) {
+      monthNum = monthNum - 12;
+    }
+  }
+
+  // Verifica los días permitido
+  if (day > monthLength[monthNum]) {
+    while (day > monthLength[monthNum]) {
+      indexMonth = monthNum + countMonth;
+
+      if (indexMonth < 12) {
+        monthL = monthLength[indexMonth];
+      } else {
+        monthL = monthLength[indexMonth - 12];
       }
+
+      day = day - monthL;
+      countMonth++;
     }
-   
-    // Verifica los días permitido
-    if (day > monthLength[monthNum]) {
-        while (day > monthLength[monthNum]) {
-          indexMonth = monthNum + countMonth;
-               
-           if (indexMonth < 12) {
-              monthL = monthLength[indexMonth];
-            }else{
-              monthL = monthLength[indexMonth-12];
-           }
-           
-            day = day - monthL;
-            countMonth++;
-        }  
-    }
+  }
   return day;
 };
 
@@ -3496,17 +3496,17 @@ const verifyDate = (data: string, obj: any) => {
   let year = parseInt(array[2]);
 
   let dayA = array[0];
-  if (dayA.length != 2 || dayA == "00" || dayA == undefined){
+  if (dayA.length != 2 || dayA == "00" || dayA == undefined) {
     day = dd;
   }
 
   let monthA = array[1];
-  if (monthA.length != 2 || monthA == "00" || monthA == undefined){
+  if (monthA.length != 2 || monthA == "00" || monthA == undefined) {
     month = dm + 1;
   }
 
   let yearA = array[2];
-  if (yearA.length != 4 || yearA == "0000" || yearA == undefined){
+  if (yearA.length != 4 || yearA == "0000" || yearA == undefined) {
     year = dy;
   }
 
@@ -3521,11 +3521,11 @@ const verifyDate = (data: string, obj: any) => {
   $(obj).val("" + pad(nDay, 2, "") + "-" + pad(nMonth, 2, "") + "-" + nYear);
 }
 
-$(".amDatepicker").focusout(function(){
+$(".amDatepicker").focusout(function () {
   let date = $(this)
-  .val()
-  .toString();
-  if (date != ""){
+    .val()
+    .toString();
+  if (date != "") {
     verifyDate(date, $(this));
   }
 
@@ -3537,14 +3537,14 @@ function pad(n, width, z) {
   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
-$(".amDatepicker").on("keydown",function(e){
+$(".amDatepicker").on("keydown", function (e) {
   let date = $(this)
-  .val()
-  .toString();
+    .val()
+    .toString();
 
   if (e.which == 13) {
     e.preventDefault();
-    if (date != ""){
+    if (date != "") {
       verifyDate(date, $(this));
     }
   }
