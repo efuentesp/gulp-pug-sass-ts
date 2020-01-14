@@ -1,27 +1,27 @@
 @import "../vars";
 
-.is-search-form {
+.amIsSearchForm {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 
-  .is-horizontal {
+  .amIsHorizontal {
     flex-direction: row;
   }
 
-  .is-vertical {
+  .amIsVertical {
     flex-direction: column;
   }
 
-  .is-start {
+  .amIsStart {
     justify-content: flex-start;
   }
 
-  .is-center {
+  .amIsCenter {
     justify-content: center;
   }
 
-  .is-end {
+  .amIsEnd {
     justify-content: flex-end;
   }
 
@@ -30,16 +30,13 @@
 
   // Medium devices (tablets, 768px and up)
   @media (min-width: 768px) {
-
   }
 
   // Large devices (desktops, 992px and up)
   @media (min-width: 992px) {
-
   }
 
   // Extra large devices (large desktops, 1200px and up)
   @media (min-width: 1200px) {
-
   }
 }

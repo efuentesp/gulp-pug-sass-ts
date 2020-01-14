@@ -1,21 +1,21 @@
 @import "../vars";
 
-.has-toggle-input {
+.amHasToggleInput {
   label {
     height: 28px;
     color: $color-ink-lightest;
 
-    &.left {
+    &.amLeft {
       border-top-left-radius: 8px;
       border-bottom-left-radius: 8px;
     }
 
-    &.right {
+    &.amRight {
       border-top-right-radius: 8px;
       border-bottom-right-radius: 8px;
     }
 
-    &.active {
+    &.amActive {
       background-image: linear-gradient(
         to bottom,
         rgb(54, 114, 219),

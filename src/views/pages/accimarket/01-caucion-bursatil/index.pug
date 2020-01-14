@@ -7,11 +7,11 @@ block styles
    link(rel="stylesheet" href="../../assets/css/accimarket/01-caucion-bursatil/styles.css")
 
 block content
-   .content.p-4
-      .row
+   .amContent.p-4
+      .amRow
          +accordion("CriteriosBusquedaAccordion")
             +accordion-item("CriteriosBusquedaAccordionItem")
-               +form("criterios-busqueda", {class: "is-search-form"})
+               +form("criterios-busqueda", {class: "amIsSearchForm"})
                   +field-date("fecha", {label: "Fecha", clear:true, tooltip: "DD/MM/AAAA"})
                   +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: true, size:"10em",  clear:true, orientation:"vertical"})
                   +field-plus-minus("contrato", {label: "Contrato", tooltip: "Contrato"})
@@ -53,8 +53,8 @@ block content
                      +button-pdf({size: "large", tooltip: "PDF", disabled: false})
                      +button-xls({size: "large", tooltip: "XLS", disabled: false})
 
-      .row.has_border
-         .row.w-full.overflow-auto
+      .amRow.amHasBorder
+         .amRow.w-full.overflow-auto
             +grid("Contratos")
          +grid-records-count("Contratos")
 

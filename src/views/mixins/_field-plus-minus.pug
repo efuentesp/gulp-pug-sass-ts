@@ -2,7 +2,7 @@ mixin field-plus-minus(id, parms)
   - var _field_id = "field_" + id
   - var _input_id = id
   - var _input_id_h = id + "_hidden"
-  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _class = "amIs" + (parms.orientation ? parms.orientation[0].toUpperCase() + parms.orientation.substr(1) : "Vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   - var _input_max_size = "32"
   - var _input_max_size_errmsg = "You can enter only " + _input_max_size + " characters."  
@@ -13,14 +13,14 @@ mixin field-plus-minus(id, parms)
   - var _field_error_block_id = "#" + _field_error_block
   - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
-  .field(id=_field_id class=_class)
-    .field-label.flex
+  .amField(id=_field_id class=_class)
+    .amFieldLabel.flex
       label(for=_input_id)= parms.label
       if parms.required
-        span.required *
-    .field-control
-      .field-plus-minus.has-addons.flex(data-tooltip=_tooltip)
-        input.input(type="text"
+        span.amRequired *
+    .amFieldControl
+      .amFieldPlusMinus.amHasAddons.flex(data-tooltip=_tooltip)
+        input.amInput(type="text"
                     id=_input_id
                     required=parms.required
                     style=_style
@@ -31,16 +31,16 @@ mixin field-plus-minus(id, parms)
                     data-parsley-validation-threshold="10"
                     data-parsley-errors-container=_field_error_block_id
                     )
-        input.input(type="hidden"
+        input.amInput(type="hidden"
           id=_input_id_h
           )
-        button.button-noborder(id=btn_plus_id type="button")
+        button.amButtonNoborder(id=btn_plus_id type="button")
           img.plus-icon(src="../../assets/images/plus-icon.png")
-        button.button-noborder(id=btn_minus_id type="button")
-          img.minus-icon(src="../../assets/images/minus-icon.png")
-      span.field-error.flex
-        .error-tip
-        .error-msg(id=_field_error_block)
-      ul.tag-list(id=tag_list_id
+        button.amButtonNoborder(id=btn_minus_id type="button")
+          img.amMinusIcon(src="../../assets/images/minus-icon.png")
+      span.amFieldError.flex
+        .amErrorTip
+        .amErrorMsg(id=_field_error_block)
+      ul.amTagList(id=tag_list_id
                   style=_style
                   )

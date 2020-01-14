@@ -136,7 +136,7 @@ $(".amTabGroup").tabs();
 $(".amAccordion").accordion(ui_accordion_settings);
 
 // DatePicker
-$(".datepicker")
+$(".amDatepicker")
   .datepicker(ui_datepicker_settings)
   .prop("readonly", false);
 
@@ -2820,7 +2820,7 @@ const formatNumber = {
 $(".currency").mask("###,###,##0", { reverse: true });
 $(".number").mask("###,###,##0.00", { reverse: true });
 $(".integer").mask("###,###,##0", { reverse: true });
-$(".datepicker").mask("99-99-9999");
+$(".amDatepicker").mask("99-99-9999");
 
 const putErrorsInAttrTitle = (e: any) => {
   if(e.$element.tooltip('instance') != undefined) {
@@ -3521,7 +3521,7 @@ const verifyDate = (data: string, obj: any) => {
   $(obj).val("" + pad(nDay, 2, "") + "-" + pad(nMonth, 2, "") + "-" + nYear);
 }
 
-$(".datepicker").focusout(function(){
+$(".amDatepicker").focusout(function(){
   let date = $(this)
   .val()
   .toString();
@@ -3537,7 +3537,7 @@ function pad(n, width, z) {
   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
-$(".datepicker").on("keydown",function(e){
+$(".amDatepicker").on("keydown",function(e){
   let date = $(this)
   .val()
   .toString();

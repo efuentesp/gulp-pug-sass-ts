@@ -3,25 +3,25 @@ mixin field-checks(id, parms, ...items)
   - var check_name = "chk_" + id
   - var _field_error_block = "field_error_block_" + id
   - var _field_error_block_id = "#" + _field_error_block
-  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _class = "amIs" + (parms.orientation ? parms.orientation[0].toUpperCase() + parms.orientation.substr(1) : "Vertical")
   - var _field_control_class = (parms.orientation=="horizontal" ? "flex" : "")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   - var check_name_arr = check_name + "[]"
   - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
-  .field(id=_field_id class=_class)
-    .field-label.flex
+  .amField(id=_field_id class=_class)
+    .amFieldLabel.flex
       label(for=check_name)= parms.label
       if parms.required
-        span.required.pr-5 *
+        span.amRequired.pr-5 *
       else
         span.pr-5
-    .field-control(data-tooltip=_tooltip)
+    .amFieldControl(data-tooltip=_tooltip)
       div(class=_field_control_class)
         each item, index in items
           - var check_id = "chk_" + id + "_" + index
           - var class_color = "is_" + item.color
-          label.checkbox_input.pr-5= item.value
+          label.amCheckboxInput.pr-5= item.value
             input(type="checkbox"
                   name=check_name
                   id=check_id
@@ -31,8 +31,8 @@ mixin field-checks(id, parms, ...items)
                   data-parsley-errors-container=_field_error_block_id
             )
             if item.color
-              span.checkmark.with_color(class=class_color)
+              span.amCheckmark.amWithColor(class=class_color)
             else
-              span.checkmark
-      .field-error
+              span.amCheckmark
+      .amFieldError
         div(id=_field_error_block)

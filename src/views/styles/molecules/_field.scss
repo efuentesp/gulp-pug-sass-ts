@@ -1,9 +1,9 @@
 @import "../vars";
 
-.field {
+.amField {
   padding: 6px;
 
-  &.is_horizontal {
+  &.amIsHorizontal {
     display: flex;
     flex-flow: row;
     // align-items: center;
@@ -15,7 +15,7 @@
     //   }
     // }
 
-    .radio_button {
+    .amRadioButton {
       padding-right: 1.5em;
     }
 
@@ -26,16 +26,16 @@
     //   }
     // }
 
-    .field-control {
+    .amFieldControl {
       margin-left: 8px;
     }
 
-    .field-validated {
+    .amFieldValidated {
       position: relative;
     }
   }
 
-  &.is_vertical {
+  &.amIsVertical {
     display: flex;
     flex-flow: column;
   }
@@ -47,14 +47,14 @@
   }
 
   span {
-    &.required {
+    &.amRequired {
       padding-left: 3px;
       color: $color-red-dark;
       font-size: 1em;
     }
   }
 
-  .input {
+  .amInput {
     //display: block;
     background-color: $input_background_color;
     border: 1px solid rgb(196, 190, 190);
@@ -70,23 +70,23 @@
       color: $darkblue;
     }
 
-    &.is-extra-small {
+    &.amIsExtraSmall {
       width: 64px;
     }
 
-    &.is-small {
+    &.amIsSmall {
       width: 128px;
     }
 
-    &.is-medium {
+    &.amIsMedium {
       width: 256px;
     }
 
-    &.is-large {
+    &.amIsLarge {
       width: 512px;
     }
 
-    &.has-error {
+    &.amHasError {
       border: 1px solid $color-red-dark;
     }
   }
@@ -96,7 +96,7 @@
   }
 
   p {
-    &.help-text {
+    &.amHelpText {
       color: $color-ink-lighter;
       font-size: 90%;
       margin-top: 5px;
@@ -105,7 +105,7 @@
   }
 
   ul {
-    &.error-list {
+    &.amErrorList {
       list-style: none;
       padding-inline-start: 0;
       margin-block-start: 0.3em;
@@ -116,14 +116,14 @@
     }
   }
 
-  .field-control {
+  .amFieldControl {
     box-sizing: border-box;
     clear: both;
     // font-size: 1rem;
     position: relative;
     text-align: left;
 
-    &.has-addons {
+    &.amHasAddons {
       display: flex;
       justify-content: flex-start;
 

@@ -1,6 +1,6 @@
 @import "../vars";
 
-.radio_button {
+.amRadioButton {
   display: block;
   position: relative;
   padding-left: 25px;
@@ -21,13 +21,13 @@
     // }
 
     /* Show the indicator (dot/circle) when checked */
-    &:checked ~ .checkmark:after {
+    &:checked ~ .amCheckmark:after {
       display: block;
     }
   }
 
   /* Create a custom radio button */
-  .checkmark {
+  .amCheckmark {
     position: absolute;
     top: 0;
     left: 0;

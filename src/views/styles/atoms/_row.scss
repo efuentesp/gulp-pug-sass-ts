@@ -1,7 +1,7 @@
 @import "../vars";
 
-.row {
-  &.has_border {
+.amRow {
+  &.amHasBorder {
     margin-top: 0.5em;
     border: 1px solid $color-ink-lightest;
     border-radius: 6px;
