@@ -1,13 +1,13 @@
 include /mixins/mixins
 
 
-+tab-group("cotitular2_clasificacion_contrato_tab_group",
-    {id: "clasificacion_contrato", label: "Clasificación Contrato"},
-    {id: "conocimiento_experiencia", label: "Conocimiento y Experiencia"},
-    {id: "limitantes_invertir", label: "Limitantes a Invertir"},
-    {id: "relacion_emisor", label: "Relación Emisor"}
++tab-group("CotitularDosClasificacionContratoTabGroup",
+    {id: "ClasificacionContrato", label: "Clasificación Contrato"},
+    {id: "ConocimientoExperiencia", label: "Conocimiento y Experiencia"},
+    {id: "LimitantesInvertir", label: "Limitantes a Invertir"},
+    {id: "RelacionEmisor", label: "Relación Emisor"}
 )
-    +tab-item("clasificacion_contrato")
+    +tab-item("ClasificacionContrato")
         .row.flex.flex-wrap
             +field-input("asesor_inversion",
                 {
@@ -182,7 +182,7 @@ include /mixins/mixins
                 })
 
 
-    +tab-item("conocimiento_experiencia")
+    +tab-item("ConocimientoExperiencia")
         .row.flex.inline-flex
             +quiz("encuesta2", {name: "Instrumento de Inversión", size: "40em"}, [
                 {question: "Instrumentos de Deuda Gubernamental"},
@@ -201,10 +201,10 @@ include /mixins/mixins
                     {answer: "Conoce y ha invertido", type: "option"}
                 ])
 
-    +tab-item("limitantes_invertir")
+    +tab-item("LimitantesInvertir")
         .row.overflow-auto.heigthTablaM
-            +grid("cotitular2_clasificacion_contrato_limitantes_intervenir")
+            +grid("CotitularDosClasificacionContratoLimitantesIntervenir")
 
-    +tab-item("relacion_emisor")
+    +tab-item("RelacionEmisor")
         .row.overflow-auto.heigthTablaM
-            +grid("cotitular2_clasificacion_contrato_relacion_emisor")
+            +grid("CotitularDosClasificacionContratoRelacionEmisor")

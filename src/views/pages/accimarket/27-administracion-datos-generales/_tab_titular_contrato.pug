@@ -1,43 +1,43 @@
 include /mixins/mixins
 
-+tab-group("titular_contrato_tabgroup",
-    {id: "tab_persona_fisica_nacional", label: "Persona Física Nacional", img:'male_user.png'},
-    {id: "tab_persona_fisica_inter", label: "Persona Fisica Internacional", img:'male_user.png'},
-    {id: "tab_persona_moral_nacional", label: "Persona Moral Nacional", img:'male_user.png'},
-    {id: "tab_persona_moral_extranjera", label: "Persona Moral Extranjera", img:'male_user.png'},
-    {id: "tab_clasificacion_contrato", label: "Clasificación Contrato", img:'formatos.png'},
-    {id: "tab_comisionaes", label: "Comisiones", img:'calculator.png'},
-    {id: "tab_documentacion", label: "Documentación", img:'attachment.png'},
-    {id: "tab_domicilio", label: "Domicilio", img:'home.png'},
-    {id: "tab_firmas_autorizadas", label: "Firmas Autorizadas", img:'edit_page.png'},
-    {id: "tab_formatos_fiscales", label: "Formatos Fiscales", img:'documentacion.png'},
-    {id: "tab_medio_comunicacion", label: "Medio de Comunicación", img:'correo.png'},
-    {id: "tab_medio_liquidacion", label: "Medio de Liquidación", img:'credit_cart.png'},
-    {id: "tab_observaciones", label: "Observaciones", img:'search_page.png'}
++tab-group("TitularContratoTabGroup",
+    {id: "TabPersonaFisicaNacional", label: "Persona Física Nacional", img:'male_user.png'},
+    {id: "TabPersonaFisicaInter", label: "Persona Fisica Internacional", img:'male_user.png'},
+    {id: "TabPersonaMoralNacional", label: "Persona Moral Nacional", img:'male_user.png'},
+    {id: "TabPersonaMoralExtranjera", label: "Persona Moral Extranjera", img:'male_user.png'},
+    {id: "TabClasificacionContrato", label: "Clasificación Contrato", img:'formatos.png'},
+    {id: "TabComisionaes", label: "Comisiones", img:'calculator.png'},
+    {id: "TabDocumentacion", label: "Documentación", img:'attachment.png'},
+    {id: "TabDomicilio", label: "Domicilio", img:'home.png'},
+    {id: "TabFirmasAutorizadas", label: "Firmas Autorizadas", img:'edit_page.png'},
+    {id: "TabFormatosFiscales", label: "Formatos Fiscales", img:'documentacion.png'},
+    {id: "TabMedioComunicacion", label: "Medio de Comunicación", img:'correo.png'},
+    {id: "TabMedioLiquidacion", label: "Medio de Liquidación", img:'credit_cart.png'},
+    {id: "TabObservaciones", label: "Observaciones", img:'search_page.png'}
 )
-    +tab-item("tab_persona_fisica_nacional")
+    +tab-item("TabPersonaFisicaNacional")
         include tab-titular-contrato/fisica/_personaFisicaNacional
-    +tab-item("tab_persona_fisica_inter")
+    +tab-item("TabPersonaFisicaInter")
         include tab-titular-contrato/fisica/_personaFisicaInter
-    +tab-item("tab_persona_moral_nacional")
+    +tab-item("TabPersonaMoralNacional")
         include tab-titular-contrato/moral/_personaMoralNacional
-    +tab-item("tab_persona_moral_extranjera")
+    +tab-item("TabPersonaMoralExtranjera")
         include tab-titular-contrato/moral/_personaMoralExtranjera
-    +tab-item("tab_clasificacion_contrato")
+    +tab-item("TabClasificacionContrato")
         include tab-titular-contrato/_clasificacion_contrato
-    +tab-item("tab_comisionaes")
+    +tab-item("TabComisionaes")
         include tab-titular-contrato/_comisiones
-    +tab-item("tab_documentacion")
+    +tab-item("TabDocumentacion")
         include tab-titular-contrato/_documentacion
-    +tab-item("tab_domicilio")
+    +tab-item("TabDomicilio")
         include tab-titular-contrato/_domicilio
-    +tab-item("tab_firmas_autorizadas")
+    +tab-item("TabFirmasAutorizadas")
         include tab-titular-contrato/_firmas_autorizadas
-    +tab-item("tab_formatos_fiscales")
+    +tab-item("TabFormatosFiscales")
         include tab-titular-contrato/_formato_fiscales
-    +tab-item("tab_medio_comunicacion")
+    +tab-item("TabMedioComunicacion")
         include tab-titular-contrato/_medio_comunicacion
-    +tab-item("tab_medio_liquidacion")
+    +tab-item("TabMedioLiquidacion")
         include tab-titular-contrato/_medio_liquidacion
-    +tab-item("tab_observaciones")
+    +tab-item("TabObservaciones")
         include tab-titular-contrato/_observaciones

@@ -130,7 +130,7 @@ $('div[class*="field-plus-minus"]').each(function(index,item){
 });
 
 // Tabs
-$(".tab-group").tabs();
+$(".amTabGroup").tabs();
 
 // Accordion
 $(".amAccordion").accordion(ui_accordion_settings);

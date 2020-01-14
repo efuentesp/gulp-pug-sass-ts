@@ -1,8 +1,8 @@
 mixin tab-group(id, ...items)
-  div.tab-group(id=id)
+  div.amTabGroup(id="div"+id)
     ul
       each item in items
-        - var tab_item_ref = "#" + item.id
+        - var tab_item_ref = "#div" + item.id
         li
           a(href=tab_item_ref)
             if item.img != null
@@ -16,5 +16,5 @@ mixin tab-group(id, ...items)
     block
 
 mixin tab-item(id)
-  div(id=id)
+  div(id="div"+id)
     block

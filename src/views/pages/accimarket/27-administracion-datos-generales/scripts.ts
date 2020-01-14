@@ -140,12 +140,12 @@ const llenarCotitular_LimitantesInvertir = (payload: any, i: number) => {
   const limitantesInvertirArray: any[] =
     payload.cotitulares[i].clasificacion_contrato.limitantes_invertitr;
   fillJqGrid(
-    "#table_cotitular2_clasificacion_contrato_limitantes_intervenir",
+    "#dtgCotitularDosClasificacionContratoLimitantesIntervenir",
     limitantesInvertirArray
   );
 };
 
-$("#table_cotitular2_clasificacion_contrato_limitantes_intervenir").jqGrid({
+$("#dtgCotitularDosClasificacionContratoLimitantesIntervenir").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: [
@@ -175,12 +175,12 @@ const llenarCotitular_RelacionEmisor = (payload: any, i: number) => {
   const relacionEmisorArray: any[] =
     payload.cotitulares[i].clasificacion_contrato.relacion_emisor;
   fillJqGrid(
-    "#table_cotitular2_clasificacion_contrato_relacion_emisor",
+    "#dtgCotitularDosClasificacionContratoRelacionEmisor",
     relacionEmisorArray
   );
 };
 
-$("#table_cotitular2_clasificacion_contrato_relacion_emisor").jqGrid({
+$("#dtgCotitularDosClasificacionContratoRelacionEmisor").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: ["Emisor", "Relación"],
@@ -198,10 +198,10 @@ $("#table_cotitular2_clasificacion_contrato_relacion_emisor").jqGrid({
 
 const llenarCotitular_Comisiones = (payload: any, i: number) => {
   const comisionesArray: any[] = payload.cotitulares[i].comisiones;
-  fillJqGrid("#table_cotitular2_comisiones", comisionesArray);
+  fillJqGrid("#dtgCotitularDosComisiones", comisionesArray);
 };
 
-$("#table_cotitular2_comisiones").jqGrid({
+$("#dtgCotitularDosComisiones").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: ["Tipo", "Porcentaje %"],
@@ -220,21 +220,21 @@ $("#table_cotitular2_comisiones").jqGrid({
 const llenarCotitular_Documentacion = (payload: any, i: number) => {
   const documentacionContratoArray: any[] =
     payload.cotitulares[i].documentacion.contrato;
-  $("#table_cotitular2_documentacion_contrato").jqGrid("clearGridData");
-  $("#table_cotitular2_documentacion_contrato").jqGrid("setGridParam", {
+  $("#dtgCotitularDosDocumentacionContrato").jqGrid("clearGridData");
+  $("#dtgCotitularDosDocumentacionContrato").jqGrid("setGridParam", {
     data: documentacionContratoArray
   });
-  $("#table_cotitular2_documentacion_contrato").trigger("reloadGrid");
+  $("#dtgCotitularDosDocumentacionContrato").trigger("reloadGrid");
   const documentacionClienteArray: any[] =
     payload.cotitulares[i].documentacion.cliente;
-  $("#table_cotitular2_documentacion_cliente").jqGrid("clearGridData");
-  $("#table_cotitular2_documentacion_cliente").jqGrid("setGridParam", {
+  $("#dtgCotitularDosDocumentacionCliente").jqGrid("clearGridData");
+  $("#dtgCotitularDosDocumentacionCliente").jqGrid("setGridParam", {
     data: documentacionClienteArray
   });
-  $("#table_cotitular2_documentacion_cliente").trigger("reloadGrid");
+  $("#dtgCotitularDosDocumentacionCliente").trigger("reloadGrid");
 };
 
-$("#table_cotitular2_documentacion_contrato").jqGrid({
+$("#dtgCotitularDosDocumentacionContrato").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: ["Sts", "Documentación", "Tipo", "Observaciones"],
@@ -255,7 +255,7 @@ $("#table_cotitular2_documentacion_contrato").jqGrid({
   caption: ""
 });
 
-$("#table_cotitular2_documentacion_cliente").jqGrid({
+$("#dtgCotitularDosDocumentacionCliente").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: ["Sts", "Documentación", "Tipo", "Observaciones"],
@@ -278,10 +278,10 @@ $("#table_cotitular2_documentacion_cliente").jqGrid({
 
 const llenarCotitular_Domicilio = (payload: any, i: number) => {
   const domicilioArray: any[] = payload.cotitulares[i].domicilio;
-  fillJqGrid("#table_cotitular2_domicilio", domicilioArray);
+  fillJqGrid("#dtgCotitularDosDomicilio", domicilioArray);
 };
 
-$("#table_cotitular2_domicilio").jqGrid({
+$("#dtgCotitularDosDomicilio").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: [
@@ -320,10 +320,10 @@ $("#table_cotitular2_domicilio").jqGrid({
 const llenarCotitular_FirmasAutorizadas = (payload: any, i: number) => {
   const firmasAutorizadasArray: any[] =
     payload.cotitulares[i].firmas_autorizadas;
-  fillJqGrid("#table_cotitular2_firmas_autorizadas", firmasAutorizadasArray);
+  fillJqGrid("#dtgCotitularDosFirmasAutorizadas", firmasAutorizadasArray);
 };
 
-$("#table_cotitular2_firmas_autorizadas").jqGrid({
+$("#dtgCotitularDosFirmasAutorizadas").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: [
@@ -360,14 +360,14 @@ $("#table_cotitular2_firmas_autorizadas").jqGrid({
 const llenarCotitular_FormatosFiscales = (payload: any, i: number) => {
   const formatosFiscalesArray: any[] = payload.cotitulares[i].formatos_fiscales;
   //fillJqGrid("#table_cotitular2_formatos_fiscales", formatosFiscalesArray);
-  $("#table_cotitular2_formatos_fiscales").jqGrid("clearGridData");
-  $("#table_cotitular2_formatos_fiscales").jqGrid("setGridParam", {
+  $("#dtgCotitularDosFormatosFiscales").jqGrid("clearGridData");
+  $("#dtgCotitularDosFormatosFiscales").jqGrid("setGridParam", {
     data: formatosFiscalesArray
   });
-  $("#table_cotitular2_formatos_fiscales").trigger("reloadGrid");
+  $("#dtgCotitularDosFormatosFiscales").trigger("reloadGrid");
 };
 
-$("#table_cotitular2_formatos_fiscales").jqGrid({
+$("#dtgCotitularDosFormatosFiscales").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: [
@@ -410,10 +410,10 @@ $("#table_cotitular2_formatos_fiscales").jqGrid({
 const llenarCotitular_MediosComunicacion = (payload: any, i: number) => {
   const mediosComunicacionArray: any[] =
     payload.cotitulares[i].medio_comunicacion;
-  fillJqGrid("#table_cotitular2_medio_comunicacion", mediosComunicacionArray);
+  fillJqGrid("#dtgCotitularDosMedioComunicacion", mediosComunicacionArray);
 };
 
-$("#table_cotitular2_medio_comunicacion").jqGrid({
+$("#dtgCotitularDosMedioComunicacion").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: ["Tipo", "Descripción", "Observaciones"],
@@ -436,10 +436,10 @@ $("#table_cotitular2_medio_comunicacion").jqGrid({
 const llenarCotitular_MedioLiquidacion = (payload: any, i: number) => {
   const mediosComunicacionArray: any[] =
     payload.cotitulares[i].medio_liquidacion;
-  fillJqGrid("#table_cotitular2_medio_liquidacion", mediosComunicacionArray);
+  fillJqGrid("#dtgCotitularDosMedioLiquidacion", mediosComunicacionArray);
 };
 
-$("#table_cotitular2_medio_liquidacion").jqGrid({
+$("#dtgCotitularDosMedioLiquidacion").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: [
@@ -477,7 +477,7 @@ $("#table_cotitular2_medio_liquidacion").jqGrid({
   caption: ""
 });
 
-$("#table_persona_fisica_int").jqGrid({
+$("#dtgPersonaFisicaInt").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: ["Nombre", "Apellido Paterno", "Apellido Materno", "Porcentaje %"],
@@ -498,7 +498,7 @@ $("#table_persona_fisica_int").jqGrid({
   caption: ""
 });
 
-$("#table_persona_fisica_nac").jqGrid({
+$("#dtgPersonaFisicaNac").jqGrid({
   datatype: "local",
   height: "auto",
   colNames: ["Nombre", "Apellido Paterno", "Apellido Materno", "Porcentaje %"],
@@ -568,18 +568,18 @@ function valores(cellvalue, options, rowObject) {
 // const template_cotitulares = Handlebars.compile(source_cotitulares);
 // $("#titular-cotitulares").append(template_cotitulares(null));
 
-$(".tab-group").tabs();
+$(".amTabGroup").tabs();
 
-$("#titular_contrato_tabgroup")
+$("#divTitularContratoTabGroup")
   .tabs()
   .addClass("ui-tabs-vertical ui-helper-clearfix");
-$("#titular_contrato_tabgroup > ul > li")
+$("#divTitularContratoTabGroup > ul > li")
   .removeClass("ui-corner-top")
   .addClass("ui-corner-left");
 
-$("#cotitular2_tabgroup")
+$("#divCotitularDosTabGroup")
   .tabs()
   .addClass("ui-tabs-vertical ui-helper-clearfix");
-$("#cotitular2_tabgroup > ul > li")
+$("#divCotitularDosTabGroup > ul > li")
   .removeClass("ui-corner-top")
   .addClass("ui-corner-left");
