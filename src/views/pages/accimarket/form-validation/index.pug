@@ -6,7 +6,7 @@ block title
 block styles
 
 block content
-  .container#form-validation
+  .amContainer#form-validation
     .callout.callout-warning(hidden)
       h4 Invalid Form
       p Erros was found!
@@ -16,26 +16,26 @@ block content
       p Everything seems ok!
 
     +form("new-customer")
-      .form-group
-        .row
+      .amFormGroup
+        .amRow
           +field-input("id", {label: "ID", tooltip: "Tooltip ID", required: true, max_length: "6"})
           +field-input("id1", {label: "Nombre"})
           +field-input("name", {label: "Nombre", required: true, orientation: "horizontal"})
           +field-input("name2", {label: "Nombre", orientation: "horizontal"})
-        .row
+        .amRow
           +field-email("email", {label: "E-mail", required: true})
           +field-email("email2", {label: "E-mail", required: true, orientation: "horizontal"})
-        .row
+        .amRow
           +field-date("fecha1", {label: "Fecha"})
           +field-date("fecha2", {label: "Fecha", required: true})
           +field-date("fecha3", {label: "Fecha", orientation: "horizontal"})
           +field-date("fecha4", {label: "Fecha", orientation: "horizontal", required: true})
-        .row
+        .amRow
           +field-plus-minus("contrato1", {label: "Contrato"})
           +field-plus-minus("contrato2", {label: "Contrato", required: true})
           +field-plus-minus("contrato3", {label: "Contrato", orientation: "horizontal"})
           +field-plus-minus("contrato4", {label: "Contrato", orientation: "horizontal", required: true})
-        .row
+        .amRow
           +field-select-plus-minus("contrato5", {label: "Contrato", size: "10em"},
                           {key: "", value:""},
                           {key: "C001", value:"Contrato 01"},
@@ -68,7 +68,7 @@ block content
                           {key: "C004", value:"Contrato 04"},
                           {key: "C005", value:"Contrato 05"}
           )
-        .row
+        .amRow
           +field-options("banco",
             {label: "Tipo de Persona", required: true},
             {key: "P", value:"Persona Moral"}, {key:"C", value:"Persona Física"}
@@ -77,10 +77,10 @@ block content
             {label: "Tipo de Persona", required: true, orientation: "horizontal"},
             {key: "P", value:"Persona Moral"}, {key:"C", value:"Persona Física"}
           )
-        .row
+        .amRow
           +field-input("description", {label: "Description"})
           +field-input("description2", {label: "Description", orientation: "horizontal"})
-        .row
+        .amRow
           +field-checks("products",
             {
               label: "Product Type",
@@ -116,7 +116,7 @@ block content
             {key: "P02", value:"Product 2"},
             {key: "P03", value:"Product 3"}
           )
-        .row
+        .amRow
           +field-checks("servicio_inversion",
             {
                 label: "Servicio de Inversión",
@@ -139,7 +139,7 @@ block content
             {key: "S05", value:"En Proceso", color:"grey"},
             {key: "S05", value:"En Revisión Sans", color:"cyan"}
             )
-        .row
+        .amRow
           +field-select("payment",
             {
               label: "Método de pago",
@@ -167,18 +167,18 @@ block content
             {key: "ET", value:"Electronic transfer"},
             {key:"CHK", value:"Check"}
           )
-        .row
+        .amRow
           +field-input("amount", {label: "Amount", required: true, type: "digits"})
-        .row
+        .amRow
           +field-fileupload("adjuntar_archivo",
             {
               label: "Adjuntar Archivo",
               required: true
             }
           )
-        .row
+        .amRow
           +field-search("buscar", {})
-        .row
+        .amRow
           +field-multiselect("multi",
             {
               label: "Multiselect",
@@ -195,7 +195,7 @@ block content
             {key: "O7", value: "Opción 7"},
             {key: "O8", value: "Opción 8"}
           )
-        .row
+        .amRow
           +button-send({size: "large", disabled: false})
 
 block scripts
