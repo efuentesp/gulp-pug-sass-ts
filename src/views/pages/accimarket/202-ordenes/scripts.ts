@@ -1,5 +1,5 @@
-$('.sidebar-collapsible-button').on('click', function() {
-  $('#sidebar_wrapper_aside .sidebar').toggleClass('isClosed');
+$('.amSidebarCollapsibleButton').on('click', function() {
+  $('#divSidebarWrapperAside .amSidebar').toggleClass('amIsClosed');
 });
 
 

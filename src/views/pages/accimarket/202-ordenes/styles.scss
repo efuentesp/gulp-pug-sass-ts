@@ -47,18 +47,18 @@
 }
 
 // Para IE11
-.sidebar {
+.amSidebar {
   width: 650px;
-  &.isClosed {
+  &.amIsClosed {
     width: 1.5em;
   }
 }
 
-.sidebar-wrapper {
+.amSidebarWrapper {
   height: 100vh;
 }
 
-.sidebar-content {
+.amSidebarContent {
   overflow-y: scroll;
 }
 

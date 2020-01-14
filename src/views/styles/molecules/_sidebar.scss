@@ -1,21 +1,21 @@
 @import "../vars";
 
-.sidebar-wrapper {
+.amSidebarWrapper {
   display: flex;
 
-  .sidebar {
+  .amSidebar {
     display: flex;
     flex-grow: 2;
     transition: all 0.3s;
 
-    &.isClosed {
+    &.amIsClosed {
       flex-grow: 0;
 
-      .sidebar-content {
+      .amSidebarContent {
         display: none;
       }
 
-      .sidebar-collapsible-button {
+      .amSidebarCollapsibleButton {
         cursor: pointer;
         width: 1.5em;
         border: 1px solid darkgray;
@@ -27,7 +27,7 @@
       }
     }
 
-    .sidebar-collapsible-button {
+    .amSidebarCollapsibleButton {
       cursor: pointer;
       width: 1.5em;
       border: 1px solid darkgray;
@@ -39,7 +39,7 @@
     }
   }
 
-  .sidebar-content {
+  .amSidebarContent {
     flex-grow: 8;
     transform: translate3d(0, 0, 0);
     transition: transform 0.3s;

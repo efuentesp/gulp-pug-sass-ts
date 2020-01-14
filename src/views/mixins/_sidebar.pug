@@ -1,18 +1,18 @@
 mixin sidebar-wrapper(id)
-  - var _id = "sidebar_wrapper_" + id
+  - var _id = "divSidebarWrapper" + id
 
-  .sidebar-wrapper(id=_id)
+  .amSidebarWrapper(id=_id)
     block
 
 mixin sidebar(parms)
   - var _parms = parms ? parms : { expanded: true }
-  - var _expanded = _parms.expanded ? "" : "isClosed"
+  - var _expanded = _parms.expanded ? "" : "amIsClosed"
   - var _class = _expanded
-  .sidebar(class=_class)
-    .sidebar-content
+  .amSidebar(class=_class)
+    .amSidebarContent
       block
-    .sidebar-collapsible-button
+    .amSidebarCollapsibleButton
 
 mixin sidebar-content()
-  .sidebar-content()
+  .amSidebarContent()
     block
