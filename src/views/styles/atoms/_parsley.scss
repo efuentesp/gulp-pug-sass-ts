@@ -1,7 +1,7 @@
 @import "../vars";
 
-.input,
-.multiselect {
+.amInput,
+.amMultiselect {
   &.parsley-error {
     border: 1px solid $color-red-dark !important;
 
@@ -11,8 +11,8 @@
   }
 }
 
-.field.parsley-error {
-  span.checkmark {
+.amField.parsley-error {
+  span.amCheckmark {
     border: 1px solid $color-red-dark !important;
 
     &:hover {
@@ -33,7 +33,7 @@ select.select2.parsley-error {
   }
 }
 
-.field-error {
+.amFieldError {
   display: none;
   // width: 180px;
   position: absolute;
@@ -44,7 +44,7 @@ select.select2.parsley-error {
   z-index: 1;
   left: 30px;
 
-  .error-tip {
+  .amErrorTip {
     width: 0;
     height: 0;
     border-top: 7px solid transparent;
@@ -55,7 +55,7 @@ select.select2.parsley-error {
     left: -9px;
   }
 
-  .error-msg {
+  .amErrorMsg {
     float: left;
     color: #fff;
     background-color: $color-red-dark;

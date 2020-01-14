@@ -1,6 +1,6 @@
 mixin field-input(id, parms)
-  - var _field_id = "field_" + id
-  - var _field_error_block = "field_error_block_" + id
+  - var _field_id = "divField" + id
+  - var _field_error_block = "divFieldErrorBlock" + id
   - var _field_error_block_id = "#" + _field_error_block
   - var _input_id = id
   - var _type = (parms.type ? parms.type : "alphanum") // alphanum, integer, number, currency
@@ -35,6 +35,6 @@ mixin field-input(id, parms)
         data-parsley-validation-threshold="10"
         data-parsley-errors-container=_field_error_block_id
         )
-      span.amFieldErrorFlex
+      span.amFieldError.flex
         .amErrorTip
         .amErrorMsg(id=_field_error_block)

@@ -112,7 +112,7 @@ $(".button").each(function(i, obj) {
 });
 
 // Coloca el atributo "custom-tooltip" a los div, con la clase field-control, para que aparezca el tooltip
-$('div[class*="field-control"]').each(function(index,item){
+$('div[class*="amFieldControl"]').each(function(index,item){
   if(item.attributes.getNamedItem("data-tooltip")){
     let value = item.attributes.getNamedItem("data-tooltip").value
     if(value)
@@ -121,7 +121,7 @@ $('div[class*="field-control"]').each(function(index,item){
 });
 
 // Coloca el atributo "custom-tooltip" a los div, con la clase field-plus-minus, para que aparezca el tooltip
-$('div[class*="field-plus-minus"]').each(function(index,item){
+$('div[class*="amFeldPlusMinus"]').each(function(index,item){
   if(item.attributes.getNamedItem("data-tooltip")){
     let value = item.attributes.getNamedItem("data-tooltip").value
     if(value)
@@ -2817,9 +2817,9 @@ const formatNumber = {
   }
 };
 
-$(".currency").mask("###,###,##0", { reverse: true });
-$(".number").mask("###,###,##0.00", { reverse: true });
-$(".integer").mask("###,###,##0", { reverse: true });
+$(".amCurrency").mask("###,###,##0", { reverse: true });
+$(".amNumber").mask("###,###,##0.00", { reverse: true });
+$(".amInteger").mask("###,###,##0", { reverse: true });
 $(".amDatepicker").mask("99-99-9999");
 
 const putErrorsInAttrTitle = (e: any) => {
@@ -2829,7 +2829,7 @@ const putErrorsInAttrTitle = (e: any) => {
 
   // console.log(e.$element);
   // console.log(e.getErrorsMessages());
-  const isInput = $(e.$element).hasClass("input");
+  const isInput = $(e.$element).hasClass("amInput");
   const isMultiSelect = $(e.$element).is("select[multiple='multiple']");
   if (isInput || isMultiSelect) {
     e.$element.tooltip({
@@ -2839,16 +2839,16 @@ const putErrorsInAttrTitle = (e: any) => {
     });
   }
 
-  if(e.$element.next(".checkmark").tooltip('instance') != undefined) {
-    e.$element.next(".checkmark").tooltip('destroy');
+  if(e.$element.next(".amCheckmark").tooltip('instance') != undefined) {
+    e.$element.next(".amCheckmark").tooltip('destroy');
   }
 
   const isRadio = $(e.$element).is("input[type='radio']");
   const isCheckbox = $(e.$element).is("input[type='checkbox']");
   if (isRadio || isCheckbox) {
-    e.$element.next(".checkmark").tooltip({
+    e.$element.next(".amCheckmark").tooltip({
       content: e.getErrorsMessages().join("<br />"),
-      items: e.$element.next(".checkmark"),
+      items: e.$element.next(".amCheckmark"),
       position: { my: 'left center', at: 'right+10 center' }
     });
   }
@@ -2873,8 +2873,8 @@ const removeErrorsInAttrTitle = (e: any) => {
     e.$element.tooltip('destroy');
   }
 
-  if(e.$element.next(".checkmark").tooltip('instance') != undefined) {
-    e.$element.next(".checkmark").tooltip('destroy');
+  if(e.$element.next(".amCheckmark").tooltip('instance') != undefined) {
+    e.$element.next(".amCheckmark").tooltip('destroy');
   }
 
   if(e.$element.next(".select2").tooltip('instance') != undefined) {
