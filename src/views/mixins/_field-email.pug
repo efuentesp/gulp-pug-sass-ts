@@ -1,28 +1,26 @@
 mixin field-email(id, parms)
-  - var _field_id = "field_" + id
-  - var _field_error_block = "field_error_block_" + id
+  - var _field_id = "divField" + id
+  - var _field_error_block = "divFieldErrorBlock" + id
   - var _field_error_block_id = "#" + _field_error_block
   - var input_id = id
-  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
-  - var size_class = "is-" + (parms.size ? parms.size : "vertical")
-  - var _class = (_class == "is_horizontal" ? _class + " items-center" : _class)
+  - var _class = "amIs" + (parms.orientation ? parms.orientation[0].toUpperCase() + parms.orientation.substr(1) : "Vertical")
+  - var _class = (_class == "amIsHorizontal" ? _class + " amItemsCenter" : _class)
   - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
-  .field(id=_field_id class=_class)
-    .field-label.flex
+  .amField(id=_field_id class=_class)
+    .amFieldLabel.flex
       label= parms.label
       if parms.required
-        span.required *
+        span.amRequired *
       else
         span
-    .field-control(data-tooltip=_tooltip)
-      input.input(type="email"
+    .amFieldControl(data-tooltip=_tooltip)
+      input.amInput(type="email"
                   id=input_id
-                  class=size_class
                   required=parms.required
                   data-parsley-trigger="change"
                   data-parsley-errors-container=_field_error_block_id
       )
-      span.field-error.flex
-        .error-tip
-        .error-msg(id=_field_error_block)
+      span.amFieldError.flex
+        .amErrorTip
+        .amErrorMsg(id=_field_error_block)
