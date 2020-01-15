@@ -1,22 +1,22 @@
 mixin field-multiselect(id, parms, ...items)
-  - var _field_id = "field_" + id
-  - var _input_id = id
-  - var _field_error_block = "field_error_block_" + id
+  - var _field_id = "divField" + id
+  - var _input_id = "cmb"+id
+  - var _field_error_block = "divFieldErrorBlock" + id
   - var _field_error_block_id = "#" + _field_error_block
-  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _class = "amIs" + (parms.orientation ? parms.orientation[0].toUpperCase() + parms.orientation.substr(1) : "Vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   //- - var _class = (_class == "is_horizontal" ? _class + " items-center" : _class)
   - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
-  .field(id=_field_id class=_class)
-    .field-label.flex
+  .amField(id=_field_id class=_class)
+    .amFieldLabel.flex
       label(for=_input_id)= parms.label
         if parms.required
-          span.pr-3.required *
+          span.pr-3.amRequired *
         else
           span.pr-3
-    .field-control(data-tooltip=_tooltip)
-      select.multiselect(id=id
+    .amFieldControl(data-tooltip=_tooltip)
+      select.amMultiselect(id=id
             name=id
             multiple
             required=parms.required
@@ -28,5 +28,5 @@ mixin field-multiselect(id, parms, ...items)
         each item in items
           - var _item_selected = (item.selected ? "selected" : "")
           option(value=item.key)= item.value
-      .field-error
+      .amFieldError
         div(id=_field_error_block)
