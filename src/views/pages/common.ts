@@ -540,12 +540,12 @@ const fieldPlusMinus = (id: string, params: any) => {
  *   maxsize (opcional): Si la lista solo permite un número limitado de elementos en la lista
  */
 const fieldSelectPlusMinus = (id: string, params: any) => {
-  const idBtnPlus = "#btn_plus_" + id;
-  const idBtnMinus = "#btn_minus_" + id;
-  const idInput = "#" + id;
-  const idInputHidden = "#" + id + "_hidden";
-  const list = "ul#tag_list_" + id;
-  const node = "tag_list_" + id;
+  const idBtnPlus = "#btnPlus" + id;
+  const idBtnMinus = "#btnMinus" + id;
+  const idInput = "#txt" + id;
+  const idInputHidden = "#txt" + id + "Hidden";
+  const list = "ul#lstTagList" + id;
+  const node = "lstTagList" + id;
   let definedNodes = true;
   const numNodes = 4;
 
@@ -558,7 +558,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
   if (definedNodes) {
     for (let i = 0; i < numNodes; i++) {
       $(list).append(
-        "<li><a class='delete_item' href='javascript:void();'></a></li>"
+        "<li><a class='amDeleteItem' href='javascript:void();'></a></li>"
       );
     }
   }
@@ -637,12 +637,12 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
     removeHoverStyle(list);
   });
 
-  $(list).delegate(".delete_item", "click", function() {
+  $(list).delegate(".amDeleteItem", "click", function() {
     $(idInputHidden)
       .val(
         $(this)
           .parent()
-          .find(".delete_item")
+          .find(".amDeleteItem")
           .attr("id")
       )
       .trigger("change");
@@ -654,7 +654,7 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
 
       if ($(this)
       .parent()
-      .find(".delete_item")
+      .find(".amDeleteItem")
       .attr("id") != undefined){
         $(this).addClass("selected");
         $(this).css("background-color","#79c3ed");
