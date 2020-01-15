@@ -1,32 +1,32 @@
 mixin field-swaplist(id, params)
-  - var _id = id
-  - var _id_source = id + "_source"
-  - var _id_destination = id + "_destination"
+  - var _id = 'div' + id
+  - var _id_source = _id + "Source"
+  - var _id_destination = _id + "Destination"
 
-  .listswap_wrapper(id=id)
-    .row
-      div(id="swaplist")
-        div(id="swaplist-source")
-          p.title= params.title_source
-          ul.column.source(id=_id_source)
-        .source_control
-          .up(style="margin-top:3px;")
-            button.up-button
+  .amListSwapWrapper(id=_id)
+    .amRow
+      div(id="divSwapList")
+        div(id="divSwapListSource")
+          p.amTitle= params.title_source
+          ul.amColumn.amSource(id=_id_source)
+        .amSourceControl
+          .amUp(style="margin-top:3px;")
+            button.amUpButton
               img(src="../../assets/images/flecha-arriba.png" style="width:18px;")
-          .add(style="margin-top:3px;")
-            button.right-button
+          .amAdd(style="margin-top:3px;")
+            button.amRightButton
               img(src="../../assets/images/flecha-derecha.png" style="width:18px;")
-          .remove(style="margin-top:3px;")
-            button.left-button
+          .amRemove(style="margin-top:3px;")
+            button.amLeftButton
               img(src="../../assets/images/flecha-izquierda.png" style="width:18px;")
-          .down(style="margin-top:3px;")
-            button.down-button
+          .amDown(style="margin-top:3px;")
+            button.amDownButton
               img(src="../../assets/images/flecha-abajo.png" style="width:18px;")
-        div(id="swaplist-destination")
-          p.title= params.title_source
-          ul.column.destination(id=_id_destination)              
-      .row
-         div(id="swaplist-buttons")
+        div(id="divSwapListDestination")
+          p.amTitle= params.title_source
+          ul.amColumn.amDestination(id=_id_destination)              
+      .amRow
+         div(id="divSwapListButtons")
           +button-accept
           +button-cancel
     

@@ -1,15 +1,15 @@
-.listswap_wrapper {
+.amListSwapWrapper {
   padding: 2px;
   width: 60em;
 
-  .title {
+  .amTitle {
     text-align: center;
     border-bottom: 1px solid black;
     font-weight: bold;
     width: 22em;
   }
 
-  .source_control {
+  .amSourceControl {
     width: 3em;
     float: left;
     vertical-align: middle;
@@ -17,7 +17,7 @@
     margin-top: 2em;
   }
 
-  ul.column > li.portlet.selected {
+  ul.amColumn > li.portlet.selected {
     background: $color-blue-lighter;
   }
 
@@ -36,7 +36,7 @@
     padding: 5px;
   }
 
-  .column {
+  .amColumn {
     float: left;
     overflow: auto;
     height: 200px;
@@ -57,24 +57,24 @@
     height: 20px;
   }
 
-  #swaplist-buttons {
+  #divSwapListButtons {
     width: 20em;
     float: left;
     margin-left: 34em;
   }
-  #swaplist-source {
+  #divSwapListSource {
     width: 22em;
     float: left;
     height: 20em;
   }
 
-  #swaplist-destination {
+  #divSwapListDestination {
     width: 22em;
     float: left;
     height: 20em;
   }
 
-  #swaplist li:hover {
+  #divSwapList li:hover {
     background-color: #b4e1fa;
     color: $font_color;
   }
