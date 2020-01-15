@@ -7,9 +7,9 @@ block styles
    link(rel="stylesheet" href="../../assets/css/accimarket/10-Test/styles.css")
 
 block content
-   .content.p-4
-      .row
-         .scrollmenu
+   .amContent.p-4
+      .amRow
+         .amScrollmenu
             a(href="") Mapa de Liquidez
             a(href="") I.- Conocimiento del cliente y su Experiencia en productos financieros
             a(href="") I.- Conocimiento del cliente y su Experiencia en productos financieros
@@ -26,46 +26,46 @@ block content
             a(href="") Tab 11
             a(href="") Tab 12
 
-      .row.pt-10
-         nav.arrow#menu-container
-            #btn-nav-previous(style="fill: #fff")
+      .amRow.pt-10
+         nav.arrow#menuContainer
+            #btnNavPrevious(style="fill: #fff")
                img(src="../../assets/images/arrow-left.png")
-            #btn-nav-next(style="fill: #fff")
+            #btnNavNext(style="fill: #fff")
                img(src="../../assets/images/arrow-right.png")
-            .menu-inner-box
-               ul.menu
-                  li.menu-item
-                     a.current(href="") Mapa de Liquidez
-                  li.menu-item
+            .amMenuInnerBox
+               ul.amMenu
+                  li.amMenuItem
+                     a.amCurrent(href="") Mapa de Liquidez
+                  li.amMenuItem
                      a(href="") I.- Conocimiento del cliente y su Experiencia en productos financieros
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") I.- Conocimiento del cliente y su Experiencia en productos financieros
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") II.- Objetivos de Inversión
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") II.- Objetivos de Inversión
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") II.- Objetivos de Inversión
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") Tab 4
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") Tab 5
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") Tab 6
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") Tab 7
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") Tab 8
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") Tab 9
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") Tab 10
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") Tab 11
-                  li.menu-item
+                  li.amMenuItem
                      a(href="") Tab 12
 
-      .row.pt-10
+      .amRow.pt-10
          +scrolling_menu
             +menu_item("tab01", {label: "Mapa de Liquidez"})
             +menu_item("tab01", {label: "I.- Conocimiento del cliente y su Experiencia en productos financieros"})
@@ -84,7 +84,7 @@ block content
             +menu_item("tab01", {label: "Tab X"})
             +menu_item("tab01", {label: "Tab X"})
 
-      .row.pt-10
+      .amRow.pt-10
          .wizard
             h3 Datos Generales
             section
@@ -96,8 +96,8 @@ block content
             section
                p Contenido del Paso 3
 
-      .row.pt-10
-         .row
+      .amRow.pt-10
+         .amRow
             +spinner
                img(src="../../../../assets/images/loader.gif", alt="", width="45px", height="45px")
 

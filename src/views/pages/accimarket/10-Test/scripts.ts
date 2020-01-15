@@ -2,12 +2,12 @@
 
 console.log("10-Test");
 
-$("#btn-nav-previous").click(function() {
-  $(".menu-inner-box").animate({ scrollLeft: "-=200px" });
+$("#btnNavPrevious").click(function() {
+  $(".amMenuInnerBox").animate({ scrollLeft: "-=200px" });
 });
 
-$("#btn-nav-next").click(function() {
-  $(".menu-inner-box").animate({ scrollLeft: "+=200px" });
+$("#btnNavNext").click(function() {
+  $(".amMenuInnerBox").animate({ scrollLeft: "+=200px" });
 });
 
 
