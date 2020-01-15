@@ -162,24 +162,23 @@
   .splitter-bar-vertical {
     width: 12px;
 
-    &.ui-state-default{
+    &.ui-state-default {
       background-image: url("../images/expanded.png");
       background-repeat: no-repeat;
       background-position: center;
     }
 
-    &.ui-state-error{
+    &.ui-state-error {
       background-image: url("../images/collapsed.png");
       background-repeat: no-repeat;
       background-position: center;
     }
-    
-    &.ui-state-highlight{
+
+    &.ui-state-highlight {
       background-image: url("../images/expanded.png");
       background-repeat: no-repeat;
       background-position: center;
     }
-    
   }
 
   .splitter-bar.ui-state-highlight {
