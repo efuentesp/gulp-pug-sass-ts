@@ -1,7 +1,7 @@
 mixin field-date-range(id, parms)
-  - var _field_id = "field_" + id
+  - var _field_id = "divField" + id
   - var _input_id = id
-  - var _btn_id = "btn_" + id
+  - var _btn_id = "btn" + id
   - var _class = (parms.orientation ? parms.orientation[0].toUpperCase() + parms.orientation.substr(1) : "Vertical")
   - var _style = (parms.size ? parms.size : "8em")
   - var _input_max_length = (parms.max_length ? parms.max_length : "32")
@@ -11,7 +11,7 @@ mixin field-date-range(id, parms)
 
   .amField(id=_field_id class=_class)
     .amFieldControl.flex(data-tooltip=_tooltip)
-    +field-date(_input_id + "_begin_date",
+    +field-date(_input_id + "BeginDate",
                 {
                   label: parms.begin_label,
                   required: parms.required,
@@ -20,7 +20,7 @@ mixin field-date-range(id, parms)
                   datepicker_range: true,
                   clear: _btn_clear
                 })
-    +field-date(_input_id + "_end_date",
+    +field-date(_input_id + "EndDate",
                 {
                   label: parms.end_label,
                   required: parms.required,

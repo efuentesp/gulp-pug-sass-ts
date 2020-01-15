@@ -2224,36 +2224,36 @@ const pieChart = (params: pieChartParams) => {
 
 // Dates
 const validateDateRage = (id: string) => {
-  $("#" + id + "_begin_date").datepicker({
+  $("#" + id + "BeginDate").datepicker({
     ...ui_datepicker_settings,
     onClose: function(selectedDate, instance) {
       if (selectedDate != "") {
-        $("#" + id + "_end_date").datepicker("option", "minDate", selectedDate);
+        $("#" + id + "EndDate").datepicker("option", "minDate", selectedDate);
         var date = $.datepicker.parseDate(
           instance.settings.dateFormat,
           selectedDate,
           instance.settings
         );
         date.setMonth(date.getMonth() + 3);
-        $("#" + id + "_end_date").datepicker("option", "minDate", selectedDate);
-        $("#" + id + "_end_date").datepicker("option", "maxDate", date);
+        $("#" + id + "EndDate").datepicker("option", "minDate", selectedDate);
+        $("#" + id + "EndDate").datepicker("option", "maxDate", date);
       }
     }
   });
 
-  $("#" + id + "_end_date").datepicker({
+  $("#" + id + "EndDate").datepicker({
     ...ui_datepicker_settings,
     onClose: function(selectedDate) {
-      $("#" + id + "_begin_date").datepicker("option", "maxDate", selectedDate);
+      $("#" + id + "BeginDate").datepicker("option", "maxDate", selectedDate);
     }
   });
 };
 
 // Reset Form
-$("#btn_clean").click(() => {
-  ($(".form-group") as any).parsley().reset();
-  $(".form-group .tag-list li a").text("");
-  $(".form-group select.select2").val([]).trigger("change");
+$("#btnClean").click(() => {
+  ($(".amFormGroup") as any).parsley().reset();
+  $(".amFormGroup .amTagList li a").text("");
+  $(".amFormGroup select.select2").val([]).trigger("change");
 });
 
 const getCheckedCheckbox = (id: string) => {
@@ -2508,29 +2508,29 @@ function initializeSelect2(isQuizSelect2:string[]) {
   }   
 }
 
-const fieldDateClear = (id: string) => {
+const fieldDateClear = (id: string) => {  
   var _id = "#" + id;
   var $dates = $(_id).datepicker();
-
-  $("#clear_" + id).on("click", function() {
+  
+  $("#imgClear" + id).on("click", function() {
     $dates.datepicker("setDate", null);
   });
 };
 
 const fieldBeginDateRangeClear = (id: string) => {
-  var _id = $("#" + id + "_begin_date");
+  var _id = $("#" + id + "BeginDate");
   var $dates = $(_id).datepicker();
 
-  $("#clear_" + id + "_begin_date").on("click", function() {
+  $("#imgClear" + id + "BeginDate").on("click", function() {
     $dates.datepicker("setDate", null);
   });
 };
 
 const fieldEndDateRangeClear = (id: string) => {
-  var _id = $("#" + id + "_end_date");
+  var _id = $("#" + id + "EndDate");
   var $dates = $(_id).datepicker();
 
-  $("#clear_" + id + "_end_date").on("click", function() {
+  $("#imgClear" + id + "EndDate").on("click", function() {
     $dates.datepicker("setDate", null);
   });
 };
