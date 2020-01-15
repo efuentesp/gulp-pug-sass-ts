@@ -141,7 +141,7 @@ $(".amDatepicker")
   .prop("readonly", false);
 
 // DatePicker Month Year
-$(".monthpicker").datepicker(ui_datepicker_month_year_settings);
+$(".amMonthpicker").datepicker(ui_datepicker_month_year_settings);
 
 // Splitter
 $(".splitter-vertical").splitter();
