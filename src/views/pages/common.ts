@@ -2,22 +2,22 @@
 
 // console.log("common.ts");
 
-const REST_URL = "http://localhost:3000";
+const RESTURL = "http://localhost:3000";
 
 interface UrlParams {
   [key: string]: any;
 }
 
 // Query UI DatePicker settings
-const DATE_FORMAT = "dd-mm-yy";
-const DATE_FORMAT_MONTH_YEAR = "MM yy";
+const DATEFORMAT = "dd-mm-yy";
+const DATEFORMATMONTHYEAR = "MM yy";
 
-const ui_datepicker_settings = {
+const uiDatepickerSettings = {
   showOn: "both",
   buttonImage: "../../assets/images/btn-calendario.png",
   buttonImageOnly: true,
   buttonText: "",
-  dateFormat: DATE_FORMAT,
+  dateFormat: DATEFORMAT,
   changeMonth: true,
   changeYear: true,
   showButtonPanel: true,
@@ -74,11 +74,11 @@ $.datepicker.regional["es"] = {
 
 $.datepicker.setDefaults($.datepicker.regional["es"]);
 
-const ui_datepicker_month_year_settings = {
+const uiDatepickerMonthYearSettings = {
   changeMonth: true,
   changeYear: true,
   showButtonPanel: false,
-  dateFormat: DATE_FORMAT_MONTH_YEAR,
+  dateFormat: DATEFORMATMONTHYEAR,
   onChangeMonthYear: function (year, month, inst) {
     $(this).datepicker(
       "setDate",
@@ -90,7 +90,7 @@ const ui_datepicker_month_year_settings = {
 // Query UI Accordion settings
 const icons = { header: "plus-icon", activeHeader: "minus-icon" };
 
-const ui_accordion_settings = {
+const uiAccordionSettings = {
   collapsible: true,
   icons: icons,
   heightStyle: "content"
@@ -105,7 +105,7 @@ $(document).tooltip({
 });
 
 // Coloca el atributo "title" al botón para que aparezca el tooltip
-$(".button").each(function (i, obj) {
+$(".amButton").each(function (i, obj) {
   // const label = $(`#${obj.id} span`).html();
   const label = $(`#${obj.id}`).attr("data-tooltip");
   $(`#${obj.id}`).attr("custom-tooltip", label);
@@ -121,7 +121,7 @@ $('div[class*="amFieldControl"]').each(function (index, item) {
 });
 
 // Coloca el atributo "custom-tooltip" a los div, con la clase field-plus-minus, para que aparezca el tooltip
-$('div[class*="amFeldPlusMinus"]').each(function (index, item) {
+$('div[class*="amFieldPlusMinus"]').each(function (index, item) {
   if (item.attributes.getNamedItem("data-tooltip")) {
     let value = item.attributes.getNamedItem("data-tooltip").value
     if (value)
@@ -133,24 +133,24 @@ $('div[class*="amFeldPlusMinus"]').each(function (index, item) {
 $(".amTabGroup").tabs();
 
 // Accordion
-$(".amAccordion").accordion(ui_accordion_settings);
+$(".amAccordion").accordion(uiAccordionSettings);
 
 // DatePicker
 $(".amDatepicker")
-  .datepicker(ui_datepicker_settings)
+  .datepicker(uiDatepickerSettings)
   .prop("readonly", false);
 
 // DatePicker Month Year
-$(".amMonthpicker").datepicker(ui_datepicker_month_year_settings);
+$(".amMonthpicker").datepicker(uiDatepickerMonthYearSettings);
 
 // Splitter
 $(".splitter-vertical").splitter();
 $(".splitter-horizontal").splitter({ type: "h" });
 
 // JqGrid functions
-const fillJqGrid = (grid_id: string, data: any[]) => {
-  $(grid_id).jqGrid("clearGridData");
-  data.forEach((item, i) => $(grid_id).jqGrid("addRowData", i + 1, item));
+const fillJqGrid = (gridId: string, data: any[]) => {
+  $(gridId).jqGrid("clearGridData");
+  data.forEach((item, i) => $(gridId).jqGrid("addRowData", i + 1, item));
 };
 
 // Switch / Toggle
@@ -183,11 +183,11 @@ $("[href='#finish']").html(
 );
 
 // REST APIs}
-const rest_findAll = (resource: string, params: any, cb: Function) => {
-  const api_params = $.param(params);
-  const url = api_params
-    ? `${REST_URL}/${resource}?${api_params}`
-    : `${REST_URL}/${resource}`;
+const restFindAll = (resource: string, params: any, cb: Function) => {
+  const apiParams = $.param(params);
+  const url = apiParams
+    ? `${RESTURL}/${resource}?${apiParams}`
+    : `${RESTURL}/${resource}`;
   // console.log(url);
 
   $.ajax({
@@ -212,8 +212,8 @@ const rest_findAll = (resource: string, params: any, cb: Function) => {
 //   });
 // };
 
-const rest_create = (resource: string, payload: any, cb: Function) => {
-  const url = `${REST_URL}/${resource}`;
+const restCreate = (resource: string, payload: any, cb: Function) => {
+  const url = `${RESTURL}/${resource}`;
   // console.log(url);
 
   $.ajax({
@@ -239,8 +239,8 @@ const rest_create = (resource: string, payload: any, cb: Function) => {
 //   });
 // };
 
-const rest_findOne = (resource: string, id: string, cb: Function) => {
-  const url = `${REST_URL}/${resource}/${id}`;
+const restFindOne = (resource: string, id: string, cb: Function) => {
+  const url = `${RESTURL}/${resource}/${id}`;
   // console.log(url);
 
   $.ajax({
@@ -251,8 +251,8 @@ const rest_findOne = (resource: string, id: string, cb: Function) => {
   });
 };
 
-const rest_findOne$ = (resource: string, id: string) => {
-  const url = `${REST_URL}/${resource}/${id}`;
+const restFindOne$ = (resource: string, id: string) => {
+  const url = `${RESTURL}/${resource}/${id}`;
 
   return $.ajaxAsObservable({
     url,
@@ -282,20 +282,20 @@ const rpc = (url: string, params: any, cb: Function) => {
   minimumResultsForSearch: Infinity
 });
 
-const http_findAll = rest_findAll;
+const httpFindAll = restFindAll;
 // const http_findAll$ = rest_findAll$;
-const http_findOne = rest_findOne;
-const http_findOne$ = rest_findOne$;
-const http_create = rest_create;
+const httpFindOne = restFindOne;
+const httpFindOne$ = restFindOne$;
+const httpCreate = restCreate;
 // const http_create$ = rest_create$;
 
-const existText = (text_to_add: string, list: string) => {
+const existText = (textToAdd: string, list: string) => {
   let exist = false;
   let count = 1;
 
   $.each($(list + " li a"), function () {
     if (
-      $(list + " li:nth-child(" + count + ")").text() === text_to_add.trim()
+      $(list + " li:nth-child(" + count + ")").text() === textToAdd.trim()
     ) {
       exist = true;
       return false;
@@ -305,14 +305,14 @@ const existText = (text_to_add: string, list: string) => {
   return exist;
 };
 
-const addedText = (text_to_add: string, value_to_add: string, list: string) => {
+const addedText = (textToAdd: string, valueToAdd: string, list: string) => {
   let added = false;
   let count = 1;
 
   $.each($(list + " li a"), function () {
     if ($(list + " li:nth-child(" + count + ") a").text() === "") {
-      $(list + " li:nth-child(" + count + ") a").attr("id", value_to_add);
-      $(list + " li:nth-child(" + count + ") a").append(text_to_add);
+      $(list + " li:nth-child(" + count + ") a").attr("id", valueToAdd);
+      $(list + " li:nth-child(" + count + ") a").append(textToAdd);
       added = true;
       return false;
     }
@@ -323,8 +323,8 @@ const addedText = (text_to_add: string, value_to_add: string, list: string) => {
 };
 
 const addNode = (
-  text_to_add: string,
-  value_to_add: string,
+  textToAdd: string,
+  valueToAdd: string,
   list: string,
   maxsize: number
 ) => {
@@ -332,43 +332,43 @@ const addNode = (
     if ($(list + " li").length < maxsize) {
       $(list).append(
         "<li><a id=" +
-        value_to_add +
-        " class='delete_item' href='javascript:void();'>" +
-        text_to_add +
+        valueToAdd +
+        " class='amDeleteItem' href='javascript:void();'>" +
+        textToAdd +
         "</a></li>"
       );
     }
   } else {
     $(list).append(
       "<li><a id=" +
-      value_to_add +
-      " class='delete_item' href='javascript:void();'>" +
-      text_to_add +
+      valueToAdd +
+      " class='amDeleteItem' href='javascript:void();'>" +
+      textToAdd +
       "</a></li>"
     );
   }
 };
 
 function fieldPlusMinusRepaintList(node) {
-  let listcontentid = [];
-  let listcontentvalue = [];
-  let nodelist: HTMLUListElement = document.getElementById(
+  let listContentId = [];
+  let listContentValue = [];
+  let nodeList: HTMLUListElement = document.getElementById(
     node
   ) as HTMLUListElement;
-  let listSize = nodelist.childNodes.length;
-  $(nodelist.childNodes).each(function (childNode) {
-    if (nodelist.childNodes[childNode].childNodes[0].textContent) {
-      listcontentid.push(
-        (nodelist.childNodes[childNode]
+  let listSize = nodeList.childNodes.length;
+  $(nodeList.childNodes).each(function (childNode) {
+    if (nodeList.childNodes[childNode].childNodes[0].textContent) {
+      listContentId.push(
+        (nodeList.childNodes[childNode]
           .childNodes[0] as HTMLElement).getAttribute("id")
       );
-      listcontentvalue.push(
-        nodelist.childNodes[childNode].childNodes[0].textContent
+      listContentValue.push(
+        nodeList.childNodes[childNode].childNodes[0].textContent
       );
     }
   });
-  while (nodelist.firstChild) {
-    nodelist.removeChild(nodelist.firstChild);
+  while (nodeList.firstChild) {
+    nodeList.removeChild(nodeList.firstChild);
   }
 
   for (let i = 0; i < listSize; i++) {
@@ -376,13 +376,13 @@ function fieldPlusMinusRepaintList(node) {
     let tagA = document.createElement("A");
     tagA.setAttribute("class", "amDeleteItem");
     tagA.setAttribute("href", "javascript:void();");
-    if (i < listcontentid.length) {
-      tagA.setAttribute("id", listcontentid[i]);
-      tagA.innerHTML = listcontentvalue[i];
+    if (i < listContentId.length) {
+      tagA.setAttribute("id", listContentId[i]);
+      tagA.innerHTML = listContentValue[i];
     }
 
     tagLi.appendChild(tagA);
-    nodelist.appendChild(tagLi);
+    nodeList.appendChild(tagLi);
   }
 }
 
@@ -468,12 +468,12 @@ const fieldPlusMinus = (id: string, params: any) => {
   removeHoverStyle(list);
 
   const addValueToList = () => {
-    const text_to_add = $(idInput).val() as string;
-    const value_to_add = $(idInput).val() as string;
+    const textToAdd = $(idInput).val() as string;
+    const valueToAdd = $(idInput).val() as string;
 
-    if (!existText(text_to_add, list)) {
-      if (!addedText(text_to_add, value_to_add, list)) {
-        addNode(text_to_add, value_to_add, list, params.maxsize);
+    if (!existText(textToAdd, list)) {
+      if (!addedText(textToAdd, valueToAdd, list)) {
+        addNode(textToAdd, valueToAdd, list, params.maxsize);
       }
     }
     fieldPlusMinusRepaintList(node);
@@ -595,12 +595,12 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
   removeHoverStyle(list);
 
   $(idBtnPlus).click(() => {
-    const text_to_add = $(idInput + " option:selected").text() as string;
-    const value_to_add = $(idInput + " option:selected").val() as string;
+    const textToAdd = $(idInput + " option:selected").text() as string;
+    const valueToAdd = $(idInput + " option:selected").val() as string;
 
-    if (!existText(text_to_add, list)) {
-      if (!addedText(text_to_add, value_to_add, list)) {
-        addNode(text_to_add, value_to_add, list, params.maxsize);
+    if (!existText(textToAdd, list)) {
+      if (!addedText(textToAdd, valueToAdd, list)) {
+        addNode(textToAdd, valueToAdd, list, params.maxsize);
       }
     }
     fieldPlusMinusRepaintList(node);
@@ -732,12 +732,12 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   removeHoverStyle(list);
 
   $(idBtnPlus).click(() => {
-    const text_to_add = $(idInput + " option:selected").text() as string;
-    const value_to_add = $(idInput + " option:selected").val() as string;
+    const textToAdd = $(idInput + " option:selected").text() as string;
+    const valueToAdd = $(idInput + " option:selected").val() as string;
 
-    if (!existText(text_to_add, list)) {
-      if (!addedText(text_to_add, value_to_add, list)) {
-        addNode(text_to_add, value_to_add, list, params.maxsize);
+    if (!existText(textToAdd, list)) {
+      if (!addedText(textToAdd, valueToAdd, list)) {
+        addNode(textToAdd, valueToAdd, list, params.maxsize);
       }
     }
     fieldPlusMinusRepaintList(node);
@@ -752,14 +752,14 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
   $(idInput).change(() => {
 
     if (!$(idInputHidden).hasClass("select-item")) {
-      const value_to_add = $(idInput + " option:selected").val() as string;
+      const valueToAdd = $(idInput + " option:selected").val() as string;
 
-      if (!(value_to_add == "")) {
-        const text_to_add = $(idInput + " option:selected").text() as string;
+      if (!(valueToAdd == "")) {
+        const textToAdd = $(idInput + " option:selected").text() as string;
 
-        if (!existText(text_to_add, list)) {
-          if (!addedText(text_to_add, value_to_add, list)) {
-            addNode(text_to_add, value_to_add, list, params.maxsize);
+        if (!existText(textToAdd, list)) {
+          if (!addedText(textToAdd, valueToAdd, list)) {
+            addNode(textToAdd, valueToAdd, list, params.maxsize);
           }
         }
         fieldPlusMinusRepaintList(node);
@@ -864,9 +864,9 @@ const getList = (id: string) => {
  */
 const getChecked = (id: string) => {
   let selected = [];
-  const query_select = "#field_" + id + " input[type=checkbox]";
+  const querySelect = "#divField" + id + " input[type=checkbox]";
 
-  $(query_select).each(function () {
+  $(querySelect).each(function () {
     if ($(this).is(":checked")) {
       selected.push($(this).attr("value"));
     }
@@ -881,9 +881,9 @@ const getChecked = (id: string) => {
  * @return {string} valor del elemento seleccionado
  */
 const getOptionSelected = (id: string) => {
-  const query_select = "input[name='" + id + "']:checked";
+  const querySelect = "input[name='" + id + "']:checked";
 
-  return $(query_select).val();
+  return $(querySelect).val();
 };
 
 interface stackChartParams {
@@ -2195,7 +2195,7 @@ const pieChart = (params: pieChartParams) => {
 // Dates
 const validateDateRage = (id: string) => {
   $("#" + id + "BeginDate").datepicker({
-    ...ui_datepicker_settings,
+    ...uiDatepickerSettings,
     onClose: function (selectedDate, instance) {
       if (selectedDate != "") {
         $("#" + id + "EndDate").datepicker("option", "minDate", selectedDate);
@@ -2212,7 +2212,7 @@ const validateDateRage = (id: string) => {
   });
 
   $("#" + id + "EndDate").datepicker({
-    ...ui_datepicker_settings,
+    ...uiDatepickerSettings,
     onClose: function (selectedDate) {
       $("#" + id + "BeginDate").datepicker("option", "maxDate", selectedDate);
     }
@@ -2479,8 +2479,8 @@ function initializeSelect2(isQuizSelect2: string[]) {
 }
 
 const fieldDateClear = (id: string) => {
-  var _id = "#" + id;
-  var $dates = $(_id).datepicker();
+  var fieldId = "#" + id;
+  var $dates = $(fieldId).datepicker();
 
   $("#imgClear" + id).on("click", function () {
     $dates.datepicker("setDate", null);
@@ -2488,8 +2488,8 @@ const fieldDateClear = (id: string) => {
 };
 
 const fieldBeginDateRangeClear = (id: string) => {
-  var _id = $("#" + id + "BeginDate");
-  var $dates = $(_id).datepicker();
+  var fieldId = $("#" + id + "BeginDate");
+  var $dates = $(fieldId).datepicker();
 
   $("#imgClear" + id + "BeginDate").on("click", function () {
     $dates.datepicker("setDate", null);
@@ -2497,8 +2497,8 @@ const fieldBeginDateRangeClear = (id: string) => {
 };
 
 const fieldEndDateRangeClear = (id: string) => {
-  var _id = $("#" + id + "EndDate");
-  var $dates = $(_id).datepicker();
+  var fieldId = $("#" + id + "EndDate");
+  var $dates = $(fieldId).datepicker();
 
   $("#imgClear" + id + "EndDate").on("click", function () {
     $dates.datepicker("setDate", null);
@@ -2700,9 +2700,9 @@ const xml2json = (xml, tab) => {
   );
 };
 
-const fillSwapList = (id: string, list_id: string, params: any) => {
-  var _id = "#" + id;
-  var list = $(_id + list_id);
+const fillSwapList = (id: string, listId: string, params: any) => {
+  var fieldId = "#" + id;
+  var list = $(fieldId + listId);
 
   for (var i = 0; i < params.length; i++) {
     var data = params[i];
