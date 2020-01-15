@@ -154,7 +154,7 @@ const fillJqGrid = (grid_id: string, data: any[]) => {
 };
 
 // Switch / Toggle
-($(".radio-toggle") as any).toggleInput();
+($(".amRadioToggle") as any).toggleInput();
 
 // Wizard
 ($(".wizard") as any).steps({

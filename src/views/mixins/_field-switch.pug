@@ -1,27 +1,27 @@
 mixin field-switch(id, parms, ...items)
-  - var _field_id = "field_" + id
-  - var _field_error_block = "field_error_block_" + id
+  - var _field_id = "divField" + id
+  - var _field_error_block = "divFieldErrorBlock" + id
   - var _field_error_block_id = "#" + _field_error_block
-  - var _class = "is_" + (parms.orientation ? parms.orientation : "vertical")
+  - var _class = "amIs" + (parms.orientation ? parms.orientation[0].toUpperCase() + parms.orientation.substr(1) : "Vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
   - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
-  .field(id=_field_id class=_class)
-    .field-label.flex
-      label.field-label= parms.label
+  .amField(id=_field_id class=_class)
+    .amFieldLabel.flex
+      label.amFieldLabel= parms.label
       if parms.required
-        span.pr-5.required *
+        span.pr-5.amRequired *
       else
         span.pr-5
-    .field-control.radio-toggle.has-toggle-input(data-tooltip=_tooltip)
-        .form-check
+    .amFieldControl.amRadioToggle.amHasToggleInput(data-tooltip=_tooltip)
+        .amFormCheck
             each item, index in items
                 - var item_id = "radio_" + id + "_" + index
                 - var _checked = (index==0 ? true : false)
                 
                 if index==0
-                  label.form-check-label.left
-                      input.form-check-input(type="radio"
+                  label.amFormCheckLabel.amLeft
+                      input.amFormCheckInput(type="radio"
                           name=id
                           id=item_id
                           value=item.key
@@ -31,8 +31,8 @@ mixin field-switch(id, parms, ...items)
                       )
                       span= item.value
                 else
-                  label.form-check-label.right
-                      input.form-check-input(type="radio"
+                  label.amFormCheckLabel.amRight
+                      input.amFormCheckInput(type="radio"
                           name=id
                           id=item_id
                           value=item.key
@@ -42,5 +42,5 @@ mixin field-switch(id, parms, ...items)
                       )
                       span= item.value
 
-        .field-error
+        .amFieldError
         div(id=_field_error_block)
