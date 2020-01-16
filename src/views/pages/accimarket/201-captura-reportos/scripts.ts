@@ -28,7 +28,7 @@ $('.sidebar-collapsible-button').on('click', function() {
 fieldPlusMinus("contrato", {});
 fieldPlusMinus("digito", {});
 
-http_findAll("grupos", {}, payload => {
+httpFindAll("grupos", {}, payload => {
   ($("#cboGrupo") as any).select2({
     language: "es",
     placeholder: "",
@@ -46,7 +46,7 @@ if( capReportsideBar ){
   $(".content").addClass("is_sidebar_open");
 }
 
-http_findAll("instrumentos", {}, payload => {
+httpFindAll("instrumentos", {}, payload => {
   ($("#cboInstrumento") as any).select2({
     language: "es",
     placeholder: "",
@@ -426,7 +426,7 @@ $(window).on("resize", function() {
       }
     }
 
-    http_findAll("captura_reportos", captura_reportos_params, payload => {
+    httpFindAll("captura_reportos", captura_reportos_params, payload => {
       $("#table_gridBandas").jqGrid("clearGridData");
       $("#table_gridBandas").jqGrid("setGridParam", { data: payload });
       $("#table_gridBandas").trigger("reloadGrid");
@@ -496,7 +496,7 @@ llenaGridErroresReportos([]);
     //   contratos_params.product = productTypes;
     // }
 
-    // http_findAll("contratos", contratos_params, payload => {
+    // httpFindAll("contratos", contratos_params, payload => {
     //   // console.log(payload);
     //   console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS 2");
     //   $("#table_contratos").jqGrid("clearGridData");

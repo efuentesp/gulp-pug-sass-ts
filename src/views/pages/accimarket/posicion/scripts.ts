@@ -196,7 +196,7 @@ const generaTabla = (tabDescripcion) => {
 };
 
 const consultaInformacion = (contrato: string) => {
-    http_findAll("datosContrato", contrato, payload => {
+    httpFindAll("datosContrato", contrato, payload => {
         infoContrato(payload);
         if (payload[0].listaContrato.length == 0) {
             ejecutaDialog();
@@ -290,7 +290,7 @@ $("#btn_consul_mov").click(() => {
 
             $("#contratoDetalle").val($("#contrato").val())
 
-            http_findAll("consultaCon", mov_posicion_params, payload => {
+            httpFindAll("consultaCon", mov_posicion_params, payload => {
                 if (payload !== null) {
                     $("#table_detalle").jqGrid("clearGridData");
                     $("#table_detalle").jqGrid("setGridParam", { data: payload.movimientosLst });

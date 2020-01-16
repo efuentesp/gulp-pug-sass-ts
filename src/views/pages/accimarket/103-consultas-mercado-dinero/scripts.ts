@@ -4,7 +4,7 @@ console.log("103-consultas-mercado-dinero");
 
 let orden_directo_params: UrlParams = {};
 
-http_findAll("orden_en_directo", orden_directo_params, payload => {
+httpFindAll("orden_en_directo", orden_directo_params, payload => {
   llenaGridOrdenDirecto(payload);
   const rec_count = payload.length;
   $("#count_contratos").html(rec_count);

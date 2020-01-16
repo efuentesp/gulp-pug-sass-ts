@@ -21,7 +21,7 @@ $("#dateRangeVencimiento_end_date").datepicker("setDate", "today");
 // Form validations
 let mercado_vencido_params: UrlParams = {};
 
-http_findAll("vencidos", mercado_vencido_params, payload => {
+httpFindAll("vencidos", mercado_vencido_params, payload => {
   console.log("INGRESA A LA FUNCION  FINDALL vencidos");
   llenaGridMercadoVencido(payload);
   const rec_count = payload.length;
@@ -86,7 +86,7 @@ const formMercadoVencido = ($("#criterios-busqueda") as any)
       mercado_vencido_params.fechaFin = fechaFin;
     }
 
-    http_findAll("vencidos", mercado_vencido_params, payload => {
+    httpFindAll("vencidos", mercado_vencido_params, payload => {
       // console.log(payload);
       $("#table_vencidos").jqGrid("clearGridData");
       $("#table_vencidos").jqGrid("setGridParam", { data: payload });

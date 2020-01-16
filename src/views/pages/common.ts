@@ -96,9 +96,6 @@ const uiAccordionSettings = {
   heightStyle: "content"
 };
 
-// Timepicker
-// ($(".timepicker") as any).wickedpicker();
-
 // Query UI Tooltip settings
 $(document).tooltip({
   disabled: true
@@ -182,13 +179,12 @@ $("[href='#finish']").html(
   '<img src="../../assets/images/btn-enviar.png">Enviar</img>'
 );
 
-// REST APIs}
+// REST APIs
 const restFindAll = (resource: string, params: any, cb: Function) => {
   const apiParams = $.param(params);
   const url = apiParams
     ? `${RESTURL}/${resource}?${apiParams}`
     : `${RESTURL}/${resource}`;
-  // console.log(url);
 
   $.ajax({
     url,
@@ -197,20 +193,6 @@ const restFindAll = (resource: string, params: any, cb: Function) => {
     success: result => cb(result)
   });
 };
-
-// const rest_findAll$ = (resource: string, params: any) => {
-//   const api_params = $.param(params);
-//   const url = api_params
-//     ? `${REST_URL}/${resource}?${api_params}`
-//     : `${REST_URL}/${resource}`;
-//   // console.log(url);
-
-//   return $.ajaxAsObservable({
-//     url,
-//     contentType: "application/json",
-//     dataType: "json"
-//   });
-// };
 
 const restCreate = (resource: string, payload: any, cb: Function) => {
   const url = `${RESTURL}/${resource}`;
@@ -226,23 +208,10 @@ const restCreate = (resource: string, payload: any, cb: Function) => {
   });
 };
 
-// const rest_create$ = (resource: string, payload: any) => {
-//   const url = `${REST_URL}/${resource}`;
-//   // console.log(url);
-
-//   return $.ajaxAsObservable({
-//     type: "POST",
-//     url,
-//     data: JSON.stringify(payload),
-//     contentType: "application/json; charset=utf-8",
-//     dataType: "json"
-//   });
-// };
 
 const restFindOne = (resource: string, id: string, cb: Function) => {
   const url = `${RESTURL}/${resource}/${id}`;
-  // console.log(url);
-
+ 
   $.ajax({
     url,
     contentType: "application/json",
@@ -283,11 +252,8 @@ const rpc = (url: string, params: any, cb: Function) => {
 });
 
 const httpFindAll = restFindAll;
-// const http_findAll$ = rest_findAll$;
 const httpFindOne = restFindOne;
-const httpFindOne$ = restFindOne$;
 const httpCreate = restCreate;
-// const http_create$ = rest_create$;
 
 const existText = (textToAdd: string, list: string) => {
   let exist = false;

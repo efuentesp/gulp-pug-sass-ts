@@ -10,7 +10,7 @@ $('.sidebar-collapsible-button').on('click', function() {
   $('#sidebar_wrapper_aside .sidebar').toggleClass('isClosed');
 });
 
-http_findAll("grupos", {}, payload => {
+httpFindAll("grupos", {}, payload => {
   ($("#grupo") as any).select2({
     language: "es",
     placeholder: "",
@@ -28,7 +28,7 @@ if( expandSideBar ){
   $(".content").addClass("is_sidebar_open");
 }
 
-http_findAll("instrumentos", {}, payload => {
+httpFindAll("instrumentos", {}, payload => {
   ($("#instrumento") as any).select2({
     language: "es",
     placeholder: "",
@@ -40,7 +40,7 @@ http_findAll("instrumentos", {}, payload => {
 
 let cotizacion_reporto_params: UrlParams = {};
 
-// http_findAll("cotizacion_reporto", cotizacion_reporto_params, payload => {
+// httpFindAll("cotizacion_reporto", cotizacion_reporto_params, payload => {
 //   llenaGridCotizacionReporto(payload);
 //   $("#table_grid_cotizacion_reportos").jqGrid("clearGridData");
 //   $("#table_grid_cotizacion_reportos").trigger("reloadGrid");
@@ -174,7 +174,7 @@ $(window).on("resize", function() {
       }
     }
 
-    http_findAll("cotizacion_reporto", cotizacion_reporto_params, payload => {
+    httpFindAll("cotizacion_reporto", cotizacion_reporto_params, payload => {
       $("#table_grid_cotizacion_reportos").jqGrid("clearGridData");
       $("#table_grid_cotizacion_reportos").jqGrid("setGridParam", { data: payload });
       $("#table_grid_cotizacion_reportos").trigger("reloadGrid");
@@ -237,7 +237,7 @@ llenaGridCotizacionReporto([]);
     //   contratos_params.product = productTypes;
     // }
 
-    // http_findAll("contratos", contratos_params, payload => {
+    // httpFindAll("contratos", contratos_params, payload => {
     //   // console.log(payload);
     //   console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS 2");
     //   $("#table_contratos").jqGrid("clearGridData");

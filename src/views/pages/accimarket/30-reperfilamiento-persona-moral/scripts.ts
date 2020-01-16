@@ -5,7 +5,7 @@ $('#contratoPM').change(() => {
   params_pm = {};
   params_pm.contrato = String($('#contratoPM').val());
 
-  http_findAll("contratoPM", params_pm, payload => {
+  httpFindAll("contratoPM", params_pm, payload => {
     if (payload !== null) {
       $('#nombrePM').val(payload.nomFirma);
       $('#perfilPM').val(payload.perfil);

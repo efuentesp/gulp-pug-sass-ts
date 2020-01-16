@@ -17,11 +17,11 @@ fieldSelectPlusAutocomplete("ejemplo", {});
 // Form validations
 let contratos_params: UrlParams = {};
 
-// const r$ = http_findAll$("contratos", contratos_params)
+// const r$ = httpFindAll$("contratos", contratos_params)
 //   .map(v => v["data"])
 //   .subscribe(data => llenaGridContratos(data));
 
-http_findAll("contratos", contratos_params, payload => {
+httpFindAll("contratos", contratos_params, payload => {
   llenaGridContratos(payload);
   llenaSelectContratos(payload);
   const rec_count = payload.length;
@@ -81,7 +81,7 @@ const form = ($("#criterios-busqueda") as any)
       contratos_params.product = productTypes;
     }
 
-    http_findAll("contratos", contratos_params, payload => {
+    httpFindAll("contratos", contratos_params, payload => {
       // console.log(payload);
       $("#dtgContratos").jqGrid("clearGridData");
       $("#dtgContratos").jqGrid("setGridParam", { data: payload });

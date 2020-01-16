@@ -222,7 +222,7 @@ $("#dtgErroresDirectos").jqGrid({
     //   contratos_params.product = productTypes;
     // }
 
-    // http_findAll("contratos", contratos_params, payload => {
+    // httpFindAll("contratos", contratos_params, payload => {
     //   // console.log(payload);
     //   console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS 2");
     //   $("#table_contratos").jqGrid("clearGridData");
@@ -280,7 +280,7 @@ $("#dtgErroresDirectos").jqGrid({
     //   contratos_params.product = productTypes;
     // }
 
-    // http_findAll("contratos", contratos_params, payload => {
+    // httpFindAll("contratos", contratos_params, payload => {
     //   // console.log(payload);
     //   console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS 2");
     //   $("#table_contratos").jqGrid("clearGridData");

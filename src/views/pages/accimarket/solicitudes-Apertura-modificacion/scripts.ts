@@ -168,7 +168,7 @@ $("#btn_search").click(() => {
       }
 
 
-      http_findAll("contratos", listaOrdenes_parametros, payload => {
+      httpFindAll("contratos", listaOrdenes_parametros, payload => {
         const rec_count = payload.length;
         $("#count_contratos").html(rec_count);
         fillJqGrid("#table_solicitudesApertura", payload);
@@ -215,7 +215,7 @@ $("#btn_search_modificacion").click(() => {
         listaOrdenes_parametros.fecha_captura = rangoModificacion_end_date;
       }
 
-      http_findAll("contratos", listaOrdenes_parametros, payload => {
+      httpFindAll("contratos", listaOrdenes_parametros, payload => {
         const rec_count = payload.length;
         $("#count_contratos").html(rec_count);
         fillJqGrid("#table_solicitudesModificacion", payload);

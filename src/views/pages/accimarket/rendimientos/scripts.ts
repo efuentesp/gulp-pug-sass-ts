@@ -140,7 +140,7 @@ const activaTIR = (selected: any[]) => {
   
   const txtContrato: string = String($("#txtContrato").val());
 
-  http_findOne("contratos", txtContrato, payload => {
+  httpFindOne("contratos", txtContrato, payload => {
     infoContratoRendimiento(payload);
 
     fillJqGrid("#table_resultadosMensuales", payload.listaMensuales);
@@ -156,7 +156,7 @@ const activaTWP = (selected: any[]) => {
 
   const txtContrato: string = String($("#txtContrato").val());
 
-  http_findOne("contratos", txtContrato, payload => {
+  httpFindOne("contratos", txtContrato, payload => {
     infoContratoRendimiento(payload);
 
     fillJqGrid("#table_resultadosMensualesTWP", payload.listaMensualesTWP);
@@ -475,7 +475,7 @@ $("#table_resultadosMensualesTWP").jqGrid({
         "obtener-fuente": function(event) {
           const txtContrato: string = String($("#txtContrato").val());
 
-          http_findOne("contratos", txtContrato, payload => {
+          httpFindOne("contratos", txtContrato, payload => {
             infoContratoRendimiento(payload);
 
             fillJqGrid("#table_resultadosfuente", payload.listatabla_fuente);

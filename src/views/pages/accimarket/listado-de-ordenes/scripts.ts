@@ -87,7 +87,7 @@ $("#btn_search").click(() => {
         listaOrdenes_params.clasificacion = clasificacion;
       }
 
-      http_findAll("contratos", listaOrdenes_params, payload => {
+      httpFindAll("contratos", listaOrdenes_params, payload => {
         const rec_count = payload.length;
         $("#count_contratos").html(rec_count);
         fillJqGrid("#table_busquedaOrdenes", payload);

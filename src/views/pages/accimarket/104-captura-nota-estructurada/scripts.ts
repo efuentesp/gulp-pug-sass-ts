@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 let ordenes_params: UrlParams = {};
 
-http_findAll("ordenes_nota_estructurada", ordenes_params, payload => {
+httpFindAll("ordenes_nota_estructurada", ordenes_params, payload => {
   llenaGridOrdenes(payload);
   const rec_count = payload.length;
   $("#count_ordenes").html(rec_count);
@@ -158,7 +158,7 @@ $("#contrato").keypress(event => {
   if (keycode == 13) {
     const contrato: string = String($("#contrato").val());
 
-    http_findOne("contratos", contrato, payload => {
+    httpFindOne("contratos", contrato, payload => {
       console.log(payload);
       llenarInfoContratoNE(payload);
     });
@@ -178,7 +178,7 @@ fieldSelectPlusAutocomplete("emisora", {
 $("#emisora").on("select2:select", e => {
   const emisora: string = String($("#emisora").val());
 
-  http_findOne("datosEmisora", emisora, payload => {
+  httpFindOne("datosEmisora", emisora, payload => {
     console.log(payload);
     llenarInfoEmisoraNE(payload);
   });

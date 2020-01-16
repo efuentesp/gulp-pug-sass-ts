@@ -22,11 +22,11 @@ $("#btn_search").click(() =>
 // Form validations
 let contratos_posicion_grupo_params: UrlParams = {};
 
-// const r$ = http_findAll$("contratos", contratos_params2)
+// const r$ = httpFindAll$("contratos", contratos_params2)
 //   .map(v => v["data"])
 //   .subscribe(data => llenaGridContratos77(data));
 
-http_findAll("contratos", contratos_posicion_grupo_params, payload => {
+httpFindAll("contratos", contratos_posicion_grupo_params, payload => {
   console.log("INGRESA A LA FUNCION  FINDALL CONTRATOS");
 
   llenaGridContratosPosicionGrupo(payload);
@@ -74,7 +74,7 @@ const formContratosPosicionGrupo = ($("#criterios-busqueda") as any)
       contratos_posicion_grupo_params.payment = payment;
     }
 
-    http_findAll("contratos", contratos_posicion_grupo_params, payload => {
+    httpFindAll("contratos", contratos_posicion_grupo_params, payload => {
       // console.log(payload);
       $("#table_contratos").jqGrid("clearGridData");
       $("#table_contratos").jqGrid("setGridParam", { data: payload });

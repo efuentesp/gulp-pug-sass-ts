@@ -47,7 +47,7 @@ $("#dtgVentas").jqGrid({
 // Form validations
 let ventas_params: UrlParams = {};
 
-http_findAll("contratos", ventas_params, payload => {
+httpFindAll("contratos", ventas_params, payload => {
   $("#totalreg").val(payload.length);
   fillJqGrid("#dtgVentas", payload);
 });
@@ -76,7 +76,7 @@ const formu = ($("#criterios-busqueda") as any)
       ventas_params.negocio = lineaNegocio;
     }
 
-    http_findAll("contratos", ventas_params, payload => {
+    httpFindAll("contratos", ventas_params, payload => {
       $("#totalreg").val(payload.length);
       fillJqGrid("#dtgVentas", payload);
     });
@@ -86,11 +86,11 @@ const formu = ($("#criterios-busqueda") as any)
 
 let average_params: UrlParams = {};
 
-http_findAll("averages", average_params, payload => {
+httpFindAll("averages", average_params, payload => {
   fillAverage(payload);
 });
 
-http_findAll("averages", average_params, payload => {
+httpFindAll("averages", average_params, payload => {
   fillAverage1(payload);
 });
 
@@ -167,11 +167,11 @@ const fillAverage1 = (average: any) => {
 // Form validations
 let contratos1_params: UrlParams = {};
 
-// const r$ = http_findAll$("contratos", contratos_params)
+// const r$ = httpFindAll$("contratos", contratos_params)
 //   .map(v => v["data"])
 //   .subscribe(data => llenaGridContratos(data));
 
-http_findAll("contratos", contratos1_params, payload => {
+httpFindAll("contratos", contratos1_params, payload => {
   // fillJqGrid("#table_contratos", payload);
   llenaGridContratos1(payload);
   const rec_count = payload.length;

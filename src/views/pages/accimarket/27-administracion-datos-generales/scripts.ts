@@ -14,7 +14,7 @@ const form27 = ($("#criterios-busqueda") as any)
 
     const contrato: string = String($("#contrato").val());
 
-    http_findOne("contratos", contrato, payload => {
+    httpFindOne("contratos", contrato, payload => {
       console.log(payload);
       llenarInfoContrato(payload);
       llenarTitularContrato(payload);

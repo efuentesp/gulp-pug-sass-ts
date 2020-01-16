@@ -21,7 +21,7 @@ $("#dateRangeVencimiento_end_date").datepicker("setDate", "today");
 // Form validations
 let ventas_asesoradas_params: UrlParams = {};
 
-http_findAll("ventas", ventas_asesoradas_params, payload => {
+httpFindAll("ventas", ventas_asesoradas_params, payload => {
   console.log("INGRESA A LA FUNCION  FINDALL VENTAS ASESORADAS");
   llenaGridVentaAsesorada(payload);
   const rec_count = payload.length;
@@ -71,7 +71,7 @@ const formVentasAsesoradas = ($("#criterios-busqueda") as any)
       ventas_asesoradas_params.negocios = negocios;
     }
 
-    http_findAll("ventas", ventas_asesoradas_params, payload => {
+    httpFindAll("ventas", ventas_asesoradas_params, payload => {
       // console.log(payload);
       $("#table_ventas").jqGrid("clearGridData");
       $("#table_ventas").jqGrid("setGridParam", { data: payload });

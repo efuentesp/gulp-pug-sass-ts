@@ -3,11 +3,11 @@
 let source_params: UrlParams = {};
 let destination_params: UrlParams = {};
 
-http_findAll("source", source_params, payload => {
+httpFindAll("source", source_params, payload => {
   llenaSource("divListado", payload);
 });
 
-http_findAll("destination", destination_params, payload => {
+httpFindAll("destination", destination_params, payload => {
   llenaDestination("divListado", payload);
 });
 

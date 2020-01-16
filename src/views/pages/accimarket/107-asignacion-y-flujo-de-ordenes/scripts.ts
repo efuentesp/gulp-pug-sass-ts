@@ -44,7 +44,7 @@ $("input[name='vista']").click(function () {
     }
 });
 
-http_findAll("asignacion", listaAsignacion_params, payload => {
+httpFindAll("asignacion", listaAsignacion_params, payload => {
     llenaGridAsignacionOrdenes(payload);
     llenaSelectEmisora(payload);
     llenaSelectDigito(payload);
@@ -449,7 +449,7 @@ const llenaGridAsignacionOrdenes = (asignaciones: any) => {
 };
 
 
-http_findAll("flujo", listaFlujo_params, payload => {
+httpFindAll("flujo", listaFlujo_params, payload => {
     llenaGridFlujoOrdenes(payload);
     const rec_count = payload.length;
     $("#count_flujo").html(rec_count);
@@ -534,7 +534,7 @@ const llenaGridFlujoOrdenes = (flujos: any) => {
     });
 }
 
-http_findAll("hechos", listaHechos_params, payload => {
+httpFindAll("hechos", listaHechos_params, payload => {
     llenaGridHechos(payload);
     const rec_count = payload.length;
     $("#count_hechos").html(rec_count);
@@ -560,7 +560,7 @@ const llenaGridHechos = (hechos: any) => {
         ]
     });
 };
-http_findAll("cancelarordenes", listaCancelarOrdenes_params, payload => {
+httpFindAll("cancelarordenes", listaCancelarOrdenes_params, payload => {
     llenaGridCancelarOrdenes(payload);
     const rec_count = payload.length;
     $("#count_hechos").html(rec_count);
@@ -670,7 +670,7 @@ const rellenarGridAsignacion = () => {
         }
     }
 
-    http_findAll("asignacion", listaAsignacion_params, payload => {
+    httpFindAll("asignacion", listaAsignacion_params, payload => {
         $("#table_busquedaAsignacion").jqGrid("clearGridData");
         $("#table_busquedaAsignacion").jqGrid("setGridParam", { data: payload });
         $("#table_busquedaAsignacion").trigger("reloadGrid");
@@ -790,11 +790,11 @@ const cuentaRegresiva = (segundos: number) => {
 const segundos_actualizar = $("#segundos-actualizar").val();
 cuentaRegresiva(+segundos_actualizar);
 
-http_findAll("source", source_asignacion_params, payload => {
+httpFindAll("source", source_asignacion_params, payload => {
     llenaSource_asignacion("listado", payload);
 });
 
-http_findAll("destination", destination_asignacion_params, payload => {
+httpFindAll("destination", destination_asignacion_params, payload => {
     llenaDestination_asignacion("listado", payload);
 });
 

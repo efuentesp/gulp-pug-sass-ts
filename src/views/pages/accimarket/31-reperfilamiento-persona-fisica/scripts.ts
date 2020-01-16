@@ -30,7 +30,7 @@ $("#contrato").change(() => {
     .append(options)
     .trigger("change");
 
-  http_findOne("busquedaContrato", contrato, payload => {
+  httpFindOne("busquedaContrato", contrato, payload => {
     if (payload !== null) {
       $("#nombre").val(payload.nombre);
       $("#perfil").val(payload.perfilActual);
@@ -305,7 +305,7 @@ $("#btn_send").click(() => {
 
       console.log(JSON.stringify(pf_params));
 
-      http_create(
+      httpCreate(
         "perfilamiento_personas_fisicas",
         pf_params,
         (payload: any) => {
@@ -398,7 +398,7 @@ $("#dtgEmisora").jqGrid({
 // Quiz group 3
 let encuesta_params: UrlParams = {};
 // Name of json
-http_findAll("encuesta", encuesta_params, payload => {
+httpFindAll("encuesta", encuesta_params, payload => {
   // Parameters: field name group, id of quiz, data
   fillQuiz("grupoTres", "encuesta", payload);
 });

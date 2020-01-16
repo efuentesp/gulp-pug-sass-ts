@@ -36,7 +36,7 @@ $("#btn_search").click(() => {
         movc_params.plazoStr = plazo;
       }
 
-      http_findAll("consultaCon", movc_params, payload => {
+      httpFindAll("consultaCon", movc_params, payload => {
         if (payload !== null) {
           llenarContrato(payload);
           movimientosGrid(payload);
@@ -134,7 +134,7 @@ $("#table_grid_mov_contrato").jqGrid({
 });
 
 $(document).ready(function () {
-  http_findOne("movPorContratos", "", payload => {
+  httpFindOne("movPorContratos", "", payload => {
     $("#fechaI").val(payload.fecServicio.fechaInicial);
     $("#fechaF").val(payload.fecServicio.fechaFinal);
   });

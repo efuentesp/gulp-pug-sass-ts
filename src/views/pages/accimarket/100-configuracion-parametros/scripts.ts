@@ -14,11 +14,11 @@ $("#grupo-instrumento").trigger("change");
 // Form validations
 let spreads_params: UrlParams = {};
 
-// const r$ = http_findAll$("contratos", contratos_params)
+// const r$ = httpFindAll$("contratos", contratos_params)
 //   .map(v => v["data"])
 //   .subscribe(data => llenaGridContratos(data));
 
-http_findAll("spreads", spreads_params, payload => {
+httpFindAll("spreads", spreads_params, payload => {
   llenaGridSpreads(payload);
 });
 

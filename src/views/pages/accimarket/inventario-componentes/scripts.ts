@@ -40,7 +40,7 @@
 // _canvas-variantes.pug
 // let canvas_test_params: UrlParams = {};
 
-// http_findAll("averages", canvas_test_params, payload => {
+// httpFindAll("averages", canvas_test_params, payload => {
 //     canvasTest(payload);
 //   });
 
@@ -103,7 +103,7 @@
 // _grid-variantes.pug
 // let test_grid_params: UrlParams = {};
 
-// http_findAll("contratos", test_grid_params, payload => {
+// httpFindAll("contratos", test_grid_params, payload => {
   
 //     llenaGridTestGridVariantess(payload);    
 //     const rec_count = payload.length;
@@ -441,7 +441,7 @@
 
 // fieldSelectPlusAutocomplete("contrato", {});
 
-// http_findAll("contratos", page_params, payload => {
+// httpFindAll("contratos", page_params, payload => {
 //     llenaSelectContrato(payload);
 //   });
 
@@ -455,7 +455,7 @@
 
 // _quiz-varaintes.pug
 // let ejemplo_encuesta_params: UrlParams = {}; 
-// http_findAll("encuesta", ejemplo_encuesta_params, payload => {
+// httpFindAll("encuesta", ejemplo_encuesta_params, payload => {
 //   // Parameters: field name group, id of quiz, data
 //   fillQuiz("ejemplo_encuesta", "encuesta", payload);
 // });

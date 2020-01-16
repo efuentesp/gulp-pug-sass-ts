@@ -34,7 +34,7 @@ fieldEndDateRangeClear("rango");
 
 let notaEstructurada_params: UrlParams = {};
 
-http_findAll(
+httpFindAll(
   "notaEstructurada",
   notaEstructurada_params,
   notasEstructuradas => {
@@ -167,7 +167,7 @@ const formMonitoreoCaptacion = ($("#criterios-busqueda") as any)
       notaEstructurada_params.emisora = listEmisora;
     }
 
-    http_findAll(
+    httpFindAll(
       "notaEstructurada",
       notaEstructurada_params,
       notasEstructuradas => {

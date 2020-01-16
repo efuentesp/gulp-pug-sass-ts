@@ -50,7 +50,7 @@ const mostrarDialogoHorario = (notaEstructurada: any) => {
           params.horario = $("#horario-ampliacion option:selected").text();
           //idsistema, idlibro
           console.log("Params " + JSON.stringify(params));
-          http_create("horarioAmpliado", params, response => {
+          httpCreate("horarioAmpliado", params, response => {
             console.log(response);
           });
           $("#horario-ampliacion").prop("selectedIndex", 0);

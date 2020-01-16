@@ -7,42 +7,42 @@ let rendimientoshc_params: UrlParams = {};
 let promedios_params: UrlParams = {};
 
 // Service line chart
-http_findAll("rates", rates_params, payload => {
+httpFindAll("rates", rates_params, payload => {
   fillEstrategias(payload);
 });
 
 // Service multiline chart
-http_findAll("rates", rates_params, payload => {
+httpFindAll("rates", rates_params, payload => {
   fillRates(payload);
 });
 
 // Services stack chart
-http_findAll("rendimientos", rendimientos_params, payload => {
+httpFindAll("rendimientos", rendimientos_params, payload => {
   fillRendimientos(payload);
 });
 
 // Services stack chart horizontal
-http_findAll("rendimientosh", rendimientosh_params, payload => {
+httpFindAll("rendimientosh", rendimientosh_params, payload => {
   fillHorizontalRendimientos(payload);
 });
 
 // Services stack chart horizontal
-http_findAll("rendimientoshc", rendimientoshc_params, payload => {
+httpFindAll("rendimientoshc", rendimientoshc_params, payload => {
   fillPromediosHighchartBar(payload);
 });
 
 
 // Services bar chart
-http_findAll("promedios", promedios_params, payload => {
+httpFindAll("promedios", promedios_params, payload => {
   fillPromedios(payload);
 });
 
-http_findAll("promediosNBar", promedios_params, payload => {
+httpFindAll("promediosNBar", promedios_params, payload => {
   fillPromediosNBar(payload);
 });
 
 // Services bar chart
-http_findAll("promedios", promedios_params, payload => {
+httpFindAll("promedios", promedios_params, payload => {
   fillPromediosPie(payload);
   fillPromediosPieHighcharts(payload);
 });

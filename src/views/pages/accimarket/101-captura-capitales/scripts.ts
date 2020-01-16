@@ -14,7 +14,7 @@ console.log("101-captura-capitales");
 
 // const rest_url = `${REST_URL}/cotizacion_reportos`;
 let cotizacion_reportos_params: UrlParams = {};
-http_findAll("cotizacion_reportos", cotizacion_reportos_params, payload => {
+httpFindAll("cotizacion_reportos", cotizacion_reportos_params, payload => {
   llenaGridContratos(payload);
   const rec_count = payload.length;
   $("#count_contratos").html(rec_count);

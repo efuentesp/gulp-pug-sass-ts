@@ -10,7 +10,7 @@ $(document).ready(() => {
   document.getElementById("field_menuSimulado").style.display = "none";
 
   let emisoras_params: UrlParams = {};
-  http_findAll("emisoras", emisoras_params, emisorasJ => {
+  httpFindAll("emisoras", emisoras_params, emisorasJ => {
     const rec_count = emisorasJ.length;
     $("#count_contratos").html(rec_count);
     data = emisorasJ;
@@ -391,7 +391,7 @@ $("#contrato").on('keydown', function (e) {
 
 function getContratos() {
   const contratot: string = String($("#contrato").val());
-  http_findOne("contratoP", contratot, dataParams => {
+  httpFindOne("contratoP", contratot, dataParams => {
     dataContratos = dataParams;
   });
   elementosContratos(dataContratos);
@@ -700,11 +700,11 @@ const mensajeEjecuta = (opcion: number, mensaje: string) => {
 /*
 * Configuracion para dialogo de columnas
 */
-http_findAll("source", sourceParams, payload => {
+httpFindAll("source", sourceParams, payload => {
   llenaSourceList("listado", payload);
 });
 
-http_findAll("destination", destinationParams, payload => {
+httpFindAll("destination", destinationParams, payload => {
   llenaDestinationList("listado", payload);
 });
 

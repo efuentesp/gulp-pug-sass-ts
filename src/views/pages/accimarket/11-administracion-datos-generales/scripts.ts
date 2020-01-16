@@ -33,7 +33,7 @@ let limitantes_invertir_grid_params: UrlParams = {
   // contrato: "CONTRATO 01"
 };
 
-http_findAll(
+httpFindAll(
   "limitantes_invertir_grid",
   limitantes_invertir_grid_params,
   payload => {
@@ -64,7 +64,7 @@ let relacion_emisor_grid_params: UrlParams = {
   // contrato: "CONTRATO 01"
 };
 
-http_findAll(
+httpFindAll(
   "relacion_emisor_grid_params",
   relacion_emisor_grid_params,
   payload => {

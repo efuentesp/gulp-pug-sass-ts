@@ -73,7 +73,7 @@ const dialogoMovimientos = () => {
 
     $("#contratoDetalle").val($("#contrato").val());
 
-    http_findAll("consultaCon", mov_pos_dialog_params, payload => {
+    httpFindAll("consultaCon", mov_pos_dialog_params, payload => {
       if (payload !== null) {
         listaDetalle = payload.movimientosLst;
 
@@ -179,7 +179,7 @@ function redondeo2decimales(numero) {
 }
 
 const ejecutaGraficaLineal = idGenerado => {
-  http_findAll("rendimientosh", rendi_params, payload => {
+  httpFindAll("rendimientosh", rendi_params, payload => {
     fillHorizontalRendi(payload, idGenerado);
   });
 };
