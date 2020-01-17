@@ -6,9 +6,9 @@ validateDateRage("rango");
 fieldDateClear("fecha");
 fieldBeginDateRangeClear("rango");
 fieldEndDateRangeClear("rango");
-fieldPlusMinus("Contrato", {});
-fieldPlusMinus("Digito", { maxsize: 5 }); // Max number of elements
-fieldSelectPlusMinus("TestSelectPlusMinusContrato", {});
+fieldPlusMinus("contrato", {});
+fieldPlusMinus("digito", { maxsize: 5 }); // Max number of elements
+fieldSelectPlusMinus("testSelectPlusMinusContrato", {});
 
 ($("#cmbPayment") as any).select2({
   language: "es",
@@ -66,22 +66,22 @@ const form = ($("#criteriosBusqueda") as any)
     console.log("-----+> Fecha: ", $("#fecha").val());
     console.log("-----+> Fecha inicial: ", $("#rangoBeginDate").val());
     console.log("-----+> Fecha final: ", $("#rangoEndDate").val());
-    console.log("-----+> Contrato +-: ", getList("Contrato"));
-    console.log("-----+> Digito +-: ", getList("Digito"));
-    console.log("-----+> Negocio radio: ", getOptionSelected("Negocio"));
-    console.log("-----+> Contrato select +-: ", getList("TestSelectPlusMinusContrato"));
-    console.log("-----+> Product: ", getChecked("Products"));
+    console.log("-----+> Contrato +-: ", getList("contrato"));
+    console.log("-----+> Digito +-: ", getList("digito"));
+    console.log("-----+> Negocio radio: ", getOptionSelected("negocio"));
+    console.log("-----+> Contrato select +-: ", getList("testSelectPlusMinusContrato"));
+    console.log("-----+> Product: ", getChecked("products"));
     console.log("-----+> Payment: ", $("#cmbPayment").val());
-    console.log("-----+> Contrato +- autocomplete: ", getList("TestSelecPlusMinusAutocomplete"));
+    console.log("-----+> Contrato +- autocomplete: ", getList("testSelecPlusMinusAutocomplete"));
 
 
     const fecha = $("#fecha").val();
-    const negocio = getOptionSelected("Negocio");
+    const negocio = getOptionSelected("negocio");
 
-    let listContrato = getList("Contrato");
-    let listDigito = getList("Digito");
+    let listContrato = getList("contrato");
+    let listDigito = getList("digito");
 
-    let productTypes = getChecked("Products");
+    let productTypes = getChecked("products");
 
     if (fecha) {
       contratosParams.fecha = fecha;

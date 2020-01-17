@@ -196,7 +196,6 @@ const restFindAll = (resource: string, params: any, cb: Function) => {
 
 const restCreate = (resource: string, payload: any, cb: Function) => {
   const url = `${RESTURL}/${resource}`;
-  // console.log(url);
 
   $.ajax({
     type: "POST",
@@ -367,12 +366,13 @@ const removeHoverStyle = (list: string) => {
  *   maxsize (opcional): Si la lista solo permite un número limitado de elementos en la lista
  */
 const fieldPlusMinus = (id: string, params: any) => {
-  const idBtnPlus = "#btnPlus" + id;
-  const idBtnMinus = "#btnMinus" + id;
-  const idInput = "#txt" + id;
-  const idInputHidden = "#txt" + id + "Hidden";
-  const list = "ul#lstTagList" + id;
-  const node = "lstTagList" + id;
+  const uppcId = id[0].toUpperCase() + id.substr(1)
+  const idBtnPlus = "#btnPlus" + uppcId;
+  const idBtnMinus = "#btnMinus" + uppcId;
+  const idInput = "#txt" + uppcId;
+  const idInputHidden = "#txt" + uppcId + "Hidden";
+  const list = "ul#lstTagList" + uppcId;
+  const node = "lstTagList" + uppcId;
   let definedNodes = true;
   const numNodes = 4;
 
@@ -506,12 +506,13 @@ const fieldPlusMinus = (id: string, params: any) => {
  *   maxsize (opcional): Si la lista solo permite un número limitado de elementos en la lista
  */
 const fieldSelectPlusMinus = (id: string, params: any) => {
-  const idBtnPlus = "#btnPlus" + id;
-  const idBtnMinus = "#btnMinus" + id;
-  const idInput = "#cmb" + id;
-  const idInputHidden = "#txt" + id + "Hidden";
-  const list = "ul#lstTagList" + id;
-  const node = "lstTagList" + id;
+  const uppcId = id[0].toUpperCase() + id.substr(1)
+  const idBtnPlus = "#btnPlus" + uppcId;
+  const idBtnMinus = "#btnMinus" + uppcId;
+  const idInput = "#cmb" + uppcId;
+  const idInputHidden = "#txt" + uppcId + "Hidden";
+  const list = "ul#lstTagList" + uppcId;
+  const node = "lstTagList" + uppcId;
   let definedNodes = true;
   const numNodes = 4;
 
@@ -640,12 +641,13 @@ const fieldSelectPlusMinus = (id: string, params: any) => {
  *   maxsize (opcional): Si la lista solo permite un número limitado de elementos en la lista
  */
 const fieldSelectPlusAutocomplete = (id: string, params: any) => {
-  const idBtnPlus = "#btnPlus" + id;
-  const idBtnMinus = "#btnMinus" + id;
-  const idInput = "#cmb" + id;
-  const idInputHidden = "#txt" + id + "Hidden";
-  const list = "ul#lstTagList" + id;
-  const node = "lstTagList" + id;
+  const uppcId = id[0].toUpperCase() + id.substr(1)
+  const idBtnPlus = "#btnPlus" + uppcId;
+  const idBtnMinus = "#btnMinus" + uppcId;
+  const idInput = "#cmb" + uppcId;
+  const idInputHidden = "#txt" + uppcId + "Hidden";
+  const list = "ul#lstTagList" + uppcId;
+  const node = "lstTagList" + uppcId;
   const attrId = params.id;
   const attrText = params.text;
   const payload = params.payload;
@@ -809,9 +811,10 @@ const fieldSelectPlusAutocomplete = (id: string, params: any) => {
  * @return {array} Lista de valores seleccionados
  */
 const getList = (id: string) => {
+  const uppcId = id[0].toUpperCase() + id.substr(1)
   var list: any = [];
-
-  $("#lstTagList" + id + " li").each(function () {
+  
+  $("#lstTagList" + uppcId + " li").each(function () {
     let value = $(this)
       .text()
       .trim();
@@ -830,7 +833,8 @@ const getList = (id: string) => {
  */
 const getChecked = (id: string) => {
   let selected = [];
-  const querySelect = "#divField" + id + " input[type=checkbox]";
+  const uppcId = id[0].toUpperCase() + id.substr(1)
+  const querySelect = "#divField" + uppcId + " input[type=checkbox]";
 
   $(querySelect).each(function () {
     if ($(this).is(":checked")) {
@@ -847,7 +851,8 @@ const getChecked = (id: string) => {
  * @return {string} valor del elemento seleccionado
  */
 const getOptionSelected = (id: string) => {
-  const querySelect = "input[name='rdb" + id + "']:checked";
+  const uppcId = id[0].toUpperCase() + id.substr(1)
+  const querySelect = "input[name='rdb" + uppcId + "']:checked";
 
   return $(querySelect).val();
 };
@@ -2160,27 +2165,28 @@ const pieChart = (params: pieChartParams) => {
 
 // Dates
 const validateDateRage = (id: string) => {
-  $("#" + id + "BeginDate").datepicker({
+  const lowcId = id[0].toLowerCase() + id.substr(1)
+  $("#" + lowcId + "BeginDate").datepicker({
     ...uiDatepickerSettings,
     onClose: function (selectedDate, instance) {
       if (selectedDate != "") {
-        $("#" + id + "EndDate").datepicker("option", "minDate", selectedDate);
+        $("#" + lowcId + "EndDate").datepicker("option", "minDate", selectedDate);
         var date = $.datepicker.parseDate(
           instance.settings.dateFormat,
           selectedDate,
           instance.settings
         );
         date.setMonth(date.getMonth() + 3);
-        $("#" + id + "EndDate").datepicker("option", "minDate", selectedDate);
-        $("#" + id + "EndDate").datepicker("option", "maxDate", date);
+        $("#" + lowcId + "EndDate").datepicker("option", "minDate", selectedDate);
+        $("#" + lowcId + "EndDate").datepicker("option", "maxDate", date);
       }
     }
   });
 
-  $("#" + id + "EndDate").datepicker({
+  $("#" + lowcId + "EndDate").datepicker({
     ...uiDatepickerSettings,
     onClose: function (selectedDate) {
-      $("#" + id + "BeginDate").datepicker("option", "maxDate", selectedDate);
+      $("#" + lowcId + "BeginDate").datepicker("option", "maxDate", selectedDate);
     }
   });
 };
@@ -2193,51 +2199,16 @@ $("#btnClean").click(() => {
 });
 
 const getCheckedCheckbox = (id: string) => {
+  const uppcId = id[0].toUpperCase() + id.substr(1)
   var list: any = [];
 
-  list = $("input[name='chk" + id + "']:checked")
+  list = $("input[name='chk" + uppcId + "']:checked")
     .map(function () {
       return $(this).val();
     })
     .toArray();
   return list;
 };
-
-// Función creada por Guillermo Islas
-// function relocateSummary(gridNameID, summaryColumnName, decimalPlaces) {
-//   if (gridNameID && summaryColumnName) {
-//     var summaryRow = $("#" + gridNameID + " tr[jqfootlevel]");
-//     if (summaryRow && summaryRow.length > 0) {
-//       var singleRow;
-//       $(summaryRow).each(function(index) {
-//         singleRow = $(this);
-//         var columnFullName = gridNameID + "_" + summaryColumnName;
-//         var summaryColumn = $(singleRow).find(
-//           "td[aria-describedBy=" + columnFullName + "]"
-//         );
-//         var summaryIndex = $(summaryColumn).index();
-//         if (-1 != summaryIndex) {
-//           var sum = $(summaryColumn);
-//           var sumValue = Number($(sum).html());
-//           if (decimalPlaces && !isNaN(sumValue)) {
-//             sumValue = "$" + Number(sumValue).toFixed(decimalPlaces);
-//             $(sum).html(sumValue);
-//           }
-//           var level = $(singleRow).attr("jqfootlevel");
-//           var headerRowID = "#" + gridNameID + "ghead_" + level + "_" + index;
-//           var headerRow = $(headerRowID);
-//           if (headerRow && headerRow.length > 0) {
-//             $(headerRow)
-//               .find("td:first")
-//               .attr("colspan", summaryIndex - 1);
-//             $(headerRow).append(sum);
-//             $(singleRow).remove();
-//           }
-//         }
-//       });
-//     }
-//   }
-// }
 
 // Función creada por Guillermo Islas
 function copyGridContentToClipboard(gridNameID, includeGroups) {
@@ -2445,28 +2416,34 @@ function initializeSelect2(isQuizSelect2: string[]) {
 }
 
 const fieldDateClear = (id: string) => {
-  var fieldId = "#" + id;
+  const uppcId = id[0].toUpperCase() + id.substr(1)
+  const lowcId = id[0].toLowerCase() + id.substr(1)
+  var fieldId = "#" + lowcId;
   var $dates = $(fieldId).datepicker();
 
-  $("#imgClear" + id).on("click", function () {
+  $("#imgClear" + uppcId).on("click", function () {
     $dates.datepicker("setDate", null);
   });
 };
 
 const fieldBeginDateRangeClear = (id: string) => {
-  var fieldId = $("#" + id + "BeginDate");
+  const uppcId = id[0].toUpperCase() + id.substr(1)
+  const lowcId = id[0].toLowerCase() + id.substr(1)
+  var fieldId = $("#" + lowcId + "BeginDate");
   var $dates = $(fieldId).datepicker();
 
-  $("#imgClear" + id + "BeginDate").on("click", function () {
+  $("#imgClear" + uppcId + "BeginDate").on("click", function () {
     $dates.datepicker("setDate", null);
   });
 };
 
 const fieldEndDateRangeClear = (id: string) => {
-  var fieldId = $("#" + id + "EndDate");
+  const uppcId = id[0].toUpperCase() + id.substr(1)
+  const lowcId = id[0].toLowerCase() + id.substr(1)
+  var fieldId = $("#" + lowcId + "EndDate");
   var $dates = $(fieldId).datepicker();
 
-  $("#imgClear" + id + "EndDate").on("click", function () {
+  $("#imgClear" + uppcId + "EndDate").on("click", function () {
     $dates.datepicker("setDate", null);
   });
 };
@@ -2667,7 +2644,8 @@ const xml2json = (xml, tab) => {
 };
 
 const fillSwapList = (id: string, listId: string, params: any) => {
-  var fieldId = "#" + id;
+  const uppcId = id[0].toUpperCase() + id.substr(1)
+  var fieldId = "#" + uppcId;
   var list = $(fieldId + listId);
 
   for (var i = 0; i < params.length; i++) {
@@ -2818,27 +2796,6 @@ const removeErrorsInAttrTitle = (e: any) => {
   }
 }
 
-// $("input").on({
-//   mouseenter: function(e) {
-//     // console.log("hover", e);
-//     const hasError = $(e.target).hasClass("parsley-error");
-//     if (hasError) {
-//       const fieldErrorQuerySelector = `#field_${e.target.id} .field-error`;
-//       const fieldError = $(fieldErrorQuerySelector);
-//       fieldError.css("display", "flex");
-//     }
-//   },
-//   mouseleave: function(e) {
-//     // console.log("out", e);
-//     const hasError = $(e.target).hasClass("parsley-error");
-//     if (hasError) {
-//       const fieldErrorQuerySelector = `#field_${e.target.id} .field-error`;
-//       const fieldError = $(fieldErrorQuerySelector);
-//       fieldError.css("display", "none");
-//     }
-//   }
-// });
-
 const isSelectedColumnn = (columnName: String, selectedColumns: any) => {
   let isSelected: boolean = false;
 
@@ -2885,8 +2842,7 @@ const windowResize = (widthTable: number, idTable: String, idSplitterContainer: 
     if (gridWidth > widthTable) {
       gridWidth = widthTable;
     }
-
-    // console.log("============================>> table resize: " + gridWidth);  
+    
     $("#" + idTable).jqGrid("setGridWidth", gridWidth, true);
   });
 }

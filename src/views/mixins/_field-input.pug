@@ -10,7 +10,7 @@ mixin field-input(id, parms)
   - var _input_max_length = (parms.max_length ? parms.max_length : "32")
   - var _input_max_length_errmsg = "Solo puedes ingresar hasta " + _input_max_length + " caracteres."
   - var _default_value = (parms.default_value ? parms.default_value : "")
-  - var _class = (_class == "amIsHorizontal" ? _class + " amItemsCenter" : _class)
+  - var _class = (_class == "amIsHorizontal" ? _class + " items-center" : _class)
   - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
   .amField(id=_field_id class=_class)

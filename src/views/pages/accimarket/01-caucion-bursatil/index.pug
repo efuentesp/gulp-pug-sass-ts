@@ -12,16 +12,16 @@ block content
          +accordion("criteriosBusquedaAccordion")
             +accordion-item("criteriosBusquedaAccordionItem")
                +form("criteriosBusqueda", {class: "amIsSearchForm"})
-                  +field-date("fecha", {label: "Fecha", clear:false, tooltip: "DD/MM/AAAA", required:false})
+                  +field-date("fecha", {label: "Fecha", clear:true, tooltip: "DD/MM/AAAA", required:false})
                   +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: false, size:"10em",  clear:true, orientation:"vertical"})
-                  +field-plus-minus("Contrato", {label: "Contrato", tooltip: "Contrato", required:false})
-                  +field-plus-minus("Digito", {label: "Digito", required:false})
-                  +field-options("Negocio",
+                  +field-plus-minus("contrato", {label: "Contrato", tooltip: "Contrato", required:false})
+                  +field-plus-minus("digito", {label: "Digito", required:false})
+                  +field-options("negocio",
                      {required:false},
                      {key: "CB", value:"Casa de Bolsa"},
                      {key:"B", value:"Banco"}
                   )
-                  +field-select-plus-minus("TestSelectPlusMinusContrato", {label: "Contrato", size: "10em", required:false},
+                  +field-select-plus-minus("testSelectPlusMinusContrato", {label: "Contrato", size: "10em", required:false},
                      {key: "", value:""},
                      {key: "C001", value:"Contrato 01"},
                      {key: "C002", value:"Contrato 02"},
@@ -29,7 +29,7 @@ block content
                      {key: "C004", value:"Contrato 04"},
                      {key: "C005", value:"Contrato 05"}
                   )
-                  +field-checks("Products",
+                  +field-checks("products",
                      {
                      label: "Product Type",
                      orientation: "horizontal", 
@@ -39,7 +39,7 @@ block content
                      {key: "P02", value:"Product 2"},
                      {key: "P03", value:"Product 3"}
                   )
-                  +field-select("Payment",
+                  +field-select("payment",
                      {
                      label: "Payment method",
                      size: "12em", 
@@ -48,7 +48,7 @@ block content
                      {key: "ET", value:"Electronic transfer"},
                      {key:"CHK", value:"Check"}
                   )
-                  +field-select-plus-minus("TestSelecPlusMinusAutocomplete", {label: "Contrato", size: "10em", maxsize: 3, required:false}, {key: "", value:""})
+                  +field-select-plus-minus("testSelecPlusMinusAutocomplete", {label: "Contrato", size: "10em", maxsize: 3, required:false}, {key: "", value:""})
                   .column#divBotonesAccion
                      +button-search({size: "large", tooltip: "Consultar", disabled: false})
                      +button-clean({size: "large", tooltip: "Limpiar", disabled: false})
@@ -57,8 +57,8 @@ block content
 
       .amRow.amHasBorder
          .amRow.w-full.overflow-auto
-            +grid("Contratos")
-         +grid-records-count("Contratos")
+            +grid("contratos")
+         +grid-records-count("contratos")
 
       include _dialog_pdf
       include _dialog_xls

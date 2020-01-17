@@ -5,7 +5,7 @@ mixin field-email(id, parms)
   - var _field_error_block_id = "#" + _field_error_block
   - var input_id = id[0].toLowerCase() + id.substr(1)
   - var _class = "amIs" + (parms.orientation ? parms.orientation[0].toUpperCase() + parms.orientation.substr(1) : "Vertical")
-  - var _class = (_class == "amIsHorizontal" ? _class + " amItemsCenter" : _class)
+  - var _class = (_class == "amIsHorizontal" ? _class + " items-center" : _class)
   - var _tooltip = (parms.tooltip ? parms.tooltip : "")
 
   .amField(id=_field_id class=_class)
