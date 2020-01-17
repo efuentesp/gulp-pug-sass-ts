@@ -12,7 +12,7 @@ const form27 = ($("#criterios-busqueda") as any)
   .on("form:submit", () => {
     console.log("form:submit");
 
-    const contrato: string = String($("#contrato").val());
+    const contrato: string = String($("#txtContrato").val());
 
     httpFindOne("contratos", contrato, payload => {
       console.log(payload);
@@ -39,7 +39,7 @@ const llenarInfoContrato = (payload: any) => {
   // ...
 };
 
-const llenarTitularContrato = (payload: any) => {};
+const llenarTitularContrato = (payload: any) => { };
 
 const llenarCotitulares = (payload: any) => {
   llenarCotitular_ClasificacionContrato(payload, 0);
