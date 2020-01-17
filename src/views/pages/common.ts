@@ -847,7 +847,7 @@ const getChecked = (id: string) => {
  * @return {string} valor del elemento seleccionado
  */
 const getOptionSelected = (id: string) => {
-  const querySelect = "input[name='" + id + "']:checked";
+  const querySelect = "input[name='rdb" + id + "']:checked";
 
   return $(querySelect).val();
 };

@@ -1,6 +1,7 @@
 mixin grid(id)
-  - var table_id = "dtg" + id
-  - var pager_id = "divPager" + id
+  - var _uppc_id = id[0].toUpperCase() + id.substr(1)
+  - var table_id = "dtg" + _uppc_id
+  - var pager_id = "divPager" + _uppc_id
     table(id=table_id)
       tr
         td

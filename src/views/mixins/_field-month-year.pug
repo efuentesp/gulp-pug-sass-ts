@@ -1,3 +1,4 @@
 mixin field-month-year(id, parms)
-  - var _input_id = "div"+id
+  - var _uppc_id = "div" + id[0].toUpperCase() + id.substr(1)
+  - var _input_id = "div" + _uppc_id
   .amMonthpicker(id=_input_id)

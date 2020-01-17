@@ -1,5 +1,6 @@
 mixin field-swaplist(id, params)
-  - var _id = 'div' + id
+  - var _uppc_id = id[0].toUpperCase() + id.substr(1)
+  - var _id = 'lst' + _uppc_id
   - var _id_source = _id + "Source"
   - var _id_destination = _id + "Destination"
 

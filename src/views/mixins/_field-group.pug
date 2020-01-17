@@ -1,3 +1,4 @@
 mixin field-group(id)
-  .amFieldGroup.flex.amItemsCenter(id=id)
+  - var _uppc_id = "div" + id[0].toUpperCase() + id.substr(1)
+  .amFieldGroup.flex.amItemsCenter(id=_uppc_id)
     block

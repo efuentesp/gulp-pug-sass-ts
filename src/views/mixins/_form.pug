@@ -1,5 +1,5 @@
 mixin form(id, parms)
-  - var form_id = id
+  - var form_id = id[0].toLowerCase() + id.substr(1)
   - var _parms = (parms ? parms : {})
 
   form.amFormGroup(id=id

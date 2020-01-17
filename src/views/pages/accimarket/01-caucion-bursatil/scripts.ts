@@ -2,46 +2,56 @@
 
 console.log("01-caucion-bursatil");
 
-// const rest_url = `${REST_URL}/fideicomiso`;
+validateDateRage("rango");
+fieldDateClear("fecha");
+fieldBeginDateRangeClear("rango");
+fieldEndDateRangeClear("rango");
+fieldPlusMinus("Contrato", {});
+fieldPlusMinus("Digito", { maxsize: 5 }); // Max number of elements
+fieldSelectPlusMinus("TestSelectPlusMinusContrato", {});
 
-fieldPlusMinus("contrato", {});
-fieldPlusMinus("digito", { maxsize: 5 }); // Max number of elements
-fieldSelectPlusAutocomplete("ejemplo", {});
-
-($("#payment") as any).select2({
+($("#cmbPayment") as any).select2({
   language: "es",
   placeholder: "",
   minimumResultsForSearch: Infinity
 });
 
-// Form validations
-let contratos_params: UrlParams = {};
+const llenaSelectContratos = (contratos: any) => {
+  fieldSelectPlusAutocomplete("TestSelecPlusMinusAutocomplete", {
+    id: "id",
+    text: "contrato",
+    payload: contratos
+  });
+};
 
-// const r$ = httpFindAll$("contratos", contratos_params)
-//   .map(v => v["data"])
-//   .subscribe(data => llenaGridContratos(data));
+// // Form validations
+let contratosParams: UrlParams = {};
 
-httpFindAll("contratos", contratos_params, payload => {
+// // const r$ = httpFindAll$("contratos", contratos_params)
+// //   .map(v => v["data"])
+// //   .subscribe(data => llenaGridContratos(data));
+
+httpFindAll("contratos", contratosParams, payload => {
   llenaGridContratos(payload);
   llenaSelectContratos(payload);
-  const rec_count = payload.length;
-  $("#countContratos").html(rec_count);
+  const recCount = payload.length;
+  $("#countContratos").html(recCount);
 });
 
-// Llamado a servicios via POST
-const rpc_url = "/appserver/mvcpt/movimientosPorContrato/consultaCon";
-const rpc_parms = {
+// // Llamado a servicios via POST
+const rpcUrl = "/appserver/mvcpt/movimientosPorContrato/consultaCon";
+const rpcParms = {
   contrato: "12345",
   rol: "TIT"
 };
-rpc(rpc_url, rpc_parms, (data, textStatus, jQxhr) => {
+rpc(rpcUrl, rpcParms, (data, textStatus, jQxhr) => {
   // console.log(data, textStatus, jQxhr);
   llenaGridContratos(data);
-  const rec_count = data.length;
-  $("#countContratos").html(rec_count);
+  const recCount = data.length;
+  $("#countContratos").html(recCount);
 });
 
-const form = ($("#criterios-busqueda") as any)
+const form = ($("#criteriosBusqueda") as any)
   .parsley()
   .on("field:success", (e) => {
     removeErrorsInAttrTitle(e);
@@ -51,50 +61,61 @@ const form = ($("#criterios-busqueda") as any)
   })
   .on("form:submit", e => {
     // console.log("form:submit", e);
-    contratos_params = {};
+    contratosParams = {};
+
+    console.log("-----+> Fecha: ", $("#fecha").val());
+    console.log("-----+> Fecha inicial: ", $("#rangoBeginDate").val());
+    console.log("-----+> Fecha final: ", $("#rangoEndDate").val());
+    console.log("-----+> Contrato +-: ", getList("Contrato"));
+    console.log("-----+> Digito +-: ", getList("Digito"));
+    console.log("-----+> Negocio radio: ", getOptionSelected("Negocio"));
+    console.log("-----+> Contrato select +-: ", getList("TestSelectPlusMinusContrato"));
+    console.log("-----+> Product: ", getChecked("Products"));
+    console.log("-----+> Payment: ", $("#cmbPayment").val());
+    console.log("-----+> Contrato +- autocomplete: ", getList("TestSelecPlusMinusAutocomplete"));
+
 
     const fecha = $("#fecha").val();
-    const negocio = getOptionSelected("negocio");
+    const negocio = getOptionSelected("Negocio");
 
-    let listContrato = getList("contrato");
-    let listDigito = getList("digito");
+    let listContrato = getList("Contrato");
+    let listDigito = getList("Digito");
 
-    let productTypes = getChecked("products3");
+    let productTypes = getChecked("Products");
 
     if (fecha) {
-      contratos_params.fecha = fecha;
+      contratosParams.fecha = fecha;
     }
 
     if (listContrato.length > 0) {
-      contratos_params.contrato = listContrato;
+      contratosParams.contrato = listContrato;
     }
 
     if (listDigito.length > 0) {
-      contratos_params.digito = listDigito;
+      contratosParams.digito = listDigito;
     }
 
     if (negocio) {
-      contratos_params.negocio = negocio;
+      contratosParams.negocio = negocio;
     }
 
     if (productTypes.length > 0) {
-      contratos_params.product = productTypes;
+      contratosParams.product = productTypes;
     }
 
-    httpFindAll("contratos", contratos_params, payload => {
+    httpFindAll("contratos", contratosParams, payload => {
       // console.log(payload);
       $("#dtgContratos").jqGrid("clearGridData");
       $("#dtgContratos").jqGrid("setGridParam", { data: payload });
       $("#dtgContratos").trigger("reloadGrid");
-      const rec_count = payload.length;
-      $("#countContratos").html(rec_count);
+      const recCount = payload.length;
+      $("#countContratos").html(recCount);
     });
 
     return false;
   });
 
 const llenaGridContratos = (contratos: any) => {
-  // console.log(contratos);
   $("#dtgContratos").jqGrid({
     data: contratos,
     datatype: "local",
@@ -103,8 +124,6 @@ const llenaGridContratos = (contratos: any) => {
     rowList: [10, 20, 30],
     colNames: [
       "Contrato",
-      // "Imagen",
-      // "Icono",
       "ID Emisión",
       "Cantidad",
       "Emision",
@@ -146,24 +165,6 @@ const llenaGridContratos = (contratos: any) => {
         sorttype: "number",
         frozen: true
       },
-      // {
-      //   name: "imagen",
-      //   index: "imagen",
-      //   width: 50,
-      //   sortable: false,
-      //   formatter: (cellvalue, options, rowobject) => {
-      //     return "<img src='../../assets/images/btn-calendario_32x32.png' width='12px'>";
-      //   }
-      // },
-      // {
-      //   name: "icono",
-      //   index: "icono",
-      //   width: 50,
-      //   sortable: false,
-      //   formatter: (cellvalue, options, rowobject) => {
-      //     return "<i class='fa fa-plus-circle fa-lg text-red-600'></i>";
-      //   }
-      // },
       { name: "emisora", index: "emisora", width: 100, sortable: false },
       { name: "cantidad", index: "cantidad", width: 100, sortable: false },
       { name: "emision", index: "emision", width: 100, sortable: false },
@@ -247,8 +248,8 @@ const llenaGridContratos = (contratos: any) => {
 
 $("#dtgContratos").jqGrid("setFrozenColumns");
 
-$("#btn_pdf").click(() =>
-  $("#dialogo_pdf").dialog({
+$("#btnPdf").click(() =>
+  $("#divDialogoPdf").dialog({
     modal: true,
     closeText: "",
     show: true,
@@ -273,8 +274,8 @@ $("#btn_pdf").click(() =>
   })
 );
 
-$("#btn_xls").click(() =>
-  $("#dialogo_aviso").dialog({
+$("#btnXls").click(() =>
+  $("#divDialogoAviso").dialog({
     modal: true,
     closeText: "",
     show: true,
@@ -283,18 +284,4 @@ $("#btn_xls").click(() =>
   })
 );
 
-validateDateRage("rango");
 
-const llenaSelectContratos = (contratos: any) => {
-  fieldSelectPlusAutocomplete("ejemplo", {
-    id: "id",
-    text: "contrato",
-    payload: contratos
-  });
-};
-
-fieldDateClear("fecha");
-
-// DateRange
-fieldBeginDateRangeClear("rango");
-fieldEndDateRangeClear("rango");

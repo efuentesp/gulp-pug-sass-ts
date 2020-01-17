@@ -4,11 +4,11 @@ let source_params: UrlParams = {};
 let destination_params: UrlParams = {};
 
 httpFindAll("source", source_params, payload => {
-  llenaSource("divListado", payload);
+  llenaSource("lstListado", payload);
 });
 
 httpFindAll("destination", destination_params, payload => {
-  llenaDestination("divListado", payload);
+  llenaDestination("lstListado", payload);
 });
 
 const llenaSource = (id: string, source: any) => {

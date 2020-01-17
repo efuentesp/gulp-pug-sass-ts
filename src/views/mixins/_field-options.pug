@@ -1,6 +1,7 @@
 mixin field-options(id, parms, ...items)
-  - var _field_id = "divField" + id
-  - var _field_error_block = "divFieldErrorBlock" + id
+  - var _uppc_id = "div" + id[0].toUpperCase() + id.substr(1)
+  - var _field_id = "divField" + _uppc_id
+  - var _field_error_block = "divFieldErrorBlock" + _uppc_id
   - var _field_error_block_id = "#" + _field_error_block
   - var _class = "amIs" + (parms.orientation ? parms.orientation[0].toUpperCase() + parms.orientation.substr(1) : "Vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
@@ -15,10 +16,10 @@ mixin field-options(id, parms, ...items)
         span.pr-5
     .amFieldControl(data-tooltip=_tooltip)
       each item, index in items
-        - var item_id = "rdb" + id + index
+        - var item_id = "rdb" + _uppc_id + index
         label.amRadioButton= item.value
           input(type="radio"
-                name="rdb"+id
+                name="rdb" + _uppc_id
                 id=item_id
                 value=item.key
                 required=parms.required

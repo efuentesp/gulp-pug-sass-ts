@@ -1,5 +1,6 @@
 mixin grid-records-count(id)
-    - var count_id = "count" + id
+    - var _uppc_id = id[0].toUpperCase() + id.substr(1)
+    - var count_id = "count" + _uppc_id
     .ui-jqgrid-count-rec
         span Total registros: 
             span(id=count_id)

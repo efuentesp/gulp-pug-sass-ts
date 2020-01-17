@@ -1,8 +1,10 @@
 mixin tab-group(id, ...items)
-  div.amTabGroup(id="div"+id)
+  - var _uppc_id = id[0].toUpperCase() + id.substr(1)
+  div.amTabGroup(id="div" + _uppc_id)
     ul
       each item in items
-        - var tab_item_ref = "#div" + item.id
+        - var tab_item_ref = (item.id != null && item.id != undefined) ? "#div" + item.id.charAt(0).toUpperCase() + item.id.substr(1) : "#div" + item.id
+                
         li
           a(href=tab_item_ref)
             if item.img != null
@@ -16,5 +18,5 @@ mixin tab-group(id, ...items)
     block
 
 mixin tab-item(id)
-  div(id="div"+id)
+  div(id="div" + id[0].toUpperCase() + id.substr(1))
     block

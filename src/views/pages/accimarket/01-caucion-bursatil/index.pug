@@ -9,45 +9,47 @@ block styles
 block content
    .amContent.p-4
       .amRow
-         +accordion("CriteriosBusquedaAccordion")
-            +accordion-item("CriteriosBusquedaAccordionItem")
-               +form("criterios-busqueda", {class: "amIsSearchForm"})
-                  +field-date("fecha", {label: "Fecha", clear:true, tooltip: "DD/MM/AAAA"})
-                  +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: true, size:"10em",  clear:true, orientation:"vertical"})
-                  +field-plus-minus("contrato", {label: "Contrato", tooltip: "Contrato"})
-                  +field-plus-minus("digito", {label: "Digito"})
-                  +field-options("negocio",
-                     {},
+         +accordion("criteriosBusquedaAccordion")
+            +accordion-item("criteriosBusquedaAccordionItem")
+               +form("criteriosBusqueda", {class: "amIsSearchForm"})
+                  +field-date("fecha", {label: "Fecha", clear:false, tooltip: "DD/MM/AAAA", required:false})
+                  +field-date-range("rango", {begin_label: "Fecha inicial", end_label: "Fecha final", required: false, size:"10em",  clear:true, orientation:"vertical"})
+                  +field-plus-minus("Contrato", {label: "Contrato", tooltip: "Contrato", required:false})
+                  +field-plus-minus("Digito", {label: "Digito", required:false})
+                  +field-options("Negocio",
+                     {required:false},
                      {key: "CB", value:"Casa de Bolsa"},
                      {key:"B", value:"Banco"}
                   )
-                  //- +field-select-plus-minus("contrato1", {label: "Contrato", size: "10em"},
-                  //-    {key: "", value:""},
-                  //-    {key: "C001", value:"Contrato 01"},
-                  //-    {key: "C002", value:"Contrato 02"},
-                  //-    {key: "C003", value:"Contrato 03"},
-                  //-    {key: "C004", value:"Contrato 04"},
-                  //-    {key: "C005", value:"Contrato 05"}
-                  //- )
-                  +field-checks("products3",
+                  +field-select-plus-minus("TestSelectPlusMinusContrato", {label: "Contrato", size: "10em", required:false},
+                     {key: "", value:""},
+                     {key: "C001", value:"Contrato 01"},
+                     {key: "C002", value:"Contrato 02"},
+                     {key: "C003", value:"Contrato 03"},
+                     {key: "C004", value:"Contrato 04"},
+                     {key: "C005", value:"Contrato 05"}
+                  )
+                  +field-checks("Products",
                      {
                      label: "Product Type",
-                     orientation: "horizontal"
+                     orientation: "horizontal", 
+                     required:false
                      },
                      {key: "P01", value:"Product 1"},
                      {key: "P02", value:"Product 2"},
                      {key: "P03", value:"Product 3"}
                   )
-                  +field-select("payment",
+                  +field-select("Payment",
                      {
                      label: "Payment method",
-                     size: "12em"
+                     size: "12em", 
+                     required:false
                      },
                      {key: "ET", value:"Electronic transfer"},
                      {key:"CHK", value:"Check"}
                   )
-                  +field-select-plus-minus("ejemplo", {label: "Contrato", size: "10em", maxsize: 3}, {key: "", value:""})
-                  .column#botones-accion
+                  +field-select-plus-minus("TestSelecPlusMinusAutocomplete", {label: "Contrato", size: "10em", maxsize: 3, required:false}, {key: "", value:""})
+                  .column#divBotonesAccion
                      +button-search({size: "large", tooltip: "Consultar", disabled: false})
                      +button-clean({size: "large", tooltip: "Limpiar", disabled: false})
                      +button-pdf({size: "large", tooltip: "PDF", disabled: false})

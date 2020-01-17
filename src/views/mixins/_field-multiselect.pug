@@ -1,7 +1,9 @@
 mixin field-multiselect(id, parms, ...items)
-  - var _field_id = "divField" + id
-  - var _input_id = "cmb"+id
-  - var _field_error_block = "divFieldErrorBlock" + id
+  - var _uppc_id = "div" + id[0].toUpperCase() + id.substr(1)
+  - var _id = id[0].toLowerCase() + id.substr(1)
+  - var _field_id = "divField" + _uppc_id
+  - var _input_id = "cmb" + _uppc_id
+  - var _field_error_block = "divFieldErrorBlock" + _uppc_id
   - var _field_error_block_id = "#" + _field_error_block
   - var _class = "amIs" + (parms.orientation ? parms.orientation[0].toUpperCase() + parms.orientation.substr(1) : "Vertical")
   - var _style = "width: " + (parms.size ? parms.size : "8em") + ";"
@@ -16,8 +18,8 @@ mixin field-multiselect(id, parms, ...items)
         else
           span.pr-3
     .amFieldControl(data-tooltip=_tooltip)
-      select.amMultiselect(id=id
-            name=id
+      select.amMultiselect(id=_id
+            name=_id
             multiple
             required=parms.required
             style=_style

@@ -1,7 +1,8 @@
 mixin field-date-range(id, parms)
-  - var _field_id = "divField" + id
-  - var _input_id = id
-  - var _btn_id = "btn" + id
+  - var _uppc_id = id[0].toUpperCase() + id.substr(1)
+  - var _field_id = "divField" + _uppc_id
+  - var _input_id = id[0].toLowerCase() + id.substr(1)
+  - var _btn_id = "btn" + _uppc_id
   - var _class = (parms.orientation ? parms.orientation[0].toUpperCase() + parms.orientation.substr(1) : "Vertical")
   - var _style = (parms.size ? parms.size : "8em")
   - var _input_max_length = (parms.max_length ? parms.max_length : "32")

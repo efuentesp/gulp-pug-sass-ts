@@ -1,7 +1,7 @@
 mixin button-save(parms)
   - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
   - var _label = (parms.label ? parms.label : "Guardar")
-  - var _id = (parms.id ? parms.id : "btnSave")
+  - var _id = (parms.id ? "btn" + parms.id[0].toUpperCase() + parms.id.substr(1) : "btnSave")
 
   if _parms.size == "large"
     button.amButton.amBigButton(id=_id data-tooltip=_parms.tooltip disabled=_parms.disabled)

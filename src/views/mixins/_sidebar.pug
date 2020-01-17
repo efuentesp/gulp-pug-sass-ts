@@ -1,5 +1,6 @@
 mixin sidebar-wrapper(id)
-  - var _id = "divSidebarWrapper" + id
+  - var _uppc_id = id[0].toUpperCase() + id.substr(1)
+  - var _id = "divSidebarWrapper" + _uppc_id
 
   .amSidebarWrapper(id=_id)
     block

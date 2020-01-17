@@ -1,7 +1,7 @@
 mixin button-pdf(parms)
   - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
   - var _label = (parms.label ? parms.label : "PDF")
-  - var _id = (parms.id ? parms.id : "btnPdf")
+  - var _id = (parms.id ? "btn" + parms.id[0].toUpperCase() + parms.id.substr(1) : "btnPdf")
 
   if _parms.size == "large"
     button.amButton.amBigButton(id=_id data-tooltip=_parms.tooltip disabled=_parms.disabled)

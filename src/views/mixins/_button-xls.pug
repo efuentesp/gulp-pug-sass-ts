@@ -1,7 +1,7 @@
 mixin button-xls(parms)
   - var _parms = parms ? parms : {size: "large", disabled: false, tooltip: ""}
   - var _label = (parms.label ? parms.label : "XLS")
-  - var _id = (parms.id ? parms.id : "btnXls")
+  - var _id = (parms.id ? parms.id[0].toUpperCase() + parms.id.substr(1) : "btnXls")
 
   if _parms.size == "large"
     button.amButton.amBigButton(id=_id data-tooltip=_parms.tooltip disabled=_parms.disabled)

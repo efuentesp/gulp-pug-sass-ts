@@ -13,26 +13,26 @@ block content
                 form#reperfilamientoPM
                     include _criteriosBusqueda
                     +tab-group("ReperfilamientoPersonaMoralTabGroup",
-                        {id: "TabMapaLiquidaciones", label: "Mapa de Liquidez"},
-                        {id: "TabConocimientoClienUno", label: "Conocimiento del cliente y su Experencia en productos financieros"},
-                        {id: "TabConocimientoClienDos", label: "Conocimiento del cliente y su Experencia en productos financieros"},
-                        {id: "TabObjetivosInversioUno", label: "Objetivos de Inversion"},
-                        {id: "TabObjetivosInversioDos", label: "Objetivos de Inversion"},
-                        {id: "TabObjetivosInversioTres", label: "Objetivos de Inversion"},
-                        {id: "TabSituacionCapacitacion", label: "Situacion y Capa..."})
-                        +tab-item("TabMapaLiquidaciones")
+                        {id: "tabMapaLiquidaciones", label: "Mapa de Liquidez"},
+                        {id: "tabConocimientoClienUno", label: "Conocimiento del cliente y su Experencia en productos financieros"},
+                        {id: "tabConocimientoClienDos", label: "Conocimiento del cliente y su Experencia en productos financieros"},
+                        {id: "tabObjetivosInversioUno", label: "Objetivos de Inversion"},
+                        {id: "tabObjetivosInversioDos", label: "Objetivos de Inversion"},
+                        {id: "tabObjetivosInversioTres", label: "Objetivos de Inversion"},
+                        {id: "tabSituacionCapacitacion", label: "Situacion y Capa..."})
+                        +tab-item("tabMapaLiquidaciones")
                             include _tabMapaLiquide
-                        +tab-item("TabConocimientoClienUno")
+                        +tab-item("tabConocimientoClienUno")
                             include _tabConocimientoUno
-                        +tab-item("TabConocimientoClienDos")
+                        +tab-item("tabConocimientoClienDos")
                             include _tabConocimientoDos
-                        +tab-item("TabObjetivosInversioUno")
+                        +tab-item("tabObjetivosInversioUno")
                             include _tabObjetivosInvUno
-                        +tab-item("TabObjetivosInversioDos")
+                        +tab-item("tabObjetivosInversioDos")
                             include _tabObjetivosInvDos
-                        +tab-item("TabObjetivosInversioTres")
+                        +tab-item("tabObjetivosInversioTres")
                             include _tabObjetivosInvTres
-                        +tab-item("TabSituacionCapacitacion")
+                        +tab-item("tabSituacionCapacitacion")
                             include _tabSituacionCapa
                     .row#sticky-action-bar
                         +button-reset({size: "large", disabled: false})
