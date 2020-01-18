@@ -8,9 +8,9 @@ mixin tab-group(id, ...items)
         li
           a(href=tab_item_ref)
             if item.img != null
-              .container-imgtxt
-                img.container-img_image(src="../../assets/images/"+item.img align="middle")
-                .container-img_text=item.label
+              .amContainerImgtxt
+                img.amContainerImgImage(src="../../assets/images/"+item.img align="middle")
+                .amContainerImgText=item.label
             else 
               //- i.fas.fa-user.pr-3
               =item.label
