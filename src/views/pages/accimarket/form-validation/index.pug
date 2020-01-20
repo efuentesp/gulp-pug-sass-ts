@@ -18,23 +18,23 @@ block content
     +form("newCustomer")
       .amFormGroup
         .amRow
-          +field-input("id", {label: "ID", tooltip: "Tooltip ID", required: false, max_length: "6"})
+          +field-input("id", {label: "ID", tooltip: "Tooltip ID", required: true, max_length: "6"})
           +field-input("nombreUno", {label: "Nombre"})
-          +field-input("nombreDos", {label: "Nombre", required: false, orientation: "horizontal"})
+          +field-input("nombreDos", {label: "Nombre", required: true, orientation: "horizontal"})
           +field-input("nombreTres", {label: "Nombre", orientation: "horizontal"})
         .amRow
-          +field-email("emailUno", {label: "E-mail", required: false})
-          +field-email("emailDos", {label: "E-mail", required: false, orientation: "horizontal"})
+          +field-email("emailUno", {label: "E-mail", required: true})
+          +field-email("emailDos", {label: "E-mail", required: true, orientation: "horizontal"})
         .amRow
           +field-date("fechaUno", {label: "Fecha"})
-          +field-date("fechaDos", {label: "Fecha", required: false})
+          +field-date("fechaDos", {label: "Fecha", required: true})
           +field-date("fechaTres", {label: "Fecha", orientation: "horizontal"})
-          +field-date("fechaCuatro", {label: "Fecha", orientation: "horizontal", required: false})
+          +field-date("fechaCuatro", {label: "Fecha", orientation: "horizontal", required: true})
         .amRow
           +field-plus-minus("contratoPlusMinusUno", {label: "Contrato"})
-          +field-plus-minus("contratoPlusMinusDos", {label: "Contrato", required: false})
+          +field-plus-minus("contratoPlusMinusDos", {label: "Contrato", required: true})
           +field-plus-minus("contratoPlusMinusTres", {label: "Contrato", orientation: "horizontal"})
-          +field-plus-minus("contratoPlusMinusCuatro", {label: "Contrato", orientation: "horizontal", required: false})
+          +field-plus-minus("contratoPlusMinusCuatro", {label: "Contrato", orientation: "horizontal", required: true})
         .amRow
           +field-select-plus-minus("contratoSelectPlusMinusUno", {label: "Contrato", size: "10em"},
                           {key: "", value:""},
@@ -44,7 +44,7 @@ block content
                           {key: "C004", value:"Contrato 04"},
                           {key: "C005", value:"Contrato 05"}
           )
-          +field-select-plus-minus("contratoSelectPlusMinusDos", {label: "Contrato", size: "10em", required: false},
+          +field-select-plus-minus("contratoSelectPlusMinusDos", {label: "Contrato", size: "10em", required: true},
                           {key: "", value:""},
                           {key: "C001", value:"Contrato 01"},
                           {key: "C002", value:"Contrato 02"},
@@ -60,7 +60,7 @@ block content
                           {key: "C004", value:"Contrato 04"},
                           {key: "C005", value:"Contrato 05"}
           )
-          +field-select-plus-minus("contratoSelectPlusMinusCuatro", {label: "Contrato", size: "20em", orientation: "horizontal", required: false},
+          +field-select-plus-minus("contratoSelectPlusMinusCuatro", {label: "Contrato", size: "20em", orientation: "horizontal", required: true},
                           {key: "", value:""},
                           {key: "C001", value:"Contrato 01"},
                           {key: "C002", value:"Contrato 02"},
@@ -70,11 +70,11 @@ block content
           )
         .amRow
           +field-options("bancoUno",
-            {label: "Tipo de Persona", required: false},
+            {label: "Tipo de Persona", required: true},
             {key: "P", value:"Persona Moral"}, {key:"C", value:"Persona Física"}
           )
           +field-options("bancoDos",
-            {label: "Tipo de Persona", required: false, orientation: "horizontal"},
+            {label: "Tipo de Persona", required: true, orientation: "horizontal"},
             {key: "P", value:"Persona Moral"}, {key:"C", value:"Persona Física"}
           )
         .amRow
@@ -84,7 +84,7 @@ block content
           +field-checks("productsUno",
             {
               label: "Product Type",
-              required: false
+              required: true
             },
             {key: "P01", value:"Product 1"},
             {key: "P02", value:"Product 2"},
@@ -100,7 +100,7 @@ block content
           +field-checks("productsTres",
             {
               label: "Product Type",
-              required: false,
+              required: true,
               orientation: "horizontal"
             },
             {key: "P01", value:"Product 1"},
@@ -151,7 +151,7 @@ block content
           +field-select("paymentDos",
             {
               label: "Payment method",
-              required: false,
+              required: true,
               size: "12em"
             },
             {key: "ET", value:"Electronic transfer"},
@@ -160,7 +160,7 @@ block content
           +field-select("paymentTres",
             {
               label: "Payment method",
-              required: false,
+              required: true,
               size: "12em",
               orientation: "horizontal"
             },
@@ -168,12 +168,12 @@ block content
             {key:"CHK", value:"Check"}
           )
         .amRow
-          +field-input("amount", {label: "Amount", required: false, type: "digits"})
+          +field-input("amount", {label: "Amount", required: true, type: "digits"})
         .amRow
           +field-fileupload("adjuntarArchivo",
             {
               label: "Adjuntar Archivo",
-              required: false
+              required: true
             }
           )
         .amRow
@@ -182,7 +182,7 @@ block content
           +field-multiselect("multi",
             {
               label: "Multiselect",
-              required: false,
+              required: true,
               size: "12em",
               orientation: "horizontal"
             },
