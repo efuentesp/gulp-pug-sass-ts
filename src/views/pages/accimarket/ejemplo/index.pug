@@ -7,12 +7,12 @@ block styles
     link(rel="stylesheet" href="../../assets/css/accimarket/ejemplo/styles.css")
 
 block content
-    .content.p-4
-        .row
-            +accordion("CriteriosBusquedaAccordion")
-                +accordion-item("BusquedaItem")
-                    form.is-search-form#criterios-busqueda(data-parsley-validate="")
-                        +field-group("fecha-group")
+    .amContent.p-4
+        .amRow
+            +accordion("criteriosBusquedaAccordion")
+                +accordion-item("busquedaItem")
+                    form.amIsSearchForm#criteriosBusqueda(data-parsley-validate="")
+                        +field-group("fechaGroup")
                             +field-date("fechaInicial",
                                 {
                                     label: "Fecha Inicial",
@@ -25,7 +25,7 @@ block content
                                     required: true,
                                     orientation: "horizontal"
                                 })
-                        +field-group("negocio-group")
+                        +field-group("negocioGroup")
                             +field-select("lineaNegocio",
                                 {
                                     label: "Linea de Negocio"
@@ -43,7 +43,7 @@ block content
                             {key:"E", value:"ESPECIAL"}
                         )
 
-                        +field-group("botones-group")
+                        +field-group("botonesGroup")
                             +button-search({size: "large", disabled: false})
                             +button-clean({size: "large", disabled: false})
 
@@ -55,7 +55,7 @@ block content
                             +button-reset({size:"large", disabled: false})
                             +button-filter({size:"large", disabled: false})
 
-                        +field-group("botones-group-md")
+                        +field-group("botonesGroupMd")
                             +button-search({size: "medium", disabled: false})
                             +button-clean({size: "medium", disabled: false})
 
@@ -68,7 +68,7 @@ block content
                             +button-filter({size:"medium", disabled: false})
 
 
-                        +field-group("botones-group-sm")
+                        +field-group("botonesGroupSm")
                             +button-search({size: "small", disabled: false})
                             +button-clean({size: "small", disabled: false})
 
@@ -79,17 +79,17 @@ block content
                             +button-delete({size:"small", disabled: false})
                             +button-reset({size:"small", disabled: false})
                             +button-filter({size:"small", disabled: false})
-        .row
+        .amRow
             p#textoInformativo Listado de Órdenes
-        .row.has_border.w-full.overflow-auto
+        .amRow.has_border.w-full.overflow-auto
             +splitter("simple")
                 .pane
                     +grid("Ventas")
                     +canvas("averageChart", {width:'600px', height:'400px'})
                 .pane
                     +grid("Contratos")
-                    +canvas("average1Chart", {width:'600px', height:'400px'})
-        .row
+                    +canvas("averageRightChart", {width:'600px', height:'400px'})
+        .amRow
             +field-input("totalreg",
                 {
                     label: "Total de registros",
@@ -98,14 +98,14 @@ block content
                 })
         br
         p Ejemplo de Panel Horizontal (arrastrar la linea que divide a los 2 paneles)
-        .row
+        .amRow
             +splitter("horizontal-splitter", {orientation: "horizontal"})
                 .pane
                     p Panel 1
                 .pane
                     p Panel 2
 
-        .row
+        .amRow
             include _acordeon
 
 block scripts

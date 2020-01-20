@@ -1,6 +1,6 @@
 /// <reference path="../../typings/index.d.ts" />
 
-($("#lineaNegocio") as any).select2({
+($("#cmbLineaNegocio") as any).select2({
   minimumResultsForSearch: Infinity
 });
 
@@ -45,14 +45,14 @@ $("#dtgVentas").jqGrid({
 });
 
 // Form validations
-let ventas_params: UrlParams = {};
+let ventasParams: UrlParams = {};
 
-httpFindAll("contratos", ventas_params, payload => {
-  $("#totalreg").val(payload.length);
+httpFindAll("contratos", ventasParams, payload => {
+  $("#txtTotalreg").val(payload.length);
   fillJqGrid("#dtgVentas", payload);
 });
 
-const formu = ($("#criterios-busqueda") as any)
+const formu = ($("#criteriosBusqueda") as any)
   .parsley()
   .on("field:validated", () => {
     const ok = $(".parsley-error").length === 0;
@@ -60,38 +60,38 @@ const formu = ($("#criterios-busqueda") as any)
   .on("form:submit", () => {
     console.log("form:submit");
 
-    ventas_params = {};
+    ventasParams = {};
 
     const fechaInicial = $("#fechaInicial").val();
     const fechaFinal = $("#fechaFinal").val();
-    const lineaNegocio = $("#lineaNegocio").val();
+    const lineaNegocio = $("#cmbLineaNegocio").val();
 
     if (fechaInicial) {
-      ventas_params.fecha = fechaInicial;
+      ventasParams.fecha = fechaInicial;
     }
     if (fechaFinal) {
-      ventas_params.fechaFinal = fechaFinal;
+      ventasParams.fechaFinal = fechaFinal;
     }
     if (lineaNegocio) {
-      ventas_params.negocio = lineaNegocio;
+      ventasParams.negocio = lineaNegocio;
     }
 
-    httpFindAll("contratos", ventas_params, payload => {
-      $("#totalreg").val(payload.length);
+    httpFindAll("contratos", ventasParams, payload => {
+      $("#txtTotalreg").val(payload.length);
       fillJqGrid("#dtgVentas", payload);
     });
 
     return false;
   });
 
-let average_params: UrlParams = {};
+let averageParams: UrlParams = {};
 
-httpFindAll("averages", average_params, payload => {
+httpFindAll("averages", averageParams, payload => {
   fillAverage(payload);
 });
 
-httpFindAll("averages", average_params, payload => {
-  fillAverage1(payload);
+httpFindAll("averages", averageParams, payload => {
+  fillAverageRight(payload);
 });
 
 const fillAverage = (average: any) => {
@@ -133,7 +133,7 @@ const fillAverage = (average: any) => {
   });
 };
 
-const fillAverage1 = (average: any) => {
+const fillAverageRight = (average: any) => {
   var dataSetY = [];
   var dataSetX = [];
 
@@ -144,7 +144,7 @@ const fillAverage1 = (average: any) => {
   }
 
   simpleBarChart({
-    id: "divCanvasAverage1Chart",
+    id: "divCanvasAverageRightChart",
     titleX: "Período",
     titleY: "Portafolio",
     labels: dataSetX,
@@ -165,21 +165,21 @@ const fillAverage1 = (average: any) => {
 };
 
 // Form validations
-let contratos1_params: UrlParams = {};
+let contratosOrdenesParams: UrlParams = {};
 
 // const r$ = httpFindAll$("contratos", contratos_params)
 //   .map(v => v["data"])
 //   .subscribe(data => llenaGridContratos(data));
 
-httpFindAll("contratos", contratos1_params, payload => {
+httpFindAll("contratos", contratosOrdenesParams, payload => {
   // fillJqGrid("#table_contratos", payload);
-  llenaGridContratos1(payload);
+  llenaGridContratosRight(payload);
   const rec_count = payload.length;
-  $("#CountContratos").html(rec_count);
+  $("#txtTotalreg").html(rec_count);
   // console.log(rec_count);
 });
 
-const llenaGridContratos1 = (contratos: any) => {
+const llenaGridContratosRight = (contratos: any) => {
   // console.log(contratos);
   $("#dtgContratos").jqGrid({
     data: contratos,
