@@ -246,7 +246,7 @@ const rpc = (url: string, params: any, cb: Function) => {
   });
 };
 
-($("select[name=quiz_select]") as any).select2({
+($("select[name=amQuizSelect]") as any).select2({
   minimumResultsForSearch: Infinity
 });
 

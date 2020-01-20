@@ -10,24 +10,24 @@ mixin quiz(id, params, questions, answers)
         tbody
             each question, index in questions
                 - var _answer_name = id + index
-                - var _field_error_block = "field_error_block_" + id + index
+                - var _field_error_block = "fieldErrorBlock" + id + index
                 - var _field_error_block_id = "#" + _field_error_block
                 tr
                     td.amQuestion #{question.question}
                         if question.required
                             span.amRequired *
-                        .field-error
+                        .fieldError
                             div(id=_field_error_block)
                     each answer, j in answers
-                        - var _answer_id = "rdb" + _answer_name + j
+                        - var _answer_id = _answer_name + j
                         - var _answer_points = (question.points ? question.points[j] : "1")
                         - var _disabled = (answer.disabled ? answer.disabled : false)
                         td
                             if answer.type == "option"
-                                .answer
+                                .amAnswer
                                     input(type="radio"
-                                        id=_answer_id
-                                        name=_answer_name
+                                        id='rbd' + _answer_id
+                                        name='rbd' + _answer_name
                                         required=question.required
                                         disabled=_disabled
                                         data-parsley-errors-container=_field_error_block_id
@@ -36,10 +36,10 @@ mixin quiz(id, params, questions, answers)
                                     span.checkmark
                             if answer.type == "select"
                                 - var _style_select = "width: " + (answer.size ? answer.size : "8em") + ";"
-                                .answer
+                                .amAnswer
                                     select.select2(
-                                        id=_answer_id
-                                        name="quiz_select"
+                                        id='cmb' + _answer_id
+                                        name="amQuizSelect"
                                         style=_style_select
                                         required=question.required
                                         disabled=_disabled
