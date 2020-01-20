@@ -8,28 +8,28 @@ fieldPlusMinus("digito", { maxsize: 5 }); // Max number of elements
 fieldSelectPlusAutocomplete("ejemplo", {});
 
 
-($("#emisora") as any).select2({
+($("#cmbEmisora") as any).select2({
   language: "es",
   placeholder: "",
   minimumResultsForSearch: Infinity
 });
 
 
-($("#serie") as any).select2({
+($("#cmbSerie") as any).select2({
   language: "es",
   placeholder: "",
   minimumResultsForSearch: Infinity
 });
 
 
-($("#tipo_valor") as any).select2({
+($("#cmbTipoValor") as any).select2({
   language: "es",
   placeholder: "",
   minimumResultsForSearch: Infinity
 });
 
 
-($("#operacion") as any).select2({
+($("#cmbOperacion") as any).select2({
   language: "es",
   placeholder: "",
   minimumResultsForSearch: Infinity
@@ -180,7 +180,7 @@ $("#dtgErroresDirectos").jqGrid({
     viewrecords: true
 });
 
-($("#criterios-busqueda") as any)
+($("#criteriosBusqueda") as any)
   .parsley()
   .on("field:success", (e) => {
     removeErrorsInAttrTitle(e);
@@ -237,7 +237,7 @@ $("#dtgErroresDirectos").jqGrid({
   });
 
   
-($("#Criterios-Datos") as any)
+($("#criteriosDatos") as any)
 .parsley()
 .on("field:success", (e) => {
   removeErrorsInAttrTitle(e);

@@ -1,9 +1,9 @@
-#filtros {
+#divFiltros {
   label {
     width: 80px;
   }
 
-  #field_fecha_valor {
+  #divFieldFechaValor {
     label {
       width: 72px;
     }
@@ -24,7 +24,7 @@
   justify-content: center;
 }
 
-#titulo {
+#divTitulo {
   margin-top: 5em;
 }
 
@@ -80,11 +80,11 @@ input {
   margin-right: 4px;
 }
 
-#buscadorTabla {
+#divBuscadorTabla {
   background: #e2e8f0;
 }
 
-#buscadorTabla input {
+#divBuscadorTabla input {
   height: 18px;
 }
 

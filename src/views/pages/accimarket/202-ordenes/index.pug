@@ -7,27 +7,27 @@ block styles
    link(rel="stylesheet" href="../../assets/css/accimarket/202-ordenes/styles.css")
 
 block content
-  +sidebar-wrapper ("Aside")
+  +sidebar-wrapper ("aside")
     +sidebar
       include _leftDiv
     +sidebar-content
       span.bg-gray-300.block.p-3.font-bold.text-lg Listado de Órdenes
       .row
-        +tab-group("GrupoGrids",
-            {id: "TabOrdenes", label: "Órdenes"},
-            {id: "TabEnviosErrores", label: "Envios y Errores"}
+        +tab-group("grupoGrids",
+            {id: "tabOrdenes", label: "Órdenes"},
+            {id: "tabEnviosErrores", label: "Envios y Errores"}
         )
-          +tab-item("TabOrdenes")
+          +tab-item("tabOrdenes")
             include _tab_ordenes
-          +tab-item("TabEnviosErrores")
+          +tab-item("tabEnviosErrores")
             include _tab_envios_errores
-  +field-group("modales-group")
+  +field-group("modalesGroup")
         #modalEnvia
-          #dialog-modalEnvia
+          #dialogModalEnvia
         #modalIKE
-          #dialog-modalIKE
+          #dialogModalIKE
         #modalTablaDialog2
-          #dialog-modal2
+          #dialogModal2
               table.innerTable#idtablaModal
   
   

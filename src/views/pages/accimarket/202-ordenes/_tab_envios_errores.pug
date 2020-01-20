@@ -1,5 +1,5 @@
-span.bg-gray-200.block#buscadorTabla
-    .row
+span.bg-gray-200.block#divBuscadorTabla
+    .amRow
         +field-input("envio",
             {
                 label: "Envío :",
@@ -9,15 +9,15 @@ span.bg-gray-200.block#buscadorTabla
             })
 
 
-    .row.w-full.overflow-auto#div-bandas-reportos-grid
+    .amRow.w-full.overflow-auto#divBandasReportosGrid
         +grid("EnviosDirectos")
     +grid-records-count("EnviosDirectos")
 
-.row#boton_resert.pb-50.pt-20
+.amRow#botonResert.pb-50.pt-20
     +button-reset({size: "large", disabled: false})
 
 span.bg-gray-200.block.p-0#buscadorTabla
-    .row#input_errores.mt-6.justify-center
+    .amRow#inputErrores.mt-6.justify-center
     +field-input("errores",
             {
             label: "Errores:",
@@ -26,6 +26,6 @@ span.bg-gray-200.block.p-0#buscadorTabla
             size: "8em"
             })
 
-    .row.w-full.overflow-auto#div-errores-reportos-grid
+    .amRow.w-full.overflow-auto#divErroresReportosGrid
         +grid("ErroresDirectos")
     +grid-records-count("ErroresDirectos")

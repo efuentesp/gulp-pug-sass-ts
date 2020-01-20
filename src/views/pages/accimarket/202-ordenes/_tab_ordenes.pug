@@ -1,4 +1,4 @@
-span.bg-gray-200.block#buscadorTabla
+span.bg-gray-200.block#divBuscadorTabla
     +field-input("captura",
         {
         label: "Captura : ",
@@ -9,8 +9,8 @@ span.bg-gray-200.block#buscadorTabla
     )
 
     .row.w-full.overflow-auto#div-contratos-reportos-grid
-        +grid("ContratosDirectos")
-    +grid-records-count("ContratosDirectos")
+        +grid("contratosDirectos")
+    +grid-records-count("contratosDirectos")
 
 
 .row.mt-6.flex.pb-64.pt-64
