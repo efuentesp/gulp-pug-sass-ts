@@ -15,12 +15,12 @@
   justify-content: center;
 }
 
-#boton_resert {
+#botonResert {
   display: flex;
   justify-content: center;
 }
 
-#input_errores {
+#divInputErrores {
   justify-content: center;
 }
 
@@ -28,19 +28,19 @@
   margin-top: 5em;
 }
 
-#field_serie {
+#divFieldSerie {
   span.required {
     display: none;
   }
-  .field-label {
+  .amFieldLabel {
     display: none;
   }
-  .field-control {
+  .amFieldControl {
     margin-left: 0px;
   }
 }
 
-#btn_reset {
+#btnReset {
   span.button.big-button {
     margin-top: 100em;
   }
@@ -76,7 +76,7 @@ input {
 #divTabOrdenes {
   padding: 0px 0px 6px 0px !important;
 }
-.currency-prefix {
+.amCurrencyPrefix {
   margin-right: 4px;
 }
 
@@ -88,10 +88,10 @@ input {
   height: 18px;
 }
 
-#div-bandas-reportos-grid,
-#div-contratos-reportos-grid,
-#div-envios-reportos-grid,
-#div-errores-reportos-grid {
+#divBandasReportosGrid,
+#divContratosReportosGrid,
+#divEnviosReportosGrid,
+#divErroresReportosGrid {
   border: 1px solid #919eab;
 }
 

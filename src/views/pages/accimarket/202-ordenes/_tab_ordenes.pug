@@ -8,12 +8,12 @@ span.bg-gray-200.block#divBuscadorTabla
         }
     )
 
-    .row.w-full.overflow-auto#div-contratos-reportos-grid
+    .amRow.w-full.overflow-auto#divContratosReportosGrid
         +grid("contratosDirectos")
     +grid-records-count("contratosDirectos")
 
 
-.row.mt-6.flex.pb-64.pt-64
+.amRow.mt-6.flex.pb-64.pt-64
     +button-send({size: "large", disabled: false})
     +button-validate({size: "large", disabled: false})
     +button-clean({size: "large", disabled: false})
