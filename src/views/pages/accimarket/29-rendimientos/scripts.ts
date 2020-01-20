@@ -49,29 +49,29 @@ var mesfi = fechafi.getMonth() + 1;
 var aniofi = fechafi.getFullYear();
 //alert(fechafi.toString('dd/mm/yyyy'));
 //var fec=fechafi.toString('dd/mm/yyyy');
-$("#dtFecha").val(dia + "-" + mes + "-" + anio);
-$("#dtFechaFinal").val(diafi + "-" + mesfi + "-" + aniofi);
+$("#fecha").val(dia + "-" + mes + "-" + anio);
+$("#fechaFinal").val(diafi + "-" + mesfi + "-" + aniofi);
 
-$("#dtFecha").on("change", function(event) {
+$("#fecha").on("change", function(event) {
   validaFechaInicial();
 });
 
-$("#dtFechaFinal").on("change", function(event) {
+$("#fechaFinal").on("change", function(event) {
   validaFechaInicial();
 });
 
-$("#dtFecha").datepicker("option", "minDate", "fechafi-3y");
-$("#dtFecha").datepicker("option", "maxDate", "fechafi");
-$("#dtFechaFinal").datepicker("option", "minDate", "fechafi-3y");
-$("#dtFechaFinal").datepicker("option", "maxDate", "fechafi");
-$("#dtFecha").val(dia + "-" + mes + "-" + anio);
-$("#dtFechaFinal").val(diafi + "-" + mesfi + "-" + aniofi);
+$("#fecha").datepicker("option", "minDate", "fechafi-3y");
+$("#fecha").datepicker("option", "maxDate", "fechafi");
+$("#fechaFinal").datepicker("option", "minDate", "fechafi-3y");
+$("#fechaFinal").datepicker("option", "maxDate", "fechafi");
+$("#fecha").val(dia + "-" + mes + "-" + anio);
+$("#fechaFinal").val(diafi + "-" + mesfi + "-" + aniofi);
 
 var validaFechaInicial = function() {
-  var dtFecha = $("#dtFecha")
+  var dtFecha = $("#fecha")
     .val()
     .toString();
-  var dtFechaFinal = $("#dtFechaFinal")
+  var dtFechaFinal = $("#fechaFinal")
     .val()
     .toString();
 
@@ -100,34 +100,34 @@ var validaFechaInicial = function() {
   }
 };
 
-$('input[name="chk_cmbOpcionesRendi"]').change(function() {  
+$('input[name="chkOpcionesRendi"]').change(function() {  
   if ($(this).is(":checked")) {
-    $("#table_resultadosMensuales").jqGrid("showCol", $(this).val());
-    $("#table_resultadosAcumulados").jqGrid("showCol", $(this).val());
-    $("#table_resultadosMensualesTWP").jqGrid("showCol", $(this).val());
-    $("#table_resultadosAcumuladosTWP").jqGrid("showCol", $(this).val());
+    $("#dtgResultadosMensuales").jqGrid("showCol", $(this).val());
+    $("#dtgResultadosAcumulados").jqGrid("showCol", $(this).val());
+    $("#dtgResultadosMensualesTWP").jqGrid("showCol", $(this).val());
+    $("#dtgResultadosAcumuladosTWP").jqGrid("showCol", $(this).val());
   } else {
-    $("#table_resultadosMensuales").jqGrid("hideCol", $(this).val());
-    $("#table_resultadosAcumulados").jqGrid("hideCol", $(this).val());
-    $("#table_resultadosMensualesTWP").jqGrid("hideCol", $(this).val());
-    $("#table_resultadosAcumuladosTWP").jqGrid("hideCol", $(this).val());
+    $("#dtgResultadosMensuales").jqGrid("hideCol", $(this).val());
+    $("#dtgResultadosAcumulados").jqGrid("hideCol", $(this).val());
+    $("#dtgResultadosMensualesTWP").jqGrid("hideCol", $(this).val());
+    $("#dtgResultadosAcumuladosTWP").jqGrid("hideCol", $(this).val());
   }
 
   let selectedColumns = verificaSeleccionados();
-  responsiveEffect(widthTable, numColumnsBase, selectedColumns, "table_resultadosMensuales", "splitter-container");
-  responsiveEffect(widthTable, numColumnsBase, selectedColumns, "table_resultadosAcumulados", "splitter-container");
+  responsiveEffect(widthTable, numColumnsBase, selectedColumns, "dtgResultadosMensuales", "splitter-container");
+  responsiveEffect(widthTable, numColumnsBase, selectedColumns, "dtgResultadosAcumulados", "splitter-container");
 });
 
 $(window).on("resize", function() {
-  windowResize(widthTable, "table_resultadosMensuales", "splitter-container");
-  windowResize(widthTable, "table_resultadosAcumulados", "splitter-container");
+  windowResize(widthTable, "dtgResultadosMensuales", "splitter-container");
+  windowResize(widthTable, "dtgResultadosAcumulados", "splitter-container");
 });
 
 
 const verificaSeleccionados = () => {
   let selected: any = [];
 
-  $('input[name="chk_cmbOpcionesRendi"]').each(function() {
+  $('input[name="chkOpcionesRendi"]').each(function() {
     if ($(this).is(":checked")) {
       selected.push($(this).val());
     }
@@ -143,10 +143,10 @@ const activaTIR = (selected: any[]) => {
   httpFindOne("contratos", txtContrato, payload => {
     infoContratoRendimiento(payload);
 
-    fillJqGrid("#table_resultadosMensuales", payload.listaMensuales);
+    fillJqGrid("#dtgResultadosMensuales", payload.listaMensuales);
     graficaMensuales("divCanvasGraficaMensual", selected, payload.listaMensuales);
 
-    fillJqGrid("#table_resultadosAcumulados", payload.listaAcumulados);
+    fillJqGrid("#dtgResultadosAcumulados", payload.listaAcumulados);
     graficaAcumulados("divCanvasGraficaAcumulados", selected, payload.listaAcumulados);
 
   });
@@ -159,25 +159,25 @@ const activaTWP = (selected: any[]) => {
   httpFindOne("contratos", txtContrato, payload => {
     infoContratoRendimiento(payload);
 
-    fillJqGrid("#table_resultadosMensualesTWP", payload.listaMensualesTWP);
+    fillJqGrid("#dtgResultadosMensualesTWP", payload.listaMensualesTWP);
     graficaMensualesTWP("divCanvasGraficaMensualTWP", selected, payload.listaMensualesTWP);
 
-    fillJqGrid("#table_resultadosAcumuladosTWP", payload.listaAcumuladosTWP);
+    fillJqGrid("#dtgResultadosAcumuladosTWP", payload.listaAcumuladosTWP);
     graficaAcumuladosTWP("divCanvasGraficaAcumuladosTWP", selected, payload.listaAcumuladosTWP);
   });
 };
 
 const openWindow = () => {
-  $("#gbox_table_resultadosMensualesTWP").hide();
+  $("#gbox_dtgResultadosMensualesTWP").hide();
   $("#graficaMensualTWP").hide();
-  $("#gbox_table_resultadosAcumuladosTWP").hide();
+  $("#gbox_dtgResultadosAcumuladosTWP").hide();
   $("#graficaAcumuladosTWP").hide();
-  $("#gbox_table_resultadosMensuales").show();
+  $("#gbox_dtgResultadosMensuales").show();
   $("#graficaMensual").show();
-  $("#gbox_table_resultadosAcumulados").show();
+  $("#gbox_dtgResultadosAcumulados").show();
   $("#graficaAcumulados").show();
 
-  $("#table_resultadosMensuales").jqGrid("setColProp", "amount", {
+  $("#dtgResultadosMensuales").jqGrid("setColProp", "amount", {
     width: 800
   });
 
@@ -187,21 +187,21 @@ const openWindow = () => {
 };  
 
 const closeWindow = () => {
-  $("#gbox_table_resultadosMensuales").hide();
+  $("#gbox_dtgResultadosMensuales").hide();
   $("#graficaMensual").hide();
-  $("#gbox_table_resultadosAcumulados").hide();
+  $("#gbox_dtgResultadosAcumulados").hide();
   $("#graficaAcumulados").hide();
-  $("#gbox_table_resultadosMensualesTWP").show();
+  $("#gbox_dtgResultadosMensualesTWP").show();
   $("#graficaMensualTWP").show();
-  $("#gbox_table_resultadosAcumuladosTWP").show();
+  $("#gbox_dtgResultadosAcumuladosTWP").show();
   $("#graficaAcumuladosTWP").show();
 
-  $("#gbox_table_resultadosMensualesTWP").css({
+  $("#gbox_dtgResultadosMensualesTWP").css({
     top: 10,
     left: 10,
     position: "absolute"
   });
-  $("#gbox_table_resultadosAcumuladosTWP").css({
+  $("#gbox_dtgResultadosAcumuladosTWP").css({
     top: 10,
     left: 10,
     position: "absolute"
@@ -219,7 +219,7 @@ const closeWindow = () => {
 }; 
 
 // Boton search
-$("#btn_search").click(function() {
+$("#btnSearch").click(function() {
   
   let selected = [];
   selected = verificaSeleccionados();
@@ -270,7 +270,7 @@ $("#btn_search").click(function() {
   //responsiveEffect(gridWidth, widthTable, 2, selectedColumns, "table_resultadosMensuales");
 //});
 
-$("#table_resultadosMensuales").jqGrid({
+$("#dtgResultadosMensuales").jqGrid({
   datatype: "local",
   height: "70",
   sortable: true,
@@ -301,7 +301,7 @@ $("#table_resultadosMensuales").jqGrid({
   caption: ""
 });
 
-$("#table_resultadosfuente").jqGrid({
+$("#dtgResultadosfuente").jqGrid({
   datatype: "local",
   height: "70",
   sortable: true,
@@ -379,7 +379,7 @@ $("#table_resultadosfuente").jqGrid({
   autoencode: true,
   caption: "",
   loadComplete: function() {
-    $("#gbox_table_resultadosfuente").contextMenu("menu-excel", {
+    $("#gbox_dtgResultadosfuente").contextMenu("menu-excel", {
       bindings: {
         "obtener-excel": function(event) {
           console.log("copiar excel");
@@ -390,7 +390,7 @@ $("#table_resultadosfuente").jqGrid({
   }
 });
 
-$("#table_resultadosAcumulados").jqGrid({
+$("#dtgResultadosAcumulados").jqGrid({
   datatype: "local",
   height: "70",
   sortable: true,
@@ -426,7 +426,7 @@ $("#table_resultadosAcumulados").jqGrid({
   autoencode: true,
   caption: ""
 });
-$("#table_resultadosMensualesTWP").jqGrid({
+$("#dtgResultadosMensualesTWP").jqGrid({
   datatype: "local",
   height: "70",
   sortable: true,
@@ -470,7 +470,7 @@ $("#table_resultadosMensualesTWP").jqGrid({
   autoencode: true,
   caption: "",
   loadComplete: function() {
-    $("#gbox_table_resultadosMensualesTWP").contextMenu("menu-pdf", {
+    $("#gbox_dtgResultadosMensualesTWP").contextMenu("menu-pdf", {
       bindings: {
         "obtener-fuente": function(event) {
           const txtContrato: string = String($("#txtContrato").val());
@@ -478,7 +478,7 @@ $("#table_resultadosMensualesTWP").jqGrid({
           httpFindOne("contratos", txtContrato, payload => {
             infoContratoRendimiento(payload);
 
-            fillJqGrid("#table_resultadosfuente", payload.listatabla_fuente);
+            fillJqGrid("#dtgResultadosfuente", payload.listatabla_fuente);
           });
           $("#dialogo_xls").dialog({
             modal: true,
@@ -494,7 +494,7 @@ $("#table_resultadosMensualesTWP").jqGrid({
     });
   }
 });
-$("#table_resultadosAcumuladosTWP").jqGrid({
+$("#dtgResultadosAcumuladosTWP").jqGrid({
   datatype: "local",
   height: "70",
   sortable: true,
@@ -542,7 +542,7 @@ const infoContratoRendimiento = (payload: any) => {
   $("#txtClabe").val(payload.clabe);
 };
 
-$('input[name="chk_cmbOpcionesRendi"]').change(function() {
+$('input[name="chkOpcionesRendi"]').change(function() {
   let selected = [];
   selected = verificaSeleccionados();
 
@@ -1507,7 +1507,7 @@ const graficaAcumuladosTWP = (
 
 };
 
-$("#gbox_table_resultadosMensualesTWP").hide();
+$("#gbox_dtgResultadosMensualesTWP").hide();
 $("#graficaMensualTWP").hide();
-$("#gbox_table_resultadosAcumuladosTWP").hide();
+$("#gbox_dtgResultadosAcumuladosTWP").hide();
 $("#graficaAcumuladosTWP").hide();

@@ -1,13 +1,13 @@
-.content {
-  .row {
+.amContent {
+  .amRow {
     flex-wrap: wrap;
   }
 
-  #criterios-busqueda-rendimientos {
+  #criteriosBusquedaRendimientos {
     display: flex;
   }
 
-  #groupRendimiento {
+  #divGroupRendimiento {
     flex-wrap: wrap;
     width: 62em;
 
@@ -17,28 +17,28 @@
     }
   }
 
-  #field_perfilContrato {
+  #divFieldPerfilContrato {
     label[for="perfilContrato"] {
       width: 3.5em;
     }
   }
 
-  #field_FechaInicial {
+  #divFieldFechaInicial {
     label {
       width: 7.5em;
     }
   }
 
-  #field_FechaFinal {
+  #divFieldFechaFinal {
     label {
       width: 6.5em;
     }
   }
 
-  #field_cmbOpcionesRendi {
+  #divFieldOpcionesRendi {
     width: 20em;
 
-    .field-control {
+    .amFieldControl {
       div {
         label {
           width: 12em;
@@ -51,7 +51,7 @@
     }
   }
 
-  #field_cmbModuloCalculo {
+  #divFieldModelosCalculoCombo {
     justify-content: flex-end;
   }
 }
@@ -96,7 +96,7 @@
   cursor: e-resize;
 }
 
-#simple {
+#divSimple {
   width: 100%;
   height: 700px;
   // top: 100px;
@@ -107,6 +107,6 @@
   // background: #888;
 }
 
-#simple > div {
+#divSimple > div {
   height: 450px !important;
 }

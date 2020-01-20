@@ -1,0 +1,19 @@
+extends /layouts/html5
+
+block title
+    title Rendimientos
+
+block styles
+    link(rel="stylesheet" href="/assets/css/accimarket/29-rendimientos/styles.css")
+
+block content
+    .amContent.p-4
+        +accordion("criteriosBusquedaRendimientos")
+            +accordion-item("busquedaItem")
+                +form("criteriosBusquedaRendimientos")
+                    include _criteriosRendimientos
+        include _graficasRendimientos
+        include _context_menus
+        include _dialog_xls
+block scripts
+    script(src="/assets/scripts/accimarket/29-rendimientos/scripts.js")

@@ -2,42 +2,42 @@ include /mixins/mixins
 
 .row
     +field-group("groupRendimiento")
-        +field-input("txtContrato",
+        +field-input("contrato",
             {
                 label: "Contrato",
                 orientation: "horizontal",
                 size: "10em",
                 max_length: "10"
             })
-        +field-input("txtDigito",
+        +field-input("digito",
             {
                 label: "Digito",
                 orientation: "horizontal",
                 disabled: true,
                 size: "4em"
             })
-        +field-input("txtDigitoVerificador",
+        +field-input("digitoVerificador",
             {
                 label: "DV",
                 orientation: "horizontal",
                 disabled: true,
                 size: "4em"
             })
-        +field-input("txtEstatus",
+        +field-input("estatus",
             {
                 label: "Estatus",
                 orientation: "horizontal",
                 disabled: true,
                 size: "4em"
             })
-        +field-input("txtPerfilContrato",
+        +field-input("perfilContrato",
             {
                 label: "Perfil",
                 orientation: "horizontal",
                 disabled: true,
                 size: "13em"
             })
-        +field-input("txtNombreContrato",
+        +field-input("nombreContrato",
             {
                 label: "",
                 orientation: "horizontal",
@@ -45,26 +45,26 @@ include /mixins/mixins
                 size: "40em",
                 max_length: "50"
             })
-        +field-input("txtClabe",
+        +field-input("clabe",
             {
                 label: "CLABE",
                 orientation: "horizontal",
                 disabled: true,
                 size: "13em"
             })
-        +field-date("dtFecha",
+        +field-date("fecha",
             {
                 label: "Fecha Inicial",
                 orientation: "horizontal",
                 size: "10em"
             })
-        +field-date("dtFechaFinal",
+        +field-date("fechaFinal",
             {
                 label: "Fecha Final",
                 orientation: "horizontal",
                 size: "10em"
             })
-        +field-select("cmbRenta",
+        +field-select("renta",
             {
             label: "Renta",
             orientation: "horizontal",
@@ -82,7 +82,7 @@ include /mixins/mixins
             {key:"9", value:"Notas Estructuradas"}
             )
 .row
-    +field-checks("cmbOpcionesRendi",
+    +field-checks("opcionesRendi",
         {
             label: "",
                 position:"fixed"
@@ -97,12 +97,12 @@ include /mixins/mixins
         {key: "S08", value:"INMEX", color:"cyan"}
         )
 .row
-    #search-actions-column.pl-12
+    #searchActionsColumn.pl-12
         +button-search({size: "large", disabled: false})
         +button-clean({size: "large", disabled: false})
         +button-pdf({size: "large", disabled: false})
         +button-xls({size: "large", disabled: false})
-        +field-select("cmbModelosCalculoCombo",
+        +field-select("modelosCalculoCombo",
             {
                 label: "Modulo de Calculo",
                 orientation: "horizontal",
