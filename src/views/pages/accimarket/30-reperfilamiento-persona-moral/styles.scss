@@ -22,7 +22,7 @@
     }
   }
 
-  #dtgTableTitulos {
+  #tableTitulos {
     margin: auto;
     width: 560px;
     border-collapse: collapse;
@@ -37,18 +37,18 @@
       color: #fff;
     }
 
-    .amTdTitulos {
+    .amTitulos {
       width: 9.9rem;
     }
 
-    .amTdConfig {
+    .amConfig {
       width: 16em;
       height: 4em;
       background: #fff;
     }
   }
 
-  #dtgTablePorta {
+  #tablePorta {
     margin: auto;
     width: 560px;
     border-collapse: collapse;
@@ -56,19 +56,19 @@
     border-style: hidden;
   }
 
-  #dtgTablePorta th,
-  #dtgTablePorta td {
+  #tablePorta th,
+  #tablePorta td {
     padding: 3px;
     border-width: 1.5px;
     border-style: solid;
     border-color: white black;
   }
 
-  #dtgTablePorta thead {
+  #tablePorta thead {
     background-color: #c4cdd5;
   }
 
-  #dtgTablePorta tr#even {
+  #tablePorta tr#even {
     background-color: #c4cdd5;
   }
 

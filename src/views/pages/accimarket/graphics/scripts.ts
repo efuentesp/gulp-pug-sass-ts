@@ -1,48 +1,48 @@
 /// <reference path="../../typings/index.d.ts" />
 
-let rates_params: UrlParams = {};
-let rendimientos_params: UrlParams = {};
-let rendimientosh_params: UrlParams = {};
-let rendimientoshc_params: UrlParams = {};
-let promedios_params: UrlParams = {};
+let ratesParams: UrlParams = {};
+let rendimientosParams: UrlParams = {};
+let rendimientoshParams: UrlParams = {};
+let rendimientoshcParams: UrlParams = {};
+let promediosParams: UrlParams = {};
 
 // Service line chart
-httpFindAll("rates", rates_params, payload => {
+httpFindAll("rates", ratesParams, payload => {
   fillEstrategias(payload);
 });
 
 // Service multiline chart
-httpFindAll("rates", rates_params, payload => {
+httpFindAll("rates", ratesParams, payload => {
   fillRates(payload);
 });
 
 // Services stack chart
-httpFindAll("rendimientos", rendimientos_params, payload => {
+httpFindAll("rendimientos", rendimientosParams, payload => {
   fillRendimientos(payload);
 });
 
 // Services stack chart horizontal
-httpFindAll("rendimientosh", rendimientosh_params, payload => {
+httpFindAll("rendimientosh", rendimientoshParams, payload => {
   fillHorizontalRendimientos(payload);
 });
 
 // Services stack chart horizontal
-httpFindAll("rendimientoshc", rendimientoshc_params, payload => {
+httpFindAll("rendimientoshc", rendimientoshcParams, payload => {
   fillPromediosHighchartBar(payload);
 });
 
 
 // Services bar chart
-httpFindAll("promedios", promedios_params, payload => {
+httpFindAll("promedios", promediosParams, payload => {
   fillPromedios(payload);
 });
 
-httpFindAll("promediosNBar", promedios_params, payload => {
+httpFindAll("promediosNBar", promediosParams, payload => {
   fillPromediosNBar(payload);
 });
 
 // Services bar chart
-httpFindAll("promedios", promedios_params, payload => {
+httpFindAll("promedios", promediosParams, payload => {
   fillPromediosPie(payload);
   fillPromediosPieHighcharts(payload);
 });

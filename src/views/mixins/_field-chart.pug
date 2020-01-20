@@ -1,4 +1,4 @@
 mixin chart(id,params)
   - var _uppc_id = id[0].toUpperCase() + id.substr(1)
   - var _style = "min-width: " + (params.min_width ? params.min_width : "200px") + ";" + "max-width: " + (params.max_width ? params.max_width : "800px") + ";" + "height: " + (params.height ? params.height : "400px") + ";  margin: 0 auto;"
-  div(id="div" + _id style=_style)
+  div(id="div" + _uppc_id style=_style)

@@ -1,8 +1,8 @@
 include /mixins/mixins
 
-.row 
+.amRow 
     p  6. Para cada una de las siguientes preguntas, seleccione la opcion que mejor describa la situacion financiera actual de la Persona Moral que representa.
-.row
+.amRow
     +quiz("EncuestaCapa", {name: ""}, [
     {question: "1. Porcentaje del total del Patrimonio de la Persona Moral que se destinara a invertir en Productos de Inversión.", required: true},
     {question: "2. Porcentaje del ingreso anual de la Persona Moral que se destinara a invertir en Productos de Inversión.", required: true},
@@ -14,7 +14,7 @@ include /mixins/mixins
         {answer: "60-80%", type: "option"},
         {answer: "80-100%", type: "option"}
     ])
-.row
+.amRow
     +field-checks("origen_unoPM",
         {
             label: "4 Selecciona el origen de los ingresos destinados a invertir (puede seleccionar mas de una opcion).",

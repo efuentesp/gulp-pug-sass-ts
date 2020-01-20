@@ -1,9 +1,9 @@
-let params_rates: UrlParams = {};
-let params_objInversion: UrlParams = {};
-let params_objInversionRA: UrlParams = {};
+let paramsRates: UrlParams = {};
+let paramsObjInversion: UrlParams = {};
+let paramsObjInversionRA: UrlParams = {};
 
 // Grafica Mapa de Liquidez
-httpFindAll("rates", params_rates, payload => {
+httpFindAll("rates", paramsRates, payload => {
     fillLiquidez(payload);
 });
 
@@ -72,7 +72,7 @@ const fillLiquidez = (rates: any) => {
 };
 
 // Grafica de Barras Objetivo de Inversion Uno
-httpFindAll("promedios", params_objInversion, payload => {
+httpFindAll("promedios", paramsObjInversion, payload => {
     fillObjInversion(payload);
 });
 
@@ -119,7 +119,7 @@ const fillObjInversion = (promedios: any) => {
 };
 
 // Grafica de Barras de Azul y Roja
-httpFindAll("rendimientos", params_objInversionRA, payload => {
+httpFindAll("rendimientos", paramsObjInversionRA, payload => {
     fillObjInversionRA(payload);
 });
 
@@ -161,7 +161,7 @@ const fillObjInversionRA = (rendimientos: any) => {
 };
 
 // Grafica de multilenas Objetivo de Inversion Dos
-httpFindAll("rates", params_rates, payload => {
+httpFindAll("rates", paramsRates, payload => {
     fillMultileneasObjetivo(payload);
 });
 

@@ -1,14 +1,14 @@
 /// <reference path="../../typings/index.d.ts" />
 
-let source_params: UrlParams = {};
-let destination_params: UrlParams = {};
+let listswapSourceParams: UrlParams = {};
+let listwapDestinationParams: UrlParams = {};
 
-httpFindAll("source", source_params, payload => {
-  llenaSource("lstListado", payload);
+httpFindAll("source", listswapSourceParams, payload => {
+  llenaSource("listado", payload);
 });
 
-httpFindAll("destination", destination_params, payload => {
-  llenaDestination("lstListado", payload);
+httpFindAll("destination", listwapDestinationParams, payload => {
+  llenaDestination("listado", payload);
 });
 
 const llenaSource = (id: string, source: any) => {

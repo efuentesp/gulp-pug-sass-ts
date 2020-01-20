@@ -1,6 +1,6 @@
 include /mixins/mixins
 
-.row
+.amRow
     +field-select("graficosOpcionT",
         {
             label: "5. Tomando en cuenta su horizonte y sus requerimientos de liquidez a traves del tiempo, ¿cual de las siguientes alternativas se mas a los objetivos de inversion de la Persona Moral?. Seleccione una sola opcion de los cinco portafolios abajo propuesto e indique si cuenta con alguna limitante de inverion.",
@@ -8,26 +8,26 @@ include /mixins/mixins
             required: true,
             orientation: "horizontal"
         })
-.row
+.amRow
     table.text-center#tableTitulos
         tr
-            td.tdConfig
-            td.tdTitulos
+            td.amConfig
+            td.amTitulos
                 label.font-bold.text-3xl 1
                 label (Corto Plazo)
-            td.tdTitulos
+            td.amTitulos
                 label.font-bold.text-3xl 2
                 label (Corto / Mediano Plazo)
-            td.tdTitulos
+            td.amTitulos
                 label.font-bold.text-3xl 3
                 label (Mediano Plazo)
-            td.tdTitulos
+            td.amTitulos
                 label.font-bold.text-3xl 4
                 label (Mediano / Largo Plazo)
-            td.tdTitulos
+            td.amTitulos
                 label.font-bold.text-3xl 5
                 label (Largo Plazo)
-.row.pt-4
+.amRow.pt-4
     table.text-center#tablePorta
         thead
             th
@@ -89,7 +89,7 @@ include /mixins/mixins
                     p 100%
                 td
                     p 100%
-.row
+.amRow
     +field-options("limitantePM",
         {
             label: "¿Tiene alguna limitante y/o restriccion para invertir?",

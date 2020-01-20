@@ -2645,7 +2645,7 @@ const xml2json = (xml, tab) => {
 
 const fillSwapList = (id: string, listId: string, params: any) => {
   const uppcId = id[0].toUpperCase() + id.substr(1)
-  var fieldId = "#" + uppcId;
+  var fieldId = "#lst" + uppcId;
   var list = $(fieldId + listId);
 
   for (var i = 0; i < params.length; i++) {
