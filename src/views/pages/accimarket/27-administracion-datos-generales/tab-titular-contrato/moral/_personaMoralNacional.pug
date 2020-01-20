@@ -1,7 +1,7 @@
 include /mixins/mixins
 
 +field-group("personaMN")
-    .row
+    .amRow
         +field-input("nombreCorto",
             {
             label: "Nombre Corto:",
@@ -23,7 +23,7 @@ include /mixins/mixins
             disabled: true,
             orientation: "horizontal"
             })
-    .row
+    .amRow
         +field-input("numNotario",
             {
             label: "Num. Notario:",
@@ -45,7 +45,7 @@ include /mixins/mixins
             disabled: true,
             orientation: "horizontal"
             })
-    .row
+    .amRow
         +field-input("fechaEscCons",
             {
             label: "Fecha Esc Cons:",
@@ -67,7 +67,7 @@ include /mixins/mixins
             disabled: true,
             orientation: "horizontal"
             })
-    .row
+    .amRow
         +field-input("recompra",
             {
             label: "Recompra:",
@@ -75,7 +75,7 @@ include /mixins/mixins
             disabled: true,
             orientation: "horizontal"
             })
-    .row#rowBnmx
+    .amRow#divRowBnmx
         +field-input("cteBnmx",
             {
             label: "Cte Bnmx:",
@@ -83,7 +83,7 @@ include /mixins/mixins
             disabled: true,
             orientation: "horizontal"
             })
-    .row
+    .amRow
         +field-input("obsEscritura",
             {
             label: "Obs Escritura:",
@@ -91,7 +91,7 @@ include /mixins/mixins
             disabled: true,
             orientation: "horizontal"
             })
-    .row
+    .amRow
         +field-textarea("clasificacion",
             {
                 label: "Clasificacion",
@@ -99,7 +99,7 @@ include /mixins/mixins
                 disabled: true,
                 orientation: "horizontal"
             })
-    .row
+    .amRow
         +field-textarea("clasificacionBanxico",
             {
                 label: "Clasificacion Banxico",

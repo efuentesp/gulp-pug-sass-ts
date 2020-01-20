@@ -1,77 +1,77 @@
-let params_pm: UrlParams = {};
+let paramsReperfilamientoPersonaMoralm: UrlParams = {};
 
-$('#contratoPM').change(() => {
+$('#txtContratoPM').change(() => {
 
-  params_pm = {};
-  params_pm.contrato = String($('#contratoPM').val());
+  paramsReperfilamientoPersonaMoralm = {};
+  paramsReperfilamientoPersonaMoralm.contrato = String($('#contratoPM').val());
 
-  httpFindAll("contratoPM", params_pm, payload => {
+  httpFindAll("contratoPM", paramsReperfilamientoPersonaMoralm, payload => {
     if (payload !== null) {
-      $('#nombrePM').val(payload.nomFirma);
-      $('#perfilPM').val(payload.perfil);
-      ($('#personaPerfilarPM') as any).select2({
+      $('#txtNombrePM').val(payload.nomFirma);
+      $('#txtPerfilPM').val(payload.perfil);
+      ($('#cmbPersonaPerfilarPM') as any).select2({
         placeholder: '--Seleccione--',
         minimumResultsForSearch: Infinity,
         data: payload.listaFirmas
       });
     } else {
-      $('#nombrePM').val('');
-      $('#perfilPM').val('');
+      $('#txtNombrePM').val('');
+      $('#txtPerfilPM').val('');
     }
   });
 });
 
-($("#personaPerfilarPM") as any).select2({
+($("#cmbPersonaPerfilarPM") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-($("#graficosOpcionU") as any).select2({
+($("#cmbGraficosOpcionU") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-($("#graficosOpcionD") as any).select2({
+($("#cmbGraficosOpcionD") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-($("#graficosOpcionT") as any).select2({
+($("#cmbGraficosOpcionT") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-($("#antiguedadConsPM") as any).select2({
+($("#cmbAntiguedadConsPM") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-($("#giroPM") as any).select2({
+($("#cmbGiroPM") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-($("#tipoPM") as any).select2({
+($("#cmbTipoPM") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-($("#actividadActuaPM") as any).select2({
+($("#cmbActividadActuaPM") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-($("#estrategiaInvPM") as any).select2({
+($("#cmbEstrategiaInvPM") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-($("#asesoriaInvPM") as any).select2({
+($("#cmbAsesoriaInvPM") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-($("#graficosOpcion") as any).select2({
+($("#cmbGraficosOpcion") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });

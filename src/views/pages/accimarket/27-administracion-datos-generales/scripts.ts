@@ -1,7 +1,7 @@
 /// <reference path="../../typings/index.d.ts" />
 console.log("27-administracion-datos-generales");
 
-const form27 = ($("#criterios-busqueda") as any)
+const form27 = ($("#criteriosBusqueda") as any)
   .parsley()
   .on("field:validated", () => {
     const ok = $(".parsley-error").length === 0;
@@ -25,118 +25,118 @@ const form27 = ($("#criterios-busqueda") as any)
   });
 
 const llenarInfoContrato = (payload: any) => {
-  $("#digito").val(payload.digito);
-  $("#dv").val(payload.dv);
-  $("#estatus").val(payload.estatus);
-  $("#perfil").val(payload.perfil);
-  $("#perfil2").val(payload.perfil2);
-  $("#portafolio").val(payload.portafolio);
-  $("#portafolio_uuid").val(payload.portafolio_uuid);
-  $("#clabe").val(payload.clabe);
-  $("#clabe2").val(payload.clabe2);
-  $("#stipo_port").val(payload.stipo_port);
-  $("#libro").val(payload.libro);
+  $("#txtDigito").val(payload.digito);
+  $("#txtDv").val(payload.dv);
+  $("#txtEstatus").val(payload.estatus);
+  $("#txtPerfil").val(payload.perfil);
+  $("#txtPerfilDos").val(payload.perfil2);
+  $("#txtPortafolio").val(payload.portafolio);
+  $("#txtPortafolioUuid").val(payload.portafolio_uuid);
+  $("#txtClabe").val(payload.clabe);
+  $("#txtClabeDos").val(payload.clabe2);
+  $("#txtStipoPort").val(payload.stipo_port);
+  $("#txtLibro").val(payload.libro);
   // ...
 };
 
 const llenarTitularContrato = (payload: any) => { };
 
 const llenarCotitulares = (payload: any) => {
-  llenarCotitular_ClasificacionContrato(payload, 0);
-  llenarCotitular_Observaciones(payload, 0);
-  llenarCotitular_Comisiones(payload, 0);
-  llenarCotitular_Documentacion(payload, 0);
-  llenarCotitular_Domicilio(payload, 0);
-  llenarCotitular_FirmasAutorizadas(payload, 0);
-  llenarCotitular_FormatosFiscales(payload, 0);
-  llenarCotitular_MediosComunicacion(payload, 0);
-  llenarCotitular_MedioLiquidacion(payload, 0);
+  llenarCotitularClasificacionContrato(payload, 0);
+  llenarCotitularObservaciones(payload, 0);
+  llenarCotitularComisiones(payload, 0);
+  llenarCotitularDocumentacion(payload, 0);
+  llenarCotitularDomicilio(payload, 0);
+  llenarCotitularFirmasAutorizadas(payload, 0);
+  llenarCotitularFormatosFiscales(payload, 0);
+  llenarCotitularMediosComunicacion(payload, 0);
+  llenarCotitularMedioLiquidacion(payload, 0);
   // ..
 };
 
-const llenarCotitular_ClasificacionContrato = (payload: any, i: number) => {
-  $("#asesor_inversion").val(
+const llenarCotitularClasificacionContrato = (payload: any, i: number) => {
+  $("#txtAsesorInversion").val(
     payload.cotitulares[i].clasificacion_contrato.asesor_inversion
   );
-  $("#tipo_manifiesto").val(
+  $("#txtTipoManifiesto").val(
     payload.cotitulares[i].clasificacion_contrato.tipo_manifiesto
   );
-  $("#servicio_inversion").val(
+  $("#txtServicioInversion").val(
     payload.cotitulares[i].clasificacion_contrato.servicio_inversion
   );
-  $("#carta_ejecucion").val(
+  $("#txtCartaEjecucion").val(
     payload.cotitulares[i].clasificacion_contrato.carta_ejecucion
   );
-  $("#fecha_carta_ejecucion").val(
+  $("#txtFechaCartaEjecucion").val(
     payload.cotitulares[i].clasificacion_contrato.fecha_carta_ejecucion
   );
-  $("#carta_ejecucion_2").val(
+  $("#txtCartaEjecucionDos").val(
     payload.cotitulares[i].clasificacion_contrato.carta_ejecucion_2
   );
-  $("#fecha_carta_ejecucion_2").val(
+  $("#txtFechaCartaEjecucionDos").val(
     payload.cotitulares[i].clasificacion_contrato.fecha_carta_ejecucion_2
   );
-  $("#institucional_pract_vta").val(
+  $("#txtInstitucionalPractVta").val(
     payload.cotitulares[i].clasificacion_contrato.institucional_pract_vta
   );
-  $("#justificacion_institucional_pract_vta").val(
+  $("#txtJustificacionInstitucionalPractVta").val(
     payload.cotitulares[i].clasificacion_contrato
       .justificacion_institucional_pract_vta
   );
-  $("#fecha_institucional_pract_vta").val(
+  $("#txtFechaInstitucionalPractVta").val(
     payload.cotitulares[i].clasificacion_contrato.fecha_institucional_pract_vta
   );
-  $("#sofisticado_nosofisticado").val(
+  $("#txtSofisticadoNosofisticado").val(
     payload.cotitulares[i].clasificacion_contrato.sofisticado_nosofisticado
   );
-  $("#justificacion_sofisticado_nosofisticado").val(
+  $("#txtJustificacionSofisticadoNosofisticado").val(
     payload.cotitulares[i].clasificacion_contrato
       .justificacion_sofisticado_nosofisticado
   );
-  $("#fecha_sofisticado_nosofisticado").val(
+  $("#txtFechaSofisticadoNosofisticado").val(
     payload.cotitulares[i].clasificacion_contrato
       .fecha_sofisticado_nosofisticado
   );
-  $("#elegible_noelegible").val(
+  $("#txtElegibleNoelegible").val(
     payload.cotitulares[i].clasificacion_contrato.elegible_noelegible
   );
-  $("#justificacion_elegible_noelegible").val(
+  $("#txtJustificacionElegibleNoelegible").val(
     payload.cotitulares[i].clasificacion_contrato
       .justificacion_elegible_noelegible
   );
-  $("#fecha_elegible_noelegible").val(
+  $("#txtFechaElegibleNoelegible").val(
     payload.cotitulares[i].clasificacion_contrato.fecha_elegible_noelegible
   );
-  $("#calificado_nocalificado").val(
+  $("#txtCalificadoNocalificado").val(
     payload.cotitulares[i].clasificacion_contrato.calificado_nocalificado
   );
-  $("#justificacion_calificado_nocalificado").val(
+  $("#txtJustificacionCalificadoNocalificado").val(
     payload.cotitulares[i].clasificacion_contrato
       .justificacion_calificado_nocalificado
   );
-  $("#fecha_calificado_nocalificado").val(
+  $("#txtFechaCalificadoNocalificado").val(
     payload.cotitulares[i].clasificacion_contrato.fecha_calificado_nocalificado
   );
-  $("#discrecional_nodiscrecional").val(
+  $("#txtDiscrecionalNodiscrecional").val(
     payload.cotitulares[i].clasificacion_contrato.discrecional_nodiscrecional
   );
-  $("#justificacion_discrecional_nodiscrecional").val(
+  $("#txtJustificacionDiscrecionalNodiscrecional").val(
     payload.cotitulares[i].clasificacion_contrato
       .justificacion_discrecional_nodiscrecional
   );
-  $("#fecha_discrecional_nodiscrecional").val(
+  $("#txtFechaDiscrecionalNodiscrecional").val(
     payload.cotitulares[i].clasificacion_contrato
       .fecha_discrecional_nodiscrecional
   );
-  $("#anexo_descriptivo").val(
+  $("#txtAnexoDescriptivo").val(
     payload.cotitulares[i].clasificacion_contrato.anexo_descriptivo
   );
 
-  llenarCotitular_LimitantesInvertir(payload, 0);
-  llenarCotitular_RelacionEmisor(payload, 0);
+  llenarCotitularLimitantesInvertir(payload, 0);
+  llenarCotitularRelacionEmisor(payload, 0);
 };
 
-const llenarCotitular_LimitantesInvertir = (payload: any, i: number) => {
+const llenarCotitularLimitantesInvertir = (payload: any, i: number) => {
   const limitantesInvertirArray: any[] =
     payload.cotitulares[i].clasificacion_contrato.limitantes_invertitr;
   fillJqGrid(
@@ -171,7 +171,7 @@ $("#dtgCotitularDosClasificacionContratoLimitantesIntervenir").jqGrid({
   caption: ""
 });
 
-const llenarCotitular_RelacionEmisor = (payload: any, i: number) => {
+const llenarCotitularRelacionEmisor = (payload: any, i: number) => {
   const relacionEmisorArray: any[] =
     payload.cotitulares[i].clasificacion_contrato.relacion_emisor;
   fillJqGrid(
@@ -196,7 +196,7 @@ $("#dtgCotitularDosClasificacionContratoRelacionEmisor").jqGrid({
   caption: ""
 });
 
-const llenarCotitular_Comisiones = (payload: any, i: number) => {
+const llenarCotitularComisiones = (payload: any, i: number) => {
   const comisionesArray: any[] = payload.cotitulares[i].comisiones;
   fillJqGrid("#dtgCotitularDosComisiones", comisionesArray);
 };
@@ -217,7 +217,7 @@ $("#dtgCotitularDosComisiones").jqGrid({
   caption: ""
 });
 
-const llenarCotitular_Documentacion = (payload: any, i: number) => {
+const llenarCotitularDocumentacion = (payload: any, i: number) => {
   const documentacionContratoArray: any[] =
     payload.cotitulares[i].documentacion.contrato;
   $("#dtgCotitularDosDocumentacionContrato").jqGrid("clearGridData");
@@ -276,7 +276,7 @@ $("#dtgCotitularDosDocumentacionCliente").jqGrid({
   caption: ""
 });
 
-const llenarCotitular_Domicilio = (payload: any, i: number) => {
+const llenarCotitularDomicilio = (payload: any, i: number) => {
   const domicilioArray: any[] = payload.cotitulares[i].domicilio;
   fillJqGrid("#dtgCotitularDosDomicilio", domicilioArray);
 };
@@ -317,7 +317,7 @@ $("#dtgCotitularDosDomicilio").jqGrid({
   caption: ""
 });
 
-const llenarCotitular_FirmasAutorizadas = (payload: any, i: number) => {
+const llenarCotitularFirmasAutorizadas = (payload: any, i: number) => {
   const firmasAutorizadasArray: any[] =
     payload.cotitulares[i].firmas_autorizadas;
   fillJqGrid("#dtgCotitularDosFirmasAutorizadas", firmasAutorizadasArray);
@@ -357,7 +357,7 @@ $("#dtgCotitularDosFirmasAutorizadas").jqGrid({
   caption: ""
 });
 
-const llenarCotitular_FormatosFiscales = (payload: any, i: number) => {
+const llenarCotitularFormatosFiscales = (payload: any, i: number) => {
   const formatosFiscalesArray: any[] = payload.cotitulares[i].formatos_fiscales;
   //fillJqGrid("#table_cotitular2_formatos_fiscales", formatosFiscalesArray);
   $("#dtgCotitularDosFormatosFiscales").jqGrid("clearGridData");
@@ -407,7 +407,7 @@ $("#dtgCotitularDosFormatosFiscales").jqGrid({
   caption: ""
 });
 
-const llenarCotitular_MediosComunicacion = (payload: any, i: number) => {
+const llenarCotitularMediosComunicacion = (payload: any, i: number) => {
   const mediosComunicacionArray: any[] =
     payload.cotitulares[i].medio_comunicacion;
   fillJqGrid("#dtgCotitularDosMedioComunicacion", mediosComunicacionArray);
@@ -433,7 +433,7 @@ $("#dtgCotitularDosMedioComunicacion").jqGrid({
   caption: ""
 });
 
-const llenarCotitular_MedioLiquidacion = (payload: any, i: number) => {
+const llenarCotitularMedioLiquidacion = (payload: any, i: number) => {
   const mediosComunicacionArray: any[] =
     payload.cotitulares[i].medio_liquidacion;
   fillJqGrid("#dtgCotitularDosMedioLiquidacion", mediosComunicacionArray);
@@ -479,7 +479,7 @@ $("#dtgCotitularDosMedioLiquidacion").jqGrid({
 
 $("#dtgPersonaFisicaInt").jqGrid({
   datatype: "local",
-  height: "auto",
+  height: 250,
   colNames: ["Nombre", "Apellido Paterno", "Apellido Materno", "Porcentaje %"],
   colModel: [
     { name: "nombre_persona_int", width: 220 },
@@ -500,7 +500,7 @@ $("#dtgPersonaFisicaInt").jqGrid({
 
 $("#dtgPersonaFisicaNac").jqGrid({
   datatype: "local",
-  height: "auto",
+  height: 250,
   colNames: ["Nombre", "Apellido Paterno", "Apellido Materno", "Porcentaje %"],
   colModel: [
     { name: "nombre_persona_nac", width: 220 },
@@ -519,32 +519,32 @@ $("#dtgPersonaFisicaNac").jqGrid({
   caption: ""
 });
 
-const llenarCotitular_Observaciones = (payload: any, i: number) => {
-  $("#text_area_observaciones").val(
+const llenarCotitularObservaciones = (payload: any, i: number) => {
+  $("#txaTextAreaObservaciones").val(
     payload.cotitulares[i].observaciones.text_area_observaciones
   );
-  $("#fecha_apertura").val(payload.cotitulares[i].observaciones.fecha_apertura);
-  $("#monto_inicial").val(payload.cotitulares[i].observaciones.monto_inicial);
-  $("#sector").val(payload.cotitulares[i].observaciones.sector);
-  $("#residencia").val(payload.cotitulares[i].observaciones.residencia);
-  $("#envio_correspondencia").val(
+  $("#txtFechaApertura").val(payload.cotitulares[i].observaciones.fecha_apertura);
+  $("#txtMontoInicial").val(payload.cotitulares[i].observaciones.monto_inicial);
+  $("#txtSector").val(payload.cotitulares[i].observaciones.sector);
+  $("#txtResidencia").val(payload.cotitulares[i].observaciones.residencia);
+  $("#txtEnvioCorrespondencia").val(
     payload.cotitulares[i].observaciones.envio_correspondencia
   );
-  $("#tipo_cuenta").val(payload.cotitulares[i].observaciones.tipo_cuenta);
-  $("#manejo_cuenta").val(payload.cotitulares[i].observaciones.manejo_cuenta);
-  $("#custodia_admon").val(payload.cotitulares[i].observaciones.custodia_admon);
-  $("#lim_max_operacion").val(
+  $("#txtTipoCuenta").val(payload.cotitulares[i].observaciones.tipo_cuenta);
+  $("#txtManejoCuenta").val(payload.cotitulares[i].observaciones.manejo_cuenta);
+  $("#txtCustodiaAdmon").val(payload.cotitulares[i].observaciones.custodia_admon);
+  $("#txtLimMaxOperacion").val(
     payload.cotitulares[i].observaciones.lim_max_operacion
   );
-  $("#isr_mdo_din").val(payload.cotitulares[i].observaciones.isr_mdo_din);
-  $("#fecha_ult_mov").val(payload.cotitulares[i].observaciones.fecha_ult_mov);
-  $("#porcentaje_acum_isr").val(
+  $("#txtIsrMdoDin").val(payload.cotitulares[i].observaciones.isr_mdo_din);
+  $("#txtFechaUltMov").val(payload.cotitulares[i].observaciones.fecha_ult_mov);
+  $("#txtPorcentajeAcumIsr").val(
     payload.cotitulares[i].observaciones.porcentaje_acum_isr
   );
-  $("#porcentaje_acum_ide").val(
+  $("#txtPorcentajeAcumIde").val(
     payload.cotitulares[i].observaciones.porcentaje_acum_ide
   );
-  $("#imprime_estado_cuenta").val(
+  $("#txtImprimeEstadoCuenta").val(
     payload.cotitulares[i].observaciones.imprime_estado_cuenta
   );
 };

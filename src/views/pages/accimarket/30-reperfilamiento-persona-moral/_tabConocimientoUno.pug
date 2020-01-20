@@ -1,8 +1,8 @@
 include /mixins/mixins
 
-.row
+.amRow
     p 1. Para cada una de las siguientes preguntas, seleccione la opcion que mejor describa la informacion de la Persona Moral por usted(es) representada.
-.row
+.amRow
     +field-select("antiguedadConsPM",
         {
             label: "1.-Antiguedad con base en la fecha de Constitucion",
@@ -10,7 +10,7 @@ include /mixins/mixins
             required: true,
             orientation: "horizontal"
         })
-.row
+.amRow
     +field-select("giroPM",
         {
             label: "2.-Giro de la Persona Moral",
@@ -18,7 +18,7 @@ include /mixins/mixins
             required: true,
             orientation: "horizontal"
         })
-.row
+.amRow
     +field-select("tipoPM",
         {
             label: "3.-Tipo de Persona Moral",
@@ -26,7 +26,7 @@ include /mixins/mixins
             required: true,
             orientation: "horizontal"
         })
-.row
+.amRow
     +field-options("actividadInvPM",
         {
             label: "4.-¿La actividad esta relacionada con inversiones?",
@@ -35,7 +35,7 @@ include /mixins/mixins
         },
         {key:"true", value:"Si"},
         {key:"false", value:"No"})
-.row
+.amRow
     +field-select("actividadActuaPM",
         {
             label: "4.1.-Anote actividad actual de la Persona Moral",
@@ -43,7 +43,7 @@ include /mixins/mixins
             required: true,
             orientation: "horizontal"
         })
-.row
+.amRow
     +field-select("estrategiaInvPM",
         {
             label: "5.-Estrategia de inversion generalmente utilizada",
@@ -51,7 +51,7 @@ include /mixins/mixins
             required: true,
             orientation: "horizontal"
         })
-.row
+.amRow
     +field-select("asesoriaInvPM",
         {
             label: "6.-Ha usado asesoria para la toma de decisiones de inversion",
@@ -59,9 +59,9 @@ include /mixins/mixins
             required: true,
             orientation: "horizontal"
         })
-.row
+.amRow
     p *El giro de Servicios incluye a las personas morales dedicadas a Servicios en General, Gubernamental, Educacion y Sin Fines de Lucro.
-.row
+.amRow
     p **Especulativa: Estrategia de inversion de alto riesgo basadas en las oprtunidades derivadas de la fluctaciones de los mercados y precios.
-.row
+.amRow
     p ***Presevacion de Capital portafolios diversificados basados en una estrategia de inversion de corto, mediano y largo plazo.

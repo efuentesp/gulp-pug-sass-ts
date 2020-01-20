@@ -1,5 +1,5 @@
-.content {
-  .row {
+.amContent {
+  .amRow {
     display: flex;
   }
 
@@ -7,7 +7,7 @@
     width: 80em;
   }
 
-  #liquidezPM {
+  #dtgLiquidezPM {
     width: 70em;
     height: 26em;
   }
@@ -22,7 +22,7 @@
     }
   }
 
-  #tableTitulos {
+  #dtgTableTitulos {
     margin: auto;
     width: 560px;
     border-collapse: collapse;
@@ -37,18 +37,18 @@
       color: #fff;
     }
 
-    .tdTitulos {
+    .amTdTitulos {
       width: 9.9rem;
     }
 
-    .tdConfig {
+    .amTdConfig {
       width: 16em;
       height: 4em;
       background: #fff;
     }
   }
 
-  #tablePorta {
+  #dtgTablePorta {
     margin: auto;
     width: 560px;
     border-collapse: collapse;
@@ -56,35 +56,35 @@
     border-style: hidden;
   }
 
-  #tablePorta th,
-  #tablePorta td {
+  #dtgTablePorta th,
+  #dtgTablePorta td {
     padding: 3px;
     border-width: 1.5px;
     border-style: solid;
     border-color: white black;
   }
 
-  #tablePorta thead {
+  #dtgTablePorta thead {
     background-color: #c4cdd5;
   }
 
-  #tablePorta tr#even {
+  #dtgTablePorta tr#even {
     background-color: #c4cdd5;
   }
 
-  .liquidezI {
+  .amLiquidezI {
     margin-top: 3em;
     height: 23em;
   }
 
-  .lididezColumnA {
+  .amLididezColumnA {
     border-width: 3px;
     border-style: solid none solid solid;
     border-color: blue;
     width: 1em;
   }
 
-  .lididezColumnB {
+  .amLididezColumnB {
     border-width: 3px;
     border-style: solid none solid solid;
     border-color: blue;

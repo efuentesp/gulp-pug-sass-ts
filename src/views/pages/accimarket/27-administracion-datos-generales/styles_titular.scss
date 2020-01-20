@@ -1,37 +1,37 @@
-#personaFN,
-#personaFI {
+#divPersonaFN,
+#divPersonaFI {
   display: flex;
   flex-wrap: wrap;
   width: 80em;
 
-  #field_sexo {
+  #txtSexo {
     label {
       width: 4.5em;
     }
   }
 
-  #field_pfi_sexo,
-  #field_pfi_calidadMigratoria {
+  #divFieldPfiSexo,
+  #divFieldPfiCalidadMigratoria {
     label {
       width: 4.5em;
     }
   }
 
-  #field_pfi_actividad {
+  #divFieldPfiActividad {
     label {
       width: 3.8em;
     }
   }
 
-  #field_pfi_rfc {
+  #divFieldPfiRfc {
     label {
       width: 2.6em;
     }
   }
 }
 
-#personaMN,
-#personaME {
+#divPersonaMN,
+#divPersonaME {
   flex-wrap: wrap;
   width: 83em;
 
@@ -39,12 +39,12 @@
     width: 11em;
   }
 
-  .row {
+  .amRow {
     display: flex;
   }
 
-  #rowBnmx,
-  #rowPme_Bnmx {
+  #divRowBnmx,
+  #divRowPmeBnmx {
     width: 60em;
   }
 }

@@ -2,7 +2,7 @@ include /mixins/mixins
 
 +accordion("CriteriosBusquedaAccordion")
     +accordion-item("CriteriosBusquedaAccordionItem")
-        form#criterios-busqueda.flex.flex-wrap.justify-between
+        form#criteriosBusqueda.flex.flex-wrap.justify-between
             .campos-filtrado
                 .row.flex.flex-wrap
                     +field-input("contrato",
@@ -20,23 +20,23 @@ include /mixins/mixins
                     +field-input("perfil",
                         { label: "Perfil", size: "12em", disabled: true, orientation: "horizontal" }
                     )
-                    +field-input("perfil2",
+                    +field-input("perfilDos",
                         { label: "", size: "12em", disabled: true, orientation: "horizontal" }
                     )
                     +field-input("portafolio",
                         { label: "Portafolio", size: "12em", disabled: true, orientation: "horizontal" }
                     )
                 .row.flex.flex-wrap
-                    +field-input("portafolio_uuid",
+                    +field-input("portafolioUuid",
                         { label: "", size: "37.5em", max_length:200, disabled: true, orientation: "horizontal" }
                     )
                     +field-input("clabe",
                         { label: "Perfil", size: "12em", disabled: true, orientation: "horizontal" }
                     )
-                    +field-input("clabe2",
+                    +field-input("clabeDos",
                         { label: "", size: "12em", disabled: true, orientation: "horizontal" }
                     )
-                    +field-input("stipo_port",
+                    +field-input("stipoPort",
                         { label: "STipo Port", size: "12em", disabled: true, orientation: "horizontal" }
                     )
                 .row.flex.flex-wrap

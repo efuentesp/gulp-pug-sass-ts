@@ -1,74 +1,74 @@
-#field_asesor_inversion {
+#divFieldAsesorInversion {
   label {
     width: 20em;
     text-align: end;
   }
 }
 
-#field_tipo_manifiesto {
+#divFieldTipoManifiesto {
   label {
     width: 20em;
     text-align: end;
   }
 }
 
-#field_servicio_inversion {
+#divFieldServicioInversion {
   label {
     width: 20em;
     text-align: end;
   }
 }
 
-#field_carta_ejecucion {
+#divFieldCartaEjecucion {
   label {
     width: 20em;
     text-align: end;
   }
 }
 
-#field_carta_ejecucion_2 {
+#divFieldCartaEjecucionDos {
   label {
     width: 20em;
     text-align: end;
   }
 }
 
-#field_institucional_pract_vta {
+#divFieldInstitucionalPractVta {
   label {
     width: 20em;
     text-align: end;
   }
 }
 
-#field_sofisticado_nosofisticado {
+#divFieldSofisticadoNosofisticado {
   label {
     width: 20em;
     text-align: end;
   }
 }
 
-#field_elegible_noelegible {
+#divFieldElegibleNoelegible {
   label {
     width: 20em;
     text-align: end;
   }
 }
 
-#field_calificado_nocalificado {
+#divFieldCalificadoNocalificado {
   label {
     width: 20em;
     text-align: end;
   }
 }
 
-#field_discrecional_nodiscrecional {
+#divFieldDiscrecionalNodiscrecional {
   label {
     width: 20em;
     text-align: end;
   }
 }
 
-#field_anexo_descriptivo {
+#divFieldAnexoDescriptivo {
   label {
     width: 20em;
     text-align: end;
@@ -77,49 +77,49 @@
 
 /*FECHAS*/
 
-#field_fecha_carta_ejecucion {
+#divFieldFechaCartaEjecucion {
   label {
     width: 3.1em;
     text-align: end;
   }
 }
 
-#field_fecha_carta_ejecucion_2 {
+#divFielFechaCartaEjecucionDos {
   label {
     width: 3.1em;
     text-align: end;
   }
 }
 
-#field_fecha_institucional_pract_vta {
+#divFieldFechaInstitucionalPractVta {
   label {
     width: 2.9em;
     text-align: end;
   }
 }
 
-#field_fecha_sofisticado_nosofisticado {
+#divFieldFechaSofisticadoNosofisticado {
   label {
     width: 2.9em;
     text-align: end;
   }
 }
 
-#field_fecha_elegible_noelegible {
+#divFieldFechaElegibleNoelegible {
   label {
     width: 2.9em;
     text-align: end;
   }
 }
 
-#field_fecha_calificado_nocalificado {
+#divFieldFechaCalificadoNocalificado {
   label {
     width: 2.9em;
     text-align: end;
   }
 }
 
-#field_fecha_discrecional_nodiscrecional {
+#divFieldFechaDiscrecionalNodiscrecional {
   label {
     width: 2.9em;
     text-align: end;
@@ -128,62 +128,62 @@
 
 /*PAGE OBSERVACIONES - COTITULAR2*/
 
-#field_text_area_observaciones {
+#divFieldTextAreaObservaciones {
   label {
     width: 2em;
     text-align: end;
   }
 }
 
-#field_fecha_apertura {
+#divFieldFechaApertura {
   label {
     width: 14em;
     text-align: end;
   }
 }
 
-#field_monto_inicial {
+#divFieldMontoInicial {
   label {
     width: 17em;
     text-align: end;
   }
 }
 
-#field_sector {
+#divFieldSector {
   label {
     width: 14em;
     text-align: end;
   }
 }
 
-#field_residencia {
+#divFieldResidencia {
   label {
     width: 17em;
     text-align: end;
   }
 }
 
-#field_envio_correspondencia {
+#divFieldEnvioCorrespondencia {
   label {
     width: 14em;
     text-align: end;
   }
 }
 
-#field_tipo_cuenta {
+#divFieldTipoCuenta {
   label {
     width: 17em;
     text-align: end;
   }
 }
 
-#comisiones-impuestos-span {
+#comisionesImpuestosSpan {
   width: 14em;
   text-align: end;
   font-weight: bold;
 }
 
-#field_manejo_cuenta {
+#divFieldManejoCuenta {
   margin-left: 19.9em;
   label {
     width: 17em;
@@ -191,49 +191,49 @@
   }
 }
 
-#field_custodia_admon {
+#divFieldCustodiaAdmon {
   label {
     width: 14em;
     text-align: end;
   }
 }
 
-#field_lim_max_operacion {
+#divFieldLimMaxOperacion {
   label {
     width: 17em;
     text-align: end;
   }
 }
 
-#field_isr_mdo_din {
+#divFieldIsrMdoDin {
   label {
     width: 14em;
     text-align: end;
   }
 }
 
-#field_fecha_ult_mov {
+#divFieldFechaUltMov {
   label {
     width: 17em;
     text-align: end;
   }
 }
 
-#field_porcentaje_acum_isr {
+#divFieldPorcentajeAcumIsr {
   label {
     width: 14em;
     text-align: end;
   }
 }
 
-#field_porcentaje_acum_ide {
+#divFieldPorcentajeAcumIde {
   label {
     width: 17em;
     text-align: end;
   }
 }
 
-#field_imprime_estado_cuenta {
+#divFieldImprimeEstadoCuenta {
   label {
     width: 14em;
     text-align: end;
@@ -247,21 +247,21 @@
   }
 }
 
-.heigtTabla {
+.amHeigtTabla {
   height: 31em;
 }
 
-.heigthTablaM {
+.amHeigthTablaM {
   height: 27.5em;
 }
 
-.heigthTablaC {
+.amHeigthTablaC {
   height: 15em;
 }
 
 // Centrar los textos de los campos de salida
-.field {
-  .input {
+.amField {
+  .amInput {
     &:disabled {
       text-align: center;
     }
@@ -269,19 +269,20 @@
 }
 
 // Menu style with image
-.container-img {
+.amContainerImg {
   max-width: 100px;
+}
 
-  &_image {
-    display: inline-block;
-    vertical-align: middle;
-    width: 15%;
-  }
-  &_text {
-    display: inline-block;
-    width: 80%;
-    @media (max-width: 100px) {
-      width: 100%;
-    }
+.amContainerImgImage {
+  display: inline-block;
+  vertical-align: middle;
+  width: 15%;
+}
+
+.amContainerImgText {
+  display: inline-block;
+  width: 80%;
+  @media (max-width: 100px) {
+    width: 100%;
   }
 }

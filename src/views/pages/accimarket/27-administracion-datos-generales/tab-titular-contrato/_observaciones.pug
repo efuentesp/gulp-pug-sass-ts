@@ -3,14 +3,14 @@ include /mixins/mixins
 
 .campos-observaciones
     .row.flex.flex-wrap
-        +field-textarea("text_area_observaciones",
+        +field-textarea("textAreaObservaciones",
             { size: "69em", disabled: true, orientation: "horizontal" }
         )
     .row.flex.inline-flex
-        +field-input("fecha_apertura",
+        +field-input("fechaApertura",
             { label: "Fecha Apertura", size: "18em", disabled: true, orientation: "horizontal" }
         )
-        +field-input("monto_inicial",
+        +field-input("montoInicial",
             { label: "Monto Inicial", size: "18em", disabled: true, orientation: "horizontal" }
         )
     .row.flex.inline-flex
@@ -21,40 +21,40 @@ include /mixins/mixins
             { label: "Residencia", size: "18em", disabled: true, orientation: "horizontal" }
         )
     .row.flex.inline-flex
-        +field-input("envio_correspondencia",
+        +field-input("envioCorrespondencia",
             { label: "Envio Correspondencia", size: "18em", disabled: true, orientation: "horizontal" }
         )
-        +field-input("tipo_cuenta",
+        +field-input("tipoCuenta",
             { label: "Tipo Cuenta", size: "18em", disabled: true, orientation: "horizontal" }
         )
     .row.flex.inline-flex
-        p#comisiones-impuestos-span Comisiones/Impuestos*
-        +field-input("manejo_cuenta",
+        p#comisionesImpuestosSpan Comisiones/Impuestos*
+        +field-input("manejoCuenta",
             { label: "Manejo Cuenta", size: "18em", disabled: true, orientation: "horizontal" }
         )
     .row.flex.inline-flex
-        +field-input("custodia_admon",
+        +field-input("custodiaAdmon",
             { label: "Custodia y Admon*", size: "18em", disabled: true, orientation: "horizontal" }
         )
-        +field-input("lim_max_operacion",
+        +field-input("limMaxOperacion",
             { label: "Lim.Máx. de Operación", size: "18em", disabled: true, orientation: "horizontal" }
         )
     .row.flex.inline-flex
-        +field-input("isr_mdo_din",
+        +field-input("isrMdoDin",
             { label: "ISR Mdo Din*", size: "18em", disabled: true, orientation: "horizontal" }
         )
-        +field-input("fecha_ult_mov",
+        +field-input("fechaUltMov",
             { label: "Fecha últ Mov", size: "18em", disabled: true, orientation: "horizontal" }
         )
     .row.flex.inline-flex
-        +field-input("porcentaje_acum_isr",
+        +field-input("porcentajeAcumIsr",
             { label: "Porcentaje Acum. ISR", size: "18em", disabled: true, orientation: "horizontal" }
         )
-        +field-input("porcentaje_acum_ide",
+        +field-input("porcentajeAcumIde",
             { label: "Porcentaje de Acum. IDE", size: "18em", disabled: true, orientation: "horizontal" }
         )
     .row.flex.flex-wrap
-        +field-input("imprime_estado_cuenta",
+        +field-input("imprimeEstadoCuenta",
             { label: "Imprime Estado de Cuenta", size: "18em", disabled: true, orientation: "horizontal" }
         )
 
