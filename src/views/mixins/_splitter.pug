@@ -1,7 +1,8 @@
 mixin splitter(id, parms)
   - var _uppc_id = id[0].toUpperCase() + id.substr(1)
+  - var _id = "div" +  _uppc_id
   - var _parms = (parms ? parms : {orientation: "vertical"})
   - var _class = "splitter-" + _parms.orientation
 
-  .splitter(id="div" + _uppc_id class=_class)
+  .splitter(id=_id class=_class)
     block
