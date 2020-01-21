@@ -2304,14 +2304,15 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
 
   // Questions
   for (let i = 0; i < nQuestions; i++) {
-    question = "<tr><td class='question'>" + quiz[0].question[i].question;
+    question = "<tr><td class='amQuestion'>" + quiz[0].question[i].question;
 
     if (quiz[0].question[i].required) {
-      question += "<span class='required'>*</span>";
+      question += "<span class='amRequired'>*</span>";
     }
 
     question +=
-      "<div class='field-error'><div id='field_error_block_encuesta_" +
+      "<div class='field-error'><div id='divFieldErrorBlock" +
+      id[0].toUpperCase() + id.substr(1) +
       i +
       "'></div></div></td>";
 
@@ -2330,20 +2331,16 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
       if (quiz[0].answer[j].type == "option") {
         answerOption =
           "<td>" +
-          "<div class='answer'>" +
-          "<input type='radio' id='" +
-          id +
-          "_" +
+          "<div class='amAnswer'>" +
+          "<input type='radio' id='rdb" +
+          id[0].toUpperCase() + id.substr(1) +
           i +
-          "_" +
           j +
-          "' name='" +
-          id +
-          "_" +
+          "' name='rdb" +
+          id[0].toUpperCase() + id.substr(1) +
           i +
-          "' required data-parsley-errors-container='#field_error_block_" +
+          "' required data-parsley-errors-container='#divFieldErrorBlock" +
           id +
-          "_" +
           j +
           "'";
 
@@ -2355,7 +2352,7 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
           "data-points='" +
           answer_points +
           "'>" +
-          "<span class='checkmark'></span>" +
+          "<span class='amCheckmark'></span>" +
           "</div>" +
           "</td>";
 
@@ -2364,21 +2361,20 @@ const fillQuiz = (field_group: string, id: string, quiz: any) => {
 
       if (quiz[0].answer[j].type == "select") {
         answerSelect =
-          '<td><div class="answer">' +
-          '<select class="select2" id="encuesta_' +
+          '<td><div class="amAnswer">' +
+          '<select class="select2" id="cmb' +
+          id[0].toUpperCase() + id.substr(1) +
           i +
-          "_" +
           j +
-          '" name="quiz_select" style="width: 12em;" required ' +
+          '" name="cmbQuizSelect" style="width: 12em;" required ' +
           db +
           " " +
-          'data-parsley-errors-container="#field_error_block_' +
-          id +
-          "_" +
+          'data-parsley-errors-container="#divFieldErrorBlock' +
+          id[0].toUpperCase() + id.substr(1) +
           i +
           '">';
 
-        answerSelectId.push(id + "_" + i + "_" + j);
+        answerSelectId.push("cmb" + id[0].toUpperCase() + id.substr(1)  + i +  j);
         let optionValue = quiz[0].result[i].results[j].result;
 
         options = "";
