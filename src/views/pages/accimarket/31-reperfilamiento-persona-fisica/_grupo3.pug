@@ -1,10 +1,10 @@
 include /mixins/mixins
 
 +field-group("grupoTres")
-    .row.justify-end#grupoParrafo
+    .amRow.justify-end#divGrupoParrafo
         p.font-bold.pr-40 Si conoce y ha invertido, indique:
-    .row
-        +quiz("EncuestaPerfilamientoPersonaFisica", {name: "2. ¿Cuál es la experiencia en productos de inversión del cliente?", size:"40em"}, [], [
+    .amRow
+        +quiz("encuesta", {name: "2. ¿Cuál es la experiencia en productos de inversión del cliente?", size:"40em"}, [], [
         {answer: "No conoce ni ha invertido", type: "option"},
         {answer: "Sólo conoce", type: "option"},
         {answer: "Conoce y ha invertido", type: "option"},

@@ -7,10 +7,10 @@ block styles
     link(rel="stylesheet" href="../../assets/css/accimarket/31-reperfilamiento-persona-fisica/styles.css")
 
 block content
-    .content.p-4
-        +accordion("ReperfilamientoPersonaFisica")
-            +accordion-item("ReperfilamientoPersonaFisicaItem", "Perfilamiento de Personas Fisicas")
-                +form("#criterios-busqueda")
+    .amContent.p-4
+        +accordion("reperfilamientoPersonaFisica")
+            +accordion-item("reperfilamientoPersonaFisicaItem", "Perfilamiento de Personas Fisicas")
+                +form("#criteriosBusqueda")
                     include _grupo1
                     +field-group("grupoTodo")
                         include _liquidaciones
@@ -19,7 +19,7 @@ block content
                         include _grupo4
                         include _grupo5
                         include _grupo6
-                    .row#sticky-action-bar
+                    .amRow#divStickyActionBar
                         +button-send({size: "large", disabled: false})
                     +field-group("grupoAsesor")
                         include asesorInversion/_asesorInversion

@@ -24,13 +24,13 @@ include /mixins/mixins
         },
         {key:"false", value:"Ninguna"},
         {key:"true", value:"Si"})
-    .row
+    .amRow
         +field-group("grupoInstrumentos")
-            .row
+            .amRow
                 p#preguntas Especificar
-            .row
+            .amRow
                 p#preguntas Seleccione Independiente
-            .row
+            .amRow
                 +field-select-plus-minus("grupoInstrumento",{
                     label:"Grupo Instrumento",
                     size:"18em"
@@ -43,9 +43,9 @@ include /mixins/mixins
                 },
                 {key:"1",value:"Valor Instrumentos"},
                 {key:"2",value:"Valor Dos Instrumentos"})
-            .row
+            .amRow
                 p#preguntas Seleccione Dependiente
-            .row#rowEmisoras
+            .amRow#divRowEmisoras
                 +field-select-plus-minus("emisoras",{
                     label:"Emisoras",
                     size:"18em"
@@ -53,4 +53,4 @@ include /mixins/mixins
                 {key:"1",value:"Ejemplo Emisoras"},
                 {key:"2",value:"Ejemplo Dos Emisoras"})
                 p#boton BOTON
-                +grid("Emisora")
+                +grid("emisora")

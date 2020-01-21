@@ -1,6 +1,6 @@
 include /mixins/mixins
 
-.row
+.amRow
     +field-input("contrato",
         {
             label: "Contrato",
@@ -25,12 +25,12 @@ include /mixins/mixins
             orientation: "horizontal"
         })
 
-.row#rowPerfilar
+.amRow#divRowPerfilar
     +field-select("personaPerfilar",
         {
             label: "Seleccione la persona que desea perfilar",
             size: "35em",
-            required: true,
+            required: false,
             orientation: "horizontal"
         })
-    label.font-bold.pt-4.pl-4#fechaNacimiento
+    label.font-bold.pt-4.pl-4#divFechaNacimiento

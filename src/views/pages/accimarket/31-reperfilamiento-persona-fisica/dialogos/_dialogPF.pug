@@ -1,11 +1,11 @@
 include /mixins/mixins
 
-.row
+.amRow
     .ui-dialog.hidden(id="dialogoError")
         +field-group("grupoDialog")
-            .row
+            .amRow
                 p Boton Uno
-            .row
+            .amRow
                 +field-textarea("dialogText",
                     {
                         label:"",
@@ -13,5 +13,5 @@ include /mixins/mixins
                         size:"30em",
                         max_length:"250"
                     })
-            .row
+            .amRow
                 p Boton Dos

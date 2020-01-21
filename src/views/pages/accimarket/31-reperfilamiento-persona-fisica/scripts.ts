@@ -1,39 +1,40 @@
-let pf_params: UrlParams = {};
-let pf_encuestaU: UrlParams = {};
-let pf_encuestaLstU: any[] = [];
-let pf_encuestaD: UrlParams = {};
+let pfParams: UrlParams = {};
+let pfEncuestaU: UrlParams = {};
+let pfEncuestaLstU: any[] = [];
+let pfEncuestaD: UrlParams = {};
 let pf_encuestaLstD: any[] = [];
 
-$("#grupoInstrumentos").hide();
+$("#divGrupoInstrumentos").hide();
 
-$("#chk_origen_uno_9").click(() => {
-  if ($("#chk_origen_uno_9").is(":checked")) {
-    $("#field_otros").show();
+$("#chkOrigenUno9").click(() => {
+  if ($("#chkOrigenUno9").is(":checked")) {
+    $("#divFieldOtros").show();
   } else {
-    $("#field_otros").hide();
+    $("#divFieldOtros").hide();
   }
 });
 
 $(document).ready(() => {
   mostrarOcultar(true);
-  var element = document.getElementById("datosInfo_group");
+  var element = document.getElementById("divDatosInfoGroup");
   element.classList.remove("flex");
-  $("#field_otros").hide();
+  $("#divFieldOtros").hide();
 });
 
-$("#contrato").change(() => {
-  const contrato: string = String($("#contrato").val());
-  $("#fechaNacimiento").text("");
-  $("#personaPerfilar option").remove();
+$("#txtContrato").change(() => {
+  const contrato: string = String($("#txtContrato").val());
+  console.log("---------+> ", contrato);
+  $("#divFechaNacimiento").text("");
+  $("#cmbPersonaPerfilar option").remove();
   var options = new Option("--Seleccione--", "id", true, true);
-  $("#personaPerfilar")
+  $("#cmbPersonaPerfilar")
     .append(options)
     .trigger("change");
 
   httpFindOne("busquedaContrato", contrato, payload => {
     if (payload !== null) {
-      $("#nombre").val(payload.nombre);
-      $("#perfil").val(payload.perfilActual);
+      $("#txtNombre").val(payload.nombre);
+      $("#txtPerfil").val(payload.perfilActual);
       if (payload.noPermiso) {
         $("#dialogoError").dialog({
           modal: true,
@@ -72,29 +73,29 @@ $("#contrato").change(() => {
 				mostrarOcultar(false);
 			}*/
     } else {
-      $('#nombre').val('');
-      $('#perfil').val('');
+      $('#txtMombre').val('');
+      $('#txtPerfil').val('');
     }
   });
 });
 
-($("#personaPerfilar") as any).select2({
+($("#cmbPersonaPerfilar") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-$("input[name='limitantes']").change(() => {
-  var opcion = $("input[name='limitantes']:checked").val();
+$("input[name='rdbLimitantes']").change(() => {
+  var opcion = $("input[name='rdbLimitantes']:checked").val();
   console.log(opcion);
   if (opcion == "true") {
-    $("#grupoInstrumentos").show();
+    $("#divGrupoInstrumentos").show();
   } else {
-    $("#grupoInstrumentos").hide();
+    $("#divGupoInstrumentos").hide();
   }
 });
 
-$("#btn_send").click(() => {
-  const formularioPF = ($("#criterios-busqueda") as any)
+$("#btnSend").click(() => {
+  const formularioPF = ($("#criteriosBusqueda") as any)
     .parsley()
     .on("field:validated", () => {
       const ok = $(".parsley-error").length === 0;
@@ -102,187 +103,187 @@ $("#btn_send").click(() => {
     .on("form:submit", () => {
       console.log("form:submit");
 
-      pf_params = {};
+      pfParams = {};
 
       //Grupo 1
-      const contrato = $("#contrato").val();
+      const contrato = $("#txtContrato").val();
       if (contrato) {
-        pf_params.contrato = contrato;
+        pfParams.contrato = contrato;
       }
 
-      const nombre = $("#nombre").val();
+      const nombre = $("#txtNombre").val();
       if (nombre) {
-        pf_params.nombre = nombre;
+        pfParams.nombre = nombre;
       }
 
-      const perfil = $("#perfil").val();
+      const perfil = $("#txtPperfil").val();
       if (perfil) {
-        pf_params.perfil = perfil;
+        pfParams.perfil = perfil;
       }
 
-      const personaPerfilar = $("#personaPerfilar").val();
+      const personaPerfilar = $("#cmbPersonaPerfilar").val();
       if (personaPerfilar) {
-        pf_params.personaPerfilar = personaPerfilar;
+        pfParams.personaPerfilar = personaPerfilar;
       }
 
       //Grupo Liquidaciones
-      const liquidezPor = $("#liquidezPor").val();
+      const liquidezPor = $("#txtLiquidezPor").val();
       if (liquidezPor) {
-        pf_params.liquidezPor = liquidezPor;
+        pfParams.liquidezPor = liquidezPor;
       }
 
-      const liquidezMonto = $("#liquidezMonto").val();
+      const liquidezMonto = $("#txtLiquidezMonto").val();
       if (liquidezMonto) {
-        pf_params.liquidezMonto = liquidezMonto;
+        pfParams.liquidezMonto = liquidezMonto;
       }
 
-      const cortoPlazoPor = $("#cortoPlazoPor").val();
+      const cortoPlazoPor = $("#txtCortoPlazoPor").val();
       if (cortoPlazoPor) {
-        pf_params.cortoPlazoPor = cortoPlazoPor;
+        pfParams.cortoPlazoPor = cortoPlazoPor;
       }
 
-      const cortoPlazoMonto = $("#cortoPlazoMonto").val();
+      const cortoPlazoMonto = $("#txtCortoPlazoMonto").val();
       if (cortoPlazoMonto) {
-        pf_params.cortoPlazoMonto = cortoPlazoMonto;
+        pfParams.cortoPlazoMonto = cortoPlazoMonto;
       }
 
-      const medianoPlazoPor = $("#medianoPlazoPor").val();
+      const medianoPlazoPor = $("#txtMedianoPlazoPor").val();
       if (medianoPlazoPor) {
-        pf_params.medianoPlazoPor = medianoPlazoPor;
+        pfParams.medianoPlazoPor = medianoPlazoPor;
       }
 
-      const medianoPlazoMonto = $("#medianoPlazoMonto").val();
+      const medianoPlazoMonto = $("#txtMedianoPlazoMonto").val();
       if (medianoPlazoMonto) {
-        pf_params.medianoPlazoMonto = medianoPlazoMonto;
+        pfParams.medianoPlazoMonto = medianoPlazoMonto;
       }
 
-      const largoPlazoPor = $("#largoPlazoPor").val();
+      const largoPlazoPor = $("#txtLargoPlazoPor").val();
       if (largoPlazoPor) {
-        pf_params.largoPlazoPor = largoPlazoPor;
+        pfParams.largoPlazoPor = largoPlazoPor;
       }
 
-      const largoPlazoMonto = $("#largoPlazoMonto").val();
+      const largoPlazoMonto = $("#txtLargoPlazoMonto").val();
       if (largoPlazoMonto) {
-        pf_params.largoPlazoMonto = largoPlazoMonto;
+        pfParams.largoPlazoMonto = largoPlazoMonto;
       }
 
-      const patrimonioPor = $("#patrimonioPor").val();
+      const patrimonioPor = $("#txtPatrimonioPor").val();
       if (patrimonioPor) {
-        pf_params.patrimonioPor = patrimonioPor;
+        pfParams.patrimonioPor = patrimonioPor;
       }
 
-      const patrimonioMonto = $("#patrimonioMonto").val();
+      const patrimonioMonto = $("#txtPatrimonioMonto").val();
       if (patrimonioMonto) {
-        pf_params.patrimonioMonto = patrimonioMonto;
+        pfParams.patrimonioMonto = patrimonioMonto;
       }
 
       //Grupo 2
-      const edad = $("#edad").val();
+      const edad = $("#cmbEdad").val();
       if (edad) {
-        pf_params.edad = edad;
+        pfParams.edad = edad;
       }
 
-      const estudios = $("#estudios").val();
+      const estudios = $("#cmbEstudios").val();
       if (estudios) {
-        pf_params.estudios = estudios;
+        pfParams.estudios = estudios;
       }
 
-      const ocupacion = $("#estudios").val();
+      const ocupacion = $("#cmbOcupacion").val();
       if (ocupacion) {
-        pf_params.ocupacion = ocupacion;
+        pfParams.ocupacion = ocupacion;
       }
 
-      const anterior = $("#anterior").val();
+      const anterior = $("#cmbAnterior").val();
       if (anterior) {
-        pf_params.anterior = anterior;
+        pfParams.anterior = anterior;
       }
 
-      const actual = $("#actual").val();
+      const actual = $("#cmbActual").val();
       if (actual) {
-        pf_params.actual = actual;
+        pfParams.actual = actual;
       }
 
-      const inversiones = $("input[name='inversiones']:checked").val();
+      const inversiones = $("input[name='rdbInversiones']:checked").val();
       if (inversiones) {
-        pf_params.inversiones = inversiones;
+        pfParams.inversiones = inversiones;
       }
 
-      const estrategia = $("#estrategia").val();
+      const estrategia = $("#cmbEstrategia").val();
       if (estrategia) {
-        pf_params.estrategia = estrategia;
+        pfParams.estrategia = estrategia;
       }
 
-      const asesoria = $("#asesoria").val();
+      const asesoria = $("#cmbAsesoria").val();
       if (asesoria) {
-        pf_params.asesoria = asesoria;
+        pfParams.asesoria = asesoria;
       }
 
       //Grupo 3 es la encuesta
       var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
       $.each(numbers, function (index, value) {
-        pf_encuestaU = {};
-        pf_encuestaU.idEncuesta = value;
+        pfEncuestaU = {};
+        pfEncuestaU.idEncuesta = value;
 
         var radioComp = "encuesta_" + value;
         var score = $("input[name='" + radioComp + "']");
         z: for (var i = 0; i < score.length; i++) {
           var componente = $("input[id='" + score[i].id + "']:checked").val();
           if (i == 0 && componente == "on") {
-            pf_encuestaU.noConoceNiHaInvertido = false;
-            pf_encuestaU.punto = $("#" + score[i].id).attr("data-points");
+            pfEncuestaU.noConoceNiHaInvertido = false;
+            pfEncuestaU.punto = $("#" + score[i].id).attr("data-points");
           } else if (i == 1 && componente == "on") {
-            pf_encuestaU.soloConoce = false;
-            pf_encuestaU.punto = $("#" + score[i].id).attr("data-points");
+            pfEncuestaU.soloConoce = false;
+            pfEncuestaU.punto = $("#" + score[i].id).attr("data-points");
           }
           if (i == 2 && componente == "on") {
-            pf_encuestaU.conoceHaInvertido = true;
-            pf_encuestaU.punto = $("#" + score[i].id).attr("data-points");
-            pf_encuestaU.frecuencia = $("#" + radioComp + "_3").val();
-            pf_encuestaU.plazo = $("#" + radioComp + "_4").val();
-            pf_encuestaU.volumen = $("#" + radioComp + "_5").val();
+            pfEncuestaU.conoceHaInvertido = true;
+            pfEncuestaU.punto = $("#" + score[i].id).attr("data-points");
+            pfEncuestaU.frecuencia = $("#" + radioComp + "_3").val();
+            pfEncuestaU.plazo = $("#" + radioComp + "_4").val();
+            pfEncuestaU.volumen = $("#" + radioComp + "_5").val();
           }
         }
-        pf_encuestaLstU.push(pf_encuestaU);
+        pfEncuestaLstU.push(pfEncuestaU);
       });
-      pf_params.encuestaLst = pf_encuestaLstU;
+      pfParams.encuestaLst = pfEncuestaLstU;
 
       //Grupo 4
-      const proposito = $("#proposito").val();
+      const proposito = $("#cmbProposito").val();
       if (proposito) {
-        pf_params.proposito = proposito;
+        pfParams.proposito = proposito;
       }
 
-      const tolerancia = $("#tolerancia").val();
+      const tolerancia = $("#cmbTolerancia").val();
       if (tolerancia) {
-        pf_params.tolerancia = tolerancia;
+        pfParams.tolerancia = tolerancia;
       }
 
-      const limitantes = $("input[name='limitantes']:checked").val();
+      const limitantes = $("input[name='rdbLimitantes']:checked").val();
       if (limitantes) {
-        pf_params.limitantes = limitantes;
+        pfParams.limitantes = limitantes;
       }
 
-      const horizonteInversion = $("#horizonte-Inversion").val();
+      const horizonteInversion = $("#cmbHorizonteInversion").val();
       if (horizonteInversion) {
-        pf_params.horizonteInversion = horizonteInversion;
+        pfParams.horizonteInversion = horizonteInversion;
       }
 
       //Grupo 5 es la encuesta
       var numberEncuesta = [0, 1, 2];
       $.each(numberEncuesta, function (index, value) {
-        pf_encuestaD = {};
-        pf_encuestaD.idEncuesta = value;
+        pfEncuestaD = {};
+        pfEncuestaD.idEncuesta = value;
         var radioCompE = "encuesta2_" + value;
         var valoreE = $("input[name='" + radioCompE + "']");
         z: for (var i = 0; i < valoreE.length; i++) {
           var componente = $("input[id='" + valoreE[i].id + "']:checked").val();
           if (componente == "on") {
-            pf_encuestaD.valor = $("#" + valoreE[i].id).attr("data-points");
+            pfEncuestaD.valor = $("#" + valoreE[i].id).attr("data-points");
           }
         }
-        pf_encuestaLstD.push(pf_encuestaD);
+        pf_encuestaLstD.push(pfEncuestaD);
       });
-      pf_params.encuestaLstD = pf_encuestaLstD;
+      pfParams.encuestaLstD = pf_encuestaLstD;
 
       //Grupo 6
       var origenUno = new Array();
@@ -290,24 +291,24 @@ $("#btn_send").click(() => {
         origenUno.push($(this).val());
       });
       if (origenUno) {
-        pf_params.origenUno = origenUno;
+        pfParams.origenUno = origenUno;
       }
 
       //Origen en la opcion de Otros
-      if ($("#chk_origen_uno_9").is(":checked")) {
-        const origen_otros = $("#otros").val();
-        if (origen_otros) {
-          pf_params.otros = origen_otros;
+      if ($("#chkOrigenUno9").is(":checked")) {
+        const origenOtros = $("#txtOtros").val();
+        if (origenOtros) {
+          pfParams.otros = origenOtros;
         }
       }
 
       //Falta Perfil Doc
 
-      console.log(JSON.stringify(pf_params));
+      console.log(JSON.stringify(pfParams));
 
       httpCreate(
         "perfilamiento_personas_fisicas",
-        pf_params,
+        pfParams,
         (payload: any) => {
           console.log(payload);
         }
@@ -357,10 +358,10 @@ function rangoFecha(ed) {
 function mostrarOcultar(tipo) {
   if (tipo) {
     $("#mesaggePerfil").show();
-    $("#rowPerfilar").show();
-    $("#grupoTodo").show();
-    $("#grupoAsesor").hide();
-    $("#sticky-action-bar").show();
+    $("#divRowPerfilar").show();
+    $("#divGrupoTodo").show();
+    $("#divGrupoAsesor").hide();
+    $("#divStickyActionBar").show();
   } else {
     $("#mesaggePerfil").html(
       "El contrato tiene asociado un Asesor en Inversión, por lo tanto se le debe asignar por default el Perfil de Inversión P7 (NO APLICA)."
@@ -368,10 +369,10 @@ function mostrarOcultar(tipo) {
     $("#downloadPerfil").html(
       "Clic en el boton PDF para descargar la documentacion. "
     );
-    $("#rowPerfilar").hide();
-    $("#grupoTodo").hide();
-    $("#grupoAsesor").show();
-    $("#sticky-action-bar").hide();
+    $("#divRowPerfilar").hide();
+    $("#divGrupoTodo").hide();
+    $("#divGrupoAsesor").show();
+    $("#divStickyActionBar").hide();
   }
 }
 
@@ -396,9 +397,9 @@ $("#dtgEmisora").jqGrid({
 });
 
 // Quiz group 3
-let encuesta_params: UrlParams = {};
+let encuestaParams: UrlParams = {};
 // Name of json
-httpFindAll("encuesta", encuesta_params, payload => {
+httpFindAll("encuesta", encuestaParams, payload => {
   // Parameters: field name group, id of quiz, data
-  fillQuiz("grupoTres", "encuesta", payload);
+  fillQuiz("divGrupoTres", "encuesta", payload);
 });

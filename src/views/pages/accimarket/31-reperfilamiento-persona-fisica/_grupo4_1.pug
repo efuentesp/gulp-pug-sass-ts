@@ -1,24 +1,24 @@
 include /mixins/mixins
 
-.row
-    +field-select("horizonte-Inversion",
+.amRow
+    +field-select("horizonteInversion",
         {
             label: "5. Seleccionar el horizonte de Inversion del Cliente.",
             orientation: "horizontal",
             required: true,
             size: "25em"
         })
-    +field-group("datosInfo_group")
+    +field-group("datosInfoGroup")
         p.bg-blue-600.font-bold.py-4.pr-1#textoPortafolio
-        .row
+        .amRow
             p.w-48.font-bold.py-2.pr-10 Menor de 1 año
             p.w-48.text-right.font-bold.py-2#menorDeUno
-        .row
+        .amRow
             p.w-48.font-bold.py-2.pr-10 De 1 a 3 años
             p.w-48.text-right.font-bold.py-2#deUnoaTres
-        .row
+        .amRow
             p.w-48.font-bold.py-2.pr-10 Mayor a 3 años
             p.w-48.text-right.font-bold.py-2#mayorDeTres
-        .row
+        .amRow
             p.w-48.bg-gray-400.font-bold.py-2.pl-24 Total
             p.w-48.bg-gray-400.text-right.font-bold.py-2#totalInver

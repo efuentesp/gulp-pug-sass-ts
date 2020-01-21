@@ -1,7 +1,7 @@
 @import "src/views/styles/vars";
 
-.content {
-  .row {
+.amContent {
+  .amRow {
     display: flex;
   }
 
@@ -9,13 +9,13 @@
     padding-left: 0.7em;
   }
 
-  .informativoE {
+  .amInformativoE {
     margin-top: 3.5em;
     margin-left: 25em;
     height: 36em;
   }
 
-  #informativo {
+  #dtgInformativo {
     margin-left: 1em;
     width: 70em;
     height: 40em;
@@ -31,20 +31,20 @@
     }
   }
 
-  .estiloColumnaB {
+  .amEstiloColumnaB {
     border-width: 3px;
     border-style: solid none none solid;
     border-color: blue;
     width: 1em;
   }
 
-  .estiloColumnaD {
+  .amEstiloColumnaD {
     border-width: 3px;
     border-style: none none solid solid;
     border-color: blue;
   }
 
-  .estiloColumnaA {
+  .amEstiloColumnaA {
     border-width: 3px;
     border-style: solid none none solid;
     border-color: blue;
@@ -52,73 +52,73 @@
     height: 4em;
   }
 
-  .estiloColumnaC {
+  .amEstiloColumnaC {
     border-width: 3px;
     border-style: none none solid solid;
     border-color: blue;
     height: 5em;
   }
 
-  #grupoTodo {
+  #divGrupoTodo {
     flex-wrap: wrap;
   }
 
-  #grupoDos {
+  #divGrupoDos {
     width: 48em;
     flex-wrap: wrap;
 
-    #field_estudios {
+    #divFieldEstudios {
       label {
         width: 12.5em;
       }
     }
 
-    #field_ocupacion {
+    #divFieldOcupacion {
       label {
         width: 12.5em;
       }
     }
 
-    #field_estrategia {
+    #divFieldEstrategia {
       label {
         width: 35em;
       }
     }
 
-    #actividad {
+    #divActividad {
       width: 29em;
     }
 
-    #field_actual {
+    #divFieldActual {
       label {
         width: 4.9em;
       }
     }
 
-    #grupo_4 {
+    #divGrupoActividadProfesional {
       flex-wrap: wrap;
     }
   }
 
-  #grupoTres {
+  #divGrupoTres {
     flex-wrap: wrap;
 
-    #grupoParrafo {
+    #divGrupoParrafo {
       width: 112em;
     }
   }
 
-  #grupoCuatro {
+  #divGrupoCuatro {
     flex-wrap: wrap;
     width: 85em;
 
-    #field_tolerancia {
+    #divFieldTolerancia {
       label {
         width: 33.5em;
       }
     }
 
-    #field_horizonte-Inversion {
+    #divFieldHorizonteInversion {
       align-items: baseline;
 
       label {
@@ -126,7 +126,7 @@
       }
     }
 
-    #datosInfo_group {
+    #divDatosInfoGroup {
       flex-wrap: wrap;
 
       #textoPortafolio {
@@ -135,7 +135,7 @@
     }
   }
 
-  #grupoInstrumentos {
+  #divGrupoInstrumentos {
     flex-wrap: wrap;
     width: 80em;
     padding-left: 30em;
@@ -145,8 +145,8 @@
     }
   }
 
-  #field_origen_uno {
-    .field-control {
+  #divFieldOrigenUno {
+    .amFieldControl {
       div {
         display: flex;
         flex-wrap: wrap;
@@ -154,24 +154,24 @@
       }
     }
 
-    .checkbox_input {
+    .amCheckboxInput {
       width: 15em;
     }
   }
 
-  #field_otros {
+  #divFieldOtros {
     position: absolute;
     z-index: 1;
     margin-top: 12em;
     margin-left: 60em;
   }
 
-  #pregunta6_4 {
+  #preguntaSeisCuatro {
     padding-left: 0.8em;
     padding-right: 2em;
   }
 
-  #informativo {
+  #dtgInformativo {
     //margin-left: 30em;
     width: 70em;
 
@@ -190,7 +190,7 @@
     }
   }
 
-  #descripcionPerfil {
+  #dtgDescripcionPerfil {
     margin-left: 20em;
     width: 65em;
 
@@ -204,11 +204,11 @@
     }
   }
 
-  #grupoAsesor {
+  #divGrupoAsesor {
     flex-wrap: wrap;
   }
 
-  #rowEmisoras {
+  #divRowEmisoras {
     display: -webkit-box;
   }
 }

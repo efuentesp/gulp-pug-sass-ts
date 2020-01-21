@@ -1,8 +1,8 @@
 include /mixins/mixins
 
-.row.w-full.mb-64
-    p#pregunta6_4 6.4 Selecciona el origen de los ingresos del Cliente destinados a invertir
-    +field-checks("origen_uno",
+.amRow.w-full.mb-64
+    p#preguntaSeisCuatro 6.4 Selecciona el origen de los ingresos del Cliente destinados a invertir
+    +field-checks("origenUno",
         {
             label: "",
         },
@@ -22,7 +22,7 @@ include /mixins/mixins
             size:"16em",
             orientation: "horizontal"
         })
-.row.w-full
+.amRow.w-full
     +field-input("perfilDoc",
         {
             label: "Perfil",
@@ -30,7 +30,7 @@ include /mixins/mixins
             orientation: "horizontal"
         })
     +button-import({size: "small", disabled: false})
-.row.w-full
+.amRow.w-full
     p#preguntas Inconsistencias
-.row
+.amRow
     include _grupo6_1

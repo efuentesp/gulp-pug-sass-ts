@@ -10,7 +10,7 @@ rpc("http://localhost:3000/edadesService", "", (data, textStatus, jQxhr) => {
 });*/
 
 httpFindAll("edadesService", select_params, (payload: any) => {
-  ($("#edad") as any).select2({
+  ($("#cmbEdad") as any).select2({
     placeholder: "--Seleccione--",
     minimumResultsForSearch: Infinity,
     data: payload
@@ -18,7 +18,7 @@ httpFindAll("edadesService", select_params, (payload: any) => {
 });
 
 httpFindAll("estudiosService", select_params, (payload: any) => {
-  ($("#estudios") as any).select2({
+  ($("#cmbEstudios") as any).select2({
     placeholder: "--Seleccione--",
     minimumResultsForSearch: Infinity,
     data: payload
@@ -26,25 +26,25 @@ httpFindAll("estudiosService", select_params, (payload: any) => {
 });
 
 httpFindAll("ocupacionService", select_params, (payload: any) => {
-  ($("#ocupacion") as any).select2({
+  ($("#cmbOcupacion") as any).select2({
     placeholder: "--Seleccione--",
     minimumResultsForSearch: Infinity,
     data: payload
   });
 });
 
-($("#anterior") as any).select2({
+($("#cmbAnterior") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-($("#actual") as any).select2({
+($("#cmbActual") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
 httpFindAll("estrategiaService", select_params, (payload: any) => {
-  ($("#estrategia") as any).select2({
+  ($("#cmbEstrategia") as any).select2({
     placeholder: "--Seleccione--",
     minimumResultsForSearch: Infinity,
     data: payload
@@ -52,7 +52,7 @@ httpFindAll("estrategiaService", select_params, (payload: any) => {
 });
 
 httpFindAll("asesoriaService", select_params, (payload: any) => {
-  ($("#asesoria") as any).select2({
+  ($("#cmbAsesoria") as any).select2({
     placeholder: "--Seleccione--",
     minimumResultsForSearch: Infinity,
     data: payload
@@ -60,7 +60,7 @@ httpFindAll("asesoriaService", select_params, (payload: any) => {
 });
 
 httpFindAll("propositoService", select_params, (payload: any) => {
-  ($("#proposito") as any).select2({
+  ($("#cmbProposito") as any).select2({
     placeholder: "--Seleccione--",
     minimumResultsForSearch: Infinity,
     data: payload
@@ -68,7 +68,7 @@ httpFindAll("propositoService", select_params, (payload: any) => {
 });
 
 httpFindAll("toleranciaService", select_params, (payload: any) => {
-  ($("#tolerancia") as any).select2({
+  ($("#cmbTolerancia") as any).select2({
     placeholder: "--Seleccione--",
     minimumResultsForSearch: Infinity,
     data: payload
@@ -76,30 +76,30 @@ httpFindAll("toleranciaService", select_params, (payload: any) => {
 });
 
 fieldSelectPlusMinus("grupoInstrumento", {});
-($("#grupoInstrumento") as any).select2({
+($("#cmbGrupoInstrumento") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
 fieldSelectPlusMinus("grupoInstrumentoValor", {});
-($("#grupoInstrumentoValor") as any).select2({
+($("#cmbGrupoInstrumentoValor") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
 fieldSelectPlusMinus("emisoras", {});
-($("#emisoras") as any).select2({
+($("#cmbEmisoras") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
-($("#emisorasTipoValor") as any).select2({
+($("#cmbEmisorasTipoValor") as any).select2({
   placeholder: "--Seleccione--",
   minimumResultsForSearch: Infinity
 });
 
 httpFindAll("horizonteInversion", select_params, (payload: any) => {
-  ($("#horizonte-Inversion") as any)
+  ($("#cmbHorizonteInversion") as any)
     .select2({
       placeholder: "--Seleccione--",
       minimumResultsForSearch: Infinity,
