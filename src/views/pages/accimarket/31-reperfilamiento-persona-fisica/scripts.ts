@@ -224,7 +224,7 @@ $("#btnSend").click(() => {
         pfEncuestaU = {};
         pfEncuestaU.idEncuesta = value;
 
-        var radioComp = "encuesta_" + value;
+        var radioComp = "rdbEncuesta" + value;
         var score = $("input[name='" + radioComp + "']");
         z: for (var i = 0; i < score.length; i++) {
           var componente = $("input[id='" + score[i].id + "']:checked").val();
@@ -238,9 +238,9 @@ $("#btnSend").click(() => {
           if (i == 2 && componente == "on") {
             pfEncuestaU.conoceHaInvertido = true;
             pfEncuestaU.punto = $("#" + score[i].id).attr("data-points");
-            pfEncuestaU.frecuencia = $("#" + radioComp + "_3").val();
-            pfEncuestaU.plazo = $("#" + radioComp + "_4").val();
-            pfEncuestaU.volumen = $("#" + radioComp + "_5").val();
+            pfEncuestaU.frecuencia = $("#" + radioComp + "3").val();
+            pfEncuestaU.plazo = $("#" + radioComp + "4").val();
+            pfEncuestaU.volumen = $("#" + radioComp + "5").val();
           }
         }
         pfEncuestaLstU.push(pfEncuestaU);
@@ -273,7 +273,7 @@ $("#btnSend").click(() => {
       $.each(numberEncuesta, function (index, value) {
         pfEncuestaD = {};
         pfEncuestaD.idEncuesta = value;
-        var radioCompE = "encuesta2_" + value;
+        var radioCompE = "rbdencuestaPerfilamientoPersonaFisica" + value;
         var valoreE = $("input[name='" + radioCompE + "']");
         z: for (var i = 0; i < valoreE.length; i++) {
           var componente = $("input[id='" + valoreE[i].id + "']:checked").val();
@@ -287,7 +287,7 @@ $("#btnSend").click(() => {
 
       //Grupo 6
       var origenUno = new Array();
-      $("input[name='chk_origen_uno']:checked").each(function () {
+      $("input[name='chkOrigenUno']:checked").each(function () {
         origenUno.push($(this).val());
       });
       if (origenUno) {
