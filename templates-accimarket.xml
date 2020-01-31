@@ -11,340 +11,340 @@
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button accept large" enabled="true" name="btn-accept-lg">
 		/* Button Accept Large */&#13;
-		&lt;button class="button big-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amBigButton" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-aceptar.png" /&gt;&#13;
 		${i}&lt;span&gt;Aceptar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button accept medium" enabled="true" name="btn-accept-md">
 		/* Button Accept Medium */&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-aceptar.png" /&gt;&#13;
 		${i}&lt;span&gt;Aceptar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button accept small" enabled="true" name="btn-accept-sm">
 		/* Button Accept Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-aceptar.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button accept small" enabled="true" name="btn-accept-sm">
 		/* Button Accept Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-aceptar.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button add medium" enabled="true" name="btn-add-md">
 		/* Button Add Medium */&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-agregar.png" /&gt;&#13;
 		${i}&lt;span&gt;Agregar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button add small" enabled="true" name="btn-add-sm">
 		/* Button Add Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-agregar.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button cancel large" enabled="true" name="btn-cancel-lg">
 		/* Button Cancel Large */&#13;
-		&lt;button class="button big-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amBigButton" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-cancelar.png" /&gt;&#13;
 		${i}&lt;span&gt;Cancelar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button cancel medium" enabled="true" name="btn-cancel-md">
 		/* Button Cancel Medium */&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-cancelar.png" /&gt;&#13;
 		${i}&lt;span&gt;Cancelar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button cancel small" enabled="true" name="btn-cancel-sm">
 		/* Button Cancel Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-cancelar.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button clean large" enabled="true" name="btn-clean-lg">
 		/* Button Clean Large */&#13;
-		&lt;button class="button big-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amBigButton" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-limpiar_32x32.png" /&gt;&#13;
 		${i}&lt;span&gt;Limpiar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button clean medium" enabled="true" name="btn-clean-md">
 		/* Button Clean Medium */&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-limpiar_32x32.png" /&gt;&#13;
 		${i}&lt;span&gt;Limpiar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button clean small" enabled="true" name="btn-clean-sm">
 		/* Button Clean Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-limpiar_32x32.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button custom large" enabled="true" name="btn-custom-lg">
 		/* Button Custom Large */&#13;
-		/*&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" value="validate" disabled="${disabled}"&gt;&#13;
+		/*&lt;button class="amButton amBigButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" value="validate" disabled="${disabled}"&gt;&#13;
 		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-times-circle fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
 		${i}&lt;br/&gt;&lt;span&gt;${text}&lt;/span&gt;&#13;
 		&lt;/button&gt;*/
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button custom medium" enabled="true" name="btn-custom-md">
 		/* Button Custom Medium */&#13;
-		/*&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" value="validate" disabled="${disabled}"&gt;&#13;
+		/*&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="submit" data-tooltip="${tooltip}" value="validate" disabled="${disabled}"&gt;&#13;
 		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-times-circle fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
 		${i}&lt;br/&gt;&lt;span&gt;${text}&lt;/span&gt;&#13;
 		&lt;/button&gt;*/
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button custom small" enabled="true" name="btn-custom-sm">
 		/* Button Custom Small */&#13;
-		/*&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" value="validate" disabled="${disabled}"&gt;&#13;
+		/*&lt;button class="amButton amSmallButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" value="validate" disabled="${disabled}"&gt;&#13;
 		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-times-circle fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
 		&lt;/button&gt;*/
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button delete large" enabled="true" name="btn-delete-lg">
 		/* Button Delete Large */&#13;
-		&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amBigButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-borrar.png" /&gt;&#13;
 		${i}&lt;span&gt;Borrar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button delete medium" enabled="true" name="btn-delete-md">
 		/* Button Delete Medium */&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-borrar.png" /&gt;&#13;
 		${i}&lt;span&gt;Borrar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button delete small" enabled="true" name="btn-delete-sm">
 		/* Button Delete Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-borrar.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button edit large" enabled="true" name="btn-edit-lg">
 		/* Button Edit Large */&#13;
-		/*&lt;button class="button big-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		/*&lt;button class="amButton amBigButton" id="btn${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-edit fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
 		${i}&lt;br/&gt;&lt;span&gt;Editar&lt;/span&gt;&#13;
 		&lt;/button&gt;*/
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button edit medium" enabled="true" name="btn-edit-md">
 		/* Button Edit Medium */&#13;
-		/*&lt;button class="button medium-button flex items-center" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		/*&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-edit fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
 		${i}&lt;br/&gt;&lt;span&gt;Editar&lt;/span&gt;&#13;
 		&lt;/button&gt;*/
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button edit small" enabled="true" name="btn-edit-sm">
 		/* Button Edit Small */&#13;
-		/*&lt;button class="button small-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		/*&lt;button class="amButton amSmallButton" id="btn${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-edit fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
 		&lt;/button&gt;*/
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button export large" enabled="true" name="btn-export-lg">
 		/* Button Export Large */&#13;
-		/*&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		/*&lt;button class="amButton amBigButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-file-upload fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
 		${i}&lt;br/&gt;&lt;span&gt;Exportar&lt;/span&gt;&#13;
 		&lt;/button&gt;*/
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button export medium" enabled="true" name="btn-export-md">
 		/* Button Export Medium */&#13;
-		/*&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		/*&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-file-upload fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
 		${i}&lt;br/&gt;&lt;span&gt;Exportar&lt;/span&gt;&#13;
 		&lt;/button&gt;*/
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button export small" enabled="true" name="btn-export-sm">
 		/* Button Export Small */&#13;
-		/*&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		/*&lt;button class="amButton amSmallButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-file-upload fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
 		&lt;/button&gt;*/
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button filter clean large" enabled="true" name="btn-filter-clean-lg">
 		/* Button Filter Clean Large */&#13;
-		&lt;button class="button big-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amBigButton" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-filter-clean.png" /&gt;&#13;
 		${i}&lt;span&gt;Limpiar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button filter clean medium" enabled="true" name="btn-filter-clean-md">
 		/* Button Filter Clean Medium */&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-filter-clean.png" /&gt;&#13;
 		${i}&lt;span&gt;Limpiar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button filter clean small" enabled="true" name="btn-filter-clean-sm">
 		/* Button Filter Clean Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-filter-clean.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button filter large" enabled="true" name="btn-filter-lg">
 		/* Button Filter Large */&#13;
-		&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amBigButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-filter.png" /&gt;&#13;
 		${i}&lt;span&gt;Consultar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button filter medium" enabled="true" name="btn-filter-md">
 		/* Button Filter Medium */&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-filter.png" /&gt;&#13;
 		${i}&lt;span&gt;Consultar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button filter small" enabled="true" name="btn-filter-sm">
 		/* Button Filter Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-filter.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button import large" enabled="true" name="btn-import-lg">
 		/* Button Import Large */&#13;
-		/*&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		/*&lt;button class="amButton amBigButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-file-download fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
 		${i}&lt;br/&gt;&lt;span&gt;Importar&lt;/span&gt;&#13;
 		&lt;/button&gt;*/
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button import medium" enabled="true" name="btn-import-md">
 		/* Button Import Medium */&#13;
-		/*&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		/*&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-file-download fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
 		${i}&lt;br/&gt;&lt;span&gt;Importar&lt;/span&gt;&#13;
 		&lt;/button&gt;*/
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button import small" enabled="true" name="btn-import-sm">
 		/* Button Import Small */&#13;
-		/*&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		/*&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-file-download fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
 		&lt;/button&gt;*/
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button pdf large" enabled="true" name="btn-pdf-lg">
 		/* Button PDF Large */&#13;
-		&lt;button class="button big-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amBigButton" id="btn${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-pdf_32x32.png" /&gt;&#13;
 		${i}&lt;span&gt;PDF&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button pdf medium" enabled="true" name="btn-pdf-md">
 		/* Button PDF Medium */&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-pdf_32x32.png" /&gt;&#13;
 		${i}&lt;span&gt;PDF&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button pdf small" enabled="true" name="btn-pdf-sm">
 		/* Button PDF Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-pdf_32x32.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button reset large" enabled="true" name="btn-reset-lg">
 		/* Button Reset Large */&#13;
-		&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amBigButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-reiniciar.png" /&gt;&#13;
 		${i}&lt;span&gt;Reiniciar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button reset medium" enabled="true" name="btn-reset-md">
 		/* Button Reset Medium */&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-reiniciar.png" /&gt;&#13;
 		${i}&lt;span&gt;Reiniciar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button reset small" enabled="true" name="btn-reset-sm">
 		/* Button Reset Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-reiniciar.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button save large" enabled="true" name="btn-save-lg">
 		/* Button Save Large */&#13;
-		&lt;button class="button big-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amBigButton" id="btn${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-enviar.png" /&gt;&#13;
 		${i}&lt;span&gt;Guardar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button save medium" enabled="true" name="btn-save-md">
 		/* Button Save Medium */&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-enviar.png" /&gt;&#13;
 		${i}&lt;span&gt;Guardar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button save small" enabled="true" name="btn-save-sm">
 		/* Button Save Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-enviar.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button search large" enabled="true" name="btn-search-lg">
 		/* Button Search Large */&#13;
-		&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amBigButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-consultar_32x32.png" /&gt;&#13;
 		${i}&lt;span&gt;Consultar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button search medium" enabled="true" name="btn-search-md">
 		/* Button Search Medium */&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-consultar_32x32.png" /&gt;&#13;
 		${i}&lt;span&gt;Consultar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button search small" enabled="true" name="btn-search-sm">
 		/* Button Search Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-consultar_32x32.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button validate large" enabled="true" name="btn-validate-lg">
 		/* Button Validate Large */&#13;
-		&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amBigButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-validar.png" /&gt;&#13;
 		${i}&lt;span&gt;Validar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button validate medium" enabled="true" name="btn-validate-md">
 		/* Button Validate Medium */&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-validar.png" /&gt;&#13;
 		${i}&lt;span&gt;Validar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button validate small" enabled="true" name="btn-validate-sm">
 		/* Button Validate Small */&#13;
-		&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-validar.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button xls large" enabled="true" name="btn-xls-lg">
 		/*Button XLS Large*/&#13;
-		&lt;button class="button big-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amBigButton" id="btn${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-xls_32x32.png" /&gt;&#13;
 		${i}&lt;span&gt;XLS&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button xls medium" enabled="true" name="btn-xls-md">
 		/*Button XLS Medium*/&#13;
-		&lt;button class="button medium-button flex items-center" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amMediumButton flex items-center" id="btn${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-xls_32x32.png" /&gt;&#13;
 		${i}&lt;span&gt;XLS&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button xls small" enabled="true" name="btn-xls-sm">
 		/*Button XLS Small*/&#13;
-		&lt;button class="button small-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		&lt;button class="amButton amSmallButton" id="btn${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
 		${i}&lt;img src="../../assets/images/btn-xls_32x32.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
@@ -358,16 +358,16 @@
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field checks item optional" enabled="true" name="fld-checks-item-optl">
 		/* Field Checks Item Optional */&#13;
-		&lt;label class="checkbox_input pr-5"&gt;${label}&#13;
-		${i}&lt;input type="checkbox" name="chk_${id_parent}" id="chk_${id_parent}_${id_item}" value="${value}" data-parsley-class-handler="#field_${id_parent}" data-parsley-errors-container="#field_error_block_${id_parent}" /&gt;&#13;
-		${i}&lt;span class="checkmark ${with_color} ${is_yellow}"&gt;&lt;/span&gt;&#13;
+		&lt;label class="amCheckboxInput pr-5"&gt;${label}&#13;
+		${i}&lt;input type="checkbox" name="chk${ParentId}" id="chk${ParentId}${ItemId}" value="${value}" data-parsley-class-handler="#field${ParentId}" data-parsley-errors-container="#fieldErrorBlock${ParentId}" /&gt;&#13;
+		${i}&lt;span class="amCheckmark ${amWithColor} ${amIsYellow}"&gt;&lt;/span&gt;&#13;
 		&lt;/label&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field checks item required" enabled="true" name="fld-checks-item-req">
 		/* Field Checks Item Required */&#13;
-		&lt;label class="checkbox_input pr-5"&gt;${label}&#13;
-		${i}&lt;input type="checkbox" name="chk_${id_parent}" id="chk_${id_parent}_${id_item}" value="${value}" required="required" data-parsley-class-handler="#field_${id_parent}" data-parsley-errors-container="#field_error_block_${id_parent}" /&gt;&#13;
-		${i}&lt;span class="checkmark ${with_color} ${is_yellow}"&gt;&lt;/span&gt;&#13;
+		&lt;label class="amCheckboxInput pr-5"&gt;${label}&#13;
+		${i}&lt;input type="checkbox" name="chk${ParentId}" id="chk${ParentId}${ItemId}" value="${value}" required="required" data-parsley-class-handler="#field${ParentId}" data-parsley-errors-container="#fieldErrorBlock${ParentId}" /&gt;&#13;
+		${i}&lt;span class="amCheckmark ${amWithColor} ${amIsYellow}"&gt;&lt;/span&gt;&#13;
 		&lt;/label&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field checks optional" enabled="true" name="fld-checks-optl">
