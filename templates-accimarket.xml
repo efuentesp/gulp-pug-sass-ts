@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Accordion" enabled="true" name="accordion">
+		/* Accordion */&#13;
+		&lt;div class="accordion" id="${id}"&gt;&#13;
+		${i}&lt;h3&gt;&lt;/h3&gt;&#13;
+		${i}&lt;div class="accordion-content"&gt;&#13;
+		${i}${i}${content}&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;      	
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button accept large" enabled="true" name="btn-accept-lg">
+		/* Button Accept Large */&#13;
+		&lt;button class="button big-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-aceptar.png" /&gt;&#13;
+		${i}&lt;span&gt;Aceptar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button accept medium" enabled="true" name="btn-accept-md">
+		/* Button Accept Medium */&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-aceptar.png" /&gt;&#13;
+		${i}&lt;span&gt;Aceptar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button accept small" enabled="true" name="btn-accept-sm">
+		/* Button Accept Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-aceptar.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button accept small" enabled="true" name="btn-accept-sm">
+		/* Button Accept Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-aceptar.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button add medium" enabled="true" name="btn-add-md">
+		/* Button Add Medium */&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-agregar.png" /&gt;&#13;
+		${i}&lt;span&gt;Agregar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button add small" enabled="true" name="btn-add-sm">
+		/* Button Add Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-agregar.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button cancel large" enabled="true" name="btn-cancel-lg">
+		/* Button Cancel Large */&#13;
+		&lt;button class="button big-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-cancelar.png" /&gt;&#13;
+		${i}&lt;span&gt;Cancelar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button cancel medium" enabled="true" name="btn-cancel-md">
+		/* Button Cancel Medium */&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-cancelar.png" /&gt;&#13;
+		${i}&lt;span&gt;Cancelar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button cancel small" enabled="true" name="btn-cancel-sm">
+		/* Button Cancel Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-cancelar.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button clean large" enabled="true" name="btn-clean-lg">
+		/* Button Clean Large */&#13;
+		&lt;button class="button big-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-limpiar_32x32.png" /&gt;&#13;
+		${i}&lt;span&gt;Limpiar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button clean medium" enabled="true" name="btn-clean-md">
+		/* Button Clean Medium */&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-limpiar_32x32.png" /&gt;&#13;
+		${i}&lt;span&gt;Limpiar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button clean small" enabled="true" name="btn-clean-sm">
+		/* Button Clean Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-limpiar_32x32.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button custom large" enabled="true" name="btn-custom-lg">
+		/* Button Custom Large */&#13;
+		/*&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" value="validate" disabled="${disabled}"&gt;&#13;
+		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-times-circle fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
+		${i}&lt;br/&gt;&lt;span&gt;${text}&lt;/span&gt;&#13;
+		&lt;/button&gt;*/
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button custom medium" enabled="true" name="btn-custom-md">
+		/* Button Custom Medium */&#13;
+		/*&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" value="validate" disabled="${disabled}"&gt;&#13;
+		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-times-circle fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
+		${i}&lt;br/&gt;&lt;span&gt;${text}&lt;/span&gt;&#13;
+		&lt;/button&gt;*/
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button custom small" enabled="true" name="btn-custom-sm">
+		/* Button Custom Small */&#13;
+		/*&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" value="validate" disabled="${disabled}"&gt;&#13;
+		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-times-circle fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
+		&lt;/button&gt;*/
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button delete large" enabled="true" name="btn-delete-lg">
+		/* Button Delete Large */&#13;
+		&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-borrar.png" /&gt;&#13;
+		${i}&lt;span&gt;Borrar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button delete medium" enabled="true" name="btn-delete-md">
+		/* Button Delete Medium */&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-borrar.png" /&gt;&#13;
+		${i}&lt;span&gt;Borrar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button delete small" enabled="true" name="btn-delete-sm">
+		/* Button Delete Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-borrar.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button edit large" enabled="true" name="btn-edit-lg">
+		/* Button Edit Large */&#13;
+		/*&lt;button class="button big-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-edit fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
+		${i}&lt;br/&gt;&lt;span&gt;Editar&lt;/span&gt;&#13;
+		&lt;/button&gt;*/
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button edit medium" enabled="true" name="btn-edit-md">
+		/* Button Edit Medium */&#13;
+		/*&lt;button class="button medium-button flex items-center" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-edit fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
+		${i}&lt;br/&gt;&lt;span&gt;Editar&lt;/span&gt;&#13;
+		&lt;/button&gt;*/
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button edit small" enabled="true" name="btn-edit-sm">
+		/* Button Edit Small */&#13;
+		/*&lt;button class="button small-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-edit fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
+		&lt;/button&gt;*/
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button export large" enabled="true" name="btn-export-lg">
+		/* Button Export Large */&#13;
+		/*&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-file-upload fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
+		${i}&lt;br/&gt;&lt;span&gt;Exportar&lt;/span&gt;&#13;
+		&lt;/button&gt;*/
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button export medium" enabled="true" name="btn-export-md">
+		/* Button Export Medium */&#13;
+		/*&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-file-upload fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
+		${i}&lt;br/&gt;&lt;span&gt;Exportar&lt;/span&gt;&#13;
+		&lt;/button&gt;*/
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button export small" enabled="true" name="btn-export-sm">
+		/* Button Export Small */&#13;
+		/*&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-file-upload fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
+		&lt;/button&gt;*/
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button filter clean large" enabled="true" name="btn-filter-clean-lg">
+		/* Button Filter Clean Large */&#13;
+		&lt;button class="button big-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-filter-clean.png" /&gt;&#13;
+		${i}&lt;span&gt;Limpiar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button filter clean medium" enabled="true" name="btn-filter-clean-md">
+		/* Button Filter Clean Medium */&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-filter-clean.png" /&gt;&#13;
+		${i}&lt;span&gt;Limpiar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button filter clean small" enabled="true" name="btn-filter-clean-sm">
+		/* Button Filter Clean Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-filter-clean.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button filter large" enabled="true" name="btn-filter-lg">
+		/* Button Filter Large */&#13;
+		&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-filter.png" /&gt;&#13;
+		${i}&lt;span&gt;Consultar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button filter medium" enabled="true" name="btn-filter-md">
+		/* Button Filter Medium */&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-filter.png" /&gt;&#13;
+		${i}&lt;span&gt;Consultar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button filter small" enabled="true" name="btn-filter-sm">
+		/* Button Filter Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-filter.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button import large" enabled="true" name="btn-import-lg">
+		/* Button Import Large */&#13;
+		/*&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-file-download fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
+		${i}&lt;br/&gt;&lt;span&gt;Importar&lt;/span&gt;&#13;
+		&lt;/button&gt;*/
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button import medium" enabled="true" name="btn-import-md">
+		/* Button Import Medium */&#13;
+		/*&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-file-download fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
+		${i}&lt;br/&gt;&lt;span&gt;Importar&lt;/span&gt;&#13;
+		&lt;/button&gt;*/
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button import small" enabled="true" name="btn-import-sm">
+		/* Button Import Small */&#13;
+		/*&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;span class="fa-stack fa-lg"&gt;&lt;i class="fas fa-file-download fa-2x"&gt;&lt;/i&gt;&lt;/span&gt;&#13;
+		&lt;/button&gt;*/
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button pdf large" enabled="true" name="btn-pdf-lg">
+		/* Button PDF Large */&#13;
+		&lt;button class="button big-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-pdf_32x32.png" /&gt;&#13;
+		${i}&lt;span&gt;PDF&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button pdf medium" enabled="true" name="btn-pdf-md">
+		/* Button PDF Medium */&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-pdf_32x32.png" /&gt;&#13;
+		${i}&lt;span&gt;PDF&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button pdf small" enabled="true" name="btn-pdf-sm">
+		/* Button PDF Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-pdf_32x32.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button reset large" enabled="true" name="btn-reset-lg">
+		/* Button Reset Large */&#13;
+		&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-reiniciar.png" /&gt;&#13;
+		${i}&lt;span&gt;Reiniciar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button reset medium" enabled="true" name="btn-reset-md">
+		/* Button Reset Medium */&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-reiniciar.png" /&gt;&#13;
+		${i}&lt;span&gt;Reiniciar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button reset small" enabled="true" name="btn-reset-sm">
+		/* Button Reset Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-reiniciar.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button save large" enabled="true" name="btn-save-lg">
+		/* Button Save Large */&#13;
+		&lt;button class="button big-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-enviar.png" /&gt;&#13;
+		${i}&lt;span&gt;Guardar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button save medium" enabled="true" name="btn-save-md">
+		/* Button Save Medium */&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-enviar.png" /&gt;&#13;
+		${i}&lt;span&gt;Guardar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button save small" enabled="true" name="btn-save-sm">
+		/* Button Save Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-enviar.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button search large" enabled="true" name="btn-search-lg">
+		/* Button Search Large */&#13;
+		&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-consultar_32x32.png" /&gt;&#13;
+		${i}&lt;span&gt;Consultar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button search medium" enabled="true" name="btn-search-md">
+		/* Button Search Medium */&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-consultar_32x32.png" /&gt;&#13;
+		${i}&lt;span&gt;Consultar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button search small" enabled="true" name="btn-search-sm">
+		/* Button Search Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-consultar_32x32.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button validate large" enabled="true" name="btn-validate-lg">
+		/* Button Validate Large */&#13;
+		&lt;button class="button big-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-validar.png" /&gt;&#13;
+		${i}&lt;span&gt;Validar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button validate medium" enabled="true" name="btn-validate-md">
+		/* Button Validate Medium */&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-validar.png" /&gt;&#13;
+		${i}&lt;span&gt;Validar&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button validate small" enabled="true" name="btn-validate-sm">
+		/* Button Validate Small */&#13;
+		&lt;button class="button small-button" id="btn_${id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-validar.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button xls large" enabled="true" name="btn-xls-lg">
+		/*Button XLS Large*/&#13;
+		&lt;button class="button big-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-xls_32x32.png" /&gt;&#13;
+		${i}&lt;span&gt;XLS&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button xls medium" enabled="true" name="btn-xls-md">
+		/*Button XLS Medium*/&#13;
+		&lt;button class="button medium-button flex items-center" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-xls_32x32.png" /&gt;&#13;
+		${i}&lt;span&gt;XLS&lt;/span&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button xls small" enabled="true" name="btn-xls-sm">
+		/*Button XLS Small*/&#13;
+		&lt;button class="button small-button" id="btn_${id}" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-xls_32x32.png" /&gt;&#13;
+		&lt;/button&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Canvas" enabled="true" name="canvas">
+		/*Canvas*/&#13;
+		&lt;div style="max-width: ${max_width}px;max-height: ${max_height}px; padding: 30px;"&gt;&lt;canvas id="${id}"&gt;&lt;/canvas&gt;&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Chart" enabled="true" name="chart">
+		/* Chart */&#13;
+		&lt;div id="${id}" style="min-width: ${min_width}px;max-width: ${max_width}px;height: ${height}px;  margin: ${margin} auto;"&gt;&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field checks item optional" enabled="true" name="fld-checks-item-optl">
+		/* Field Checks Item Optional */&#13;
+		&lt;label class="checkbox_input pr-5"&gt;${label}&#13;
+		${i}&lt;input type="checkbox" name="chk_${id_parent}" id="chk_${id_parent}_${id_item}" value="${value}" data-parsley-class-handler="#field_${id_parent}" data-parsley-errors-container="#field_error_block_${id_parent}" /&gt;&#13;
+		${i}&lt;span class="checkmark ${with_color} ${is_yellow}"&gt;&lt;/span&gt;&#13;
+		&lt;/label&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field checks item required" enabled="true" name="fld-checks-item-req">
+		/* Field Checks Item Required */&#13;
+		&lt;label class="checkbox_input pr-5"&gt;${label}&#13;
+		${i}&lt;input type="checkbox" name="chk_${id_parent}" id="chk_${id_parent}_${id_item}" value="${value}" required="required" data-parsley-class-handler="#field_${id_parent}" data-parsley-errors-container="#field_error_block_${id_parent}" /&gt;&#13;
+		${i}&lt;span class="checkmark ${with_color} ${is_yellow}"&gt;&lt;/span&gt;&#13;
+		&lt;/label&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field checks optional" enabled="true" name="fld-checks-optl">
+		/* Field Checks Optional&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="chk_${id}"&gt;${label}&lt;/label&gt;&lt;span class="pr-5"&gt;&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${content}&#13;
+		${i}${i}&lt;div class="field-error"&gt;&#13;
+		${i}${i}${i}&lt;div id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field checks required" enabled="true" name="fld-checks-req">
+		/* Field Checks Required&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="chk_${id}"&gt;${label}&lt;/label&gt;&lt;span class="required pr-5"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${content}&#13;
+		${i}${i}&lt;div class="field-error"&gt;&#13;
+		${i}${i}${i}&lt;div id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field date clear required" enabled="true" name="fld-date-clear-req">
+		/* Field Date Clear Required&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orinetation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}&lt;input class="input datepicker" id="${id}" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#field_error_block_${id}" /&gt;&#13;
+		${i}${i}${i}&lt;input class="pl-1" type="image" id="clear_${id}" src="../../assets/images/meddelete.png" style="width:15px;height:15px;" /&gt;&#13;
+		${i}${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;/span&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field date optional" enabled="true" name="fld-date-optl">
+		/* Field Date Optional&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orinetation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}&lt;input class="input datepicker" id="${id}" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#field_error_block_${id}" /&gt;&#13;
+		${i}${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;/span&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field date range clear optional" enabled="true" name="fld-dater-clear-optl">
+		/* Field Date Range Clear Optional&#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field ${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-control flex" data-tooltip="${tooltip}"&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field is_${orientation}" id="field_${id}_begin_date"&gt;&#13;
+		${i}${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}_begin_date"&gt;${begin_date_label}&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="input datepicker_range" id="${id}_begin_date" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#field_error_block_${id}_begin_date" /&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="pl-1" type="image" id="clear_${id}_begin_date" src="../../assets/images/meddelete.png" style="width:15px;height:15px;" /&gt;&#13;
+		${i}${i}${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}_begin_date"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;/span&gt;&#13;
+		${i}${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		${i}&lt;div class="field is_${orientation}" id="field_${id}_end_date"&gt;&#13;
+		${i}${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}_end_date"&gt;${end_date_label}&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="input datepicker_range" id="${id}_end_date" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#field_error_block_${id}_end_date" /&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="pl-1" type="image" id="clear_${id}_end_date" src="../../assets/images/meddelete.png" style="width:15px;height:15px;" /&gt;&#13;
+		${i}${i}${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}_end_date"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;/span&gt;&#13;
+		${i}${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field date range clear required" enabled="true" name="fld-dater-clear-req">
+		/* Field Date Range Clear Required&#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field ${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-control flex" data-tooltip="${tooltip}"&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field is_${orientation}" id="field_${id}_begin_date"&gt;&#13;
+		${i}${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}_begin_date"&gt;${begin_date_label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="input datepicker_range" id="${id}_begin_date" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#field_error_block_${id}_begin_date" /&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="pl-1" type="image" id="clear_${id}_begin_date" src="../../assets/images/meddelete.png" style="width:15px;height:15px;" /&gt;&#13;
+		${i}${i}${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}_begin_date"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;/span&gt;&#13;
+		${i}${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		${i}&lt;div class="field is_${orientation}" id="field_${id}_end_date"&gt;&#13;
+		${i}${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}_end_date"&gt;${end_date_label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="input datepicker_range" id="${id}_end_date" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#field_error_block_${id}_end_date" /&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="pl-1" type="image" id="clear_${id}_end_date" src="../../assets/images/meddelete.png" style="width:15px;height:15px;" /&gt;&#13;
+		${i}${i}${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}_end_date"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;/span&gt;&#13;
+		${i}${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field date range optional" enabled="true" name="fld-dater-optl">
+		/* Field Date Range Optional&#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field ${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-control flex" data-tooltip="${tooltip}"&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field is_${orientation}" id="field_${id}_begin_date"&gt;&#13;
+		${i}${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}_begin_date"&gt;${begin_date_label}&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="input datepicker_range" id="${id}_begin_date" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#field_error_block_${id}_begin_date" /&gt;&#13;
+		${i}${i}${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}_begin_date"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;/span&gt;&#13;
+		${i}${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		${i}&lt;div class="field is_${orientation}" id="field_${id}_end_date"&gt;&#13;
+		${i}${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}_end_date"&gt;${end_date_label}&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="input datepicker_range" id="${id}_end_date" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#field_error_block_${id}_end_date" /&gt;&#13;
+		${i}${i}${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}_end_date"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;/span&gt;&#13;
+		${i}${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field date range required" enabled="true" name="fld-dater-req">
+		/* Field Date Range Required&#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field ${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-control flex" data-tooltip="${tooltip}"&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field is_${orientation}" id="field_${id}_begin_date"&gt;&#13;
+		${i}${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}_begin_date"&gt;${begin_date_label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="input datepicker_range" id="${id}_begin_date" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#field_error_block_${id}_begin_date" /&gt;&#13;
+		${i}${i}${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}_begin_date"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;/span&gt;&#13;
+		${i}${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		${i}&lt;div class="field is_${orientation}" id="field_${id}_end_date"&gt;&#13;
+		${i}${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}_end_date"&gt;${end_date_label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="input datepicker_range" id="${id}_end_date" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#field_error_block_${id}_end_date" /&gt;&#13;
+		${i}${i}${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}_end_date"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;/span&gt;&#13;
+		${i}${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field date required" enabled="true" name="fld-date-req">
+		/* Field Date Required&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}&lt;input class="input datepicker" id="${id}" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#field_error_block_${id}" /&gt;&#13;
+		${i}${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;/span&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field email optional" enabled="true" name="fld-email-optl">
+		/* Field Email Optional&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label&gt;${label}&lt;/label&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;input class="input is-vertical" type="email" id="${id}" data-parsley-trigger="change" data-parsley-errors-container="#field_error_block_${id}" /&gt;&#13;
+		${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/span&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field email required" enabled="true" name="fld-email-req">
+		/* Field Email Required&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label&gt;${label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;input class="input is-vertical" type="email" id="${id}" required="required" data-parsley-trigger="change" data-parsley-errors-container="#field_error_block_${id}" /&gt;&#13;
+		${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/span&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field fieldupload required" enabled="true" name="fld-fileupload-req">
+		/* Field Fileupload Required&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;input type="file" id="${id}" name="${id}" required="required" style="width: ${size}em;" accept="image/*,.pdf" /&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field fileupload optional" enabled="true" name="fld-fileupload-optl">
+		/* Field Fileupload Optional&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;input type="file" id="${id}" name="${id}" style="width: ${size}em;" accept="image/*,.pdf" /&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field group" enabled="true" name="fld-group">
+		/* Field Group*/&#13;
+		&lt;div class="field-group flex items-center" id="${id}"&gt;&#13;
+		${content}&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field input optional" enabled="true" name="fld-input-optl">
+		/* Field Input Optional&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		* type: alphanum | integer | number | currency&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;input class="input ${type}" type="text" id="input-${id}" value="" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10" data-parsley-errors-container="#field_error_block_${id}" /&gt;&#13;
+		${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/span&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;&#13;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field input required" enabled="true" name="fld-input-req">
+		/* Field Input Required&#13;
+		* orientation: is_vertical | is_horizontal items-center &#13;
+		* type: alphanum | integer | number | currency&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;input class="input ${type}" type="text" id="${id}" required="required" value="" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10" data-parsley-errors-container="#field_error_block_${id}" /&gt;&#13;
+		${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/span&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field month year" enabled="true" name="fld-month-year">
+		/* Field Month Year*/&#13;
+		&lt;div class="monthpicker" id="${id}"&gt;&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field multiselect optional" enabled="true" name="fld-mselect-optl">
+		/* Field Multiselect Optional &#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;span class="pr-3"&gt;&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;select class="multiselect" id="${id}" name="${id}" multiple="multiple" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#field_error_block_${id}"&gt;&#13;
+		${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
+		${i}${i}&lt;/select&gt;&#13;
+		${i}${i}&lt;div class="field-error"&gt;&lt;div id="field_error_block_${id}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field multiselect required" enabled="true" name="fld-mselect-req">
+		/* Field Multiselect Required &#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;span class="pr-3 required"&gt;*&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;select class="multiselect" id="${id}" name="${id}" multiple="multiple" required="required" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#field_error_block_${id}"&gt;&#13;
+		${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
+		${i}${i}&lt;/select&gt;&#13;
+		${i}${i}&lt;div class="field-error"&gt;&lt;div id="field_error_block_${id}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field options item optional" enabled="true" name="fld-opts-item-optl">
+		/*Field Options Item Optional*/&#13;
+		&lt;label class="radio_button"&gt;${label}&#13;
+		${i}&lt;input type="radio" name="${id_parent}" id="radio_${id_parent}_${id_item}" value="${value}" data-parsley-class-handler="#field_${id_parent}" data-parsley-errors-container="#field_error_block_${id_parent}" /&gt;&#13;
+		${i}&lt;span class="checkmark"&gt;&lt;/span&gt;&#13;
+		&lt;/label&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field options item required" enabled="true" name="fld-opts-item-req">
+		/*Field Options Item Required*/&#13;
+		&lt;label class="radio_button"&gt;${label}&#13;
+		${i}&lt;input type="radio" name="${id_parent}" id="radio_${id_parent}_${id_item}" value="${value}" required="required" data-parsley-class-handler="#field_${id_parent}" data-parsley-errors-container="#field_error_block_${id_parent}" /&gt;&#13;
+		${i}&lt;span class="checkmark"&gt;&lt;/span&gt;&#13;
+		&lt;/label&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field options optional" enabled="true" name="fld-opts-optl">
+		/* Field Options Optional&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label class="field-label"&gt;${label}&lt;/label&gt;&lt;span class="pr-5"&gt;&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${content}&#13;
+		${i}${i}&lt;div class="field-error"&gt;&#13;
+		${i}${i}${i}&lt;div id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field options required" enabled="true" name="fld-opts-req">
+		/* Field Options Required&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label class="field-label"&gt;${label}&lt;/label&gt;&lt;span class="pr-5 required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${content}&#13;
+		${i}${i}&lt;div class="field-error"&gt;&#13;
+		${i}${i}${i}&lt;div id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field plus minus optional" enabled="true" name="fld-plus-min-optl">
+		/* Field Plus Minus Optional&#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control"&gt;&#13;
+		${i}${i}&lt;div class="field-plus-minus has-addons flex" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${i}&lt;input class="input" type="text" id="${id}" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="You can enter only ${max_length} characters." &#13;
+		${i}${i}${i}data-parsley-validation-threshold="10" data-parsley-errors-container="#field_error_block_${id}" /&gt;&#13;
+		${i}${i}${i}&lt;button class="button-noborder" id="btn_plus_${id}" type="button"&gt;&#13;
+		${i}${i}${i}${i}&lt;img class="plus-icon" src="../../assets/images/plus-icon.png" /&gt;&#13;
+		${i}${i}${i}&lt;/button&gt;&#13;
+		${i}${i}${i}&lt;button class="button-noborder" id="btn_minus_${id}" type="button"&gt;&#13;
+		${i}${i}${i}${i}&lt;img class="minus-icon" src="../../assets/images/minus-icon.png" /&gt;&#13;
+		${i}${i}${i}&lt;/button&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/span&gt;&#13;
+		${i}${i}&lt;ul class="tag-list" id="tag_list_${id}" style="width: ${size}em;"&gt;&lt;/ul&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field plus minus required" enabled="true" name="fld-plus-min-req">
+		/* Field Plus Minus Required&#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control"&gt;&#13;
+		${i}${i}&lt;div class="field-plus-minus has-addons flex" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${i}&lt;input class="input" type="text" id="${id}" required="required" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" &#13;
+		${i}${i}${i}data-parsley-maxlength-message="You can enter only ${max_length} characters." data-parsley-validation-threshold="10" data-parsley-errors-container="#field_error_block_${id}" /&gt;&#13;
+		${i}${i}${i}&lt;button class="button-noborder" id="btn_plus_${id}" type="button"&gt;&#13;
+		${i}${i}${i}${i}&lt;img class="plus-icon" src="../../assets/images/plus-icon.png" /&gt;&#13;
+		${i}${i}${i}&lt;/button&gt;&#13;
+		${i}${i}${i}&lt;button class="button-noborder" id="btn_minus_${id}" type="button"&gt;&#13;
+		${i}${i}${i}${i}&lt;img class="minus-icon" src="../../assets/images/minus-icon.png" /&gt;&#13;
+		${i}${i}${i}&lt;/button&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;span class="field-error flex"&gt;&#13;
+		${i}${i}${i}&lt;div class="error-tip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;div class="error-msg" id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/span&gt;&#13;
+		${i}${i}&lt;ul class="tag-list" id="tag_list_${id}" style="width: ${size}em;"&gt;&lt;/ul&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field search optional" enabled="true" name="fld-search-optl">
+		/* Field Search Optional&#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control relative" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;button class="btn-search absolute flex items-center content-end" type="button"&gt;&#13;
+		${i}${i}${i}&lt;svg class="fill-current text-gray-500 pt-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"&gt;&#13;
+		${i}${i}${i}${i}&lt;path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"&gt;&lt;/path&gt;&#13;
+		${i}${i}${i}&lt;/svg&gt;&#13;
+		${i}${i}&lt;/button&gt;&#13;
+		${i}${i}&lt;input class="border border-solid border-gray-500 rounded-full pl-8" type="text" id="${id}" data-parsley-type="alphanum" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10" /&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field search required" enabled="true" name="fld-search-req">
+		/* Field Search Required&#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control relative" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;button class="btn-search absolute flex items-center content-end" type="button"&gt;&#13;
+		${i}${i}${i}&lt;svg class="fill-current text-gray-500 pt-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"&gt;&#13;
+		${i}${i}${i}${i}&lt;path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"&gt;&lt;/path&gt;&#13;
+		${i}${i}${i}&lt;/svg&gt;&#13;
+		${i}${i}&lt;/button&gt;&#13;
+		${i}${i}&lt;input class="border border-solid border-gray-500 rounded-full pl-8" type="text" id="${id}" required="required" data-parsley-type="alphanum" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10" /&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field select optional" enabled="true" name="fld-select-optl">
+		/* Field Select Optional&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;span class="pr-3"&gt;&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;select class="select2" id="${id}" name="${id}" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#field_error_block_${id}"&gt;&#13;
+		${i}${i}${i}&lt;option&gt;&lt;/option&gt;&#13;
+		${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
+		${i}${i}&lt;/select&gt;&#13;
+		${i}${i}&lt;div class="field-error"&gt;&#13;
+		${i}${i}${i}&lt;div id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field select plus minus optional" enabled="true" name="fld-select-pm-optl">
+		/* Field Select Plus Minus Optional&#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control"&gt;&#13;
+		${i}${i}&lt;div class="field-plus-minus has-addons flex" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${i}&lt;select class="select2" id="${id}" style="width: ${size}em;" disabled="${disabled}" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="You can enter only ${max_length} characters." data-parsley-validation-threshold="10" data-parsley-errors-container="#field_error_block_${id}"&gt;&#13;
+		${i}${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
+		${i}${i}${i}&lt;/select&gt;&#13;
+		${i}${i}${i}&lt;button class="button-noborder" id="btn_plus_${id}" type="button"&gt;&#13;
+		${i}${i}${i}${i}&lt;img class="plus-icon" src="../../assets/images/plus-icon.png" /&gt;&#13;
+		${i}${i}${i}&lt;/button&gt;&#13;
+		${i}${i}${i}&lt;button class="button-noborder" id="btn_minus_${id}" type="button"&gt;&#13;
+		${i}${i}${i}${i}&lt;img class="minus-icon" src="../../assets/images/minus-icon.png" /&gt;&#13;
+		${i}${i}${i}&lt;/button&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="field-error"&gt;&lt;div id="field_error_block_${id}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;ul class="tag-list" id="tag_list_${id}" style="width: ${size}em;"&gt;&lt;/ul&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field select plus minus required" enabled="true" name="fld-select-pm-req">
+		/* Field Select Plus Minus Required&#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control"&gt;&#13;
+		${i}${i}&lt;div class="field-plus-minus has-addons flex" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}${i}&lt;select class="select2" id="${id}" required="required" style="width: ${size}em;" disabled="${disabled}" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="You can enter only ${max_length} characters." data-parsley-validation-threshold="10" data-parsley-errors-container="#field_error_block_${id}"&gt;&#13;
+		${i}${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
+		${i}${i}${i}&lt;/select&gt;&#13;
+		${i}${i}${i}&lt;button class="button-noborder" id="btn_plus_${id}" type="button"&gt;&#13;
+		${i}${i}${i}${i}&lt;img class="plus-icon" src="../../assets/images/plus-icon.png" /&gt;&#13;
+		${i}${i}${i}&lt;/button&gt;&#13;
+		${i}${i}${i}&lt;button class="button-noborder" id="btn_minus_${id}" type="button"&gt;&#13;
+		${i}${i}${i}${i}&lt;img class="minus-icon" src="../../assets/images/minus-icon.png" /&gt;&#13;
+		${i}${i}${i}&lt;/button&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="field-error"&gt;&lt;div id="field_error_block_${id}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;ul class="tag-list" id="tag_list_${id}" style="width: ${size}em;"&gt;&lt;/ul&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field select required" enabled="true" name="fld-select-req">
+		/* Field Select Required&#13;
+		* orientation: is_vertical | is_horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;span class="pr-3 required"&gt;*&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;select class="select2" id="${id}" name="${id}" required="required" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#field_error_block_${id}"&gt;&#13;
+		${i}${i}${i}&lt;option&gt;&lt;/option&gt;&#13;
+		${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
+		${i}${i}&lt;/select&gt;&#13;
+		${i}${i}&lt;div class="field-error"&gt;&#13;
+		${i}${i}${i}&lt;div id="field_error_block_${id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field swaplist" enabled="true" name="fld-swaptlist">
+		/* Field Swaplist */&#13;
+		&lt;div class="row"&gt;&#13;
+		${i}&lt;div id="swaplist"&gt;&#13;
+		${i}${i}&lt;div id="swaplist-source"&gt;&#13;
+		${i}${i}${i}&lt;p class="title"&gt;${title_left}&lt;/p&gt;&#13;
+		${i}${i}${i}&lt;ul class="column source" id="${id}_source"&gt;&lt;/ul&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="source_control"&gt;&#13;
+		${i}${i}${i}&lt;div class="up" style="margin-top:3px;"&gt;&lt;button class="up-button"&gt;&lt;img src="../../assets/images/flecha-arriba.png" style="width:18px;" /&gt;&lt;/button&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;div class="add" style="margin-top:3px;"&gt;&lt;button class="right-button"&gt;&lt;img src="../../assets/images/flecha-derecha.png" style="width:18px;" /&gt;&lt;/button&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;div class="remove" style="margin-top:3px;"&gt;&lt;button class="left-button"&gt;&lt;img src="../../assets/images/flecha-izquierda.png" style="width:18px;" /&gt;&lt;/button&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;div class="down" style="margin-top:3px;"&gt;&lt;button class="down-button"&gt;&lt;img src="../../assets/images/flecha-abajo.png" style="width:18px;" /&gt;&lt;/button&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;div id="swaplist-destination"&gt;&#13;
+		${i}${i}${i}&lt;p class="title"&gt;${title_right}&lt;/p&gt;&#13;
+		${i}${i}${i}&lt;ul class="column destination" id="${id}_destination"&gt; &lt;/ul&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field textarea optional" enabled="true" name="fld-textarea-optl">
+		/* Field Textarea Optional&#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;textarea class="input" type="text" id="${id}" rows="4" data-parsley-type="alphanum" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10"&gt;&lt;/textarea&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field textarea required" enabled="true" name="fld-textarea-req">
+		/* Field Textarea Required&#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;textarea class="input" type="text" id="${id}" rows="4" required="required" data-parsley-type="alphanum" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10"&gt;&lt;/textarea&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field timepicker optional" enabled="true" name="fld-timepicker-optl">
+		/* Field Timepicker Optional &#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control"&gt;&#13;
+		${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}&lt;input class="timepicker input" id="${id}" style="width: ${size}em;" data-parsley-errors-container="#field_error_block_${id}" /&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="field-error"&gt;&lt;div id="field_error_block_${id}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field timepicker required" enabled="true" name="fld-timepicker-req">
+		/* Field Timepicker Required &#13;
+		* orientation: is_vertical | is_horizontal&#13;
+		*/&#13;
+		&lt;div class="field is_${orientation}" id="field_${id}"&gt;&#13;
+		${i}&lt;div class="field-label flex"&gt;&lt;label for="${id}"&gt;${label}&lt;/label&gt;&lt;span class="required"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="field-control"&gt;&#13;
+		${i}${i}&lt;div class="field-input flex items-center"&gt;&#13;
+		${i}${i}${i}&lt;input class="timepicker input" id="${id}" required="required" style="width: ${size}em;" data-parsley-errors-container="#field_error_block_${id}" /&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="field-error"&gt;&lt;div id="field_error_block_${id}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Form" enabled="true" name="form">
+		&lt;form class="is-search-form" id="${id}" method="post" data-parsley-validate="" enctype="multipart/form-data"&gt;&#13;
+		${content}&#13;
+		&lt;/form&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Grid record count" enabled="true" name="grid-record-count">
+		/* Grid Record Count */&#13;
+		&lt;div id="pager_${id_grid}"&gt;&lt;/div&gt;&#13;
+		&lt;div class="ui-jqgrid-count-rec"&gt;&lt;span&gt;Total registros: &lt;span id="count_${id_grid}"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Quiz" enabled="true" name="quiz">
+		/* Quiz */&#13;
+		&lt;table class="quiz"&gt;&#13;
+		${i}&lt;thead&gt;&#13;
+		${i}${i}&lt;tr&gt;&#13;
+		${i}${i}${i}&lt;th class="question" style="width: 50em;"&gt;&lt;/th&gt;&#13;
+		${i}${i}${i}&lt;th&gt;${answer_header}&lt;/th&gt;&#13;
+		${i}${i}&lt;/tr&gt;&#13;
+		${i}&lt;/thead&gt;&#13;
+		${i}&lt;tbody&gt;&#13;
+		${i}${i}&lt;tr&gt;&#13;
+		${i}${i}${i}${question_answers}&#13;
+		${i}${i}&lt;/tr&gt;&#13;
+		${i}&lt;/tbody&gt;&#13;
+		&lt;/table&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Quiz answer option" enabled="true" name="quiz-answer-option">
+		/* Quiz Answer Option */&#13;
+		&lt;td&gt;&#13;
+		${i}&lt;div class="answer"&gt;&#13;
+		${i}${i}&lt;input type="radio" id="${id_quiz}_${no_question}_${no_answer}" name="${id_quiz}_${no_question}" data-parsley-errors-container="#field_error_block_${id_quiz}_${no_answer}" data-points="${answer_points}" /&gt;&#13;
+		${i}${i}&lt;span class="checkmark"&gt;&lt;/span&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/td&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Quiz answer select" enabled="true" name="quiz-answer-select">
+		/*Quiz Answer Select*/&#13;
+		&lt;td&gt;&#13;
+		${i}&lt;div class="answer"&gt;&#13;
+		${i}${i}&lt;select class="select2" id="${id_quiz}_${no_question}_${no_answer}" name="quiz_select" style="width: ${size}em;" data-parsley-errors-container="#field_error_block_${id_quiz}_${no_answer}"&gt;&#13;
+		${i}${i}${i}&lt;option value="${answer_value}"&gt;"${answer_text}"&lt;/option&gt;&#13;
+		${i}${i}&lt;/select&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/td&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Quiz question optional" enabled="true" name="quiz-question-optl">
+		/* Quiz Question Optional */&#13;
+		&lt;td class="question"&gt;${question}&#13;
+		${i}&lt;div class="field-error"&gt;&lt;div id="field_error_block_${id_quiz}_${no_question}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
+		&lt;/td&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Quiz question required" enabled="true" name="quiz-question-req">
+		/* Quiz Question Required */&#13;
+		&lt;td class="question"&gt;${question}&lt;span class="required"&gt;*&lt;/span&gt;&#13;
+		${i}&lt;div class="field-error"&gt;&lt;div id="field_error_block_${id_quiz}_${no_question}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
+		&lt;/td&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Scrolling menu" enabled="true" name="scrolling-menu">
+		/* Scrolling Menu */&#13;
+		&lt;nav class="arrow" id="menu-container"&gt;&#13;
+		${i}&lt;div id="btn-nav-previous" style="fill: #fff"&gt;&lt;img src="../../assets/images/arrow-left.png" /&gt;&lt;/div&gt;&#13;
+		${i}&lt;div id="btn-nav-next" style="fill: #fff"&gt;&lt;img src="../../assets/images/arrow-right.png" /&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="menu-inner-box"&gt;&#13;
+		${i}${i}&lt;ul class="menu"&gt;&#13;
+		${i}${i}${i}&lt;li class="menu-item" id="${id_item}"&gt;&lt;a class="${current}" href=""&gt;${id}&lt;/a&gt;&lt;/li&gt;			&#13;
+		${i}${i}&lt;/ul&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/nav&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Sidebar" enabled="true" name="sidebar">
+		/* Sidebar */&#13;
+		&lt;div class="sidebar-wrapper" id="sidebar_wrapper_${id}"&gt;&#13;
+		${i}&lt;div class="sidebar"&gt;&#13;
+		${i}${i}&lt;div class="sidebar-content"&gt;&#13;
+		${i}${i}${i}&lt;p&gt;${left_content}&lt;/p&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}${i}&lt;div class="sidebar-collapsible-button"&gt;&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		${i}&lt;div class="sidebar-content"&gt;&#13;
+		${i}${i}&lt;p&gt;${rigth_content}&lt;/p&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Spinner" enabled="true" name="spinner">
+		/* Spinner */&#13;
+		&lt;div class="spinner"&gt;&lt;img src="../../../../assets/images/loader.gif" alt="" width="45px" height="45px" /&gt;&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Splitter" enabled="true" name="splitter">
+		/* Splitter &#13;
+		* orientation: vertical | horizontal&#13;
+		*/&#13;
+		&lt;div class="splitter splitter-${orientation}" id="${id}"&gt;&#13;
+		${i}&lt;div class="pane"&gt;&#13;
+		${i}${i}&lt;p&gt;${content_a}&lt;/p&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		${i}&lt;div class="pane"&gt;&#13;
+		${i}${i}&lt;p&gt;${content_b}&lt;/p&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Tab group" enabled="true" name="tab-group">
+		/* Tab Group */&#13;
+		&lt;div class="tab-group" id="${id}_tab_group"&gt;&#13;
+		${i}&lt;ul&gt;&#13;
+		${i}${i}&lt;li&gt;&#13;
+		${i}${i}${i}&lt;a href="#${id_tab_item}"&gt;&#13;
+		${i}${i}${i}${i}&lt;div class="container-imgtxt"&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;img class="container-img_image" src="../../assets/images/${item}.png" align="middle" /&gt;&#13;
+		${i}${i}${i}${i}${i}&lt;div class="container-img_text"&gt;${tab_title}&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;/a&gt;&#13;
+		${i}${i}&lt;/li&gt;&#13;
+		${i}&lt;/ul&gt;&#13;
+		${i}&lt;div id="${id_tab_item}"&gt;&#13;
+		${i}${i}${tab_content}&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket- Grid" enabled="true" name="grid">
+		/* Grid */&#13;
+		&lt;table id="table_${id}"&gt;&#13;
+		${i}&lt;tr&gt;&#13;
+		${i}${i}&lt;td&gt;&lt;/td&gt;&#13;
+		${i}&lt;/tr&gt;&#13;
+		&lt;/table&gt;
+	</template>
+</templates>
