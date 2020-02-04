@@ -29,10 +29,11 @@
 		${i}&lt;img src="../../assets/images/btn-aceptar.png" /&gt;&#13;
 		&lt;/button&gt;
 	</template>
-	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button accept small" enabled="true" name="btn-accept-sm">
-		/* Button Accept Small */&#13;
-		&lt;button class="amButton amSmallButton" id="btn${Id}" type="reset" data-tooltip="${tooltip}" disabled="${disabled}"&gt;&#13;
-		${i}&lt;img src="../../assets/images/btn-aceptar.png" /&gt;&#13;
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button add large" enabled="true" name="btn-add-lg">
+		/* Button Add Large */&#13;
+		&lt;button class="amButton amBigButton flex items-center" id="btn${Id}" type="submit" data-tooltip="${tooltip}" disabled="${disabled}" value="validate"&gt;&#13;
+		${i}&lt;img src="../../assets/images/btn-agregar.png" /&gt;&#13;
+		${i}&lt;span&gt;Agregar&lt;/span&gt;&#13;
 		&lt;/button&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Button add medium" enabled="true" name="btn-add-md">
@@ -350,11 +351,11 @@
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Canvas" enabled="true" name="canvas">
 		/*Canvas*/&#13;
-		&lt;div style="max-width: ${max_width}px;max-height: ${max_height}px; padding: 30px;"&gt;&lt;canvas id="${Id}"&gt;&lt;/canvas&gt;&lt;/div&gt;
+		&lt;div style="max-width: ${max_width}px;max-height: ${max_height}px; padding: 30px;"&gt;&lt;canvas id="$cnv{Id}"&gt;&lt;/canvas&gt;&lt;/div&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Chart" enabled="true" name="chart">
 		/* Chart */&#13;
-		&lt;div id="${Id}" style="min-width: ${min_width}px;max-width: ${max_width}px;height: ${height}px;  margin: ${margin} auto;"&gt;&lt;/div&gt;
+		&lt;div id="div${Id}" style="min-width: ${min_width}px;max-width: ${max_width}px;height: ${height}px;  margin: ${margin} auto;"&gt;&lt;/div&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field checks item optional" enabled="true" name="fld-checks-item-optl">
 		/* Field Checks Item Optional */&#13;
@@ -573,7 +574,7 @@
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;/label&gt;&lt;span class="amRequired"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
 		${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}&lt;input class="amInput amDatepicker" id="${Id}" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
+		${i}${i}${i}&lt;input class="amInput amDatepicker" id="txt${Id}" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
 		${i}${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
 		${i}${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
 		${i}${i}${i}${i}&lt;div class="amErrorMsg" id="divFieldErrorBlock${Id}"&gt;&lt;/div&gt;&#13;
@@ -589,7 +590,7 @@
 		&lt;div class="amField amIs${orientation}" id="divField${Id}"&gt;&#13;
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label&gt;${label}&lt;/label&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}&lt;input class="amInput amIsVertical" type="email" id="${Id}" data-parsley-trigger="change" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
+		${i}${i}&lt;input class="amInput amIsVertical" type="email" id="txt${Id}" data-parsley-trigger="change" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
 		${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
 		${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
 		${i}${i}${i}&lt;div class="amErrorMsg" id="divFieldErrorBlock${Id}"&gt;&lt;/div&gt;&#13;
@@ -683,7 +684,7 @@
 		&lt;div class="amField amIs${orientation}" id="divField${Id}"&gt;&#13;
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;span class="pr-3"&gt;&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}&lt;select class="multiselect" id="${Id}" name="${Id}" multiple="multiple" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
+		${i}${i}&lt;select class="multiselect" id="cmb${Id}" name="cmb${Id}" multiple="multiple" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
 		${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
 		${i}${i}&lt;/select&gt;&#13;
 		${i}${i}&lt;div class="amFieldError"&gt;&lt;div id="divFieldErrorBlock${Id}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
@@ -697,7 +698,7 @@
 		&lt;div class="amField amIs${orientation}" id="divField${Id}"&gt;&#13;
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;span class="pr-3 amRequired"&gt;*&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}&lt;select class="multiselect" id="${Id}" name="${Id}" multiple="multiple" required="required" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
+		${i}${i}&lt;select class="multiselect" id="cmb${Id}" name="cmb${Id}" multiple="multiple" required="required" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
 		${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
 		${i}${i}&lt;/select&gt;&#13;
 		${i}${i}&lt;div class="amFieldError"&gt;&lt;div id="divFieldErrorBlock${Id}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
@@ -754,7 +755,7 @@
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl"&gt;&#13;
 		${i}${i}&lt;div class="amFieldPlusMinus amHasAddons flex" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}${i}&lt;input class="amInput" type="text" id="${Id}" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="You can enter only ${max_length} characters." &#13;
+		${i}${i}${i}&lt;input class="amInput" type="text" id="txt${Id}" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="You can enter only ${max_length} characters." &#13;
 		${i}${i}${i}data-parsley-validation-threshold="10" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
 		${i}${i}${i}&lt;button class="amButtonNoborder" id="btnPlus${Id}" type="button"&gt;&#13;
 		${i}${i}${i}${i}&lt;img class="amPlusIcon" src="../../assets/images/plus-icon.png" /&gt;&#13;
@@ -779,7 +780,7 @@
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;/label&gt;&lt;span class="amRequired"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl"&gt;&#13;
 		${i}${i}&lt;div class="amFieldPlusMinus amHasAddons flex" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}${i}&lt;input class="amInput" type="text" id="${Id}" required="required" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" &#13;
+		${i}${i}${i}&lt;input class="amInput" type="text" id="txt${Id}" required="required" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" &#13;
 		${i}${i}${i}data-parsley-maxlength-message="You can enter only ${max_length} characters." data-parsley-validation-threshold="10" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
 		${i}${i}${i}&lt;button class="amButtonNoborder" id="btnPlus${Id}" type="button"&gt;&#13;
 		${i}${i}${i}${i}&lt;img class="amPlusIcon" src="../../assets/images/plus-icon.png" /&gt;&#13;
@@ -808,7 +809,7 @@
 		${i}${i}${i}${i}&lt;path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"&gt;&lt;/path&gt;&#13;
 		${i}${i}${i}&lt;/svg&gt;&#13;
 		${i}${i}&lt;/button&gt;&#13;
-		${i}${i}&lt;input class="border border-solid border-gray-500 rounded-full pl-8" type="text" id="${Id}" data-parsley-type="alphanum" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10" /&gt;&#13;
+		${i}${i}&lt;input class="border border-solid border-gray-500 rounded-full pl-8" type="text" id="txt${Id}" data-parsley-type="alphanum" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10" /&gt;&#13;
 		${i}&lt;/div&gt;&#13;
 		&lt;/div&gt;
 	</template>
@@ -824,7 +825,7 @@
 		${i}${i}${i}${i}&lt;path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"&gt;&lt;/path&gt;&#13;
 		${i}${i}${i}&lt;/svg&gt;&#13;
 		${i}${i}&lt;/button&gt;&#13;
-		${i}${i}&lt;input class="border border-solid border-gray-500 rounded-full pl-8" type="text" id="${Id}" required="required" data-parsley-type="alphanum" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10" /&gt;&#13;
+		${i}${i}&lt;input class="border border-solid border-gray-500 rounded-full pl-8" type="text" id="txt${Id}" required="required" data-parsley-type="alphanum" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10" /&gt;&#13;
 		${i}&lt;/div&gt;&#13;
 		&lt;/div&gt;
 	</template>
@@ -835,7 +836,7 @@
 		&lt;div class="amField amIs${orientation}" id="divField${Id}"&gt;&#13;
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;span class="pr-3"&gt;&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}&lt;select class="select2" id="${Id}" name="${Id}" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
+		${i}${i}&lt;select class="select2" id="cmb${Id}" name="cmb${Id}" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
 		${i}${i}${i}&lt;option&gt;&lt;/option&gt;&#13;
 		${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
 		${i}${i}&lt;/select&gt;&#13;
@@ -853,7 +854,7 @@
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl"&gt;&#13;
 		${i}${i}&lt;div class="amFieldPlusMinus amHasAddons flex" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}${i}&lt;select class="select2" id="${Id}" style="width: ${size}em;" disabled="${disabled}" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="You can enter only ${max_length} characters." data-parsley-validation-threshold="10" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
+		${i}${i}${i}&lt;select class="select2" id="cmb${Id}" style="width: ${size}em;" disabled="${disabled}" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="You can enter only ${max_length} characters." data-parsley-validation-threshold="10" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
 		${i}${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
 		${i}${i}${i}&lt;/select&gt;&#13;
 		${i}${i}${i}&lt;button class="amButtonNoborder" id="btnPlus${Id}" type="button"&gt;&#13;
@@ -876,7 +877,7 @@
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;/label&gt;&lt;span class="amRequired"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl"&gt;&#13;
 		${i}${i}&lt;div class="amFieldPlusMinus amHasAddons flex" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}${i}&lt;select class="select2" id="${Id}" required="required" style="width: ${size}em;" disabled="${disabled}" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="You can enter only ${max_length} characters." data-parsley-validation-threshold="10" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
+		${i}${i}${i}&lt;select class="select2" id="cmb${Id}" required="required" style="width: ${size}em;" disabled="${disabled}" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="You can enter only ${max_length} characters." data-parsley-validation-threshold="10" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
 		${i}${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
 		${i}${i}${i}&lt;/select&gt;&#13;
 		${i}${i}${i}&lt;button class="amButtonNoborder" id="btnPlus${Id}" type="button"&gt;&#13;
@@ -898,7 +899,7 @@
 		&lt;div class="amField amIs${orientation}" id="divField${Id}"&gt;&#13;
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;span class="pr-3 amRequired"&gt;*&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}&lt;select class="select2" id="${Id}" name="${Id}" required="required" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
+		${i}${i}&lt;select class="select2" id="cmb${Id}" name="cmb${Id}" required="required" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
 		${i}${i}${i}&lt;option&gt;&lt;/option&gt;&#13;
 		${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
 		${i}${i}&lt;/select&gt;&#13;
@@ -936,7 +937,7 @@
 		&lt;div class="amField amIs${orientation}" id="divField${Id}"&gt;&#13;
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}&lt;textarea class="amInput" type="text" id="${Id}" rows="4" data-parsley-type="alphanum" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10"&gt;&lt;/textarea&gt;&#13;
+		${i}${i}&lt;textarea class="amInput" type="text" id="txt${Id}" rows="4" data-parsley-type="alphanum" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10"&gt;&lt;/textarea&gt;&#13;
 		${i}&lt;/div&gt;&#13;
 		&lt;/div&gt;
 	</template>
@@ -947,7 +948,7 @@
 		&lt;div class="amField amIs${orientation}" id="divField${Id}"&gt;&#13;
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;/label&gt;&lt;span class="amRequired"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}&lt;textarea class="amInput" type="text" id="${Id}" rows="4" required="required" data-parsley-type="alphanum" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10"&gt;&lt;/textarea&gt;&#13;
+		${i}${i}&lt;textarea class="amInput" type="text" id="txt${Id}" rows="4" required="required" data-parsley-type="alphanum" style="width: ${size}em;" data-parsley-trigger="keyup" data-parsley-maxlength="${max_length}" data-parsley-maxlength-message="Solo puedes ingresar hasta ${max_length} caracteres." data-parsley-validation-threshold="10"&gt;&lt;/textarea&gt;&#13;
 		${i}&lt;/div&gt;&#13;
 		&lt;/div&gt;
 	</template>
@@ -959,7 +960,7 @@
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl"&gt;&#13;
 		${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}&lt;input class="amTimepicker amInput" id="${Id}" style="width: ${size}em;" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
+		${i}${i}${i}&lt;input class="amTimepicker amInput" id="txt${Id}" style="width: ${size}em;" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
 		${i}${i}&lt;/div&gt;&#13;
 		${i}${i}&lt;div class="amFieldError"&gt;&lt;div id="divFieldErrorBlock${Id}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
 		${i}&lt;/div&gt;&#13;
@@ -973,7 +974,7 @@
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;/label&gt;&lt;span class="amRequired"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl"&gt;&#13;
 		${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}&lt;input class="amTimepicker amInput" id="${Id}" required="required" style="width: ${size}em;" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
+		${i}${i}${i}&lt;input class="amTimepicker amInput" id="txt${Id}" required="required" style="width: ${size}em;" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
 		${i}${i}&lt;/div&gt;&#13;
 		${i}${i}&lt;div class="amFieldError"&gt;&lt;div id="divFieldErrorBlock${Id}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
 		${i}&lt;/div&gt;&#13;
