@@ -360,14 +360,14 @@
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field checks item optional" enabled="true" name="fld-checks-item-optl">
 		/* Field Checks Item Optional */&#13;
 		&lt;label class="amCheckboxInput pr-5"&gt;${label}&#13;
-		${i}&lt;input type="checkbox" name="chk${ParentId}" id="chk${ParentId}${ItemId}" value="${value}" data-parsley-class-handler="#field${ParentId}" data-parsley-errors-container="#fieldErrorBlock${ParentId}" /&gt;&#13;
+		${i}&lt;input type="checkbox" name="chk${ParentId}" id="chk${ParentId}${ItemId}" value="${value}" data-parsley-class-handler="#divField${ParentId}" data-parsley-errors-container="#divFieldErrorBlock${ParentId}" /&gt;&#13;
 		${i}&lt;span class="amCheckmark ${amWithColor} ${amIsYellow}"&gt;&lt;/span&gt;&#13;
 		&lt;/label&gt;
 	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field checks item required" enabled="true" name="fld-checks-item-req">
 		/* Field Checks Item Required */&#13;
 		&lt;label class="amCheckboxInput pr-5"&gt;${label}&#13;
-		${i}&lt;input type="checkbox" name="chk${ParentId}" id="chk${ParentId}${ItemId}" value="${value}" required="required" data-parsley-class-handler="#field${ParentId}" data-parsley-errors-container="#fieldErrorBlock${ParentId}" /&gt;&#13;
+		${i}&lt;input type="checkbox" name="chk${ParentId}" id="chk${ParentId}${ItemId}" value="${value}" required="required" data-parsley-class-handler="#divField${ParentId}" data-parsley-errors-container="#divFieldErrorBlock${ParentId}" /&gt;&#13;
 		${i}&lt;span class="amCheckmark ${amWithColor} ${amIsYellow}"&gt;&lt;/span&gt;&#13;
 		&lt;/label&gt;
 	</template>
@@ -425,7 +425,24 @@
 		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
 		${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}&lt;input class="amInput amDatepicker" id="${Id}" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
+		${i}${i}${i}&lt;input class="amInput amDatepicker" id="txt${Id}" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
+		${i}${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
+		${i}${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}${i}&lt;div class="amErrorMsg" id="divFieldErrorBlock${Id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}${i}&lt;/span&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field date required" enabled="true" name="fld-date-req">
+		/* Field Date Required&#13;
+		* orientation: Vertical |  Horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="amField amIs${orientation}" id="divField${Id}"&gt;&#13;
+		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;/label&gt;&lt;span class="amRequired"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
+		${i}${i}${i}&lt;input class="amInput amDatepicker" id="txt${Id}" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
 		${i}${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
 		${i}${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
 		${i}${i}${i}${i}&lt;div class="amErrorMsg" id="divFieldErrorBlock${Id}"&gt;&lt;/div&gt;&#13;
@@ -562,23 +579,6 @@
 		${i}${i}${i}${i}${i}&lt;div class="amErrorMsg" id="divFieldErrorBlock${Id}EndDate"&gt;&lt;/div&gt;&#13;
 		${i}${i}${i}${i}&lt;/span&gt;&#13;
 		${i}${i}${i}&lt;/div&gt;&#13;
-		${i}${i}&lt;/div&gt;&#13;
-		${i}&lt;/div&gt;&#13;
-		&lt;/div&gt;
-	</template>
-	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field date required" enabled="true" name="fld-date-req">
-		/* Field Date Required&#13;
-		* orientation: Vertical |  Horizontal items-center&#13;
-		*/&#13;
-		&lt;div class="amField amIs${orientation}" id="divField${Id}"&gt;&#13;
-		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;/label&gt;&lt;span class="amRequired"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
-		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}&lt;input class="amInput amDatepicker" id="txt${Id}" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}" /&gt;&#13;
-		${i}${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
-		${i}${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
-		${i}${i}${i}${i}&lt;div class="amErrorMsg" id="divFieldErrorBlock${Id}"&gt;&lt;/div&gt;&#13;
-		${i}${i}${i}&lt;/span&gt;&#13;
 		${i}${i}&lt;/div&gt;&#13;
 		${i}&lt;/div&gt;&#13;
 		&lt;/div&gt;
@@ -846,6 +846,23 @@
 		${i}&lt;/div&gt;&#13;
 		&lt;/div&gt;
 	</template>
+	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field select required" enabled="true" name="fld-select-req">
+		/* Field Select Required&#13;
+		* orientation: Vertical |  Horizontal items-center&#13;
+		*/&#13;
+		&lt;div class="amField amIs${orientation}" id="divField${Id}"&gt;&#13;
+		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;span class="pr-3 amRequired"&gt;*&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&#13;
+		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
+		${i}${i}&lt;select class="select2" id="cmb${Id}" name="cmb${Id}" required="required" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
+		${i}${i}${i}&lt;option&gt;&lt;/option&gt;&#13;
+		${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
+		${i}${i}&lt;/select&gt;&#13;
+		${i}${i}&lt;div class="amFieldError"&gt;&#13;
+		${i}${i}${i}&lt;div id="divFieldErrorBlock${Id}"&gt;&lt;/div&gt;&#13;
+		${i}${i}&lt;/div&gt;&#13;
+		${i}&lt;/div&gt;&#13;
+		&lt;/div&gt;
+	</template>
 	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field select plus minus optional" enabled="true" name="fld-select-pm-optl">
 		/* Field Select Plus Minus Optional&#13;
 		* orientation: Vertical |  Horizontal&#13;
@@ -889,23 +906,6 @@
 		${i}${i}&lt;/div&gt;&#13;
 		${i}${i}&lt;div class="amFieldError"&gt;&lt;div id="divFieldErrorBlock${Id}"&gt;&lt;/div&gt;&lt;/div&gt;&#13;
 		${i}${i}&lt;ul class="amTagList" id="lstTagList${Id}" style="width: ${size}em;"&gt;&lt;/ul&gt;&#13;
-		${i}&lt;/div&gt;&#13;
-		&lt;/div&gt;
-	</template>
-	<template autoinsert="true" context="java" deleted="false" description="Accimarket - Field select required" enabled="true" name="fld-select-req">
-		/* Field Select Required&#13;
-		* orientation: Vertical |  Horizontal items-center&#13;
-		*/&#13;
-		&lt;div class="amField amIs${orientation}" id="divField${Id}"&gt;&#13;
-		${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}"&gt;${label}&lt;span class="pr-3 amRequired"&gt;*&lt;/span&gt;&lt;/label&gt;&lt;/div&gt;&#13;
-		${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
-		${i}${i}&lt;select class="select2" id="cmb${Id}" name="cmb${Id}" required="required" style="width: ${size}em;" data-parsley-trigger="change" data-parsley-errors-container="#divFieldErrorBlock${Id}"&gt;&#13;
-		${i}${i}${i}&lt;option&gt;&lt;/option&gt;&#13;
-		${i}${i}${i}&lt;option value="${value_item}"&gt;${label_item}&lt;/option&gt;&#13;
-		${i}${i}&lt;/select&gt;&#13;
-		${i}${i}&lt;div class="amFieldError"&gt;&#13;
-		${i}${i}${i}&lt;div id="divFieldErrorBlock${Id}"&gt;&lt;/div&gt;&#13;
-		${i}${i}&lt;/div&gt;&#13;
 		${i}&lt;/div&gt;&#13;
 		&lt;/div&gt;
 	</template>
