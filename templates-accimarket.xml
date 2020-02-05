@@ -461,7 +461,7 @@
 		${i}${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}BeginDate"&gt;${BeginDateLabel}&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
 		${i}${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}${i}&lt;input class="amInput amDatepickerRange" id="${Id}BeginDate" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}BeginDate" /&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="amInput amDatepicker" id="${Id}BeginDate" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}BeginDate" /&gt;&#13;
 		${i}${i}${i}${i}&lt;input class="pl-1" type="image" id="clear${Id}BeginDate" src="../../assets/images/meddelete.png" style="width:15px;height:15px;" /&gt;&#13;
 		${i}${i}${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
 		${i}${i}${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
@@ -474,7 +474,7 @@
 		${i}${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}EndDate"&gt;${EndDateLabel}&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
 		${i}${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}${i}&lt;input class="amInput amDatepickerRange" id="${Id}EndDate" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}EndDate" /&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="amInput amDatepicker" id="${Id}EndDate" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}EndDate" /&gt;&#13;
 		${i}${i}${i}${i}&lt;input class="pl-1" type="image" id="clear${Id}EndDate" src="../../assets/images/meddelete.png" style="width:15px;height:15px;" /&gt;&#13;
 		${i}${i}${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
 		${i}${i}${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
@@ -495,7 +495,7 @@
 		${i}${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}BeginDate"&gt;${BeginDateLabel}&lt;/label&gt;&lt;span class="amRequired"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
 		${i}${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
 		${i}${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}${i}&lt;input class="amInput amDatepickerRange" id="${Id}BeginDate" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}BeginDate" /&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="amInput amDatepicker" id="${Id}BeginDate" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}BeginDate" /&gt;&#13;
 		${i}${i}${i}${i}&lt;input class="pl-1" type="image" id="clear${Id}BeginDate" src="../../assets/images/meddelete.png" style="width:15px;height:15px;" /&gt;&#13;
 		${i}${i}${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
 		${i}${i}${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
@@ -508,7 +508,7 @@
 		${i}${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}EndDate"&gt;${EndDateLabel}&lt;/label&gt;&lt;span class="amRequired"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
 		${i}${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
 		${i}${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}${i}&lt;input class="amInput amDatepickerRange" id="${Id}EndDate" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}EndDate" /&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="amInput amDatepicker" id="${Id}EndDate" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}EndDate" /&gt;&#13;
 		${i}${i}${i}${i}&lt;input class="pl-1" type="image" id="clear${Id}EndDate" src="../../assets/images/meddelete.png" style="width:15px;height:15px;" /&gt;&#13;
 		${i}${i}${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
 		${i}${i}${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
@@ -529,7 +529,7 @@
 		${i}${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}BeginDate"&gt;${BeginDateLabel}&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
 		${i}${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}${i}&lt;input class="amInput amDatepickerRange" id="${Id}BeginDate" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}BeginDate" /&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="amInput amDatepicker" id="${Id}BeginDate" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}BeginDate" /&gt;&#13;
 		${i}${i}${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
 		${i}${i}${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
 		${i}${i}${i}${i}${i}&lt;div class="amErrorMsg" id="divFieldErrorBlock${Id}BeginDate"&gt;&lt;/div&gt;&#13;
@@ -541,7 +541,7 @@
 		${i}${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}EndDate"&gt;${EndDateLabel}&lt;/label&gt;&lt;/div&gt;&#13;
 		${i}${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
 		${i}${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}${i}&lt;input class="amInput amDatepickerRange" id="${Id}EndDate" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}EndDate" /&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="amInput amDatepicker" id="${Id}EndDate" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}EndDate" /&gt;&#13;
 		${i}${i}${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
 		${i}${i}${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
 		${i}${i}${i}${i}${i}&lt;div class="amErrorMsg" id="divFieldErrorBlock${Id}EndDate"&gt;&lt;/div&gt;&#13;
@@ -561,7 +561,7 @@
 		${i}${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}BeginDate"&gt;${BeginDateLabel}&lt;/label&gt;&lt;span class="amRequired"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
 		${i}${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
 		${i}${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}${i}&lt;input class="amInput amDatepickerRange" id="${Id}BeginDate" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}BeginDate" /&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="amInput amDatepicker" id="${Id}BeginDate" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}BeginDate" /&gt;&#13;
 		${i}${i}${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
 		${i}${i}${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
 		${i}${i}${i}${i}${i}&lt;div class="amErrorMsg" id="divFieldErrorBlock${Id}BeginDate"&gt;&lt;/div&gt;&#13;
@@ -573,7 +573,7 @@
 		${i}${i}&lt;div class="amFieldLabel flex"&gt;&lt;label for="${Id}EndDate"&gt;${EndDateLabel}&lt;/label&gt;&lt;span class="amRequired"&gt;*&lt;/span&gt;&lt;/div&gt;&#13;
 		${i}${i}&lt;div class="amFieldControl" data-tooltip="${tooltip}"&gt;&#13;
 		${i}${i}${i}&lt;div class="amFieldInput flex items-center"&gt;&#13;
-		${i}${i}${i}${i}&lt;input class="amInput amDatepickerRange" id="${Id}EndDate" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}EndDate" /&gt;&#13;
+		${i}${i}${i}${i}&lt;input class="amInput amDatepicker" id="${Id}EndDate" required="required" style="width: ${size}em;" readonly="readonly" data-parsley-errors-container="#divFieldErrorBlock${Id}EndDate" /&gt;&#13;
 		${i}${i}${i}${i}&lt;span class="amFieldError flex"&gt;&#13;
 		${i}${i}${i}${i}${i}&lt;div class="amErrorTip"&gt;&lt;/div&gt;&#13;
 		${i}${i}${i}${i}${i}&lt;div class="amErrorMsg" id="divFieldErrorBlock${Id}EndDate"&gt;&lt;/div&gt;&#13;
