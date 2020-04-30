@@ -63,7 +63,7 @@
     "@fortawesome/fontawesome-free": "^5.11.2",
     "chart.js": "^2.8.0",
     "jqGrid": "^5.4.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-file-upload": "^4.0.11",
     "jquery-mask-plugin": "^1.14.16",
     "jquery-maskmoney": "^3.0.2",
