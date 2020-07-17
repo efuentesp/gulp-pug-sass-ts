@@ -67,7 +67,7 @@
     "jquery-file-upload": "^4.0.11",
     "jquery-mask-plugin": "^1.14.16",
     "jquery-maskmoney": "^3.0.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
     "parsleyjs": "^2.9.1",
