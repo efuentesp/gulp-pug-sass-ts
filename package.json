@@ -68,7 +68,7 @@
     "jquery-mask-plugin": "^1.14.16",
     "jquery-maskmoney": "^3.0.2",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "normalize.css": "^8.0.1",
     "parsleyjs": "^2.9.1",
     "requirejs": "^2.3.6",
